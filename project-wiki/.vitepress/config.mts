@@ -67,6 +67,23 @@ export default withMermaid(defineConfig({
     '**/exports/**',
     '**/skills/**',
   ],
+  markdown: {
+    // Wrap the content inside <details> blocks with v-pre to prevent
+    // Vue template compilation of code snippets that contain JSX/HTML-like syntax
+    config: (md) => {
+      const originalRender = md.render.bind(md);
+      md.render = (src: string, env: any) => {
+        // Strip <details class="source-snippets">...</details> blocks entirely
+        // before Vue compilation. These contain raw source code that frequently
+        // includes JSX/TSX/HTML tags which break the Vue template compiler.
+        const cleaned = src.replace(
+          /<details class="source-snippets">[\s\S]*?<\/details>/g,
+          ''
+        );
+        return originalRender(cleaned, env);
+      };
+    },
+  },
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },

@@ -1031,7 +1031,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
 
 #### `src/ui/hooks/useAgentSession.ts:474-536`
 
-```typescript
+```text
   const submit = useCallback(async (text: string): Promise<SubmitResult> => {
     if (!text.trim()) {
       return { handled: false };
