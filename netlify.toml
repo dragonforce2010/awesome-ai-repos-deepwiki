@@ -1,6 +1,5 @@
 [build]
-  base = "project-wiki"
-  publish = ".vitepress/dist"
+  publish = "project-wiki/.vitepress/dist"
   command = "pnpm install && pnpm run build"
 
 [build.environment]
