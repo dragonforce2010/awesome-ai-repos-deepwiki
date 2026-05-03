@@ -1,0 +1,208 @@
+{
+  "title": "GitNexus DeepWiki",
+  "description": "将任意代码库索引为知识图谱，并通过 MCP、CLI 与 Web UI 暴露给 AI 代理的 monorepo 中文技术百科。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/abhigyanpatwari/GitNexus",
+    "commit": "7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构与数据流",
+      "pages": ["system-architecture", "ingestion-pipeline", "graph-storage-and-schema"],
+      "subsections": []
+    },
+    {
+      "id": "section-interfaces",
+      "title": "接口与入口",
+      "pages": ["mcp-cli-http-interfaces", "web-ui-bridge"],
+      "subsections": []
+    },
+    {
+      "id": "section-intelligence",
+      "title": "检索、图谱与多仓",
+      "pages": ["search-embeddings-and-wiki", "groups-contract-bridge"],
+      "subsections": []
+    },
+    {
+      "id": "section-ecosystem",
+      "title": "扩展与生态",
+      "pages": ["agent-plugins-skills"],
+      "subsections": []
+    },
+    {
+      "id": "section-quality",
+      "title": "测试、CI 与运维",
+      "pages": ["testing-ci-and-ops"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-interfaces",
+    "section-intelligence",
+    "section-ecosystem",
+    "section-quality"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "定位、双形态产品形态、许可证与文档地图",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "CHANGELOG.md",
+        "gitnexus/package.json",
+        "gitnexus-shared/package.json"
+      ],
+      "relatedPages": ["system-architecture", "mcp-cli-http-interfaces"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "monorepo 包边界、端到端数据流与职责表",
+      "importance": "high",
+      "filePaths": [
+        "ARCHITECTURE.md",
+        "gitnexus/package.json",
+        "gitnexus-web/package.json",
+        "gitnexus-shared/package.json",
+        "RUNBOOK.md"
+      ],
+      "relatedPages": ["ingestion-pipeline", "mcp-cli-http-interfaces"]
+    },
+    {
+      "id": "ingestion-pipeline",
+      "title": "索引流水线",
+      "file": "pages/ingestion-pipeline.md",
+      "description": "DAG 阶段、runner、调用解析与语言扩展点",
+      "importance": "high",
+      "filePaths": [
+        "gitnexus/src/core/ingestion/pipeline.ts",
+        "gitnexus/src/core/ingestion/pipeline-phases/index.ts",
+        "gitnexus/src/core/ingestion/pipeline-phases/runner.ts",
+        "gitnexus/src/core/ingestion/call-processor.ts",
+        "ARCHITECTURE.md"
+      ],
+      "relatedPages": ["graph-storage-and-schema", "search-embeddings-and-wiki"]
+    },
+    {
+      "id": "graph-storage-and-schema",
+      "title": "图存储与持久化",
+      "file": "pages/graph-storage-and-schema.md",
+      "description": "LadybugDB、仓库注册表、陈旧度与加载路径",
+      "importance": "high",
+      "filePaths": [
+        "ARCHITECTURE.md",
+        "gitnexus/package.json",
+        "RUNBOOK.md",
+        "GUARDRAILS.md",
+        "README.md"
+      ],
+      "relatedPages": ["mcp-cli-http-interfaces", "search-embeddings-and-wiki"]
+    },
+    {
+      "id": "mcp-cli-http-interfaces",
+      "title": "MCP、CLI 与 HTTP 桥",
+      "file": "pages/mcp-cli-http-interfaces.md",
+      "description": "stdio MCP 工具、Express 桥与 CLI 查询命令",
+      "importance": "high",
+      "filePaths": [
+        "gitnexus/src/mcp/tools.ts",
+        "gitnexus/src/mcp/resources.ts",
+        "README.md",
+        "ARCHITECTURE.md",
+        "gitnexus/package.json"
+      ],
+      "relatedPages": ["web-ui-bridge", "groups-contract-bridge"]
+    },
+    {
+      "id": "web-ui-bridge",
+      "title": "Web UI 与本地桥接",
+      "file": "pages/web-ui-bridge.md",
+      "description": "Vite/React 客户端与 gitnexus serve 协作方式",
+      "importance": "medium",
+      "filePaths": [
+        "gitnexus-web/package.json",
+        "README.md",
+        "ARCHITECTURE.md",
+        "TESTING.md",
+        "gitnexus/package.json"
+      ],
+      "relatedPages": ["mcp-cli-http-interfaces", "testing-ci-and-ops"]
+    },
+    {
+      "id": "search-embeddings-and-wiki",
+      "title": "检索、向量与 Wiki",
+      "file": "pages/search-embeddings-and-wiki.md",
+      "description": "BM25 混合检索、可选嵌入与图驱动文档生成",
+      "importance": "medium",
+      "filePaths": [
+        "ARCHITECTURE.md",
+        "README.md",
+        "RUNBOOK.md",
+        "gitnexus/package.json",
+        "TESTING.md"
+      ],
+      "relatedPages": ["ingestion-pipeline", "mcp-cli-http-interfaces"]
+    },
+    {
+      "id": "groups-contract-bridge",
+      "title": "多仓组与 Contract Bridge",
+      "file": "pages/groups-contract-bridge.md",
+      "description": "group 模式、资源 URI 与跨仓影响分析",
+      "importance": "medium",
+      "filePaths": [
+        "ARCHITECTURE.md",
+        "gitnexus/src/mcp/tools.ts",
+        "gitnexus/src/mcp/resources.ts",
+        "README.md",
+        "gitnexus/package.json"
+      ],
+      "relatedPages": ["mcp-cli-http-interfaces", "search-embeddings-and-wiki"]
+    },
+    {
+      "id": "agent-plugins-skills",
+      "title": "代理插件与 Skills",
+      "file": "pages/agent-plugins-skills.md",
+      "description": "Claude 插件、Cursor 集成与随包分发的 SKILL 工作流",
+      "importance": "medium",
+      "filePaths": [
+        "README.md",
+        "gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md",
+        "gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md",
+        "gitnexus/package.json",
+        "ARCHITECTURE.md"
+      ],
+      "relatedPages": ["mcp-cli-http-interfaces", "testing-ci-and-ops"]
+    },
+    {
+      "id": "testing-ci-and-ops",
+      "title": "测试、CI 与运维",
+      "file": "pages/testing-ci-and-ops.md",
+      "description": "Vitest/Playwright、GitHub Actions 与运行手册要点",
+      "importance": "medium",
+      "filePaths": [
+        "TESTING.md",
+        ".github/workflows/ci.yml",
+        "RUNBOOK.md",
+        "GUARDRAILS.md",
+        "gitnexus-web/package.json"
+      ],
+      "relatedPages": ["web-ui-bridge", "graph-storage-and-schema"]
+    }
+  ]
+}

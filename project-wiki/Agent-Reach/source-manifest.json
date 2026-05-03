@@ -1,0 +1,2082 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/Agent-Reach",
+    "remote": "https://github.com/Panniantong/Agent-Reach.git",
+    "branch": "main",
+    "commit": "17624268a059ccfb23eba8a2ba50f9f92c8dc0ca"
+  },
+  "file_count": 72,
+  "skipped_count": 13,
+  "files": [
+    {
+      "path": ".claude/settings.local.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/pytest.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 97,
+      "symbols": []
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 107,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 394,
+      "symbols": []
+    },
+    {
+      "path": "SECURITY.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/__init__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/channels/__init__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 65,
+      "symbols": [
+        {
+          "name": "get_channel",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "get_all_channels",
+          "type": "function",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/base.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 36,
+      "symbols": [
+        {
+          "name": "Channel",
+          "type": "class",
+          "line": 18
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/bilibili.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 66,
+      "symbols": [
+        {
+          "name": "_search_api_ok",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "BilibiliChannel",
+          "type": "class",
+          "line": 27
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/douyin.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 56,
+      "symbols": [
+        {
+          "name": "DouyinChannel",
+          "type": "class",
+          "line": 9
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/exa_search.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "ExaSearchChannel",
+          "type": "class",
+          "line": 9
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/github.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 32,
+      "symbols": [
+        {
+          "name": "GitHubChannel",
+          "type": "class",
+          "line": 9
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/linkedin.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 41,
+      "symbols": [
+        {
+          "name": "LinkedInChannel",
+          "type": "class",
+          "line": 9
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/reddit.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 76,
+      "symbols": [
+        {
+          "name": "RedditChannel",
+          "type": "class",
+          "line": 18
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/rss.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 21,
+      "symbols": [
+        {
+          "name": "RSSChannel",
+          "type": "class",
+          "line": 7
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/twitter.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 82,
+      "symbols": [
+        {
+          "name": "TwitterChannel",
+          "type": "class",
+          "line": 9
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "_check_twitter_cli",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "_check_bird",
+          "type": "function",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/v2ex.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 212,
+      "symbols": [
+        {
+          "name": "_get_json",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "V2EXChannel",
+          "type": "class",
+          "line": 20
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "get_hot_topics",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "get_node_topics",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "get_topic",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "get_user",
+          "type": "function",
+          "line": 163
+        },
+        {
+          "name": "search",
+          "type": "function",
+          "line": 191
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/web.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 32,
+      "symbols": [
+        {
+          "name": "WebChannel",
+          "type": "class",
+          "line": 10
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/wechat.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "_exa_available",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "WeChatChannel",
+          "type": "class",
+          "line": 27
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/weibo.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 52,
+      "symbols": [
+        {
+          "name": "WeiboChannel",
+          "type": "class",
+          "line": 9
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/xiaohongshu.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 162,
+      "symbols": [
+        {
+          "name": "format_xhs_result",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "_clean_note",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "_clean_comment",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "XiaoHongShuChannel",
+          "type": "class",
+          "line": 118
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/xiaoyuzhou.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "XiaoyuzhouChannel",
+          "type": "class",
+          "line": 10
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/xueqiu.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 314,
+      "symbols": [
+        {
+          "name": "_inject_cookie_string",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "_load_cookies_from_config",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "_load_cookies_from_browser",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "_ensure_cookies",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "_get_json",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "_strip_html",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "XueqiuChannel",
+          "type": "class",
+          "line": 146
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "get_stock_quote",
+          "type": "function",
+          "line": 183
+        },
+        {
+          "name": "search_stock",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "get_hot_posts",
+          "type": "function",
+          "line": 242
+        },
+        {
+          "name": "get_hot_stocks",
+          "type": "function",
+          "line": 288
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/channels/youtube.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 46,
+      "symbols": [
+        {
+          "name": "YouTubeChannel",
+          "type": "class",
+          "line": 12
+        },
+        {
+          "name": "can_handle",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/cli.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 1743,
+      "symbols": [
+        {
+          "name": "_ensure_utf8_console",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "_configure_logging",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "_cmd_install",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "_install_skill",
+          "type": "function",
+          "line": 323
+        },
+        {
+          "name": "_is_english_locale",
+          "type": "function",
+          "line": 329
+        },
+        {
+          "name": "_skill_resource_name",
+          "type": "function",
+          "line": 333
+        },
+        {
+          "name": "_read_skill_markdown",
+          "type": "function",
+          "line": 344
+        },
+        {
+          "name": "_copy_skill_dir",
+          "type": "function",
+          "line": 351
+        },
+        {
+          "name": "_uninstall_skill",
+          "type": "function",
+          "line": 421
+        },
+        {
+          "name": "_cmd_skill",
+          "type": "function",
+          "line": 454
+        },
+        {
+          "name": "_cmd_format",
+          "type": "function",
+          "line": 462
+        },
+        {
+          "name": "_install_system_deps",
+          "type": "function",
+          "line": 484
+        },
+        {
+          "name": "_install_xiaoyuzhou_deps",
+          "type": "function",
+          "line": 611
+        },
+        {
+          "name": "_install_twitter_deps",
+          "type": "function",
+          "line": 654
+        },
+        {
+          "name": "_install_xhs_deps",
+          "type": "function",
+          "line": 677
+        },
+        {
+          "name": "_install_reddit_deps",
+          "type": "function",
+          "line": 700
+        },
+        {
+          "name": "_install_bili_deps",
+          "type": "function",
+          "line": 723
+        },
+        {
+          "name": "_install_weibo_deps",
+          "type": "function",
+          "line": 746
+        },
+        {
+          "name": "_install_wechat_deps",
+          "type": "function",
+          "line": 793
+        },
+        {
+          "name": "_install_system_deps_safe",
+          "type": "function",
+          "line": 863
+        },
+        {
+          "name": "_install_system_deps_dryrun",
+          "type": "function",
+          "line": 892
+        },
+        {
+          "name": "_install_mcporter",
+          "type": "function",
+          "line": 912
+        },
+        {
+          "name": "_install_mcporter_safe",
+          "type": "function",
+          "line": 960
+        },
+        {
+          "name": "_detect_environment",
+          "type": "function",
+          "line": 975
+        },
+        {
+          "name": "_cmd_configure",
+          "type": "function",
+          "line": 1017
+        },
+        {
+          "name": "_parse_twitter_cookie_input",
+          "type": "function",
+          "line": 1124
+        },
+        {
+          "name": "_configure_xhs_cookies",
+          "type": "function",
+          "line": 1145
+        },
+        {
+          "name": "_cmd_uninstall",
+          "type": "function",
+          "line": 1321
+        },
+        {
+          "name": "_cmd_doctor",
+          "type": "function",
+          "line": 1419
+        },
+        {
+          "name": "_cmd_setup",
+          "type": "function",
+          "line": 1434
+        },
+        {
+          "name": "_classify_update_error",
+          "type": "function",
+          "line": 1523
+        },
+        {
+          "name": "_update_error_text",
+          "type": "function",
+          "line": 1547
+        },
+        {
+          "name": "_classify_github_response_error",
+          "type": "function",
+          "line": 1561
+        },
+        {
+          "name": "_github_get_with_retry",
+          "type": "function",
+          "line": 1582
+        },
+        {
+          "name": "_cmd_check_update",
+          "type": "function",
+          "line": 1614
+        },
+        {
+          "name": "_cmd_watch",
+          "type": "function",
+          "line": 1678
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/config.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 109,
+      "symbols": [
+        {
+          "name": "Config",
+          "type": "class",
+          "line": 15
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "_ensure_dir",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "load",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "save",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "get",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "set",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "delete",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "is_configured",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "get_configured_features",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "to_dict",
+          "type": "function",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/cookie_extract.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 267,
+      "symbols": [
+        {
+          "name": "extract_all",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "_Cookie",
+          "type": "class",
+          "line": 89
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "_sync_xfetch_session",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "_sync_bird_env",
+          "type": "function",
+          "line": 177
+        },
+        {
+          "name": "configure_from_browser",
+          "type": "function",
+          "line": 202
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/core.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 42,
+      "symbols": [
+        {
+          "name": "AgentReach",
+          "type": "class",
+          "line": 23
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "doctor",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "doctor_report",
+          "type": "function",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/doctor.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 108,
+      "symbols": [
+        {
+          "name": "check_all",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "format_report",
+          "type": "function",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/guides/setup-exa.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/guides/setup-groq.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/guides/setup-reddit.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/guides/setup-twitter.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 84,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/guides/setup-wechat.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/guides/setup-xiaohongshu.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 85,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/integrations/__init__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/integrations/mcp_server.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "create_server",
+          "type": "function",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/scripts/transcribe_xiaoyuzhou.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 167,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/skill/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/skill/SKILL_en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 312,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/skill/references/career.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/skill/references/dev.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/skill/references/search.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/skill/references/social.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 228,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/skill/references/video.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 115,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/skill/references/web.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": "agent_reach/utils/paths.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 45,
+      "symbols": [
+        {
+          "name": "get_ytdlp_config_dir",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "get_ytdlp_config_path",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "render_ytdlp_fix_command",
+          "type": "function",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "agent_reach/utils/text.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 14,
+      "symbols": [
+        {
+          "name": "read_utf8_text",
+          "type": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "config/mcporter.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "docs/README_en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 364,
+      "symbols": []
+    },
+    {
+      "path": "docs/README_ja.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 322,
+      "symbols": []
+    },
+    {
+      "path": "docs/README_ko.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 359,
+      "symbols": []
+    },
+    {
+      "path": "docs/cookie-export.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "docs/dependency-locking.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "docs/install.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 405,
+      "symbols": []
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "docs/update.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 132,
+      "symbols": []
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "kind": "manifest",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "scripts/sync-upstream.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 72,
+      "symbols": []
+    },
+    {
+      "path": "test.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 92,
+      "symbols": []
+    },
+    {
+      "path": "tests/test_channel_contracts.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 155,
+      "symbols": [
+        {
+          "name": "test_channel_registry_contract",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "test_channel_check_contract_with_minimal_runtime",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "test_youtube_warns_when_node_only_and_no_config",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "fake_which",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "test_youtube_warns_with_windows_specific_fix_command",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "fake_which",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "test_youtube_ok_when_deno_installed",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "fake_which",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "test_douyin_check_does_not_call_with_invalid_url",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "tracking_run",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "R",
+          "type": "class",
+          "line": 107
+        },
+        {
+          "name": "R",
+          "type": "class",
+          "line": 115
+        },
+        {
+          "name": "test_channel_can_handle_contract",
+          "type": "function",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "tests/test_channels.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 744,
+      "symbols": [
+        {
+          "name": "TestChannelRegistry",
+          "type": "class",
+          "line": 15
+        },
+        {
+          "name": "test_get_channel_by_name",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "test_get_unknown_channel_returns_none",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "test_all_channels_registered",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "TestV2EXChannel",
+          "type": "class",
+          "line": 33
+        },
+        {
+          "name": "test_can_handle_v2ex_urls",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "test_check_ok_when_api_reachable",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 44
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "test_check_warn_when_api_unreachable",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "raise_error",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "test_get_hot_topics_returns_list",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 104
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "test_get_hot_topics_respects_limit",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 135
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "test_get_hot_topics_truncates_content",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 153
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "test_get_node_topics",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 181
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 183
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "test_get_topic_returns_detail_and_replies",
+          "type": "function",
+          "line": 198
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 226
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 227
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 232
+        },
+        {
+          "name": "fake_urlopen",
+          "type": "function",
+          "line": 234
+        },
+        {
+          "name": "test_get_topic_handles_empty_replies",
+          "type": "function",
+          "line": 251
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 267
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 268
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 271
+        },
+        {
+          "name": "fake_urlopen",
+          "type": "function",
+          "line": 273
+        },
+        {
+          "name": "test_get_user_returns_profile",
+          "type": "function",
+          "line": 286
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 304
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 305
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 306
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 307
+        },
+        {
+          "name": "test_search_returns_unavailable_notice",
+          "type": "function",
+          "line": 322
+        },
+        {
+          "name": "TestXueqiuChannel",
+          "type": "class",
+          "line": 329
+        },
+        {
+          "name": "test_can_handle_xueqiu_urls",
+          "type": "function",
+          "line": 330
+        },
+        {
+          "name": "test_check_ok_when_api_reachable",
+          "type": "function",
+          "line": 338
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 351
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 352
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 355
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 358
+        },
+        {
+          "name": "test_check_warn_when_api_unreachable",
+          "type": "function",
+          "line": 366
+        },
+        {
+          "name": "raise_error",
+          "type": "function",
+          "line": 371
+        },
+        {
+          "name": "test_get_stock_quote",
+          "type": "function",
+          "line": 383
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 414
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 415
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 418
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 421
+        },
+        {
+          "name": "test_search_stock",
+          "type": "function",
+          "line": 436
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 448
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 449
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 452
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 455
+        },
+        {
+          "name": "test_get_hot_posts_returns_list",
+          "type": "function",
+          "line": 469
+        },
+        {
+          "name": "make_item",
+          "type": "function",
+          "line": 475
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 493
+        },
+        {
+          "name": "__enter__",
+          "type": "function",
+          "line": 494
+        },
+        {
+          "name": "__exit__",
+          "type": "function",
+          "line": 497
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 500
+        },
+        {
+          "name": "test_get_hot_posts_respects_limit",
+          "type": "function",
+          "line": 513
+        },
+        {
+          "name": "FakeResponse",
+          "type": "class",
+          "line": 535
+        }
+      ]
+    },
+    {
+      "path": "tests/test_cli.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 126,
+      "symbols": [
+        {
+          "name": "TestCLI",
+          "type": "class",
+          "line": 11
+        },
+        {
+          "name": "test_version",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "test_no_command_shows_help",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "test_doctor_runs",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "test_parse_twitter_cookie_input_separate_values",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "test_parse_twitter_cookie_input_cookie_header",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "TestCheckUpdateRetry",
+          "type": "class",
+          "line": 46
+        },
+        {
+          "name": "test_retry_timeout_classification",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "fake_sleep",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "test_retry_dns_classification",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "test_retry_rate_limit_then_success",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "R",
+          "type": "class",
+          "line": 81
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "json",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "test_classify_rate_limit_from_403",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "R",
+          "type": "class",
+          "line": 109
+        },
+        {
+          "name": "json",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "test_check_update_reports_classified_error",
+          "type": "function",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "path": "tests/test_config.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 88,
+      "symbols": [
+        {
+          "name": "tmp_config",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "TestConfig",
+          "type": "class",
+          "line": 21
+        },
+        {
+          "name": "test_init_creates_dir",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "test_set_and_get",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "test_get_default",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "test_get_from_env",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "test_config_file_priority_over_env",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "test_save_and_load",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "test_delete",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "test_is_configured",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "test_get_configured_features",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "test_to_dict_masks_sensitive",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "test_save_creates_file_with_restricted_permissions",
+          "type": "function",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "path": "tests/test_core.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 29,
+      "symbols": [
+        {
+          "name": "eyes",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "TestAgentReach",
+          "type": "class",
+          "line": 16
+        },
+        {
+          "name": "test_init",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "test_doctor",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "test_doctor_report",
+          "type": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "tests/test_doctor.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 100,
+      "symbols": [
+        {
+          "name": "_StubChannel",
+          "type": "class",
+          "line": 10
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "tmp_config",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "TestDoctor",
+          "type": "class",
+          "line": 28
+        },
+        {
+          "name": "test_check_all_collects_channel_results",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "test_format_report",
+          "type": "function",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "path": "tests/test_skill_command.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 128,
+      "symbols": [
+        {
+          "name": "TestSkillCommand",
+          "type": "class",
+          "line": 13
+        },
+        {
+          "name": "test_skill_resources_include_both_locales",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "test_install_skill_creates_skill_md",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "test_uninstall_skill_removes_dir",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "test_install_creates_dir_if_parent_exists",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "test_install_uses_english_skill_for_english_locale",
+          "type": "function",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "path": "tests/test_twitter_channel.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 108,
+      "symbols": [
+        {
+          "name": "_cp",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "test_check_twitter_cli_found_and_auth_ok",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "test_check_twitter_cli_found_auth_missing",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "test_check_bird_fallback_auth_ok",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "which_side_effect",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "test_check_bird_fallback_auth_missing",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "which_side_effect",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "test_check_nothing_installed",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "test_twitter_cli_preferred_over_bird",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "which_side_effect",
+          "type": "function",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "path": "tests/test_xhs_format.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 133,
+      "symbols": [
+        {
+          "name": "TestFormatXhsResult",
+          "type": "class",
+          "line": 9
+        },
+        {
+          "name": "test_single_note_keeps_useful_fields",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "test_single_note_drops_useless_fields",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "test_search_results_wrapper",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "test_list_input",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "test_note_card_wrapper",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "test_with_comments",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "test_empty_input",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "test_non_dict_passthrough",
+          "type": "function",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "path": "tests/test_xiaoyuzhou_install.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 21,
+      "symbols": [
+        {
+          "name": "_DummyConfig",
+          "type": "class",
+          "line": 8
+        },
+        {
+          "name": "get",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "test_install_xiaoyuzhou_deps_does_not_raise_when_no_groq_key",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    }
+  ]
+}

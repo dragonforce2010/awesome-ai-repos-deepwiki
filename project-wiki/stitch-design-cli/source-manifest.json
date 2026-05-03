@@ -1,0 +1,481 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/stitch-design-cli",
+    "remote": "https://github.com/danielgwilson/stitch-design-cli.git",
+    "branch": "main",
+    "commit": "71e62a260313d7e3030f2d6a17067c455c7f4873"
+  },
+  "file_count": 21,
+  "skipped_count": 3,
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/publish.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": ".gitleaks.toml",
+      "language": "toml",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 118,
+      "symbols": []
+    },
+    {
+      "path": "SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 90,
+      "symbols": []
+    },
+    {
+      "path": "docs/CONTRACT_V1.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 318,
+      "symbols": []
+    },
+    {
+      "path": "package-lock.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 1750,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 64,
+      "symbols": []
+    },
+    {
+      "path": "src/auth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "AuthValidation",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "normalizeConfig",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "validateAuth",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "saveAndValidateConfig",
+          "type": "function",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "src/cli.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 666,
+      "symbols": [
+        {
+          "name": "CommonJsonOptions",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "DeviceType",
+          "type": "type",
+          "line": 21
+        },
+        {
+          "name": "ModelId",
+          "type": "type",
+          "line": 22
+        },
+        {
+          "name": "CreativeRange",
+          "type": "type",
+          "line": 23
+        },
+        {
+          "name": "VariantAspect",
+          "type": "type",
+          "line": 24
+        },
+        {
+          "name": "getCliVersion",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "readStdin",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "promptForApiKey",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "printHuman",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "emitFailure",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "requireAuthConfig",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "runWithSdk",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "printProjectList",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "printScreenList",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "printToolList",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "parsePositiveInteger",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "validateEnum",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "validateVariantAspects",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "path": "src/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 130,
+      "symbols": [
+        {
+          "name": "StitchCliConfig",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "AuthMode",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "ResolvedConfig",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "getConfigDir",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "getConfigPath",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "cleanBaseUrl",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "raw",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "cleanTimeoutMs",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "inferAuthMode",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "readConfig",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "writeConfig",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "clearConfig",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "resolveConfig",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "redactSecret",
+          "type": "function",
+          "line": 125
+        }
+      ]
+    },
+    {
+      "path": "src/normalize.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 156,
+      "symbols": [
+        {
+          "name": "splitCsv",
+          "type": "function",
+          "line": 1
+        },
+        {
+          "name": "collectStrings",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "buildScreenGetCommand",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "toProjectId",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "toScreenId",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "serializeProject",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "serializeScreen",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "artifactUrlsFromData",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "extractOutputMessages",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "extractScreensFromOutput",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "createScreenMutationResult",
+          "type": "function",
+          "line": 114
+        }
+      ]
+    },
+    {
+      "path": "src/output.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 96,
+      "symbols": [
+        {
+          "name": "isObject",
+          "type": "function",
+          "line": 3
+        },
+        {
+          "name": "CliError",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "isInvalidCredentialMessage",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "toErrorCode",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "isRetryable",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "makeError",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "FailEnvelope",
+          "type": "type",
+          "line": 79
+        },
+        {
+          "name": "ok",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "fail",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "printJson",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "exitCodeFor",
+          "type": "function",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "path": "src/stitch-client.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 27,
+      "symbols": [
+        {
+          "name": "hasAuth",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "toSdkConfig",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "createSdkContext",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "src/transport-noise.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 12,
+      "symbols": [
+        {
+          "name": "withSuppressedTransportNoise",
+          "type": "function",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "stitch-trusted-publishing-notes.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "test/config.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "test/normalize.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "test/output.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "tsconfig.build.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 16,
+      "symbols": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "repo": "Panniantong/Agent-Reach",
+  "commit": "17624268a059ccfb23eba8a2ba50f9f92c8dc0ca",
+  "version": "1.3.0",
+  "description": "给你的 AI Agent 一键装上互联网能力 — Python CLI + 安装器，帮助 AI Agent 访问 14+ 互联网平台",
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "slug": "README",
+      "description": "项目定位、核心价值、支持平台总表"
+    },
+    {
+      "id": "architecture",
+      "title": "架构设计",
+      "slug": "architecture",
+      "description": "脚手架定位、可插拔渠道架构、选型依据"
+    },
+    {
+      "id": "quickstart",
+      "title": "快速上手",
+      "slug": "quickstart",
+      "description": "一句话安装、自动依赖检测、环境识别"
+    },
+    {
+      "id": "channels",
+      "title": "渠道详解",
+      "slug": "channels",
+      "description": "16个平台的 backends、check机制、认证方式"
+    },
+    {
+      "id": "cli-reference",
+      "title": "CLI 命令参考",
+      "slug": "cli-reference",
+      "description": "install / doctor / configure / uninstall 等子命令详解"
+    },
+    {
+      "id": "config-system",
+      "title": "配置系统",
+      "slug": "config",
+      "description": "YAML配置、目录权限、环境变量、敏感信息处理"
+    },
+    {
+      "id": "skill-integration",
+      "title": "Agent Skill 集成",
+      "slug": "skill",
+      "description": "SKILL.md多语言自动安装、skill注册流程"
+    },
+    {
+      "id": "tests",
+      "title": "测试体系",
+      "slug": "tests",
+      "description": "pytest测试、test.sh集成测试、CI配置"
+    }
+  ],
+  "generated_at": "2026-05-03"
+}

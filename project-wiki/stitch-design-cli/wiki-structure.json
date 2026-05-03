@@ -1,0 +1,114 @@
+{
+  "title": "stitch-design-cli DeepWiki",
+  "description": "面向 Agent 的 Google Stitch 官方 SDK 封装 CLI 的中文技术维基",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/danielgwilson/stitch-design-cli",
+    "commit": "71e62a260313d7e3030f2d6a17067c455c7f4873"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览与定位",
+      "pages": ["overview", "system-architecture"],
+      "subsections": []
+    },
+    {
+      "id": "section-runtime",
+      "title": "运行时与集成",
+      "pages": ["cli-commands", "auth-and-config", "stitch-sdk-layer"],
+      "subsections": []
+    },
+    {
+      "id": "section-contract",
+      "title": "契约、数据与工程化",
+      "pages": ["json-output-and-errors", "normalization-pipeline", "testing-ci-release", "agent-skill"],
+      "subsections": []
+    }
+  ],
+  "rootSections": ["section-overview", "section-runtime", "section-contract"],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "定位、受众、与官方 Stitch 平台的关系",
+      "importance": "high",
+      "filePaths": ["README.md", "package.json", "docs/CONTRACT_V1.md", "LICENSE", "SKILL.md"],
+      "relatedPages": ["system-architecture", "cli-commands"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与模块边界",
+      "file": "pages/system-architecture.md",
+      "description": "源码分层、依赖方向与执行流",
+      "importance": "high",
+      "filePaths": ["src/cli.ts", "src/config.ts", "src/stitch-client.ts", "src/output.ts", "src/normalize.ts", "src/auth.ts", "src/transport-noise.ts"],
+      "relatedPages": ["overview", "cli-commands"]
+    },
+    {
+      "id": "cli-commands",
+      "title": "CLI 命令面",
+      "file": "pages/cli-commands.md",
+      "description": "Commander 子命令树与典型调用路径",
+      "importance": "high",
+      "filePaths": ["src/cli.ts", "README.md", "docs/CONTRACT_V1.md"],
+      "relatedPages": ["system-architecture", "auth-and-config"]
+    },
+    {
+      "id": "auth-and-config",
+      "title": "认证与配置解析",
+      "file": "pages/auth-and-config.md",
+      "description": "本地 config、环境变量与 OAuth 组合规则",
+      "importance": "high",
+      "filePaths": ["src/config.ts", "src/auth.ts", "src/cli.ts", "README.md"],
+      "relatedPages": ["cli-commands", "stitch-sdk-layer"]
+    },
+    {
+      "id": "stitch-sdk-layer",
+      "title": "Stitch SDK 适配层",
+      "file": "pages/stitch-sdk-layer.md",
+      "description": "StitchToolClient 与 Stitch 包装、默认端点",
+      "importance": "high",
+      "filePaths": ["src/stitch-client.ts", "package.json", "src/cli.ts"],
+      "relatedPages": ["auth-and-config", "normalization-pipeline"]
+    },
+    {
+      "id": "json-output-and-errors",
+      "title": "JSON 契约与错误模型",
+      "file": "pages/json-output-and-errors.md",
+      "description": "ok 信封、退出码、StitchError 归一化",
+      "importance": "high",
+      "filePaths": ["docs/CONTRACT_V1.md", "src/output.ts", "src/cli.ts"],
+      "relatedPages": ["cli-commands", "normalization-pipeline"]
+    },
+    {
+      "id": "normalization-pipeline",
+      "title": "响应归一化与屏幕变更结果",
+      "file": "pages/normalization-pipeline.md",
+      "description": "serialize、extractScreens、followUp 命令拼装",
+      "importance": "medium",
+      "filePaths": ["src/normalize.ts", "src/cli.ts", "docs/CONTRACT_V1.md"],
+      "relatedPages": ["stitch-sdk-layer", "json-output-and-errors"]
+    },
+    {
+      "id": "testing-ci-release",
+      "title": "测试、CI 与发布",
+      "file": "pages/testing-ci-release.md",
+      "description": "Node 版本矩阵、gitleaks、npm publish 与 public surface 检查",
+      "importance": "medium",
+      "filePaths": [".github/workflows/ci.yml", ".github/workflows/publish.yml", "package.json", "scripts/public-surface-check.mjs", "test/config.test.ts", "test/normalize.test.ts", "test/output.test.ts"],
+      "relatedPages": ["overview", "agent-skill"]
+    },
+    {
+      "id": "agent-skill",
+      "title": "Agent Skill 与运维提示",
+      "file": "pages/agent-skill.md",
+      "description": "仓库内 SKILL 约定与 v1 能力边界",
+      "importance": "medium",
+      "filePaths": ["SKILL.md", "README.md", "docs/CONTRACT_V1.md", "stitch-trusted-publishing-notes.md"],
+      "relatedPages": ["overview", "testing-ci-release"]
+    }
+  ]
+}
