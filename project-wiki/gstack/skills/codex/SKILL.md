@@ -24,7 +24,7 @@ OpenAI Codex CLI 包装技能，用于独立审查、挑战和咨询。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: codex
 preamble-tier: 3
@@ -68,7 +68,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -100,7 +100,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -305,20 +305,20 @@ AI orchestrator (e.g., OpenClaw). In spawned sessions:
 Every AskUserQuestion is a decision brief and must be sent as tool_use, not prose.
 
 ```
-D<N> — <one-line question title>
-Project/branch/task: <1 short grounding sentence using _BRANCH>
-ELI10: <plain English a 16-year-old could follow, 2-4 sentences, name the stakes>
-Stakes if we pick wrong: <one sentence on what breaks, what user sees, what's lost>
-Recommendation: <choice> because <one-line reason>
+D&lt;N&gt; — &lt;one-line question title&gt;
+Project/branch/task: &lt;1 short grounding sentence using _BRANCH&gt;
+ELI10: &lt;plain English a 16-year-old could follow, 2-4 sentences, name the stakes&gt;
+Stakes if we pick wrong: &lt;one sentence on what breaks, what user sees, what's lost&gt;
+Recommendation: &lt;choice&gt; because &lt;one-line reason&gt;
 Completeness: A=X/10, B=Y/10   (or: Note: options differ in kind, not coverage — no completeness score)
 Pros / cons:
-A) <option label> (recommended)
-  ✅ <pro — concrete, observable, ≥40 chars>
-  ❌ <con — honest, ≥40 chars>
-B) <option label>
-  ✅ <pro>
-  ❌ <con>
-Net: <one-line synthesis of what you're actually trading off>
+A) &lt;option label&gt; (recommended)
+  ✅ &lt;pro — concrete, observable, ≥40 chars&gt;
+  ❌ &lt;con — honest, ≥40 chars&gt;
+B) &lt;option label&gt;
+  ✅ &lt;pro&gt;
+  ❌ &lt;con&gt;
+Net: &lt;one-line synthesis of what you're actually trading off&gt;
 ```
 
 D-numbering: first question in a skill invocation is `D1`; increment yourself. This is a model-level instruction, not a runtime counter.
@@ -409,7 +409,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -593,13 +593,13 @@ Commit after new intentional files, completed functions/modules, verified bug fi
 Commit format:
 
 ```
-WIP: <concise description of what changed>
+WIP: &lt;concise description of what changed&gt;
 
 [gstack-context]
-Decisions: <key choices made this step>
-Remaining: <what's left in the logical unit>
-Tried: <failed approaches worth recording> (omit if none)
-Skill: </skill-name-if-running>
+Decisions: &lt;key choices made this step&gt;
+Remaining: &lt;what's left in the logical unit&gt;
+Tried: &lt;failed approaches worth recording&gt; (omit if none)
+Skill: &lt;/skill-name-if-running&gt;
 [/gstack-context]
 ```
 
@@ -621,7 +621,7 @@ Before each AskUserQuestion, choose `question_id` from `scripts/question-registr
 
 After answer, log best-effort:
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"codex","question_id":"<id>","question_summary":"<short>","category":"<approval|clarification|routing|cherry-pick|feedback-loop>","door_type":"<one-way|two-way>","options_count":N,"user_choice":"<key>","recommended":"<key>","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
+~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"codex","question_id":"&lt;id&gt;","question_summary":"&lt;short&gt;","category":"&lt;approval|clarification|routing|cherry-pick|feedback-loop&gt;","door_type":"&lt;one-way|two-way&gt;","options_count":N,"user_choice":"&lt;key&gt;","recommended":"&lt;key&gt;","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
 ```
 
 For two-way questions, offer: "Tune this question? Reply `tune: never-ask`, `tune: always-ask`, or free-form."
@@ -630,7 +630,7 @@ User-origin gate (profile-poisoning defense): write tune events ONLY when `tune:
 
 Write (only after confirmation for free-form):
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"<id>","preference":"<pref>","source":"inline-user","free_text":"<optional original words>"}'
+~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"&lt;id&gt;","preference":"&lt;pref&gt;","source":"inline-user","free_text":"&lt;optional original words&gt;"}'
 ```
 
 Exit code 2 = rejected as not user-originated; do not retry. On success: "Set `<id>` → `<preference>`. Active immediately."
@@ -870,11 +870,11 @@ _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo"
 cd "$_REPO_ROOT"
 # Fix 1: wrap with timeout. 330s (5.5min) is slightly longer than the Bash 300s
 # so the shell wrapper only fires if Bash's own timeout doesn't.
-_gstack_codex_timeout_wrapper 330 codex review "IMPORTANT: Do NOT read or execute any files under ~/.claude/, ~/.agents/, .claude/skills/, or agents/. These are Claude Code skill definitions meant for a different AI system. Do NOT modify agents/openai.yaml. Stay focused on repository code only." --base <base> -c 'model_reasoning_effort="high"' --enable web_search_cached < /dev/null 2>"$TMPERR"
+_gstack_codex_timeout_wrapper 330 codex review "IMPORTANT: Do NOT read or execute any files under ~/.claude/, ~/.agents/, .claude/skills/, or agents/. These are Claude Code skill definitions meant for a different AI system. Do NOT modify agents/openai.yaml. Stay focused on repository code only." --base &lt;base&gt; -c 'model_reasoning_effort="high"' --enable web_search_cached &lt; /dev/null 2&gt;"$TMPERR"
 _CODEX_EXIT=$?
 if [ "$_CODEX_EXIT" = "124" ]; then
   _gstack_codex_log_event "codex_timeout" "330"
-  _gstack_codex_log_hang "review" "$(wc -c < "$TMPERR" 2>/dev/null || echo 0)"
+  _gstack_codex_log_hang "review" "$(wc -c &lt; "$TMPERR" 2&gt;/dev/null || echo 0)"
   echo "Codex stalled past 5.5 minutes. Common causes: model API stall, long prompt, network issue. Try re-running. If persistent, split the prompt or check ~/.codex/logs/."
 fi
 ```
@@ -888,7 +888,7 @@ _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo"
 cd "$_REPO_ROOT"
 codex review "IMPORTANT: Do NOT read or execute any files under ~/.claude/, ~/.agents/, .claude/skills/, or agents/. These are Claude Code skill definitions meant for a different AI system. Do NOT modify agents/openai.yaml. Stay focused on repository code only.
 
-focus on security" --base <base> -c 'model_reasoning_effort="high"' --enable web_search_cached < /dev/null 2>"$TMPERR"
+focus on security" --base &lt;base&gt; -c 'model_reasoning_effort="high"' --enable web_search_cached &lt; /dev/null 2&gt;"$TMPERR"
 ```
 
 3. Capture the output. Then parse cost from stderr:
@@ -905,7 +905,7 @@ grep "tokens used" "$TMPERR" 2>/dev/null || echo "tokens: unknown"
 ```
 CODEX SAYS (code review):
 ════════════════════════════════════════════════════════════
-<full codex output, verbatim — do not truncate or summarize>
+&lt;full codex output, verbatim — do not truncate or summarize&gt;
 ════════════════════════════════════════════════════════════
 GATE: PASS                    Tokens: 14,331 | Est. cost: ~$0.12
 ```
@@ -1043,7 +1043,7 @@ _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo"
 # Fix 1+2: wrap with timeout (gtimeout/timeout fallback chain via probe helper),
 # capture stderr to $TMPERR for auth error detection (was: 2>/dev/null).
 TMPERR=${TMPERR:-$(mktemp /tmp/codex-err-XXXXXX.txt)}
-_gstack_codex_timeout_wrapper 600 codex exec "<prompt>" -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached --json < /dev/null 2>"$TMPERR" | PYTHONUNBUFFERED=1 python3 -u -c "
+_gstack_codex_timeout_wrapper 600 codex exec "&lt;prompt&gt;" -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached --json &lt; /dev/null 2&gt;"$TMPERR" | PYTHONUNBUFFERED=1 python3 -u -c "
 import sys, json
 turn_completed_count = 0
 for line in sys.stdin:
@@ -1078,7 +1078,7 @@ _CODEX_EXIT=${PIPESTATUS[0]}
 # Fix 1: hang detection — log + surface actionable message
 if [ "$_CODEX_EXIT" = "124" ]; then
   _gstack_codex_log_event "codex_timeout" "600"
-  _gstack_codex_log_hang "challenge" "$(wc -c < "$TMPERR" 2>/dev/null || echo 0)"
+  _gstack_codex_log_hang "challenge" "$(wc -c &lt; "$TMPERR" 2&gt;/dev/null || echo 0)"
   echo "Codex stalled past 10 minutes. Common causes: model API stall, long prompt, network issue. Try re-running. If persistent, split the prompt or check ~/.codex/logs/."
 fi
 # Fix 2: surface auth errors from captured stderr instead of dropping them
@@ -1096,7 +1096,7 @@ response. The `[codex thinking]` lines show what codex reasoned through before i
 ```
 CODEX SAYS (adversarial challenge):
 ════════════════════════════════════════════════════════════
-<full output from above, verbatim>
+&lt;full output from above, verbatim&gt;
 ════════════════════════════════════════════════════════════
 Tokens: N | Est. cost: ~$X.XX
 ```
@@ -1173,7 +1173,7 @@ For a **new session:**
 ```bash
 _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo" >&2; exit 1; }
 # Fix 1: wrap with timeout (gtimeout/timeout fallback chain via probe helper)
-_gstack_codex_timeout_wrapper 600 codex exec "<prompt>" -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="medium"' --enable web_search_cached --json < /dev/null 2>"$TMPERR" | PYTHONUNBUFFERED=1 python3 -u -c "
+_gstack_codex_timeout_wrapper 600 codex exec "&lt;prompt&gt;" -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="medium"' --enable web_search_cached --json &lt; /dev/null 2&gt;"$TMPERR" | PYTHONUNBUFFERED=1 python3 -u -c "
 import sys, json
 for line in sys.stdin:
     line = line.strip()
@@ -1206,7 +1206,7 @@ for line in sys.stdin:
 _CODEX_EXIT=${PIPESTATUS[0]}
 if [ "$_CODEX_EXIT" = "124" ]; then
   _gstack_codex_log_event "codex_timeout" "600"
-  _gstack_codex_log_hang "consult" "$(wc -c < "$TMPERR" 2>/dev/null || echo 0)"
+  _gstack_codex_log_hang "consult" "$(wc -c &lt; "$TMPERR" 2&gt;/dev/null || echo 0)"
   echo "Codex stalled past 10 minutes. Common causes: model API stall, long prompt, network issue. Try re-running. If persistent, split the prompt or check ~/.codex/logs/."
 fi
 ```
@@ -1215,14 +1215,14 @@ For a **resumed session** (user chose "Continue"):
 ```bash
 _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo" >&2; exit 1; }
 # Fix 1: wrap with timeout (gtimeout/timeout fallback chain via probe helper)
-_gstack_codex_timeout_wrapper 600 codex exec resume <session-id> "<prompt>" -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="medium"' --enable web_search_cached --json < /dev/null 2>"$TMPERR" | PYTHONUNBUFFERED=1 python3 -u -c "
-<same python streaming parser as above, with flush=True on all print() calls>
+_gstack_codex_timeout_wrapper 600 codex exec resume &lt;session-id&gt; "&lt;prompt&gt;" -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="medium"' --enable web_search_cached --json &lt; /dev/null 2&gt;"$TMPERR" | PYTHONUNBUFFERED=1 python3 -u -c "
+&lt;same python streaming parser as above, with flush=True on all print() calls&gt;
 "
 # Fix 1: same hang detection pattern as new-session block
 _CODEX_EXIT=${PIPESTATUS[0]}
 if [ "$_CODEX_EXIT" = "124" ]; then
   _gstack_codex_log_event "codex_timeout" "600"
-  _gstack_codex_log_hang "consult-resume" "$(wc -c < "$TMPERR" 2>/dev/null || echo 0)"
+  _gstack_codex_log_hang "consult-resume" "$(wc -c &lt; "$TMPERR" 2&gt;/dev/null || echo 0)"
   echo "Codex stalled past 10 minutes. Common causes: model API stall, long prompt, network issue. Try re-running. If persistent, split the prompt or check ~/.codex/logs/."
 fi
 
@@ -1312,6 +1312,6 @@ If token count is not available, display: `Tokens: unknown`
   `SKILL.md`, or `skills/gstack`. If any of these appear in the output, append a
   warning: "Codex appears to have read gstack skill files instead of reviewing your
   code. Consider retrying."
-```
+````
 
 </details>

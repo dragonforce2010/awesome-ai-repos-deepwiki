@@ -187,19 +187,20 @@ const MIME_TYPES = {
 
 // ========== Templates and Constants ==========
 
-const WAITING_PAGE = `<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>Brainstorm Companion</title>
-<style>body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; }
-h1 { color: #333; } p { color: #666; }</style>
-</head>
-<body><h1>Brainstorm Companion</h1>
-<p>Waiting for the agent to push a screen...</p></body></html>`;
+const WAITING_PAGE = <!DOCTYPE html>
+&lt;html&gt;
+&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;Brainstorm Companion&lt;/title&gt;
+&lt;style&gt;body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; }
+h1 { color: #333; } p { color: #666; }&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;h1>Brainstorm Companion&lt;/h1>
+&lt;p>Waiting for the agent to push a screen...&lt;/p>&lt;/body&gt;&lt;/html&gt;;
 
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## WebSocket 服务器实现
 
 `server.cjs` 是一个**零外部依赖**的 Node.js 服务器，手动实现了 RFC 6455 WebSocket 协议：
@@ -264,6 +265,7 @@ function decodeFrame(buffer) {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 交互循环
 
 ```mermaid
@@ -354,12 +356,13 @@ Use `--url-host` to control what hostname is printed in the returned URL JSON.
 
    ```html
    <!-- filename: waiting.html (or waiting-2.html, etc.) -->
-   <div style="display:flex;align-items:center;justify-content:center;min-height:60vh">
-     <p class="subtitle">Continuing in terminal...</p>
+   &lt;div style="display:flex;align-items:center;justify-content:center;min-height:60vh">
+     &lt;p class="subtitle">Continuing in terminal...&lt;/p>
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 内容模板系统
 
 服务器提供两种模式：
@@ -392,8 +395,8 @@ Sources: [skills/brainstorming/visual-companion.md:120-200](../../../project-rep
 #### `skills/brainstorming/visual-companion.md:120-200`
 
 ````markdown
-     <p class="subtitle">Continuing in terminal...</p>
-   </div>
+     &lt;p class="subtitle">Continuing in terminal...&lt;/p>
+   &lt;/div>
    ```
 
    This prevents the user from staring at a resolved choice while the conversation has moved on. When the next visual question comes up, push a new content file as usual.
@@ -407,25 +410,25 @@ Write just the content that goes inside the page. The server wraps it in the fra
 **Minimal example:**
 
 ```html
-<h2>Which layout works better?</h2>
-<p class="subtitle">Consider readability and visual hierarchy</p>
+&lt;h2>Which layout works better?&lt;/h2>
+&lt;p class="subtitle">Consider readability and visual hierarchy&lt;/p>
 
-<div class="options">
-  <div class="option" data-choice="a" onclick="toggleSelect(this)">
-    <div class="letter">A</div>
-    <div class="content">
-      <h3>Single Column</h3>
-      <p>Clean, focused reading experience</p>
-    </div>
-  </div>
-  <div class="option" data-choice="b" onclick="toggleSelect(this)">
-    <div class="letter">B</div>
-    <div class="content">
-      <h3>Two Column</h3>
-      <p>Sidebar navigation with main content</p>
-    </div>
-  </div>
-</div>
+&lt;div class="options">
+  &lt;div class="option" data-choice="a" onclick="toggleSelect(this)">
+    &lt;div class="letter">A&lt;/div>
+    &lt;div class="content">
+      &lt;h3>Single Column&lt;/h3>
+      &lt;p>Clean, focused reading experience&lt;/p>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="option" data-choice="b" onclick="toggleSelect(this)">
+    &lt;div class="letter">B&lt;/div>
+    &lt;div class="content">
+      &lt;h3>Two Column&lt;/h3>
+      &lt;p>Sidebar navigation with main content&lt;/p>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
 ```
 
 That's it. No `<html>`, no CSS, no `<script>` tags needed. The server provides all of that.
@@ -437,37 +440,37 @@ The frame template provides these CSS classes for your content:
 ### Options (A/B/C choices)
 
 ```html
-<div class="options">
-  <div class="option" data-choice="a" onclick="toggleSelect(this)">
-    <div class="letter">A</div>
-    <div class="content">
-      <h3>Title</h3>
-      <p>Description</p>
-    </div>
-  </div>
-</div>
+&lt;div class="options">
+  &lt;div class="option" data-choice="a" onclick="toggleSelect(this)">
+    &lt;div class="letter">A&lt;/div>
+    &lt;div class="content">
+      &lt;h3>Title&lt;/h3>
+      &lt;p>Description&lt;/p>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
 ```
 
 **Multi-select:** Add `data-multiselect` to the container to let users select multiple options. Each click toggles the item. The indicator bar shows the count.
 
 ```html
-<div class="options" data-multiselect>
+&lt;div class="options" data-multiselect>
   <!-- same option markup — users can select/deselect multiple -->
-</div>
+&lt;/div>
 ```
 
 ### Cards (visual designs)
 
 ```html
-<div class="cards">
-  <div class="card" data-choice="design1" onclick="toggleSelect(this)">
-    <div class="card-image"><!-- mockup content --></div>
-    <div class="card-body">
-      <h3>Name</h3>
-      <p>Description</p>
-    </div>
-  </div>
-</div>
+&lt;div class="cards">
+  &lt;div class="card" data-choice="design1" onclick="toggleSelect(this)">
+    &lt;div class="card-image"><!-- mockup content -->&lt;/div>
+    &lt;div class="card-body">
+      &lt;h3>Name&lt;/h3>
+      &lt;p>Description&lt;/p>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
 ```
 
 ### Mockup container
@@ -477,6 +480,7 @@ The frame template provides these CSS classes for your content:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 何时使用浏览器 vs 终端
 
 **逐问题决定，而非逐会话决定**。判断标准：用户通过看比通过读更能理解吗？
@@ -545,6 +549,7 @@ scripts/start-server.sh --project-dir /path/to/project
 
 <!-- source-snippets:end -->
 </details>
+
 ## 跨平台启动方式
 
 | 平台 | 启动命令 | 注意事项 |
@@ -632,6 +637,7 @@ Use `--url-host` to control what hostname is printed in the returned URL JSON.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 规格文档审查
 
 brainstorming 技能还包含一个 `spec-document-reviewer-prompt.md`，用于在头脑风暴完成后对生成的规格文档进行审查，确保文档质量符合标准。
@@ -699,6 +705,7 @@ Task tool (general-purpose):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [核心工作流](core-workflow.md)

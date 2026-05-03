@@ -24,7 +24,7 @@ YC office-hours 风格的产品/想法诊断和设计文档技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: office-hours
 preamble-tier: 3
@@ -76,7 +76,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -108,7 +108,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -313,20 +313,20 @@ AI orchestrator (e.g., OpenClaw). In spawned sessions:
 Every AskUserQuestion is a decision brief and must be sent as tool_use, not prose.
 
 ```
-D<N> — <one-line question title>
-Project/branch/task: <1 short grounding sentence using _BRANCH>
-ELI10: <plain English a 16-year-old could follow, 2-4 sentences, name the stakes>
-Stakes if we pick wrong: <one sentence on what breaks, what user sees, what's lost>
-Recommendation: <choice> because <one-line reason>
+D&lt;N&gt; — &lt;one-line question title&gt;
+Project/branch/task: &lt;1 short grounding sentence using _BRANCH&gt;
+ELI10: &lt;plain English a 16-year-old could follow, 2-4 sentences, name the stakes&gt;
+Stakes if we pick wrong: &lt;one sentence on what breaks, what user sees, what's lost&gt;
+Recommendation: &lt;choice&gt; because &lt;one-line reason&gt;
 Completeness: A=X/10, B=Y/10   (or: Note: options differ in kind, not coverage — no completeness score)
 Pros / cons:
-A) <option label> (recommended)
-  ✅ <pro — concrete, observable, ≥40 chars>
-  ❌ <con — honest, ≥40 chars>
-B) <option label>
-  ✅ <pro>
-  ❌ <con>
-Net: <one-line synthesis of what you're actually trading off>
+A) &lt;option label&gt; (recommended)
+  ✅ &lt;pro — concrete, observable, ≥40 chars&gt;
+  ❌ &lt;con — honest, ≥40 chars&gt;
+B) &lt;option label&gt;
+  ✅ &lt;pro&gt;
+  ❌ &lt;con&gt;
+Net: &lt;one-line synthesis of what you're actually trading off&gt;
 ```
 
 D-numbering: first question in a skill invocation is `D1`; increment yourself. This is a model-level instruction, not a runtime counter.
@@ -417,7 +417,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -601,13 +601,13 @@ Commit after new intentional files, completed functions/modules, verified bug fi
 Commit format:
 
 ```
-WIP: <concise description of what changed>
+WIP: &lt;concise description of what changed&gt;
 
 [gstack-context]
-Decisions: <key choices made this step>
-Remaining: <what's left in the logical unit>
-Tried: <failed approaches worth recording> (omit if none)
-Skill: </skill-name-if-running>
+Decisions: &lt;key choices made this step&gt;
+Remaining: &lt;what's left in the logical unit&gt;
+Tried: &lt;failed approaches worth recording&gt; (omit if none)
+Skill: &lt;/skill-name-if-running&gt;
 [/gstack-context]
 ```
 
@@ -629,7 +629,7 @@ Before each AskUserQuestion, choose `question_id` from `scripts/question-registr
 
 After answer, log best-effort:
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"office-hours","question_id":"<id>","question_summary":"<short>","category":"<approval|clarification|routing|cherry-pick|feedback-loop>","door_type":"<one-way|two-way>","options_count":N,"user_choice":"<key>","recommended":"<key>","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
+~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"office-hours","question_id":"&lt;id&gt;","question_summary":"&lt;short&gt;","category":"&lt;approval|clarification|routing|cherry-pick|feedback-loop&gt;","door_type":"&lt;one-way|two-way&gt;","options_count":N,"user_choice":"&lt;key&gt;","recommended":"&lt;key&gt;","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
 ```
 
 For two-way questions, offer: "Tune this question? Reply `tune: never-ask`, `tune: always-ask`, or free-form."
@@ -638,7 +638,7 @@ User-origin gate (profile-poisoning defense): write tune events ONLY when `tune:
 
 Write (only after confirmation for free-form):
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"<id>","preference":"<pref>","source":"inline-user","free_text":"<optional original words>"}'
+~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"&lt;id&gt;","preference":"&lt;pref&gt;","source":"inline-user","free_text":"&lt;optional original words&gt;"}'
 ```
 
 Exit code 2 = rejected as not user-originated; do not retry. On success: "Set `<id>` → `<preference>`. Active immediately."
@@ -1061,7 +1061,7 @@ After the user states the problem (first question in Phase 2A or 2B), search exi
 Extract 3-5 significant keywords from the user's problem statement and grep across design docs:
 ```bash
 setopt +o nomatch 2>/dev/null || true  # zsh compat
-grep -li "<keyword1>\|<keyword2>\|<keyword3>" ~/.gstack/projects/$SLUG/*-design-*.md 2>/dev/null
+grep -li "&lt;keyword1&gt;\|&lt;keyword2&gt;\|&lt;keyword3&gt;" ~/.gstack/projects/$SLUG/*-design-*.md 2>/dev/null
 ```
 
 If matches found, read the matching design docs and surface them:
@@ -1178,7 +1178,7 @@ Then add the context block and mode-appropriate instructions:
 ```bash
 TMPERR_OH=$(mktemp /tmp/codex-oh-err-XXXXXXXX)
 _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo" >&2; exit 1; }
-codex exec "$(cat "$CODEX_PROMPT_FILE")" -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached < /dev/null 2>"$TMPERR_OH"
+codex exec "$(cat "$CODEX_PROMPT_FILE")" -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached &lt; /dev/null 2&gt;"$TMPERR_OH"
 ```
 
 Use a 5-minute timeout (`timeout: 300000`). After the command completes, read stderr:
@@ -1210,7 +1210,7 @@ If Codex ran:
 ```
 SECOND OPINION (Codex):
 ════════════════════════════════════════════════════════════
-<full codex output, verbatim — do not truncate or summarize>
+&lt;full codex output, verbatim — do not truncate or summarize&gt;
 ════════════════════════════════════════════════════════════
 ```
 
@@ -1218,7 +1218,7 @@ If Claude subagent ran:
 ```
 SECOND OPINION (Claude subagent):
 ════════════════════════════════════════════════════════════
-<full subagent output, verbatim — do not truncate or summarize>
+&lt;full subagent output, verbatim — do not truncate or summarize&gt;
 ════════════════════════════════════════════════════════════
 ```
 
@@ -1305,7 +1305,7 @@ explore wide across diverse directions.
 **Step 3: Generate 3 variants**
 
 ```bash
-$D variants --brief "<assembled brief>" --count 3 --output-dir "$_DESIGN_DIR/"
+$D variants --brief "&lt;assembled brief&gt;" --count 3 --output-dir "$_DESIGN_DIR/"
 ```
 
 This generates 3 style variations of the same brief (~40 seconds total).
@@ -1340,7 +1340,7 @@ If `"regenerated": false`: proceed with the approved variant.
 **Step 6: Save approved choice**
 
 ```bash
-echo '{"approved_variant":"<VARIANT>","feedback":"<FEEDBACK>","date":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","screen":"mockup","branch":"'$(git branch --show-current 2>/dev/null)'"}' > "$_DESIGN_DIR/approved.json"
+echo '{"approved_variant":"&lt;VARIANT&gt;","feedback":"&lt;FEEDBACK&gt;","date":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","screen":"mockup","branch":"'$(git branch --show-current 2>/dev/null)'"}' > "$_DESIGN_DIR/approved.json"
 ```
 
 Reference the saved mockup in the design doc or plan.
@@ -1423,7 +1423,7 @@ If user chooses A, launch both voices simultaneously:
 ```bash
 TMPERR_SKETCH=$(mktemp /tmp/codex-sketch-XXXXXXXX)
 _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo" >&2; exit 1; }
-codex exec "For this product approach, provide: a visual thesis (one sentence — mood, material, energy), a content plan (hero → support → detail → CTA), and 2 interaction ideas that change page feel. Apply beautiful defaults: composition-first, brand-first, cardless, poster not document. Be opinionated." -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="medium"' --enable web_search_cached < /dev/null 2>"$TMPERR_SKETCH"
+codex exec "For this product approach, provide: a visual thesis (one sentence — mood, material, energy), a content plan (hero → support → detail → CTA), and 2 interaction ideas that change page feel. Apply beautiful defaults: composition-first, brand-first, cardless, poster not document. Be opinionated." -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="medium"' --enable web_search_cached &lt; /dev/null 2&gt;"$TMPERR_SKETCH"
 ```
 Use a 5-minute timeout (`timeout: 300000`). After completion: `cat "$TMPERR_SKETCH" && rm -f "$TMPERR_SKETCH"`
 
@@ -2003,6 +2003,6 @@ already knows. A good test: would this insight save time in a future session? If
   - DONE — design doc APPROVED
   - DONE_WITH_CONCERNS — design doc approved but with open questions listed
   - NEEDS_CONTEXT — user left questions unanswered, design incomplete
-```
+````
 
 </details>

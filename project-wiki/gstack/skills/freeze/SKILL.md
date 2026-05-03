@@ -24,7 +24,7 @@ description: 限制本会话文件编辑范围的安全技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: freeze
 version: 0.1.0
@@ -79,7 +79,7 @@ Once the user provides a directory path:
 
 1. Resolve it to an absolute path:
 ```bash
-FREEZE_DIR=$(cd "<user-provided-path>" 2>/dev/null && pwd)
+FREEZE_DIR=$(cd "&lt;user-provided-path&gt;" 2>/dev/null && pwd)
 echo "$FREEZE_DIR"
 ```
 
@@ -111,6 +111,6 @@ script reads it on every Edit/Write invocation.
 - Freeze applies to Edit and Write tools only — Read, Bash, Glob, Grep are unaffected
 - This prevents accidental edits, not a security boundary — Bash commands like `sed` can still modify files outside the boundary
 - To deactivate, run `/unfreeze` or end the conversation
-```
+````
 
 </details>

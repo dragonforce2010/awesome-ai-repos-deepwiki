@@ -1,4 +1,5 @@
-<details><summary>相关源文件</summary>
+<details>
+<summary>相关源文件</summary>
 
 - `cli-hub/cli_hub/preview.py`
 - `cli-hub/cli_hub/cli.py`
@@ -149,6 +150,7 @@ def _normalize_index(value: Any, fallback: int) -> int:
 
 <!-- source-snippets:end -->
 </details>
+
 ### 引用解析函数
 
 在加载任何数据之前，系统需要将用户提供的字符串引用规范化为文件系统路径。
@@ -323,6 +325,7 @@ def update(name):
 
 <!-- source-snippets:end -->
 </details>
+
 所有预览相关命令均归属于 `cli-hub previews` 命令组。
 
 ### 命令列表
@@ -394,6 +397,7 @@ Sources: [agent-harness/freecad/](../../../project-repos/CLI-Anything/agent-harn
 
 <!-- source-snippets:end -->
 </details>
+
 - Agent 按装配步骤逐步构建漫游车模型
 - 每完成一个步骤后发布一个 preview bundle（含渲染图和 manifest）
 - Live session 持续追踪最新 head 步骤
@@ -414,6 +418,7 @@ Sources: [agent-harness/blender/](../../../project-repos/CLI-Anything/agent-harn
 
 <!-- source-snippets:end -->
 </details>
+
 - 每个渲染步骤生成带有 PNG 渲染结果的 bundle
 - Live session 允许在渲染过程中实时监控进度
 - Trajectory 文件记录材质、光照、相机调整的完整历史

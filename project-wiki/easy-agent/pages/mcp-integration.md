@@ -112,6 +112,7 @@ export function getAllTools(): Tool[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 配置模型
 
 Easy Agent 支持三种 MCP transport：`stdio`、`http`、`sse`。stdio 的 `type` 可省略；HTTP/SSE 使用 `url` 和可选 static headers；OAuth、WebSocket、IDE transport 等在当前阶段明确不实现。  
@@ -189,6 +190,7 @@ export type McpServerConfig =
 
 <!-- source-snippets:end -->
 </details>
+
 配置从 `~/.easy-agent/settings.json` 和 `<cwd>/.easy-agent/settings.json` 读取，project 同名 server 覆盖 user。每个 server 独立校验，失败项被丢弃并记录 warning，但不会让整个 CLI 启动失败。  
 Sources: [src/services/mcp/config.ts:136-188](../../../project-repos/easy-agent/src/services/mcp/config.ts#L136-L188)
 
@@ -257,6 +259,7 @@ export async function loadMcpConfigs(cwd: string): Promise<McpConfigLoadResult> 
 
 <!-- source-snippets:end -->
 </details>
+
 ## 启动流程
 
 `bootstrapMcp()` 先加载配置并注册 cleanup hook，然后清空 registry。关键点是它会在任何 IO 之前把每个 server 注册成 `pending`，让 `/mcp` 在慢启动期间也能显示真实意图状态；随后并行连接各 server，成功后拉取工具并刷新全局工具注册表。  
@@ -342,6 +345,7 @@ function refreshGlobalToolRegistry(): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant CLI as cli.ts
@@ -460,6 +464,7 @@ function refreshGlobalToolRegistry(): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 连接层
 
 `connectToServer()` 用 server name + transport-specific config 作为 cache key，同一配置的并发连接共享 promise。stdio transport 会继承父进程 env 并叠加 server env，stderr 被 pipe 缓冲；HTTP transport 设置 User-Agent 和 headers；SSE transport 分别给 POST 和长连接 GET 设置 headers。连接有默认 30 秒超时。  
@@ -672,6 +677,7 @@ function createSseTransport(config: McpSSEServerConfig & { scope: string }): Tra
 
 <!-- source-snippets:end -->
 </details>
+
 连接成功后会读取 server capabilities 和 server version，并返回带 cleanup 的 `ConnectedMcpServer`。cleanup 对 stdio 会先做 SIGINT/SIGTERM/SIGKILL 分级清理，然后关闭 SDK client。  
 Sources: [src/services/mcp/client.ts:337-367](../../../project-repos/easy-agent/src/services/mcp/client.ts#L337-L367), [src/services/mcp/client.ts:83-127](../../../project-repos/easy-agent/src/services/mcp/client.ts#L83-L127)
 
@@ -768,6 +774,7 @@ async function escalatedKill(name: string, pid: number | undefined): Promise<voi
 
 <!-- source-snippets:end -->
 </details>
+
 ## 工具适配
 
 `fetchToolsForConnection()` 只在 server 声明 `tools` capability 时调用 `tools/list`。每个 MCP tool 会变成本地 `Tool`：name 形如 `mcp__<server>__<tool>`，description 最多 2048 字符，input schema 透传，`annotations.readOnlyHint` 映射到 `isReadOnly()`。  
@@ -894,6 +901,7 @@ export async function fetchToolsForConnection(
 
 <!-- source-snippets:end -->
 </details>
+
 MCP tool 调用时，本地工具会把 prefixed name 还原成 server 自己的 tool name 发给 `tools/call`；返回内容统一 stringify 成文本。图片当前只转成占位描述，resource 优先使用 text。  
 Sources: [src/services/mcp/fetchTools.ts:40-65](../../../project-repos/easy-agent/src/services/mcp/fetchTools.ts#L40-L65), [src/services/mcp/fetchTools.ts:101-124](../../../project-repos/easy-agent/src/services/mcp/fetchTools.ts#L101-L124)
 
@@ -964,6 +972,7 @@ function stringifyMcpContent(content: CallToolResult["content"]): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   ServerTool["MCP Tool descriptor"] --> Name["mcp__server__tool"]
@@ -1082,6 +1091,7 @@ function buildToolAdapter(connection: ConnectedMcpServer, mcpTool: McpTool): Too
 
 <!-- source-snippets:end -->
 </details>
+
 ## `/mcp` 命令表面
 
 `QueryEngine` 的 `/mcp` 命令可以列出所有 server 的 connected/failed/pending/disabled 状态，展示某个 server 的工具，或者 reconnect 单个 server。Reconnect 会清 cache、删 registry entry、重新连接、重新拉取工具并刷新全局 tool registry。  
@@ -1273,6 +1283,7 @@ export async function reconnectMcpServer(name: string): Promise<McpServerConnect
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证脚本覆盖
 
 `test-mcp.ts` 覆盖 name normalization、配置校验、inline stdio server 端到端连接、tools/list、tools/call、registry、reconnect、cleanup，以及 pending 到 connected 的非阻塞启动窗口。  
@@ -1569,6 +1580,7 @@ async function testNonBlockingBootstrap(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [工具系统与权限模型](tools-permissions.md)

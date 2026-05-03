@@ -75,6 +75,7 @@ npx playwright screenshot https://example.com screenshot.png --viewport-size=192
 
 <!-- source-snippets:end -->
 </details>
+
 ## 资产协议的执行边界
 
 `SKILL.md` 将「核心资产协议」设置为涉及具体品牌时的强制流程：先问用户手头资产，再按 Logo、产品图/UI 截图、色值、字体等类型搜索官方渠道，随后下载、验证、提取并固化到 `brand-spec.md`。它明确强调资产优先级高于色值，Logo、实体产品图、数字产品 UI 截图是识别度根基。Sources: [SKILL.md:69-98](../../../project-repos/huashu-design/SKILL.md#L69-L98), [SKILL.md:100-130](../../../project-repos/huashu-design/SKILL.md#L100-L130), [SKILL.md:198-267](../../../project-repos/huashu-design/SKILL.md#L198-L267)
@@ -127,7 +128,7 @@ npx playwright screenshot https://example.com screenshot.png --viewport-size=192
 不要只问「有 brand guidelines 吗？」——太宽泛，用户不知道该给什么。按清单逐项问：
 
 ```
-关于 <brand/product>，你手上有以下哪些资料？我按优先级列：
+关于 &lt;brand/product&gt;，你手上有以下哪些资料？我按优先级列：
 1. Logo（SVG / 高清 PNG）—— 任何品牌必备
 2. 产品图 / 官方渲染图 —— 实体产品必备（如 DJI Pocket 4 的产品照）
 3. UI 截图 / 界面素材 —— 数字产品必备（如 App 主要页面截图）
@@ -174,52 +175,52 @@ npx playwright screenshot https://example.com screenshot.png --viewport-size=192
 ##### Step 5 · 固化为 `brand-spec.md` 文件（模板必须覆盖所有资产）
 
 ```markdown
-# <Brand> · Brand Spec
+# &lt;Brand&gt; · Brand Spec
 > 采集日期：YYYY-MM-DD
-> 资产来源：<列出下载来源>
-> 资产完整度：<完整 / 部分 / 推断>
+> 资产来源：&lt;列出下载来源&gt;
+> 资产完整度：&lt;完整 / 部分 / 推断&gt;
 
 ## 🎯 核心资产（一等公民）
 
 ### Logo
 - 主版本：`assets/<brand>-brand/logo.svg`
 - 浅底反色版：`assets/<brand>-brand/logo-white.svg`
-- 使用场景：<片头/片尾/角落水印/全局>
-- 禁用变形：<不能拉伸/改色/加描边>
+- 使用场景：&lt;片头/片尾/角落水印/全局&gt;
+- 禁用变形：&lt;不能拉伸/改色/加描边&gt;
 
 ### 产品图（实体产品必填）
 - 主视角：`assets/<brand>-brand/product-hero.png`（2000×1500）
 - 细节图：`assets/<brand>-brand/product-detail-1.png` / `product-detail-2.png`
 - 场景图：`assets/<brand>-brand/product-scene.png`
-- 使用场景：<特写/旋转/对比>
+- 使用场景：&lt;特写/旋转/对比&gt;
 
 ### UI 截图（数字产品必填）
 - 主页：`assets/<brand>-brand/ui-home.png`
 - 核心功能：`assets/<brand>-brand/ui-feature-<name>.png`
-- 使用场景：<产品展示/Dashboard 渐现/对比演示>
+- 使用场景：&lt;产品展示/Dashboard 渐现/对比演示&gt;
 
 ## 🎨 辅助资产
 
 ### 色板
-- Primary: #XXXXXX  <来源标注>
+- Primary: #XXXXXX  &lt;来源标注&gt;
 - Background: #XXXXXX
 - Ink: #XXXXXX
 - Accent: #XXXXXX
-- 禁用色: <品牌明确不用的色系>
+- 禁用色: &lt;品牌明确不用的色系&gt;
 
 ### 字型
-- Display: <font stack>
-- Body: <font stack>
-- Mono（数据 HUD 用）: <font stack>
+- Display: &lt;font stack&gt;
+- Body: &lt;font stack&gt;
+- Mono（数据 HUD 用）: &lt;font stack&gt;
 
 ### 签名细节
-- <哪些细节是「120% 做到」的>
+- &lt;哪些细节是「120% 做到」的&gt;
 
 ### 禁区
-- <明确不能做的：比如 Lovart 不用蓝色、Stripe 不用低饱和暖色>
+- &lt;明确不能做的：比如 Lovart 不用蓝色、Stripe 不用低饱和暖色&gt;
 
 ### 气质关键词
-- <3-5 个形容词>
+- &lt;3-5 个形容词&gt;
 ```
 
 **写完 spec 后的执行纪律（硬要求）**：
@@ -232,6 +233,7 @@ npx playwright screenshot https://example.com screenshot.png --viewport-size=192
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A["具体品牌或产品任务"] --> B["事实验证"]
@@ -267,7 +269,7 @@ Sources: [SKILL.md:75-78](../../../project-repos/huashu-design/SKILL.md#L75-L78)
 不要只问「有 brand guidelines 吗？」——太宽泛，用户不知道该给什么。按清单逐项问：
 
 ```
-关于 <brand/product>，你手上有以下哪些资料？我按优先级列：
+关于 &lt;brand/product&gt;，你手上有以下哪些资料？我按优先级列：
 1. Logo（SVG / 高清 PNG）—— 任何品牌必备
 2. 产品图 / 官方渲染图 —— 实体产品必备（如 DJI Pocket 4 的产品照）
 3. UI 截图 / 界面素材 —— 数字产品必备（如 App 主要页面截图）
@@ -300,13 +302,13 @@ Sources: [SKILL.md:75-78](../../../project-repos/huashu-design/SKILL.md#L75-L78)
 三条路径按成功率递减：
 1. 独立 SVG/PNG 文件（最理想）：
    ```bash
-   curl -o assets/<brand>-brand/logo.svg https://<brand>.com/logo.svg
-   curl -o assets/<brand>-brand/logo-white.svg https://<brand>.com/logo-white.svg
+   curl -o assets/&lt;brand&gt;-brand/logo.svg https://&lt;brand&gt;.com/logo.svg
+   curl -o assets/&lt;brand&gt;-brand/logo-white.svg https://&lt;brand&gt;.com/logo-white.svg
    ```
 2. 官网 HTML 全文提取 inline SVG（80% 场景必用）：
    ```bash
-   curl -A "Mozilla/5.0" -L https://<brand>.com -o assets/<brand>-brand/homepage.html
-   # 然后 grep <svg>...</svg> 提取 logo 节点
+   curl -A "Mozilla/5.0" -L https://&lt;brand&gt;.com -o assets/&lt;brand&gt;-brand/homepage.html
+   # 然后 grep &lt;svg&gt;...&lt;/svg&gt; 提取 logo 节点
    ```
 3. 官方社交媒体 avatar（最后手段）：GitHub/Twitter/LinkedIn 的公司头像通常是 400×400 或 800×800 透明底 PNG
 
@@ -321,7 +323,7 @@ Sources: [SKILL.md:75-78](../../../project-repos/huashu-design/SKILL.md#L75-L78)
 
 ```bash
 # 示例：下载 DJI 官网产品 hero image
-curl -A "Mozilla/5.0" -L "<hero-image-url>" -o assets/<brand>-brand/product-hero.png
+curl -A "Mozilla/5.0" -L "&lt;hero-image-url&gt;" -o assets/&lt;brand&gt;-brand/product-hero.png
 ```
 ````
 
@@ -363,52 +365,52 @@ curl -A "Mozilla/5.0" -L "<hero-image-url>" -o assets/<brand>-brand/product-hero
 ##### Step 5 · 固化为 `brand-spec.md` 文件（模板必须覆盖所有资产）
 
 ```markdown
-# <Brand> · Brand Spec
+# &lt;Brand&gt; · Brand Spec
 > 采集日期：YYYY-MM-DD
-> 资产来源：<列出下载来源>
-> 资产完整度：<完整 / 部分 / 推断>
+> 资产来源：&lt;列出下载来源&gt;
+> 资产完整度：&lt;完整 / 部分 / 推断&gt;
 
 ## 🎯 核心资产（一等公民）
 
 ### Logo
 - 主版本：`assets/<brand>-brand/logo.svg`
 - 浅底反色版：`assets/<brand>-brand/logo-white.svg`
-- 使用场景：<片头/片尾/角落水印/全局>
-- 禁用变形：<不能拉伸/改色/加描边>
+- 使用场景：&lt;片头/片尾/角落水印/全局&gt;
+- 禁用变形：&lt;不能拉伸/改色/加描边&gt;
 
 ### 产品图（实体产品必填）
 - 主视角：`assets/<brand>-brand/product-hero.png`（2000×1500）
 - 细节图：`assets/<brand>-brand/product-detail-1.png` / `product-detail-2.png`
 - 场景图：`assets/<brand>-brand/product-scene.png`
-- 使用场景：<特写/旋转/对比>
+- 使用场景：&lt;特写/旋转/对比&gt;
 
 ### UI 截图（数字产品必填）
 - 主页：`assets/<brand>-brand/ui-home.png`
 - 核心功能：`assets/<brand>-brand/ui-feature-<name>.png`
-- 使用场景：<产品展示/Dashboard 渐现/对比演示>
+- 使用场景：&lt;产品展示/Dashboard 渐现/对比演示&gt;
 
 ## 🎨 辅助资产
 
 ### 色板
-- Primary: #XXXXXX  <来源标注>
+- Primary: #XXXXXX  &lt;来源标注&gt;
 - Background: #XXXXXX
 - Ink: #XXXXXX
 - Accent: #XXXXXX
-- 禁用色: <品牌明确不用的色系>
+- 禁用色: &lt;品牌明确不用的色系&gt;
 
 ### 字型
-- Display: <font stack>
-- Body: <font stack>
-- Mono（数据 HUD 用）: <font stack>
+- Display: &lt;font stack&gt;
+- Body: &lt;font stack&gt;
+- Mono（数据 HUD 用）: &lt;font stack&gt;
 
 ### 签名细节
-- <哪些细节是「120% 做到」的>
+- &lt;哪些细节是「120% 做到」的&gt;
 
 ### 禁区
-- <明确不能做的：比如 Lovart 不用蓝色、Stripe 不用低饱和暖色>
+- &lt;明确不能做的：比如 Lovart 不用蓝色、Stripe 不用低饱和暖色&gt;
 
 ### 气质关键词
-- <3-5 个形容词>
+- &lt;3-5 个形容词&gt;
 ```
 
 **写完 spec 后的执行纪律（硬要求）**：
@@ -421,6 +423,7 @@ curl -A "Mozilla/5.0" -L "<hero-image-url>" -o assets/<brand>-brand/product-hero
 
 <!-- source-snippets:end -->
 </details>
+
 ## 失败兜底
 
 协议不鼓励静默编造：Logo 找不到要停下问用户，产品图缺失时优先基于官方参考走 AI 生成或向用户索取，UI 截图缺失则找官方演示或用户账号截图。用 CSS 剪影或通用渐变硬做被标为核心反模式。Sources: [SKILL.md:269-287](../../../project-repos/huashu-design/SKILL.md#L269-L287)
@@ -456,6 +459,7 @@ curl -A "Mozilla/5.0" -L "<hero-image-url>" -o assets/<brand>-brand/product-hero
 
 <!-- source-snippets:end -->
 </details>
+
 ## 私有素材索引
 
 仓库提供 `assets/personal-asset-index.example.json` 作为用户私有素材索引模板，说明真实数据应复制到私有 memory 路径，而不是放进 skill 目录分发。`.gitignore` 也忽略了 `assets/personal-asset-index.json`，避免用户真实身份、产品和素材路径泄露。Sources: [assets/personal-asset-index.example.json:1-71](../../../project-repos/huashu-design/assets/personal-asset-index.example.json#L1-L71), [gitignore:9-10](../../../project-repos/huashu-design/gitignore#L9-L10)
@@ -547,6 +551,7 @@ curl -A "Mozilla/5.0" -L "<hero-image-url>" -o assets/<brand>-brand/product-hero
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Skill 编排与主提示词](skill-orchestration.md)

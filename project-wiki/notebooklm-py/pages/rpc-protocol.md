@@ -39,6 +39,7 @@ QUERY_URL = "https://notebooklm.google.com/_/LabsTailwindUi/data/google.internal
 
 <!-- source-snippets:end -->
 </details>
+
 ## 请求编码流程
 
 ```mermaid
@@ -174,6 +175,7 @@ def build_url_params(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 响应解码流程
 
 ```mermaid
@@ -345,6 +347,7 @@ _ERROR_CODE_MESSAGES: dict[int, tuple[str, bool]] = {
 
 <!-- source-snippets:end -->
 </details>
+
 ## RPC 方法标识
 
 所有 RPC 方法使用混淆后的短字符串标识，通过 `RPCMethod` 枚举管理：
@@ -474,6 +477,7 @@ class ArtifactTypeCode(int, Enum):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 错误处理层级
 
 ```mermaid
@@ -763,6 +767,7 @@ class RPCError(NotebookLMError):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)

@@ -24,7 +24,7 @@ description: 跨 Claude、Codex/GPT 与 Gemini 的模型基准比较技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: benchmark-models
 preamble-tier: 1
@@ -67,7 +67,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -99,7 +99,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -359,7 +359,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -536,7 +536,7 @@ If judge is NOT available, skip this question and omit the `--judge` flag.
 Construct the command from Step 1, 2, 3 decisions:
 
 ```bash
-"$BIN" <prompt-spec> --models <picked-models> [--judge] --output table
+"$BIN" &lt;prompt-spec&gt; --models &lt;picked-models&gt; [--judge] --output table
 ```
 
 Where `<prompt-spec>` is either `--prompt "<text>"` (Step 1B), a file path (Step 1A or 1C), and `<picked-models>` is the comma-separated list from Step 2.
@@ -577,6 +577,6 @@ If A: re-run with `--output json` and tee to the dated file. Print the path so t
 - **Never auto-include `--judge`.** It adds real cost; user must opt in.
 - **If zero providers are authed, STOP.** Don't attempt the benchmark — it produces no useful output.
 - **Cost is visible.** Every run shows per-provider cost in the table. Users should see it before the next run.
-```
+````
 
 </details>

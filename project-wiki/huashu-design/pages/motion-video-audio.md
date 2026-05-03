@@ -66,7 +66,7 @@
 录一个 25fps 的 MP4 基础版本。依赖全局 playwright。
 
 ```bash
-NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js <html文件>
+NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js &lt;html文件&gt;
 ```
 
 可选参数：
@@ -194,6 +194,7 @@ NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js <ht
 
 <!-- source-snippets:end -->
 </details>
+
 ## Stage/Sprite 模型
 
 `Stage` 持有全局 time、duration、playing、canvas scale；`Sprite` 按 `start/end` 切片显示，向子组件提供局部进度 `t`。这让动画更接近纯函数时间轴，而不是一串不可 seek 的 timeout。Sources: [assets/animations.jsx:30-83](../../../project-repos/huashu-design/assets/animations.jsx#L30-L83), [assets/animations.jsx:165-305](../../../project-repos/huashu-design/assets/animations.jsx#L165-L305), [assets/animations.jsx:307-340](../../../project-repos/huashu-design/assets/animations.jsx#L307-L340), [references/animation-pitfalls.md:77-94](../../../project-repos/huashu-design/references/animation-pitfalls.md#L77-L94)
@@ -407,7 +408,7 @@ NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js <ht
 
     return (
       <SpriteContext.Provider value={spriteValue}>
-        <div style={{ position: 'absolute', inset: 0, ...style }}>
+        <div style=&#123;&#123; position: 'absolute', inset: 0, ...style &#125;&#125;>
           {children}
         </div>
       </SpriteContext.Provider>
@@ -452,6 +453,7 @@ NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js <ht
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A["HTML 动画"] --> B["Stage 全局时间"]
@@ -570,6 +572,7 @@ ffmpeg -y -i video.mp4 -i sfx-track.mp3 -i bgm.mp3 \
 
 <!-- source-snippets:end -->
 </details>
+
 ## 录制抓手
 
 `render-video.js` 用 warmup context 缓存字体/资源，再用 fresh recording context 录制，等待 `window.__ready` 定位动画起点，注入 `window.__recording = true` 让 Stage 停止 loop，并隐藏常见 chrome 元素。Sources: [scripts/render-video.js:13-37](../../../project-repos/huashu-design/scripts/render-video.js#L13-L37), [scripts/render-video.js:100-128](../../../project-repos/huashu-design/scripts/render-video.js#L100-L128), [scripts/render-video.js:130-188](../../../project-repos/huashu-design/scripts/render-video.js#L130-L188), [scripts/render-video.js:197-238](../../../project-repos/huashu-design/scripts/render-video.js#L197-L238)
@@ -756,6 +759,7 @@ ffmpeg -y -i video.mp4 -i sfx-track.mp3 -i bgm.mp3 \
 
 <!-- source-snippets:end -->
 </details>
+
 ## MP4/GIF 派生
 
 `convert-formats.sh` 从 MP4 派生 60fps MP4 与 palette 优化 GIF。默认 60fps 是帧复制以保证 QuickTime/Safari/Chrome 兼容，`--minterpolate` 只用于需要真插帧且目标播放器已验证的场景。Sources: [scripts/convert-formats.sh:1-29](../../../project-repos/huashu-design/scripts/convert-formats.sh#L1-L29), [scripts/convert-formats.sh:54-83](../../../project-repos/huashu-design/scripts/convert-formats.sh#L54-L83), [references/video-export.md:84-108](../../../project-repos/huashu-design/references/video-export.md#L84-L108)
@@ -842,7 +846,7 @@ echo "  ✓ $GIF_SIZE"
 从已有 MP4 生成 60fps 版本和 GIF。
 
 ```bash
-bash /path/to/claude-design/scripts/convert-formats.sh <input.mp4> [gif_width] [--minterpolate]
+bash /path/to/claude-design/scripts/convert-formats.sh &lt;input.mp4&gt; [gif_width] [--minterpolate]
 ```
 
 输出（与输入同目录）：
@@ -866,6 +870,7 @@ bash /path/to/claude-design/scripts/convert-formats.sh <input.mp4> [gif_width] [
 
 <!-- source-snippets:end -->
 </details>
+
 ## 音频双轨制
 
 音频规则要求动画音频分为 SFX 节拍层和 BGM 氛围底层：SFX 强同步视觉 beat、占高频；BGM 连续铺底、占中低频。`sfx-library.md` 列出 37 个 SFX，`add-music.sh` 支持按 mood 选择内置 BGM 并加淡入淡出。Sources: [references/audio-design-rules.md:8-18](../../../project-repos/huashu-design/references/audio-design-rules.md#L8-L18), [references/audio-design-rules.md:21-40](../../../project-repos/huashu-design/references/audio-design-rules.md#L21-L40), [references/sfx-library.md:1-26](../../../project-repos/huashu-design/references/sfx-library.md#L1-L26), [scripts/add-music.sh:65-108](../../../project-repos/huashu-design/scripts/add-music.sh#L65-L108)
@@ -998,6 +1003,7 @@ echo "✓ Done: $OUTPUT ($SIZE)"
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Starter Components 架构](starter-components.md)

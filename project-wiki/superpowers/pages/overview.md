@@ -52,6 +52,7 @@ Once it's teased a spec out of the conversation, it shows it to you in chunks sh
 
 <!-- source-snippets:end -->
 </details>
+
 ## 项目定位
 
 Superpowers 解决的核心问题是：编码代理倾向于直接跳入写代码，跳过设计、规划和测试环节。Superpowers 通过技能系统强制代理遵循结构化流程——先理解需求、再设计方案、然后编写计划、最后以 TDD 方式实施并审查。
@@ -125,6 +126,7 @@ If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and a skill says "alw
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心能力
 
 | 能力 | 说明 | 对应技能 |
@@ -200,6 +202,7 @@ gemini extensions update superpowers
 
 <!-- source-snippets:end -->
 </details>
+
 ## 设计哲学
 
 Superpowers 的设计哲学可以概括为四条原则：
@@ -286,6 +289,7 @@ Claiming work is complete without verification is dishonesty, not efficiency.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 仓库结构
 
 ```text
@@ -440,6 +444,7 @@ Sources: [00-repo-inventory.md](../00-repo-inventory.md)
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阅读路线
 
 - **想了解项目是什么？** → 继续阅读本页，然后看 [核心工作流](core-workflow.md)

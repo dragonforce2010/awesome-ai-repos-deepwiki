@@ -1,4 +1,5 @@
-<details><summary>相关源文件</summary>
+<details>
+<summary>相关源文件</summary>
 
 生成本页时使用的主要源文件：
 
@@ -169,9 +170,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.<software>.utils.repl_skin import ReplSkin
+     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("<software>", version="1.0.0")
+     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -465,6 +466,7 @@ def update(name):
 
 <!-- source-snippets:end -->
 </details>
+
 ## Agent 平台层
 
 Agent 平台层是所有 AI Agent 触达 CLI-Anything 方法论的入口。五个平台适配器都读取同一份 `HARNESS.md`，确保行为一致。
@@ -566,9 +568,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.<software>.utils.repl_skin import ReplSkin
+     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("<software>", version="1.0.0")
+     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -612,6 +614,7 @@ MUST contain:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 方法论层
 
 `HARNESS.md` 是整个项目的单一权威来源（Single Source of Truth），定义了七个串行阶段的 CLI 生成方法论。四条命令从不同角度触发这个方法论：
@@ -712,9 +715,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.<software>.utils.repl_skin import ReplSkin
+     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("<software>", version="1.0.0")
+     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -758,6 +761,7 @@ MUST contain:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 生成的 Harness 层
 
 每次成功运行 `/cli-anything <path>` 都会在对应软件目录下生成一个 `agent-harness/` 子目录，形成标准化的 Python 包结构：
@@ -865,9 +869,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.<software>.utils.repl_skin import ReplSkin
+     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("<software>", version="1.0.0")
+     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -1036,6 +1040,7 @@ class ReplSkin:
 
 <!-- source-snippets:end -->
 </details>
+
 ## CLI-Hub 层
 
 CLI-Hub 是面向最终用户和 Agent 的包管理器，负责从注册表发现、安装和预览各种 CLI harness。
@@ -1434,6 +1439,7 @@ def update(name):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 注册表层
 
 注册表层通过 GitHub Pages 以静态 JSON 文件对外服务，分两个文件管理不同来源的 CLI：
@@ -1578,6 +1584,7 @@ Sources: [registry.json](../../../project-repos/CLI-Anything/registry.json)
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能层
 
 技能层让 AI Agent 能自动发现并调用已安装的 CLI harness。每个 software 有对应的 `SKILL.md`，Agent 读取后知道该 CLI 的命令签名和 `--json` 输出格式：
@@ -1681,9 +1688,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.<software>.utils.repl_skin import ReplSkin
+     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("<software>", version="1.0.0")
+     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -1727,6 +1734,7 @@ MUST contain:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心数据流
 
 ### 数据流 1：生成新 harness
@@ -2147,6 +2155,7 @@ class ReplSkin:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 模块依赖关系
 
 ```mermaid
@@ -2252,9 +2261,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.<software>.utils.repl_skin import ReplSkin
+     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("<software>", version="1.0.0")
+     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -2793,6 +2802,7 @@ class ReplSkin:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 设计原则
 
 CLI-Anything 的架构体现了三个核心设计取舍：

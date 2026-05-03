@@ -336,6 +336,7 @@ class ClientCore:
 
 <!-- source-snippets:end -->
 </details>
+
 ## ClientCore 基础设施
 
 `ClientCore` 是所有子 API 的共享基础设施，职责包括：
@@ -497,6 +498,7 @@ Sources: [src/notebooklm/_core.py:153-310](../../../project-repos/notebooklm-py/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 依赖方向与模块边界
 
 | 层级 | 模块 | 依赖 |
@@ -773,6 +775,7 @@ class NotebookLMClient:
 
 <!-- source-snippets:end -->
 </details>
+
 ## NotebookLMClient 初始化流程
 
 ```mermaid
@@ -899,6 +902,7 @@ Sources: [src/notebooklm/client.py:82-165](../../../project-repos/notebooklm-py/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 认证刷新机制
 
 `ClientCore.rpc_call()` 内置了认证自动刷新逻辑：
@@ -1033,6 +1037,7 @@ Sources: [src/notebooklm/_core.py:310-420](../../../project-repos/notebooklm-py/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [RPC 协议层](rpc-protocol.md)

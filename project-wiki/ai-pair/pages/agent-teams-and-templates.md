@@ -257,6 +257,7 @@ Follow the shared CLI Invocation Protocol (timeout + degradation retry). Stay ac
 
 <!-- source-snippets:end -->
 </details>
+
 ## team-stop
 
 用户执行 `/ai-pair team-stop` 时：向各 agent 发 `shutdown_request` → 等待确认 → `TeamDelete` → 输出关闭与资源清理摘要。
@@ -288,6 +289,7 @@ When user calls `/ai-pair team-stop` or chooses "end" in the workflow:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 与 examples 的对应关系
 
 ```mermaid
@@ -502,6 +504,7 @@ The author revises. You can send for another round of review or pass.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [半自动工作流与 CLI 调用协议](workflow-and-protocol.md)

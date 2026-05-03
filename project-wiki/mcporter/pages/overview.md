@@ -191,6 +191,7 @@ export async function runCli(argv: string[]): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心定位
 
 mcporter 解决三个高频痛点：
@@ -526,6 +527,7 @@ export async function handleEmitTs(runtime: Runtime, args: string[]): Promise<vo
 
 <!-- source-snippets:end -->
 </details>
+
 ## 公共 API 切面
 
 `src/index.ts` 暴露的入口非常克制——只 9 行。这是 mcporter 作为 npm 库时使用者真正能拿到的全部类型与函数：
@@ -579,6 +581,7 @@ export { createServerProxy } from './server-proxy.js';
 
 <!-- source-snippets:end -->
 </details>
+
 ## 受众与使用场景
 
 - **写 Agent / 脚本的工程师**：用 `createRuntime()` 直接合并多客户端配置，在脚本里调用 MCP 工具，不需要重新写配置文件。
@@ -728,6 +731,7 @@ export { toFileUrl } from './config-imports.js';
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阅读路径建议
 
 ```mermaid
@@ -997,6 +1001,7 @@ Helpful flags:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 0.10.0 与最近迭代
 
 `package.json:3` 声明 `"version": "0.10.0"`，README 的"What's New"块仍记录了 0.9.0 的关键变更（per-server tool filtering、stdio shutdown 加固、Windows OAuth URL、`auth --json` 结构化失败信封、`call` 字符串参数不再被强制数字化等）。日常迭代以 `CHANGELOG.md` 为准，但仓库默认会在 `mcporter list <server>` 输出区分 healthy / auth required / offline / http / 其它错误并按数量汇总（[src/cli/list-command.ts:217-233]()），这是早期版本不具备的能力。
@@ -1048,6 +1053,7 @@ Sources: [package.json:3](../../../project-repos/mcporter/package.json:3), [READ
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)

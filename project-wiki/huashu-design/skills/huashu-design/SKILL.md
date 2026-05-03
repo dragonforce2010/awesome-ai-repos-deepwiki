@@ -529,10 +529,10 @@ api = 'https://commons.wikimedia.org/w/api.php'
 **Overview 平铺的骨架**（每屏独立一台 IosFrame 并排）：
 
 ```jsx
-<div style={{display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'}}>
+<div style=&#123;&#123;display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'&#125;&#125;>
   {screens.map(s => (
     <div key={s.id}>
-      <div style={{fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'}}>{s.label}</div>
+      <div style=&#123;&#123;fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'&#125;&#125;>{s.label}</div>
       <IosFrame>
         <ScreenComponent data={s} />
       </IosFrame>
@@ -777,12 +777,12 @@ Skill 路径引用均采用**相对本 skill 根目录**的形式（`references/
 - **用户明确说"不要水印"**：尊重，移除
 - **水印模板**：
   ```jsx
-  <div style={{
+  <div style=&#123;&#123;
     position: 'absolute', bottom: 24, right: 32,
     fontSize: 11, color: 'rgba(0,0,0,0.4)' /* 深底用 rgba(255,255,255,0.35) */,
     letterSpacing: '0.15em', fontFamily: 'monospace',
     pointerEvents: 'none', zIndex: 100,
-  }}>
+  &#125;&#125;>
     Created by Huashu-Design
     {/* 第三方品牌动画前缀「非官方出品 · 」*/}
   </div>

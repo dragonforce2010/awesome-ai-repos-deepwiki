@@ -161,6 +161,7 @@ export function shouldUseSandbox(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Bash["Bash tool call"] --> Settings["load sandbox settings"]
@@ -419,6 +420,7 @@ export function wrapWithSandbox(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 两层类型
 
 代码区分 `SandboxSettings` 和 `SandboxProfile`。前者是用户写在 settings.json 里的原始配置，后者是运行时喂给 sandbox-exec 的具体 profile，会混合 settings、权限规则和硬编码安全默认值。  
@@ -515,6 +517,7 @@ export interface SandboxProfile {
 
 <!-- source-snippets:end -->
 </details>
+
 settings 默认值偏保守地要求用户显式 opt-in：`enabled=false`。但开启后，默认允许 sandboxed Bash 自动通过权限检查，并允许模型用 `dangerouslyDisableSandbox` 单次逃逸，除非用户把 `allowUnsandboxedCommands` 关掉。  
 Sources: [src/sandbox/settings.ts:1-15](../../../project-repos/easy-agent/src/sandbox/settings.ts#L1-L15), [src/sandbox/settings.ts:105-168](../../../project-repos/easy-agent/src/sandbox/settings.ts#L105-L168), [src/sandbox/types.ts:34-55](../../../project-repos/easy-agent/src/sandbox/types.ts#L34-L55)
 
@@ -641,6 +644,7 @@ export interface SandboxSettings {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 可用性检查
 
 Easy Agent 只实现 macOS backend。`availability.ts` 会检查 `process.platform === "darwin"` 和 `sandbox-exec` 是否存在；如果 settings 开启但 runtime 不可用，CLI startup 会暴露原因，而不是静默降级。  
@@ -761,6 +765,7 @@ export function isSandboxRuntimeReady(): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## shouldUseSandbox 决策
 
 `shouldUseSandbox()` 的决策顺序是：settings 必须 enabled，runtime 必须 ready，单次 `dangerouslyDisableSandbox` 只有在用户 policy 允许时才生效，命令为空不启用，命中 `excludedCommands` 也不启用。  
@@ -820,6 +825,7 @@ export function shouldUseSandbox(
 
 <!-- source-snippets:end -->
 </details>
+
 `excludedCommands` 支持精确前缀、`docker:*` 这类前缀通配和一般 `*` 通配。它会拆分 compound command 的子命令，任一子命令命中就跳过 sandbox；源码注释也明确这只是 UX escape hatch，不是安全边界。  
 Sources: [src/sandbox/shouldUseSandbox.ts:30-76](../../../project-repos/easy-agent/src/sandbox/shouldUseSandbox.ts#L30-L76)
 
@@ -882,6 +888,7 @@ export function containsExcludedCommand(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Profile 构建
 
 profile 的写权限默认允许 cwd、系统 tmpdir 和 `tmp/easy-agent`。同时会强制 deny 系统路径、用户/项目 settings、skills 目录和 AGENT.md，防止 sandboxed 命令改写自身运行配置或技能内容。  
@@ -955,6 +962,7 @@ export function buildSandboxProfile(params: {
 
 <!-- source-snippets:end -->
 </details>
+
 权限规则也会参与 profile 派生：`WebFetch(domain:github.com)` 会加入 sandbox network allowlist；`Edit(path)` 与 `Write(path)` 会加入 writable allowlist；deny 规则则加入 denylist。这样权限系统和 sandbox runtime 使用同一份用户意图。  
 Sources: [src/sandbox/buildProfile.ts:1-22](../../../project-repos/easy-agent/src/sandbox/buildProfile.ts#L1-L22), [src/sandbox/buildProfile.ts:147-206](../../../project-repos/easy-agent/src/sandbox/buildProfile.ts#L147-L206)
 
@@ -1057,6 +1065,7 @@ Sources: [src/sandbox/buildProfile.ts:1-22](../../../project-repos/easy-agent/sr
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart LR
   UserSettings["sandbox settings"] --> Profile["SandboxProfile"]
@@ -1223,6 +1232,7 @@ export function buildSandboxProfile(params: {
 
 <!-- source-snippets:end -->
 </details>
+
 ## macOS SBPL 编译限制
 
 `compileMacosProfile()` 生成默认 deny 的 SBPL，但本教程版有两个重要限制：文件读默认全放行，网络规则只做到 allowedDomains 非空时放开 network。注释说明生产级实现需要更复杂的读限制和代理型网络控制。  
@@ -1309,6 +1319,7 @@ export function compileMacosProfile(profile: SandboxProfile): string {
 
 <!-- source-snippets:end -->
 </details>
+
 SBPL 规则按顺序生效，代码先 emit write allow，再 emit write deny，让关键 deny path 在重叠时覆盖 allow path。  
 Sources: [src/sandbox/macosProfile.ts:53-73](../../../project-repos/easy-agent/src/sandbox/macosProfile.ts#L53-L73)
 
@@ -1345,6 +1356,7 @@ Sources: [src/sandbox/macosProfile.ts:53-73](../../../project-repos/easy-agent/s
 
 <!-- source-snippets:end -->
 </details>
+
 ## Bash 工具接入点
 
 Bash 工具每次调用都会重新加载 sandbox settings，并动态 import permission settings 来构造 profile。这样用户在会话中批准新的权限规则后，下一条 Bash 命令就能使用更新后的 sandbox profile。  
@@ -1418,6 +1430,7 @@ async function buildProfileForCwd(
 
 <!-- source-snippets:end -->
 </details>
+
 最终执行字符串形态是 `/usr/bin/sandbox-exec -p '<sbpl>' /bin/bash -lc '<original command>'`，用户命令用 POSIX 单引号规则内联转义，不通过临时文件传递。  
 Sources: [src/sandbox/wrapWithSandbox.ts:1-15](../../../project-repos/easy-agent/src/sandbox/wrapWithSandbox.ts#L1-L15), [src/sandbox/wrapWithSandbox.ts:20-45](../../../project-repos/easy-agent/src/sandbox/wrapWithSandbox.ts#L20-L45)
 
@@ -1479,6 +1492,7 @@ export function wrapWithSandbox(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 违规反馈
 
 macOS sandbox denial 通常写到系统日志，不直接出现在子进程 stderr。Easy Agent 用启发式扫描 stderr 中的 `Operation not permitted`、`sandbox-exec:`、`EPERM`、`EACCES` 等信号，并给模型侧追加 `<sandbox_violations>` 标签。UI 渲染前会去掉该标签。  
@@ -1632,6 +1646,7 @@ export function hasSandboxViolationTag(text: string): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证覆盖
 
 `test:sandbox` 不依赖真实 LLM，也尽量避免直接运行 sandbox-exec；它覆盖命令拆分、settings merge、excluded matcher、shouldUseSandbox、profile 派生、SBPL 输出、wrapper 形态和 violation tag。两个 smoke 脚本则用于实际 sandbox 行为和 Bash 工具集成验证。  
@@ -1881,6 +1896,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [工具系统与权限模型](tools-permissions.md)

@@ -24,7 +24,7 @@ description: 破坏性命令安全护栏，执行前提醒高风险操作。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: careful
 version: 0.1.0
@@ -88,6 +88,6 @@ patterns above, and returns `permissionDecision: "ask"` with a warning message
 if a match is found. You can always override the warning and proceed.
 
 To deactivate, end the conversation or start a new one. Hooks are session-scoped.
-```
+````
 
 </details>

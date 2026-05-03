@@ -71,10 +71,10 @@
 ~/.claude/lark-memory/
 ├── MEMORY.md            # 始终加载的索引
 ├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/             # 按 ISO 周的流水
     └── 2026-W16.md
 ```
@@ -95,6 +95,7 @@ source_hints:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 解决的问题
 
 仓库的原始需求很直接：用户在字节内部大量使用飞书群聊和文档，希望 AI 能持续从飞书获取上下文，自动沉淀长期记忆、短期记忆和 TODO，但只读取指定群聊。Sources: [spec.md:1-7](../../../project-repos/lark-context/spec.md#L1-L7)
@@ -118,6 +119,7 @@ https://github.com/larksuite/cli
 
 <!-- source-snippets:end -->
 </details>
+
 README 把能力拆成五类：指定群增量拉取、手动喂飞书文档、由 Claude 本地提炼、`entities/` + `journal/` 两层记忆结构，以及通过 TS CLI 和 skill 分发。Sources: [README.md:5-10](../../../project-repos/lark-context/README.md#L5-L10)
 
 <details class="source-snippets">
@@ -138,6 +140,7 @@ README 把能力拆成五类：指定群增量拉取、手动喂飞书文档、�
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Need["飞书上下文散落"] --> Pull["指定群增量拉取"]
@@ -182,10 +185,10 @@ Sources: [README.md:3-10](../../../project-repos/lark-context/README.md#L3-L10),
 ~/.claude/lark-memory/
 ├── MEMORY.md            # 始终加载的索引
 ├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/             # 按 ISO 周的流水
     └── 2026-W16.md
 ```
@@ -230,6 +233,7 @@ Claude 提炼成 entities（人 / 项目 / 术语 / 决策）+ journal（按周�
 
 <!-- source-snippets:end -->
 </details>
+
 ## 使用者视角
 
 常规路径是先安装官方 `lark-cli` 并 OAuth 登录，再安装 `@tiktok-fe/lark-context` 和全局 skill，执行 `lark-context init` 初始化配置、SQLite 和记忆目录。之后用户在 Claude 里用自然语言触发 `/lark-context`，由 skill 路由到对应 CLI 或引用工作流。Sources: [README.md:37-67](../../../project-repos/lark-context/README.md#L37-L67), [GETTING_STARTED.md:31-61](../../../project-repos/lark-context/GETTING_STARTED.md#L31-L61), [skills/lark-context/SKILL.md:13-29](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L13-L29)
@@ -255,7 +259,7 @@ lark-cli auth login            # 浏览器 OAuth 授权
 
 ```bash
 bnpm i -g @tiktok-fe/lark-context     # 安装 lark-context 二进制
-npx skills add <you>/lark-context -g -y   # 安装 /lark-context skill
+npx skills add &lt;you&gt;/lark-context -g -y   # 安装 /lark-context skill
 ```
 
 替换 `<you>` 为实际的 GitHub 用户名 / 组织。
@@ -335,6 +339,7 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
+
 | 阶段 | 用户动作 | 底层动作 |
 |---|---|---|
 | 安装 | 装 `@larksuite/cli` 与 `@tiktok-fe/lark-context` | 提供官方飞书访问和本项目二进制 |
@@ -369,7 +374,7 @@ You: /lark-context 拉一下最近 3 天的消息
 → lark-context pull --since 3d
 
 You: (粘贴飞书文档 URL) /lark-context 收下这个文档
-→ lark-context ingest-doc <url>
+→ lark-context ingest-doc &lt;url&gt;
 
 You: /lark-context 沉淀一下
 → skill 走 references/digest.md workflow：读 show 输出 → 更新 ~/.claude/lark-memory/
@@ -496,6 +501,7 @@ export async function runAdd(opts: AddOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 仓库形态
 
 当前主实现是 TypeScript ESM CLI：`package.json` 声明包名 `@tiktok-fe/lark-context`、二进制 `lark-context`、Node `>=18`、构建用 `tsup`、测试用 `vitest`。`legacy/python/` 是 V1 前的冻结实现，用来对照但不再演进。Sources: [package.json:1-18](../../../project-repos/lark-context/package.json#L1-L18), [package.json:20-35](../../../project-repos/lark-context/package.json#L20-L35), [README.md:208-219](../../../project-repos/lark-context/README.md#L208-L219)
@@ -568,6 +574,7 @@ V1 正式发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，可以删掉这个
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Repo["lark-context repo"] --> TS["src/ TypeScript CLI"]
@@ -631,7 +638,7 @@ export default defineConfig({
 
 ```bash
 # 克隆 + 装依赖
-git clone https://github.com/<you>/lark-context.git
+git clone https://github.com/&lt;you&gt;/lark-context.git
 cd lark-context
 pnpm install
 
@@ -665,6 +672,7 @@ V1 正式发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，可以删掉这个
 
 <!-- source-snippets:end -->
 </details>
+
 ## 项目边界
 
 工具本身不调用外部 LLM API；它只通过官方 `lark-cli` 读取飞书数据，并把原始材料落在本地 SQLite。摘要、实体合并和 TODO 判断由 Claude 在 skill workflow 中本地完成。Sources: [README.md:5-8](../../../project-repos/lark-context/README.md#L5-L8), [GETTING_STARTED.md:25-29](../../../project-repos/lark-context/GETTING_STARTED.md#L25-L29), [skills/lark-context/SKILL.md:69-73](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L69-L73)
@@ -705,6 +713,7 @@ V1 正式发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，可以删掉这个
 
 <!-- source-snippets:end -->
 </details>
+
 当前 README 同时记录了 V1 边界：不自动调度、只读指定群聊、文档类型受 `lark-cli` 支持范围限制、工具本身不调 LLM API。README 的“已知限制”里还保留了“不拉回复线程”的旧描述，但当前代码已经实现 `thread_id`、`is_thread_reply` 和话题回复拉取；这说明该限制文本滞后于源码。Sources: [README.md:177-185](../../../project-repos/lark-context/README.md#L177-L185), [src/db.ts:14-28](../../../project-repos/lark-context/src/db.ts#L14-L28), [src/commands/pull.ts:123-145](../../../project-repos/lark-context/src/commands/pull.ts#L123-L145), [src/commands/pull.ts:240-290](../../../project-repos/lark-context/src/commands/pull.ts#L240-L290)
 
 <details class="source-snippets">
@@ -832,6 +841,7 @@ async function pullThreads(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阅读路线
 
 1. 先读 [系统架构](system-architecture.md)，建立从自然语言到 SQLite 和记忆文件的主链路。
@@ -882,7 +892,7 @@ async function pullThreads(
                                    └─ 暴露子命令给 Claude shell 调用
                                            │
                                            ▼
-                                  /lark-context <自然语言>
+                                  /lark-context &lt;自然语言&gt;
                                  （skill 在 ~/.agents/skills/lark-context/）
                                            │
                                            ▼
@@ -945,6 +955,7 @@ program.parseAsync(process.argv);
 
 <!-- source-snippets:end -->
 </details>
+
 ## 端到端边界
 
 ```mermaid
@@ -979,7 +990,7 @@ Sources: [README.md:13-35](../../../project-repos/lark-context/README.md#L13-L35
                                    └─ 暴露子命令给 Claude shell 调用
                                            │
                                            ▼
-                                  /lark-context <自然语言>
+                                  /lark-context &lt;自然语言&gt;
                                  （skill 在 ~/.agents/skills/lark-context/）
                                            │
                                            ▼
@@ -1111,17 +1122,18 @@ export async function* runNdjson(args: string[]): AsyncGenerator<unknown> {
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
-    └── <ISO-week>.md     # e.g. 2026-W16.md
+    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 运行时模块
 
 | 模块 | 责任 | 关键事实 |
@@ -1274,6 +1286,7 @@ export async function* runNdjson(args: string[]): AsyncGenerator<unknown> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 数据落点
 
 默认数据分两类：原始数据在 `~/.lark-context/raw.db`，给 Claude 读的长期记忆在 `~/.claude/lark-memory/`。路径可以通过 `LARK_CONTEXT_CONFIG`、`LARK_CONTEXT_RAW_DIR`、`LARK_CONTEXT_MEMORY_DIR` 覆盖。Sources: [README.md:120-128](../../../project-repos/lark-context/README.md#L120-L128), [src/config.ts:6-8](../../../project-repos/lark-context/src/config.ts#L6-L8), [src/config.ts:111-126](../../../project-repos/lark-context/src/config.ts#L111-L126)
@@ -1328,6 +1341,7 @@ export const ENV_RAW = "LARK_CONTEXT_RAW_DIR";
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   ConfigYaml["~/.lark-context/config.yaml"] --> CLI["loadConfig"]
@@ -1475,17 +1489,18 @@ CREATE TABLE IF NOT EXISTS kv (
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
-    └── <ISO-week>.md     # e.g. 2026-W16.md
+    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 控制流与职责分离
 
 `lark-context` 的 CLI 层不做 LLM 级判断。`pull`、`ingest-doc`、`show` 只读取/写入本地 DB；digest 和 TODO 的“值得记什么”“是否是待办”等判断写在 skill references 中，由 Claude 执行。Sources: [README.md:5-8](../../../project-repos/lark-context/README.md#L5-L8), [src/commands/pull.ts:401-440](../../../project-repos/lark-context/src/commands/pull.ts#L401-L440), [src/commands/show.ts:31-127](../../../project-repos/lark-context/src/commands/show.ts#L31-L127), [skills/lark-context/references/digest.md:42-78](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L42-L78), [skills/lark-context/references/todo.md:21-34](../../../project-repos/lark-context/skills/lark-context/references/todo.md#L21-L34)
@@ -1657,7 +1672,7 @@ export async function runShow(opts: ShowOpts): Promise<void> {
 ## Step 3 — 读原始材料
 
 ```bash
-lark-context show [--chat <alias>] --since <window>
+lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
 ```
 
 输出是本次沉淀的**唯一事实来源**。不要捏造、不要从记忆里补 show 里没出现的事。
@@ -1714,6 +1729,7 @@ lark-context show [--chat <alias>] --since <window>
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant U as 用户
@@ -1808,7 +1824,7 @@ Sources: [skills/lark-context/references/pull.md:12-20](../../../project-repos/l
 ## Step 3 — 读原始材料
 
 ```bash
-lark-context show [--chat <alias>] --since <window>
+lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
 ```
 
 输出是本次沉淀的**唯一事实来源**。不要捏造、不要从记忆里补 show 里没出现的事。
@@ -1865,6 +1881,7 @@ sqlite3 ~/.lark-context/raw.db "INSERT INTO kv(key,value) VALUES('last_digest_at
 
 <!-- source-snippets:end -->
 </details>
+
 ## 设计取舍
 
 - 使用官方 `lark-cli` 做 OAuth 和飞书 API 访问，避免在项目内重新实现认证和 API 客户端。Sources: [README.md:39-44](../../../project-repos/lark-context/README.md#L39-L44), [src/lark.ts:3-20](../../../project-repos/lark-context/src/lark.ts#L3-L20)
@@ -1910,6 +1927,7 @@ async function invoke(args: string[]): Promise<string> {
 
 <!-- source-snippets:end -->
 </details>
+
 - 使用 SQLite 存原始材料，Markdown 存提炼后的长期记忆，让数据可审、可迁移、可手工修改。Sources: [README.md:120-175](../../../project-repos/lark-context/README.md#L120-L175), [GETTING_STARTED.md:92-107](../../../project-repos/lark-context/GETTING_STARTED.md#L92-L107)
 
 <details class="source-snippets">
@@ -1956,10 +1974,10 @@ groups:
 ~/.claude/lark-memory/
 ├── MEMORY.md            # 始终加载的索引
 ├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/             # 按 ISO 周的流水
     └── 2026-W16.md
 ```
@@ -1987,10 +2005,10 @@ source_hints:
 ~/.claude/lark-memory/
 ├── MEMORY.md                     # 总索引
 ├── entities/
-│   ├── people/<slug>.md          # 每个同事一个文件
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md          # 每个同事一个文件
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md                  # 术语表
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
     └── 2026-W17.md               # 每周一个流水文件
 ```
@@ -2001,6 +2019,7 @@ source_hints:
 
 <!-- source-snippets:end -->
 </details>
+
 - 使用 skill 做自然语言路由和高层 workflow，避免 CLI 本身引入 LLM API 或复杂调度。Sources: [skills/lark-context/SKILL.md:31-48](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L31-L48), [README.md:177-185](../../../project-repos/lark-context/README.md#L177-L185)
 
 <details class="source-snippets">
@@ -2047,6 +2066,7 @@ source_hints:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -2134,6 +2154,7 @@ program.parseAsync(process.argv);
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令注册图
 
 ```mermaid
@@ -2177,6 +2198,7 @@ program.parseAsync(process.argv);
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令职责
 
 | 命令 | 注册位置 | 主要职责 | 外部依赖 |
@@ -2394,6 +2416,7 @@ export function registerShowDoc(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 初始化命令
 
 `runInit` 先检查 `lark-cli --version`，检查失败就提示安装官方 CLI 并登录；之后加载路径配置，创建 memory/raw 目录，在配置文件不存在时写入空白配置，最后初始化 `raw.db` schema。Sources: [src/commands/init.ts:18-34](../../../project-repos/lark-context/src/commands/init.ts#L18-L34), [src/commands/init.ts:36-53](../../../project-repos/lark-context/src/commands/init.ts#L36-L53)
@@ -2450,6 +2473,7 @@ export async function runInit(opts: InitOpts = {}): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A["lark-context init"] --> B{"checkLarkCli?"}
@@ -2505,6 +2529,7 @@ export async function runInit(opts: InitOpts = {}): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 群白名单命令
 
 `groups add` 会解析配置、要求 DB 已初始化、决定 alias、拒绝重复 alias、保存 YAML，并 upsert `chats` 表。`groups rm` 从 YAML 删除该 alias，同时把 DB 中对应 chat 标为 disabled，而不是删除历史消息。Sources: [src/commands/groups.ts:31-58](../../../project-repos/lark-context/src/commands/groups.ts#L31-L58), [src/commands/groups.ts:73-90](../../../project-repos/lark-context/src/commands/groups.ts#L73-L90)
@@ -2572,6 +2597,7 @@ export async function runRm(opts: RmOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 `list-groups` 则不读本地白名单，它调用官方 CLI 列出用户所在群，默认输出表格，`--json` 输出原始 items 数组。Sources: [src/commands/listGroups.ts:9-44](../../../project-repos/lark-context/src/commands/listGroups.ts#L9-L44)
 
 <details class="source-snippets">
@@ -2622,6 +2648,7 @@ export async function runListGroups(opts: ListGroupsOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 数据命令的错误出口
 
 每个注册函数都把命令体包在 `try/catch` 中，出错时写 stderr 并 `process.exit(1)`。业务函数本身用抛错表达错误，这让测试能直接断言 `runXxx` 的异常，而 CLI 运行时能转成标准非零退出。Sources: [src/commands/init.ts:60-66](../../../project-repos/lark-context/src/commands/init.ts#L60-L66), [src/commands/groups.ts:101-129](../../../project-repos/lark-context/src/commands/groups.ts#L101-L129), [src/commands/pull.ts:460-470](../../../project-repos/lark-context/src/commands/pull.ts#L460-L470), [src/commands/show.ts:162-181](../../../project-repos/lark-context/src/commands/show.ts#L162-L181)
@@ -2720,6 +2747,7 @@ export function registerShowDoc(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Cmd["Commander action"] --> Run["runXxx"]
@@ -2761,6 +2789,7 @@ Sources: [src/commands/ingestDoc.ts:109-115](../../../project-repos/lark-context
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)
@@ -2839,6 +2868,7 @@ export async function* runNdjson(args: string[]): AsyncGenerator<unknown> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 封装层
 
 ```mermaid
@@ -2949,6 +2979,7 @@ describe("runJson", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 `runJson` 会在参数末尾追加 `--format json`，`runNdjson` 追加 `--format ndjson` 并逐行解析非空行。测试明确覆盖了追加格式参数、JSON 解析、空行跳过、ENOENT 和 stderr 透传。Sources: [src/lark.ts:24-35](../../../project-repos/lark-context/src/lark.ts#L24-L35), [test/lark.test.ts:20-39](../../../project-repos/lark-context/test/lark.test.ts#L20-L39), [test/lark.test.ts:74-101](../../../project-repos/lark-context/test/lark.test.ts#L74-L101)
 
 <details class="source-snippets">
@@ -3033,6 +3064,7 @@ describe("runNdjson", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 调用点
 
 | 业务 | 调用参数 | 返回处理 |
@@ -3164,6 +3196,7 @@ async function pullThreadsPage(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 初始化检查
 
 `init` 不通过 `src/lark.ts`，而是直接执行 `lark-cli --version` 做 PATH 检查。失败时提示安装 `@larksuite/cli` 并执行 `lark-cli auth login`。这是一种启动前置检查，而不是业务调用。Sources: [src/commands/init.ts:18-34](../../../project-repos/lark-context/src/commands/init.ts#L18-L34), [skills/lark-context/SKILL.md:15-29](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L15-L29)
@@ -3217,6 +3250,7 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant User as 用户
@@ -3286,6 +3320,7 @@ export async function runInit(opts: InitOpts = {}): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 错误传播策略
 
 `LarkNotFoundError` 在 `pullThreads` 中会继续向上抛；`LarkCLIError` 在单个 thread 失败时只跳过该 thread，写 warning 后继续。对群级 `pull` 来说，`LarkCLIError` 会把该 chat disable，并继续处理其他群。Sources: [src/commands/pull.ts:279-285](../../../project-repos/lark-context/src/commands/pull.ts#L279-L285), [src/commands/pull.ts:391-399](../../../project-repos/lark-context/src/commands/pull.ts#L391-L399), [src/commands/pull.ts:424-437](../../../project-repos/lark-context/src/commands/pull.ts#L424-L437)
@@ -3342,6 +3377,7 @@ function disableChat(dbPath: string, alias: string, reason: string): void {
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了群级 `LarkCLIError` 会禁用失败群但保留其他群，也覆盖了单 thread 权限错误不会禁用 chat，非 Lark 错误不会被吞掉。Sources: [test/cmd-pull.test.ts:240-265](../../../project-repos/lark-context/test/cmd-pull.test.ts#L240-L265), [test/cmd-pull.test.ts:908-963](../../../project-repos/lark-context/test/cmd-pull.test.ts#L908-L963), [test/cmd-pull.test.ts:998-1033](../../../project-repos/lark-context/test/cmd-pull.test.ts#L998-L1033)
 
 <details class="source-snippets">
@@ -3484,6 +3520,7 @@ function disableChat(dbPath: string, alias: string, reason: string): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Pull["runPull"] --> Chat["pullChat"]
@@ -3615,6 +3652,7 @@ export async function runPull(opts: PullOpts): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 与 skill 的契约
 
 skill 文档要求 CLI 非零退出时透传 stderr，不编造解释；命中已知场景时才补操作建议。`pull.md` 还列出了 scope、chat_not_found、ENOENT、自动 disable 等常见错误的用户建议。Sources: [skills/lark-context/SKILL.md:69-73](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L69-L73), [skills/lark-context/references/pull.md:38-46](../../../project-repos/lark-context/skills/lark-context/references/pull.md#L38-L46)
@@ -3650,6 +3688,7 @@ skill 文档要求 CLI 非零退出时透传 stderr，不编造解释；命中�
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [CLI 命令面](cli-command-surface.md)
@@ -3750,6 +3789,7 @@ CREATE TABLE IF NOT EXISTS kv (
 
 <!-- source-snippets:end -->
 </details>
+
 ## 路径优先级
 
 README 写明路径覆盖优先级是 CLI flag、环境变量、config.yaml、默认值。源码中的 `resolvePath` 与 `loadConfig` 实现了这个顺序，并支持 `~` 展开。Sources: [README.md:120-128](../../../project-repos/lark-context/README.md#L120-L128), [src/config.ts:38-63](../../../project-repos/lark-context/src/config.ts#L38-L63), [src/config.ts:95-133](../../../project-repos/lark-context/src/config.ts#L95-L133)
@@ -3850,6 +3890,7 @@ export function loadConfig(opts: LoadConfigOptions = {}): Config {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Flag["CLI override"] --> Resolve["resolvePath"]
@@ -3952,6 +3993,7 @@ function resolvePath(
 
 <!-- source-snippets:end -->
 </details>
+
 ## YAML 配置模型
 
 `groups` 在 YAML 中使用 `chat_id`，进入 TypeScript 后映射为 `chatId`。`parseGroups` 要求 `groups` 必须是列表，每个 entry 至少有 `alias` 和 `chat_id`，并拒绝重复 alias；`enabled` 缺省为 `true`。Sources: [src/config.ts:65-93](../../../project-repos/lark-context/src/config.ts#L65-L93), [test/config.test.ts:51-72](../../../project-repos/lark-context/test/config.test.ts#L51-L72), [test/config.test.ts:140-148](../../../project-repos/lark-context/test/config.test.ts#L140-L148)
@@ -4038,6 +4080,7 @@ function parseGroups(raw: unknown): GroupConfig[] {
 
 <!-- source-snippets:end -->
 </details>
+
 保存配置时，`saveConfig` 会把 HOME 下路径收缩回 `~/...`，并把 `chatId` 写回 `chat_id`。测试覆盖了 HOME 内路径收缩和 HOME 外绝对路径保留。Sources: [src/config.ts:135-164](../../../project-repos/lark-context/src/config.ts#L135-L164), [test/config.test.ts:93-138](../../../project-repos/lark-context/test/config.test.ts#L93-L138)
 
 <details class="source-snippets">
@@ -4133,6 +4176,7 @@ export function saveConfig(cfg: Config): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## SQLite schema
 
 ```mermaid
@@ -4224,6 +4268,7 @@ CREATE TABLE IF NOT EXISTS kv (
 
 <!-- source-snippets:end -->
 </details>
+
 连接数据库时会创建父目录、开启外键和 WAL；`initSchema` 执行 schema 后还会运行 `migrateMessagesColumns`。Sources: [src/db.ts:43-59](../../../project-repos/lark-context/src/db.ts#L43-L59)
 
 <details class="source-snippets">
@@ -4255,6 +4300,7 @@ export function initSchema(dbPath: string): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## thread 字段迁移
 
 `migrateMessagesColumns` 会检查 `messages` 表字段，补 `thread_id` 和 `is_thread_reply`；对旧数据，它从 `content_json` 的 `$.thread_id` 回填缺失的 `thread_id`，然后创建 `(chat_alias, thread_id, create_time)` 索引。Sources: [src/db.ts:61-91](../../../project-repos/lark-context/src/db.ts#L61-L91)
@@ -4302,6 +4348,7 @@ function migrateMessagesColumns(db: Database.Database): void {
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了新 schema 中字段和索引存在、旧 schema 原地迁移、JSON 回填、坏 JSON 不崩溃以及重复迁移幂等。Sources: [test/db.test.ts:48-80](../../../project-repos/lark-context/test/db.test.ts#L48-L80), [test/db.test.ts:82-145](../../../project-repos/lark-context/test/db.test.ts#L82-L145), [test/db.test.ts:147-206](../../../project-repos/lark-context/test/db.test.ts#L147-L206)
 
 <details class="source-snippets">
@@ -4483,6 +4530,7 @@ function migrateMessagesColumns(db: Database.Database): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 白名单与 DB 同步
 
 `groups add` 同时写 YAML 和 `chats` 表；`groups rm` 从 YAML 中移除，并把 DB 中的 chat 设为 disabled。这样历史消息仍保留，但后续 `pull`/`show` 默认不会遍历 disabled 群。Sources: [src/commands/groups.ts:31-58](../../../project-repos/lark-context/src/commands/groups.ts#L31-L58), [src/commands/groups.ts:73-90](../../../project-repos/lark-context/src/commands/groups.ts#L73-L90), [test/cmd-groups.test.ts:43-81](../../../project-repos/lark-context/test/cmd-groups.test.ts#L43-L81), [test/cmd-groups.test.ts:103-123](../../../project-repos/lark-context/test/cmd-groups.test.ts#L103-L123)
@@ -4620,6 +4668,7 @@ describe("groups rm", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Add["groups add"] --> Save["saveConfig(groups +1)"]
@@ -4729,6 +4778,7 @@ export async function runRm(opts: RmOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## KV 用途
 
 源码当前提供 `kvSet` 和 `kvGet`，skill 的 digest workflow 用 `kv.last_digest_at` 作为上次沉淀时间戳。也就是说 KV 是 CLI 与 workflow 之间的轻量状态面。Sources: [src/db.ts:93-114](../../../project-repos/lark-context/src/db.ts#L93-L114), [skills/lark-context/references/digest.md:14-29](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L14-L29), [skills/lark-context/references/digest.md:93-97](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L93-L97)
@@ -4798,6 +4848,7 @@ sqlite3 ~/.lark-context/raw.db "INSERT INTO kv(key,value) VALUES('last_digest_at
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)
@@ -4891,6 +4942,7 @@ export async function runPull(opts: PullOpts): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 顶层消息分页
 
 `onePage` 固定按 asc 排序、每页 50 条；第一页可带 `--start`，后续页靠 `--page-token`。返回值规范化成 `messages`、`nextToken`、`hasMore`。Sources: [src/commands/pull.ts:41-77](../../../project-repos/lark-context/src/commands/pull.ts#L41-L77)
@@ -4944,6 +4996,7 @@ async function onePage(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Start["pullChat"] --> Page1["onePage startIso"]
@@ -5017,7 +5070,7 @@ Sources: [src/commands/pull.ts:345-386](../../../project-repos/lark-context/src/
 首次拉历史消息每群最多 200 页（约 10k 条）。到上限后 stderr 有：
 
 ```
-<alias>: hit MAX_PAGES=200 cap; re-run to continue
+&lt;alias&gt;: hit MAX_PAGES=200 cap; re-run to continue
 ```
 
 把这条原样转述给用户，**并建议**再跑一次 `lark-context pull --chat <alias>` 续拉。
@@ -5025,6 +5078,7 @@ Sources: [src/commands/pull.ts:345-386](../../../project-repos/lark-context/src/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 首次拉取与续拉
 
 当 `chats.last_cursor` 存在时，`pullChat` 不再使用用户传入的 `--since`，而是从 last_cursor 往前回退 1 小时作为重叠窗口，避免错过稍后才出现的 `thread_id` 或 `thread_replies`。首次拉取没有 last_cursor 时，才使用 `--since` 计算 startIso；如果也没有 `--since`，则不带 start。Sources: [src/commands/pull.ts:317-337](../../../project-repos/lark-context/src/commands/pull.ts#L317-L337), [src/commands/pull.ts:164-169](../../../project-repos/lark-context/src/commands/pull.ts#L164-L169)
@@ -5073,6 +5127,7 @@ const INCR_PULL_OVERLAP_MS = 60 * 60 * 1000;
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了续拉 startIso 早于 last_cursor 但不早太多，也覆盖首次 pull 不应用重叠窗口。Sources: [test/cmd-pull.test.ts:504-559](../../../project-repos/lark-context/test/cmd-pull.test.ts#L504-L559)
 
 <details class="source-snippets">
@@ -5143,6 +5198,7 @@ describe("runPull — re-pull overlap window", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   LastSeen{"last_cursor exists?"}
@@ -5187,6 +5243,7 @@ Sources: [src/commands/pull.ts:317-337](../../../project-repos/lark-context/src/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 写入幂等性
 
 `writePage` 使用 `INSERT ... ON CONFLICT(id) DO UPDATE`。更新时只用 `COALESCE(excluded.thread_id, messages.thread_id)` 补 `thread_id`，不会用空值覆盖已有值；同时更新 `content_json` 保留最新原始内容。Sources: [src/commands/pull.ts:79-122](../../../project-repos/lark-context/src/commands/pull.ts#L79-L122)
@@ -5247,6 +5304,7 @@ function writePage(
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了第二次无新消息不会重复、后续 pull 能给既有父消息补 `thread_id`，也不会用 null 覆盖已有 `thread_id`。Sources: [test/cmd-pull.test.ts:163-197](../../../project-repos/lark-context/test/cmd-pull.test.ts#L163-L197), [test/cmd-pull.test.ts:562-647](../../../project-repos/lark-context/test/cmd-pull.test.ts#L562-L647), [test/cmd-pull.test.ts:649-702](../../../project-repos/lark-context/test/cmd-pull.test.ts#L649-L702)
 
 <details class="source-snippets">
@@ -5446,6 +5504,7 @@ describe("runPull — upsert thread_id on re-pull", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 嵌套回复与二阶段回复
 
 飞书顶层消息返回中可能包含 `thread_replies` 数组。`writePage` 会把这些内嵌回复直接写成 `is_thread_reply=1`，即使用户设置 `--no-threads` 跳过第二阶段，也不会丢掉响应中已经带回来的回复。Sources: [src/commands/pull.ts:123-145](../../../project-repos/lark-context/src/commands/pull.ts#L123-L145), [test/cmd-pull.test.ts:308-448](../../../project-repos/lark-context/test/cmd-pull.test.ts#L308-L448)
@@ -5611,6 +5670,7 @@ describe("runPull — embedded thread_replies (phase 1)", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 第二阶段 `pullThreads` 会从 DB 中扫描窗口内、非回复、带 `thread_id` 的顶层消息，然后逐个调用 `im +threads-messages-list` 拉完整回复，并使用 `INSERT OR IGNORE` 避免重复。Sources: [src/commands/pull.ts:171-238](../../../project-repos/lark-context/src/commands/pull.ts#L171-L238), [src/commands/pull.ts:240-290](../../../project-repos/lark-context/src/commands/pull.ts#L240-L290)
 
 <details class="source-snippets">
@@ -5749,6 +5809,7 @@ async function pullThreads(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Root["顶层 messages"] --> Embedded{"raw.thread_replies?"}
@@ -5854,6 +5915,7 @@ async function pullThreads(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 话题窗口策略
 
 默认话题窗口有三层：首次 pull 使用 effective `--since`；首次但没有 `--since` 时回看 90 天；续拉默认回看 30 天。用户也可以显式传 `--thread-window` 覆盖，或 `--no-threads` 跳过第二阶段。Sources: [src/commands/pull.ts:164-165](../../../project-repos/lark-context/src/commands/pull.ts#L164-L165), [src/commands/pull.ts:377-386](../../../project-repos/lark-context/src/commands/pull.ts#L377-L386), [src/commands/pull.ts:443-459](../../../project-repos/lark-context/src/commands/pull.ts#L443-L459)
@@ -5909,6 +5971,7 @@ export function registerPull(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
+
 README 也记录了相同的用户语义：首次窗口与 effective `--since` 对齐，续拉 30 天，单个话题失败不会 disable 整个群。Sources: [README.md:113-118](../../../project-repos/lark-context/README.md#L113-L118)
 
 <details class="source-snippets">
@@ -5929,6 +5992,7 @@ README 也记录了相同的用户语义：首次窗口与 effective `--since` �
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了首次 90d/180d、续拉 30d、显式 `--thread-window`、`--no-threads`、单 thread 失败继续、thread 回复分页。Sources: [test/cmd-pull.test.ts:827-906](../../../project-repos/lark-context/test/cmd-pull.test.ts#L827-L906), [test/cmd-pull.test.ts:908-996](../../../project-repos/lark-context/test/cmd-pull.test.ts#L908-L996), [test/cmd-pull.test.ts:1035-1129](../../../project-repos/lark-context/test/cmd-pull.test.ts#L1035-L1129)
 
 <details class="source-snippets">
@@ -6217,6 +6281,7 @@ README 也记录了相同的用户语义：首次窗口与 effective `--since` �
 
 <!-- source-snippets:end -->
 </details>
+
 ## 群级失败隔离
 
 `runPull` 遍历所有目标群。遇到 `LarkCLIError` 时，它会调用 `disableChat` 把该群置为 disabled，并继续处理其他群；`LarkNotFoundError` 和非 Lark 错误则向上抛。Sources: [src/commands/pull.ts:391-440](../../../project-repos/lark-context/src/commands/pull.ts#L391-L440)
@@ -6283,6 +6348,7 @@ export async function runPull(opts: PullOpts): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
+
 这个策略让权限失效或被踢出某个群时，不会阻断其他 enabled 群的增量拉取。测试覆盖了单群失败禁用该群、其他群继续。Sources: [test/cmd-pull.test.ts:240-265](../../../project-repos/lark-context/test/cmd-pull.test.ts#L240-L265)
 
 <details class="source-snippets">
@@ -6323,6 +6389,7 @@ export async function runPull(opts: PullOpts): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [配置与 SQLite 存储](configuration-and-storage.md)
@@ -6542,6 +6609,7 @@ export async function runShowDoc(opts: ShowDocOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 文档 token 解析
 
 `extractToken` 支持 bare token，也支持 host 包含 `feishu`、`larkoffice`、`larksuite`、`lark.com` 的 URL；路径必须是 `/docx/`、`/docs/`、`/wiki/`、`/file/`、`/base/` 加 token。非飞书 host、坏 URL 或带 slash 的非 URL 字符串会报错。Sources: [src/commands/ingestDoc.ts:10-39](../../../project-repos/lark-context/src/commands/ingestDoc.ts#L10-L39)
@@ -6588,6 +6656,7 @@ export function extractToken(ref: string): string {
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了 `/docx/`、`/docs/`、`/wiki/`、不同 larkoffice/larksuite host、bare token，以及非 Lark URL 和 `foo/bar` 拒绝。Sources: [test/cmd-ingest-doc.test.ts:65-97](../../../project-repos/lark-context/test/cmd-ingest-doc.test.ts#L65-L97)
 
 <details class="source-snippets">
@@ -6635,6 +6704,7 @@ describe("extractToken", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 入库流程
 
 ```mermaid
@@ -6707,6 +6777,7 @@ export async function runIngestDoc(opts: IngestDocOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 如果 `data` 没有 `content`、`markdown`、`text`、`body` 任一字符串字段，代码会把整个 data 作为 JSON code block 保存，确保仍有可展示内容。Sources: [src/commands/ingestDoc.ts:41-51](../../../project-repos/lark-context/src/commands/ingestDoc.ts#L41-L51)
 
 <details class="source-snippets">
@@ -6732,6 +6803,7 @@ function extractContent(data: Record<string, unknown>): { title: string; body: s
 
 <!-- source-snippets:end -->
 </details>
+
 `docs` 表用 `doc_token` 做主键，重复 ingest 同一 token 会更新 url、title、content_md、fetched_at，不产生重复行。Sources: [src/commands/ingestDoc.ts:89-98](../../../project-repos/lark-context/src/commands/ingestDoc.ts#L89-L98), [test/cmd-ingest-doc.test.ts:100-136](../../../project-repos/lark-context/test/cmd-ingest-doc.test.ts#L100-L136)
 
 <details class="source-snippets">
@@ -6798,6 +6870,7 @@ function extractContent(data: Record<string, unknown>): { title: string; body: s
 
 <!-- source-snippets:end -->
 </details>
+
 ## show 命令
 
 `runShow` 默认窗口是 `24h`，通过 `parseDuration` 解析；`--chat all` 和省略 `--chat` 都表示所有 enabled 群。未知 alias 会报错，完全没有关注群也会报错。Sources: [src/commands/show.ts:31-48](../../../project-repos/lark-context/src/commands/show.ts#L31-L48), [src/durations.ts:1-29](../../../project-repos/lark-context/src/durations.ts#L1-L29)
@@ -6866,6 +6939,7 @@ export function parseDuration(text: unknown): Duration {
 
 <!-- source-snippets:end -->
 </details>
+
 它先查顶层消息，再按顶层消息的 `thread_id` 查回复，把回复插回所属 root 后面，最后交给 `renderChatWindow`。这保证即使回复时间晚于下一条顶层消息，展示仍按话题归组。Sources: [src/commands/show.ts:50-109](../../../project-repos/lark-context/src/commands/show.ts#L50-L109), [test/cmd-show.test.ts:239-335](../../../project-repos/lark-context/test/cmd-show.test.ts#L239-L335)
 
 <details class="source-snippets">
@@ -7042,6 +7116,7 @@ export function parseDuration(text: unknown): Duration {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Show["runShow"] --> Targets["enabled groups"]
@@ -7195,6 +7270,7 @@ export function renderChatWindow(args: {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 渲染格式
 
 `renderChatWindow` 输出二级标题、窗口范围、发送者和时间。`is_thread_reply` 为 true 的消息前缀是两个空格加 `↳`，正文每行也同样缩进；空窗口输出 `(no messages)`。Sources: [src/render.ts:16-40](../../../project-repos/lark-context/src/render.ts#L16-L40), [skills/lark-context/references/show.md:22-38](../../../project-repos/lark-context/skills/lark-context/references/show.md#L22-L38)
@@ -7258,6 +7334,7 @@ export function renderChatWindow(args: {
 
 <!-- source-snippets:end -->
 </details>
+
 ## show-doc 命令
 
 `show-doc` 通过 token 或 URL 查找已入库文档。URL 会用路径第二段提 token；查询条件是 `doc_token=? OR url=?`。未找到时返回 `no ingested doc matches "<ref>"`，找到就原样输出保存的 Markdown。Sources: [src/commands/show.ts:11-22](../../../project-repos/lark-context/src/commands/show.ts#L11-L22), [src/commands/show.ts:129-154](../../../project-repos/lark-context/src/commands/show.ts#L129-L154), [test/cmd-show.test.ts:338-375](../../../project-repos/lark-context/test/cmd-show.test.ts#L338-L375)
@@ -7360,6 +7437,7 @@ describe("runShowDoc", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 与 skill 的剪裁契约
 
 `show.md` 要求消息超过 100 条时先询问是否收窄窗口，文档超过 5000 字时摘要而不是全文塞回对话。这个限制在 CLI 中没有实现，是 skill/agent 使用 CLI 输出时必须遵守的展示边界。Sources: [skills/lark-context/references/show.md:48-53](../../../project-repos/lark-context/skills/lark-context/references/show.md#L48-L53)
@@ -7382,6 +7460,7 @@ describe("runShowDoc", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [消息拉取与话题回复流水线](pull-thread-pipeline.md)
@@ -7458,6 +7537,7 @@ metadata:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 意图路由
 
 ```mermaid
@@ -7503,6 +7583,7 @@ Sources: [skills/lark-context/SKILL.md:31-48](../../../project-repos/lark-contex
 
 <!-- source-snippets:end -->
 </details>
+
 skill 明确要求“只路由一次”，意图不明时反问，多意图时分两步执行。比如“拉一下最近消息然后沉淀”先执行 pull，再执行 digest，而不是混成一个命令。Sources: [skills/lark-context/SKILL.md:31-48](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L31-L48)
 
 <details class="source-snippets">
@@ -7535,6 +7616,7 @@ skill 明确要求“只路由一次”，意图不明时反问，多意图时�
 
 <!-- source-snippets:end -->
 </details>
+
 ## 前置检查和错误处理
 
 执行任何 workflow 前先跑 `lark-context --version`，要求至少 `0.1.0`。如果 `lark-cli` 未安装或未登录，skill 要透传 CLI stderr，不尝试替用户登录。Sources: [skills/lark-context/SKILL.md:15-29](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L15-L29)
@@ -7566,6 +7648,7 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
+
 错误处理原则是 CLI 非零退出时透传 stderr，不编造解释；references 缺失说明 skill 安装损坏；网络或超时不自动重试。Sources: [skills/lark-context/SKILL.md:69-73](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L69-L73)
 
 <details class="source-snippets">
@@ -7585,6 +7668,7 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
+
 ## digest 工作流
 
 digest 的输入是 `lark-context show` 原文，目标是更新 `journal/`、`entities/` 和 `MEMORY.md`，并在 `kv.last_digest_at` 写时间戳。workflow 强调 show 输出是唯一事实来源，不能从记忆中补 show 里没出现的事实。Sources: [skills/lark-context/references/digest.md:8-10](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L8-L10), [skills/lark-context/references/digest.md:42-50](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L42-L50)
@@ -7608,7 +7692,7 @@ digest 的输入是 `lark-context show` 原文，目标是更新 `journal/`、`e
 ## Step 3 — 读原始材料
 
 ```bash
-lark-context show [--chat <alias>] --since <window>
+lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
 ```
 
 输出是本次沉淀的**唯一事实来源**。不要捏造、不要从记忆里补 show 里没出现的事。
@@ -7618,6 +7702,7 @@ lark-context show [--chat <alias>] --since <window>
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Last["读取 kv.last_digest_at"] --> Window["决定 --since 窗口"]
@@ -7676,7 +7761,7 @@ lark-context groups list
 ## Step 3 — 读原始材料
 
 ```bash
-lark-context show [--chat <alias>] --since <window>
+lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
 ```
 
 输出是本次沉淀的**唯一事实来源**。不要捏造、不要从记忆里补 show 里没出现的事。
@@ -7733,6 +7818,7 @@ sqlite3 ~/.lark-context/raw.db "INSERT INTO kv(key,value) VALUES('last_digest_at
 
 <!-- source-snippets:end -->
 </details>
+
 entity 更新有强约束：保留用户手写段落，新事实追加或更新 summary，第一次短暂提及不建实体，出现多次、用户明确要求或可执行决策才建。Sources: [skills/lark-context/references/digest.md:61-78](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L61-L78), [skills/lark-context/references/digest.md:109-114](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L109-L114)
 
 <details class="source-snippets">
@@ -7776,6 +7862,7 @@ entity 更新有强约束：保留用户手写段落，新事实追加或更新 
 
 <!-- source-snippets:end -->
 </details>
+
 ## TODO 工作流
 
 TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识别直接点名、显式 ddl、`@all` 动作、被问未回等模式，排除闲聊、别人之间的对话和已有人接走的事项。Sources: [skills/lark-context/references/todo.md:1-8](../../../project-repos/lark-context/skills/lark-context/references/todo.md#L1-L8), [skills/lark-context/references/todo.md:21-34](../../../project-repos/lark-context/skills/lark-context/references/todo.md#L21-L34)
@@ -7819,6 +7906,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 
 <!-- source-snippets:end -->
 </details>
+
 排序先看明确 ddl，再看紧急关键词，最后按被 @ 次数；输出是 Markdown checklist，并且每条附原文摘要或链接。Sources: [skills/lark-context/references/todo.md:43-73](../../../project-repos/lark-context/skills/lark-context/references/todo.md#L43-L73)
 
 <details class="source-snippets">
@@ -7845,8 +7933,8 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 ## 待办（窗口：最近 N 天）
 
 ### 今天 / 最紧急
-- [ ] @张三 在 #群名 的话题：<一句简述>（ddl: 今天 18:00）
-  - 原文：<消息摘要 / 文档链接>
+- [ ] @张三 在 #群名 的话题：&lt;一句简述&gt;（ddl: 今天 18:00）
+  - 原文：&lt;消息摘要 / 文档链接&gt;
 
 ### 本周
 - [ ] ...
@@ -7864,6 +7952,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 
 <!-- source-snippets:end -->
 </details>
+
 ## pull/show/ingest 的 skill 约定
 
 `pull.md` 规定首次拉某个 alias 时由 skill 显式传 `--since 90d`，这是 skill 约定，不是 CLI 默认值。它还要求把 200 页上限提示原样转述给用户，并在常见错误上给具体操作建议。Sources: [skills/lark-context/references/pull.md:12-20](../../../project-repos/lark-context/skills/lark-context/references/pull.md#L12-L20), [skills/lark-context/references/pull.md:28-46](../../../project-repos/lark-context/skills/lark-context/references/pull.md#L28-L46)
@@ -7895,7 +7984,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 首次拉历史消息每群最多 200 页（约 10k 条）。到上限后 stderr 有：
 
 ```
-<alias>: hit MAX_PAGES=200 cap; re-run to continue
+&lt;alias&gt;: hit MAX_PAGES=200 cap; re-run to continue
 ```
 
 把这条原样转述给用户，**并建议**再跑一次 `lark-context pull --chat <alias>` 续拉。
@@ -7913,6 +8002,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 
 <!-- source-snippets:end -->
 </details>
+
 `ingest-doc.md` 说明支持的 URL 形态、底层 `docs +fetch`、同 token 幂等，以及老版 docs 或权限错误时透传。Sources: [skills/lark-context/references/ingest-doc.md:9-30](../../../project-repos/lark-context/skills/lark-context/references/ingest-doc.md#L9-L30), [skills/lark-context/references/ingest-doc.md:31-42](../../../project-repos/lark-context/skills/lark-context/references/ingest-doc.md#L31-L42)
 
 <details class="source-snippets">
@@ -7936,7 +8026,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 ## 工作流
 
 ```bash
-lark-context ingest-doc <url-or-token>
+lark-context ingest-doc &lt;url-or-token&gt;
 ```
 
 CLI 内部：
@@ -7966,6 +8056,7 @@ lark-context ingest-doc AbCdEfGh1234                  # bare token 也接受
 
 <!-- source-snippets:end -->
 </details>
+
 `show.md` 说明 show 只读本地 SQLite，不拉新数据，并定义了输出剪裁原则。Sources: [skills/lark-context/references/show.md:8-20](../../../project-repos/lark-context/skills/lark-context/references/show.md#L8-L20), [skills/lark-context/references/show.md:48-53](../../../project-repos/lark-context/skills/lark-context/references/show.md#L48-L53)
 
 <details class="source-snippets">
@@ -7983,7 +8074,7 @@ lark-context ingest-doc AbCdEfGh1234                  # bare token 也接受
 ## `show` 命令
 
 ```bash
-lark-context show [--chat <alias>|all] [--since <duration>]
+lark-context show [--chat &lt;alias&gt;|all] [--since &lt;duration&gt;]
 ```
 
 - **默认窗口** `--since 24h`
@@ -8004,6 +8095,7 @@ lark-context show [--chat <alias>|all] [--since <duration>]
 
 <!-- source-snippets:end -->
 </details>
+
 ## 记忆目录契约
 
 默认记忆目录是 `~/.claude/lark-memory/`，包含 `MEMORY.md`、`entities/people`、`entities/projects`、`entities/terms.md`、`entities/decisions` 和 `journal/<ISO-week>.md`。README 和 skill 都强调这些是 Markdown，用户可审可改。Sources: [README.md:148-175](../../../project-repos/lark-context/README.md#L148-L175), [GETTING_STARTED.md:92-107](../../../project-repos/lark-context/GETTING_STARTED.md#L92-L107), [skills/lark-context/SKILL.md:75-93](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L75-L93)
@@ -8024,10 +8116,10 @@ lark-context show [--chat <alias>|all] [--since <duration>]
 ~/.claude/lark-memory/
 ├── MEMORY.md            # 始终加载的索引
 ├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/             # 按 ISO 周的流水
     └── 2026-W16.md
 ```
@@ -8055,10 +8147,10 @@ source_hints:
 ~/.claude/lark-memory/
 ├── MEMORY.md                     # 总索引
 ├── entities/
-│   ├── people/<slug>.md          # 每个同事一个文件
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md          # 每个同事一个文件
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md                  # 术语表
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
     └── 2026-W17.md               # 每周一个流水文件
 ```
@@ -8082,17 +8174,18 @@ source_hints:
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
-    └── <ISO-week>.md     # e.g. 2026-W16.md
+    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Memory["~/.claude/lark-memory"] --> Index["MEMORY.md"]
@@ -8126,17 +8219,18 @@ Sources: [skills/lark-context/SKILL.md:75-93](../../../project-repos/lark-contex
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
-    └── <ISO-week>.md     # e.g. 2026-W16.md
+    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -8234,6 +8328,7 @@ export default defineConfig({
 
 <!-- source-snippets:end -->
 </details>
+
 ## 构建与发布
 
 ```mermaid
@@ -8325,6 +8420,7 @@ export default defineConfig({
 
 <!-- source-snippets:end -->
 </details>
+
 `package.json` 只发布 `dist/*.js`，二进制入口是 `./dist/cli.js`。`better-sqlite3` 被列为 `onlyBuiltDependencies`，说明安装时需要允许该 native 依赖构建。Sources: [package.json:6-12](../../../project-repos/lark-context/package.json#L6-L12), [package.json:20-35](../../../project-repos/lark-context/package.json#L20-L35)
 
 <details class="source-snippets">
@@ -8367,6 +8463,7 @@ export default defineConfig({
 
 <!-- source-snippets:end -->
 </details>
+
 ## 测试布局
 
 Vitest 配置运行在 Node 环境，测试入口是 `test/**/*.test.ts`。测试覆盖了配置、DB、Lark CLI wrapper、初始化、群管理、拉取、文档入库、show 渲染和 CLI smoke。Sources: [vitest.config.ts:1-9](../../../project-repos/lark-context/vitest.config.ts#L1-L9), [00-repo-inventory.md:37-55](../00-repo-inventory.md#L37-L55)
@@ -8416,6 +8513,7 @@ export default defineConfig({
 
 <!-- source-snippets:end -->
 </details>
+
 | 测试文件 | 覆盖重点 |
 |---|---|
 | `test/config.test.ts` | 路径优先级、YAML 解析、保存回写、重复 alias |
@@ -9010,6 +9108,7 @@ describe("runShow", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 关键风险被哪些测试守住
 
 ```mermaid
@@ -9403,6 +9502,7 @@ describe("runPull — upsert thread_id on re-pull", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## V1 边界
 
 README 的 V1 边界包括不自动调度、首次 pull 上限 200 页、只读指定群聊、文档类型受官方 CLI 支持范围限制、工具不调 LLM API。源码中 200 页上限对应 `MAX_PAGES = 200`，命中后提示 re-run 继续。Sources: [README.md:177-185](../../../project-repos/lark-context/README.md#L177-L185), [src/commands/pull.ts:13-13](../../../project-repos/lark-context/src/commands/pull.ts#L13-L13), [src/commands/pull.ts:371-375](../../../project-repos/lark-context/src/commands/pull.ts#L371-L375)
@@ -9444,6 +9544,7 @@ export const MAX_PAGES = 200;
 
 <!-- source-snippets:end -->
 </details>
+
 需要注意：README 里仍写着“不拉回复线程”，但当前代码和测试已经支持 thread replies。维护文档时应以源码为准修正该条。Sources: [README.md:183-183](../../../project-repos/lark-context/README.md#L183-L183), [src/commands/pull.ts:171-290](../../../project-repos/lark-context/src/commands/pull.ts#L171-L290), [test/cmd-pull.test.ts:705-1129](../../../project-repos/lark-context/test/cmd-pull.test.ts#L705-L1129)
 
 <details class="source-snippets">
@@ -9710,6 +9811,7 @@ describe("runPull — phase 2 thread replies", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## legacy Python
 
 `legacy/python/` 是 V1 前实现，README 明确写着已冻结、不再演进、保留作对照。其 `pyproject.toml` 定义了 Python 包、依赖和 pytest/ruff/mypy 等 dev 依赖。Sources: [README.md:208-219](../../../project-repos/lark-context/README.md#L208-L219), [legacy/python/README.md:1-15](../../../project-repos/lark-context/legacy/python/README.md#L1-L15), [legacy/python/pyproject.toml:1-29](../../../project-repos/lark-context/legacy/python/pyproject.toml#L1-L29)
@@ -9792,6 +9894,7 @@ testpaths = ["tests"]
 
 <!-- source-snippets:end -->
 </details>
+
 ## V2 方向
 
 README 记录的 V2 规划包括 MCP server、自动调度、数据源扩展、TODO 持久化、语义检索、记忆整理/衰减。这些还没有在当前 TypeScript CLI 中形成对应实现，因此应视作路线图而不是现有能力。Sources: [README.md:221-228](../../../project-repos/lark-context/README.md#L221-L228), [src/cli.ts:41-49](../../../project-repos/lark-context/src/cli.ts#L41-L49)
@@ -9830,6 +9933,7 @@ program.parseAsync(process.argv);
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

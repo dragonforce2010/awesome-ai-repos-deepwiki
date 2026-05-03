@@ -111,6 +111,7 @@ Team Lead (current Claude session)
 
 <!-- source-snippets:end -->
 </details>
+
 ## Agent 运行时假设
 
 `SKILL.md` 要求用 Agent 工具启动子代理时：`subagent_type: "general-purpose"` 且 `mode: "bypassPermissions"`，理由是审查者需要执行外部 CLI 并读取项目文件。
@@ -134,6 +135,7 @@ See Agent Prompt Templates below for each agent's startup prompt.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

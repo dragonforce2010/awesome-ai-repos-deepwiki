@@ -144,6 +144,7 @@ export async function loadConfigLayers(options: LoadConfigOptions, rootDir: stri
 
 <!-- source-snippets:end -->
 </details>
+
 ## 解析顺序与显式 vs 隐式
 
 `resolveConfigPath(configPath, rootDir)` 用同样的优先级表决定**单次写操作**的目标文件路径（[src/config/path-discovery.ts:37-55]()）。`mcporter config add/remove` 命令使用它，运行时则使用更宽松的 `loadConfigLayers`：
@@ -254,6 +255,7 @@ export async function readConfigFile(configPath: string, explicit: boolean): Pro
 
 <!-- source-snippets:end -->
 </details>
+
 ## 配置文件 schema
 
 `mcporter.json` / `mcporter.jsonc` 的根 schema 定义在 [src/config-schema.ts:121-129]()：
@@ -383,6 +385,7 @@ export const RawConfigSchema = z
 
 <!-- source-snippets:end -->
 </details>
+
 ### `mcpServers` 与 `imports` 的相互作用
 
 `imports` 默认值定义在 [src/config-schema.ts:9-17]()：
@@ -546,6 +549,7 @@ function defaultClaudeDesktopConfigPath(): string {
 
 <!-- source-snippets:end -->
 </details>
+
 `readExternalEntries(filePath, opts)` 处理读取与解析（[src/config/imports/external.ts:14-41]()）：
 
 - `.toml` → `parseToml` → 抽取 `mcp_servers` 节（codex 风格）。
@@ -792,6 +796,7 @@ function convertExternalEntry(value: Record<string, unknown>): RawEntry | null {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 优先级与冲突解决规则
 
 合并循环里有两条铁律（[src/config.ts:60-95]()）：
@@ -869,6 +874,7 @@ Sources: [src/config.ts:42-96](../../../project-repos/mcporter/src/config.ts#L42
 
 <!-- source-snippets:end -->
 </details>
+
 ## RawEntry → ServerDefinition 的规范化
 
 `normalizeServerEntry` 是规范化的核心（[src/config-normalize.ts:5-73]()）。它的输入是 `RawEntry + baseDir + source + sources`，输出是稳定的 `ServerDefinition`：
@@ -1085,6 +1091,7 @@ export interface ServerDefinition {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 环境变量与占位符
 
 `env.ts` 提供三种 token：
@@ -1217,6 +1224,7 @@ export async function withEnvOverrides<T>(
 
 <!-- source-snippets:end -->
 </details>
+
 ## `mcporter config` 命令
 
 `mcporter config <subcommand>` 是把上面这套加载/规范化流程暴露成可读写操作的命令族，路由在 [src/cli/config-command.ts:12-67]()：
@@ -1322,6 +1330,7 @@ export function resolveWriteTarget(flags: AddFlags, loadOptions: LoadConfigOptio
 
 <!-- source-snippets:end -->
 </details>
+
 ## 失败模式与降级
 
 `readConfigFile` 在隐式打开时对两类错误做降级，避免开发机上没有任何配置就直接报错：
@@ -1380,6 +1389,7 @@ function shouldIgnoreParseError(error: unknown): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 一图总结
 
 ```mermaid
@@ -1588,6 +1598,7 @@ export function normalizeServerEntry(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

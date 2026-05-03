@@ -1,4 +1,5 @@
-<details><summary>相关源文件</summary>
+<details>
+<summary>相关源文件</summary>
 
 - `HARNESS.md`
 - `cli-hub/tests/test_cli_hub.py`
@@ -30,6 +31,7 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)
 
 <!-- source-snippets:end -->
 </details>
+
 ### 第一层：单元测试（`test_core.py`）
 
 对每个核心函数进行隔离测试。使用合成数据，**不依赖任何外部程序**。这一层覆盖参数解析、路径构建、命令拼装逻辑，可在无软件安装的 CI 环境中快速运行。
@@ -89,6 +91,7 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)
 
 <!-- source-snippets:end -->
 </details>
+
 每个 harness 在**写代码之前**必须先创建 `TEST.md`，内容包括：
 
 1. **测试清单** — 列举所有待测函数与场景
@@ -113,6 +116,7 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)
 
 <!-- source-snippets:end -->
 </details>
+
 | Harness | 测试总数 | 备注 |
 |---------|---------|------|
 | blender | 208 | 渲染 PNG 验证 |
@@ -145,6 +149,7 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)
 
 <!-- source-snippets:end -->
 </details>
+
 退出码 0 不能作为测试通过的依据。每种输出类型都有对应的验证方法：
 
 | 输出类型 | 验证方法 |
@@ -292,6 +297,7 @@ def _make_preview_bundle(tmp_path: Path, *, with_trajectory: bool = False) -> Pa
 
 <!-- source-snippets:end -->
 </details>
+
 `cli-hub` 工具本身也有独立测试套件，覆盖：
 - bundle 发布与拉取流程
 - registry 查询与解析

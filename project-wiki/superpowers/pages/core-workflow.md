@@ -153,6 +153,7 @@ Assume they are a skilled developer, but know almost nothing about our toolset o
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段一：头脑风暴（brainstorming）
 
 头脑风暴技能是整个工作流的入口。它强制代理在写任何代码之前先理解需求。
@@ -312,6 +313,7 @@ After writing the spec document, look at it with fresh eyes:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段二：创建隔离工作区（using-git-worktrees）
 
 设计审批后，代理创建 Git worktree 隔离工作区：
@@ -377,7 +379,7 @@ If no directory exists and no CLAUDE.md preference:
 No worktree directory found. Where should I create worktrees?
 
 1. .worktrees/ (project-local, hidden)
-2. ~/.config/superpowers/worktrees/<project-name>/ (global location)
+2. ~/.config/superpowers/worktrees/&lt;project-name&gt;/ (global location)
 
 Which would you prefer?
 ```
@@ -457,6 +459,7 @@ if [ -f go.mod ]; then go mod download; fi
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段三：编写计划（writing-plans）
 
 计划技能将设计分解为原子级任务，每个任务 2-5 分钟可完成。
@@ -625,6 +628,7 @@ Every step must contain the actual content an engineer needs. These are **plan f
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段四：执行实施
 
 计划完成后，用户选择执行方式：
@@ -725,6 +729,7 @@ After all tasks complete and verified:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段五：代码审查
 
 ### 请求审查（requesting-code-review）
@@ -993,6 +998,7 @@ Push back when:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段六：分支完成（finishing-a-development-branch）
 
 所有任务完成并审查通过后：
@@ -1044,7 +1050,7 @@ npm test / cargo test / pytest / go test ./...
 
 **If tests fail:**
 ```
-Tests failing (<N> failures). Must fix before completing:
+Tests failing (&lt;N&gt; failures). Must fix before completing:
 
 [Show failures]
 
@@ -1071,7 +1077,7 @@ Present exactly these 4 options:
 ```
 Implementation complete. What would you like to do?
 
-1. Merge back to <base-branch> locally
+1. Merge back to &lt;base-branch&gt; locally
 2. Push and create a Pull Request
 3. Keep the branch as-is (I'll handle it later)
 4. Discard this work
@@ -1087,19 +1093,19 @@ Which option?
 
 ```bash
 # Switch to base branch
-git checkout <base-branch>
+git checkout &lt;base-branch&gt;
 
 # Pull latest
 git pull
 
 # Merge feature branch
-git merge <feature-branch>
+git merge &lt;feature-branch&gt;
 
 # Verify tests on merged result
-<test command>
+&lt;test command&gt;
 
 # If tests pass
-git branch -d <feature-branch>
+git branch -d &lt;feature-branch&gt;
 ```
 
 Then: Cleanup worktree (Step 5)
@@ -1108,15 +1114,15 @@ Then: Cleanup worktree (Step 5)
 
 ```bash
 # Push branch
-git push -u origin <feature-branch>
+git push -u origin &lt;feature-branch&gt;
 
 # Create PR
-gh pr create --title "<title>" --body "$(cat <<'EOF'
+gh pr create --title "&lt;title&gt;" --body "$(cat <<'EOF'
 ## Summary
-<2-3 bullets of what changed>
+&lt;2-3 bullets of what changed&gt;
 
 ## Test Plan
-- [ ] <verification steps>
+- [ ] &lt;verification steps&gt;
 EOF
 )"
 ```
@@ -1134,13 +1140,14 @@ Report: "Keeping branch <name>. Worktree preserved at <path>."
 **Confirm first:**
 ```
 This will permanently delete:
-- Branch <name>
-- All commits: <commit-list>
+- Branch &lt;name&gt;
+- All commits: &lt;commit-list&gt;
 ... snippet truncated ...
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证先行原则
 
 贯穿所有阶段的元原则：**没有新鲜验证证据就不能声称完成**。
@@ -1293,6 +1300,7 @@ From 24 failure memories:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [子代理驱动开发](subagent-driven-development.md)

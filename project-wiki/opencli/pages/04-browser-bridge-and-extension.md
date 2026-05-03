@@ -1,6 +1,7 @@
 # 浏览器桥接与 Chrome 扩展
 
-<details><summary>相关源文件</summary>
+<details>
+<summary>相关源文件</summary>
 
 - `src/browser/bridge.ts`
 - `src/browser/daemon-client.ts`
@@ -39,6 +40,7 @@ Sources: [src/runtime.ts:7-14](../../../project-repos/opencli/src/runtime.ts#L7-
 
 <!-- source-snippets:end -->
 </details>
+
 ## BrowserBridge 生命周期
 
 ```mermaid
@@ -85,6 +87,7 @@ Sources: [src/browser/bridge.ts:33-60](../../../project-repos/opencli/src/browse
 
 <!-- source-snippets:end -->
 </details>
+
 ## Daemon client 协议
 
 CLI 端通过 `daemon-client.ts` 用 HTTP 调 daemon。命令统一为 `DaemonCommand`，action 包含 `exec`、`navigate`、`tabs`、`cookies`、`screenshot`、`close-window`、`sessions`、`set-file-input`、`insert-text`、`bind-current`、`network-capture-*`、`cdp`、`frames`。  
@@ -101,6 +104,7 @@ Sources: [src/browser/daemon-client.ts:22-55](../../../project-repos/opencli/src
 
 <!-- source-snippets:end -->
 </details>
+
 发送命令时最多重试 4 次：网络错误固定延迟重试，浏览器瞬态错误根据分类建议延迟重试。page-scoped 命令可以返回 `page` identity，后续调用会带上它避免猜测目标 tab。  
 Sources: [src/browser/daemon-client.ts:129-185](../../../project-repos/opencli/src/browser/daemon-client.ts#L129-L185), [src/browser/daemon-client.ts:187-208](../../../project-repos/opencli/src/browser/daemon-client.ts#L187-L208), [src/browser/page.ts:40-67](../../../project-repos/opencli/src/browser/page.ts#L40-L67)
 
@@ -123,6 +127,7 @@ Sources: [src/browser/daemon-client.ts:129-185](../../../project-repos/opencli/s
 
 <!-- source-snippets:end -->
 </details>
+
 ## Page 抽象
 
 `Page` 是 CLI 侧的浏览器对象。它把高级操作转成 daemon action：
@@ -157,6 +162,7 @@ Sources: [src/browser/page.ts:59-104](../../../project-repos/opencli/src/browser
 
 <!-- source-snippets:end -->
 </details>
+
 ## 扩展侧分发
 
 Chrome 扩展是 MV3 service worker。它启动后会探测 `/ping`、打开 WebSocket，发送 hello 和版本兼容信息，然后等待 daemon 下发 command。  
@@ -177,6 +183,7 @@ Sources: [extension/src/background.ts:40-87](../../../project-repos/opencli/exte
 
 <!-- source-snippets:end -->
 </details>
+
 扩展的 `handleCommand` 是 action dispatcher：根据 command action 分发到 exec、navigate、tabs、cookies、screenshot、cdp、sessions、file input、insert text、bind current、network capture、frames 等 handler。  
 Sources: [extension/src/background.ts:301-350](../../../project-repos/opencli/extension/src/background.ts#L301-L350)
 
@@ -191,6 +198,7 @@ Sources: [extension/src/background.ts:301-350](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
+
 ## 自动化窗口与 tab 绑定
 
 扩展维护 workspace 级 automation session。它会解析 page identity 到 tabId，校验 tab 仍在 automation window 中；若 tab 漂移到其他窗口，会尝试移回。导航只允许 http/https，并在跳转前按需 detach debugger。  
@@ -211,6 +219,7 @@ Sources: [extension/src/background.ts:452-557](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
+
 ## CDP 能力与限制
 
 扩展侧 CDP helper 使用 `chrome.debugger` attach tab，并对 attach/evaluate 做重试。它只允许 http/https/about:blank/data 等可调试 URL。网络 capture 对响应体设置 8 MiB 上限，请求体 1 MiB 上限。  
@@ -235,6 +244,7 @@ Sources: [extension/src/cdp.ts:13-18](../../../project-repos/opencli/extension/s
 
 <!-- source-snippets:end -->
 </details>
+
 CDP passthrough 不是任意方法开放。`handleCdp` 只允许 allowlist 中的 DOM、Accessibility、Input、Page、Runtime.enable、Emulation 方法；`Runtime.evaluate` 走 `exec` action。  
 Sources: [extension/src/background.ts:816-860](../../../project-repos/opencli/extension/src/background.ts#L816-L860)
 
@@ -249,6 +259,7 @@ Sources: [extension/src/background.ts:816-860](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
+
 ## 扩展权限
 
 扩展 manifest 声明权限包括 `debugger`、`tabs`、`cookies`、`activeTab`、`alarms`，host permissions 是 `<all_urls>`。这解释了为什么 doctor 和用户安装指引是关键运维步骤。  

@@ -24,7 +24,7 @@ description: 团队感知的每周工程复盘技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: retro
 preamble-tier: 2
@@ -66,7 +66,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -98,7 +98,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -303,20 +303,20 @@ AI orchestrator (e.g., OpenClaw). In spawned sessions:
 Every AskUserQuestion is a decision brief and must be sent as tool_use, not prose.
 
 ```
-D<N> — <one-line question title>
-Project/branch/task: <1 short grounding sentence using _BRANCH>
-ELI10: <plain English a 16-year-old could follow, 2-4 sentences, name the stakes>
-Stakes if we pick wrong: <one sentence on what breaks, what user sees, what's lost>
-Recommendation: <choice> because <one-line reason>
+D&lt;N&gt; — &lt;one-line question title&gt;
+Project/branch/task: &lt;1 short grounding sentence using _BRANCH&gt;
+ELI10: &lt;plain English a 16-year-old could follow, 2-4 sentences, name the stakes&gt;
+Stakes if we pick wrong: &lt;one sentence on what breaks, what user sees, what's lost&gt;
+Recommendation: &lt;choice&gt; because &lt;one-line reason&gt;
 Completeness: A=X/10, B=Y/10   (or: Note: options differ in kind, not coverage — no completeness score)
 Pros / cons:
-A) <option label> (recommended)
-  ✅ <pro — concrete, observable, ≥40 chars>
-  ❌ <con — honest, ≥40 chars>
-B) <option label>
-  ✅ <pro>
-  ❌ <con>
-Net: <one-line synthesis of what you're actually trading off>
+A) &lt;option label&gt; (recommended)
+  ✅ &lt;pro — concrete, observable, ≥40 chars&gt;
+  ❌ &lt;con — honest, ≥40 chars&gt;
+B) &lt;option label&gt;
+  ✅ &lt;pro&gt;
+  ❌ &lt;con&gt;
+Net: &lt;one-line synthesis of what you're actually trading off&gt;
 ```
 
 D-numbering: first question in a skill invocation is `D1`; increment yourself. This is a model-level instruction, not a runtime counter.
@@ -407,7 +407,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -591,13 +591,13 @@ Commit after new intentional files, completed functions/modules, verified bug fi
 Commit format:
 
 ```
-WIP: <concise description of what changed>
+WIP: &lt;concise description of what changed&gt;
 
 [gstack-context]
-Decisions: <key choices made this step>
-Remaining: <what's left in the logical unit>
-Tried: <failed approaches worth recording> (omit if none)
-Skill: </skill-name-if-running>
+Decisions: &lt;key choices made this step&gt;
+Remaining: &lt;what's left in the logical unit&gt;
+Tried: &lt;failed approaches worth recording&gt; (omit if none)
+Skill: &lt;/skill-name-if-running&gt;
 [/gstack-context]
 ```
 
@@ -619,7 +619,7 @@ Before each AskUserQuestion, choose `question_id` from `scripts/question-registr
 
 After answer, log best-effort:
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"retro","question_id":"<id>","question_summary":"<short>","category":"<approval|clarification|routing|cherry-pick|feedback-loop>","door_type":"<one-way|two-way>","options_count":N,"user_choice":"<key>","recommended":"<key>","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
+~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"retro","question_id":"&lt;id&gt;","question_summary":"&lt;short&gt;","category":"&lt;approval|clarification|routing|cherry-pick|feedback-loop&gt;","door_type":"&lt;one-way|two-way&gt;","options_count":N,"user_choice":"&lt;key&gt;","recommended":"&lt;key&gt;","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
 ```
 
 For two-way questions, offer: "Tune this question? Reply `tune: never-ask`, `tune: always-ask`, or free-form."
@@ -628,7 +628,7 @@ User-origin gate (profile-poisoning defense): write tune events ONLY when `tune:
 
 Write (only after confirmation for free-form):
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"<id>","preference":"<pref>","source":"inline-user","free_text":"<optional original words>"}'
+~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"&lt;id&gt;","preference":"&lt;pref&gt;","source":"inline-user","free_text":"&lt;optional original words&gt;"}'
 ```
 
 Exit code 2 = rejected as not user-originated; do not retry. On success: "Set `<id>` → `<preference>`. Active immediately."
@@ -819,7 +819,7 @@ If `RETRO_CONTEXT_FOUND`: read `~/.gstack/retro-context.md`. This file is user-a
 
 First, fetch origin and identify the current user:
 ```bash
-git fetch origin <default> --quiet
+git fetch origin &lt;default&gt; --quiet
 # Identify who is running the retro
 git config user.name
 git config user.email
@@ -831,27 +831,27 @@ Run ALL of these git commands in parallel (they are independent):
 
 ```bash
 # 1. All commits in window with timestamps, subject, hash, AUTHOR, files changed, insertions, deletions
-git log origin/<default> --since="<window>" --format="%H|%aN|%ae|%ai|%s" --shortstat
+git log origin/&lt;default&gt; --since="&lt;window&gt;" --format="%H|%aN|%ae|%ai|%s" --shortstat
 
 # 2. Per-commit test vs total LOC breakdown with author
-#    Each commit block starts with COMMIT:<hash>|<author>, followed by numstat lines.
+#    Each commit block starts with COMMIT:&lt;hash&gt;|&lt;author&gt;, followed by numstat lines.
 #    Separate test files (matching test/|spec/|__tests__/) from production files.
-git log origin/<default> --since="<window>" --format="COMMIT:%H|%aN" --numstat
+git log origin/&lt;default&gt; --since="&lt;window&gt;" --format="COMMIT:%H|%aN" --numstat
 
 # 3. Commit timestamps for session detection and hourly distribution (with author)
-git log origin/<default> --since="<window>" --format="%at|%aN|%ai|%s" | sort -n
+git log origin/&lt;default&gt; --since="&lt;window&gt;" --format="%at|%aN|%ai|%s" | sort -n
 
 # 4. Files most frequently changed (hotspot analysis)
-git log origin/<default> --since="<window>" --format="" --name-only | grep -v '^$' | sort | uniq -c | sort -rn
+git log origin/&lt;default&gt; --since="&lt;window&gt;" --format="" --name-only | grep -v '^$' | sort | uniq -c | sort -rn
 
 # 5. PR/MR numbers from commit messages (GitHub #NNN, GitLab !NNN)
-git log origin/<default> --since="<window>" --format="%s" | grep -oE '[#!][0-9]+' | sort -t'#' -k1 | uniq
+git log origin/&lt;default&gt; --since="&lt;window&gt;" --format="%s" | grep -oE '[#!][0-9]+' | sort -t'#' -k1 | uniq
 
 # 6. Per-author file hotspots (who touches what)
-git log origin/<default> --since="<window>" --format="AUTHOR:%aN" --name-only
+git log origin/&lt;default&gt; --since="&lt;window&gt;" --format="AUTHOR:%aN" --name-only
 
 # 7. Per-author commit counts (quick summary)
-git shortlog origin/<default> --since="<window>" -sn --no-merges
+git shortlog origin/&lt;default&gt; --since="&lt;window&gt;" -sn --no-merges
 
 # 8. Greptile triage history (if available)
 cat ~/.gstack/greptile-history.md 2>/dev/null || true
@@ -863,13 +863,13 @@ cat TODOS.md 2>/dev/null || true
 find . -name '*.test.*' -o -name '*.spec.*' -o -name '*_test.*' -o -name '*_spec.*' 2>/dev/null | grep -v node_modules | wc -l
 
 # 11. Regression test commits in window
-git log origin/<default> --since="<window>" --oneline --grep="test(qa):" --grep="test(design):" --grep="test: coverage"
+git log origin/&lt;default&gt; --since="&lt;window&gt;" --oneline --grep="test(qa):" --grep="test(design):" --grep="test: coverage"
 
 # 12. gstack skill usage telemetry (if available)
 cat ~/.gstack/analytics/skill-usage.jsonl 2>/dev/null || true
 
 # 12. Test files changed in window
-git log origin/<default> --since="<window>" --format="" --name-only | grep -E '\.(test|spec)\.' | sort -u | wc -l
+git log origin/&lt;default&gt; --since="&lt;window&gt;" --format="" --name-only | grep -E '\.(test|spec)\.' | sort -u | wc -l
 ```
 
 ### Step 2: Compute Metrics
@@ -1085,10 +1085,10 @@ Count consecutive days with at least 1 commit to origin/<default>, going back fr
 
 ```bash
 # Team streak: all unique commit dates (local time) — no hard cutoff
-git log origin/<default> --format="%ad" --date=format:"%Y-%m-%d" | sort -u
+git log origin/&lt;default&gt; --format="%ad" --date=format:"%Y-%m-%d" | sort -u
 
 # Personal streak: only the current user's commits
-git log origin/<default> --author="<user_name>" --format="%ad" --date=format:"%Y-%m-%d" | sort -u
+git log origin/&lt;default&gt; --author="&lt;user_name&gt;" --format="%ad" --date=format:"%Y-%m-%d" | sort -u
 ```
 
 Count backward from today — how many consecutive days have at least one commit? This queries the full history so streaks of any length are reported accurately. Display both:
@@ -1346,7 +1346,7 @@ If no binary is found, tell the user: "Discovery script not found. Run `bun run 
 
 Run the discovery:
 ```bash
-$DISCOVER_BIN --since "<window>" --format json 2>/tmp/gstack-discover-stderr
+$DISCOVER_BIN --since "&lt;window&gt;" --format json 2>/tmp/gstack-discover-stderr
 ```
 
 Read the stderr output from `/tmp/gstack-discover-stderr` for diagnostic info. Parse the JSON output from stdout.
@@ -1362,23 +1362,23 @@ For each repo in the discovery JSON's `repos` array, find the first valid path i
 **For repos with remotes:**
 
 ```bash
-git -C <path> fetch origin --quiet 2>/dev/null
+git -C &lt;path&gt; fetch origin --quiet 2>/dev/null
 ```
 
 Detect the default branch for each repo: first try `git symbolic-ref refs/remotes/origin/HEAD`, then check common branch names (`main`, `master`), then fall back to `git rev-parse --abbrev-ref HEAD`. Use the detected branch as `<default>` in the commands below.
 
 ```bash
 # Commits with stats
-git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%H|%aN|%ai|%s" --shortstat
+git -C &lt;path&gt; log origin/$DEFAULT --since="&lt;start_date&gt;T00:00:00" --format="%H|%aN|%ai|%s" --shortstat
 
 # Commit timestamps for session detection, streak, and context switching
-git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%at|%aN|%ai|%s" | sort -n
+git -C &lt;path&gt; log origin/$DEFAULT --since="&lt;start_date&gt;T00:00:00" --format="%at|%aN|%ai|%s" | sort -n
 
 # Per-author commit counts
-git -C <path> shortlog origin/$DEFAULT --since="<start_date>T00:00:00" -sn --no-merges
+git -C &lt;path&gt; shortlog origin/$DEFAULT --since="&lt;start_date&gt;T00:00:00" -sn --no-merges
 
 # PR/MR numbers from commit messages (GitHub #NNN, GitLab !NNN)
-git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%s" | grep -oE '[#!][0-9]+' | sort -t'#' -k1 | uniq
+git -C &lt;path&gt; log origin/$DEFAULT --since="&lt;start_date&gt;T00:00:00" --format="%s" | grep -oE '[#!][0-9]+' | sort -t'#' -k1 | uniq
 ```
 
 For repos that fail (deleted paths, network errors): skip and note "N repos could not be reached."
@@ -1388,7 +1388,7 @@ For repos that fail (deleted paths, network errors): skip and note "N repos coul
 For each repo, get commit dates (capped at 365 days):
 
 ```bash
-git -C <path> log origin/$DEFAULT --since="365 days ago" --format="%ad" --date=format:"%Y-%m-%d" | sort -u
+git -C &lt;path&gt; log origin/$DEFAULT --since="365 days ago" --format="%ad" --date=format:"%Y-%m-%d" | sort -u
 ```
 
 Union all dates across all repos. Count backward from today — how many consecutive days have at least one commit to ANY repo? If the streak hits 365 days, display as "365+ days".
@@ -1587,7 +1587,7 @@ Use the Write tool to save JSON to `~/.gstack/retros/global-${today}-${next}.jso
   "projects": [
     {
       "name": "gstack",
-      "remote": "<detected from git remote get-url origin, normalized to HTTPS>",
+      "remote": "&lt;detected from git remote get-url origin, normalized to HTTPS&gt;",
       "commits": 47,
       "insertions": 3200,
       "deletions": 800,
@@ -1644,6 +1644,6 @@ When the user runs `/retro compare` (or `/retro compare 14d`):
 - Do not read CLAUDE.md or other docs — this skill is self-contained
 - On first run (no prior retros), skip comparison sections gracefully
 - **Global mode:** Does NOT require being inside a git repo. Saves snapshots to `~/.gstack/retros/` (not `.context/retros/`). Gracefully skip AI tools that aren't installed. Only compare against prior global retros with the same window value. If streak hits 365d cap, display as "365+ days".
-```
+````
 
 </details>

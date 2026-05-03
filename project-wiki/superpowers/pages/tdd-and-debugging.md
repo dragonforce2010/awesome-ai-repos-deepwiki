@@ -193,6 +193,7 @@ test('retry works', async () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ### 常见自我合理化
 
 | 借口 | 现实 |
@@ -252,7 +253,7 @@ Write simplest code to pass the test.
 
 <Good>
 ```typescript
-async function retryOperation<T>(fn: () => Promise<T>): Promise<T> {
+async function retryOperation&lt;T&gt;(fn: () => Promise&lt;T&gt;): Promise&lt;T&gt; {
   for (let i = 0; i < 3; i++) {
     try {
       return await fn();
@@ -268,14 +269,14 @@ Just enough to pass
 
 <Bad>
 ```typescript
-async function retryOperation<T>(
-  fn: () => Promise<T>,
+async function retryOperation&lt;T&gt;(
+  fn: () => Promise&lt;T&gt;,
   options?: {
     maxRetries?: number;
     backoff?: 'linear' | 'exponential';
     onRetry?: (attempt: number) => void;
   }
-): Promise<T> {
+): Promise&lt;T&gt; {
   // YAGNI
 }
 ```
@@ -321,6 +322,7 @@ Next failing test for next feature.
 
 <!-- source-snippets:end -->
 </details>
+
 ### 测试反模式
 
 - 测试 mock 行为而非真实行为
@@ -363,7 +365,7 @@ Tests must verify real behavior, not mock behavior. Mocks are a means to isolate
 ```typescript
 // ❌ BAD: Testing that the mock exists
 test('renders sidebar', () => {
-  render(<Page />);
+  render(&lt;Page /&gt;);
   expect(screen.getByTestId('sidebar-mock')).toBeInTheDocument();
 });
 ```
@@ -379,7 +381,7 @@ test('renders sidebar', () => {
 ```typescript
 // ✅ GOOD: Test real component or don't mock it
 test('renders sidebar', () => {
-  render(<Page />);  // Don't mock sidebar
+  render(&lt;Page /&gt;);  // Don't mock sidebar
   expect(screen.getByRole('navigation')).toBeInTheDocument();
 });
 
@@ -461,6 +463,7 @@ BEFORE adding any method to production class:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 系统化调试
 
 ### 铁律
@@ -577,6 +580,7 @@ You MUST complete each phase before proceeding to the next.
 
 <!-- source-snippets:end -->
 </details>
+
 ### 阶段一：根因调查
 
 在提出任何修复之前：
@@ -662,6 +666,7 @@ Sources: [skills/systematic-debugging/SKILL.md:60-120](../../../project-repos/su
 
 <!-- source-snippets:end -->
 </details>
+
 ### 阶段二：模式分析
 
 1. 找到同类工作的代码
@@ -779,6 +784,7 @@ Sources: [skills/systematic-debugging/SKILL.md:120-200](../../../project-repos/s
 
 <!-- source-snippets:end -->
 </details>
+
 ### 辅助技术
 
 | 技术 | 文件 | 用途 |
@@ -832,6 +838,7 @@ If systematic investigation reveals issue is truly environmental, timing-depende
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证先行原则
 
 验证先行是贯穿 TDD 和调试的元原则。
@@ -999,6 +1006,7 @@ From 24 failure memories:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 三者的关系
 
 ```mermaid
@@ -1238,6 +1246,7 @@ From 24 failure memories:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能体系](skills-system.md)

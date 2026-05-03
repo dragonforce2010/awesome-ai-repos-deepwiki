@@ -30,6 +30,7 @@ Localize agent `name` and `description` fields in YAML frontmatter to Simplified
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Install["install.sh --tool copilot"] --> Installed["installed agent files"]
@@ -81,6 +82,7 @@ powershell -ExecutionPolicy Bypass -File scripts/i18n/localize-agents-zh.ps1
 
 <!-- source-snippets:end -->
 </details>
+
 ## 文件职责
 
 | 文件 | 职责 |
@@ -110,6 +112,7 @@ Sources: [scripts/i18n/README.md:5-11](../../../project-repos/agency-agents/scri
 
 <!-- source-snippets:end -->
 </details>
+
 ## 处理范围
 
 默认脚本处理 `%USERPROFILE%\.githubgents\` 和 `%USERPROFILE%\.copilotgents\`，也可传入自定义路径；它只修改已安装副本，不修改源仓库，因此每次 `install.sh` 覆盖后需要重新运行。Sources: [scripts/i18n/README.md:21-29](../../../project-repos/agency-agents/scripts/i18n/README.md#L21-L29), [scripts/i18n/README.md:58-63](../../../project-repos/agency-agents/scripts/i18n/README.md#L58-L63)
@@ -146,6 +149,7 @@ powershell -File scripts/i18n/localize-agents-zh.ps1 -TargetDirs @("C:\custom\pa
 
 <!-- source-snippets:end -->
 </details>
+
 ## 与 DeepWiki skill 翻译不同
 
 本仓库没有 `SKILL.md` skill 源文件，因此本次 DeepWiki 没有生成 `<output-root>/skills/` 翻译树。这里的 i18n 是仓库自身面向已安装 Copilot agent 的 frontmatter 本地化机制。Sources: [00-repo-inventory.md:58-60](../00-repo-inventory.md#L58-L60), [scripts/i18n/README.md:31-39](../../../project-repos/agency-agents/scripts/i18n/README.md#L31-L39)
@@ -179,6 +183,7 @@ powershell -File scripts/i18n/localize-agents-zh.ps1 -TargetDirs @("C:\custom\pa
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [安装与工具集成](installation-and-tooling.md)

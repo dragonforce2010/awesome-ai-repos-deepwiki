@@ -145,7 +145,7 @@ node "$OD_BIN" media generate \
   --prompt "<assembled prompt from Step 2 — for speech, the literal script>"
 ```
 
-The command prints one line of JSON: `{"file": {"name": "...", ...}}`.
+The command prints one line of JSON: `{"file": {"name": "...", ...&#125;&#125;`.
 The bytes land in the project; the FileViewer renders the audio
 transport controls automatically.
 

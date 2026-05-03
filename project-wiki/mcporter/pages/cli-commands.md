@@ -197,6 +197,7 @@ export function buildGlobalContext(argv: string[]): GlobalCliContext | { exit: t
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令路由与隐式命令
 
 `runCli` 的命令分发流程：
@@ -458,6 +459,7 @@ function isHttpToolToken(token: string): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令分组详解
 
 ### `mcporter list`
@@ -653,6 +655,7 @@ export function printSingleServerHeader(
 
 <!-- source-snippets:end -->
 </details>
+
 ### `mcporter call`
 
 `handleCall`（[src/cli/call-command.ts:41-53]()）的执行流：
@@ -953,6 +956,7 @@ function applyTrailingArguments(positional: string[], result: CallArgsParseResul
 
 <!-- source-snippets:end -->
 </details>
+
 ### `mcporter auth`
 
 `handleAuth`（[src/cli/auth-command.ts:16-86]()）：
@@ -1048,6 +1052,7 @@ export async function handleAuth(runtime: Runtime, args: string[]): Promise<void
 
 <!-- source-snippets:end -->
 </details>
+
 ### `mcporter config`
 
 `handleConfigCli` 是一个简单的子命令分发表（[src/cli/config-command.ts:12-67]()）：
@@ -1134,6 +1139,7 @@ export async function handleConfigCli(options: ConfigCliOptions, args: string[])
 
 <!-- source-snippets:end -->
 </details>
+
 ### `mcporter daemon`
 
 `handleDaemonCli`（[src/cli/daemon-command.ts:26-58]()）只有 4 个动作：
@@ -1282,6 +1288,7 @@ async function handleDaemonStart(args: string[], options: DaemonCliOptions, clie
 
 <!-- source-snippets:end -->
 </details>
+
 ### `mcporter generate-cli` / `inspect-cli` / `emit-ts`
 
 这三个生成相关命令的入口在 [代码生成章节](code-generation.md) 详细展开。从命令路由角度看：
@@ -1472,6 +1479,7 @@ export async function handleInspectCli(args: string[]): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Help / version 路由
 
 `isHelpToken` / `isVersionToken` 在 [src/cli/help-output.ts:174-192]() 定义，识别 `--help|-h|help` 与 `--version|-v|-V`。`consumeHelpTokens` 反向扫描 args 数组、把所有 help token 摘掉（[src/cli/help-output.ts:178-188]()）——这让 `mcporter list --help`、`mcporter call linear --help linear.list_issues` 这样的写法都能进入对应子命令的 `printXxxHelp`。
@@ -1525,6 +1533,7 @@ async function resolveCliVersion(): Promise<string> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 进程退出与"force exit"
 
 `runCli` 的 finally 块（[src/cli.ts:168-203]()）执行三步：
@@ -1585,6 +1594,7 @@ Sources: [src/cli.ts:168-204](../../../project-repos/mcporter/src/cli.ts#L168-L2
 
 <!-- source-snippets:end -->
 </details>
+
 ## CliUsageError 与统一错误信封
 
 `runCli` 抛 `CliUsageError` 时仅打印 message + 退出 1，不带 stacktrace（[src/cli.ts:215-223]()）。其它 Error 走默认 `logError(message, error)`。`call` / `auth` / `list` 在 `--output json` 模式下统一用 `buildConnectionIssueEnvelope` 输出 `{ server, tool?, issue: { kind, statusCode, ... }, error: <message> }`，方便上游脚本机读处理。
@@ -1709,6 +1719,7 @@ function maybeReportConnectionIssue(server: string, tool: string, error: unknown
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [调用语法、自动纠错与临时服务器](call-syntax.md)

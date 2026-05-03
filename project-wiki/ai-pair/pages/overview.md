@@ -57,6 +57,7 @@ AI-Pair 把模型差异变成结构化的工作流：给每个模型分配匹配
 
 <!-- source-snippets:end -->
 </details>
+
 ## 产物形态与版本
 
 
@@ -109,6 +110,7 @@ ai-pair/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 许可证
 
 MIT License，Copyright 2026 Axton Liu。
@@ -148,6 +150,7 @@ SOFTWARE.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [架构与角色分工](architecture-and-roles.md)

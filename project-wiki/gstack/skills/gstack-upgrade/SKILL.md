@@ -24,7 +24,7 @@ description: 升级 gstack 到最新版本并展示变更的技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: gstack-upgrade
 version: 1.1.0
@@ -304,6 +304,6 @@ echo "PRIMARY=$PRIMARY_VER LOCAL=$LOCAL_VER"
 **If versions differ:** follow the Step 4.5 sync bash block above to update the local copy from the primary. Tell user: "Global v{PRIMARY_VER} is up to date. Updated local vendored copy from v{LOCAL_VER} → v{PRIMARY_VER}. Commit `.claude/skills/gstack/` when you're ready."
 
 **If versions match:** tell the user "You're on the latest version (v{PRIMARY_VER}). Global and local vendored copy are both up to date."
-```
+````
 
 </details>

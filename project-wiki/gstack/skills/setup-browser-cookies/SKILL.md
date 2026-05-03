@@ -24,7 +24,7 @@ description: 从本机 Chromium 浏览器导入 cookie 到 Browse 会话。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: setup-browser-cookies
 preamble-tier: 1
@@ -63,7 +63,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -95,7 +95,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -355,7 +355,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -551,6 +551,6 @@ Show the user a summary of imported cookies (domain counts).
 - Cookie picker is served on the same port as the browse server (no extra process)
 - Only domain names and cookie counts are shown in the UI — no cookie values are exposed
 - The browse session persists cookies between commands, so imported cookies work immediately
-```
+````
 
 </details>

@@ -83,6 +83,7 @@ export async function runPull(opts: PullOpts): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 顶层消息分页
 
 `onePage` 固定按 asc 排序、每页 50 条；第一页可带 `--start`，后续页靠 `--page-token`。返回值规范化成 `messages`、`nextToken`、`hasMore`。Sources: [src/commands/pull.ts:41-77](../../../project-repos/lark-context/src/commands/pull.ts#L41-L77)
@@ -136,6 +137,7 @@ async function onePage(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Start["pullChat"] --> Page1["onePage startIso"]
@@ -209,7 +211,7 @@ Sources: [src/commands/pull.ts:345-386](../../../project-repos/lark-context/src/
 首次拉历史消息每群最多 200 页（约 10k 条）。到上限后 stderr 有：
 
 ```
-<alias>: hit MAX_PAGES=200 cap; re-run to continue
+&lt;alias&gt;: hit MAX_PAGES=200 cap; re-run to continue
 ```
 
 把这条原样转述给用户，**并建议**再跑一次 `lark-context pull --chat <alias>` 续拉。
@@ -217,6 +219,7 @@ Sources: [src/commands/pull.ts:345-386](../../../project-repos/lark-context/src/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 首次拉取与续拉
 
 当 `chats.last_cursor` 存在时，`pullChat` 不再使用用户传入的 `--since`，而是从 last_cursor 往前回退 1 小时作为重叠窗口，避免错过稍后才出现的 `thread_id` 或 `thread_replies`。首次拉取没有 last_cursor 时，才使用 `--since` 计算 startIso；如果也没有 `--since`，则不带 start。Sources: [src/commands/pull.ts:317-337](../../../project-repos/lark-context/src/commands/pull.ts#L317-L337), [src/commands/pull.ts:164-169](../../../project-repos/lark-context/src/commands/pull.ts#L164-L169)
@@ -265,6 +268,7 @@ const INCR_PULL_OVERLAP_MS = 60 * 60 * 1000;
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了续拉 startIso 早于 last_cursor 但不早太多，也覆盖首次 pull 不应用重叠窗口。Sources: [test/cmd-pull.test.ts:504-559](../../../project-repos/lark-context/test/cmd-pull.test.ts#L504-L559)
 
 <details class="source-snippets">
@@ -335,6 +339,7 @@ describe("runPull — re-pull overlap window", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   LastSeen{"last_cursor exists?"}
@@ -379,6 +384,7 @@ Sources: [src/commands/pull.ts:317-337](../../../project-repos/lark-context/src/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 写入幂等性
 
 `writePage` 使用 `INSERT ... ON CONFLICT(id) DO UPDATE`。更新时只用 `COALESCE(excluded.thread_id, messages.thread_id)` 补 `thread_id`，不会用空值覆盖已有值；同时更新 `content_json` 保留最新原始内容。Sources: [src/commands/pull.ts:79-122](../../../project-repos/lark-context/src/commands/pull.ts#L79-L122)
@@ -439,6 +445,7 @@ function writePage(
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了第二次无新消息不会重复、后续 pull 能给既有父消息补 `thread_id`，也不会用 null 覆盖已有 `thread_id`。Sources: [test/cmd-pull.test.ts:163-197](../../../project-repos/lark-context/test/cmd-pull.test.ts#L163-L197), [test/cmd-pull.test.ts:562-647](../../../project-repos/lark-context/test/cmd-pull.test.ts#L562-L647), [test/cmd-pull.test.ts:649-702](../../../project-repos/lark-context/test/cmd-pull.test.ts#L649-L702)
 
 <details class="source-snippets">
@@ -638,6 +645,7 @@ describe("runPull — upsert thread_id on re-pull", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 嵌套回复与二阶段回复
 
 飞书顶层消息返回中可能包含 `thread_replies` 数组。`writePage` 会把这些内嵌回复直接写成 `is_thread_reply=1`，即使用户设置 `--no-threads` 跳过第二阶段，也不会丢掉响应中已经带回来的回复。Sources: [src/commands/pull.ts:123-145](../../../project-repos/lark-context/src/commands/pull.ts#L123-L145), [test/cmd-pull.test.ts:308-448](../../../project-repos/lark-context/test/cmd-pull.test.ts#L308-L448)
@@ -803,6 +811,7 @@ describe("runPull — embedded thread_replies (phase 1)", () => {
 
 <!-- source-snippets:end -->
 </details>
+
 第二阶段 `pullThreads` 会从 DB 中扫描窗口内、非回复、带 `thread_id` 的顶层消息，然后逐个调用 `im +threads-messages-list` 拉完整回复，并使用 `INSERT OR IGNORE` 避免重复。Sources: [src/commands/pull.ts:171-238](../../../project-repos/lark-context/src/commands/pull.ts#L171-L238), [src/commands/pull.ts:240-290](../../../project-repos/lark-context/src/commands/pull.ts#L240-L290)
 
 <details class="source-snippets">
@@ -941,6 +950,7 @@ async function pullThreads(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Root["顶层 messages"] --> Embedded{"raw.thread_replies?"}
@@ -1046,6 +1056,7 @@ async function pullThreads(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 话题窗口策略
 
 默认话题窗口有三层：首次 pull 使用 effective `--since`；首次但没有 `--since` 时回看 90 天；续拉默认回看 30 天。用户也可以显式传 `--thread-window` 覆盖，或 `--no-threads` 跳过第二阶段。Sources: [src/commands/pull.ts:164-165](../../../project-repos/lark-context/src/commands/pull.ts#L164-L165), [src/commands/pull.ts:377-386](../../../project-repos/lark-context/src/commands/pull.ts#L377-L386), [src/commands/pull.ts:443-459](../../../project-repos/lark-context/src/commands/pull.ts#L443-L459)
@@ -1101,6 +1112,7 @@ export function registerPull(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
+
 README 也记录了相同的用户语义：首次窗口与 effective `--since` 对齐，续拉 30 天，单个话题失败不会 disable 整个群。Sources: [README.md:113-118](../../../project-repos/lark-context/README.md#L113-L118)
 
 <details class="source-snippets">
@@ -1121,6 +1133,7 @@ README 也记录了相同的用户语义：首次窗口与 effective `--since` �
 
 <!-- source-snippets:end -->
 </details>
+
 测试覆盖了首次 90d/180d、续拉 30d、显式 `--thread-window`、`--no-threads`、单 thread 失败继续、thread 回复分页。Sources: [test/cmd-pull.test.ts:827-906](../../../project-repos/lark-context/test/cmd-pull.test.ts#L827-L906), [test/cmd-pull.test.ts:908-996](../../../project-repos/lark-context/test/cmd-pull.test.ts#L908-L996), [test/cmd-pull.test.ts:1035-1129](../../../project-repos/lark-context/test/cmd-pull.test.ts#L1035-L1129)
 
 <details class="source-snippets">
@@ -1409,6 +1422,7 @@ README 也记录了相同的用户语义：首次窗口与 effective `--since` �
 
 <!-- source-snippets:end -->
 </details>
+
 ## 群级失败隔离
 
 `runPull` 遍历所有目标群。遇到 `LarkCLIError` 时，它会调用 `disableChat` 把该群置为 disabled，并继续处理其他群；`LarkNotFoundError` 和非 Lark 错误则向上抛。Sources: [src/commands/pull.ts:391-440](../../../project-repos/lark-context/src/commands/pull.ts#L391-L440)
@@ -1475,6 +1489,7 @@ export async function runPull(opts: PullOpts): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
+
 这个策略让权限失效或被踢出某个群时，不会阻断其他 enabled 群的增量拉取。测试覆盖了单群失败禁用该群、其他群继续。Sources: [test/cmd-pull.test.ts:240-265](../../../project-repos/lark-context/test/cmd-pull.test.ts#L240-L265)
 
 <details class="source-snippets">
@@ -1515,6 +1530,7 @@ export async function runPull(opts: PullOpts): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [配置与 SQLite 存储](configuration-and-storage.md)

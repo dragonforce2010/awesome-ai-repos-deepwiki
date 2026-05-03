@@ -103,7 +103,7 @@ The user can:
   preferences (or sensible defaults).
 - Adjust accent / scale / density / mode / motion in the panel and
   watch the stage update instantly — no rerender.
-- Press <kbd>T</kbd> to hide / reveal the panel; <kbd>R</kbd> to
+- Press &lt;kbd>T&lt;/kbd> to hide / reveal the panel; &lt;kbd>R&lt;/kbd> to
   reset to defaults.
 - Refresh the page — every choice is persisted.
 
@@ -206,7 +206,7 @@ The bridge in `wrap.html`:
 - Loads `localStorage[STORAGE_KEY]` JSON on first paint.
 - Applies values as `document.documentElement.style.setProperty('--accent', ...)`.
 - Listens to every form control's `change` event and writes back.
-- Exposes <kbd>T</kbd> (toggle panel) and <kbd>R</kbd> (reset).
+- Exposes &lt;kbd>T&lt;/kbd> (toggle panel) and &lt;kbd>R&lt;/kbd> (reset).
 
 ## Workflow
 

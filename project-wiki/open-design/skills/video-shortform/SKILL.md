@@ -142,7 +142,7 @@ node "$OD_BIN" media generate \
   --prompt "<assembled shot prompt from Step 2>"
 ```
 
-The command prints one line of JSON: `{"file": {"name": "...", ...}}`.
+The command prints one line of JSON: `{"file": {"name": "...", ...&#125;&#125;`.
 The bytes land in the project; the FileViewer plays it automatically.
 
 ### Step 4 — Hand off

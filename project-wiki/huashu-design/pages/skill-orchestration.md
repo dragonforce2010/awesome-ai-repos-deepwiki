@@ -159,6 +159,7 @@ description: 花叔Design（Huashu-Design）——用HTML做高保真原型、�
 
 <!-- source-snippets:end -->
 </details>
+
 ## 优先级结构
 
 `SKILL.md` 把「事实验证先于假设」列为核心原则 #0，要求涉及具体产品、技术、事件或版本时先 `WebSearch` 验证，再进入提问或设计。随后才是从 existing context 出发、核心资产协议、Junior Designer 展示假设、给 variations、placeholder 优先和反 AI slop。Sources: [SKILL.md:24-57](../../../project-repos/huashu-design/SKILL.md#L24-L57), [SKILL.md:61-68](../../../project-repos/huashu-design/SKILL.md#L61-L68), [SKILL.md:298-317](../../../project-repos/huashu-design/SKILL.md#L298-L317), [SKILL.md:326-369](../../../project-repos/huashu-design/SKILL.md#L326-L369)
@@ -296,6 +297,7 @@ description: 花叔Design（Huashu-Design）——用HTML做高保真原型、�
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A["用户设计请求"] --> B{"涉及具体事实"}
@@ -467,6 +469,7 @@ Sources: [SKILL.md:34-38](../../../project-repos/huashu-design/SKILL.md#L34-L38)
 
 <!-- source-snippets:end -->
 </details>
+
 ## References 路由
 
 主提示词没有把所有细节塞进一个文件，而是在 `References路由表` 中按任务类型路由：幻灯片读 `slide-decks.md`，可编辑 PPTX 读 `editable-pptx.md`，动画读 `animation-pitfalls.md` 和 `animations.md`，验证读 `verification.md`，视频和音频读 `video-export.md`、`audio-design-rules.md`、`sfx-library.md`。Sources: [SKILL.md:724-748](../../../project-repos/huashu-design/SKILL.md#L724-L748)
@@ -508,6 +511,7 @@ Sources: [SKILL.md:34-38](../../../project-repos/huashu-design/SKILL.md#L34-L38)
 
 <!-- source-snippets:end -->
 </details>
+
 ## 行为检查点
 
 工作流中的多个 `🛑` 检查点要求 agent 在提问、资产自检、四问系统、Junior pass 和交付前验证处停下来等待用户确认。这让 skill 更像「junior designer 向 manager 汇报」，而不是单轮自动完成。Sources: [SKILL.md:603-648](../../../project-repos/huashu-design/SKILL.md#L603-L648), [references/workflow.md:99-153](../../../project-repos/huashu-design/references/workflow.md#L99-L153)
@@ -595,11 +599,11 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 -->
 
 <!-- 然后是带placeholder的结构 -->
-<section class="hero">
-  <h1>[主标题位 - 等用户提供]</h1>
-  <p>[副标题位]</p>
-  <div class="cta-placeholder">[CTA按钮]</div>
-</section>
+&lt;section class="hero"&gt;
+  &lt;h1>[主标题位 - 等用户提供]&lt;/h1>
+  &lt;p>[副标题位]&lt;/p>
+  &lt;div class="cta-placeholder">[CTA按钮]&lt;/div>
+&lt;/section&gt;
 ```
 
 **保存 → show用户 → 等反馈再走下一步**。
@@ -630,6 +634,7 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 <!-- source-snippets:end -->
 </details>
+
 ## 测试提示作为行为规格
 
 `test-prompts.json` 用 6 个自然语言 prompt 描述预期行为，例如登录页要触发 design context 询问和 3 个 variation，iOS/Tracker 类原型要用 `ios_frame.jsx` 且体现高密度信息。这些不是自动化测试，但为 reviewer 提供了可人工核验的行为样例。Sources: [test-prompts.json:1-38](../../../project-repos/huashu-design/test-prompts.json#L1-L38)
@@ -684,6 +689,7 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Design Context 与核心资产协议](design-context-assets.md)

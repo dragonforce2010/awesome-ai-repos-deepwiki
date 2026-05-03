@@ -24,7 +24,7 @@ description: 抓取 Hacker News 首页标题、分数和评论数量的浏览器
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: hackernews-frontpage
 description: Scrape the Hacker News front page (titles, points, comment counts).
@@ -77,6 +77,6 @@ exercised by `$B skill run hackernews-frontpage` and the bundled
 
 When the HN HTML rotates and our selectors break, the test fails against the
 captured fixture before users notice. That's the point.
-```
+````
 
 </details>

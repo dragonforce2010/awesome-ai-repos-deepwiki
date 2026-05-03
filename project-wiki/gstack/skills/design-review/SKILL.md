@@ -24,7 +24,7 @@ description: 上线后视觉 QA 与修复技能，检查并修复视觉问题。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: design-review
 preamble-tier: 4
@@ -71,7 +71,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -103,7 +103,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -308,20 +308,20 @@ AI orchestrator (e.g., OpenClaw). In spawned sessions:
 Every AskUserQuestion is a decision brief and must be sent as tool_use, not prose.
 
 ```
-D<N> — <one-line question title>
-Project/branch/task: <1 short grounding sentence using _BRANCH>
-ELI10: <plain English a 16-year-old could follow, 2-4 sentences, name the stakes>
-Stakes if we pick wrong: <one sentence on what breaks, what user sees, what's lost>
-Recommendation: <choice> because <one-line reason>
+D&lt;N&gt; — &lt;one-line question title&gt;
+Project/branch/task: &lt;1 short grounding sentence using _BRANCH&gt;
+ELI10: &lt;plain English a 16-year-old could follow, 2-4 sentences, name the stakes&gt;
+Stakes if we pick wrong: &lt;one sentence on what breaks, what user sees, what's lost&gt;
+Recommendation: &lt;choice&gt; because &lt;one-line reason&gt;
 Completeness: A=X/10, B=Y/10   (or: Note: options differ in kind, not coverage — no completeness score)
 Pros / cons:
-A) <option label> (recommended)
-  ✅ <pro — concrete, observable, ≥40 chars>
-  ❌ <con — honest, ≥40 chars>
-B) <option label>
-  ✅ <pro>
-  ❌ <con>
-Net: <one-line synthesis of what you're actually trading off>
+A) &lt;option label&gt; (recommended)
+  ✅ &lt;pro — concrete, observable, ≥40 chars&gt;
+  ❌ &lt;con — honest, ≥40 chars&gt;
+B) &lt;option label&gt;
+  ✅ &lt;pro&gt;
+  ❌ &lt;con&gt;
+Net: &lt;one-line synthesis of what you're actually trading off&gt;
 ```
 
 D-numbering: first question in a skill invocation is `D1`; increment yourself. This is a model-level instruction, not a runtime counter.
@@ -412,7 +412,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -596,13 +596,13 @@ Commit after new intentional files, completed functions/modules, verified bug fi
 Commit format:
 
 ```
-WIP: <concise description of what changed>
+WIP: &lt;concise description of what changed&gt;
 
 [gstack-context]
-Decisions: <key choices made this step>
-Remaining: <what's left in the logical unit>
-Tried: <failed approaches worth recording> (omit if none)
-Skill: </skill-name-if-running>
+Decisions: &lt;key choices made this step&gt;
+Remaining: &lt;what's left in the logical unit&gt;
+Tried: &lt;failed approaches worth recording&gt; (omit if none)
+Skill: &lt;/skill-name-if-running&gt;
 [/gstack-context]
 ```
 
@@ -624,7 +624,7 @@ Before each AskUserQuestion, choose `question_id` from `scripts/question-registr
 
 After answer, log best-effort:
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"design-review","question_id":"<id>","question_summary":"<short>","category":"<approval|clarification|routing|cherry-pick|feedback-loop>","door_type":"<one-way|two-way>","options_count":N,"user_choice":"<key>","recommended":"<key>","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
+~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"design-review","question_id":"&lt;id&gt;","question_summary":"&lt;short&gt;","category":"&lt;approval|clarification|routing|cherry-pick|feedback-loop&gt;","door_type":"&lt;one-way|two-way&gt;","options_count":N,"user_choice":"&lt;key&gt;","recommended":"&lt;key&gt;","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
 ```
 
 For two-way questions, offer: "Tune this question? Reply `tune: never-ask`, `tune: always-ask`, or free-form."
@@ -633,7 +633,7 @@ User-origin gate (profile-poisoning defense): write tune events ONLY when `tune:
 
 Write (only after confirmation for free-form):
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"<id>","preference":"<pref>","source":"inline-user","free_text":"<optional original words>"}'
+~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"&lt;id&gt;","preference":"&lt;pref&gt;","source":"inline-user","free_text":"&lt;optional original words&gt;"}'
 ```
 
 Exit code 2 = rejected as not user-originated; do not retry. On success: "Set `<id>` → `<preference>`. Active immediately."
@@ -1197,7 +1197,7 @@ $B js "JSON.stringify([...new Set([...document.querySelectorAll('*')].slice(0,50
 $B js "JSON.stringify([...document.querySelectorAll('h1,h2,h3,h4,h5,h6')].map(h => ({tag:h.tagName, text:h.textContent.trim().slice(0,50), size:getComputedStyle(h).fontSize, weight:getComputedStyle(h).fontWeight})))"
 
 # Touch target audit (find undersized interactive elements)
-$B js "JSON.stringify([...document.querySelectorAll('a,button,input,[role=button]')].filter(e => {const r=e.getBoundingClientRect(); return r.width>0 && (r.width<44||r.height<44)}).map(e => ({tag:e.tagName, text:(e.textContent||'').trim().slice(0,30), w:Math.round(e.getBoundingClientRect().width), h:Math.round(e.getBoundingClientRect().height)})).slice(0,20))"
+$B js "JSON.stringify([...document.querySelectorAll('a,button,input,[role=button]')].filter(e => {const r=e.getBoundingClientRect(); return r.width>0 && (r.width&lt;44||r.height<44)}).map(e =&gt; ({tag:e.tagName, text:(e.textContent||'').trim().slice(0,30), w:Math.round(e.getBoundingClientRect().width), h:Math.round(e.getBoundingClientRect().height)})).slice(0,20))"
 
 # Performance baseline
 $B perf
@@ -1218,7 +1218,7 @@ After extraction, offer: *"Want me to save this as your DESIGN.md? I can lock in
 For each page in scope:
 
 ```bash
-$B goto <url>
+$B goto &lt;url&gt;
 $B snapshot -i -a -o "$REPORT_DIR/screenshots/{page}-annotated.png"
 $B responsive "$REPORT_DIR/screenshots/{page}"
 $B console --errors
@@ -1455,7 +1455,7 @@ Write to: `~/.gstack/projects/{slug}/{user}-{branch}-design-audit-{datetime}.md`
 ```json
 {
   "date": "YYYY-MM-DD",
-  "url": "<target>",
+  "url": "&lt;target&gt;",
   "designScore": "B",
   "aiSlopScore": "C",
   "categoryGrades": { "hierarchy": "A", "typography": "B", ... },
@@ -1671,7 +1671,7 @@ HARD REJECTION — flag if ANY apply:
 6. Carousel with no narrative purpose
 7. App UI made of stacked cards instead of layout
 
-Be specific. Reference file:line for every finding." -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached < /dev/null 2>"$TMPERR_DESIGN"
+Be specific. Reference file:line for every finding." -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached &lt; /dev/null 2&gt;"$TMPERR_DESIGN"
 ```
 Use a 5-minute timeout (`timeout: 300000`). After the command completes, read stderr:
 ```bash
@@ -1741,7 +1741,7 @@ For each fixable finding, in impact order:
 If the gstack designer is available and the finding involves visual layout, hierarchy, or spacing (not just a CSS value fix like wrong color or font-size), generate a target mockup showing what the corrected version should look like:
 
 ```bash
-$D generate --brief "<description of the page/component with the finding fixed, referencing DESIGN.md constraints>" --output "$REPORT_DIR/screenshots/finding-NNN-target.png"
+$D generate --brief "&lt;description of the page/component with the finding fixed, referencing DESIGN.md constraints&gt;" --output "$REPORT_DIR/screenshots/finding-NNN-target.png"
 ```
 
 Show the user: "Here's the current state (screenshot) and here's what it should look like (mockup). Now I'll fix the source to match."
@@ -1759,7 +1759,7 @@ This step is optional — skip for trivial CSS fixes (wrong hex color, missing p
 ### 8c. Commit
 
 ```bash
-git add <only-changed-files>
+git add &lt;only-changed-files&gt;
 git commit -m "style(design): FINDING-NNN — short description"
 ```
 
@@ -1771,7 +1771,7 @@ git commit -m "style(design): FINDING-NNN — short description"
 Navigate back to the affected page and verify the fix:
 
 ```bash
-$B goto <affected-url>
+$B goto &lt;affected-url&gt;
 $B screenshot "$REPORT_DIR/screenshots/finding-NNN-after.png"
 $B console --errors
 $B snapshot -D
@@ -1903,6 +1903,6 @@ already knows. A good test: would this insight save time in a future session? If
 15. **Self-regulate.** Follow the design-fix risk heuristic. When in doubt, stop and ask.
 16. **CSS-first.** Prefer CSS/styling changes over structural component changes. CSS-only changes are safer and more reversible.
 17. **DESIGN.md export.** You MAY write a DESIGN.md file if the user accepts the offer from Phase 2.
-```
+````
 
 </details>

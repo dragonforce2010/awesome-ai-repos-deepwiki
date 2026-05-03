@@ -237,6 +237,7 @@ Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能一览表
 
 | 技能 | 类别 | 类型 | 核心原则 | 辅助文件 |
@@ -269,6 +270,7 @@ Sources: [skills/*/SKILL.md](../../../project-repos/superpowers/skills/%2A/SKILL
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能类型：刚性 vs 灵活
 
 技能分为两种类型，决定了遵循的严格程度：
@@ -323,6 +325,7 @@ Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
 
 <!-- source-snippets:end -->
 </details>
+
 ## SKILL.md 规范
 
 每个技能必须包含 YAML frontmatter 和结构化的 Markdown 内容。
@@ -479,6 +482,7 @@ Concrete results
 
 <!-- source-snippets:end -->
 </details>
+
 ## Claude 搜索优化（CSO）
 
 技能的发现依赖于 Claude 的搜索能力。CSO 策略确保技能能被正确找到和加载。
@@ -654,6 +658,7 @@ wc -w skills/path/SKILL.md
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能间的交叉引用
 
 技能之间使用名称引用，带明确的必需标记：
@@ -710,6 +715,7 @@ Use skill name only, with explicit requirement markers:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

@@ -57,6 +57,7 @@ gstack works well with one sprint. It gets interesting with ten running at once.
 
 <!-- source-snippets:end -->
 </details>
+
 ## Design CLI
 
 `design/src/cli.ts` 明确说明它是 stateless CLI：每次调用解析参数、解析 OpenAI auth、执行 API 调用并写入 PNG/HTML，多轮迭代状态保存在 `/tmp` JSON 文件里。Sources: [design/src/cli.ts:1-13](../../../project-repos/gstack/design/src/cli.ts#L1-L13)
@@ -86,6 +87,7 @@ gstack works well with one sprint. It gets interesting with ten running at once.
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A[$D command] --> B[parseArgs]
@@ -312,6 +314,7 @@ export const COMMANDS = new Map<string, {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 图像生成与实现提示
 
 `generate.ts` 使用 OpenAI Responses API 的 `image_generation` tool，默认生成 `1536x1024`、`high` quality，并可选做视觉质量检查和重试。`design-to-code.ts` 则用 GPT-4o vision 从批准的 mockup 中提取颜色、排版、布局和组件，输出 JSON 结构化实现提示。Sources: [design/src/generate.ts:29-92](../../../project-repos/gstack/design/src/generate.ts#L29-L92), [design/src/generate.ts:97-160](../../../project-repos/gstack/design/src/generate.ts#L97-L160), [design/src/design-to-code.ts:1-18](../../../project-repos/gstack/design/src/design-to-code.ts#L1-L18), [design/src/design-to-code.ts:22-88](../../../project-repos/gstack/design/src/design-to-code.ts#L22-L88)
@@ -556,6 +559,7 @@ Be specific about every visual detail: exact hex colors, font sizes in px, spaci
 
 <!-- source-snippets:end -->
 </details>
+
 ## make-pdf CLI
 
 `make-pdf/src/cli.ts` 的输出契约很严格：成功时 stdout 只输出路径，stderr 输出进度和错误；exit code 区分 bad args、render error、Paged.js timeout、browse unavailable。CLI 支持 cover、TOC、page numbers、tagged PDF、outline、watermark、header/footer template、network control 等。Sources: [make-pdf/src/cli.ts:1-11](../../../project-repos/gstack/make-pdf/src/cli.ts#L1-L11), [make-pdf/src/cli.ts:56-99](../../../project-repos/gstack/make-pdf/src/cli.ts#L56-L99), [make-pdf/src/cli.ts:174-253](../../../project-repos/gstack/make-pdf/src/cli.ts#L174-L253)
@@ -717,6 +721,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 与技能层的关系
 
 ```mermaid
@@ -778,6 +783,7 @@ allowed-tools:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能工作流](skill-workflow.md)

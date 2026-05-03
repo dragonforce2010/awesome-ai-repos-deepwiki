@@ -53,6 +53,7 @@ All three CLIs must have authentication configured before use.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 安装 Skill
 
 **推荐**：克隆到全局目录：
@@ -96,6 +97,7 @@ For project-level installation, clone into `.claude/skills/ai-pair` within your 
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令一览
 
 ```mermaid
@@ -165,6 +167,7 @@ Team Lead creates | 团队领导创建:
 
 <!-- source-snippets:end -->
 </details>
+
 ## examples 阅读顺序
 
 | 文件 | 场景 |
@@ -200,6 +203,7 @@ None of these overlapped. That's the point. See [`examples/`](examples/) for ste
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

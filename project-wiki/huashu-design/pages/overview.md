@@ -79,6 +79,7 @@ description: 花叔Design（Huashu-Design）——用HTML做高保真原型、�
 
 <!-- source-snippets:end -->
 </details>
+
 ## 仓库形态
 
 这个仓库不是传统 npm 包：清单脚本没有检测到 `package.json`、CI 或测试目录，主要内容是一个根 `SKILL.md`、一组 `references/` 规则文档、`assets/` starter components、`scripts/` 导出工具链和 `demos/` 示例。Sources: [00-repo-inventory.md:10-49](../00-repo-inventory.md#L10-L49), [README.md:248-281](../../../project-repos/huashu-design/README.md#L248-L281)
@@ -174,6 +175,7 @@ huashu-design/
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A["README 用户入口"] --> B["SKILL.md Agent 主规则"]
@@ -263,6 +265,7 @@ huashu-design/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心能力地图
 
 | 能力 | 主要文件 | 交付物 |
@@ -375,6 +378,7 @@ Sources: [README.md:79-89](../../../project-repos/huashu-design/README.md#L79-L8
 
 <!-- source-snippets:end -->
 </details>
+
 ## 读者路线
 
 新维护者应先读 `SKILL.md` 的 frontmatter 和「核心哲学」，再按任务类型跳到 `references/`。如果要理解可复用代码，先读 `assets/animations.jsx`、`assets/deck_index.html`、`assets/deck_stage.js`、`assets/ios_frame.jsx`。如果要理解交付工具链，读 `scripts/render-video.js`、`scripts/html2pptx.js` 与对应 reference。Sources: [SKILL.md:61-80](../../../project-repos/huashu-design/SKILL.md#L61-L80), [SKILL.md:703-748](../../../project-repos/huashu-design/SKILL.md#L703-L748), [assets/animations.jsx:1-25](../../../project-repos/huashu-design/assets/animations.jsx#L1-L25), [scripts/render-video.js:1-38](../../../project-repos/huashu-design/scripts/render-video.js#L1-L38)
@@ -535,6 +539,7 @@ Sources: [README.md:79-89](../../../project-repos/huashu-design/README.md#L79-L8
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Skill 编排与主提示词](skill-orchestration.md)

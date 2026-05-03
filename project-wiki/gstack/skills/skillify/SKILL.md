@@ -24,7 +24,7 @@ description: 把成功 scrape 流程固化成可复用 browser-skill。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: skillify
 version: 1.0.0
@@ -67,7 +67,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -99,7 +99,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -304,20 +304,20 @@ AI orchestrator (e.g., OpenClaw). In spawned sessions:
 Every AskUserQuestion is a decision brief and must be sent as tool_use, not prose.
 
 ```
-D<N> — <one-line question title>
-Project/branch/task: <1 short grounding sentence using _BRANCH>
-ELI10: <plain English a 16-year-old could follow, 2-4 sentences, name the stakes>
-Stakes if we pick wrong: <one sentence on what breaks, what user sees, what's lost>
-Recommendation: <choice> because <one-line reason>
+D&lt;N&gt; — &lt;one-line question title&gt;
+Project/branch/task: &lt;1 short grounding sentence using _BRANCH&gt;
+ELI10: &lt;plain English a 16-year-old could follow, 2-4 sentences, name the stakes&gt;
+Stakes if we pick wrong: &lt;one sentence on what breaks, what user sees, what's lost&gt;
+Recommendation: &lt;choice&gt; because &lt;one-line reason&gt;
 Completeness: A=X/10, B=Y/10   (or: Note: options differ in kind, not coverage — no completeness score)
 Pros / cons:
-A) <option label> (recommended)
-  ✅ <pro — concrete, observable, ≥40 chars>
-  ❌ <con — honest, ≥40 chars>
-B) <option label>
-  ✅ <pro>
-  ❌ <con>
-Net: <one-line synthesis of what you're actually trading off>
+A) &lt;option label&gt; (recommended)
+  ✅ &lt;pro — concrete, observable, ≥40 chars&gt;
+  ❌ &lt;con — honest, ≥40 chars&gt;
+B) &lt;option label&gt;
+  ✅ &lt;pro&gt;
+  ❌ &lt;con&gt;
+Net: &lt;one-line synthesis of what you're actually trading off&gt;
 ```
 
 D-numbering: first question in a skill invocation is `D1`; increment yourself. This is a model-level instruction, not a runtime counter.
@@ -408,7 +408,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -592,13 +592,13 @@ Commit after new intentional files, completed functions/modules, verified bug fi
 Commit format:
 
 ```
-WIP: <concise description of what changed>
+WIP: &lt;concise description of what changed&gt;
 
 [gstack-context]
-Decisions: <key choices made this step>
-Remaining: <what's left in the logical unit>
-Tried: <failed approaches worth recording> (omit if none)
-Skill: </skill-name-if-running>
+Decisions: &lt;key choices made this step&gt;
+Remaining: &lt;what's left in the logical unit&gt;
+Tried: &lt;failed approaches worth recording&gt; (omit if none)
+Skill: &lt;/skill-name-if-running&gt;
 [/gstack-context]
 ```
 
@@ -620,7 +620,7 @@ Before each AskUserQuestion, choose `question_id` from `scripts/question-registr
 
 After answer, log best-effort:
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"skillify","question_id":"<id>","question_summary":"<short>","category":"<approval|clarification|routing|cherry-pick|feedback-loop>","door_type":"<one-way|two-way>","options_count":N,"user_choice":"<key>","recommended":"<key>","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
+~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"skillify","question_id":"&lt;id&gt;","question_summary":"&lt;short&gt;","category":"&lt;approval|clarification|routing|cherry-pick|feedback-loop&gt;","door_type":"&lt;one-way|two-way&gt;","options_count":N,"user_choice":"&lt;key&gt;","recommended":"&lt;key&gt;","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
 ```
 
 For two-way questions, offer: "Tune this question? Reply `tune: never-ask`, `tune: always-ask`, or free-form."
@@ -629,7 +629,7 @@ User-origin gate (profile-poisoning defense): write tune events ONLY when `tune:
 
 Write (only after confirmation for free-form):
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"<id>","preference":"<pref>","source":"inline-user","free_text":"<optional original words>"}'
+~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"&lt;id&gt;","preference":"&lt;pref&gt;","source":"inline-user","free_text":"&lt;optional original words&gt;"}'
 ```
 
 Exit code 2 = rejected as not user-originated; do not retry. On success: "Set `<id>` → `<preference>`. Active immediately."
@@ -769,19 +769,19 @@ From the prototype intent, extract:
 Then **AskUserQuestion** to confirm:
 
 ```
-D<N> — Skill name + tier
-Project/branch/task: codifying /scrape "<intent>" as a browser-skill.
+D&lt;N&gt; — Skill name + tier
+Project/branch/task: codifying /scrape "&lt;intent&gt;" as a browser-skill.
 ELI10: Pick a short name we'll use to find this skill next time you say
 something similar. Pick a tier — global means every project on this
 machine sees it, project means just this repo.
 Stakes if we pick wrong: bad name buries the skill in $B skill list;
 wrong tier means future projects can't find it (or can find it when you
 didn't want them to).
-Recommendation: A — <proposed-name> at global tier — most scrape skills
+Recommendation: A — &lt;proposed-name&gt; at global tier — most scrape skills
 generalize across projects.
 Note: options differ in kind, not coverage — no completeness score.
-A) Keep "<proposed-name>" at global tier — ~/.gstack/browser-skills/<proposed-name>/  (recommended)
-B) Keep "<proposed-name>" but at project tier — <project>/.gstack/browser-skills/<proposed-name>/
+A) Keep "&lt;proposed-name&gt;" at global tier — ~/.gstack/browser-skills/&lt;proposed-name&gt;/  (recommended)
+B) Keep "&lt;proposed-name&gt;" but at project tier — &lt;project&gt;/.gstack/browser-skills/&lt;proposed-name&gt;/
 C) Rename it (free-form — say the new name)
 ```
 
@@ -816,7 +816,7 @@ import { browse } from './_lib/browse-client';
 export interface Item { /* one row of the JSON output */ }
 export interface Output { items: Item[]; count: number; }
 
-const TARGET_URL = '<the URL the prototype used>';
+const TARGET_URL = '&lt;the URL the prototype used&gt;';
 
 export function parseFromHtml(html: string): Item[] {
   // Pure function: HTML in, parsed Item[] out. No $B calls.
@@ -825,7 +825,7 @@ export function parseFromHtml(html: string): Item[] {
 
 if (import.meta.main) { await main(); }
 
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   await browse.goto(TARGET_URL);
   const html = await browse.html();
   const items = parseFromHtml(html);
@@ -842,7 +842,7 @@ step 5 only exercise the pure parts.
 ## Step 4 — Capture the fixture
 
 ```bash
-$B goto "<TARGET_URL>"
+$B goto "&lt;TARGET_URL&gt;"
 $B html > /tmp/skillify-fixture-$$.html
 ```
 
@@ -866,8 +866,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { parseFromHtml } from './script';
 
-describe('<name> parser', () => {
-  const fixturePath = path.join(import.meta.dir, 'fixtures', '<host>-<date>.html');
+describe('&lt;name&gt; parser', () => {
+  const fixturePath = path.join(import.meta.dir, 'fixtures', '&lt;host&gt;-&lt;date&gt;.html');
   const html = fs.readFileSync(fixturePath, 'utf-8');
   const items = parseFromHtml(html);
 
@@ -877,7 +877,7 @@ describe('<name> parser', () => {
 
   it('every item has the required shape', () => {
     for (const item of items) {
-      expect(typeof item.<keyfield>).toBe('<keytype>');
+      expect(typeof item.&lt;keyfield&gt;).toBe('&lt;keytype&gt;');
       // ... assert on every required field
     }
   });
@@ -932,16 +932,16 @@ Use the helper at `browse/src/browser-skill-write.ts`. Construct an inline
 TypeScript snippet (or shell out to a small Bun one-liner) that calls:
 
 ```ts
-import { stageSkill } from '<gstack-install>/browse/src/browser-skill-write';
+import { stageSkill } from '&lt;gstack-install&gt;/browse/src/browser-skill-write';
 
 const stagedDir = stageSkill({
-  name: '<name>',
+  name: '&lt;name&gt;',
   files: new Map([
     ['SKILL.md', skillMd],
     ['script.ts', scriptTs],
     ['script.test.ts', scriptTestTs],
     ['_lib/browse-client.ts', sdkContents],
-    ['fixtures/<host>-<date>.html', fixtureHtml],
+    ['fixtures/&lt;host&gt;-&lt;date&gt;.html', fixtureHtml],
   ]),
 });
 console.log(stagedDir);
@@ -952,20 +952,20 @@ contract:
 
 ```yaml
 ---
-name: <name>
-description: <one-line, what data this returns>
-host: <hostname>
+name: &lt;name&gt;
+description: &lt;one-line, what data this returns&gt;
+host: &lt;hostname&gt;
 trusted: false       # agent-authored skills are untrusted by default
 source: agent
 version: 1.0.0
 args: []             # extend if your script accepts --arg key=value
 triggers:
-  - <phrase 1>
-  - <phrase 2>
-  - <phrase 3>
+  - &lt;phrase 1&gt;
+  - &lt;phrase 2&gt;
+  - &lt;phrase 3&gt;
 ---
 
-# <Name> scraper
+# &lt;Name&gt; scraper
 
 <2-3 sentences on what the script does, what URL it hits, and what
 shape of JSON it returns. NO conversation context. NO chat fragments.
@@ -974,7 +974,7 @@ This is a durable on-disk artifact — keep it tight.>
 ## Usage
 
 \`\`\`
-$ $B skill run <name>
+$ $B skill run &lt;name&gt;
 { "items": [...], "count": N }
 \`\`\`
 ```
@@ -985,14 +985,14 @@ to `$B skill test` next, then to `commitSkill` or `discardStaged`.
 ## Step 8 — Run `$B skill test` against the staged dir
 
 ```bash
-$B skill test "<name>" --dir "<stagedDir>"
+$B skill test "&lt;name&gt;" --dir "&lt;stagedDir&gt;"
 ```
 
 If `$B skill test` does not yet accept `--dir`, fall back to invoking the
 test runner directly against the staged path:
 
 ```bash
-( cd "<stagedDir>" && bun test script.test.ts )
+( cd "&lt;stagedDir&gt;" && bun test script.test.ts )
 ```
 
 If the test fails:
@@ -1005,8 +1005,8 @@ If the test fails:
    environmental issue (SDK import, daemon connection):
 
    ```ts
-   import { discardStaged } from '<gstack-install>/browse/src/browser-skill-write';
-   discardStaged('<stagedDir>');
+   import { discardStaged } from '&lt;gstack-install&gt;/browse/src/browser-skill-write';
+   discardStaged('&lt;stagedDir&gt;');
    ```
 
    Report the failure to the user, show them the staged `script.ts` for
@@ -1017,14 +1017,14 @@ If the test fails:
 Tests passed. Now ask the user before committing:
 
 ```
-D<N> — Commit skill "<name>" at <resolved-tier-path>?
-Project/branch/task: codified /scrape "<intent>" — tests pass against fixture.
+D&lt;N&gt; — Commit skill "&lt;name&gt;" at &lt;resolved-tier-path&gt;?
+Project/branch/task: codified /scrape "&lt;intent&gt;" — tests pass against fixture.
 ELI10: The script ran clean against the snapshot we captured. Saying yes
 moves the staged folder into ~/.gstack/browser-skills/ where /scrape
 will find it next time. Saying no removes the staged folder and nothing
 lands on disk.
 Stakes if we pick wrong: yes commits an artifact you have to manually rm
-later if you regret it ($B skill rm <name> --global). No throws away
+later if you regret it ($B skill rm &lt;name&gt; --global). No throws away
 ~30s of synthesis work.
 Recommendation: A — tests passed, the script is self-contained, this is
 the productivity payoff for the prototype.
@@ -1043,11 +1043,11 @@ this time — they already saw it).
 If the user approved:
 
 ```ts
-import { commitSkill } from '<gstack-install>/browse/src/browser-skill-write';
+import { commitSkill } from '&lt;gstack-install&gt;/browse/src/browser-skill-write';
 const dest = commitSkill({
-  name: '<name>',
-  tier: '<global|project>',  // from step 2 answer
-  stagedDir: '<stagedDir>',
+  name: '&lt;name&gt;',
+  tier: '&lt;global|project&gt;',  // from step 2 answer
+  stagedDir: '&lt;stagedDir&gt;',
 });
 console.log(`Committed: ${dest}`);
 ```
@@ -1062,8 +1062,8 @@ user dismissed in step 2), report and ask whether to:
 If the user rejected in step 9:
 
 ```ts
-import { discardStaged } from '<gstack-install>/browse/src/browser-skill-write';
-discardStaged('<stagedDir>');
+import { discardStaged } from '&lt;gstack-install&gt;/browse/src/browser-skill-write';
+discardStaged('&lt;stagedDir&gt;');
 ```
 
 Report: "Discarded. No skill was written to disk."
@@ -1073,8 +1073,8 @@ Report: "Discarded. No skill was written to disk."
 After a successful commit, run one verification:
 
 ```bash
-$B skill list | grep <name>
-$B skill run <name>    # should match the JSON the prototype produced
+$B skill list | grep &lt;name&gt;
+$B skill run &lt;name&gt;    # should match the JSON the prototype produced
 ```
 
 If the post-commit run does not match the prototype output, something
@@ -1139,6 +1139,6 @@ staleness detection: if those files are later deleted, the learning can be flagg
 
 **Only log genuine discoveries.** Don't log obvious things. Don't log things the user
 already knows. A good test: would this insight save time in a future session? If yes, log it.
-```
+````
 
 </details>

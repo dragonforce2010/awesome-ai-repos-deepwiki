@@ -99,6 +99,7 @@ export interface Tool {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 注册表
 
 内置工具数组包含文件读写编辑、Glob/Grep、Bash、MemoryWrite、TodoWrite、Task V2 工具、Plan Mode 工具和 Skill 工具。MCP 工具通过 `registerMcpTools()` 单独注入，最终由 `getAllTools()` 合并。  
@@ -173,6 +174,7 @@ export function getAllTools(): Tool[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Builtins["BUILTIN_TOOLS"] --> Registry["getAllTools"]
@@ -271,6 +273,7 @@ export function toolToApiParam(tool: Tool): Anthropic.Tool {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 路径边界
 
 文件类工具通过 `resolveWorkspacePath()` 解析路径，只允许访问当前 cwd 和 `~/.easy-agent`。这意味着默认情况下模型不能随意读写工作区外的路径，除非路径落在这两个允许根下。  
@@ -323,6 +326,7 @@ export function resolveWorkspacePath(filePath: string, cwd: string): string {
 
 <!-- source-snippets:end -->
 </details>
+
 | 工具 | 关键行为 |
 |------|----------|
 | `Read` | 可读文件或目录，支持 offset/limit，并输出行号 |
@@ -819,6 +823,7 @@ export const bashTool: Tool = {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Bash 工具
 
 `Bash` 用当前 shell 执行命令，默认 timeout 120 秒，输出截断到 30K 字符。它会在调用前读取 sandbox settings，如果应启用 sandbox，就构建 profile 并把原始命令包装成 `sandbox-exec` 命令。工具结果会明确输出原命令、是否 read-only、sandbox 是否启用、exit code、stdout 和 stderr。  
@@ -989,6 +994,7 @@ export function isReadOnlyCommand(command: string): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant Loop as runTools
@@ -1172,6 +1178,7 @@ Sources: [src/core/agenticLoop.ts:135-191](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## 权限设置加载
 
 权限设置从 user/project 两个 `settings.json` 路径读取。allow/deny 数组会合并，mode 由 project 覆盖 user，默认是 `default`。权限 JSON parse error 会抛错，避免用户以为配置生效但实际被静默忽略。  
@@ -1245,6 +1252,7 @@ export async function loadPermissionSettings(cwd: string): Promise<PermissionSet
 
 <!-- source-snippets:end -->
 </details>
+
 ## 权限规则匹配
 
 规则支持裸工具名、`Tool(pattern)` 和 MCP wildcard。`Bash(pattern)` 匹配 command，`Skill(pattern)` 匹配 skill name；`mcp__server__*` 可匹配某个 server 暴露的全部 MCP 工具。  
@@ -1302,6 +1310,7 @@ export function matchesPermissionRule(rule: string, toolName: string, input: Rec
 
 <!-- source-snippets:end -->
 </details>
+
 ## 决策树
 
 `checkPermission()` 的顺序很重要：auto mode 全允许；Todo/Task planning-only 工具全模式允许；plan mode 只允许 Read/Grep/Glob、read-only Bash、Plan transition 和写 plan 文件；普通模式下 read-only 工具直接允许；显式 deny/allow 再判定；最后 Bash 可通过 sandbox auto-allow，否则危险 Bash 或普通 side-effect tool 需要 ask。  
@@ -1446,6 +1455,7 @@ export async function checkPermission(params: PermissionCheckParams): Promise<Pe
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Start["checkPermission"] --> Auto{"mode auto?"}
@@ -1598,6 +1608,7 @@ export async function checkPermission(params: PermissionCheckParams): Promise<Pe
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Sandbox 与安全边界](sandbox-security.md)

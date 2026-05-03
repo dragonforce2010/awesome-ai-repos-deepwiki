@@ -68,6 +68,7 @@ Easy Agent should currently be understood as a serious open-source rebuild in pr
 
 <!-- source-snippets:end -->
 </details>
+
 ## 定位与边界
 
 项目定位可以概括为：**面向真实工程系统的本地 Agentic Coding CLI**。它强调五层架构、持久化、上下文压缩、MCP、Skills、Sandbox、任务系统等长期能力，但 README 也明确指出当前不是面向终端用户完全交付的成品。  
@@ -109,6 +110,7 @@ Core goals:
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Vision["复刻 Claude Code 风格"] --> Runtime["本地 Agent CLI"]
@@ -208,6 +210,7 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技术栈与运行方式
 
 仓库是 ESM TypeScript 项目，`bin.agent` 指向编译后的 `dist/entrypoint/cli.js`，开发入口是 `tsx src/entrypoint/cli.ts`，构建命令是 `tsc`。依赖显示它基于 Anthropic SDK、MCP SDK、React/Ink、dotenv、proper-lockfile、yaml 和 ignore。  
@@ -267,6 +270,7 @@ Sources: [package.json:2-20](../../../project-repos/easy-agent/package.json#L2-L
 
 <!-- source-snippets:end -->
 </details>
+
 TypeScript 配置使用 `NodeNext` 模块系统、`ES2022` target、`strict: true`、React JSX、声明文件和 sourcemap 输出。  
 Sources: [tsconfig.json:2-20](../../../project-repos/easy-agent/tsconfig.json#L2-L20)
 
@@ -301,6 +305,7 @@ Sources: [tsconfig.json:2-20](../../../project-repos/easy-agent/tsconfig.json#L2
 
 <!-- source-snippets:end -->
 </details>
+
 | 维度 | 证据 | 说明 |
 |------|------|------|
 | 语言 | `package.json` + `tsconfig.json` | TypeScript、ESM、NodeNext |
@@ -358,6 +363,7 @@ Sources: [package.json:36-46](../../../project-repos/easy-agent/package.json#L36
 
 <!-- source-snippets:end -->
 </details>
+
 ## 仓库组织
 
 README 给出的主结构与当前源文件一致：`entrypoint` 负责 CLI bootstrap，`ui` 负责 Ink 终端界面，`core` 放 agentic loop 与 query orchestration，`tools` 放本地工具和注册系统，`services/api` 放模型客户端与 streaming wrapper，`context/session/state/sandbox` 分别承载上下文、持久化、状态和安全边界。  
@@ -418,6 +424,7 @@ easy-agent/
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Repo["easy-agent"] --> Src["src/"]
@@ -472,6 +479,7 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 <!-- source-snippets:end -->
 </details>
+
 ## 路线图状态
 
 README 的路线图列出 30 个阶段，其中 1-18 已完成，19-22 等高级能力仍未开始，UI 升级、配置、错误处理、auto mode、发布文档等属于部分完成或待推进项。`step/` 目录保存教程化里程碑代码，便于把正式 `src/` 实现和单文件教学版本对照阅读。  
@@ -572,6 +580,7 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阅读路线
 
 | 目标 | 建议路径 |
@@ -700,7 +709,7 @@ export class QueryEngine {
   private prePlanMode: PermissionMode | null = null;
   private readonly permissionSettings?: PermissionSettings;
   private readonly sessionPermissionRules: PermissionRuleSet;
-  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise<PermissionDecision>;
+  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise&lt;PermissionDecision&gt;;
   private abortController: AbortController | null = null;
   private usageAnchorIndex: number = -1;
   private lastCallUsage: Usage = { input_tokens: 0, output_tokens: 0 };
@@ -725,7 +734,7 @@ export class QueryEngine {
 ```typescript
 export async function* query(
   params: QueryParams,
-): AsyncGenerator<AgenticLoopEvent, AgenticLoopResult> {
+): AsyncGenerator&lt;AgenticLoopEvent, AgenticLoopResult&gt; {
   const maxTurns = params.maxTurns ?? MAX_TOOL_TURNS;
   let state: LoopState = {
     messages: [...params.messages],
@@ -848,6 +857,7 @@ export async function* query(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 分层视图
 
 ```mermaid
@@ -878,7 +888,7 @@ Sources: [src/entrypoint/cli.ts:69-77](../../../project-repos/easy-agent/src/ent
 ```typescript
   // Skills must load BEFORE we render anything (live REPL or
   // --dump-system-prompt), because `buildSystemPrompt` reads the
-  // skill registry to inject the <system-reminder> discovery block.
+  // skill registry to inject the &lt;system-reminder&gt; discovery block.
   // If we bootstrap after the dump branch, the dump shows an empty
   // skills section and users assume the feature is broken.
   const { bootstrapSkills } = await import("../services/skills/bootstrap.js");
@@ -975,20 +985,20 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
   });
 
   return (
-    <Box flexDirection="column" paddingX={1}>
-      <Box marginBottom={1}>
-        <Text bold color="cyan">Easy Agent</Text>
-        <Text dimColor> ({state.currentModel})</Text>
-      </Box>
-      <Text dimColor>Type a message to start. Ctrl+C to interrupt, Ctrl+D to exit.</Text>
+    &lt;Box flexDirection="column" paddingX={1}&gt;
+      &lt;Box marginBottom={1}&gt;
+        &lt;Text bold color="cyan"&gt;Easy Agent&lt;/Text&gt;
+        &lt;Text dimColor&gt; ({state.currentModel})&lt;/Text&gt;
+      &lt;/Box&gt;
+      &lt;Text dimColor&gt;Type a message to start. Ctrl+C to interrupt, Ctrl+D to exit.&lt;/Text&gt;
 
-      <ConversationView messages={state.messages} />
+      &lt;ConversationView messages={state.messages} /&gt;
       {state.taskMode === "task"
-        ? <TaskList tasks={state.tasks} />
-        : <TodoList todos={state.todos} />}
-      <ToolCallList toolCalls={state.toolCalls} />
-      <SystemPanel notice={state.systemNotice} />
-      <StatusBar
+        ? &lt;TaskList tasks={state.tasks} /&gt;
+        : &lt;TodoList todos={state.todos} /&gt;}
+      &lt;ToolCallList toolCalls={state.toolCalls} /&gt;
+      &lt;SystemPanel notice={state.systemNotice} /&gt;
+      &lt;StatusBar
         isLoading={state.isLoading}
         spinnerLabel={effectiveSpinnerLabel}
         streamingText={state.streamingText}
@@ -997,14 +1007,14 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
         permissionMode={state.permissionMode}
         onPlanDecision={actions.resolvePermission}
       />
-      <InputPrompt isLoading={state.isLoading || Boolean(state.permissionPrompt)} inputValue={inputValue} />
-      <CommandSuggestions items={commandSuggestions} />
-      <ModeSelector items={modeSuggestions} />
-      <ModeSelector
+      &lt;InputPrompt isLoading={state.isLoading || Boolean(state.permissionPrompt)} inputValue={inputValue} /&gt;
+      &lt;CommandSuggestions items={commandSuggestions} /&gt;
+      &lt;ModeSelector items={modeSuggestions} /&gt;
+      &lt;ModeSelector
         items={taskModeSuggestions}
         title={`select task system (↑↓ navigate, Enter confirm, 1-${taskModeSuggestions.length || 2} shortcut)`}
       />
-    </Box>
+    &lt;/Box&gt;
   );
 ```
 
@@ -1225,6 +1235,7 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
 
 <!-- source-snippets:end -->
 </details>
+
 ## 启动装配
 
 CLI 入口先加载环境变量，再处理 `--version`、`--help`、`--model`、`--resume`、`--plan`、`--auto`、`--permission-mode` 和 `--dump-system-prompt`。Skills 在渲染 system prompt 之前启动，因为 system prompt 会读取 skill registry；MCP 则以 fire-and-forget 的方式后台连接，避免慢 server 启动阻塞首帧 UI。  
@@ -1263,14 +1274,14 @@ function parsePermissionMode(argv: string[]): PermissionMode | undefined {
 #### `src/entrypoint/cli.ts:22-67`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   if (process.argv.includes("--version") || process.argv.includes("-v")) {
     console.log("easy-agent v" + VERSION);
     process.exit(0);
   }
 
   if (process.argv.includes("--help") || process.argv.includes("-h")) {
-    console.log(`
+    console.log(
 easy-agent v${VERSION} — Terminal-native agentic coding system
 
 Usage:
@@ -1279,11 +1290,11 @@ Usage:
 Options:
   -v, --version               Print version and exit
   -h, --help                  Show this help message
-  --model <model>             Override the LLM model
+  --model &lt;model&gt;             Override the LLM model
   --resume [session-id]       Resume the latest or a specific session
   --plan                      Start in plan mode (read-only tools only)
   --auto                      Start in auto mode (allow all tools)
-  --permission-mode <mode>    Permission mode: default | plan | auto
+  --permission-mode &lt;mode&gt;    Permission mode: default | plan | auto
   --dump-system-prompt        Print the assembled system prompt and exit
 
 Commands (in REPL):
@@ -1291,13 +1302,13 @@ Commands (in REPL):
   /clear                      Clear conversation history
   /mode [default|plan|auto]   Inspect or switch permission mode
   /tasks [task|todo|reset]    Switch task system or reset the task graph
-  /mcp [tools|reconnect <n>]  Inspect or reconnect MCP servers
+  /mcp [tools|reconnect &lt;n&gt;]  Inspect or reconnect MCP servers
   /skills                     List loaded skills (user + project scope)
-  /<skill-name> [args]        Invoke a skill by name
+  /&lt;skill-name&gt; [args]        Invoke a skill by name
   /history                    Show session history
   /compact                    Compact conversation context
   /exit, /quit, /bye          Exit the REPL
-`);
+);
     process.exit(0);
   }
 
@@ -1316,7 +1327,7 @@ Commands (in REPL):
 ```typescript
   // Skills must load BEFORE we render anything (live REPL or
   // --dump-system-prompt), because `buildSystemPrompt` reads the
-  // skill registry to inject the <system-reminder> discovery block.
+  // skill registry to inject the &lt;system-reminder&gt; discovery block.
   // If we bootstrap after the dump branch, the dump shows an empty
   // skills section and users assume the feature is broken.
   const { bootstrapSkills } = await import("../services/skills/bootstrap.js");
@@ -1347,6 +1358,7 @@ Commands (in REPL):
 
 <!-- source-snippets:end -->
 </details>
+
 | 启动步骤 | 代码位置 | 目的 |
 |----------|----------|------|
 | `loadEnv()` | `src/entrypoint/cli.ts` | 加载 API 相关环境变量 |
@@ -1375,7 +1387,7 @@ loadEnv();
 ```typescript
   // Skills must load BEFORE we render anything (live REPL or
   // --dump-system-prompt), because `buildSystemPrompt` reads the
-  // skill registry to inject the <system-reminder> discovery block.
+  // skill registry to inject the &lt;system-reminder&gt; discovery block.
   // If we bootstrap after the dump branch, the dump shows an empty
   // skills section and users assume the feature is broken.
   const { bootstrapSkills } = await import("../services/skills/bootstrap.js");
@@ -1438,6 +1450,7 @@ loadEnv();
 
 <!-- source-snippets:end -->
 </details>
+
 ## 编排与核心循环边界
 
 `QueryEngine` 的状态包括 message history、usage、默认模型、会话内模型 override、当前权限模式、session allow rules、AbortController 和 token usage anchor。它会在每个用户提交前重建 system prompt，必要时执行 micro/full compaction，再调用 `agenticLoop.query()`。  
@@ -1461,7 +1474,7 @@ export class QueryEngine {
   private prePlanMode: PermissionMode | null = null;
   private readonly permissionSettings?: PermissionSettings;
   private readonly sessionPermissionRules: PermissionRuleSet;
-  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise<PermissionDecision>;
+  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise&lt;PermissionDecision&gt;;
   private abortController: AbortController | null = null;
   private usageAnchorIndex: number = -1;
   private lastCallUsage: Usage = { input_tokens: 0, output_tokens: 0 };
@@ -1486,7 +1499,7 @@ export class QueryEngine {
 ```typescript
   private async *submitInternal(
     trimmed: string,
-  ): AsyncGenerator<QueryEngineEvent, { handled: boolean; reason?: LoopTerminationReason }> {
+  ): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean; reason?: LoopTerminationReason }&gt; {
 
     const previewSystemParts = await buildSystemPrompt({
       cwd: this.toolContext.cwd,
@@ -1576,6 +1589,7 @@ export class QueryEngine {
 
 <!-- source-snippets:end -->
 </details>
+
 `agenticLoop.query()` 是更低层的单轮循环：它用当前 messages 和 tools 发起 streaming 请求，收到 assistant message 后根据 stop reason 判断是否需要执行工具。如果 stop reason 是 `tool_use`，它执行 `runTools()`，把 tool_result 作为 user message 追加回去，然后继续下一轮。  
 Sources: [src/core/agenticLoop.ts:239-299](../../../project-repos/easy-agent/src/core/agenticLoop.ts#L239-L299), [src/core/agenticLoop.ts:349-399](../../../project-repos/easy-agent/src/core/agenticLoop.ts#L349-L399)
 
@@ -1589,7 +1603,7 @@ Sources: [src/core/agenticLoop.ts:239-299](../../../project-repos/easy-agent/src
 ```typescript
 export async function* query(
   params: QueryParams,
-): AsyncGenerator<AgenticLoopEvent, AgenticLoopResult> {
+): AsyncGenerator&lt;AgenticLoopEvent, AgenticLoopResult&gt; {
   const maxTurns = params.maxTurns ?? MAX_TOOL_TURNS;
   let state: LoopState = {
     messages: [...params.messages],
@@ -1708,6 +1722,7 @@ export async function* query(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant U as User
@@ -1739,7 +1754,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
 #### `src/ui/hooks/useAgentSession.ts:474-536`
 
 ```typescript
-  const submit = useCallback(async (text: string): Promise<SubmitResult> => {
+  const submit = useCallback(async (text: string): Promise&lt;SubmitResult&gt; => {
     if (!text.trim()) {
       return { handled: false };
     }
@@ -1763,7 +1778,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
     // Slash commands fall into two categories that need different UX:
     //   1. *System* commands (/help, /cost, /model, /skills, /mcp, …) —
     //      synchronous, never call the LLM, just print a notice.
-    //   2. *Skill* commands (/<skill-name> [args]) — expand into a real
+    //   2. *Skill* commands (/&lt;skill-name&gt; [args]) — expand into a real
     //      user prompt and engage the full agentic loop, exactly like a
     //      typed chat message.
     // Without this distinction every `/` input was treated as case (1):
@@ -1973,6 +1988,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
+
 ## 工具与扩展边界
 
 工具注册表由两部分组成：编译期内置工具数组和运行时 MCP 工具数组。`getAllTools()` 会合并两者并过滤 `isEnabled()`，`getToolsApiParams()` 会根据 plan mode 隐藏 `EnterPlanMode` 或 `ExitPlanMode`，但其他工具的模式限制交给权限层执行。  
@@ -2051,6 +2067,7 @@ export function getToolsApiParams(mode?: PermissionMode): Anthropic.Tool[] {
 
 <!-- source-snippets:end -->
 </details>
+
 System prompt 动态部分会合并环境、Git 状态、`AGENT.md`、项目 memory、session instructions 和 skills reminder。因此架构上，`context/` 是每轮 prompt 的上下文聚合层，而不是只存静态 prompt 文本。  
 Sources: [src/context/systemPrompt.ts:45-72](../../../project-repos/easy-agent/src/context/systemPrompt.ts#L45-L72), [src/context/systemPrompt.ts:95-140](../../../project-repos/easy-agent/src/context/systemPrompt.ts#L95-L140)
 
@@ -2062,7 +2079,7 @@ Sources: [src/context/systemPrompt.ts:45-72](../../../project-repos/easy-agent/s
 #### `src/context/systemPrompt.ts:45-72`
 
 ```typescript
-async function getGitContext(cwd: string): Promise<Pick<RuntimeEnvironmentContext, "gitBranch" | "gitStatus" | "gitRecentCommit">> {
+async function getGitContext(cwd: string): Promise&lt;Pick&lt;RuntimeEnvironmentContext, "gitBranch" | "gitStatus" | "gitRecentCommit"&gt;&gt; {
   try {
     const [branchResult, statusResult, logResult] = await Promise.all([
       execFileAsync("git", ["rev-parse", "--abbrev-ref", "HEAD"], { cwd, maxBuffer: 32 * 1024 }),
@@ -2081,7 +2098,7 @@ async function getGitContext(cwd: string): Promise<Pick<RuntimeEnvironmentContex
   }
 }
 
-export async function getRuntimeEnvironmentContext(cwd: string): Promise<RuntimeEnvironmentContext> {
+export async function getRuntimeEnvironmentContext(cwd: string): Promise&lt;RuntimeEnvironmentContext&gt; {
   const git = await getGitContext(cwd);
   return {
     cwd,
@@ -2095,7 +2112,7 @@ export async function getRuntimeEnvironmentContext(cwd: string): Promise<Runtime
 #### `src/context/systemPrompt.ts:95-140`
 
 ```typescript
-export async function buildSystemPrompt(options: BuildSystemPromptOptions): Promise<string[]> {
+export async function buildSystemPrompt(options: BuildSystemPromptOptions): Promise&lt;string[]&gt; {
   const ignoreMemory = options.userQuery ? shouldIgnoreMemory(options.userQuery) : false;
   const memoryDir = await ensureMemoryDirExists(options.cwd);
   const [environmentContext, agentMdContext, memoryEntrypoint] = await Promise.all([
@@ -2123,7 +2140,7 @@ export async function buildSystemPrompt(options: BuildSystemPromptOptions): Prom
   ].filter(Boolean);
 
   // Skill discovery listing — see skills/budget.ts for the budget logic.
-  // Wrapped as a <system-reminder> block (not a top-level instruction) so the
+  // Wrapped as a &lt;system-reminder&gt; block (not a top-level instruction) so the
   // model treats it as ambient context that may or may not apply this turn.
   // Conditional skills (frontmatter `paths`) only appear here AFTER they've
   // been promoted in by activateConditionalSkillsForPaths(); see
@@ -2145,6 +2162,7 @@ export async function buildSystemPrompt(options: BuildSystemPromptOptions): Prom
 
 <!-- source-snippets:end -->
 </details>
+
 ## 关键设计取舍
 
 | 取舍 | 当前实现 |
@@ -2211,7 +2229,7 @@ export function getToolsApiParams(mode?: PermissionMode): Anthropic.Tool[] {
 
 ```typescript
   // Skill discovery listing — see skills/budget.ts for the budget logic.
-  // Wrapped as a <system-reminder> block (not a top-level instruction) so the
+  // Wrapped as a &lt;system-reminder&gt; block (not a top-level instruction) so the
   // model treats it as ambient context that may or may not apply this turn.
   // Conditional skills (frontmatter `paths`) only appear here AFTER they've
   // been promoted in by activateConditionalSkillsForPaths(); see
@@ -2317,7 +2335,7 @@ export function getToolsApiParams(mode?: PermissionMode): Anthropic.Tool[] {
               (value.name === "Write" || value.name === "Edit") &&
               value.result.content.includes(getPlansDirectory());
             const inputPreview = formatToolInputPreview(value.input);
-            // Strip the model-only <sandbox_violations> tag from the
+            // Strip the model-only &lt;sandbox_violations&gt; tag from the
             // user-visible error message. The tag stays in the tool
             // result that goes back to the model (so it can interpret
             // sandbox denials), but humans see clean stderr only.
@@ -2408,6 +2426,7 @@ export function getToolsApiParams(mode?: PermissionMode): Anthropic.Tool[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [CLI 与终端 UI](cli-and-ui.md)
@@ -2445,14 +2464,14 @@ Sources: [src/entrypoint/cli.ts:22-67](../../../project-repos/easy-agent/src/ent
 #### `src/entrypoint/cli.ts:22-67`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   if (process.argv.includes("--version") || process.argv.includes("-v")) {
     console.log("easy-agent v" + VERSION);
     process.exit(0);
   }
 
   if (process.argv.includes("--help") || process.argv.includes("-h")) {
-    console.log(`
+    console.log(
 easy-agent v${VERSION} — Terminal-native agentic coding system
 
 Usage:
@@ -2461,11 +2480,11 @@ Usage:
 Options:
   -v, --version               Print version and exit
   -h, --help                  Show this help message
-  --model <model>             Override the LLM model
+  --model &lt;model&gt;             Override the LLM model
   --resume [session-id]       Resume the latest or a specific session
   --plan                      Start in plan mode (read-only tools only)
   --auto                      Start in auto mode (allow all tools)
-  --permission-mode <mode>    Permission mode: default | plan | auto
+  --permission-mode &lt;mode&gt;    Permission mode: default | plan | auto
   --dump-system-prompt        Print the assembled system prompt and exit
 
 Commands (in REPL):
@@ -2473,13 +2492,13 @@ Commands (in REPL):
   /clear                      Clear conversation history
   /mode [default|plan|auto]   Inspect or switch permission mode
   /tasks [task|todo|reset]    Switch task system or reset the task graph
-  /mcp [tools|reconnect <n>]  Inspect or reconnect MCP servers
+  /mcp [tools|reconnect &lt;n&gt;]  Inspect or reconnect MCP servers
   /skills                     List loaded skills (user + project scope)
-  /<skill-name> [args]        Invoke a skill by name
+  /&lt;skill-name&gt; [args]        Invoke a skill by name
   /history                    Show session history
   /compact                    Compact conversation context
   /exit, /quit, /bye          Exit the REPL
-`);
+);
     process.exit(0);
   }
 
@@ -2584,20 +2603,20 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
   });
 
   return (
-    <Box flexDirection="column" paddingX={1}>
-      <Box marginBottom={1}>
-        <Text bold color="cyan">Easy Agent</Text>
-        <Text dimColor> ({state.currentModel})</Text>
-      </Box>
-      <Text dimColor>Type a message to start. Ctrl+C to interrupt, Ctrl+D to exit.</Text>
+    &lt;Box flexDirection="column" paddingX={1}&gt;
+      &lt;Box marginBottom={1}&gt;
+        &lt;Text bold color="cyan"&gt;Easy Agent&lt;/Text&gt;
+        &lt;Text dimColor&gt; ({state.currentModel})&lt;/Text&gt;
+      &lt;/Box&gt;
+      &lt;Text dimColor&gt;Type a message to start. Ctrl+C to interrupt, Ctrl+D to exit.&lt;/Text&gt;
 
-      <ConversationView messages={state.messages} />
+      &lt;ConversationView messages={state.messages} /&gt;
       {state.taskMode === "task"
-        ? <TaskList tasks={state.tasks} />
-        : <TodoList todos={state.todos} />}
-      <ToolCallList toolCalls={state.toolCalls} />
-      <SystemPanel notice={state.systemNotice} />
-      <StatusBar
+        ? &lt;TaskList tasks={state.tasks} /&gt;
+        : &lt;TodoList todos={state.todos} /&gt;}
+      &lt;ToolCallList toolCalls={state.toolCalls} /&gt;
+      &lt;SystemPanel notice={state.systemNotice} /&gt;
+      &lt;StatusBar
         isLoading={state.isLoading}
         spinnerLabel={effectiveSpinnerLabel}
         streamingText={state.streamingText}
@@ -2606,19 +2625,20 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
         permissionMode={state.permissionMode}
         onPlanDecision={actions.resolvePermission}
       />
-      <InputPrompt isLoading={state.isLoading || Boolean(state.permissionPrompt)} inputValue={inputValue} />
-      <CommandSuggestions items={commandSuggestions} />
-      <ModeSelector items={modeSuggestions} />
-      <ModeSelector
+      &lt;InputPrompt isLoading={state.isLoading || Boolean(state.permissionPrompt)} inputValue={inputValue} /&gt;
+      &lt;CommandSuggestions items={commandSuggestions} /&gt;
+      &lt;ModeSelector items={modeSuggestions} /&gt;
+      &lt;ModeSelector
         items={taskModeSuggestions}
         title={`select task system (↑↓ navigate, Enter confirm, 1-${taskModeSuggestions.length || 2} shortcut)`}
       />
-    </Box>
+    &lt;/Box&gt;
   );
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## CLI 参数与 REPL 命令
 
 `cli.ts` 支持版本、帮助、模型覆盖、会话恢复、plan/auto permission mode、显式 permission mode、system prompt dump。帮助文本还列出 REPL 命令：`/mode`、`/tasks`、`/mcp`、`/skills`、`/<skill-name>`、`/history`、`/compact` 等。  
@@ -2633,7 +2653,7 @@ Sources: [src/entrypoint/cli.ts:28-56](../../../project-repos/easy-agent/src/ent
 
 ```typescript
   if (process.argv.includes("--help") || process.argv.includes("-h")) {
-    console.log(`
+    console.log(
 easy-agent v${VERSION} — Terminal-native agentic coding system
 
 Usage:
@@ -2642,11 +2662,11 @@ Usage:
 Options:
   -v, --version               Print version and exit
   -h, --help                  Show this help message
-  --model <model>             Override the LLM model
+  --model &lt;model&gt;             Override the LLM model
   --resume [session-id]       Resume the latest or a specific session
   --plan                      Start in plan mode (read-only tools only)
   --auto                      Start in auto mode (allow all tools)
-  --permission-mode <mode>    Permission mode: default | plan | auto
+  --permission-mode &lt;mode&gt;    Permission mode: default | plan | auto
   --dump-system-prompt        Print the assembled system prompt and exit
 
 Commands (in REPL):
@@ -2654,13 +2674,13 @@ Commands (in REPL):
   /clear                      Clear conversation history
   /mode [default|plan|auto]   Inspect or switch permission mode
   /tasks [task|todo|reset]    Switch task system or reset the task graph
-  /mcp [tools|reconnect <n>]  Inspect or reconnect MCP servers
+  /mcp [tools|reconnect &lt;n&gt;]  Inspect or reconnect MCP servers
   /skills                     List loaded skills (user + project scope)
-  /<skill-name> [args]        Invoke a skill by name
+  /&lt;skill-name&gt; [args]        Invoke a skill by name
   /history                    Show session history
   /compact                    Compact conversation context
   /exit, /quit, /bye          Exit the REPL
-`);
+);
 ```
 
 #### `src/entrypoint/cli.ts:60-67`
@@ -2678,6 +2698,7 @@ Commands (in REPL):
 
 <!-- source-snippets:end -->
 </details>
+
 | 输入 | 行为 |
 |------|------|
 | `--model <model>` | 覆盖默认模型 |
@@ -2701,11 +2722,11 @@ Sources: [src/entrypoint/cli.ts:35-55](../../../project-repos/easy-agent/src/ent
 Options:
   -v, --version               Print version and exit
   -h, --help                  Show this help message
-  --model <model>             Override the LLM model
+  --model &lt;model&gt;             Override the LLM model
   --resume [session-id]       Resume the latest or a specific session
   --plan                      Start in plan mode (read-only tools only)
   --auto                      Start in auto mode (allow all tools)
-  --permission-mode <mode>    Permission mode: default | plan | auto
+  --permission-mode &lt;mode&gt;    Permission mode: default | plan | auto
   --dump-system-prompt        Print the assembled system prompt and exit
 
 Commands (in REPL):
@@ -2713,9 +2734,9 @@ Commands (in REPL):
   /clear                      Clear conversation history
   /mode [default|plan|auto]   Inspect or switch permission mode
   /tasks [task|todo|reset]    Switch task system or reset the task graph
-  /mcp [tools|reconnect <n>]  Inspect or reconnect MCP servers
+  /mcp [tools|reconnect &lt;n&gt;]  Inspect or reconnect MCP servers
   /skills                     List loaded skills (user + project scope)
-  /<skill-name> [args]        Invoke a skill by name
+  /&lt;skill-name&gt; [args]        Invoke a skill by name
   /history                    Show session history
   /compact                    Compact conversation context
   /exit, /quit, /bye          Exit the REPL
@@ -2724,7 +2745,7 @@ Commands (in REPL):
 #### `src/core/queryEngine.ts:440-629`
 
 ```typescript
-  private async *handleCommand(command: string): AsyncGenerator<QueryEngineEvent, { handled: boolean }> {
+  private async *handleCommand(command: string): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean }&gt; {
     const [name, ...args] = command.slice(1).split(/\s+/).filter(Boolean);
 
     switch (name) {
@@ -2732,7 +2753,7 @@ Commands (in REPL):
         yield {
           type: "command",
           kind: "info",
-          message: "Commands: /help /clear /cost /model [name|default] /mode [default|plan|auto] /tasks [task|todo|reset] /mcp [tools <name>|reconnect <name>] /skills /history /compact /<skill-name> [args] /exit /quit /bye",
+          message: "Commands: /help /clear /cost /model [name|default] /mode [default|plan|auto] /tasks [task|todo|reset] /mcp [tools &lt;name&gt;|reconnect &lt;name&gt;] /skills /history /compact /&lt;skill-name&gt; [args] /exit /quit /bye",
         };
         return { handled: true };
       case "mcp":
@@ -2843,12 +2864,13 @@ Commands (in REPL):
               `- Source: ${this.getModelSource()}`,
               `- Default model: ${this.defaultModel}`,
               this.sessionModelOverride ? `- Session override: ${this.sessionModelOverride}` : "- Session override: none",
-              "- Usage: /model <name> to override for this session",
+              "- Usage: /model &lt;name&gt; to override for this session",
 ... snippet truncated ...
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## App 组件树
 
 `App` 从 `useAgentSession` 取 state/actions，并组合多个显示组件。任务展示在 Task V2 和 TodoWrite V1 间切换，工具调用既有实时 `ToolCallList`，也会在消息提交后由 `ConversationView` 内联渲染。  
@@ -2901,20 +2923,20 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
   });
 
   return (
-    <Box flexDirection="column" paddingX={1}>
-      <Box marginBottom={1}>
-        <Text bold color="cyan">Easy Agent</Text>
-        <Text dimColor> ({state.currentModel})</Text>
-      </Box>
-      <Text dimColor>Type a message to start. Ctrl+C to interrupt, Ctrl+D to exit.</Text>
+    &lt;Box flexDirection="column" paddingX={1}&gt;
+      &lt;Box marginBottom={1}&gt;
+        &lt;Text bold color="cyan"&gt;Easy Agent&lt;/Text&gt;
+        &lt;Text dimColor&gt; ({state.currentModel})&lt;/Text&gt;
+      &lt;/Box&gt;
+      &lt;Text dimColor&gt;Type a message to start. Ctrl+C to interrupt, Ctrl+D to exit.&lt;/Text&gt;
 
-      <ConversationView messages={state.messages} />
+      &lt;ConversationView messages={state.messages} /&gt;
       {state.taskMode === "task"
-        ? <TaskList tasks={state.tasks} />
-        : <TodoList todos={state.todos} />}
-      <ToolCallList toolCalls={state.toolCalls} />
-      <SystemPanel notice={state.systemNotice} />
-      <StatusBar
+        ? &lt;TaskList tasks={state.tasks} /&gt;
+        : &lt;TodoList todos={state.todos} /&gt;}
+      &lt;ToolCallList toolCalls={state.toolCalls} /&gt;
+      &lt;SystemPanel notice={state.systemNotice} /&gt;
+      &lt;StatusBar
         isLoading={state.isLoading}
         spinnerLabel={effectiveSpinnerLabel}
         streamingText={state.streamingText}
@@ -2923,19 +2945,20 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
         permissionMode={state.permissionMode}
         onPlanDecision={actions.resolvePermission}
       />
-      <InputPrompt isLoading={state.isLoading || Boolean(state.permissionPrompt)} inputValue={inputValue} />
-      <CommandSuggestions items={commandSuggestions} />
-      <ModeSelector items={modeSuggestions} />
-      <ModeSelector
+      &lt;InputPrompt isLoading={state.isLoading || Boolean(state.permissionPrompt)} inputValue={inputValue} /&gt;
+      &lt;CommandSuggestions items={commandSuggestions} /&gt;
+      &lt;ModeSelector items={modeSuggestions} /&gt;
+      &lt;ModeSelector
         items={taskModeSuggestions}
         title={`select task system (↑↓ navigate, Enter confirm, 1-${taskModeSuggestions.length || 2} shortcut)`}
       />
-    </Box>
+    &lt;/Box&gt;
   );
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   App["App"] --> Session["useAgentSession"]
@@ -2980,20 +3003,20 @@ import type { CommandSuggestion } from "./types.js";
 
 ```tsx
   return (
-    <Box flexDirection="column" paddingX={1}>
-      <Box marginBottom={1}>
-        <Text bold color="cyan">Easy Agent</Text>
-        <Text dimColor> ({state.currentModel})</Text>
-      </Box>
-      <Text dimColor>Type a message to start. Ctrl+C to interrupt, Ctrl+D to exit.</Text>
+    &lt;Box flexDirection="column" paddingX={1}&gt;
+      &lt;Box marginBottom={1}&gt;
+        &lt;Text bold color="cyan"&gt;Easy Agent&lt;/Text&gt;
+        &lt;Text dimColor&gt; ({state.currentModel})&lt;/Text&gt;
+      &lt;/Box&gt;
+      &lt;Text dimColor&gt;Type a message to start. Ctrl+C to interrupt, Ctrl+D to exit.&lt;/Text&gt;
 
-      <ConversationView messages={state.messages} />
+      &lt;ConversationView messages={state.messages} /&gt;
       {state.taskMode === "task"
-        ? <TaskList tasks={state.tasks} />
-        : <TodoList todos={state.todos} />}
-      <ToolCallList toolCalls={state.toolCalls} />
-      <SystemPanel notice={state.systemNotice} />
-      <StatusBar
+        ? &lt;TaskList tasks={state.tasks} /&gt;
+        : &lt;TodoList todos={state.todos} /&gt;}
+      &lt;ToolCallList toolCalls={state.toolCalls} /&gt;
+      &lt;SystemPanel notice={state.systemNotice} /&gt;
+      &lt;StatusBar
         isLoading={state.isLoading}
         spinnerLabel={effectiveSpinnerLabel}
         streamingText={state.streamingText}
@@ -3002,18 +3025,19 @@ import type { CommandSuggestion } from "./types.js";
         permissionMode={state.permissionMode}
         onPlanDecision={actions.resolvePermission}
       />
-      <InputPrompt isLoading={state.isLoading || Boolean(state.permissionPrompt)} inputValue={inputValue} />
-      <CommandSuggestions items={commandSuggestions} />
-      <ModeSelector items={modeSuggestions} />
-      <ModeSelector
+      &lt;InputPrompt isLoading={state.isLoading || Boolean(state.permissionPrompt)} inputValue={inputValue} /&gt;
+      &lt;CommandSuggestions items={commandSuggestions} /&gt;
+      &lt;ModeSelector items={modeSuggestions} /&gt;
+      &lt;ModeSelector
         items={taskModeSuggestions}
         title={`select task system (↑↓ navigate, Enter confirm, 1-${taskModeSuggestions.length || 2} shortcut)`}
       />
-    </Box>
+    &lt;/Box&gt;
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## 会话 Hook
 
 `useAgentSession` 初始化 permission settings 和 `QueryEngine`，创建或恢复 session，订阅 Todo/Task store，处理流式事件、工具卡片、permission prompt、usage、compaction、model/mode/task mode 变化，并把结果写入 transcript。  
@@ -3034,28 +3058,28 @@ export function useAgentSession({
   shouldResume,
   resumeSessionId,
 }: UseAgentSessionOptions) {
-  const [messages, setMessages] = useState<MessageParam[]>([]);
+  const [messages, setMessages] = useState&lt;MessageParam[]&gt;([]);
   const [isLoading, setIsLoading] = useState(false);
   const [spinnerLabel, setSpinnerLabel] = useState("Thinking");
   const [streamingText, setStreamingText] = useState("");
-  const [toolCalls, setToolCalls] = useState<ToolCallInfo[]>([]);
-  const [lastUsage, setLastUsage] = useState<UsageSummary | null>(null);
-  const [totalUsage, setTotalUsage] = useState<UsageSummary | null>(null);
-  const [systemNotice, setSystemNotice] = useState<SystemNotice | null>(null);
-  const [permissionPrompt, setPermissionPrompt] = useState<PermissionPromptState | null>(null);
-  const [permissionSettings, setPermissionSettings] = useState<PermissionSettings | null>(null);
+  const [toolCalls, setToolCalls] = useState&lt;ToolCallInfo[]&gt;([]);
+  const [lastUsage, setLastUsage] = useState&lt;UsageSummary | null&gt;(null);
+  const [totalUsage, setTotalUsage] = useState&lt;UsageSummary | null&gt;(null);
+  const [systemNotice, setSystemNotice] = useState&lt;SystemNotice | null&gt;(null);
+  const [permissionPrompt, setPermissionPrompt] = useState&lt;PermissionPromptState | null&gt;(null);
+  const [permissionSettings, setPermissionSettings] = useState&lt;PermissionSettings | null&gt;(null);
   const [currentModel, setCurrentModel] = useState(model);
-  const [activePermissionMode, setActivePermissionMode] = useState<string>(permissionMode ?? "default");
-  const [todos, setTodosState] = useState<TodoItem[]>([]);
-  const [tasks, setTasksState] = useState<Task[]>([]);
-  const [taskMode, setTaskModeState] = useState<TaskMode>(getTaskMode());
+  const [activePermissionMode, setActivePermissionMode] = useState&lt;string&gt;(permissionMode ?? "default");
+  const [todos, setTodosState] = useState&lt;TodoItem[]&gt;([]);
+  const [tasks, setTasksState] = useState&lt;Task[]&gt;([]);
+  const [taskMode, setTaskModeState] = useState&lt;TaskMode&gt;(getTaskMode());
 
-  const permissionResolverRef = useRef<((decision: PermissionDecision) => void) | null>(null);
+  const permissionResolverRef = useRef&lt;((decision: PermissionDecision) =&gt; void) | null>(null);
   const pendingClearContextRef = useRef(false);
-  const pendingFeedbackRef = useRef<string | null>(null);
-  const sessionRulesRef = useRef<PermissionRuleSet>({ allow: [], deny: [] });
-  const engineRef = useRef<QueryEngine | null>(null);
-  const sessionIdRef = useRef<string>(createSessionId());
+  const pendingFeedbackRef = useRef&lt;string | null&gt;(null);
+  const sessionRulesRef = useRef&lt;PermissionRuleSet&gt;({ allow: [], deny: [] });
+  const engineRef = useRef&lt;QueryEngine | null&gt;(null);
+  const sessionIdRef = useRef&lt;string&gt;(createSessionId());
 
   // Streaming-text throttling. SSE chunks can arrive at >100 Hz from fast
   // models, and every setStreamingText forces Ink to repaint the whole
@@ -3063,8 +3087,8 @@ export function useAgentSession({
   // the unbatched updates caused visible flicker and "untouchable" terminal
   // scrolling. We coalesce chunks into a 30ms window (≈33 fps) — fast
   // enough to look live, slow enough to keep the UI usable.
-  const pendingTextRef = useRef<string>("");
-  const flushTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingTextRef = useRef&lt;string&gt;("");
+  const flushTimerRef = useRef&lt;ReturnType&lt;typeof setTimeout&gt; | null&gt;(null);
   const flushPendingText = useCallback(() => {
     flushTimerRef.current = null;
     if (pendingTextRef.current) {
@@ -3089,7 +3113,7 @@ export function useAgentSession({
   // value would silently route TodoWrite writes to the old (orphan) key
   // while the UI subscriber filters on the new sessionId, leaving the
   // todo panel permanently empty.
-  const toolContext = useMemo<ToolContext>(
+  const toolContext = useMemo&lt;ToolContext&gt;(
     () => ({
       cwd: process.cwd(),
       get sessionId() {
@@ -3180,7 +3204,7 @@ export function useAgentSession({
               planContent,
               planFilePath,
             });
-            return new Promise<PermissionDecision>((resolve) => {
+            return new Promise&lt;PermissionDecision&gt;((resolve) => {
               permissionResolverRef.current = resolve;
             });
           },
@@ -3216,7 +3240,7 @@ export function useAgentSession({
 #### `src/ui/hooks/useAgentSession.ts:474-679`
 
 ```typescript
-  const submit = useCallback(async (text: string): Promise<SubmitResult> => {
+  const submit = useCallback(async (text: string): Promise&lt;SubmitResult&gt; => {
     if (!text.trim()) {
       return { handled: false };
     }
@@ -3240,7 +3264,7 @@ export function useAgentSession({
     // Slash commands fall into two categories that need different UX:
     //   1. *System* commands (/help, /cost, /model, /skills, /mcp, …) —
     //      synchronous, never call the LLM, just print a notice.
-    //   2. *Skill* commands (/<skill-name> [args]) — expand into a real
+    //   2. *Skill* commands (/&lt;skill-name&gt; [args]) — expand into a real
     //      user prompt and engage the full agentic loop, exactly like a
     //      typed chat message.
     // Without this distinction every `/` input was treated as case (1):
@@ -3327,7 +3351,7 @@ export function useAgentSession({
               (value.name === "Write" || value.name === "Edit") &&
               value.result.content.includes(getPlansDirectory());
             const inputPreview = formatToolInputPreview(value.input);
-            // Strip the model-only <sandbox_violations> tag from the
+            // Strip the model-only &lt;sandbox_violations&gt; tag from the
             // user-visible error message. The tag stays in the tool
             // result that goes back to the model (so it can interpret
             // sandbox denials), but humans see clean stderr only.
@@ -3341,6 +3365,7 @@ export function useAgentSession({
 
 <!-- source-snippets:end -->
 </details>
+
 它对 streaming text 做 30ms 合并，避免高频 SSE chunks 触发 Ink 全树重绘。这个优化和 Task/Todo 列表的静态渲染策略配合，降低终端闪烁和滚动问题。  
 Sources: [src/ui/hooks/useAgentSession.ts:198-223](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts#L198-L223), [src/ui/hooks/useAgentSession.ts:551-560](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts#L551-L560), [src/ui/components/TaskList.tsx:9-17](../../../project-repos/easy-agent/src/ui/components/TaskList.tsx#L9-L17), [src/ui/components/TodoList.tsx:9-17](../../../project-repos/easy-agent/src/ui/components/TodoList.tsx#L9-L17)
 
@@ -3358,8 +3383,8 @@ Sources: [src/ui/hooks/useAgentSession.ts:198-223](../../../project-repos/easy-a
   // the unbatched updates caused visible flicker and "untouchable" terminal
   // scrolling. We coalesce chunks into a 30ms window (≈33 fps) — fast
   // enough to look live, slow enough to keep the UI usable.
-  const pendingTextRef = useRef<string>("");
-  const flushTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingTextRef = useRef&lt;string&gt;("");
+  const flushTimerRef = useRef&lt;ReturnType&lt;typeof setTimeout&gt; | null&gt;(null);
   const flushPendingText = useCallback(() => {
     flushTimerRef.current = null;
     if (pendingTextRef.current) {
@@ -3425,6 +3450,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:198-223](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant Input as InputPrompt
@@ -3450,7 +3476,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
 #### `src/ui/hooks/useAgentSession.ts:474-536`
 
 ```typescript
-  const submit = useCallback(async (text: string): Promise<SubmitResult> => {
+  const submit = useCallback(async (text: string): Promise&lt;SubmitResult&gt; => {
     if (!text.trim()) {
       return { handled: false };
     }
@@ -3474,7 +3500,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
     // Slash commands fall into two categories that need different UX:
     //   1. *System* commands (/help, /cost, /model, /skills, /mcp, …) —
     //      synchronous, never call the LLM, just print a notice.
-    //   2. *Skill* commands (/<skill-name> [args]) — expand into a real
+    //   2. *Skill* commands (/&lt;skill-name&gt; [args]) — expand into a real
     //      user prompt and engage the full agentic loop, exactly like a
     //      typed chat message.
     // Without this distinction every `/` input was treated as case (1):
@@ -3552,7 +3578,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
               (value.name === "Write" || value.name === "Edit") &&
               value.result.content.includes(getPlansDirectory());
             const inputPreview = formatToolInputPreview(value.input);
-            // Strip the model-only <sandbox_violations> tag from the
+            // Strip the model-only &lt;sandbox_violations&gt; tag from the
             // user-visible error message. The tag stays in the tool
             // result that goes back to the model (so it can interpret
             // sandbox denials), but humans see clean stderr only.
@@ -3643,6 +3669,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
+
 ## 输入建议与权限交互
 
 `usePromptInput` 处理 Ctrl+C、Ctrl+D、permission prompt 快捷键、命令建议、mode selector、task mode selector 和普通文本输入。命令建议由内置命令加动态 skills 命令合并，并按输入前缀过滤到最多 8 个。  
@@ -3728,7 +3755,7 @@ const TASK_MODE_OPTIONS: { mode: TaskMode; description: string }[] = [
     // Built-ins first, then dynamic skill commands. We de-dupe by name so
     // a project-level skill that shadows a built-in (unlikely but possible
     // once users start naming their own skills) doesn't appear twice.
-    const seen = new Set<string>();
+    const seen = new Set&lt;string&gt;();
     const merged: CommandSuggestion[] = [];
     for (const cmd of [...BUILTIN_COMMANDS, ...(extraCommands ?? [])]) {
       if (seen.has(cmd.name)) continue;
@@ -3743,6 +3770,7 @@ const TASK_MODE_OPTIONS: { mode: TaskMode; description: string }[] = [
 
 <!-- source-snippets:end -->
 </details>
+
 Permission prompt 的普通确认键是 `y/n/a`；plan exit 分支使用 `y/k/n`，对应清上下文执行、保留上下文执行、拒绝。  
 Sources: [src/ui/hooks/usePromptInput.ts:101-120](../../../project-repos/easy-agent/src/ui/hooks/usePromptInput.ts#L101-L120), [src/ui/hooks/useAgentSession.ts:432-472](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts#L432-L472)
 
@@ -3824,6 +3852,7 @@ Sources: [src/ui/hooks/usePromptInput.ts:101-120](../../../project-repos/easy-ag
 
 <!-- source-snippets:end -->
 </details>
+
 ## 消息和工具卡片渲染
 
 `ConversationView` 会隐藏内部消息：compact boundary、resume 续聊提示、plan attachment、plan exit attachment、skill invocation body。slash skill 的可见 marker 会被渲染成命令气泡，而真实 `SKILL.md` body 不直接展示。  
@@ -3869,10 +3898,10 @@ function extractCommandMarker(
 ): { name: string; args: string } | null {
   if (typeof message.content !== "string") return null;
   const text = message.content;
-  if (!text.includes("<command-name>")) return null;
-  const nameMatch = text.match(/<command-name>([^<]*)<\/command-name>/);
+  if (!text.includes("&lt;command-name&gt;")) return null;
+  const nameMatch = text.match(/&lt;command-name&gt;([^&lt;]*)<\/command-name&gt;/);
   if (!nameMatch) return null;
-  const argsMatch = text.match(/<command-args>([^<]*)<\/command-args>/);
+  const argsMatch = text.match(/&lt;command-args&gt;([^&lt;]*)<\/command-args&gt;/);
   return {
     name: nameMatch[1] ?? "",
     args: (argsMatch?.[1] ?? "").trim(),
@@ -3894,17 +3923,17 @@ function extractCommandMarker(
               const display = `/${marker.name.replace(/^\//, "")}` +
                 (marker.args ? ` ${marker.args}` : "");
               return (
-                <Box key={`u${index}`} marginTop={1}>
-                  <Text color="cyan" dimColor>{"❯ "}</Text>
-                  <Text color="cyan">{display}</Text>
-                </Box>
+                &lt;Box key={`u${index}`} marginTop={1}>
+                  &lt;Text color="cyan" dimColor&gt;{"❯ "}&lt;/Text&gt;
+                  &lt;Text color="cyan"&gt;{display}&lt;/Text&gt;
+                &lt;/Box&gt;
               );
             }
             return (
-              <Box key={`u${index}`} marginTop={1}>
-                <Text color="green" bold>{"❯ "}</Text>
-                <Text>{message.content}</Text>
-              </Box>
+              &lt;Box key={`u${index}`} marginTop={1}>
+                &lt;Text color="green" bold&gt;{"❯ "}&lt;/Text&gt;
+                &lt;Text&gt;{message.content}&lt;/Text&gt;
+              &lt;/Box&gt;
             );
           }
           // Array content = tool_result blocks — already rendered inline
@@ -3914,6 +3943,7 @@ function extractCommandMarker(
 
 <!-- source-snippets:end -->
 </details>
+
 工具结果按 `tool_use_id` 建索引，再回填到 assistant 的 `tool_use` block 下，避免 live tool card 和历史内联 card 顺序不一致。  
 Sources: [src/ui/components/ConversationView.tsx:53-82](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx#L53-L82), [src/ui/components/ConversationView.tsx:181-221](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx#L181-L221)
 
@@ -3930,8 +3960,8 @@ Sources: [src/ui/components/ConversationView.tsx:53-82](../../../project-repos/e
  * its parent tool_use. The assistant's tool_use blocks are then rendered
  * inline (see below) with their matching result pulled from this map.
  */
-function buildToolResultMap(messages: MessageParam[]): Map<string, ToolResultInfo> {
-  const map = new Map<string, ToolResultInfo>();
+function buildToolResultMap(messages: MessageParam[]): Map&lt;string, ToolResultInfo&gt; {
+  const map = new Map&lt;string, ToolResultInfo&gt;();
   for (const msg of messages) {
     if (msg.role !== "user" || !Array.isArray(msg.content)) continue;
     for (const block of msg.content as Array<{
@@ -3945,7 +3975,7 @@ function buildToolResultMap(messages: MessageParam[]): Map<string, ToolResultInf
       if (typeof block.content === "string") {
         text = block.content;
       } else if (Array.isArray(block.content)) {
-        text = (block.content as Array<{ type?: string; text?: string }>)
+        text = (block.content as Array&lt;{ type?: string; text?: string }&gt;)
           .filter((b) => b?.type === "text" && typeof b.text === "string")
           .map((b) => b.text as string)
           .join("");
@@ -3966,16 +3996,16 @@ function buildToolResultMap(messages: MessageParam[]): Map<string, ToolResultInf
               text?: string;
               id?: string;
               name?: string;
-              input?: Record<string, unknown>;
+              input?: Record&lt;string, unknown&gt;;
             }>;
             const items: React.ReactNode[] = [];
             blocks.forEach((block, j) => {
               if (block?.type === "text" && block.text) {
                 items.push(
-                  <Box key={`t${j}`}>
-                    <Text color="magenta">{"\u258E "}</Text>
-                    <Text>{block.text}</Text>
-                  </Box>,
+                  &lt;Box key={`t${j}`}>
+                    &lt;Text color="magenta"&gt;{"\u258E "}&lt;/Text&gt;
+                    &lt;Text&gt;{block.text}&lt;/Text&gt;
+                  &lt;/Box&gt;,
                 );
                 return;
               }
@@ -3986,7 +4016,7 @@ function buildToolResultMap(messages: MessageParam[]): Map<string, ToolResultInf
                 // has been committed to the message history.
                 if (!result) return;
                 items.push(
-                  <InlineToolCard
+                  &lt;InlineToolCard
                     key={`tu${j}`}
                     name={block.name}
                     input={block.input}
@@ -3997,14 +4027,15 @@ function buildToolResultMap(messages: MessageParam[]): Map<string, ToolResultInf
             });
             if (items.length === 0) return null;
             return (
-              <Box key={`a${index}`} flexDirection="column">
+              &lt;Box key={`a${index}`} flexDirection="column">
                 {items}
-              </Box>
+              &lt;/Box&gt;
             );
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## 状态栏
 
 `StatusBar` 展示当前 permission mode、plan approval dialog、普通权限确认、spinner、streaming text、最近一轮 tokens 和估算 context 百分比。plan exit 的富交互由 `PlanApprovalDialog` 承载。  
@@ -4029,12 +4060,12 @@ export function StatusBar({
 }: StatusBarProps): React.ReactNode {
   return (
     <>
-      <Box>
-        <Text dimColor>{"  mode: "}{permissionMode}</Text>
-      </Box>
+      &lt;Box&gt;
+        &lt;Text dimColor&gt;{"  mode: "}{permissionMode}&lt;/Text&gt;
+      &lt;/Box&gt;
 
       {permissionPrompt && permissionPrompt.isPlanExit && onPlanDecision && (
-        <PlanApprovalDialog
+        &lt;PlanApprovalDialog
           planContent={permissionPrompt.planContent}
           planFilePath={permissionPrompt.planFilePath}
           summary={permissionPrompt.summary}
@@ -4043,31 +4074,31 @@ export function StatusBar({
       )}
 
       {permissionPrompt && !permissionPrompt.isPlanExit && (
-        <Box marginTop={1} flexDirection="column" borderStyle="round" borderColor="yellow" paddingX={1}>
-          <Text color="yellow">{"⚠ Permission required: "}{permissionPrompt.toolName}</Text>
-          <Text dimColor>{"  args: "}{permissionPrompt.summary}</Text>
-          <Text dimColor>{"  risk: "}{permissionPrompt.risk}</Text>
-          <Text dimColor>{"  always allow rule: "}{permissionPrompt.ruleHint}</Text>
-          <Text color="cyan">{"  [y] allow once   [n] deny   [a] always allow (session)"}</Text>
-        </Box>
+        &lt;Box marginTop={1} flexDirection="column" borderStyle="round" borderColor="yellow" paddingX={1}&gt;
+          &lt;Text color="yellow"&gt;{"⚠ Permission required: "}{permissionPrompt.toolName}&lt;/Text&gt;
+          &lt;Text dimColor&gt;{"  args: "}{permissionPrompt.summary}&lt;/Text&gt;
+          &lt;Text dimColor&gt;{"  risk: "}{permissionPrompt.risk}&lt;/Text&gt;
+          &lt;Text dimColor&gt;{"  always allow rule: "}{permissionPrompt.ruleHint}&lt;/Text&gt;
+          &lt;Text color="cyan"&gt;{"  [y] allow once   [n] deny   [a] always allow (session)"}&lt;/Text&gt;
+        &lt;/Box&gt;
       )}
 
       {isLoading && !streamingText && !permissionPrompt && (
-        <Box marginTop={1}>
-          <Spinner label={spinnerLabel} />
-        </Box>
+        &lt;Box marginTop={1}&gt;
+          &lt;Spinner label={spinnerLabel} /&gt;
+        &lt;/Box&gt;
       )}
 
       {isLoading && streamingText && !permissionPrompt && (
-        <Box marginTop={0}>
-          <Text color="magenta">{"\u258E "}</Text>
-          <Text>{streamingText}</Text>
-        </Box>
+        &lt;Box marginTop={0}&gt;
+          &lt;Text color="magenta"&gt;{"\u258E "}&lt;/Text&gt;
+          &lt;Text&gt;{streamingText}&lt;/Text&gt;
+        &lt;/Box&gt;
       )}
 
       {lastUsage && !isLoading && (
-        <Box flexDirection="column">
-          <Text dimColor>
+        &lt;Box flexDirection="column"&gt;
+          &lt;Text dimColor&gt;
             {"  tokens: "}
             {lastUsage.input + lastUsage.output}
             {" total ("}
@@ -4075,25 +4106,26 @@ export function StatusBar({
             {" in / "}
             {lastUsage.output}
             {" out)"}
-          </Text>
+          &lt;/Text&gt;
           {typeof lastUsage.contextTokens === "number" && typeof lastUsage.contextPercent === "number" && (
-            <Text dimColor>
+            &lt;Text dimColor&gt;
               {"  context: ~"}
               {lastUsage.contextTokens}
               {" tokens ("}
               {lastUsage.contextPercent}
               {"% of max window)"}
-            </Text>
+            &lt;/Text&gt;
           )}
-        </Box>
+        &lt;/Box&gt;
       )}
-    </>
+    &lt;/&gt;
   );
 }
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)
@@ -4140,7 +4172,7 @@ export class QueryEngine {
   private prePlanMode: PermissionMode | null = null;
   private readonly permissionSettings?: PermissionSettings;
   private readonly sessionPermissionRules: PermissionRuleSet;
-  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise<PermissionDecision>;
+  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise&lt;PermissionDecision&gt;;
   private abortController: AbortController | null = null;
   private usageAnchorIndex: number = -1;
   private lastCallUsage: Usage = { input_tokens: 0, output_tokens: 0 };
@@ -4165,7 +4197,7 @@ export class QueryEngine {
 ```typescript
   async *submitMessage(
     input: string,
-  ): AsyncGenerator<QueryEngineEvent, { handled: boolean; reason?: LoopTerminationReason }> {
+  ): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean; reason?: LoopTerminationReason }&gt; {
     const trimmed = input.trim();
     if (!trimmed) {
       return { handled: false };
@@ -4195,7 +4227,7 @@ export class QueryEngine {
       // the model still receives it as a regular user prompt.
       //
       // We don't have an `isMeta` field on `MessageParam`, so we use a
-      // string-prefix sentinel ("[skill_invocation:<name>]\n") for the body
+      // string-prefix sentinel ("[skill_invocation:&lt;name&gt;]\n") for the body
       // and the source's exact XML format for the marker — both matched in
       // ConversationView.
       const skillExpansion = this.tryExpandSkillCommand(trimmed);
@@ -4220,7 +4252,7 @@ export class QueryEngine {
 ```typescript
 export async function* query(
   params: QueryParams,
-): AsyncGenerator<AgenticLoopEvent, AgenticLoopResult> {
+): AsyncGenerator&lt;AgenticLoopEvent, AgenticLoopResult&gt; {
   const maxTurns = params.maxTurns ?? MAX_TOOL_TURNS;
   let state: LoopState = {
     messages: [...params.messages],
@@ -4343,6 +4375,7 @@ export async function* query(
 
 <!-- source-snippets:end -->
 </details>
+
 ## QueryEngine 状态
 
 `QueryEngine` 内部持有 message history、累计 usage、默认模型、会话内模型 override、当前 permission mode、进入 plan mode 前的 mode、permission settings、session rules、AbortController 和 usage anchor。  
@@ -4366,7 +4399,7 @@ export class QueryEngine {
   private prePlanMode: PermissionMode | null = null;
   private readonly permissionSettings?: PermissionSettings;
   private readonly sessionPermissionRules: PermissionRuleSet;
-  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise<PermissionDecision>;
+  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise&lt;PermissionDecision&gt;;
   private abortController: AbortController | null = null;
   private usageAnchorIndex: number = -1;
   private lastCallUsage: Usage = { input_tokens: 0, output_tokens: 0 };
@@ -4393,6 +4426,7 @@ export class QueryEngine {
 
 <!-- source-snippets:end -->
 </details>
+
 | 状态 | 用途 |
 |------|------|
 | `messages` | 传给模型的 conversation history |
@@ -4422,7 +4456,7 @@ export class QueryEngine {
   private prePlanMode: PermissionMode | null = null;
   private readonly permissionSettings?: PermissionSettings;
   private readonly sessionPermissionRules: PermissionRuleSet;
-  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise<PermissionDecision>;
+  private readonly onPermissionRequest?: (request: PermissionRequest) => Promise&lt;PermissionDecision&gt;;
   private abortController: AbortController | null = null;
   private usageAnchorIndex: number = -1;
   private lastCallUsage: Usage = { input_tokens: 0, output_tokens: 0 };
@@ -4479,6 +4513,7 @@ export class QueryEngine {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 输入分流
 
 `submitMessage()` 对空输入直接忽略；以 `/` 开头的输入先尝试 skill slash command 展开，匹配成功后写入可见 marker message，再把隐藏的 skill body 当作真实 prompt 重新进入普通提交；否则进入内置命令处理。普通文本则进入 `submitInternal()`。  
@@ -4494,7 +4529,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
 ```typescript
   async *submitMessage(
     input: string,
-  ): AsyncGenerator<QueryEngineEvent, { handled: boolean; reason?: LoopTerminationReason }> {
+  ): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean; reason?: LoopTerminationReason }&gt; {
     const trimmed = input.trim();
     if (!trimmed) {
       return { handled: false };
@@ -4524,7 +4559,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
       // the model still receives it as a regular user prompt.
       //
       // We don't have an `isMeta` field on `MessageParam`, so we use a
-      // string-prefix sentinel ("[skill_invocation:<name>]\n") for the body
+      // string-prefix sentinel ("[skill_invocation:&lt;name&gt;]\n") for the body
       // and the source's exact XML format for the marker — both matched in
       // ConversationView.
       const skillExpansion = this.tryExpandSkillCommand(trimmed);
@@ -4608,6 +4643,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Input["submitMessage(input)"] --> Empty{"empty?"}
@@ -4632,7 +4668,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
 ```typescript
   async *submitMessage(
     input: string,
-  ): AsyncGenerator<QueryEngineEvent, { handled: boolean; reason?: LoopTerminationReason }> {
+  ): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean; reason?: LoopTerminationReason }&gt; {
     const trimmed = input.trim();
     if (!trimmed) {
       return { handled: false };
@@ -4662,7 +4698,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
       // the model still receives it as a regular user prompt.
       //
       // We don't have an `isMeta` field on `MessageParam`, so we use a
-      // string-prefix sentinel ("[skill_invocation:<name>]\n") for the body
+      // string-prefix sentinel ("[skill_invocation:&lt;name&gt;]\n") for the body
       // and the source's exact XML format for the marker — both matched in
       // ConversationView.
       const skillExpansion = this.tryExpandSkillCommand(trimmed);
@@ -4734,7 +4770,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
 #### `src/core/queryEngine.ts:440-629`
 
 ```typescript
-  private async *handleCommand(command: string): AsyncGenerator<QueryEngineEvent, { handled: boolean }> {
+  private async *handleCommand(command: string): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean }&gt; {
     const [name, ...args] = command.slice(1).split(/\s+/).filter(Boolean);
 
     switch (name) {
@@ -4742,7 +4778,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
         yield {
           type: "command",
           kind: "info",
-          message: "Commands: /help /clear /cost /model [name|default] /mode [default|plan|auto] /tasks [task|todo|reset] /mcp [tools <name>|reconnect <name>] /skills /history /compact /<skill-name> [args] /exit /quit /bye",
+          message: "Commands: /help /clear /cost /model [name|default] /mode [default|plan|auto] /tasks [task|todo|reset] /mcp [tools &lt;name&gt;|reconnect &lt;name&gt;] /skills /history /compact /&lt;skill-name&gt; [args] /exit /quit /bye",
         };
         return { handled: true };
       case "mcp":
@@ -4853,12 +4889,13 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
               `- Source: ${this.getModelSource()}`,
               `- Default model: ${this.defaultModel}`,
               this.sessionModelOverride ? `- Session override: ${this.sessionModelOverride}` : "- Session override: none",
-              "- Usage: /model <name> to override for this session",
+              "- Usage: /model &lt;name&gt; to override for this session",
 ... snippet truncated ...
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## Turn 前处理
 
 进入模型调用前，`submitInternal()` 先构建预览 system prompt；如果已有历史，先执行 micro compaction，再按 token budget 触发 auto compaction 和 warning。之后根据当前 mode 注入 plan mode attachment 或 plan exit attachment，再追加用户消息。  
@@ -4950,6 +4987,7 @@ Sources: [src/core/queryEngine.ts:288-340](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 Plan mode attachment 是 user message，不是 system prompt 文本；第一次进入 plan mode 注入完整说明，后续每 5 个 human turn 以完整/简短提醒交替注入。  
 Sources: [src/context/planAttachments.ts:1-19](../../../project-repos/easy-agent/src/context/planAttachments.ts#L1-L19), [src/context/planAttachments.ts:23-70](../../../project-repos/easy-agent/src/context/planAttachments.ts#L23-L70), [src/context/planAttachments.ts:129-168](../../../project-repos/easy-agent/src/context/planAttachments.ts#L129-L168)
 
@@ -5082,6 +5120,7 @@ export function getPlanModeExitAttachment(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心 Agentic Loop
 
 `agenticLoop.query()` 的外层 while 最多执行 `MAX_TOOL_TURNS = 50` 次。每轮先检查 abort 和 token blocking limit，然后调用 `streamMessage()`。如果模型 stop reason 不是 `tool_use`，turn 完成；如果是 `tool_use`，就执行工具并把 tool_result message 追加到 history，继续下一轮。  
@@ -5221,6 +5260,7 @@ export type LoopTerminationReason =
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 stateDiagram-v2
   [*] --> Stream
@@ -5376,6 +5416,7 @@ Sources: [src/core/agenticLoop.ts:257-299](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## 工具执行与权限
 
 `runTools()` 从 assistant content blocks 中筛出 `tool_use`，通过 tool registry 查找工具，执行前调用 `checkPermission()`。deny 会直接生成 error tool_result；ask 会触发 `onPermissionRequest()`，用户拒绝同样生成 error tool_result，`allow_always` 会把 ruleHint 加入 session allow rules。  
@@ -5412,7 +5453,7 @@ export async function runTools(
   const permissionRequests: PermissionRequest[] = [];
 
   for (const block of toolUseBlocks) {
-    const toolInput = (block.input as Record<string, unknown>) ?? {};
+    const toolInput = (block.input as Record&lt;string, unknown&gt;) ?? {};
     const tool = findToolByName(block.name);
     if (!tool) {
       const result: ToolResult = {
@@ -5492,6 +5533,7 @@ export async function runTools(
 
 <!-- source-snippets:end -->
 </details>
+
 工具调用成功后，结果会按工具自己的 `maxResultSizeChars` 截断；非错误工具调用还会把 Read/Write/Edit/Glob 涉及的路径交给 conditional skill activation。  
 Sources: [src/core/agenticLoop.ts:191-213](../../../project-repos/easy-agent/src/core/agenticLoop.ts#L191-L213), [src/tools/Tool.ts:91-107](../../../project-repos/easy-agent/src/tools/Tool.ts#L91-L107)
 
@@ -5552,6 +5594,7 @@ export function toolToApiParam(tool: Tool): Anthropic.Tool {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Plan Mode 进出
 
 `EnterPlanMode` 会创建 plans 目录、设置 session permission mode 为 `plan`，并返回探索、写计划、退出的操作说明。`ExitPlanMode` 只允许在 plan mode 中调用，会读取或写入 plan 文件，把 `allowedPrompts` 转换为 session allow rules，然后恢复 default mode 并返回批准后的 plan 内容。  
@@ -5565,7 +5608,7 @@ Sources: [src/tools/enterPlanModeTool.ts:34-80](../../../project-repos/easy-agen
 #### `src/tools/enterPlanModeTool.ts:34-80`
 
 ```typescript
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const currentMode = context.getPermissionMode?.();
     if (currentMode === "plan") {
       return { content: "Already in plan mode.", isError: true };
@@ -5617,7 +5660,7 @@ Sources: [src/tools/enterPlanModeTool.ts:34-80](../../../project-repos/easy-agen
 #### `src/tools/exitPlanModeTool.ts:69-128`
 
 ```typescript
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const currentMode = context.getPermissionMode?.();
     if (currentMode !== "plan") {
       return { content: "Not currently in plan mode. ExitPlanMode can only be called while in plan mode.", isError: true };
@@ -5681,6 +5724,7 @@ Sources: [src/tools/enterPlanModeTool.ts:34-80](../../../project-repos/easy-agen
 
 <!-- source-snippets:end -->
 </details>
+
 `QueryEngine` 记录进入 plan 前的 mode；离开 plan 时恢复之前的 mode，并设置 `needsPlanModeExitAttachment`，让下一次普通提交知道已经恢复全工具权限。  
 Sources: [src/core/queryEngine.ts:113-129](../../../project-repos/easy-agent/src/core/queryEngine.ts#L113-L129), [src/core/queryEngine.ts:342-353](../../../project-repos/easy-agent/src/core/queryEngine.ts#L342-L353)
 
@@ -5730,6 +5774,7 @@ Sources: [src/core/queryEngine.ts:113-129](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## Slash Command 表面
 
 内置命令覆盖帮助、MCP、Skills、mode、tasks、clear、cost、model、history、compact。它们通过 `QueryEngineEvent` 传给 UI，不直接进模型，除非是 skill slash command 被展开成真实 user prompt。  
@@ -5743,7 +5788,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
 #### `src/core/queryEngine.ts:440-629`
 
 ```typescript
-  private async *handleCommand(command: string): AsyncGenerator<QueryEngineEvent, { handled: boolean }> {
+  private async *handleCommand(command: string): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean }&gt; {
     const [name, ...args] = command.slice(1).split(/\s+/).filter(Boolean);
 
     switch (name) {
@@ -5751,7 +5796,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
         yield {
           type: "command",
           kind: "info",
-          message: "Commands: /help /clear /cost /model [name|default] /mode [default|plan|auto] /tasks [task|todo|reset] /mcp [tools <name>|reconnect <name>] /skills /history /compact /<skill-name> [args] /exit /quit /bye",
+          message: "Commands: /help /clear /cost /model [name|default] /mode [default|plan|auto] /tasks [task|todo|reset] /mcp [tools &lt;name&gt;|reconnect &lt;name&gt;] /skills /history /compact /&lt;skill-name&gt; [args] /exit /quit /bye",
         };
         return { handled: true };
       case "mcp":
@@ -5862,7 +5907,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
               `- Source: ${this.getModelSource()}`,
               `- Default model: ${this.defaultModel}`,
               this.sessionModelOverride ? `- Session override: ${this.sessionModelOverride}` : "- Session override: none",
-              "- Usage: /model <name> to override for this session",
+              "- Usage: /model &lt;name&gt; to override for this session",
 ... snippet truncated ...
 ```
 
@@ -5876,7 +5921,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
    * deferred to a later stage; users can restart the CLI to pick up
    * SKILL.md edits.
    */
-  private async *handleSkillsCommand(): AsyncGenerator<QueryEngineEvent, { handled: boolean }> {
+  private async *handleSkillsCommand(): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean }&gt; {
     const all = getAllUserInvocableSkills();
     if (all.length === 0) {
       yield {
@@ -5885,8 +5930,8 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
         message:
           "Skills (0 loaded)\n\n" +
           "No skills found. Add a directory containing SKILL.md to:\n" +
-          "  ~/.easy-agent/skills/<name>/SKILL.md   (user-wide)\n" +
-          "  .easy-agent/skills/<name>/SKILL.md     (project-only)",
+          "  ~/.easy-agent/skills/&lt;name&gt;/SKILL.md   (user-wide)\n" +
+          "  .easy-agent/skills/&lt;name&gt;/SKILL.md     (project-only)",
       };
       return { handled: true };
     }
@@ -5901,7 +5946,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
       lines.push(`  /${skill.name}    ${skill.description}`);
       lines.push(`        [${flags.join("] [")}]`);
     }
-    lines.push("", "Invoke a skill with /<name> [args], or let the model call it via the Skill tool.");
+    lines.push("", "Invoke a skill with /&lt;name&gt; [args], or let the model call it via the Skill tool.");
     yield { type: "command", kind: "info", message: lines.join("\n") };
     return { handled: true };
   }
@@ -5910,14 +5955,14 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
    * Handle the `/mcp` slash command family.
    *
    *   /mcp                       — list every configured server + status + tool count
-   *   /mcp tools <name>          — show all tools exposed by one server
-   *   /mcp reconnect <name>      — drop cache + retry connection
+   *   /mcp tools &lt;name&gt;          — show all tools exposed by one server
+   *   /mcp reconnect &lt;name&gt;      — drop cache + retry connection
    *
    * The output is rendered as a system notice (info/error tone), never sent
    * to the model. Mirrors the source's `mcp.tsx` panel content but stripped
    * to a text-only listing — Easy Agent doesn't need a full TUI panel for it.
    */
-  private async *handleMcpCommand(args: string[]): AsyncGenerator<QueryEngineEvent, { handled: boolean }> {
+  private async *handleMcpCommand(args: string[]): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean }&gt; {
     const describeTransport = (config: import("../types/mcp.js").ScopedMcpServerConfig): string => {
       if (config.type === "http") return `http: ${config.url}`;
       if (config.type === "sse") return `sse: ${config.url}`;
@@ -5954,7 +5999,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
           lines.push(`  - ${connection.name}    disabled`);
         }
       }
-      lines.push("", "Subcommands: /mcp tools <name> | /mcp reconnect <name>");
+      lines.push("", "Subcommands: /mcp tools &lt;name&gt; | /mcp reconnect &lt;name&gt;");
       yield { type: "command", kind: "info", message: lines.join("\n") };
       return { handled: true };
     }
@@ -5962,7 +6007,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
     if (sub === "tools") {
       const target = rest[0];
       if (!target) {
-        yield { type: "command", kind: "error", message: "Usage: /mcp tools <serverName>" };
+        yield { type: "command", kind: "error", message: "Usage: /mcp tools &lt;serverName&gt;" };
         return { handled: true };
       }
       const entry = getMcpRegistryEntry(target);
@@ -5994,6 +6039,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [模型通信与 Streaming](model-streaming.md)
@@ -6104,7 +6150,7 @@ export function getAnthropicClient(options?: {
 ```typescript
 export async function* streamMessage(
   params: StreamRequestParams,
-): AsyncGenerator<StreamEvent, StreamResult> {
+): AsyncGenerator&lt;StreamEvent, StreamResult&gt; {
   const client = getAnthropicClient();
   const model = params.model ?? DEFAULT_MODEL;
   const maxTokens = params.maxTokens ?? DEFAULT_MAX_TOKENS;
@@ -6134,6 +6180,7 @@ export async function* streamMessage(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 环境加载
 
 CLI 启动时先调用 `loadEnv()`。它按低到高优先级合并 `~/.claude.json`、`~/.claude/settings.json` 和当前工作目录 `.env`，其中 `.env` 使用 `dotenv.config({ override: true })` 覆盖前者。  
@@ -6192,6 +6239,7 @@ export function loadEnv(): void {
 
 <!-- source-snippets:end -->
 </details>
+
 客户端默认读取这些环境变量：
 
 | 变量 | 用途 |
@@ -6263,6 +6311,7 @@ const DEBUG_STREAM = process.env.EASY_AGENT_DEBUG_STREAM === "1";
 
 <!-- source-snippets:end -->
 </details>
+
 ## Streaming 事件模型
 
 内部消息类型接近 Anthropic content block：text、tool_use、tool_result、thinking。Stream event 包括 text delta、tool_use_start、tool_use_input、message_start、message_done 和 error。  
@@ -6285,7 +6334,7 @@ export interface ToolUseBlock {
   type: "tool_use";
   id: string;
   name: string;
-  input: Record<string, unknown>;
+  input: Record&lt;string, unknown&gt;;
 }
 
 export interface ToolResultBlock {
@@ -6363,6 +6412,7 @@ export type StreamEvent =
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   SDK["Anthropic stream event"] --> Switch["streaming.ts switch"]
@@ -6398,7 +6448,7 @@ Sources: [src/services/api/streaming.ts:109-156](../../../project-repos/easy-age
           if (event.message.usage) {
             usage.input_tokens = event.message.usage.input_tokens;
             usage.output_tokens = event.message.usage.output_tokens;
-            const u = event.message.usage as unknown as Record<string, unknown>;
+            const u = event.message.usage as unknown as Record&lt;string, unknown&gt;;
             if (typeof u.cache_creation_input_tokens === "number") {
               usage.cache_creation_input_tokens = u.cache_creation_input_tokens;
             }
@@ -6416,7 +6466,7 @@ Sources: [src/services/api/streaming.ts:109-156](../../../project-repos/easy-age
             usage.output_tokens = event.usage.output_tokens;
             // Some providers (e.g. MiniMax) report input_tokens in message_delta
             // rather than message_start — pick it up as a fallback.
-            const du = event.usage as unknown as Record<string, unknown>;
+            const du = event.usage as unknown as Record&lt;string, unknown&gt;;
             if (typeof du.input_tokens === "number" && du.input_tokens > 0) {
               usage.input_tokens = du.input_tokens;
             }
@@ -6469,7 +6519,7 @@ Sources: [src/services/api/streaming.ts:109-156](../../../project-repos/easy-age
             // with `{}` at content_block_stop.
             const seedInput =
               block.input && typeof block.input === "object"
-                ? (block.input as Record<string, unknown>)
+                ? (block.input as Record&lt;string, unknown&gt;)
                 : {};
             contentBlocks[index] = {
               type: "tool_use",
@@ -6555,6 +6605,7 @@ Sources: [src/services/api/streaming.ts:109-156](../../../project-repos/easy-age
 
 <!-- source-snippets:end -->
 </details>
+
 ## Tool Input 组装
 
 `streamMessage()` 用 `toolInputJsonByIndex` 为每个 content block index 保存独立 JSON buffer，避免多个 `tool_use` block 交错 streaming 时共用字符串导致输入错配或丢失。`content_block_stop` 时尝试 JSON.parse，失败则保留 `_raw` 便于调试。  
@@ -6576,7 +6627,7 @@ Sources: [src/services/api/streaming.ts:85-94](../../../project-repos/easy-agent
   // `content_block_stop` of block 0. In that case the shared buffer gets
   // reset / cross-populated and tools end up with empty or swapped inputs.
   const contentBlocks: ContentBlock[] = [];
-  const toolInputJsonByIndex = new Map<number, string>();
+  const toolInputJsonByIndex = new Map&lt;number, string&gt;();
   let messageId = "";
 ```
 
@@ -6591,7 +6642,7 @@ Sources: [src/services/api/streaming.ts:85-94](../../../project-repos/easy-agent
             // with `{}` at content_block_stop.
             const seedInput =
               block.input && typeof block.input === "object"
-                ? (block.input as Record<string, unknown>)
+                ? (block.input as Record&lt;string, unknown&gt;)
                 : {};
             contentBlocks[index] = {
               type: "tool_use",
@@ -6641,6 +6692,7 @@ Sources: [src/services/api/streaming.ts:85-94](../../../project-repos/easy-agent
 
 <!-- source-snippets:end -->
 </details>
+
 ## Thinking Block 保留
 
 当 provider 返回 `thinking` 或 `signature_delta`，实现会把 thinking block 和 signature 保留进 content history。注释说明这是为了兼容 extended-thinking 和 Anthropic-compatible endpoint，否则后续 turn 可能重复 tool call 或产生空输入。  
@@ -6685,6 +6737,7 @@ Sources: [src/services/api/streaming.ts:167-177](../../../project-repos/easy-age
 
 <!-- source-snippets:end -->
 </details>
+
 ## 非 streaming 调用
 
 `createMessage()` 提供一次性调用，主要供内部任务使用，例如上下文压缩生成 summary。它接受和 streaming 类似的参数，但不带 AbortSignal，并把 response content 映射回内部 content block。  
@@ -6706,8 +6759,8 @@ Sources: [src/services/api/streaming.ts:293-346](../../../project-repos/easy-age
  * we don't need incremental output.
  */
 export async function createMessage(
-  params: Omit<StreamRequestParams, "signal">,
-): Promise<{ content: ContentBlock[]; usage: Usage; stopReason: string }> {
+  params: Omit&lt;StreamRequestParams, "signal"&gt;,
+): Promise&lt;{ content: ContentBlock[]; usage: Usage; stopReason: string }&gt; {
   const client = getAnthropicClient();
   const model = params.model ?? DEFAULT_MODEL;
   const maxTokens = params.maxTokens ?? DEFAULT_MAX_TOKENS;
@@ -6728,7 +6781,7 @@ export async function createMessage(
         type: "tool_use" as const,
         id: block.id,
         name: block.name,
-        input: block.input as Record<string, unknown>,
+        input: block.input as Record&lt;string, unknown&gt;,
       };
     }
     return { type: "text" as const, text: "" };
@@ -6738,7 +6791,7 @@ export async function createMessage(
     input_tokens: response.usage.input_tokens,
     output_tokens: response.usage.output_tokens,
   };
-  const ru = response.usage as unknown as Record<string, unknown>;
+  const ru = response.usage as unknown as Record&lt;string, unknown&gt;;
   if (typeof ru.cache_creation_input_tokens === "number") {
     usageResult.cache_creation_input_tokens = ru.cache_creation_input_tokens;
   }
@@ -6757,7 +6810,7 @@ export async function createMessage(
 #### `src/context/compaction.ts:203-232`
 
 ```typescript
-async function summarizeMessages(messages: MessageParam[], focus?: string): Promise<string> {
+async function summarizeMessages(messages: MessageParam[], focus?: string): Promise&lt;string&gt; {
   const extraInstruction = focus ? `\n\n## Compact Instructions\n${focus}` : "";
   debugLog("compact", "summary_request", { messageCount: messages.length, focus: focus ?? null });
 
@@ -6791,6 +6844,7 @@ async function summarizeMessages(messages: MessageParam[], focus?: string): Prom
 
 <!-- source-snippets:end -->
 </details>
+
 ## Debug 日志
 
 `writeStreamDebug()` 在 `EASY_AGENT_DEBUG_STREAM=1` 时向 `~/.easy-agent/stream-debug.log` 追加 JSONL，记录 request、raw event、assembled 和 error。日志函数吞掉自身错误，避免调试日志影响模型通信。  
@@ -6892,6 +6946,7 @@ export function writeStreamDebug(kind: string, payload: unknown): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证脚本
 
 `src/scripts/test-streaming.ts` 是手动 smoke 脚本：检查 `ANTHROPIC_AUTH_TOKEN`，发起中文 prompt，逐字输出 text delta，并打印 stop reason、usage 和 content block 类型。  
@@ -6920,7 +6975,7 @@ Sources: [src/scripts/test-streaming.ts:5-14](../../../project-repos/easy-agent/
 #### `src/scripts/test-streaming.ts:20-41`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   // ── Pre-flight check ──────────────────────────────────────────
   if (!process.env.ANTHROPIC_AUTH_TOKEN) {
     console.error(
@@ -7009,6 +7064,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [QueryEngine 与 Agentic Loop](query-engine-agentic-loop.md)
@@ -7106,7 +7162,7 @@ export interface Tool {
    * Execute the tool with the given input.
    * The model provides `input` as a parsed JSON object.
    */
-  call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult>;
+  call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt;;
 
   /** Whether this tool only reads data (no side effects). */
   isReadOnly(): boolean;
@@ -7118,6 +7174,7 @@ export interface Tool {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 注册表
 
 内置工具数组包含文件读写编辑、Glob/Grep、Bash、MemoryWrite、TodoWrite、Task V2 工具、Plan Mode 工具和 Skill 工具。MCP 工具通过 `registerMcpTools()` 单独注入，最终由 `getAllTools()` 合并。  
@@ -7192,6 +7249,7 @@ export function getAllTools(): Tool[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Builtins["BUILTIN_TOOLS"] --> Registry["getAllTools"]
@@ -7290,6 +7348,7 @@ export function toolToApiParam(tool: Tool): Anthropic.Tool {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 路径边界
 
 文件类工具通过 `resolveWorkspacePath()` 解析路径，只允许访问当前 cwd 和 `~/.easy-agent`。这意味着默认情况下模型不能随意读写工作区外的路径，除非路径落在这两个允许根下。  
@@ -7342,6 +7401,7 @@ export function resolveWorkspacePath(filePath: string, cwd: string): string {
 
 <!-- source-snippets:end -->
 </details>
+
 | 工具 | 关键行为 |
 |------|----------|
 | `Read` | 可读文件或目录，支持 offset/limit，并输出行号 |
@@ -7385,7 +7445,7 @@ export const fileReadTool: Tool = {
     },
     required: ["file_path"],
   },
-  async call(rawInput: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(rawInput: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const input = rawInput as unknown as FileReadInput;
     if (!input.file_path) {
       return { content: "Error: file_path is required", isError: true };
@@ -7458,7 +7518,7 @@ export const fileWriteTool: Tool = {
     },
     required: ["file_path", "content"],
   },
-  async call(rawInput: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(rawInput: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const input = rawInput as unknown as FileWriteInput;
     if (!input.file_path) {
       return { content: "Error: file_path is required", isError: true };
@@ -7522,7 +7582,7 @@ export const fileEditTool: Tool = {
     },
     required: ["file_path", "old_string", "new_string"],
   },
-  async call(rawInput: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(rawInput: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const input = rawInput as unknown as FileEditInput;
     if (!input.file_path || typeof input.old_string !== "string" || typeof input.new_string !== "string") {
       return { content: "Error: file_path, old_string, and new_string are required", isError: true };
@@ -7591,7 +7651,7 @@ export const globTool: Tool = {
     },
     required: ["pattern"],
   },
-  async call(rawInput: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(rawInput: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const input = rawInput as unknown as GlobInput;
     if (!input.pattern) {
       return { content: "Error: pattern is required", isError: true };
@@ -7657,7 +7717,7 @@ export const grepTool: Tool = {
     },
     required: ["pattern"],
   },
-  async call(rawInput: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(rawInput: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const input = rawInput as unknown as GrepInput;
     if (!input.pattern) {
       return { content: "Error: pattern is required", isError: true };
@@ -7729,7 +7789,7 @@ export const bashTool: Tool = {
     },
     required: ["command"],
   },
-  async call(rawInput: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(rawInput: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const input = rawInput as unknown as BashInput;
     if (!input.command) {
       return { content: "Error: command is required", isError: true };
@@ -7765,7 +7825,7 @@ export const bashTool: Tool = {
       executedCommand = wrap.wrappedCommand;
     }
 
-    return await new Promise<ToolResult>((resolve) => {
+    return await new Promise&lt;ToolResult&gt;((resolve) => {
       const child = spawn(process.env.SHELL || "bash", ["-lc", executedCommand], {
         cwd: context.cwd,
         env: process.env,
@@ -7808,7 +7868,7 @@ export const bashTool: Tool = {
         clearTimeout(timeoutId);
         context.abortSignal?.removeEventListener("abort", onAbort);
 
-        // Tag stderr with <sandbox_violations>...</sandbox_violations>
+        // Tag stderr with &lt;sandbox_violations&gt;...&lt;/sandbox_violations&gt;
         // when the failure smells like a sandbox denial. The model uses
         // this signal to decide whether to retry, ask for permission,
         // or back off. The UI strips the tag before rendering.
@@ -7838,6 +7898,7 @@ export const bashTool: Tool = {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Bash 工具
 
 `Bash` 用当前 shell 执行命令，默认 timeout 120 秒，输出截断到 30K 字符。它会在调用前读取 sandbox settings，如果应启用 sandbox，就构建 profile 并把原始命令包装成 `sandbox-exec` 命令。工具结果会明确输出原命令、是否 read-only、sandbox 是否启用、exit code、stdout 和 stderr。  
@@ -7901,7 +7962,7 @@ export function isReadOnlyCommand(command: string): boolean {
 #### `src/tools/bashTool.ts:110-145`
 
 ```typescript
-  async call(rawInput: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(rawInput: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const input = rawInput as unknown as BashInput;
     if (!input.command) {
       return { content: "Error: command is required", isError: true };
@@ -7942,7 +8003,7 @@ export function isReadOnlyCommand(command: string): boolean {
 #### `src/tools/bashTool.ts:146-207`
 
 ```typescript
-    return await new Promise<ToolResult>((resolve) => {
+    return await new Promise&lt;ToolResult&gt;((resolve) => {
       const child = spawn(process.env.SHELL || "bash", ["-lc", executedCommand], {
         cwd: context.cwd,
         env: process.env,
@@ -7985,7 +8046,7 @@ export function isReadOnlyCommand(command: string): boolean {
         clearTimeout(timeoutId);
         context.abortSignal?.removeEventListener("abort", onAbort);
 
-        // Tag stderr with <sandbox_violations>...</sandbox_violations>
+        // Tag stderr with &lt;sandbox_violations&gt;...&lt;/sandbox_violations&gt;
         // when the failure smells like a sandbox denial. The model uses
         // this signal to decide whether to retry, ask for permission,
         // or back off. The UI strips the tag before rendering.
@@ -8008,6 +8069,7 @@ export function isReadOnlyCommand(command: string): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant Loop as runTools
@@ -8125,7 +8187,7 @@ Sources: [src/core/agenticLoop.ts:135-191](../../../project-repos/easy-agent/src
       executedCommand = wrap.wrappedCommand;
     }
 
-    return await new Promise<ToolResult>((resolve) => {
+    return await new Promise&lt;ToolResult&gt;((resolve) => {
       const child = spawn(process.env.SHELL || "bash", ["-lc", executedCommand], {
         cwd: context.cwd,
         env: process.env,
@@ -8168,7 +8230,7 @@ Sources: [src/core/agenticLoop.ts:135-191](../../../project-repos/easy-agent/src
         clearTimeout(timeoutId);
         context.abortSignal?.removeEventListener("abort", onAbort);
 
-        // Tag stderr with <sandbox_violations>...</sandbox_violations>
+        // Tag stderr with &lt;sandbox_violations&gt;...&lt;/sandbox_violations&gt;
         // when the failure smells like a sandbox denial. The model uses
         // this signal to decide whether to retry, ask for permission,
         // or back off. The UI strips the tag before rendering.
@@ -8191,6 +8253,7 @@ Sources: [src/core/agenticLoop.ts:135-191](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## 权限设置加载
 
 权限设置从 user/project 两个 `settings.json` 路径读取。allow/deny 数组会合并，mode 由 project 覆盖 user，默认是 `default`。权限 JSON parse error 会抛错，避免用户以为配置生效但实际被静默忽略。  
@@ -8220,13 +8283,13 @@ const DEFAULT_PERMISSION_SETTINGS: PermissionSettings = {
 #### `src/permissions/permissions.ts:88-127`
 
 ```typescript
-async function readPermissionsFromSettings(filePath: string): Promise<Partial<PermissionSettings>> {
+async function readPermissionsFromSettings(filePath: string): Promise&lt;Partial&lt;PermissionSettings&gt;&gt; {
   // We THROW on parse errors here (matching the old behavior) so that a
   // syntactically broken settings.json doesn't silently grant fewer
   // permissions than the user thinks they configured. The MCP loader
   // chooses the opposite policy (warn + skip) because partial MCP
   // server configs are still useful — partial permission rules aren't.
-  const result = await readJsonSettingsFile<RawSettings>(filePath);
+  const result = await readJsonSettingsFile&lt;RawSettings&gt;(filePath);
   if (result.parseError) {
     throw new Error(`Invalid JSON in permissions settings: ${filePath}`);
   }
@@ -8238,7 +8301,7 @@ async function readPermissionsFromSettings(filePath: string): Promise<Partial<Pe
   };
 }
 
-export async function loadPermissionSettings(cwd: string): Promise<PermissionSettings> {
+export async function loadPermissionSettings(cwd: string): Promise&lt;PermissionSettings&gt; {
   const { user: userSettingsPath, project: projectSettingsPath } = getSettingsPaths(cwd);
 
   const [userSettings, projectSettings] = await Promise.all([
@@ -8264,6 +8327,7 @@ export async function loadPermissionSettings(cwd: string): Promise<PermissionSet
 
 <!-- source-snippets:end -->
 </details>
+
 ## 权限规则匹配
 
 规则支持裸工具名、`Tool(pattern)` 和 MCP wildcard。`Bash(pattern)` 匹配 command，`Skill(pattern)` 匹配 skill name；`mcp__server__*` 可匹配某个 server 暴露的全部 MCP 工具。  
@@ -8277,7 +8341,7 @@ Sources: [src/permissions/permissions.ts:146-185](../../../project-repos/easy-ag
 #### `src/permissions/permissions.ts:146-185`
 
 ```typescript
-export function matchesPermissionRule(rule: string, toolName: string, input: Record<string, unknown>): boolean {
+export function matchesPermissionRule(rule: string, toolName: string, input: Record&lt;string, unknown&gt;): boolean {
   const normalizedRule = rule.trim();
   if (!normalizedRule) return false;
   if (normalizedRule === toolName) return true;
@@ -8321,6 +8385,7 @@ export function matchesPermissionRule(rule: string, toolName: string, input: Rec
 
 <!-- source-snippets:end -->
 </details>
+
 ## 决策树
 
 `checkPermission()` 的顺序很重要：auto mode 全允许；Todo/Task planning-only 工具全模式允许；plan mode 只允许 Read/Grep/Glob、read-only Bash、Plan transition 和写 plan 文件；普通模式下 read-only 工具直接允许；显式 deny/allow 再判定；最后 Bash 可通过 sandbox auto-allow，否则危险 Bash 或普通 side-effect tool 需要 ask。  
@@ -8334,7 +8399,7 @@ Sources: [src/permissions/permissions.ts:325-356](../../../project-repos/easy-ag
 #### `src/permissions/permissions.ts:325-356`
 
 ```typescript
-export async function checkPermission(params: PermissionCheckParams): Promise<PermissionResponse> {
+export async function checkPermission(params: PermissionCheckParams): Promise&lt;PermissionResponse&gt; {
   const settings = params.settings ?? (await loadPermissionSettings(params.cwd));
   const mode = params.mode ?? settings.mode;
   const sessionRules = params.sessionRules ?? { allow: [], deny: [] };
@@ -8465,6 +8530,7 @@ export async function checkPermission(params: PermissionCheckParams): Promise<Pe
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Start["checkPermission"] --> Auto{"mode auto?"}
@@ -8494,7 +8560,7 @@ Sources: [src/permissions/permissions.ts:325-443](../../../project-repos/easy-ag
 #### `src/permissions/permissions.ts:325-443`
 
 ```typescript
-export async function checkPermission(params: PermissionCheckParams): Promise<PermissionResponse> {
+export async function checkPermission(params: PermissionCheckParams): Promise&lt;PermissionResponse&gt; {
   const settings = params.settings ?? (await loadPermissionSettings(params.cwd));
   const mode = params.mode ?? settings.mode;
   const sessionRules = params.sessionRules ?? { allow: [], deny: [] };
@@ -8617,6 +8683,7 @@ export async function checkPermission(params: PermissionCheckParams): Promise<Pe
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Sandbox 与安全边界](sandbox-security.md)
@@ -8663,7 +8730,7 @@ Sources: [src/services/mcp/config.ts:1-14](../../../project-repos/easy-agent/src
  * The source supports user/project/local/enterprise/managed/dynamic/claudeai
  * scopes plus per-server policy filtering. Easy Agent only needs two scopes:
  *   1. user:    ~/.easy-agent/settings.json
- *   2. project: <cwd>/.easy-agent/settings.json
+ *   2. project: &lt;cwd&gt;/.easy-agent/settings.json
  * with project overriding user (same as existing permission settings).
  *
  * The `mcpServers` field lives inside the existing settings.json so users
@@ -8739,6 +8806,7 @@ export function getAllTools(): Tool[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 配置模型
 
 Easy Agent 支持三种 MCP transport：`stdio`、`http`、`sse`。stdio 的 `type` 可省略；HTTP/SSE 使用 `url` 和可选 static headers；OAuth、WebSocket、IDE transport 等在当前阶段明确不实现。  
@@ -8779,7 +8847,7 @@ export interface McpStdioServerConfig {
   type?: "stdio";
   command: string;
   args?: string[];
-  env?: Record<string, string>;
+  env?: Record&lt;string, string&gt;;
 }
 
 /**
@@ -8793,7 +8861,7 @@ export interface McpStdioServerConfig {
 export interface McpHTTPServerConfig {
   type: "http";
   url: string;
-  headers?: Record<string, string>;
+  headers?: Record&lt;string, string&gt;;
 }
 
 /**
@@ -8805,7 +8873,7 @@ export interface McpHTTPServerConfig {
 export interface McpSSEServerConfig {
   type: "sse";
   url: string;
-  headers?: Record<string, string>;
+  headers?: Record&lt;string, string&gt;;
 }
 
 export type McpServerConfig =
@@ -8816,6 +8884,7 @@ export type McpServerConfig =
 
 <!-- source-snippets:end -->
 </details>
+
 配置从 `~/.easy-agent/settings.json` 和 `<cwd>/.easy-agent/settings.json` 读取，project 同名 server 覆盖 user。每个 server 独立校验，失败项被丢弃并记录 warning，但不会让整个 CLI 启动失败。  
 Sources: [src/services/mcp/config.ts:136-188](../../../project-repos/easy-agent/src/services/mcp/config.ts#L136-L188)
 
@@ -8832,14 +8901,14 @@ function extractScopedServers(
   scope: "user" | "project",
   filePath: string,
   errors: string[],
-): Record<string, ScopedMcpServerConfig> {
+): Record&lt;string, ScopedMcpServerConfig&gt; {
   if (!raw || raw.mcpServers === undefined) return {};
   if (typeof raw.mcpServers !== "object" || raw.mcpServers === null || Array.isArray(raw.mcpServers)) {
     errors.push(`${filePath}: 'mcpServers' must be an object`);
     return {};
   }
-  const out: Record<string, ScopedMcpServerConfig> = {};
-  for (const [name, rawConfig] of Object.entries(raw.mcpServers as Record<string, unknown>)) {
+  const out: Record&lt;string, ScopedMcpServerConfig&gt; = {};
+  for (const [name, rawConfig] of Object.entries(raw.mcpServers as Record&lt;string, unknown&gt;)) {
     const result = validateServerConfig(name, rawConfig, scope);
     if (!result.ok) {
       errors.push(result.error);
@@ -8858,13 +8927,13 @@ function extractScopedServers(
  * "best-effort" loading approach so a single malformed entry can't take the
  * whole CLI down).
  */
-export async function loadMcpConfigs(cwd: string): Promise<McpConfigLoadResult> {
+export async function loadMcpConfigs(cwd: string): Promise&lt;McpConfigLoadResult&gt; {
   const { user: userPath, project: projectPath } = getSettingsPaths(cwd);
 
   const errors: string[] = [];
   const [userFile, projectFile] = await Promise.all([
-    readJsonSettingsFile<RawSettings>(userPath),
-    readJsonSettingsFile<RawSettings>(projectPath),
+    readJsonSettingsFile&lt;RawSettings&gt;(userPath),
+    readJsonSettingsFile&lt;RawSettings&gt;(projectPath),
   ]);
   if (userFile.parseError) errors.push(userFile.parseError);
   if (projectFile.parseError) errors.push(projectFile.parseError);
@@ -8873,7 +8942,7 @@ export async function loadMcpConfigs(cwd: string): Promise<McpConfigLoadResult> 
   const projectServers = extractScopedServers(projectFile.raw, "project", projectPath, errors);
 
   // Project overrides user — Object.assign right-wins
-  const servers: Record<string, ScopedMcpServerConfig> = { ...userServers, ...projectServers };
+  const servers: Record&lt;string, ScopedMcpServerConfig&gt; = { ...userServers, ...projectServers };
 
   for (const error of errors) {
     logWarn(`[mcp] config: ${error}`);
@@ -8884,6 +8953,7 @@ export async function loadMcpConfigs(cwd: string): Promise<McpConfigLoadResult> 
 
 <!-- source-snippets:end -->
 </details>
+
 ## 启动流程
 
 `bootstrapMcp()` 先加载配置并注册 cleanup hook，然后清空 registry。关键点是它会在任何 IO 之前把每个 server 注册成 `pending`，让 `/mcp` 在慢启动期间也能显示真实意图状态；随后并行连接各 server，成功后拉取工具并刷新全局工具注册表。  
@@ -8915,7 +8985,7 @@ Sources: [src/services/mcp/bootstrap.ts:41-80](../../../project-repos/easy-agent
  *     when you want non-blocking startup — just like Claude Code's
  *     `prefetchAllMcpResources` running inside a useEffect.
  */
-export async function bootstrapMcp(cwd: string): Promise<McpBootstrapResult> {
+export async function bootstrapMcp(cwd: string): Promise&lt;McpBootstrapResult&gt; {
   const { servers, errors: configErrors } = await loadMcpConfigs(cwd);
   registerMcpProcessCleanup();
   clearMcpRegistry();
@@ -8945,9 +9015,9 @@ export async function bootstrapMcp(cwd: string): Promise<McpBootstrapResult> {
 async function connectAndRegister(
   name: string,
   config: PendingMcpServer["config"],
-): Promise<{ connection: McpServerConnection; toolCount: number }> {
+): Promise&lt;{ connection: McpServerConnection; toolCount: number }&gt; {
   const connection = await connectToServer(name, config);
-  let tools: Awaited<ReturnType<typeof fetchToolsForConnection>> = [];
+  let tools: Awaited&lt;ReturnType&lt;typeof fetchToolsForConnection&gt;&gt; = [];
   if (connection.type === "connected") {
     try {
       tools = await fetchToolsForConnection(connection);
@@ -8969,6 +9039,7 @@ function refreshGlobalToolRegistry(): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant CLI as cli.ts
@@ -9020,7 +9091,7 @@ Sources: [src/entrypoint/cli.ts:113-127](../../../project-repos/easy-agent/src/e
 #### `src/services/mcp/bootstrap.ts:59-121`
 
 ```typescript
-export async function bootstrapMcp(cwd: string): Promise<McpBootstrapResult> {
+export async function bootstrapMcp(cwd: string): Promise&lt;McpBootstrapResult&gt; {
   const { servers, errors: configErrors } = await loadMcpConfigs(cwd);
   registerMcpProcessCleanup();
   clearMcpRegistry();
@@ -9063,9 +9134,9 @@ export async function bootstrapMcp(cwd: string): Promise<McpBootstrapResult> {
 async function connectAndRegister(
   name: string,
   config: PendingMcpServer["config"],
-): Promise<{ connection: McpServerConnection; toolCount: number }> {
+): Promise&lt;{ connection: McpServerConnection; toolCount: number }&gt; {
   const connection = await connectToServer(name, config);
-  let tools: Awaited<ReturnType<typeof fetchToolsForConnection>> = [];
+  let tools: Awaited&lt;ReturnType&lt;typeof fetchToolsForConnection&gt;&gt; = [];
   if (connection.type === "connected") {
     try {
       tools = await fetchToolsForConnection(connection);
@@ -9087,6 +9158,7 @@ function refreshGlobalToolRegistry(): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 连接层
 
 `connectToServer()` 用 server name + transport-specific config 作为 cache key，同一配置的并发连接共享 promise。stdio transport 会继承父进程 env 并叠加 server env，stderr 被 pipe 缓冲；HTTP transport 设置 User-Agent 和 headers；SSE transport 分别给 POST 和长连接 GET 设置 headers。连接有默认 30 秒超时。  
@@ -9122,21 +9194,21 @@ function getCacheKey(name: string, config: ScopedMcpServerConfig): string {
   // the whole object to avoid spuriously busting the cache when scope
   // metadata (which doesn't affect the connection) changes.
   if (config.type === "http" || config.type === "sse") {
-    return `${name}:${JSON.stringify({
+    return ${name}:${JSON.stringify({
       type: config.type,
       url: config.url,
       headers: config.headers,
-    })}`;
+    })};
   }
-  return `${name}:${JSON.stringify({
+  return ${name}:${JSON.stringify({
     type: "stdio",
     command: config.command,
     args: config.args,
     env: config.env,
-  })}`;
+  })};
 }
 
-const connectionCache = new Map<string, Promise<McpServerConnection>>();
+const connectionCache = new Map&lt;string, Promise&lt;McpServerConnection&gt;&gt;();
 ```
 
 #### `src/services/mcp/client.ts:131-157`
@@ -9151,7 +9223,7 @@ const connectionCache = new Map<string, Promise<McpServerConnection>>();
 export function connectToServer(
   name: string,
   config: ScopedMcpServerConfig,
-): Promise<McpServerConnection> {
+): Promise&lt;McpServerConnection&gt; {
   const key = getCacheKey(name, config);
   const cached = connectionCache.get(key);
   if (cached) return cached;
@@ -9183,7 +9255,7 @@ function createStdioTransport(
     args: config.args ?? [],
     env: {
       // Inherit parent env first, then layer per-server overrides.
-      ...(process.env as Record<string, string>),
+      ...(process.env as Record&lt;string, string&gt;),
       ...(config.env ?? {}),
     },
     stderr: "pipe", // keep server stderr off our terminal UI
@@ -9250,7 +9322,7 @@ function createSseTransport(config: McpSSEServerConfig & { scope: string }): Tra
         fetch(url, {
           ...init,
           headers: {
-            ...(init?.headers as Record<string, string> | undefined),
+            ...(init?.headers as Record&lt;string, string&gt; | undefined),
             ...headers,
             Accept: "text/event-stream",
           },
@@ -9272,8 +9344,8 @@ function createSseTransport(config: McpSSEServerConfig & { scope: string }): Tra
   const connectPromise = client.connect(bundle.transport);
   const timeoutMs = getConnectTimeoutMs();
 
-  let timeoutHandle: ReturnType<typeof setTimeout> | undefined;
-  const timeoutPromise = new Promise<never>((_resolve, reject) => {
+  let timeoutHandle: ReturnType&lt;typeof setTimeout&gt; | undefined;
+  const timeoutPromise = new Promise&lt;never&gt;((_resolve, reject) => {
     timeoutHandle = setTimeout(() => {
       reject(new Error(`MCP server '${name}' connection timed out after ${timeoutMs}ms`));
     }, timeoutMs);
@@ -9299,6 +9371,7 @@ function createSseTransport(config: McpSSEServerConfig & { scope: string }): Tra
 
 <!-- source-snippets:end -->
 </details>
+
 连接成功后会读取 server capabilities 和 server version，并返回带 cleanup 的 `ConnectedMcpServer`。cleanup 对 stdio 会先做 SIGINT/SIGTERM/SIGKILL 分级清理，然后关闭 SDK client。  
 Sources: [src/services/mcp/client.ts:337-367](../../../project-repos/easy-agent/src/services/mcp/client.ts#L337-L367), [src/services/mcp/client.ts:83-127](../../../project-repos/easy-agent/src/services/mcp/client.ts#L83-L127)
 
@@ -9314,14 +9387,14 @@ Sources: [src/services/mcp/client.ts:337-367](../../../project-repos/easy-agent/
   const serverVersion = client.getServerVersion();
   debugLog(
     "mcp",
-    `[${name}] connected via ${bundle.describe} (server=${serverVersion?.name ?? "?"} v${serverVersion?.version ?? "?"} caps=${JSON.stringify({
+    [${name}] connected via ${bundle.describe} (server=${serverVersion?.name ?? "?"} v${serverVersion?.version ?? "?"} caps=${JSON.stringify({
       tools: !!capabilities?.tools,
       resources: !!capabilities?.resources,
       prompts: !!capabilities?.prompts,
-    })})`,
+    })}),
   );
 
-  const cleanup = async (): Promise<void> => {
+  const cleanup = async (): Promise&lt;void&gt; => {
     activeConnections.delete(name);
     await bundle.preCleanup();
     try {
@@ -9354,7 +9427,7 @@ Sources: [src/services/mcp/client.ts:337-367](../../../project-repos/easy-agent/
  * (client.ts:1431-1559) but flattened — no need for the resolved/timer
  * juggling because we await inline.
  */
-async function escalatedKill(name: string, pid: number | undefined): Promise<void> {
+async function escalatedKill(name: string, pid: number | undefined): Promise&lt;void&gt; {
   if (!pid) return;
   const aliveCheck = (): boolean => {
     try {
@@ -9395,6 +9468,7 @@ async function escalatedKill(name: string, pid: number | undefined): Promise<voi
 
 <!-- source-snippets:end -->
 </details>
+
 ## 工具适配
 
 `fetchToolsForConnection()` 只在 server 声明 `tools` capability 时调用 `tools/list`。每个 MCP tool 会变成本地 `Tool`：name 形如 `mcp__<server>__<tool>`，description 最多 2048 字符，input schema 透传，`annotations.readOnlyHint` 映射到 `isReadOnly()`。  
@@ -9448,7 +9522,7 @@ function buildToolAdapter(connection: ConnectedMcpServer, mcpTool: McpTool): Too
     inputSchema,
     isReadOnly: () => isReadOnly,
     isEnabled: () => true,
-    async call(rawInput: Record<string, unknown>, _context: ToolContext): Promise<ToolResult> {
+    async call(rawInput: Record&lt;string, unknown&gt;, _context: ToolContext): Promise&lt;ToolResult&gt; {
       try {
         const result = await connection.client.request(
           {
@@ -9487,7 +9561,7 @@ function buildToolAdapter(connection: ConnectedMcpServer, mcpTool: McpTool): Too
  */
 export async function fetchToolsForConnection(
   connection: ConnectedMcpServer,
-): Promise<Tool[]> {
+): Promise&lt;Tool[]&gt; {
   if (!connection.capabilities?.tools) {
     debugLog("mcp", `[${connection.name}] no 'tools' capability declared, skipping tools/list`);
     return [];
@@ -9521,6 +9595,7 @@ export async function fetchToolsForConnection(
 
 <!-- source-snippets:end -->
 </details>
+
 MCP tool 调用时，本地工具会把 prefixed name 还原成 server 自己的 tool name 发给 `tools/call`；返回内容统一 stringify 成文本。图片当前只转成占位描述，resource 优先使用 text。  
 Sources: [src/services/mcp/fetchTools.ts:40-65](../../../project-repos/easy-agent/src/services/mcp/fetchTools.ts#L40-L65), [src/services/mcp/fetchTools.ts:101-124](../../../project-repos/easy-agent/src/services/mcp/fetchTools.ts#L101-L124)
 
@@ -9563,7 +9638,7 @@ function stringifyMcpContent(content: CallToolResult["content"]): string {
 #### `src/services/mcp/fetchTools.ts:101-124`
 
 ```typescript
-    async call(rawInput: Record<string, unknown>, _context: ToolContext): Promise<ToolResult> {
+    async call(rawInput: Record&lt;string, unknown&gt;, _context: ToolContext): Promise&lt;ToolResult&gt; {
       try {
         const result = await connection.client.request(
           {
@@ -9591,6 +9666,7 @@ function stringifyMcpContent(content: CallToolResult["content"]): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   ServerTool["MCP Tool descriptor"] --> Name["mcp__server__tool"]
@@ -9678,7 +9754,7 @@ function buildToolAdapter(connection: ConnectedMcpServer, mcpTool: McpTool): Too
     inputSchema,
     isReadOnly: () => isReadOnly,
     isEnabled: () => true,
-    async call(rawInput: Record<string, unknown>, _context: ToolContext): Promise<ToolResult> {
+    async call(rawInput: Record&lt;string, unknown&gt;, _context: ToolContext): Promise&lt;ToolResult&gt; {
       try {
         const result = await connection.client.request(
           {
@@ -9709,6 +9785,7 @@ function buildToolAdapter(connection: ConnectedMcpServer, mcpTool: McpTool): Too
 
 <!-- source-snippets:end -->
 </details>
+
 ## `/mcp` 命令表面
 
 `QueryEngine` 的 `/mcp` 命令可以列出所有 server 的 connected/failed/pending/disabled 状态，展示某个 server 的工具，或者 reconnect 单个 server。Reconnect 会清 cache、删 registry entry、重新连接、重新拉取工具并刷新全局 tool registry。  
@@ -9726,14 +9803,14 @@ Sources: [src/core/queryEngine.ts:668-760](../../../project-repos/easy-agent/src
    * Handle the `/mcp` slash command family.
    *
    *   /mcp                       — list every configured server + status + tool count
-   *   /mcp tools <name>          — show all tools exposed by one server
-   *   /mcp reconnect <name>      — drop cache + retry connection
+   *   /mcp tools &lt;name&gt;          — show all tools exposed by one server
+   *   /mcp reconnect &lt;name&gt;      — drop cache + retry connection
    *
    * The output is rendered as a system notice (info/error tone), never sent
    * to the model. Mirrors the source's `mcp.tsx` panel content but stripped
    * to a text-only listing — Easy Agent doesn't need a full TUI panel for it.
    */
-  private async *handleMcpCommand(args: string[]): AsyncGenerator<QueryEngineEvent, { handled: boolean }> {
+  private async *handleMcpCommand(args: string[]): AsyncGenerator&lt;QueryEngineEvent, { handled: boolean }&gt; {
     const describeTransport = (config: import("../types/mcp.js").ScopedMcpServerConfig): string => {
       if (config.type === "http") return `http: ${config.url}`;
       if (config.type === "sse") return `sse: ${config.url}`;
@@ -9770,7 +9847,7 @@ Sources: [src/core/queryEngine.ts:668-760](../../../project-repos/easy-agent/src
           lines.push(`  - ${connection.name}    disabled`);
         }
       }
-      lines.push("", "Subcommands: /mcp tools <name> | /mcp reconnect <name>");
+      lines.push("", "Subcommands: /mcp tools &lt;name&gt; | /mcp reconnect &lt;name&gt;");
       yield { type: "command", kind: "info", message: lines.join("\n") };
       return { handled: true };
     }
@@ -9778,7 +9855,7 @@ Sources: [src/core/queryEngine.ts:668-760](../../../project-repos/easy-agent/src
     if (sub === "tools") {
       const target = rest[0];
       if (!target) {
-        yield { type: "command", kind: "error", message: "Usage: /mcp tools <serverName>" };
+        yield { type: "command", kind: "error", message: "Usage: /mcp tools &lt;serverName&gt;" };
         return { handled: true };
       }
       const entry = getMcpRegistryEntry(target);
@@ -9823,7 +9900,7 @@ Sources: [src/core/queryEngine.ts:668-760](../../../project-repos/easy-agent/src
     if (sub === "reconnect") {
       const target = rest[0];
       if (!target) {
-        yield { type: "command", kind: "error", message: "Usage: /mcp reconnect <serverName>" };
+        yield { type: "command", kind: "error", message: "Usage: /mcp reconnect &lt;serverName&gt;" };
         return { handled: true };
       }
       const entry = getMcpRegistryEntry(target);
@@ -9881,7 +9958,7 @@ Sources: [src/core/queryEngine.ts:668-760](../../../project-repos/easy-agent/src
  * Reconnect a single MCP server. Returns the new connection state. Used by
  * `/mcp reconnect <name>`.
  */
-export async function reconnectMcpServer(name: string): Promise<McpServerConnection | null> {
+export async function reconnectMcpServer(name: string): Promise&lt;McpServerConnection | null&gt; {
   const entry = getMcpRegistryEntry(name);
   if (!entry) return null;
 
@@ -9900,6 +9977,7 @@ export async function reconnectMcpServer(name: string): Promise<McpServerConnect
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证脚本覆盖
 
 `test-mcp.ts` 覆盖 name normalization、配置校验、inline stdio server 端到端连接、tools/list、tools/call、registry、reconnect、cleanup，以及 pending 到 connected 的非阻塞启动窗口。  
@@ -10023,7 +10101,7 @@ async function testConfigValidation() {
  *
  * The inline server exposes one tool: `echo` that returns its `message` arg.
  */
-async function writeInlineServer(opts: { startupDelayMs?: number } = {}): Promise<string> {
+async function writeInlineServer(opts: { startupDelayMs?: number } = {}): Promise&lt;string&gt; {
   const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "easy-agent-mcp-srv-"));
   const serverPath = path.join(tmpDir, "server.mjs");
   // Resolve the SDK's package path from the test process so the spawned
@@ -10032,7 +10110,7 @@ async function writeInlineServer(opts: { startupDelayMs?: number } = {}): Promis
     new URL(import.meta.resolve("@modelcontextprotocol/sdk/server/index.js")).pathname,
   );
   const startupDelayMs = opts.startupDelayMs ?? 0;
-  const serverJs = `
+  const serverJs = 
 ${startupDelayMs > 0 ? `await new Promise((r) => setTimeout(r, ${startupDelayMs}));` : ""}
 import { Server } from "${sdkPkg}/index.js";
 import { StdioServerTransport } from "${sdkPkg}/stdio.js";
@@ -10072,12 +10150,12 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
-`;
+;
   await fs.writeFile(serverPath, serverJs);
   return serverPath;
 }
 
-async function testEndToEnd(): Promise<void> {
+async function testEndToEnd(): Promise&lt;void&gt; {
   console.log("\n── 3. End-to-end (inline stdio server) ──");
   const fakeHome = await resetMcpStateForTest();
 
@@ -10143,7 +10221,7 @@ async function testEndToEnd(): Promise<void> {
 
 ```typescript
 // ─── 4. Non-blocking bootstrap (pending → connected race) ───────────
-async function testNonBlockingBootstrap(): Promise<void> {
+async function testNonBlockingBootstrap(): Promise&lt;void&gt; {
   console.log("\n── 4. Non-blocking bootstrap ──");
   const fakeHome = await resetMcpStateForTest();
   // 500ms server startup delay — gives us a wide-open window to observe the
@@ -10196,6 +10274,7 @@ async function testNonBlockingBootstrap(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [工具系统与权限模型](tools-permissions.md)
@@ -10258,7 +10337,7 @@ Sources: [src/types/types.ts:1-12](../../../project-repos/easy-agent/src/types/t
  *
  * Scopes (precedence: project > user):
  *   1. ~/.easy-agent/skills/             (per-user)
- *   2. <cwd>/.easy-agent/skills/         (per-project)
+ *   2. &lt;cwd&gt;/.easy-agent/skills/         (per-project)
  *
  * Reference: claude-code-source-code/src/skills/loadSkillsDir.ts
  *   - We mirror getFileIdentity() with `realpath()` for symlink dedupe.
@@ -10319,7 +10398,7 @@ Sources: [src/types/types.ts:1-12](../../../project-repos/easy-agent/src/types/t
       // the model still receives it as a regular user prompt.
       //
       // We don't have an `isMeta` field on `MessageParam`, so we use a
-      // string-prefix sentinel ("[skill_invocation:<name>]\n") for the body
+      // string-prefix sentinel ("[skill_invocation:&lt;name&gt;]\n") for the body
       // and the source's exact XML format for the marker — both matched in
       // ConversationView.
       const skillExpansion = this.tryExpandSkillCommand(trimmed);
@@ -10337,6 +10416,7 @@ Sources: [src/types/types.ts:1-12](../../../project-repos/easy-agent/src/types/t
 
 <!-- source-snippets:end -->
 </details>
+
 ## 加载路径与优先级
 
 当前支持两个目录：`~/.easy-agent/skills/` 和 `<cwd>/.easy-agent/skills/`。加载时用 `realpath()` 去重，project scope 后加载，因此同名 skill 会覆盖 user scope。  
@@ -10357,7 +10437,7 @@ export function getUserSkillsDir(): string {
   return getEasyAgentPath("skills");
 }
 
-/** <cwd>/.easy-agent/skills */
+/** &lt;cwd&gt;/.easy-agent/skills */
 export function getProjectSkillsDir(cwd: string): string {
   return path.join(getProjectEasyAgentDir(cwd), "skills");
 }
@@ -10374,7 +10454,7 @@ export function getProjectSkillsDir(cwd: string): string {
  * The project scope is loaded second so its entries naturally overwrite
  * user-scope entries with the same `name` in the final Map.
  */
-export async function loadAllSkills(cwd: string): Promise<LoadAllSkillsResult> {
+export async function loadAllSkills(cwd: string): Promise&lt;LoadAllSkillsResult&gt; {
   const userDir = getUserSkillsDir();
   const projectDir = getProjectSkillsDir(cwd);
 
@@ -10383,8 +10463,8 @@ export async function loadAllSkills(cwd: string): Promise<LoadAllSkillsResult> {
     loadFromOneDir(projectDir, "project"),
   ]);
 
-  const seenRealPaths = new Set<string>();
-  const byName = new Map<string, Skill>();
+  const seenRealPaths = new Set&lt;string&gt;();
+  const byName = new Map&lt;string, Skill&gt;();
 
   for (const skill of [...userResult.skills, ...projectResult.skills]) {
     if (seenRealPaths.has(skill.filePath)) continue; // symlink loop
@@ -10402,10 +10482,11 @@ export async function loadAllSkills(cwd: string): Promise<LoadAllSkillsResult> {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   User["~/.easy-agent/skills"] --> Loader["loadAllSkills"]
-  Project["<cwd>/.easy-agent/skills"] --> Loader
+  Project["&lt;cwd&gt;/.easy-agent/skills"] --> Loader
   Loader --> Dedupe["realpath dedupe"]
   Dedupe --> Override["project overrides user"]
   Override --> Registry["setSkills"]
@@ -10423,7 +10504,7 @@ Sources: [src/services/skills/loadSkillsDir.ts:53-109](../../../project-repos/ea
 #### `src/services/skills/loadSkillsDir.ts:53-109`
 
 ```typescript
-async function loadFromOneDir(dir: string, source: SkillSource): Promise<LoadedFromDir> {
+async function loadFromOneDir(dir: string, source: SkillSource): Promise&lt;LoadedFromDir&gt; {
   let entries: string[];
   try {
     const dirents = await fs.readdir(dir, { withFileTypes: true });
@@ -10485,7 +10566,7 @@ async function loadFromOneDir(dir: string, source: SkillSource): Promise<LoadedF
 #### `src/services/skills/loadSkillsDir.ts:124-147`
 
 ```typescript
-export async function loadAllSkills(cwd: string): Promise<LoadAllSkillsResult> {
+export async function loadAllSkills(cwd: string): Promise&lt;LoadAllSkillsResult&gt; {
   const userDir = getUserSkillsDir();
   const projectDir = getProjectSkillsDir(cwd);
 
@@ -10494,8 +10575,8 @@ export async function loadAllSkills(cwd: string): Promise<LoadAllSkillsResult> {
     loadFromOneDir(projectDir, "project"),
   ]);
 
-  const seenRealPaths = new Set<string>();
-  const byName = new Map<string, Skill>();
+  const seenRealPaths = new Set&lt;string&gt;();
+  const byName = new Map&lt;string, Skill&gt;();
 
   for (const skill of [...userResult.skills, ...projectResult.skills]) {
     if (seenRealPaths.has(skill.filePath)) continue; // symlink loop
@@ -10530,6 +10611,7 @@ export function setSkills(skills: Skill[]): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Frontmatter 解析
 
 `splitFrontmatter()` 用 YAML parser 解析 `--- ... ---` 块；无 frontmatter 时返回空对象和原 body；YAML 非 mapping 或 parse error 会带 `parseError`，由 loader 警告并跳过。`normalizeFrontmatter()` 归一化 `name`、`description`、`when_to_use`、`allowed-tools`、`argument-hint`、`disable-model-invocation`、`paths` 和 `context: fork`。  
@@ -10562,7 +10644,7 @@ export function splitFrontmatter(content: string): FrontmatterSplit {
   try {
     const parsed = parseYaml(yamlText) as unknown;
     if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
-      return { raw: parsed as Record<string, unknown>, body };
+      return { raw: parsed as Record&lt;string, unknown&gt;, body };
     }
     // Frontmatter that isn't an object (e.g. `---\nfoo\n---`) is a config
     // bug, not a usable skill. Treat as parse failure so the user notices.
@@ -10647,7 +10729,7 @@ export function extractFallbackDescription(body: string): string {
  * without re-parsing the file.
  */
 export function normalizeFrontmatter(
-  raw: Record<string, unknown>,
+  raw: Record&lt;string, unknown&gt;,
   body: string,
 ): SkillFrontmatter {
   const allowedTools = asStringArray(raw["allowed-tools"] ?? raw["allowedTools"]);
@@ -10670,6 +10752,7 @@ export function normalizeFrontmatter(
 
 <!-- source-snippets:end -->
 </details>
+
 | 字段 | 行为 |
 |------|------|
 | `name` | 默认目录名，可覆盖 |
@@ -10750,7 +10833,7 @@ export function extractFallbackDescription(body: string): string {
  * without re-parsing the file.
  */
 export function normalizeFrontmatter(
-  raw: Record<string, unknown>,
+  raw: Record&lt;string, unknown&gt;,
   body: string,
 ): SkillFrontmatter {
   const allowedTools = asStringArray(raw["allowed-tools"] ?? raw["allowedTools"]);
@@ -10794,6 +10877,7 @@ export function normalizeFrontmatter(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Registry 分层
 
 registry 分成 `dynamic` 和 `conditional` 两个 Map。`getModelVisibleSkills()` 只返回 dynamic 且未设置 `disable-model-invocation` 的技能；`getAllUserInvocableSkills()` 会返回 dynamic + conditional，包括 hidden skills，这解释了为什么用户 slash command 可以调用模型不可见技能。  
@@ -10874,6 +10958,7 @@ export function findSkill(name: string): Skill | undefined {
 
 <!-- source-snippets:end -->
 </details>
+
 ## System Prompt 预算
 
 Skills discovery block 被包在 `<system-reminder>` 中。预算默认 8000 字符，可由 `EASY_AGENT_SKILL_CHAR_BUDGET` 覆盖；格式化有三档降级：完整描述、均分压缩描述、只列名称。  
@@ -10976,12 +11061,12 @@ export function formatSkillsSystemReminder(skills: Skill[]): string {
   const listing = formatSkillsWithinBudget(skills);
   if (!listing) return "";
   return [
-    "<system-reminder>",
+    "&lt;system-reminder&gt;",
     "Available skills you can invoke via the `Skill` tool. Each line is `- <name>: <description>`.",
     "Call `Skill(skill=\"<name>\", args=\"<optional args>\")` when the user's request matches one of these.",
     "",
     listing,
-    "</system-reminder>",
+    "&lt;/system-reminder&gt;",
   ].join("\n");
 }
 ```
@@ -10990,7 +11075,7 @@ export function formatSkillsSystemReminder(skills: Skill[]): string {
 
 ```typescript
   // Skill discovery listing — see skills/budget.ts for the budget logic.
-  // Wrapped as a <system-reminder> block (not a top-level instruction) so the
+  // Wrapped as a &lt;system-reminder&gt; block (not a top-level instruction) so the
   // model treats it as ambient context that may or may not apply this turn.
   // Conditional skills (frontmatter `paths`) only appear here AFTER they've
   // been promoted in by activateConditionalSkillsForPaths(); see
@@ -11009,6 +11094,7 @@ export function formatSkillsSystemReminder(skills: Skill[]): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 条件激活
 
 条件 skills 使用 `paths` frontmatter 和 `ignore` 包的 gitignore 语义匹配。工具调用成功后，`agenticLoop` 会从 Read/Write/Edit/Glob 的输入里提取文件路径，命中后把 skill 从 conditional map 提升到 dynamic map，且激活在当前进程内是单向且 sticky 的。  
@@ -11089,7 +11175,7 @@ export function activateConditionalSkillsForPaths(
  */
 export function extractToolFilePaths(
   toolName: string,
-  input: Record<string, unknown>,
+  input: Record&lt;string, unknown&gt;,
 ): string[] {
   const paths: string[] = [];
   switch (toolName) {
@@ -11132,6 +11218,7 @@ export function extractToolFilePaths(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Skill 工具与用户 slash 调用
 
 `Skill` 工具会校验 skill name，查 registry，拒绝 hidden-from-model 和 `context: fork`，再替换 `${CLAUDE_SKILL_DIR}`、`${CLAUDE_SESSION_ID}`、`$ARGUMENTS`，把 skill body 作为工具结果返回给模型继续执行。  
@@ -11147,7 +11234,7 @@ Sources: [src/tools/skillTool.ts:31-64](../../../project-repos/easy-agent/src/to
 ```typescript
 const SKILL_NAME_RE = /^[a-zA-Z0-9_-]+$/;
 
-function readInput(input: Record<string, unknown>): SkillInput {
+function readInput(input: Record&lt;string, unknown&gt;): SkillInput {
   const skill = typeof input["skill"] === "string" ? input["skill"].trim() : "";
   const args = typeof input["args"] === "string" ? input["args"] : "";
   return { skill, args };
@@ -11184,7 +11271,7 @@ function buildPromptText(skill: Skill, args: string, sessionId: string): string 
 #### `src/tools/skillTool.ts:90-141`
 
 ```typescript
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const { skill: name, args } = readInput(input);
 
     if (!name || !SKILL_NAME_RE.test(name)) {
@@ -11240,6 +11327,7 @@ function buildPromptText(skill: Skill, args: string, sessionId: string): string 
 
 <!-- source-snippets:end -->
 </details>
+
 用户 slash 调用走另一条链：`QueryEngine.tryExpandSkillCommand()` 生成可见 command marker 和隐藏 body message；`ConversationView` 隐藏 body，只渲染 command 气泡。  
 Sources: [src/core/queryEngine.ts:178-215](../../../project-repos/easy-agent/src/core/queryEngine.ts#L178-L215), [src/core/queryEngine.ts:221-277](../../../project-repos/easy-agent/src/core/queryEngine.ts#L221-L277), [src/ui/components/ConversationView.tsx:15-29](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx#L15-L29), [src/ui/components/ConversationView.tsx:141-157](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx#L141-L157)
 
@@ -11275,7 +11363,7 @@ Sources: [src/core/queryEngine.ts:178-215](../../../project-repos/easy-agent/src
       // the model still receives it as a regular user prompt.
       //
       // We don't have an `isMeta` field on `MessageParam`, so we use a
-      // string-prefix sentinel ("[skill_invocation:<name>]\n") for the body
+      // string-prefix sentinel ("[skill_invocation:&lt;name&gt;]\n") for the body
       // and the source's exact XML format for the marker — both matched in
       // ConversationView.
       const skillExpansion = this.tryExpandSkillCommand(trimmed);
@@ -11387,16 +11475,17 @@ function isInternalMessage(message: MessageParam): boolean {
               const display = `/${marker.name.replace(/^\//, "")}` +
                 (marker.args ? ` ${marker.args}` : "");
               return (
-                <Box key={`u${index}`} marginTop={1}>
-                  <Text color="cyan" dimColor>{"❯ "}</Text>
-                  <Text color="cyan">{display}</Text>
-                </Box>
+                &lt;Box key={`u${index}`} marginTop={1}>
+                  &lt;Text color="cyan" dimColor&gt;{"❯ "}&lt;/Text&gt;
+                  &lt;Text color="cyan"&gt;{display}&lt;/Text&gt;
+                &lt;/Box&gt;
               );
             }
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant User as User
@@ -11484,10 +11573,10 @@ function extractCommandMarker(
 ): { name: string; args: string } | null {
   if (typeof message.content !== "string") return null;
   const text = message.content;
-  if (!text.includes("<command-name>")) return null;
-  const nameMatch = text.match(/<command-name>([^<]*)<\/command-name>/);
+  if (!text.includes("&lt;command-name&gt;")) return null;
+  const nameMatch = text.match(/&lt;command-name&gt;([^&lt;]*)<\/command-name&gt;/);
   if (!nameMatch) return null;
-  const argsMatch = text.match(/<command-args>([^<]*)<\/command-args>/);
+  const argsMatch = text.match(/&lt;command-args&gt;([^&lt;]*)<\/command-args&gt;/);
   return {
     name: nameMatch[1] ?? "",
     args: (argsMatch?.[1] ?? "").trim(),
@@ -11509,16 +11598,17 @@ function extractCommandMarker(
               const display = `/${marker.name.replace(/^\//, "")}` +
                 (marker.args ? ` ${marker.args}` : "");
               return (
-                <Box key={`u${index}`} marginTop={1}>
-                  <Text color="cyan" dimColor>{"❯ "}</Text>
-                  <Text color="cyan">{display}</Text>
-                </Box>
+                &lt;Box key={`u${index}`} marginTop={1}>
+                  &lt;Text color="cyan" dimColor&gt;{"❯ "}&lt;/Text&gt;
+                  &lt;Text color="cyan"&gt;{display}&lt;/Text&gt;
+                &lt;/Box&gt;
               );
             }
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## 源仓库技能包检测
 
 本次分析的 `easy-agent` 源仓库没有 `skills/**/SKILL.md`、`.easy-agent/skills/**/SKILL.md` 或类似技能包目录，因此 DeepWiki 输出不包含 `skills/` 翻译副本。仓库内 `src/scripts/test-skills.ts` 会在运行时创建或期待工作目录下的示例 skills，但它们不是当前 git tracked source tree 的一部分。  
@@ -11551,7 +11641,7 @@ Sources: [src/scripts/test-skills.ts:1-14](../../../project-repos/easy-agent/src
 #### `src/scripts/test-skills.ts:40-84`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   console.log(`\n[1] bootstrapSkills(${cwd})`);
   const result = await bootstrapSkills(cwd);
   console.log(
@@ -11600,6 +11690,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [CLI 与终端 UI](cli-and-ui.md)
@@ -11637,7 +11728,7 @@ Sources: [src/context/systemPrompt.ts:95-140](../../../project-repos/easy-agent/
 #### `src/context/systemPrompt.ts:95-140`
 
 ```typescript
-export async function buildSystemPrompt(options: BuildSystemPromptOptions): Promise<string[]> {
+export async function buildSystemPrompt(options: BuildSystemPromptOptions): Promise&lt;string[]&gt; {
   const ignoreMemory = options.userQuery ? shouldIgnoreMemory(options.userQuery) : false;
   const memoryDir = await ensureMemoryDirExists(options.cwd);
   const [environmentContext, agentMdContext, memoryEntrypoint] = await Promise.all([
@@ -11665,7 +11756,7 @@ export async function buildSystemPrompt(options: BuildSystemPromptOptions): Prom
   ].filter(Boolean);
 
   // Skill discovery listing — see skills/budget.ts for the budget logic.
-  // Wrapped as a <system-reminder> block (not a top-level instruction) so the
+  // Wrapped as a &lt;system-reminder&gt; block (not a top-level instruction) so the
   // model treats it as ambient context that may or may not apply this turn.
   // Conditional skills (frontmatter `paths`) only appear here AFTER they've
   // been promoted in by activateConditionalSkillsForPaths(); see
@@ -11767,7 +11858,7 @@ export async function compactMessages(
   messages: MessageParam[],
   focus?: string,
   options: CompactionCheckOptions = {},
-): Promise<CompactionResult> {
+): Promise&lt;CompactionResult&gt; {
   const microcompactResult = microCompactMessages(messages);
   const microCompacted = microcompactResult.messages;
   const microChanged = JSON.stringify(microCompacted) !== JSON.stringify(messages);
@@ -11851,6 +11942,7 @@ export async function compactMessages(
 
 <!-- source-snippets:end -->
 </details>
+
 ## System Prompt 组成
 
 静态部分是 Easy Agent 的操作原则；动态部分包括 runtime 环境、Git branch/status/recent commit、AGENT.md 内容、memory 位置和索引、session instructions、skills reminder。静态和动态部分分别用 `<SYSTEM_STATIC_CONTEXT>` 与 `<SYSTEM_DYNAMIC_CONTEXT>` 包裹。  
@@ -11864,10 +11956,10 @@ Sources: [src/context/systemPrompt.ts:12-16](../../../project-repos/easy-agent/s
 #### `src/context/systemPrompt.ts:12-16`
 
 ```typescript
-export const SYSTEM_PROMPT_STATIC_START = "<SYSTEM_STATIC_CONTEXT>";
-export const SYSTEM_PROMPT_STATIC_END = "</SYSTEM_STATIC_CONTEXT>";
-export const SYSTEM_PROMPT_DYNAMIC_START = "<SYSTEM_DYNAMIC_CONTEXT>";
-export const SYSTEM_PROMPT_DYNAMIC_END = "</SYSTEM_DYNAMIC_CONTEXT>";
+export const SYSTEM_PROMPT_STATIC_START = "&lt;SYSTEM_STATIC_CONTEXT&gt;";
+export const SYSTEM_PROMPT_STATIC_END = "&lt;/SYSTEM_STATIC_CONTEXT&gt;";
+export const SYSTEM_PROMPT_DYNAMIC_START = "&lt;SYSTEM_DYNAMIC_CONTEXT&gt;";
+export const SYSTEM_PROMPT_DYNAMIC_END = "&lt;/SYSTEM_DYNAMIC_CONTEXT&gt;";
 
 ```
 
@@ -11891,7 +11983,7 @@ function getStaticPromptSections(): string[] {
 #### `src/context/systemPrompt.ts:45-72`
 
 ```typescript
-async function getGitContext(cwd: string): Promise<Pick<RuntimeEnvironmentContext, "gitBranch" | "gitStatus" | "gitRecentCommit">> {
+async function getGitContext(cwd: string): Promise&lt;Pick&lt;RuntimeEnvironmentContext, "gitBranch" | "gitStatus" | "gitRecentCommit"&gt;&gt; {
   try {
     const [branchResult, statusResult, logResult] = await Promise.all([
       execFileAsync("git", ["rev-parse", "--abbrev-ref", "HEAD"], { cwd, maxBuffer: 32 * 1024 }),
@@ -11910,7 +12002,7 @@ async function getGitContext(cwd: string): Promise<Pick<RuntimeEnvironmentContex
   }
 }
 
-export async function getRuntimeEnvironmentContext(cwd: string): Promise<RuntimeEnvironmentContext> {
+export async function getRuntimeEnvironmentContext(cwd: string): Promise&lt;RuntimeEnvironmentContext&gt; {
   const git = await getGitContext(cwd);
   return {
     cwd,
@@ -11924,7 +12016,7 @@ export async function getRuntimeEnvironmentContext(cwd: string): Promise<Runtime
 #### `src/context/systemPrompt.ts:95-145`
 
 ```typescript
-export async function buildSystemPrompt(options: BuildSystemPromptOptions): Promise<string[]> {
+export async function buildSystemPrompt(options: BuildSystemPromptOptions): Promise&lt;string[]&gt; {
   const ignoreMemory = options.userQuery ? shouldIgnoreMemory(options.userQuery) : false;
   const memoryDir = await ensureMemoryDirExists(options.cwd);
   const [environmentContext, agentMdContext, memoryEntrypoint] = await Promise.all([
@@ -11952,7 +12044,7 @@ export async function buildSystemPrompt(options: BuildSystemPromptOptions): Prom
   ].filter(Boolean);
 
   // Skill discovery listing — see skills/budget.ts for the budget logic.
-  // Wrapped as a <system-reminder> block (not a top-level instruction) so the
+  // Wrapped as a &lt;system-reminder&gt; block (not a top-level instruction) so the
   // model treats it as ambient context that may or may not apply this turn.
   // Conditional skills (frontmatter `paths`) only appear here AFTER they've
   // been promoted in by activateConditionalSkillsForPaths(); see
@@ -11979,6 +12071,7 @@ export function renderSystemPrompt(parts: string[]): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Build["buildSystemPrompt"] --> Static["static instructions"]
@@ -12003,7 +12096,7 @@ Sources: [src/context/systemPrompt.ts:95-145](../../../project-repos/easy-agent/
 #### `src/context/systemPrompt.ts:95-145`
 
 ```typescript
-export async function buildSystemPrompt(options: BuildSystemPromptOptions): Promise<string[]> {
+export async function buildSystemPrompt(options: BuildSystemPromptOptions): Promise&lt;string[]&gt; {
   const ignoreMemory = options.userQuery ? shouldIgnoreMemory(options.userQuery) : false;
   const memoryDir = await ensureMemoryDirExists(options.cwd);
   const [environmentContext, agentMdContext, memoryEntrypoint] = await Promise.all([
@@ -12031,7 +12124,7 @@ export async function buildSystemPrompt(options: BuildSystemPromptOptions): Prom
   ].filter(Boolean);
 
   // Skill discovery listing — see skills/budget.ts for the budget logic.
-  // Wrapped as a <system-reminder> block (not a top-level instruction) so the
+  // Wrapped as a &lt;system-reminder&gt; block (not a top-level instruction) so the
   // model treats it as ambient context that may or may not apply this turn.
   // Conditional skills (frontmatter `paths`) only appear here AFTER they've
   // been promoted in by activateConditionalSkillsForPaths(); see
@@ -12058,6 +12151,7 @@ export function renderSystemPrompt(parts: string[]): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ## AGENT.md 链式加载
 
 `claudeMd.ts` 会读取全局 `~/.easy-agent/AGENT.md` 和 cwd 到根目录链路上的每个 `AGENT.md`，去掉 HTML 注释后按 source path 拼成上下文。  
@@ -12077,7 +12171,7 @@ function stripHtmlComments(content: string): string {
   return content.replace(/<!--[\s\S]*?-->/g, "").trim();
 }
 
-async function readIfExists(filePath: string): Promise<string | null> {
+async function readIfExists(filePath: string): Promise&lt;string | null&gt; {
   try {
     const stat = await fs.stat(filePath);
     if (!stat.isFile()) return null;
@@ -12107,7 +12201,7 @@ function getDirectoryChain(cwd: string): string[] {
   return chain.reverse();
 }
 
-export async function getAgentMdFiles(cwd: string): Promise<string[]> {
+export async function getAgentMdFiles(cwd: string): Promise&lt;string[]&gt; {
   const files: string[] = [getGlobalAgentMdPath()];
   for (const dir of getDirectoryChain(cwd)) {
     files.push(path.join(dir, AGENT_MD_NAME));
@@ -12115,7 +12209,7 @@ export async function getAgentMdFiles(cwd: string): Promise<string[]> {
   return files;
 }
 
-export async function loadAgentMdContext(cwd: string): Promise<string> {
+export async function loadAgentMdContext(cwd: string): Promise&lt;string&gt; {
   const files = await getAgentMdFiles(cwd);
   const loaded = await Promise.all(
     files.map(async (filePath) => {
@@ -12134,6 +12228,7 @@ export async function loadAgentMdContext(cwd: string): Promise<string> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 项目记忆目录
 
 memory 目录基于 canonical git root 计算项目 key：仓库目录 slug + git root 的 sha256 前 16 位。记忆存放在 `~/.easy-agent/projects/<projectKey>/memory/`，入口文件是 `MEMORY.md`，会被创建并限制行数/字节数。  
@@ -12165,7 +12260,7 @@ function sanitizeSlug(input: string): string {
 #### `src/context/memory/memdir.ts:46-92`
 
 ```typescript
-async function findCanonicalGitRoot(cwd: string): Promise<string> {
+async function findCanonicalGitRoot(cwd: string): Promise&lt;string&gt; {
   let current = path.resolve(cwd);
 
   while (true) {
@@ -12184,7 +12279,7 @@ async function findCanonicalGitRoot(cwd: string): Promise<string> {
   }
 }
 
-export async function getProjectPathInfo(cwd: string): Promise<ProjectPathInfo> {
+export async function getProjectPathInfo(cwd: string): Promise&lt;ProjectPathInfo&gt; {
   const gitRoot = await findCanonicalGitRoot(cwd);
   const slugBase = sanitizeSlug(path.basename(gitRoot));
   const suffix = crypto.createHash("sha256").update(gitRoot).digest("hex").slice(0, 16);
@@ -12196,12 +12291,12 @@ export async function getProjectPathInfo(cwd: string): Promise<ProjectPathInfo> 
   };
 }
 
-export async function getProjectMemoryDir(cwd: string): Promise<string> {
+export async function getProjectMemoryDir(cwd: string): Promise&lt;string&gt; {
   const { projectDir } = await getProjectPathInfo(cwd);
   return path.join(projectDir, "memory");
 }
 
-export async function ensureMemoryDirExists(cwd: string): Promise<string> {
+export async function ensureMemoryDirExists(cwd: string): Promise&lt;string&gt; {
   const memoryDir = await getProjectMemoryDir(cwd);
   await fs.mkdir(memoryDir, { recursive: true });
   const entrypoint = path.join(memoryDir, MEMORY_ENTRYPOINT);
@@ -12254,7 +12349,7 @@ export function formatMemorySystemLocation(memoryDir: string): string[] {
   ];
 }
 
-export async function readMemoryEntrypoint(cwd: string): Promise<string | null> {
+export async function readMemoryEntrypoint(cwd: string): Promise&lt;string | null&gt; {
   const memoryDir = await ensureMemoryDirExists(cwd);
   const entrypoint = path.join(memoryDir, MEMORY_ENTRYPOINT);
   const raw = await fs.readFile(entrypoint, "utf-8");
@@ -12265,6 +12360,7 @@ export async function readMemoryEntrypoint(cwd: string): Promise<string | null> 
 
 <!-- source-snippets:end -->
 </details>
+
 记忆类型有 `user`、`feedback`、`project`、`reference`。代码中的 guidance 明确要求：只有对未来对话有用且不能从当前 repo 派生的信息才保存；保存前要查现有 memory，避免把 memory 当活动日志。  
 Sources: [src/context/memory/memoryTypes.ts:1-20](../../../project-repos/easy-agent/src/context/memory/memoryTypes.ts#L1-L20), [src/context/memory/memoryTypes.ts:22-86](../../../project-repos/easy-agent/src/context/memory/memoryTypes.ts#L22-L86), [src/context/memory/memdir.ts:320-330](../../../project-repos/easy-agent/src/context/memory/memdir.ts#L320-L330)
 
@@ -12386,6 +12482,7 @@ export function buildMemoryPromptInstructions(): string[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ## MemoryWrite 工具
 
 `MemoryWrite` 会校验 name、description、type、content，调用 `writeProjectMemory()` 写入 topic markdown，并重写 `MEMORY.md` 指针索引。若发现相同或相似 memory，会更新现有文件而不是新建。  
@@ -12419,7 +12516,7 @@ export const memoryWriteTool: Tool = {
     required: ["name", "description", "type", "content"],
     additionalProperties: false,
   },
-  async call(input, context): Promise<ToolResult> {
+  async call(input, context): Promise&lt;ToolResult&gt; {
     const name = typeof input.name === "string" ? input.name.trim() : "";
     const description = typeof input.description === "string" ? input.description.trim() : "";
     const type = input.type;
@@ -12464,9 +12561,9 @@ function slugifyMemoryFileName(name: string): string {
   return sanitizeSlug(name).replace(/\.+/g, "-") + ".md";
 }
 
-async function rewriteEntrypoint(memoryDir: string, entries: MemoryEntry[]): Promise<void> {
+async function rewriteEntrypoint(memoryDir: string, entries: MemoryEntry[]): Promise&lt;void&gt; {
   const entrypointPath = path.join(memoryDir, MEMORY_ENTRYPOINT);
-  const unique = new Map<string, string>();
+  const unique = new Map&lt;string, string&gt;();
   for (const entry of entries) {
     unique.set(entry.fileName, buildPointerLine(entry));
   }
@@ -12477,7 +12574,7 @@ async function rewriteEntrypoint(memoryDir: string, entries: MemoryEntry[]): Pro
   await fs.writeFile(entrypointPath, finalText, "utf-8");
 }
 
-async function findExistingMemoryFile(cwd: string, name: string, description: string): Promise<string | null> {
+async function findExistingMemoryFile(cwd: string, name: string, description: string): Promise&lt;string | null&gt; {
   const docs = await listMemoryFiles(cwd);
   const normalizedName = normalizeLine(name).toLowerCase();
   const normalizedDescription = normalizeLine(description).toLowerCase();
@@ -12500,7 +12597,7 @@ export async function writeProjectMemory(input: {
   type: MemoryType;
   content: string;
   fileName?: string;
-}): Promise<{ filePath: string; fileName: string; updatedExisting: boolean }> {
+}): Promise&lt;{ filePath: string; fileName: string; updatedExisting: boolean }&gt; {
   const memoryDir = await ensureMemoryDirExists(input.cwd);
   const existingFileName = input.fileName ?? (await findExistingMemoryFile(input.cwd, input.name, input.description));
   const fileName = existingFileName ?? slugifyMemoryFileName(input.name);
@@ -12532,6 +12629,7 @@ export async function writeProjectMemory(input: {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Token 预算估算
 
 `tokens.ts` 用启发式估算 message 和 content block token：文本按 4 chars/token，JSON 按 2 chars/token，tool block 有固定 overhead，binary block 固定 2000。模型 context window 默认 200K，并为 summary output 预留最多 20K。  
@@ -12557,7 +12655,7 @@ const MESSAGE_OVERHEAD_TOKENS = 12;
 const TOOL_BLOCK_OVERHEAD_TOKENS = 24;
 const FIXED_BINARY_BLOCK_TOKENS = 2_000;
 
-const MODEL_CONTEXT_WINDOWS: Record<string, number> = {
+const MODEL_CONTEXT_WINDOWS: Record&lt;string, number&gt; = {
   "claude-opus-4-20250514": 200_000,
   "claude-sonnet-4-20250514": 200_000,
   "claude-haiku-3-20250307": 200_000,
@@ -12660,6 +12758,7 @@ export function tokenCountWithEstimation(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Auto Compact
 
 `autoCompact.ts` 定义 warning/error/blocking 三类阈值：warning buffer、auto compact buffer、manual compact buffer 会按有效 context window 缩放。连续 auto compact 失败达到 3 次后触发 circuit breaker，避免无限重试。  
@@ -12769,7 +12868,7 @@ export async function autoCompactIfNeeded(
     systemPrompt?: string;
     querySource?: string;
   },
-): Promise<{ result: CompactionResult; didAutoCompact: boolean }> {
+): Promise&lt;{ result: CompactionResult; didAutoCompact: boolean }&gt; {
   const estimatedTokens = tokenCountWithEstimation(messages, options);
 
   if (!shouldAutoCompact(estimatedTokens, model, options.querySource)) {
@@ -12810,6 +12909,7 @@ export async function autoCompactIfNeeded(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Estimate["estimated tokens"] --> Warning{"warning threshold"}
@@ -12895,7 +12995,7 @@ export async function autoCompactIfNeeded(
     systemPrompt?: string;
     querySource?: string;
   },
-): Promise<{ result: CompactionResult; didAutoCompact: boolean }> {
+): Promise&lt;{ result: CompactionResult; didAutoCompact: boolean }&gt; {
   const estimatedTokens = tokenCountWithEstimation(messages, options);
 
   if (!shouldAutoCompact(estimatedTokens, model, options.querySource)) {
@@ -12936,6 +13036,7 @@ export async function autoCompactIfNeeded(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Micro 与 Full Compaction
 
 `compactMessages()` 先 micro-compact：对旧的 Read/Grep/Glob/Bash/Edit/Write tool_result 清内容或用 placeholder 替换 binary 内容，只保留最近 8 条消息。若估算 token 仍低于 auto 阈值，就只返回 micro 结果；否则调用 `createMessage()` 生成 summary，保留最近尾部消息并插入 `[CompactBoundary]`。  
@@ -12954,13 +13055,13 @@ const MICROCOMPACT_MIN_MESSAGES = 10;
 const MICROCOMPACT_KEEP_RECENT_MESSAGES = 8;
 const COMPACTABLE_TOOLS = new Set(["Read", "Grep", "Glob", "Bash", "Edit", "Write"]);
 
-const NO_TOOLS_PREAMBLE = `CRITICAL: Respond with TEXT ONLY. Do NOT call any tools.
+const NO_TOOLS_PREAMBLE = CRITICAL: Respond with TEXT ONLY. Do NOT call any tools.
 
 - Do NOT use Read, Bash, Grep, Glob, Edit, Write, or ANY other tool.
 - You already have all the context you need in the conversation above.
 - Tool calls will be REJECTED and will waste your only turn — you will fail the task.
-- Your entire response must be plain text: an <analysis> block followed by a <summary> block.
-`;
+- Your entire response must be plain text: an &lt;analysis&gt; block followed by a <summary> block.
+;
 ```
 
 #### `src/context/compaction.ts:98-160`
@@ -13038,7 +13139,7 @@ export async function compactMessages(
   messages: MessageParam[],
   focus?: string,
   options: CompactionCheckOptions = {},
-): Promise<CompactionResult> {
+): Promise&lt;CompactionResult&gt; {
   const microcompactResult = microCompactMessages(messages);
   const microCompacted = microcompactResult.messages;
   const microChanged = JSON.stringify(microCompacted) !== JSON.stringify(messages);
@@ -13122,6 +13223,7 @@ export async function compactMessages(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Plan Attachment
 
 Plan mode 的说明不是一段永久 system prompt，而是按节流规则注入 user message。第一次进入 plan mode 注入完整流程，后续按 turn 计数插入 sparse/full reminder；退出 plan mode 时注入一次 `[plan_mode_exit]`。  
@@ -13274,6 +13376,7 @@ export function getPlanModeExitAttachment(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [QueryEngine 与 Agentic Loop](query-engine-agentic-loop.md)
@@ -13351,7 +13454,7 @@ export type TranscriptEntry =
  *
  * Layout (per task list):
  *
- *   ~/.easy-agent/tasks/<taskListId>/
+ *   ~/.easy-agent/tasks/&lt;taskListId&gt;/
  *     1.json
  *     2.json
  *     .highwatermark   <-- max id ever assigned, survives deletes/reset
@@ -13370,6 +13473,7 @@ export type TranscriptEntry =
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   UI["useAgentSession"] --> Session["JSONL transcript"]
@@ -13378,7 +13482,7 @@ flowchart TD
   Engine["QueryEngine events"] --> UI
   UI --> Append["appendTranscriptEntry"]
   TodoTool["TodoWrite"] --> TodoStore["in-memory todos by sessionId"]
-  TaskTools["TaskCreate / TaskUpdate / TaskList"] --> TaskStore["~/.easy-agent/tasks/<taskListId>"]
+  TaskTools["TaskCreate / TaskUpdate / TaskList"] --> TaskStore["~/.easy-agent/tasks/&lt;taskListId&gt;"]
   TaskStore --> TaskSub
   TodoStore --> TodoSub
 ```
@@ -13447,7 +13551,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:240-288](../../../project-repos/easy-a
 #### `src/session/storage.ts:221-226`
 
 ```typescript
-export async function appendTranscriptEntry(cwd: string, sessionId: string, entry: TranscriptEntry): Promise<void> {
+export async function appendTranscriptEntry(cwd: string, sessionId: string, entry: TranscriptEntry): Promise&lt;void&gt; {
   const paths = await getSessionPaths(cwd, sessionId);
   await ensureSessionDir(paths);
   await fs.appendFile(paths.transcriptPath, `${JSON.stringify(entry)}\n`, "utf-8");
@@ -13458,7 +13562,7 @@ export async function appendTranscriptEntry(cwd: string, sessionId: string, entr
 #### `src/tools/todoWriteTool.ts:112-149`
 
 ```typescript
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const parsed = parseTodos(input);
     if (!Array.isArray(parsed)) {
       return { content: `Error: ${parsed.error}`, isError: true };
@@ -13532,7 +13636,7 @@ export function getTaskPath(taskListId: string, taskId: string): string {
   return path.join(getTasksDir(taskListId), `${sanitizePathComponent(taskId)}.json`);
 }
 
-async function ensureTasksDir(taskListId: string): Promise<void> {
+async function ensureTasksDir(taskListId: string): Promise&lt;void&gt; {
   await mkdir(getTasksDir(taskListId), { recursive: true });
 }
 
@@ -13544,7 +13648,7 @@ async function ensureTasksDir(taskListId: string): Promise<void> {
  * idempotent across concurrent callers — the second writer's EEXIST is
  * benign and swallowed.
  */
-async function ensureTaskListLockFile(taskListId: string): Promise<string> {
+async function ensureTaskListLockFile(taskListId: string): Promise&lt;string&gt; {
   await ensureTasksDir(taskListId);
   const lockPath = path.join(getTasksDir(taskListId), LOCK_FILE);
   try {
@@ -13558,6 +13662,7 @@ async function ensureTaskListLockFile(taskListId: string): Promise<string> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Transcript 模型
 
 `TranscriptEntry` 是 append-only JSONL 事件流，覆盖 session metadata、user/assistant message、tool start/done、usage、system notice 和 compaction marker。会话路径由项目 key 决定，具体文件是 `<sessionId>.jsonl`，同目录还有 `latest` 指针。  
@@ -13612,12 +13717,12 @@ export function createSessionId(): string {
   return crypto.randomUUID();
 }
 
-export async function getProjectHash(cwd: string): Promise<string> {
+export async function getProjectHash(cwd: string): Promise&lt;string&gt; {
   const info = await getProjectPathInfo(cwd);
   return info.projectKey;
 }
 
-export async function getSessionPaths(cwd: string, sessionId: string): Promise<SessionPaths> {
+export async function getSessionPaths(cwd: string, sessionId: string): Promise&lt;SessionPaths&gt; {
   const info = await getProjectPathInfo(cwd);
   return {
     rootDir: getEasyAgentHome(),
@@ -13627,11 +13732,11 @@ export async function getSessionPaths(cwd: string, sessionId: string): Promise<S
   };
 }
 
-async function ensureSessionDir(paths: SessionPaths): Promise<void> {
+async function ensureSessionDir(paths: SessionPaths): Promise&lt;void&gt; {
   await fs.mkdir(paths.projectDir, { recursive: true });
 }
 
-export async function initSessionStorage(metadata: SessionMetadata): Promise<SessionPaths> {
+export async function initSessionStorage(metadata: SessionMetadata): Promise&lt;SessionPaths&gt; {
   const paths = await getSessionPaths(metadata.cwd, metadata.sessionId);
   await ensureSessionDir(paths);
 
@@ -13650,6 +13755,7 @@ export async function initSessionStorage(metadata: SessionMetadata): Promise<Ses
 
 <!-- source-snippets:end -->
 </details>
+
 初始化会话时写入 `session_meta` 并更新 `latest`；每次追加事件也会重写 `latest`，所以 `/resume` 默认恢复最近一次活跃会话。  
 Sources: [src/session/storage.ts:204-226](../../../project-repos/easy-agent/src/session/storage.ts#L204-L226), [src/session/storage.ts:238-247](../../../project-repos/easy-agent/src/session/storage.ts#L238-L247)
 
@@ -13661,7 +13767,7 @@ Sources: [src/session/storage.ts:204-226](../../../project-repos/easy-agent/src/
 #### `src/session/storage.ts:204-226`
 
 ```typescript
-export async function initSessionStorage(metadata: SessionMetadata): Promise<SessionPaths> {
+export async function initSessionStorage(metadata: SessionMetadata): Promise&lt;SessionPaths&gt; {
   const paths = await getSessionPaths(metadata.cwd, metadata.sessionId);
   await ensureSessionDir(paths);
 
@@ -13678,7 +13784,7 @@ export async function initSessionStorage(metadata: SessionMetadata): Promise<Ses
   return paths;
 }
 
-export async function appendTranscriptEntry(cwd: string, sessionId: string, entry: TranscriptEntry): Promise<void> {
+export async function appendTranscriptEntry(cwd: string, sessionId: string, entry: TranscriptEntry): Promise&lt;void&gt; {
   const paths = await getSessionPaths(cwd, sessionId);
   await ensureSessionDir(paths);
   await fs.appendFile(paths.transcriptPath, `${JSON.stringify(entry)}\n`, "utf-8");
@@ -13689,7 +13795,7 @@ export async function appendTranscriptEntry(cwd: string, sessionId: string, entr
 #### `src/session/storage.ts:238-247`
 
 ```typescript
-export async function getLatestSessionId(cwd: string): Promise<string | null> {
+export async function getLatestSessionId(cwd: string): Promise&lt;string | null&gt; {
   const { latestPath } = await getSessionPaths(cwd, "placeholder");
   try {
     const value = (await fs.readFile(latestPath, "utf-8")).trim();
@@ -13703,6 +13809,7 @@ export async function getLatestSessionId(cwd: string): Promise<string | null> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 恢复语义
 
 `restoreSession()` 先解析 JSONL，再定位最后一个 `compaction` marker，只把 marker 之后的 message 还原进模型上下文。它仍然从完整 transcript 中取最新 usage，用于 UI 的累计用量展示。  
@@ -13716,7 +13823,7 @@ Sources: [src/session/storage.ts:250-296](../../../project-repos/easy-agent/src/
 #### `src/session/storage.ts:250-296`
 
 ```typescript
-export async function restoreSession(cwd: string, sessionId?: string): Promise<RestoredSession> {
+export async function restoreSession(cwd: string, sessionId?: string): Promise&lt;RestoredSession&gt; {
   const resolvedSessionId = sessionId ?? (await getLatestSessionId(cwd));
   if (!resolvedSessionId) {
     throw new Error("No saved session found for this project.");
@@ -13728,7 +13835,7 @@ export async function restoreSession(cwd: string, sessionId?: string): Promise<R
     throw new Error(`Session ${resolvedSessionId} is empty or unreadable.`);
   }
 
-  const meta = entries.find((entry): entry is Extract<TranscriptEntry, { type: "session_meta" }> => entry.type === "session_meta");
+  const meta = entries.find((entry): entry is Extract&lt;TranscriptEntry, { type: "session_meta" }&gt; => entry.type === "session_meta");
   if (!meta) {
     throw new Error(`Session ${resolvedSessionId} is missing session metadata.`);
   }
@@ -13743,12 +13850,12 @@ export async function restoreSession(cwd: string, sessionId?: string): Promise<R
   }
   const messages = entries
     .slice(startIndex)
-    .filter((entry): entry is Extract<TranscriptEntry, { type: "message" }> => entry.type === "message")
+    .filter((entry): entry is Extract&lt;TranscriptEntry, { type: "message" }&gt; => entry.type === "message")
     .map((entry) => entry.message);
 
   const latestUsage = [...entries]
     .reverse()
-    .find((entry): entry is Extract<TranscriptEntry, { type: "usage" }> => entry.type === "usage");
+    .find((entry): entry is Extract&lt;TranscriptEntry, { type: "usage" }&gt; => entry.type === "usage");
 
   return {
     summary: {
@@ -13767,6 +13874,7 @@ export async function restoreSession(cwd: string, sessionId?: string): Promise<R
 
 <!-- source-snippets:end -->
 </details>
+
 `/history` 不是直接打印文件名，而是通过 `listProjectSessions()` 汇总最近 20 个 session，展示更新时间、消息数、token usage 和模型名。  
 Sources: [src/session/storage.ts:319-362](../../../project-repos/easy-agent/src/session/storage.ts#L319-L362), [src/session/history.ts:1-29](../../../project-repos/easy-agent/src/session/history.ts#L1-L29), [src/core/queryEngine.ts:597-603](../../../project-repos/easy-agent/src/core/queryEngine.ts#L597-L603)
 
@@ -13778,7 +13886,7 @@ Sources: [src/session/storage.ts:319-362](../../../project-repos/easy-agent/src/
 #### `src/session/storage.ts:319-362`
 
 ```typescript
-export async function listProjectSessions(cwd: string, limit = MAX_SESSIONS): Promise<SessionSummary[]> {
+export async function listProjectSessions(cwd: string, limit = MAX_SESSIONS): Promise&lt;SessionSummary[]&gt; {
   const projectDir = (await getSessionPaths(cwd, "placeholder")).projectDir;
   let entries: Dirent[];
 
@@ -13797,13 +13905,13 @@ export async function listProjectSessions(cwd: string, limit = MAX_SESSIONS): Pr
   const sessions = await Promise.all(
     sessionFiles.map(async (filePath) => {
       const transcriptEntries = await readTranscriptEntries(filePath);
-      const meta = transcriptEntries.find((entry): entry is Extract<TranscriptEntry, { type: "session_meta" }> => entry.type === "session_meta");
+      const meta = transcriptEntries.find((entry): entry is Extract&lt;TranscriptEntry, { type: "session_meta" }&gt; => entry.type === "session_meta");
       if (!meta) return null;
 
       const messages = transcriptEntries.filter((entry) => entry.type === "message");
       const latestUsage = [...transcriptEntries]
         .reverse()
-        .find((entry): entry is Extract<TranscriptEntry, { type: "usage" }> => entry.type === "usage");
+        .find((entry): entry is Extract&lt;TranscriptEntry, { type: "usage" }&gt; => entry.type === "usage");
 
       return {
         sessionId: meta.sessionId,
@@ -13834,7 +13942,7 @@ function formatSessionUsage(summary: SessionSummary): string {
   return `${summary.totalUsage.input_tokens} in / ${summary.totalUsage.output_tokens} out / ${total} total`;
 }
 
-export async function formatProjectSessionHistory(cwd: string): Promise<string> {
+export async function formatProjectSessionHistory(cwd: string): Promise&lt;string&gt; {
   const sessions = await listProjectSessions(cwd);
   if (sessions.length === 0) {
     return "No saved sessions found for this project.";
@@ -13872,6 +13980,7 @@ export async function formatProjectSessionHistory(cwd: string): Promise<string> 
 
 <!-- source-snippets:end -->
 </details>
+
 ## UI 写入点
 
 UI hook 对 LLM 触发型输入写入用户原始文本，包括 skill slash invocation 的原始命令；工具开始和结束写入 `tool_event`；assistant message、tool_result message、usage、system notice 和 error 都分别追加 transcript entry。  
@@ -13947,7 +14056,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:506-528](../../../project-repos/easy-a
               (value.name === "Write" || value.name === "Edit") &&
               value.result.content.includes(getPlansDirectory());
             const inputPreview = formatToolInputPreview(value.input);
-            // Strip the model-only <sandbox_violations> tag from the
+            // Strip the model-only &lt;sandbox_violations&gt; tag from the
             // user-visible error message. The tag stays in the tool
             // result that goes back to the model (so it can interpret
             // sandbox denials), but humans see clean stderr only.
@@ -14073,6 +14182,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:506-528](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
+
 非 micro compaction 会走 `appendCompactionSnapshot()`：先写一个 compaction marker，再把压缩后的 message snapshot 追加到 transcript。恢复时只读取 marker 之后的 message，避免旧上下文和 summary 同时进入模型。  
 Sources: [src/session/storage.ts:267-278](../../../project-repos/easy-agent/src/session/storage.ts#L267-L278), [src/session/storage.ts:298-317](../../../project-repos/easy-agent/src/session/storage.ts#L298-L317), [src/ui/hooks/useAgentSession.ts:689-715](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts#L689-L715)
 
@@ -14094,7 +14204,7 @@ Sources: [src/session/storage.ts:267-278](../../../project-repos/easy-agent/src/
   }
   const messages = entries
     .slice(startIndex)
-    .filter((entry): entry is Extract<TranscriptEntry, { type: "message" }> => entry.type === "message")
+    .filter((entry): entry is Extract&lt;TranscriptEntry, { type: "message" }&gt; => entry.type === "message")
     .map((entry) => entry.message);
 ```
 
@@ -14106,7 +14216,7 @@ export async function appendCompactionSnapshot(
   sessionId: string,
   trigger: "auto" | "manual",
   messages: MessageParam[],
-): Promise<void> {
+): Promise&lt;void&gt; {
   const paths = await getSessionPaths(cwd, sessionId);
   await ensureSessionDir(paths);
   const lines: string[] = [];
@@ -14157,6 +14267,7 @@ export async function appendCompactionSnapshot(
 
 <!-- source-snippets:end -->
 </details>
+
 ## TodoWrite V1
 
 Todo V1 是按 sessionId 隔离的内存 Map。它只有 `content`、`status`、`activeForm` 三个字段，没有 id、依赖、owner，也不跨进程持久化。  
@@ -14199,8 +14310,8 @@ import type { TodoItem } from "../types/todo.js";
 
 type Listener = (sessionId: string, todos: TodoItem[]) => void;
 
-const todosBySession = new Map<string, TodoItem[]>();
-const listeners = new Set<Listener>();
+const todosBySession = new Map&lt;string, TodoItem[]&gt;();
+const listeners = new Set&lt;Listener&gt;();
 
 /** 读取某 session 当前的 todos（不存在则返回空数组）。 */
 export function getTodos(sessionId: string): TodoItem[] {
@@ -14236,6 +14347,7 @@ export function clearTodos(sessionId: string): void {
 
 <!-- source-snippets:end -->
 </details>
+
 `TodoWrite` 输入是完整 todo 列表，每次调用都会全量替换当前 session 的状态；如果所有 todo 都是 `completed`，它存空数组，避免 UI 长期堆积已完成项。该工具只在 `todo` 模式启用。  
 Sources: [src/tools/todoWriteTool.ts:1-18](../../../project-repos/easy-agent/src/tools/todoWriteTool.ts#L1-L18), [src/tools/todoWriteTool.ts:68-149](../../../project-repos/easy-agent/src/tools/todoWriteTool.ts#L68-L149)
 
@@ -14314,7 +14426,7 @@ export const todoWriteTool: Tool = {
     additionalProperties: false,
   },
 
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const parsed = parseTodos(input);
     if (!Array.isArray(parsed)) {
       return { content: `Error: ${parsed.error}`, isError: true };
@@ -14356,6 +14468,7 @@ export const todoWriteTool: Tool = {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Task V2 持久任务图
 
 Task V2 默认启用，任务被写到 `~/.easy-agent/tasks/<taskListId>/` 下，每个任务一个 JSON 文件，并用 `.highwatermark` 保存历史最大 id，用 `.lock` 做列表级互斥。这个布局让任务跨重启保存，并避免 reset/delete 后复用旧 id。  
@@ -14400,7 +14513,7 @@ let currentMode: TaskMode = DEFAULT_TASK_MODE;
  *
  * Layout (per task list):
  *
- *   ~/.easy-agent/tasks/<taskListId>/
+ *   ~/.easy-agent/tasks/&lt;taskListId&gt;/
  *     1.json
  *     2.json
  *     .highwatermark   <-- max id ever assigned, survives deletes/reset
@@ -14451,7 +14564,7 @@ export function getTaskPath(taskListId: string, taskId: string): string {
   return path.join(getTasksDir(taskListId), `${sanitizePathComponent(taskId)}.json`);
 }
 
-async function ensureTasksDir(taskListId: string): Promise<void> {
+async function ensureTasksDir(taskListId: string): Promise&lt;void&gt; {
   await mkdir(getTasksDir(taskListId), { recursive: true });
 }
 
@@ -14463,7 +14576,7 @@ async function ensureTasksDir(taskListId: string): Promise<void> {
  * idempotent across concurrent callers — the second writer's EEXIST is
  * benign and swallowed.
  */
-async function ensureTaskListLockFile(taskListId: string): Promise<string> {
+async function ensureTaskListLockFile(taskListId: string): Promise&lt;string&gt; {
   await ensureTasksDir(taskListId);
   const lockPath = path.join(getTasksDir(taskListId), LOCK_FILE);
   try {
@@ -14484,7 +14597,7 @@ function getHighWaterMarkPath(taskListId: string): string {
   return path.join(getTasksDir(taskListId), HIGH_WATER_MARK_FILE);
 }
 
-async function readHighWaterMark(taskListId: string): Promise<number> {
+async function readHighWaterMark(taskListId: string): Promise&lt;number&gt; {
   try {
     const content = (await readFile(getHighWaterMarkPath(taskListId), "utf-8")).trim();
     const value = parseInt(content, 10);
@@ -14494,11 +14607,11 @@ async function readHighWaterMark(taskListId: string): Promise<number> {
   }
 }
 
-async function writeHighWaterMark(taskListId: string, value: number): Promise<void> {
+async function writeHighWaterMark(taskListId: string, value: number): Promise&lt;void&gt; {
   await writeFile(getHighWaterMarkPath(taskListId), String(value));
 }
 
-async function findHighestTaskIdFromFiles(taskListId: string): Promise<number> {
+async function findHighestTaskIdFromFiles(taskListId: string): Promise&lt;number&gt; {
   let files: string[];
   try {
     files = await readdir(getTasksDir(taskListId));
@@ -14516,7 +14629,7 @@ async function findHighestTaskIdFromFiles(taskListId: string): Promise<number> {
   return highest;
 }
 
-async function findHighestTaskId(taskListId: string): Promise<number> {
+async function findHighestTaskId(taskListId: string): Promise&lt;number&gt; {
   const [fromFiles, fromMark] = await Promise.all([
     findHighestTaskIdFromFiles(taskListId),
     readHighWaterMark(taskListId),
@@ -14527,6 +14640,7 @@ async function findHighestTaskId(taskListId: string): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
+
 Task schema 用递增字符串 id，包含 `subject`、`description`、可选 `activeForm`、`owner`、`status`、`blocks`、`blockedBy` 和 `metadata`。`owner` 与 metadata 为后续多 agent/扩展保留，当前单 agent 流程不会依赖它们。  
 Sources: [src/types/task.ts:1-36](../../../project-repos/easy-agent/src/types/task.ts#L1-L36)
 
@@ -14572,12 +14686,13 @@ export interface Task {
   /** Task ids that block this task (upstream). */
   blockedBy: string[];
   /** Arbitrary tool-specific metadata. */
-  metadata?: Record<string, unknown>;
+  metadata?: Record&lt;string, unknown&gt;;
 }
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart LR
   Create["TaskCreate"] --> NewFile["N.json"]
@@ -14635,12 +14750,12 @@ export const taskCreateTool: Tool = {
     additionalProperties: false,
   },
 
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const subject = pickString(input, "subject")?.trim();
     const description = pickString(input, "description")?.trim();
     const activeForm = pickString(input, "activeForm")?.trim();
     const metadata = input.metadata && typeof input.metadata === "object" && !Array.isArray(input.metadata)
-      ? (input.metadata as Record<string, unknown>)
+      ? (input.metadata as Record&lt;string, unknown&gt;)
       : undefined;
 
     if (!subject) return { content: "Error: `subject` must be a non-empty string.", isError: true };
@@ -14716,7 +14831,7 @@ export const taskUpdateTool: Tool = {
     additionalProperties: false,
   },
 
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const taskId = pickString(input, "taskId")?.trim();
     if (!taskId) return { content: "Error: `taskId` is required.", isError: true };
 
@@ -14740,7 +14855,7 @@ export const taskUpdateTool: Tool = {
         : { content: `Failed to delete task #${taskId}.`, isError: true };
     }
 
-    const updates: Partial<Omit<Task, "id">> = {};
+    const updates: Partial&lt;Omit&lt;Task, "id"&gt;&gt; = {};
     const updatedFields: string[] = [];
 
     const subject = pickString(input, "subject");
@@ -14763,7 +14878,7 @@ export const taskUpdateTool: Tool = {
       updatedFields.push("status");
     }
     if (input.metadata && typeof input.metadata === "object" && !Array.isArray(input.metadata)) {
-      updates.metadata = mergeMetadata(existing.metadata, input.metadata as Record<string, unknown>);
+      updates.metadata = mergeMetadata(existing.metadata, input.metadata as Record&lt;string, unknown&gt;);
       updatedFields.push("metadata");
     }
 
@@ -14801,8 +14916,8 @@ export const taskUpdateTool: Tool = {
 ```typescript
 export async function createTask(
   taskListId: string,
-  data: Omit<Task, "id">,
-): Promise<string> {
+  data: Omit&lt;Task, "id"&gt;,
+): Promise&lt;string&gt; {
   const lockPath = await ensureTaskListLockFile(taskListId);
   const release = await lockfile.lock(lockPath, LOCK_OPTIONS);
   try {
@@ -14817,7 +14932,7 @@ export async function createTask(
   }
 }
 
-export async function getTask(taskListId: string, taskId: string): Promise<Task | null> {
+export async function getTask(taskListId: string, taskId: string): Promise&lt;Task | null&gt; {
   try {
     const content = await readFile(getTaskPath(taskListId, taskId), "utf-8");
     return parseTask(JSON.parse(content));
@@ -14828,7 +14943,7 @@ export async function getTask(taskListId: string, taskId: string): Promise<Task 
   }
 }
 
-export async function listTasks(taskListId: string): Promise<Task[]> {
+export async function listTasks(taskListId: string): Promise&lt;Task[]&gt; {
   let files: string[];
   try {
     files = await readdir(getTasksDir(taskListId));
@@ -14847,8 +14962,8 @@ export async function listTasks(taskListId: string): Promise<Task[]> {
 async function updateTaskUnsafe(
   taskListId: string,
   taskId: string,
-  updates: Partial<Omit<Task, "id">>,
-): Promise<Task | null> {
+  updates: Partial&lt;Omit&lt;Task, "id"&gt;&gt;,
+): Promise&lt;Task | null&gt; {
   const existing = await getTask(taskListId, taskId);
   if (!existing) return null;
   const updated: Task = { ...existing, ...updates, id: taskId };
@@ -14864,8 +14979,8 @@ async function updateTaskUnsafe(
 export async function updateTask(
   taskListId: string,
   taskId: string,
-  updates: Partial<Omit<Task, "id">>,
-): Promise<Task | null> {
+  updates: Partial&lt;Omit&lt;Task, "id"&gt;&gt;,
+): Promise&lt;Task | null&gt; {
   // Check existence BEFORE locking: proper-lockfile throws if the target
   // path doesn't exist, and we want a clean null return for the benign
   // "task was already deleted" case.
@@ -14885,7 +15000,7 @@ export async function updateTask(
  * never reassign it to a new task after reset, then cascades the blocks
  * / blockedBy references in siblings.
  */
-export async function deleteTask(taskListId: string, taskId: string): Promise<boolean> {
+export async function deleteTask(taskListId: string, taskId: string): Promise&lt;boolean&gt; {
   const numericId = parseInt(taskId, 10);
   if (!Number.isNaN(numericId)) {
     const mark = await readHighWaterMark(taskListId);
@@ -14924,6 +15039,7 @@ export async function deleteTask(taskListId: string, taskId: string): Promise<bo
 
 <!-- source-snippets:end -->
 </details>
+
 ## 任务工具行为
 
 `TaskCreate` 创建 `pending` 任务并返回分配 id；`TaskUpdate` 支持字段编辑、状态迁移、metadata merge、`addBlocks`、`addBlockedBy`，并把 `status: "deleted"` 折叠为级联删除；`TaskList` 会过滤已经 completed 的上游 blocker，只报告仍未解除的阻塞。  
@@ -14937,12 +15053,12 @@ Sources: [src/tools/taskCreateTool.ts:61-84](../../../project-repos/easy-agent/s
 #### `src/tools/taskCreateTool.ts:61-84`
 
 ```typescript
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const subject = pickString(input, "subject")?.trim();
     const description = pickString(input, "description")?.trim();
     const activeForm = pickString(input, "activeForm")?.trim();
     const metadata = input.metadata && typeof input.metadata === "object" && !Array.isArray(input.metadata)
-      ? (input.metadata as Record<string, unknown>)
+      ? (input.metadata as Record&lt;string, unknown&gt;)
       : undefined;
 
     if (!subject) return { content: "Error: `subject` must be a non-empty string.", isError: true };
@@ -14966,7 +15082,7 @@ Sources: [src/tools/taskCreateTool.ts:61-84](../../../project-repos/easy-agent/s
 #### `src/tools/taskUpdateTool.ts:106-200`
 
 ```typescript
-  async call(input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const taskId = pickString(input, "taskId")?.trim();
     if (!taskId) return { content: "Error: `taskId` is required.", isError: true };
 
@@ -14990,7 +15106,7 @@ Sources: [src/tools/taskCreateTool.ts:61-84](../../../project-repos/easy-agent/s
         : { content: `Failed to delete task #${taskId}.`, isError: true };
     }
 
-    const updates: Partial<Omit<Task, "id">> = {};
+    const updates: Partial&lt;Omit&lt;Task, "id"&gt;&gt; = {};
     const updatedFields: string[] = [];
 
     const subject = pickString(input, "subject");
@@ -15013,7 +15129,7 @@ Sources: [src/tools/taskCreateTool.ts:61-84](../../../project-repos/easy-agent/s
       updatedFields.push("status");
     }
     if (input.metadata && typeof input.metadata === "object" && !Array.isArray(input.metadata)) {
-      updates.metadata = mergeMetadata(existing.metadata, input.metadata as Record<string, unknown>);
+      updates.metadata = mergeMetadata(existing.metadata, input.metadata as Record&lt;string, unknown&gt;);
       updatedFields.push("metadata");
     }
 
@@ -15066,7 +15182,7 @@ Sources: [src/tools/taskCreateTool.ts:61-84](../../../project-repos/easy-agent/s
 #### `src/tools/taskListTool.ts:31-63`
 
 ```typescript
-  async call(_input: Record<string, unknown>, context: ToolContext): Promise<ToolResult> {
+  async call(_input: Record&lt;string, unknown&gt;, context: ToolContext): Promise&lt;ToolResult&gt; {
     const taskListId = getTaskListId(context.sessionId ?? "default");
     const allTasks = await listTasks(taskListId);
     if (allTasks.length === 0) {
@@ -15103,6 +15219,7 @@ Sources: [src/tools/taskCreateTool.ts:61-84](../../../project-repos/easy-agent/s
 
 <!-- source-snippets:end -->
 </details>
+
 store 层保证依赖是双向维护的：`blockTask(from, to)` 会同时更新 `from.blocks` 和 `to.blockedBy`；删除任务后会遍历 sibling 清理所有引用；`isReady()` 只把 pending 且所有 blocker 已 completed 的任务视为可执行。  
 Sources: [src/state/taskStore.ts:291-357](../../../project-repos/easy-agent/src/state/taskStore.ts#L291-L357), [src/state/taskStore.ts:400-411](../../../project-repos/easy-agent/src/state/taskStore.ts#L400-L411)
 
@@ -15119,7 +15236,7 @@ Sources: [src/state/taskStore.ts:291-357](../../../project-repos/easy-agent/src/
  * never reassign it to a new task after reset, then cascades the blocks
  * / blockedBy references in siblings.
  */
-export async function deleteTask(taskListId: string, taskId: string): Promise<boolean> {
+export async function deleteTask(taskListId: string, taskId: string): Promise&lt;boolean&gt; {
   const numericId = parseInt(taskId, 10);
   if (!Number.isNaN(numericId)) {
     const mark = await readHighWaterMark(taskListId);
@@ -15167,7 +15284,7 @@ export async function blockTask(
   taskListId: string,
   fromTaskId: string,
   toTaskId: string,
-): Promise<boolean> {
+): Promise&lt;boolean&gt; {
   const [from, to] = await Promise.all([
     getTask(taskListId, fromTaskId),
     getTask(taskListId, toTaskId),
@@ -15202,6 +15319,7 @@ export function isReady(task: Task, tasks: readonly Task[]): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 模式切换
 
 `taskModeStore` 是进程级 source of truth，`/tasks task|todo|reset` 通过 `QueryEngine` 切换模式或清空当前 task list。工具的 `isEnabled()` 读取该全局状态，因此 TodoWrite V1 和 Task V2 工具不会同时暴露。  
@@ -15329,6 +15447,7 @@ export function isTodoModeEnabled(): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## UI 同步
 
 `useAgentSession` 订阅 todo store、task store 和 task mode store。Todo 是同步内存快照；Task V2 是磁盘状态，UI mount 时先 `listTasks()`，之后每次 mutation 触发 refresh。toolContext 暴露 live `sessionId` getter，避免 `/resume` 后工具仍写到旧 session。  
@@ -15348,7 +15467,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:224-288](../../../project-repos/easy-a
   // value would silently route TodoWrite writes to the old (orphan) key
   // while the UI subscriber filters on the new sessionId, leaving the
   // todo panel permanently empty.
-  const toolContext = useMemo<ToolContext>(
+  const toolContext = useMemo&lt;ToolContext&gt;(
     () => ({
       cwd: process.cwd(),
       get sessionId() {
@@ -15411,6 +15530,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:224-288](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [CLI 与终端 UI](cli-and-ui.md)
@@ -15487,8 +15607,8 @@ export interface ResolvedSandboxSettings {
   autoAllowBashIfSandboxed: boolean;
   allowUnsandboxedCommands: boolean;
   excludedCommands: string[];
-  filesystem: Required<SandboxFilesystemSettings>;
-  network: Required<SandboxNetworkSettings>;
+  filesystem: Required&lt;SandboxFilesystemSettings&gt;;
+  network: Required&lt;SandboxNetworkSettings&gt;;
 }
 
 export const DEFAULT_RESOLVED_SANDBOX_SETTINGS: ResolvedSandboxSettings = {
@@ -15547,7 +15667,7 @@ export function resolveSandboxSettings(
 
 export async function loadSandboxSettings(
   cwd: string,
-): Promise<ResolvedSandboxSettings> {
+): Promise&lt;ResolvedSandboxSettings&gt; {
   const { user, project } = getSettingsPaths(cwd);
   const [userSandbox, projectSandbox] = await Promise.all([
     readSandboxFromFile(user),
@@ -15582,6 +15702,7 @@ export function shouldUseSandbox(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Bash["Bash tool call"] --> Settings["load sandbox settings"]
@@ -15632,7 +15753,7 @@ Sources: [src/tools/bashTool.ts:118-207](../../../project-repos/easy-agent/src/t
       executedCommand = wrap.wrappedCommand;
     }
 
-    return await new Promise<ToolResult>((resolve) => {
+    return await new Promise&lt;ToolResult&gt;((resolve) => {
       const child = spawn(process.env.SHELL || "bash", ["-lc", executedCommand], {
         cwd: context.cwd,
         env: process.env,
@@ -15675,7 +15796,7 @@ Sources: [src/tools/bashTool.ts:118-207](../../../project-repos/easy-agent/src/t
         clearTimeout(timeoutId);
         context.abortSignal?.removeEventListener("abort", onAbort);
 
-        // Tag stderr with <sandbox_violations>...</sandbox_violations>
+        // Tag stderr with &lt;sandbox_violations&gt;...&lt;/sandbox_violations&gt;
         // when the failure smells like a sandbox denial. The model uses
         // this signal to decide whether to retry, ask for permission,
         // or back off. The UI strips the tag before rendering.
@@ -15707,17 +15828,17 @@ export function buildSandboxProfile(params: {
   const { cwd, settings, permissions } = params;
 
   // 1. Filesystem writable seed: always cwd + tmpdir.
-  const allowWrite = new Set<string>([
+  const allowWrite = new Set&lt;string&gt;([
     canonicalize(path.resolve(cwd)),
     canonicalize(os.tmpdir()),
     canonicalize(path.join(os.tmpdir(), "easy-agent")),
   ]);
 
-  const denyWrite = new Set<string>(SYSTEM_DENY_PATHS_RAW.map(canonicalize));
+  const denyWrite = new Set&lt;string&gt;(SYSTEM_DENY_PATHS_RAW.map(canonicalize));
   for (const p of getCriticalDenyPaths(cwd)) denyWrite.add(canonicalize(p));
 
-  const allowRead = new Set<string>();
-  const denyRead = new Set<string>();
+  const allowRead = new Set&lt;string&gt;();
+  const denyRead = new Set&lt;string&gt;();
 
   // 2. Filesystem from sandbox.filesystem.* settings (verbatim).
   for (const p of settings.filesystem.allowWrite) {
@@ -15734,8 +15855,8 @@ export function buildSandboxProfile(params: {
   }
 
   // 3. Network from sandbox.network.*
-  const allowedDomains = new Set<string>(settings.network.allowedDomains);
-  const deniedDomains = new Set<string>(settings.network.deniedDomains);
+  const allowedDomains = new Set&lt;string&gt;(settings.network.allowedDomains);
+  const deniedDomains = new Set&lt;string&gt;(settings.network.deniedDomains);
 
   // 4. The unified abstraction: derive sandbox config from permission
   //    rules. Each rule contributes to BOTH the permission system
@@ -15840,6 +15961,7 @@ export function wrapWithSandbox(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 两层类型
 
 代码区分 `SandboxSettings` 和 `SandboxProfile`。前者是用户写在 settings.json 里的原始配置，后者是运行时喂给 sandbox-exec 的具体 profile，会混合 settings、权限规则和硬编码安全默认值。  
@@ -15936,6 +16058,7 @@ export interface SandboxProfile {
 
 <!-- source-snippets:end -->
 </details>
+
 settings 默认值偏保守地要求用户显式 opt-in：`enabled=false`。但开启后，默认允许 sandboxed Bash 自动通过权限检查，并允许模型用 `dangerouslyDisableSandbox` 单次逃逸，除非用户把 `allowUnsandboxedCommands` 关掉。  
 Sources: [src/sandbox/settings.ts:1-15](../../../project-repos/easy-agent/src/sandbox/settings.ts#L1-L15), [src/sandbox/settings.ts:105-168](../../../project-repos/easy-agent/src/sandbox/settings.ts#L105-L168), [src/sandbox/types.ts:34-55](../../../project-repos/easy-agent/src/sandbox/types.ts#L34-L55)
 
@@ -15949,7 +16072,7 @@ Sources: [src/sandbox/settings.ts:1-15](../../../project-repos/easy-agent/src/sa
 ```typescript
 /**
  * Load + merge sandbox settings from user (~/.easy-agent/settings.json)
- * and project (<cwd>/.easy-agent/settings.json) scopes.
+ * and project (&lt;cwd&gt;/.easy-agent/settings.json) scopes.
  *
  * Project overrides user (matches the existing permissions/MCP loaders
  * — see `src/permissions/permissions.ts:loadPermissionSettings`).
@@ -16023,7 +16146,7 @@ export function resolveSandboxSettings(
 
 export async function loadSandboxSettings(
   cwd: string,
-): Promise<ResolvedSandboxSettings> {
+): Promise&lt;ResolvedSandboxSettings&gt; {
   const { user, project } = getSettingsPaths(cwd);
   const [userSandbox, projectSandbox] = await Promise.all([
     readSandboxFromFile(user),
@@ -16062,6 +16185,7 @@ export interface SandboxSettings {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 可用性检查
 
 Easy Agent 只实现 macOS backend。`availability.ts` 会检查 `process.platform === "darwin"` 和 `sandbox-exec` 是否存在；如果 settings 开启但 runtime 不可用，CLI startup 会暴露原因，而不是静默降级。  
@@ -16182,6 +16306,7 @@ export function isSandboxRuntimeReady(): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## shouldUseSandbox 决策
 
 `shouldUseSandbox()` 的决策顺序是：settings 必须 enabled，runtime 必须 ready，单次 `dangerouslyDisableSandbox` 只有在用户 policy 允许时才生效，命令为空不启用，命中 `excludedCommands` 也不启用。  
@@ -16241,6 +16366,7 @@ export function shouldUseSandbox(
 
 <!-- source-snippets:end -->
 </details>
+
 `excludedCommands` 支持精确前缀、`docker:*` 这类前缀通配和一般 `*` 通配。它会拆分 compound command 的子命令，任一子命令命中就跳过 sandbox；源码注释也明确这只是 UX escape hatch，不是安全边界。  
 Sources: [src/sandbox/shouldUseSandbox.ts:30-76](../../../project-repos/easy-agent/src/sandbox/shouldUseSandbox.ts#L30-L76)
 
@@ -16303,6 +16429,7 @@ export function containsExcludedCommand(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Profile 构建
 
 profile 的写权限默认允许 cwd、系统 tmpdir 和 `tmp/easy-agent`。同时会强制 deny 系统路径、用户/项目 settings、skills 目录和 AGENT.md，防止 sandboxed 命令改写自身运行配置或技能内容。  
@@ -16359,23 +16486,24 @@ export function buildSandboxProfile(params: {
   const { cwd, settings, permissions } = params;
 
   // 1. Filesystem writable seed: always cwd + tmpdir.
-  const allowWrite = new Set<string>([
+  const allowWrite = new Set&lt;string&gt;([
     canonicalize(path.resolve(cwd)),
     canonicalize(os.tmpdir()),
     canonicalize(path.join(os.tmpdir(), "easy-agent")),
   ]);
 
-  const denyWrite = new Set<string>(SYSTEM_DENY_PATHS_RAW.map(canonicalize));
+  const denyWrite = new Set&lt;string&gt;(SYSTEM_DENY_PATHS_RAW.map(canonicalize));
   for (const p of getCriticalDenyPaths(cwd)) denyWrite.add(canonicalize(p));
 
-  const allowRead = new Set<string>();
-  const denyRead = new Set<string>();
+  const allowRead = new Set&lt;string&gt;();
+  const denyRead = new Set&lt;string&gt;();
 
   // 2. Filesystem from sandbox.filesystem.* settings (verbatim).
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 权限规则也会参与 profile 派生：`WebFetch(domain:github.com)` 会加入 sandbox network allowlist；`Edit(path)` 与 `Write(path)` 会加入 writable allowlist；deny 规则则加入 denylist。这样权限系统和 sandbox runtime 使用同一份用户意图。  
 Sources: [src/sandbox/buildProfile.ts:1-22](../../../project-repos/easy-agent/src/sandbox/buildProfile.ts#L1-L22), [src/sandbox/buildProfile.ts:147-206](../../../project-repos/easy-agent/src/sandbox/buildProfile.ts#L147-L206)
 
@@ -16427,8 +16555,8 @@ Sources: [src/sandbox/buildProfile.ts:1-22](../../../project-repos/easy-agent/sr
   }
 
   // 3. Network from sandbox.network.*
-  const allowedDomains = new Set<string>(settings.network.allowedDomains);
-  const deniedDomains = new Set<string>(settings.network.deniedDomains);
+  const allowedDomains = new Set&lt;string&gt;(settings.network.allowedDomains);
+  const deniedDomains = new Set&lt;string&gt;(settings.network.deniedDomains);
 
   // 4. The unified abstraction: derive sandbox config from permission
   //    rules. Each rule contributes to BOTH the permission system
@@ -16478,6 +16606,7 @@ Sources: [src/sandbox/buildProfile.ts:1-22](../../../project-repos/easy-agent/sr
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart LR
   UserSettings["sandbox settings"] --> Profile["SandboxProfile"]
@@ -16545,7 +16674,7 @@ export function resolveSandboxSettings(
 
 export async function loadSandboxSettings(
   cwd: string,
-): Promise<ResolvedSandboxSettings> {
+): Promise&lt;ResolvedSandboxSettings&gt; {
   const { user, project } = getSettingsPaths(cwd);
   const [userSandbox, projectSandbox] = await Promise.all([
     readSandboxFromFile(user),
@@ -16566,17 +16695,17 @@ export function buildSandboxProfile(params: {
   const { cwd, settings, permissions } = params;
 
   // 1. Filesystem writable seed: always cwd + tmpdir.
-  const allowWrite = new Set<string>([
+  const allowWrite = new Set&lt;string&gt;([
     canonicalize(path.resolve(cwd)),
     canonicalize(os.tmpdir()),
     canonicalize(path.join(os.tmpdir(), "easy-agent")),
   ]);
 
-  const denyWrite = new Set<string>(SYSTEM_DENY_PATHS_RAW.map(canonicalize));
+  const denyWrite = new Set&lt;string&gt;(SYSTEM_DENY_PATHS_RAW.map(canonicalize));
   for (const p of getCriticalDenyPaths(cwd)) denyWrite.add(canonicalize(p));
 
-  const allowRead = new Set<string>();
-  const denyRead = new Set<string>();
+  const allowRead = new Set&lt;string&gt;();
+  const denyRead = new Set&lt;string&gt;();
 
   // 2. Filesystem from sandbox.filesystem.* settings (verbatim).
   for (const p of settings.filesystem.allowWrite) {
@@ -16593,8 +16722,8 @@ export function buildSandboxProfile(params: {
   }
 
   // 3. Network from sandbox.network.*
-  const allowedDomains = new Set<string>(settings.network.allowedDomains);
-  const deniedDomains = new Set<string>(settings.network.deniedDomains);
+  const allowedDomains = new Set&lt;string&gt;(settings.network.allowedDomains);
+  const deniedDomains = new Set&lt;string&gt;(settings.network.deniedDomains);
 
   // 4. The unified abstraction: derive sandbox config from permission
   //    rules. Each rule contributes to BOTH the permission system
@@ -16644,6 +16773,7 @@ export function buildSandboxProfile(params: {
 
 <!-- source-snippets:end -->
 </details>
+
 ## macOS SBPL 编译限制
 
 `compileMacosProfile()` 生成默认 deny 的 SBPL，但本教程版有两个重要限制：文件读默认全放行，网络规则只做到 allowedDomains 非空时放开 network。注释说明生产级实现需要更复杂的读限制和代理型网络控制。  
@@ -16730,6 +16860,7 @@ export function compileMacosProfile(profile: SandboxProfile): string {
 
 <!-- source-snippets:end -->
 </details>
+
 SBPL 规则按顺序生效，代码先 emit write allow，再 emit write deny，让关键 deny path 在重叠时覆盖 allow path。  
 Sources: [src/sandbox/macosProfile.ts:53-73](../../../project-repos/easy-agent/src/sandbox/macosProfile.ts#L53-L73)
 
@@ -16766,6 +16897,7 @@ Sources: [src/sandbox/macosProfile.ts:53-73](../../../project-repos/easy-agent/s
 
 <!-- source-snippets:end -->
 </details>
+
 ## Bash 工具接入点
 
 Bash 工具每次调用都会重新加载 sandbox settings，并动态 import permission settings 来构造 profile。这样用户在会话中批准新的权限规则后，下一条 Bash 命令就能使用更新后的 sandbox profile。  
@@ -16839,6 +16971,7 @@ async function buildProfileForCwd(
 
 <!-- source-snippets:end -->
 </details>
+
 最终执行字符串形态是 `/usr/bin/sandbox-exec -p '<sbpl>' /bin/bash -lc '<original command>'`，用户命令用 POSIX 单引号规则内联转义，不通过临时文件传递。  
 Sources: [src/sandbox/wrapWithSandbox.ts:1-15](../../../project-repos/easy-agent/src/sandbox/wrapWithSandbox.ts#L1-L15), [src/sandbox/wrapWithSandbox.ts:20-45](../../../project-repos/easy-agent/src/sandbox/wrapWithSandbox.ts#L20-L45)
 
@@ -16855,7 +16988,7 @@ Sources: [src/sandbox/wrapWithSandbox.ts:1-15](../../../project-repos/easy-agent
  *
  * Shape:
  *
- *   /usr/bin/sandbox-exec -p '<sbpl>' /bin/bash -lc '<original command>'
+ *   /usr/bin/sandbox-exec -p '&lt;sbpl&gt;' /bin/bash -lc '&lt;original command&gt;'
  *
  * The shell-quote step is deliberately strict: every single quote
  * inside the user command becomes `'\''` so the outer single-quoted
@@ -16900,6 +17033,7 @@ export function wrapWithSandbox(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 违规反馈
 
 macOS sandbox denial 通常写到系统日志，不直接出现在子进程 stderr。Easy Agent 用启发式扫描 stderr 中的 `Operation not permitted`、`sandbox-exec:`、`EPERM`、`EACCES` 等信号，并给模型侧追加 `<sandbox_violations>` 标签。UI 渲染前会去掉该标签。  
@@ -16957,7 +17091,7 @@ const SANDBOX_VIOLATION_INDICATORS = [
   "EACCES",
 ];
 
-const VIOLATION_TAG_RE = /<sandbox_violations>[\s\S]*?<\/sandbox_violations>/g;
+const VIOLATION_TAG_RE = /&lt;sandbox_violations&gt;[\s\S]*?&lt;\/sandbox_violations&gt;/g;
 
 export function looksLikeSandboxViolation(stderr: string): boolean {
   if (!stderr) return false;
@@ -16990,7 +17124,7 @@ export function removeSandboxViolationTags(text: string): string {
 /** Returns true if the stderr carries a sandbox-violations tag. */
 export function hasSandboxViolationTag(text: string): boolean {
   if (!text) return false;
-  const re = /<sandbox_violations>/;
+  const re = /&lt;sandbox_violations&gt;/;
   return re.test(text);
 }
 ```
@@ -17002,7 +17136,7 @@ export function hasSandboxViolationTag(text: string): boolean {
         clearTimeout(timeoutId);
         context.abortSignal?.removeEventListener("abort", onAbort);
 
-        // Tag stderr with <sandbox_violations>...</sandbox_violations>
+        // Tag stderr with &lt;sandbox_violations&gt;...&lt;/sandbox_violations&gt;
         // when the failure smells like a sandbox denial. The model uses
         // this signal to decide whether to retry, ask for permission,
         // or back off. The UI strips the tag before rendering.
@@ -17031,7 +17165,7 @@ export function hasSandboxViolationTag(text: string): boolean {
               (value.name === "Write" || value.name === "Edit") &&
               value.result.content.includes(getPlansDirectory());
             const inputPreview = formatToolInputPreview(value.input);
-            // Strip the model-only <sandbox_violations> tag from the
+            // Strip the model-only &lt;sandbox_violations&gt; tag from the
             // user-visible error message. The tag stays in the tool
             // result that goes back to the model (so it can interpret
             // sandbox denials), but humans see clean stderr only.
@@ -17053,6 +17187,7 @@ export function hasSandboxViolationTag(text: string): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证覆盖
 
 `test:sandbox` 不依赖真实 LLM，也尽量避免直接运行 sandbox-exec；它覆盖命令拆分、settings merge、excluded matcher、shouldUseSandbox、profile 派生、SBPL 输出、wrapper 形态和 violation tag。两个 smoke 脚本则用于实际 sandbox 行为和 Bash 工具集成验证。  
@@ -17085,7 +17220,7 @@ Sources: [src/scripts/test-sandbox.ts:1-14](../../../project-repos/easy-agent/sr
 #### `src/scripts/test-sandbox.ts:69-119`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   section("[1] splitCommand — compound bash splitter");
   assertEqual(splitCommand("ls"), ["ls"], "single command");
   assertEqual(splitCommand("echo a && rm -rf /"), ["echo a", "rm -rf /"], "&& splits");
@@ -17245,7 +17380,7 @@ async function main(): Promise<void> {
   );
   assert(
     wrap.wrappedCommand.includes("/bin/bash -lc '"),
-    "ends with /bin/bash -lc '<cmd>'",
+    "ends with /bin/bash -lc '&lt;cmd&gt;'",
   );
   assert(
     wrap.wrappedCommand.includes("'echo hello'"),
@@ -17302,6 +17437,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [工具系统与权限模型](tools-permissions.md)
@@ -17424,6 +17560,7 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 <!-- source-snippets:end -->
 </details>
+
 ## 构建入口
 
 包名是 `easy-agent`，运行时产物入口是 `dist/entrypoint/cli.js`，命令行 bin 名称是 `agent`。项目使用 ESM、TypeScript、React/Ink、Anthropic SDK、MCP SDK、proper-lockfile 和 yaml。  
@@ -17473,6 +17610,7 @@ Sources: [package.json:1-9](../../../project-repos/easy-agent/package.json#L1-L9
 
 <!-- source-snippets:end -->
 </details>
+
 `npm run dev` 直接用 `tsx src/entrypoint/cli.ts`，`npm run build` 调 `tsc`，`npm start` 运行构建后的 CLI。README 要求 Node.js、npm 和 Anthropic-compatible model access，并列出 `ANTHROPIC_MODEL`、`ANTHROPIC_BASE_URL`、`ANTHROPIC_AUTH_TOKEN`。  
 Sources: [package.json:10-20](../../../project-repos/easy-agent/package.json#L10-L20), [README.md:137-180](../../../project-repos/easy-agent/README.md#L137-L180)
 
@@ -17548,6 +17686,7 @@ agent --dump-system-prompt
 
 <!-- source-snippets:end -->
 </details>
+
 `tsconfig.json` 目标是 ES2022 与 NodeNext module resolution，开启 strict、source map、declaration、JSX React，并把源码从 `src` 输出到 `dist`。  
 Sources: [tsconfig.json:2-20](../../../project-repos/easy-agent/tsconfig.json#L2-L20)
 
@@ -17582,6 +17721,7 @@ Sources: [tsconfig.json:2-20](../../../project-repos/easy-agent/tsconfig.json#L2
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart LR
   Dev["npm run dev"] --> TSX["tsx src/entrypoint/cli.ts"]
@@ -17620,6 +17760,7 @@ Sources: [package.json:6-20](../../../project-repos/easy-agent/package.json#L6-L
 
 <!-- source-snippets:end -->
 </details>
+
 ## 专项测试脚本
 
 `test:streaming` 校验环境加载、API key、streaming 生命周期和事件输出，适合作为模型通信层的 smoke test。它会真实访问 Anthropic-compatible endpoint，因此依赖环境变量。  
@@ -17648,7 +17789,7 @@ Sources: [src/scripts/test-streaming.ts:5-14](../../../project-repos/easy-agent/
 #### `src/scripts/test-streaming.ts:20-41`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   // ── Pre-flight check ──────────────────────────────────────────
   if (!process.env.ANTHROPIC_AUTH_TOKEN) {
     console.error(
@@ -17737,6 +17878,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 `test:tools` 覆盖工具 registry、Read 工具读取、offset/limit、缺失文件错误和 API 参数转换。  
 Sources: [src/scripts/test-tools.ts:5-13](../../../project-repos/easy-agent/src/scripts/test-tools.ts#L5-L13), [src/scripts/test-tools.ts:20-80](../../../project-repos/easy-agent/src/scripts/test-tools.ts#L20-L80)
 
@@ -17827,6 +17969,7 @@ async function main() {
 
 <!-- source-snippets:end -->
 </details>
+
 `test:tasks` 覆盖 Task V2 的 create/get/list/update、依赖级联、delete cascade、reset 和 high water mark 保留。  
 Sources: [src/scripts/test-tasks.ts:1-8](../../../project-repos/easy-agent/src/scripts/test-tasks.ts#L1-L8), [src/scripts/test-tasks.ts:33-110](../../../project-repos/easy-agent/src/scripts/test-tasks.ts#L33-L110)
 
@@ -17851,7 +17994,7 @@ Sources: [src/scripts/test-tasks.ts:1-8](../../../project-repos/easy-agent/src/s
 #### `src/scripts/test-tasks.ts:33-110`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   console.log(`Task list dir: ${getTasksDir(TASK_LIST_ID)}`);
 
   // 1. Create 3 tasks.
@@ -17933,6 +18076,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 `test:mcp` 覆盖 MCP config validation、工具名归一化、连接注册和 stdio/http/sse 相关行为；`test:skills` 覆盖 frontmatter、skills 加载、registry 和 skill tool；`test:sandbox` 覆盖 sandbox 决策与 profile 生成。  
 Sources: [src/scripts/test-mcp.ts:1-22](../../../project-repos/easy-agent/src/scripts/test-mcp.ts#L1-L22), [src/scripts/test-mcp.ts:72-142](../../../project-repos/easy-agent/src/scripts/test-mcp.ts#L72-L142), [src/scripts/test-mcp.ts:144-338](../../../project-repos/easy-agent/src/scripts/test-mcp.ts#L144-L338), [src/scripts/test-skills.ts:1-14](../../../project-repos/easy-agent/src/scripts/test-skills.ts#L1-L14), [src/scripts/test-skills.ts:40-150](../../../project-repos/easy-agent/src/scripts/test-skills.ts#L40-L150), [src/scripts/test-sandbox.ts:1-14](../../../project-repos/easy-agent/src/scripts/test-sandbox.ts#L1-L14), [src/scripts/test-sandbox.ts:69-347](../../../project-repos/easy-agent/src/scripts/test-sandbox.ts#L69-L347)
 
@@ -18054,7 +18198,7 @@ async function testConfigValidation() {
  *
  * The inline server exposes one tool: `echo` that returns its `message` arg.
  */
-async function writeInlineServer(opts: { startupDelayMs?: number } = {}): Promise<string> {
+async function writeInlineServer(opts: { startupDelayMs?: number } = {}): Promise&lt;string&gt; {
   const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "easy-agent-mcp-srv-"));
   const serverPath = path.join(tmpDir, "server.mjs");
   // Resolve the SDK's package path from the test process so the spawned
@@ -18063,7 +18207,7 @@ async function writeInlineServer(opts: { startupDelayMs?: number } = {}): Promis
     new URL(import.meta.resolve("@modelcontextprotocol/sdk/server/index.js")).pathname,
   );
   const startupDelayMs = opts.startupDelayMs ?? 0;
-  const serverJs = `
+  const serverJs = 
 ${startupDelayMs > 0 ? `await new Promise((r) => setTimeout(r, ${startupDelayMs}));` : ""}
 import { Server } from "${sdkPkg}/index.js";
 import { StdioServerTransport } from "${sdkPkg}/stdio.js";
@@ -18103,12 +18247,12 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
-`;
+;
   await fs.writeFile(serverPath, serverJs);
   return serverPath;
 }
 
-async function testEndToEnd(): Promise<void> {
+async function testEndToEnd(): Promise&lt;void&gt; {
   console.log("\n── 3. End-to-end (inline stdio server) ──");
   const fakeHome = await resetMcpStateForTest();
 
@@ -18192,7 +18336,7 @@ async function testEndToEnd(): Promise<void> {
 #### `src/scripts/test-skills.ts:40-150`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   console.log(`\n[1] bootstrapSkills(${cwd})`);
   const result = await bootstrapSkills(cwd);
   console.log(
@@ -18327,7 +18471,7 @@ async function main(): Promise<void> {
 #### `src/scripts/test-sandbox.ts:69-347`
 
 ```typescript
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   section("[1] splitCommand — compound bash splitter");
   assertEqual(splitCommand("ls"), ["ls"], "single command");
   assertEqual(splitCommand("echo a && rm -rf /"), ["echo a", "rm -rf /"], "&& splits");
@@ -18452,6 +18596,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Step 教程线
 
 `step/` 目录是路线图的可复现实验线。`step1` 从 Anthropic streaming 最小闭环开始；`step4` 引入 agentic loop；`step8` 把多轮状态、system prompt、usage 和 slash command 收进 QueryEngine。  
@@ -18756,7 +18901,7 @@ export class QueryEngine {
     }
 
     if (command === "/help") {
-      yield { type: "command", kind: "info", message: "Commands: /help /clear /cost /model <name>" };
+      yield { type: "command", kind: "info", message: "Commands: /help /clear /cost /model &lt;name&gt;" };
       return { handled: true };
     }
 
@@ -18767,6 +18912,7 @@ export class QueryEngine {
 
 <!-- source-snippets:end -->
 </details>
+
 后续 step 对应更复杂能力：`step16` 是 MCP，`step17` 是 Skills，`step18` 是 Sandbox。这些 step 与 `src/` 下当前实现并存，用作教学里程碑和架构对照。  
 Sources: [README.md:105-108](../../../project-repos/easy-agent/README.md#L105-L108), [step/step16.js:1-90](../../../project-repos/easy-agent/step/step16.js#L1-L90), [step/step17.js:1-130](../../../project-repos/easy-agent/step/step17.js#L1-L130), [step/step18.js:1-160](../../../project-repos/easy-agent/step/step18.js#L1-L160)
 
@@ -19133,6 +19279,7 @@ function pickSandbox(value) {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 路线图状态
 
 README 的 30 阶段路线图显示：阶段 1 到 18 已完成，覆盖模型通信、UI、工具、agentic loop、权限、QueryEngine、session、memory、compaction、token budget、plan mode、Todo、Task、MCP、Skills 和 Sandbox。  
@@ -19176,6 +19323,7 @@ The project follows a 30-phase roadmap designed to recreate the full Claude Code
 
 <!-- source-snippets:end -->
 </details>
+
 尚未开始的核心能力包括 sub-agents、自定义 agent、多 agent 协作、hooks lifecycle、文件历史与 rollback、pipe mode、multi-provider；部分完成的方向包括终端 UI 升级、配置改进、错误恢复、auto mode、打包发布和文档。  
 Sources: [README.md:108-121](../../../project-repos/easy-agent/README.md#L108-L121), [README.md:182-191](../../../project-repos/easy-agent/README.md#L182-L191)
 
@@ -19220,6 +19368,7 @@ The next major milestones are:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 当前质量边界
 
 仓库没有传统测试框架配置，也没有 CI 配置文件；质量入口集中在 npm scripts 和手写 `src/scripts/*`。这意味着它适合逐层验证关键子系统，但不等价于完整的回归测试矩阵。  
@@ -19372,7 +19521,7 @@ function assert(cond: unknown, label: string): void {
   }
 }
 
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   console.log(`Task list dir: ${getTasksDir(TASK_LIST_ID)}`);
 
   // 1. Create 3 tasks.
@@ -19501,7 +19650,7 @@ function assert(condition: unknown, label: string): void {
     failures.push(label);
   }
 }
-function assertEqual<T>(actual: T, expected: T, label: string): void {
+function assertEqual&lt;T&gt;(actual: T, expected: T, label: string): void {
   const ok = JSON.stringify(actual) === JSON.stringify(expected);
   if (ok) {
     console.log(`  ✓ ${label}`);
@@ -19515,7 +19664,7 @@ function section(title: string): void {
   console.log(`\n${title}`);
 }
 
-function makeSettings(overrides: Partial<ResolvedSandboxSettings> = {}): ResolvedSandboxSettings {
+function makeSettings(overrides: Partial&lt;ResolvedSandboxSettings&gt; = {}): ResolvedSandboxSettings {
   return {
     ...DEFAULT_RESOLVED_SANDBOX_SETTINGS,
     enabled: true,
@@ -19523,7 +19672,7 @@ function makeSettings(overrides: Partial<ResolvedSandboxSettings> = {}): Resolve
   };
 }
 
-async function main(): Promise<void> {
+async function main(): Promise&lt;void&gt; {
   section("[1] splitCommand — compound bash splitter");
   assertEqual(splitCommand("ls"), ["ls"], "single command");
   assertEqual(splitCommand("echo a && rm -rf /"), ["echo a", "rm -rf /"], "&& splits");
@@ -19580,6 +19729,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 贡献策略也说明项目仍在 active reconstruction，结构和开发约定会频繁变化，暂不接受外部 PR。读者应把当前接口视为学习和实验主线，而不是稳定扩展 API。  
 Sources: [README.md:193-199](../../../project-repos/easy-agent/README.md#L193-L199)
 
@@ -19602,6 +19752,7 @@ Until then, you are welcome to follow the project and reference the public roadm
 
 <!-- source-snippets:end -->
 </details>
+
 ## 建议验证顺序
 
 本地开发时可以先跑类型构建，再按改动面选择专项脚本：模型通信改动跑 `test:streaming`，工具 registry 改动跑 `test:tools`，任务系统改动跑 `test:tasks`，MCP/Skills/Sandbox 分别跑对应脚本。涉及真实 sandbox 行为时再补 `smoke:sandbox` 与 `smoke:bash-sandbox`。  
@@ -19687,10 +19838,11 @@ Sources: [package.json:10-20](../../../project-repos/easy-agent/package.json#L10
  *
  * Exits non-zero if any assertion fails.
  */
-```
+
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

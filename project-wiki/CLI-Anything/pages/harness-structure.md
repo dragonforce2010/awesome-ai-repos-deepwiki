@@ -65,6 +65,7 @@ Sources: [HARNESS.md:674-710](../../../project-repos/CLI-Anything/HARNESS.md#L67
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 2. 包结构与命名空间
@@ -187,6 +188,7 @@ setup(
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 3. 包组件关系图
@@ -334,6 +336,7 @@ Sources: [HARNESS.md:28-48, 99-109](../../../project-repos/CLI-Anything/HARNESS.
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 5. ReplSkin：统一 REPL 皮肤
@@ -460,6 +463,7 @@ Sources: [repl_skin.py:106-568](../../../project-repos/CLI-Anything/repl_skin.py
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 6. 后端集成模式
@@ -525,6 +529,7 @@ Sources: [HARNESS.md:308-347](../../../project-repos/CLI-Anything/HARNESS.md#L30
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 7. 状态模型与会话锁定
@@ -578,6 +583,7 @@ Sources: [HARNESS.md:69-73](../../../project-repos/CLI-Anything/HARNESS.md#L69-L
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 8. 已有 Harness 的统计概览
@@ -629,6 +635,7 @@ of C in GIMP's xcf-load.c). Instead:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 9. 文档必备文件
@@ -672,6 +679,7 @@ Sources: [HARNESS.md:111-231](../../../project-repos/CLI-Anything/HARNESS.md#L11
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 10. 包安装与命名空间共存
@@ -708,6 +716,7 @@ Sources: [HARNESS.md:296-305](../../../project-repos/CLI-Anything/HARNESS.md#L29
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [七阶段生成流水线](seven-phase-pipeline.md) — Harness 是如何通过流水线自动生成的

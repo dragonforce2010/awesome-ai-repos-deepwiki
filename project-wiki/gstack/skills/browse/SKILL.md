@@ -24,7 +24,7 @@ description: 快速浏览器自动化技能，用于打开页面、交互、截�
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: browse
 preamble-tier: 1
@@ -66,7 +66,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -98,7 +98,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -358,7 +358,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -585,7 +585,7 @@ $B goto file://./docs/page.html        # cwd-relative
 $B goto file://~/Documents/page.html   # home-relative
 
 # HTML generated in memory → load-html reads the file into setContent
-echo '<div class="tweet">hello</div>' > /tmp/tweet.html
+echo '&lt;div class="tweet">hello&lt;/div>' > /tmp/tweet.html
 $B load-html /tmp/tweet.html
 ```
 
@@ -618,7 +618,7 @@ Worked example (the tweet-renderer flow — Puppeteer → browse):
 
 ```bash
 # Generate HTML in memory, render at 2x scale, screenshot the tweet card.
-echo '<div class="tweet-card" style="width:400px;height:200px;background:#1da1f2;color:white;padding:20px">hello</div>' > /tmp/tweet.html
+echo '&lt;div class="tweet-card" style="width:400px;height:200px;background:#1da1f2;color:white;padding:20px">hello&lt;/div>' > /tmp/tweet.html
 $B viewport 480x600 --scale 2
 $B load-html /tmp/tweet.html
 $B screenshot /tmp/out.png --selector .tweet-card
@@ -663,13 +663,13 @@ The snapshot is your primary tool for understanding and interacting with pages.
 ```
 -i        --interactive           Interactive elements only (buttons, links, inputs) with @e refs. Also auto-enables cursor-interactive scan (-C) to capture dropdowns and popovers.
 -c        --compact               Compact (no empty structural nodes)
--d <N>    --depth                 Limit tree depth (0 = root only, default: unlimited)
--s <sel>  --selector              Scope to CSS selector
+-d &lt;N&gt;    --depth                 Limit tree depth (0 = root only, default: unlimited)
+-s &lt;sel&gt;  --selector              Scope to CSS selector
 -D        --diff                  Unified diff against previous snapshot (first call stores baseline)
 -a        --annotate              Annotated screenshot with red overlay boxes and ref labels
--o <path> --output                Output path for annotated screenshot (default: <temp>/browse-annotated.png)
+-o &lt;path&gt; --output                Output path for annotated screenshot (default: &lt;temp&gt;/browse-annotated.png)
 -C        --cursor-interactive    Cursor-interactive elements (@c refs — divs with pointer, onclick). Auto-enabled when -i is used.
--H <json> --heatmap               Color-coded overlay screenshot from JSON map: '{"@e1":"green","@e3":"red"}'. Valid colors: green, yellow, red, blue, orange, gray.
+-H &lt;json&gt; --heatmap               Color-coded overlay screenshot from JSON map: '{"@e1":"green","@e3":"red"}'. Valid colors: green, yellow, red, blue, orange, gray.
 ```
 
 All flags can be combined freely. `-o` only applies when `-a` is also used.
@@ -849,6 +849,6 @@ $B prettyscreenshot --cleanup --scroll-to ".pricing" --width 1440 ~/Desktop/hero
 | `state save|load <name>` | Save/load browser state (cookies + URLs) |
 | `status` | Health check |
 | `stop` | Shutdown server |
-```
+````
 
 </details>

@@ -24,7 +24,7 @@ description: 合并 PR、等待 CI/部署并验证生产健康的发布技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: land-and-deploy
 preamble-tier: 4
@@ -65,7 +65,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -97,7 +97,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -302,20 +302,20 @@ AI orchestrator (e.g., OpenClaw). In spawned sessions:
 Every AskUserQuestion is a decision brief and must be sent as tool_use, not prose.
 
 ```
-D<N> — <one-line question title>
-Project/branch/task: <1 short grounding sentence using _BRANCH>
-ELI10: <plain English a 16-year-old could follow, 2-4 sentences, name the stakes>
-Stakes if we pick wrong: <one sentence on what breaks, what user sees, what's lost>
-Recommendation: <choice> because <one-line reason>
+D&lt;N&gt; — &lt;one-line question title&gt;
+Project/branch/task: &lt;1 short grounding sentence using _BRANCH&gt;
+ELI10: &lt;plain English a 16-year-old could follow, 2-4 sentences, name the stakes&gt;
+Stakes if we pick wrong: &lt;one sentence on what breaks, what user sees, what's lost&gt;
+Recommendation: &lt;choice&gt; because &lt;one-line reason&gt;
 Completeness: A=X/10, B=Y/10   (or: Note: options differ in kind, not coverage — no completeness score)
 Pros / cons:
-A) <option label> (recommended)
-  ✅ <pro — concrete, observable, ≥40 chars>
-  ❌ <con — honest, ≥40 chars>
-B) <option label>
-  ✅ <pro>
-  ❌ <con>
-Net: <one-line synthesis of what you're actually trading off>
+A) &lt;option label&gt; (recommended)
+  ✅ &lt;pro — concrete, observable, ≥40 chars&gt;
+  ❌ &lt;con — honest, ≥40 chars&gt;
+B) &lt;option label&gt;
+  ✅ &lt;pro&gt;
+  ❌ &lt;con&gt;
+Net: &lt;one-line synthesis of what you're actually trading off&gt;
 ```
 
 D-numbering: first question in a skill invocation is `D1`; increment yourself. This is a model-level instruction, not a runtime counter.
@@ -406,7 +406,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -590,13 +590,13 @@ Commit after new intentional files, completed functions/modules, verified bug fi
 Commit format:
 
 ```
-WIP: <concise description of what changed>
+WIP: &lt;concise description of what changed&gt;
 
 [gstack-context]
-Decisions: <key choices made this step>
-Remaining: <what's left in the logical unit>
-Tried: <failed approaches worth recording> (omit if none)
-Skill: </skill-name-if-running>
+Decisions: &lt;key choices made this step&gt;
+Remaining: &lt;what's left in the logical unit&gt;
+Tried: &lt;failed approaches worth recording&gt; (omit if none)
+Skill: &lt;/skill-name-if-running&gt;
 [/gstack-context]
 ```
 
@@ -618,7 +618,7 @@ Before each AskUserQuestion, choose `question_id` from `scripts/question-registr
 
 After answer, log best-effort:
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"land-and-deploy","question_id":"<id>","question_summary":"<short>","category":"<approval|clarification|routing|cherry-pick|feedback-loop>","door_type":"<one-way|two-way>","options_count":N,"user_choice":"<key>","recommended":"<key>","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
+~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"land-and-deploy","question_id":"&lt;id&gt;","question_summary":"&lt;short&gt;","category":"&lt;approval|clarification|routing|cherry-pick|feedback-loop&gt;","door_type":"&lt;one-way|two-way&gt;","options_count":N,"user_choice":"&lt;key&gt;","recommended":"&lt;key&gt;","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
 ```
 
 For two-way questions, offer: "Tune this question? Reply `tune: never-ask`, `tune: always-ask`, or free-form."
@@ -627,7 +627,7 @@ User-origin gate (profile-poisoning defense): write tune events ONLY when `tune:
 
 Write (only after confirmation for free-form):
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"<id>","preference":"<pref>","source":"inline-user","free_text":"<optional original words>"}'
+~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"&lt;id&gt;","preference":"&lt;pref&gt;","source":"inline-user","free_text":"&lt;optional original words&gt;"}'
 ```
 
 Exit code 2 = rejected as not user-originated; do not retry. On success: "Set `<id>` → `<preference>`. Active immediately."
@@ -1145,8 +1145,8 @@ Behavior:
 3. If drift is detected (a PR landed ahead of us and `BRANCH_VERSION < NEXT_SLOT`): **STOP** and print exactly:
    ```
    ⚠ VERSION drift detected.
-     This PR claims:  v<BRANCH_VERSION>
-     Next free slot:  v<NEXT_SLOT>   (queue moved since last /ship)
+     This PR claims:  v&lt;BRANCH_VERSION&gt;
+     Next free slot:  v&lt;NEXT_SLOT&gt;   (queue moved since last /ship)
 
    Rerun /ship from the feature branch to reconcile. /ship's ALREADY_BUMPED
    branch will detect the drift and rewrite VERSION + CHANGELOG header + PR title
@@ -1428,7 +1428,7 @@ If timeout (30 min): **STOP.** "The merge queue has been processing for 30 minut
 After the PR is merged, check if a deploy workflow was triggered by the merge:
 
 ```bash
-gh run list --branch <base> --limit 5 --json name,status,workflowName,headSha
+gh run list --branch &lt;base&gt; --limit 5 --json name,status,workflowName,headSha
 ```
 
 Look for runs matching the merge commit SHA. If a deploy workflow is found:
@@ -1498,7 +1498,7 @@ echo "FRONTEND=$SCOPE_FRONTEND BACKEND=$SCOPE_BACKEND DOCS=$SCOPE_DOCS CONFIG=$S
 
 2. Check for GitHub Actions deploy workflows:
 ```bash
-gh run list --branch <base> --limit 5 --json name,status,conclusion,headSha,workflowName
+gh run list --branch &lt;base&gt; --limit 5 --json name,status,conclusion,headSha,workflowName
 ```
 Look for workflow names containing "deploy", "release", "production", or "cd". If found: poll the deploy workflow in Step 6, then run canary.
 
@@ -1551,14 +1551,14 @@ The deploy verification strategy depends on the platform detected in Step 5.
 If a deploy workflow was detected, find the run triggered by the merge commit:
 
 ```bash
-gh run list --branch <base> --limit 10 --json databaseId,headSha,status,conclusion,name,workflowName
+gh run list --branch &lt;base&gt; --limit 10 --json databaseId,headSha,status,conclusion,name,workflowName
 ```
 
 Match by the merge commit SHA (captured in Step 4). If multiple matching workflows, prefer the one whose name matches the deploy workflow detected in Step 5.
 
 Poll every 30 seconds:
 ```bash
-gh run view <run-id> --json status,conclusion
+gh run view &lt;run-id&gt; --json status,conclusion
 ```
 
 ### Strategy B: Platform CLI (Fly.io, Render, Heroku)
@@ -1624,7 +1624,7 @@ Use the diff-scope classification from Step 5 to determine canary depth:
 **Full canary sequence:**
 
 ```bash
-$B goto <url>
+$B goto &lt;url&gt;
 ```
 
 Check that the page loaded successfully (200, not an error page).
@@ -1677,10 +1677,10 @@ If the user chose to revert at any point:
 Tell the user: "Reverting the merge now. This will create a new commit that undoes all the changes from this PR. The previous version of your site will be restored once the revert deploys."
 
 ```bash
-git fetch origin <base>
-git checkout <base>
-git revert <merge-commit-sha> --no-edit
-git push origin <base>
+git fetch origin &lt;base&gt;
+git checkout &lt;base&gt;
+git revert &lt;merge-commit-sha&gt; --no-edit
+git push origin &lt;base&gt;
 ```
 
 If the revert has conflicts: "The revert has merge conflicts — this can happen if other changes landed on {base} after your merge. You'll need to resolve the conflicts manually. The merge commit SHA is `<sha>` — run `git revert <sha>` to try again."
@@ -1705,36 +1705,36 @@ Produce and display the ASCII summary:
 ```
 LAND & DEPLOY REPORT
 ═════════════════════
-PR:           #<number> — <title>
-Branch:       <head-branch> → <base-branch>
-Merged:       <timestamp> (<merge method>)
-Merge SHA:    <sha>
-Merge path:   <auto-merge / direct / merge queue>
-First run:    <yes (dry-run validated) / no (previously confirmed)>
+PR:           #&lt;number&gt; — &lt;title&gt;
+Branch:       &lt;head-branch&gt; → &lt;base-branch&gt;
+Merged:       &lt;timestamp&gt; (&lt;merge method&gt;)
+Merge SHA:    &lt;sha&gt;
+Merge path:   &lt;auto-merge / direct / merge queue&gt;
+First run:    &lt;yes (dry-run validated) / no (previously confirmed)&gt;
 
 Timing:
-  Dry-run:    <duration or "skipped (confirmed)">
-  CI wait:    <duration>
-  Queue:      <duration or "direct merge">
-  Deploy:     <duration or "no workflow detected">
-  Staging:    <duration or "skipped">
-  Canary:     <duration or "skipped">
-  Total:      <end-to-end duration>
+  Dry-run:    &lt;duration or "skipped (confirmed)"&gt;
+  CI wait:    &lt;duration&gt;
+  Queue:      &lt;duration or "direct merge"&gt;
+  Deploy:     &lt;duration or "no workflow detected"&gt;
+  Staging:    &lt;duration or "skipped"&gt;
+  Canary:     &lt;duration or "skipped"&gt;
+  Total:      &lt;end-to-end duration&gt;
 
 Reviews:
-  Eng review: <CURRENT / STALE / NOT RUN>
-  Inline fix: <yes (N fixes) / no / skipped>
+  Eng review: &lt;CURRENT / STALE / NOT RUN&gt;
+  Inline fix: &lt;yes (N fixes) / no / skipped&gt;
 
-CI:           <PASSED / SKIPPED>
-Deploy:       <PASSED / FAILED / NO WORKFLOW / CI AUTO-DEPLOY>
-Staging:      <VERIFIED / SKIPPED / N/A>
-Verification: <HEALTHY / DEGRADED / SKIPPED / REVERTED>
-  Scope:      <FRONTEND / BACKEND / CONFIG / DOCS / MIXED>
-  Console:    <N errors or "clean">
-  Load time:  <Xs>
-  Screenshot: <path or "none">
+CI:           &lt;PASSED / SKIPPED&gt;
+Deploy:       &lt;PASSED / FAILED / NO WORKFLOW / CI AUTO-DEPLOY&gt;
+Staging:      &lt;VERIFIED / SKIPPED / N/A&gt;
+Verification: &lt;HEALTHY / DEGRADED / SKIPPED / REVERTED&gt;
+  Scope:      &lt;FRONTEND / BACKEND / CONFIG / DOCS / MIXED&gt;
+  Console:    &lt;N errors or "clean"&gt;
+  Load time:  &lt;Xs&gt;
+  Screenshot: &lt;path or "none"&gt;
 
-VERDICT: <DEPLOYED AND VERIFIED / DEPLOYED (UNVERIFIED) / STAGING VERIFIED / REVERTED>
+VERDICT: &lt;DEPLOYED AND VERIFIED / DEPLOYED (UNVERIFIED) / STAGING VERIFIED / REVERTED&gt;
 ```
 
 Save report to `.gstack/deploy-reports/{date}-pr{number}-deploy.md`.
@@ -1748,7 +1748,7 @@ mkdir -p ~/.gstack/projects/$SLUG
 
 Write a JSONL entry with timing data:
 ```json
-{"skill":"land-and-deploy","timestamp":"<ISO>","status":"<SUCCESS/REVERTED>","pr":<number>,"merge_sha":"<sha>","merge_path":"<auto/direct/queue>","first_run":<true/false>,"deploy_status":"<HEALTHY/DEGRADED/SKIPPED>","staging_status":"<VERIFIED/SKIPPED>","review_status":"<CURRENT/STALE/NOT_RUN/INLINE_FIX>","ci_wait_s":<N>,"queue_s":<N>,"deploy_s":<N>,"staging_s":<N>,"canary_s":<N>,"total_s":<N>}
+{"skill":"land-and-deploy","timestamp":"&lt;ISO&gt;","status":"&lt;SUCCESS/REVERTED&gt;","pr":&lt;number&gt;,"merge_sha":"&lt;sha&gt;","merge_path":"&lt;auto/direct/queue&gt;","first_run":&lt;true/false&gt;,"deploy_status":"&lt;HEALTHY/DEGRADED/SKIPPED&gt;","staging_status":"&lt;VERIFIED/SKIPPED&gt;","review_status":"&lt;CURRENT/STALE/NOT_RUN/INLINE_FIX&gt;","ci_wait_s":&lt;N&gt;,"queue_s":&lt;N&gt;,"deploy_s":&lt;N&gt;,"staging_s":&lt;N&gt;,"canary_s":&lt;N&gt;,"total_s":&lt;N&gt;}
 ```
 
 ---
@@ -1783,6 +1783,6 @@ Then suggest relevant follow-ups:
 - **First run = teacher mode.** Walk the user through everything. Explain what each check does and why it matters. Show them their infrastructure. Let them confirm before proceeding. Build trust through transparency.
 - **Subsequent runs = efficient mode.** Brief status updates, no re-explanations. The user already trusts the tool — just do the job and report results.
 - **The goal is: first-timers think "wow, this is thorough — I trust it." Repeat users think "that was fast — it just works."**
-```
+````
 
 </details>

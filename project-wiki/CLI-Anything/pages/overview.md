@@ -53,6 +53,7 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 1. 项目定位与愿景
@@ -160,6 +161,7 @@ Sources: [README.md:30-80](../../../project-repos/CLI-Anything/README.md#L30-L80
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 2. 核心理念：为什么选择 CLI？
@@ -301,6 +303,7 @@ CLI-Anything 以 Claude Code 插件市场的形式托管在 GitHub 上。
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 3. 支持的软件目录
@@ -441,6 +444,7 @@ Sources: [registry.json](../../../project-repos/CLI-Anything/registry.json)
 
 <!-- source-snippets:end -->
 </details>
+
 ### 创意工具
 
 | 软件 | 类别 | 典型能力 |
@@ -614,6 +618,7 @@ Requirements for standalone CLIs:
 
 <!-- source-snippets:end -->
 </details>
+
 ### CLI-Hub 包管理器
 
 CLI-Anything 提供配套的包管理工具，一行命令安装任意软件的 CLI 封装：
@@ -767,6 +772,7 @@ cp -r CLI-Anything/cli-anything-plugin ~/.claude/plugins/cli-anything
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 5. 阅读路线
@@ -775,12 +781,12 @@ cp -r CLI-Anything/cli-anything-plugin ~/.claude/plugins/cli-anything
 
 ```mermaid
 flowchart TD
-    A["1. 本页（项目概览）<br/>了解定位与愿景"] --> B["2. 系统架构<br/>理解整体模块划分"]
-    B --> C["3. 七阶段生成流水线<br/>深入核心生成机制"]
-    C --> D["4. SKILL.md 规范<br/>理解能力发现协议"]
-    D --> E["5. CLI-Hub 包管理器<br/>了解分发与安装机制"]
-    E --> F["6. 测试框架<br/>2280 个测试的组织方式"]
-    F --> G["7. CONTRIBUTING.md<br/>贡献新 CLI 封装的流程"]
+    A["1. 本页（项目概览）&lt;br/&gt;了解定位与愿景"] --> B["2. 系统架构&lt;br/&gt;理解整体模块划分"]
+    B --> C["3. 七阶段生成流水线&lt;br/&gt;深入核心生成机制"]
+    C --> D["4. SKILL.md 规范&lt;br/&gt;理解能力发现协议"]
+    D --> E["5. CLI-Hub 包管理器&lt;br/&gt;了解分发与安装机制"]
+    E --> F["6. 测试框架&lt;br/&gt;2280 个测试的组织方式"]
+    F --> G["7. CONTRIBUTING.md&lt;br/&gt;贡献新 CLI 封装的流程"]
 ```
 
 | 阶段 | 文档 | 目标 |
@@ -973,6 +979,7 @@ Once the extension is loaded, the following commands are available:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 相关页面

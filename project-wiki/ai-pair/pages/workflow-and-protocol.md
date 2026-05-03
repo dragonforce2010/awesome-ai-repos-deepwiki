@@ -66,6 +66,7 @@ The workflow is semi-automatic — you stay in control at every step:
 
 <!-- source-snippets:end -->
 </details>
+
 ## Team Lead 执行步骤（摘要）
 
 | 步骤 | 内容 |
@@ -118,6 +119,7 @@ If either CLI is missing, warn the user immediately and ask whether to proceed w
 
 <!-- source-snippets:end -->
 </details>
+
 ## CLI Invocation Protocol 要点
 
 共享协议（审查者 prompt 必须包含）规定：
@@ -182,6 +184,7 @@ CLI Invocation Protocol:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 项目 / 主题解析
 
 优先级：**显式参数** → **当前目录推断项目路径** → **含糊则询问用户**。
@@ -207,6 +210,7 @@ The project/topic is determined by:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [架构与角色分工](architecture-and-roles.md)

@@ -201,6 +201,7 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
 
 <!-- source-snippets:end -->
 </details>
+
 ## CLI 参数与 REPL 命令
 
 `cli.ts` 支持版本、帮助、模型覆盖、会话恢复、plan/auto permission mode、显式 permission mode、system prompt dump。帮助文本还列出 REPL 命令：`/mode`、`/tasks`、`/mcp`、`/skills`、`/<skill-name>`、`/history`、`/compact` 等。  
@@ -260,6 +261,7 @@ Commands (in REPL):
 
 <!-- source-snippets:end -->
 </details>
+
 | 输入 | 行为 |
 |------|------|
 | `--model <model>` | 覆盖默认模型 |
@@ -431,6 +433,7 @@ Commands (in REPL):
 
 <!-- source-snippets:end -->
 </details>
+
 ## App 组件树
 
 `App` 从 `useAgentSession` 取 state/actions，并组合多个显示组件。任务展示在 Task V2 和 TodoWrite V1 间切换，工具调用既有实时 `ToolCallList`，也会在消息提交后由 `ConversationView` 内联渲染。  
@@ -518,6 +521,7 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   App["App"] --> Session["useAgentSession"]
@@ -596,6 +600,7 @@ import type { CommandSuggestion } from "./types.js";
 
 <!-- source-snippets:end -->
 </details>
+
 ## 会话 Hook
 
 `useAgentSession` 初始化 permission settings 和 `QueryEngine`，创建或恢复 session，订阅 Todo/Task store，处理流式事件、工具卡片、permission prompt、usage、compaction、model/mode/task mode 变化，并把结果写入 transcript。  
@@ -923,6 +928,7 @@ export function useAgentSession({
 
 <!-- source-snippets:end -->
 </details>
+
 它对 streaming text 做 30ms 合并，避免高频 SSE chunks 触发 Ink 全树重绘。这个优化和 Task/Todo 列表的静态渲染策略配合，降低终端闪烁和滚动问题。  
 Sources: [src/ui/hooks/useAgentSession.ts:198-223](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts#L198-L223), [src/ui/hooks/useAgentSession.ts:551-560](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts#L551-L560), [src/ui/components/TaskList.tsx:9-17](../../../project-repos/easy-agent/src/ui/components/TaskList.tsx#L9-L17), [src/ui/components/TodoList.tsx:9-17](../../../project-repos/easy-agent/src/ui/components/TodoList.tsx#L9-L17)
 
@@ -1007,6 +1013,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:198-223](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant Input as InputPrompt
@@ -1225,6 +1232,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
+
 ## 输入建议与权限交互
 
 `usePromptInput` 处理 Ctrl+C、Ctrl+D、permission prompt 快捷键、命令建议、mode selector、task mode selector 和普通文本输入。命令建议由内置命令加动态 skills 命令合并，并按输入前缀过滤到最多 8 个。  
@@ -1325,6 +1333,7 @@ const TASK_MODE_OPTIONS: { mode: TaskMode; description: string }[] = [
 
 <!-- source-snippets:end -->
 </details>
+
 Permission prompt 的普通确认键是 `y/n/a`；plan exit 分支使用 `y/k/n`，对应清上下文执行、保留上下文执行、拒绝。  
 Sources: [src/ui/hooks/usePromptInput.ts:101-120](../../../project-repos/easy-agent/src/ui/hooks/usePromptInput.ts#L101-L120), [src/ui/hooks/useAgentSession.ts:432-472](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts#L432-L472)
 
@@ -1406,6 +1415,7 @@ Sources: [src/ui/hooks/usePromptInput.ts:101-120](../../../project-repos/easy-ag
 
 <!-- source-snippets:end -->
 </details>
+
 ## 消息和工具卡片渲染
 
 `ConversationView` 会隐藏内部消息：compact boundary、resume 续聊提示、plan attachment、plan exit attachment、skill invocation body。slash skill 的可见 marker 会被渲染成命令气泡，而真实 `SKILL.md` body 不直接展示。  
@@ -1496,6 +1506,7 @@ function extractCommandMarker(
 
 <!-- source-snippets:end -->
 </details>
+
 工具结果按 `tool_use_id` 建索引，再回填到 assistant 的 `tool_use` block 下，避免 live tool card 和历史内联 card 顺序不一致。  
 Sources: [src/ui/components/ConversationView.tsx:53-82](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx#L53-L82), [src/ui/components/ConversationView.tsx:181-221](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx#L181-L221)
 
@@ -1587,6 +1598,7 @@ function buildToolResultMap(messages: MessageParam[]): Map<string, ToolResultInf
 
 <!-- source-snippets:end -->
 </details>
+
 ## 状态栏
 
 `StatusBar` 展示当前 permission mode、plan approval dialog、普通权限确认、spinner、streaming text、最近一轮 tokens 和估算 context 百分比。plan exit 的富交互由 `PlanApprovalDialog` 承载。  
@@ -1676,6 +1688,7 @@ export function StatusBar({
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)

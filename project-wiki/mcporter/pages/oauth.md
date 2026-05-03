@@ -194,6 +194,7 @@ export async function connectWithAuth(
 
 <!-- source-snippets:end -->
 </details>
+
 ## PersistentOAuthClientProvider
 
 `PersistentOAuthClientProvider` 在 [src/oauth.ts:64-307]() 实现 `OAuthClientProvider` 接口。`create(definition, logger)` 静态构造器（[src/oauth.ts:96-167]()）做的事比类名暗示的多：
@@ -301,6 +302,7 @@ Sources: [src/oauth.ts:96-167](../../../project-repos/mcporter/src/oauth.ts#L96-
 
 <!-- source-snippets:end -->
 </details>
+
 ### `clientMetadata` / `state` / 授权码
 
 `PersistentOAuthClientProvider` 实现的 `OAuthClientProvider` 关键方法：
@@ -452,6 +454,7 @@ class PersistentOAuthClientProvider implements OAuthClientProvider {
 
 <!-- source-snippets:end -->
 </details>
+
 ### 跨平台浏览器打开
 
 `openExternal(url, platform, launch)`（[src/oauth.ts:36-61]()）：
@@ -503,6 +506,7 @@ function openExternal(url: string, platform: NodeJS.Platform = process.platform,
 
 <!-- source-snippets:end -->
 </details>
+
 ## 持久化分层
 
 `buildOAuthPersistence(definition, logger)` 在 [src/oauth-persistence.ts:233-267]() 创建一个分层 persistence：
@@ -791,6 +795,7 @@ export async function clearVaultEntry(
 
 <!-- source-snippets:end -->
 </details>
+
 ### 缓存 token 直接注入（fast-path）
 
 `applyCachedOAuthHeaderIfAvailable`（[src/runtime/transport.ts:151-187]()）在 OAuth 流程之前先尝试一次"fast-path"：如果 vault/dir 里已经有 `access_token`，且 definition headers 里没有 Authorization，就**临时 clone 一份 definition**，把 `Authorization: Bearer ${cached}` 注入头里。如果服务器接受 → 直接 200，没必要建 callback server。如果服务器 401 → 走完整 OAuth 流程刷 token。
@@ -880,6 +885,7 @@ export async function readCachedAccessToken(
 
 <!-- source-snippets:end -->
 </details>
+
 ## OAuth header 物化
 
 HTTP 头里支持 `${VAR}` / `$env:VAR` 占位符，每次请求前由 `materializeHeaders` 解析（[src/runtime-header-utils.ts:4-23]()）。OAuth 启用时 `removeAuthorizationHeader` 把任何静态 Authorization 头去掉，由 SDK 自己注入 token（[src/runtime/transport.ts:85-95]()）；没启用 OAuth 时静态头保留，包括 `bearerToken` / `bearerTokenEnv` 在 normalize 阶段写入的 `Authorization: Bearer $env:NAME`。
@@ -953,6 +959,7 @@ function createHttpTransportOptions(
 
 <!-- source-snippets:end -->
 </details>
+
 ## connectWithAuth 重试模型
 
 `connectWithAuth`（[src/runtime/oauth.ts:79-123]()）已经在 [运行时与传输层](runtime-transport.md) 概要描述。这里补充几点：
@@ -1098,6 +1105,7 @@ export async function connectWithAuth(
 
 <!-- source-snippets:end -->
 </details>
+
 ## CLI 入口
 
 ### `mcporter auth <server | url>`
@@ -1255,6 +1263,7 @@ async function invokeAuthCommand(runtimeOptions: Parameters<typeof createRuntime
 
 <!-- source-snippets:end -->
 </details>
+
 ## 失败模式速览
 
 | 现象 | 触发 | 处理 |
@@ -1451,6 +1460,7 @@ export async function connectWithAuth(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 设计取舍
 
 - **Vault 默认而非 keychain**：跨平台一致；用 sha256 哈希派生 key，不在凭证仓库里存裸服务器 URL。代价是没有系统级加密保护，靠文件权限隔离。
@@ -1560,6 +1570,7 @@ async function applyCachedOAuthHeaderIfAvailable(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [运行时与传输层](runtime-transport.md)

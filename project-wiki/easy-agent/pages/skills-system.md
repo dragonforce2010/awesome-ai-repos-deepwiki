@@ -131,6 +131,7 @@ Sources: [src/types/types.ts:1-12](../../../project-repos/easy-agent/src/types/t
 
 <!-- source-snippets:end -->
 </details>
+
 ## 加载路径与优先级
 
 当前支持两个目录：`~/.easy-agent/skills/` 和 `<cwd>/.easy-agent/skills/`。加载时用 `realpath()` 去重，project scope 后加载，因此同名 skill 会覆盖 user scope。  
@@ -196,6 +197,7 @@ export async function loadAllSkills(cwd: string): Promise<LoadAllSkillsResult> {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   User["~/.easy-agent/skills"] --> Loader["loadAllSkills"]
@@ -324,6 +326,7 @@ export function setSkills(skills: Skill[]): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Frontmatter 解析
 
 `splitFrontmatter()` 用 YAML parser 解析 `--- ... ---` 块；无 frontmatter 时返回空对象和原 body；YAML 非 mapping 或 parse error 会带 `parseError`，由 loader 警告并跳过。`normalizeFrontmatter()` 归一化 `name`、`description`、`when_to_use`、`allowed-tools`、`argument-hint`、`disable-model-invocation`、`paths` 和 `context: fork`。  
@@ -464,6 +467,7 @@ export function normalizeFrontmatter(
 
 <!-- source-snippets:end -->
 </details>
+
 | 字段 | 行为 |
 |------|------|
 | `name` | 默认目录名，可覆盖 |
@@ -588,6 +592,7 @@ export function normalizeFrontmatter(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Registry 分层
 
 registry 分成 `dynamic` 和 `conditional` 两个 Map。`getModelVisibleSkills()` 只返回 dynamic 且未设置 `disable-model-invocation` 的技能；`getAllUserInvocableSkills()` 会返回 dynamic + conditional，包括 hidden skills，这解释了为什么用户 slash command 可以调用模型不可见技能。  
@@ -668,6 +673,7 @@ export function findSkill(name: string): Skill | undefined {
 
 <!-- source-snippets:end -->
 </details>
+
 ## System Prompt 预算
 
 Skills discovery block 被包在 `<system-reminder>` 中。预算默认 8000 字符，可由 `EASY_AGENT_SKILL_CHAR_BUDGET` 覆盖；格式化有三档降级：完整描述、均分压缩描述、只列名称。  
@@ -803,6 +809,7 @@ export function formatSkillsSystemReminder(skills: Skill[]): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 条件激活
 
 条件 skills 使用 `paths` frontmatter 和 `ignore` 包的 gitignore 语义匹配。工具调用成功后，`agenticLoop` 会从 Read/Write/Edit/Glob 的输入里提取文件路径，命中后把 skill 从 conditional map 提升到 dynamic map，且激活在当前进程内是单向且 sticky 的。  
@@ -926,6 +933,7 @@ export function extractToolFilePaths(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Skill 工具与用户 slash 调用
 
 `Skill` 工具会校验 skill name，查 registry，拒绝 hidden-from-model 和 `context: fork`，再替换 `${CLAUDE_SKILL_DIR}`、`${CLAUDE_SESSION_ID}`、`$ARGUMENTS`，把 skill body 作为工具结果返回给模型继续执行。  
@@ -1034,6 +1042,7 @@ function buildPromptText(skill: Skill, args: string, sessionId: string): string 
 
 <!-- source-snippets:end -->
 </details>
+
 用户 slash 调用走另一条链：`QueryEngine.tryExpandSkillCommand()` 生成可见 command marker 和隐藏 body message；`ConversationView` 隐藏 body，只渲染 command 气泡。  
 Sources: [src/core/queryEngine.ts:178-215](../../../project-repos/easy-agent/src/core/queryEngine.ts#L178-L215), [src/core/queryEngine.ts:221-277](../../../project-repos/easy-agent/src/core/queryEngine.ts#L221-L277), [src/ui/components/ConversationView.tsx:15-29](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx#L15-L29), [src/ui/components/ConversationView.tsx:141-157](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx#L141-L157)
 
@@ -1191,6 +1200,7 @@ function isInternalMessage(message: MessageParam): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant User as User
@@ -1313,6 +1323,7 @@ function extractCommandMarker(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 源仓库技能包检测
 
 本次分析的 `easy-agent` 源仓库没有 `skills/**/SKILL.md`、`.easy-agent/skills/**/SKILL.md` 或类似技能包目录，因此 DeepWiki 输出不包含 `skills/` 翻译副本。仓库内 `src/scripts/test-skills.ts` 会在运行时创建或期待工作目录下的示例 skills，但它们不是当前 git tracked source tree 的一部分。  
@@ -1394,6 +1405,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [CLI 与终端 UI](cli-and-ui.md)

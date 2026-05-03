@@ -24,7 +24,7 @@ description: 将 Markdown 转成出版质量 PDF 的技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: make-pdf
 preamble-tier: 1
@@ -66,7 +66,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -98,7 +98,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -358,7 +358,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -550,7 +550,7 @@ $P generate --no-confidential memo.md memo.pdf
 
 ```
 Page layout:
-  --margins <dim>            1in (default) | 72pt | 2.54cm | 25mm
+  --margins &lt;dim&gt;            1in (default) | 72pt | 2.54cm | 25mm
   --page-size letter|a4|legal
 
 Structure:
@@ -559,9 +559,9 @@ Structure:
   --no-chapter-breaks        Don't start a new page at every H1
 
 Branding:
-  --watermark <text>         Diagonal watermark ("DRAFT", "CONFIDENTIAL")
-  --header-template <html>   Custom running header
-  --footer-template <html>   Custom footer (mutex with --page-numbers)
+  --watermark &lt;text&gt;         Diagonal watermark ("DRAFT", "CONFIDENTIAL")
+  --header-template &lt;html&gt;   Custom running header
+  --footer-template &lt;html&gt;   Custom footer (mutex with --page-numbers)
   --no-confidential          Suppress the CONFIDENTIAL right-footer
 
 Output:
@@ -618,6 +618,6 @@ exit code: 0 success / 1 bad args / 2 render error / 3 Paged.js timeout
 ```
 
 Capture the path: `PDF=$($P generate letter.md)` — then use `$PDF`.
-```
+````
 
 </details>

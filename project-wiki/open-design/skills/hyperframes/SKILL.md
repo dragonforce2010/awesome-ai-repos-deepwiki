@@ -59,18 +59,18 @@ od:
 - no Chrome, no network beyond the npx cache.
 - 3. Edit ONLY $COMP/index.html — change data-duration on the root
 - if you need a non-default length, swap the placeholder palette
-- in <style>, add 1–3 clip <div>s for text/imagery, and append the
+- in &lt;style&gt;, add 1–3 clip &lt;div>s for text/imagery, and append the
 - matching GSAP tweens inside the existing
 - window.__timelines["main"] = gsap.timeline({paused:true}) block.
 - Keep edits minimal; the scaffold is already valid HF.
-- 4. Dispatch render through the OD daemon. Do NOT run `npx hyperframes
-- render` from this shell — the daemon runs it for you in an
+- 4. Dispatch render through the OD daemon. Do NOT run npx hyperframes
+- render from this shell — the daemon runs it for you in an
 - unsandboxed process. (Many agent CLIs, Claude Code in particular,
 - wrap Bash in macOS sandbox-exec under which puppeteer's Chrome
 - subprocess hangs partway through frame capture. The daemon process
 - is unsandboxed, so renders complete reliably.)
 - The dispatcher returns within ~1s with a {taskId}; drive the
-- render to completion by looping od media wait <taskId> calls.
+- render to completion by looping od media wait &lt;taskId&gt; calls.
 - Each call long-polls up to 25s (well under your shell tool's
 - default 30s cap) and exits 0/2/5 to signal done/running/failed.
 
@@ -147,7 +147,7 @@ Each `generate` and each `wait` call lasts at most ~25s, so the agent
 shell tool's default ~30s cap never fires. Progress lines from HF
 (`Capturing frame N/M`) stream to stderr live throughout the loop.
 When the render finishes, the last stdout line is
-`{"file": { "name": "<output>", "size": …, "kind": "video", … }}` —
+`{"file": { "name": "<output>", "size": …, "kind": "video", … &#125;&#125;` —
 quote `file.name` in your reply so the user knows what was produced.
 
 **Skip the Visual Identity Gate inside OD.** The HARD-GATE section
@@ -203,7 +203,7 @@ For small edits (fix a color, adjust timing, add one element), skip straight to 
 
 ### Visual Identity Gate
 
-<HARD-GATE>
+&lt;HARD-GATE&gt;
 Before writing ANY composition HTML, you MUST have a visual identity defined. Do NOT write compositions with default or generic colors.
 
 Check in this order:
@@ -218,7 +218,7 @@ Check in this order:
      Then generate a minimal DESIGN.md from the answers.
 
 Every composition must trace its palette and typography back to a DESIGN.md, visual-style.md, or explicit user direction. If you're reaching for `#333`, `#3b82f6`, or `Roboto` — you skipped this step.
-</HARD-GATE>
+&lt;/HARD-GATE&gt;
 
 For motion defaults, sizing, entrance patterns, and easing — follow [house-style.md](./house-style.md). The house style handles HOW things move. The DESIGN.md handles WHAT things look like.
 

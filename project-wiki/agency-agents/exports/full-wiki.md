@@ -79,6 +79,7 @@
 
 <!-- source-snippets:end -->
 </details>
+
 README 将项目定位为 “complete AI agency”，强调每个 agent 都有专业领域、人格、交付物和生产可用工作流，并给出 Claude Code、其他工具转换安装、以及作为参考模板的三种使用方式。Sources: [README.md:12-21](../../../project-repos/agency-agents/README.md#L12-L21), [README.md:25-71](../../../project-repos/agency-agents/README.md#L25-L71)
 
 <details class="source-snippets">
@@ -155,6 +156,7 @@ See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for f
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Repo["agency-agents 仓库"] --> Agents["Markdown agent 定义"]
@@ -299,6 +301,7 @@ See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for f
 
 <!-- source-snippets:end -->
 </details>
+
 ## 这个仓库解决什么问题
 
 它把“让 LLM 扮演某个专家”的 prompt 资产标准化成可复用 agent 文件。每个 agent 文件包含 identity、mission、rules、deliverables、workflow、communication style、success metrics 等结构，使用户可以把单个专家复制到 Claude Code，也可以通过转换脚本批量生成 Cursor rules、Gemini skills、OpenClaw workspaces 等格式。Sources: [README.md:40-48](../../../project-repos/agency-agents/README.md#L40-L48), [CONTRIBUTING.md:82-152](../../../project-repos/agency-agents/CONTRIBUTING.md#L82-L152), [scripts/convert.sh:3-25](../../../project-repos/agency-agents/scripts/convert.sh#L3-L25)
@@ -428,6 +431,7 @@ Advanced techniques and approaches the agent masters
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阅读路线
 
 | 目标 | 建议页面 |
@@ -478,6 +482,7 @@ This repository contains Markdown-based agent definitions and shell scripts for 
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [仓库结构与内容地图](repository-map.md)
@@ -548,6 +553,7 @@ AGENT_DIRS=(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Root["repo root"] --> Categories["agent category 目录"]
@@ -640,6 +646,7 @@ AGENT_DIRS=(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 目录角色
 
 | 区域 | 作用 | 证据 |
@@ -738,6 +745,7 @@ Sources: [integrations/README.md:6-19](../../../project-repos/agency-agents/inte
 
 <!-- source-snippets:end -->
 </details>
+
 ## 文件类型说明
 
 inventory 显示 `.md` 占绝大多数，且没有检测到传统 build manifest；因此本仓库的“源码”主要是 prompt 文档和 shell glue，而不是 TypeScript/Python 应用。Sources: [00-repo-inventory.md:15-26](../00-repo-inventory.md#L15-L26)
@@ -766,6 +774,7 @@ inventory 显示 `.md` 占绝大多数，且没有检测到传统 build manifest
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -884,6 +893,7 @@ RECOMMENDED_SECTIONS=("Identity" "Core Mission" "Critical Rules")
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   File["agent.md"] --> FM["YAML frontmatter"]
@@ -1013,6 +1023,7 @@ RECOMMENDED_SECTIONS=("Identity" "Core Mission" "Critical Rules")
 
 <!-- source-snippets:end -->
 </details>
+
 ## 设计原则
 
 贡献指南强调优秀 agent 应该窄而深、有鲜明人格、包含具体代码或模板、具备可衡量指标、给出分步 workflow，并经过真实场景测试；应避免泛泛的“helpful assistant”、宽泛范围和未经验证的理论建议。Sources: [CONTRIBUTING.md:224-240](../../../project-repos/agency-agents/CONTRIBUTING.md#L224-L240)
@@ -1046,6 +1057,7 @@ RECOMMENDED_SECTIONS=("Identity" "Core Mission" "Critical Rules")
 
 <!-- source-snippets:end -->
 </details>
+
 `engineering/engineering-frontend-developer.md` 是一个典型样本：frontmatter 声明名称、描述、颜色、emoji、vibe；正文从身份、核心使命、关键规则、技术交付、工作流、交付模板到沟通风格逐层展开。Sources: [engineering/engineering-frontend-developer.md:1-18](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md#L1-L18), [engineering/engineering-frontend-developer.md:19-64](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md#L19-L64), [engineering/engineering-frontend-developer.md:122-176](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md#L122-L176)
 
 <details class="source-snippets">
@@ -1189,6 +1201,7 @@ You are **Frontend Developer**, an expert frontend developer who specializes in 
 
 <!-- source-snippets:end -->
 </details>
+
 ## Persona 与 Operations 分组
 
 贡献文档明确把 agent 正文拆成 persona 与 operations 两组；`convert_openclaw` 也按 `##` 标题关键词把 identity、learning & memory、communication、style、critical rules 放入 `SOUL.md`，其他 mission、deliverables、workflow 等放入 `AGENTS.md`。Sources: [CONTRIBUTING.md:154-175](../../../project-repos/agency-agents/CONTRIBUTING.md#L154-L175), [scripts/convert.sh:251-323](../../../project-repos/agency-agents/scripts/convert.sh#L251-L323)
@@ -1305,6 +1318,7 @@ HEREDOC
 
 <!-- source-snippets:end -->
 </details>
+
 ## 贡献流程
 
 新增 agent 的理想 PR 是一个 Markdown 文件；新工具、构建系统、CI、跨文件大规模变更要先开 Discussion。提交前需要真实测试、匹配模板、提供 2-3 个示例、定义可衡量指标并校对。Sources: [CONTRIBUTING.md:243-275](../../../project-repos/agency-agents/CONTRIBUTING.md#L243-L275), [CONTRIBUTING.md:276-318](../../../project-repos/agency-agents/CONTRIBUTING.md#L276-L318)
@@ -1402,6 +1416,7 @@ We love ambitious ideas — a [Discussion](https://github.com/msitarzewski/agenc
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Agent 目录与专业分工](agent-catalog.md)
@@ -1651,6 +1666,7 @@ Scholarly rigor for world-building, storytelling, and narrative design.
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Catalog["Agent 目录"] --> Eng["Engineering"]
@@ -1972,6 +1988,7 @@ Scholarly rigor for world-building, storytelling, and narrative design.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 分类规模
 
 本地盘点显示当前源码中主要分类文件数如下：Engineering 29、Marketing 30、Specialized 41、Game Development 20、Testing 8、Design 8、Sales 8、Paid Media 7、Support 6、Spatial Computing 6、Product 5、Finance 5、Academic 5。这个分布说明仓库重点覆盖软件工程、增长营销、专门业务职能和多 agent 编排。Sources: [00-repo-inventory.md:10-18](../00-repo-inventory.md#L10-L18), [README.md:75-381](../../../project-repos/agency-agents/README.md#L75-L381)
@@ -2123,6 +2140,7 @@ Growing your audience, one authentic interaction at a time.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 代表性 agent 类型
 
 | Agent | 分类 | 特征 |
@@ -2185,6 +2203,7 @@ You are **AgentsOrchestrator**, the autonomous pipeline manager who runs complet
 
 <!-- source-snippets:end -->
 </details>
+
 ## 目录与 NEXUS 的关系
 
 NEXUS 文档把 division 进一步映射成 pipeline 角色：Engineering 负责构建、Design 负责体验与品牌、Testing 负责证据化质量验证、Support 负责运营与合规，Specialized 承担编排、分析和代码智能等跨切面任务。Sources: [strategy/nexus-strategy.md:57-70](../../../project-repos/agency-agents/strategy/nexus-strategy.md#L57-L70)
@@ -2215,6 +2234,7 @@ NEXUS 文档把 division 进一步映射成 pipeline 角色：Engineering 负责
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -2313,6 +2333,7 @@ NEXUS supports three deployment configurations:
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Discovery["Phase 0 Discovery"] --> Strategy["Phase 1 Strategy"]
@@ -2440,6 +2461,7 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心原则
 
 NEXUS 的原则包括：阶段质量门、上下文连续性、并行执行、证据优先、最多 3 次重试、单一事实源。这些原则把 agent 协作从“逐个唤起”变成受控流水线。Sources: [strategy/nexus-strategy.md:46-56](../../../project-repos/agency-agents/strategy/nexus-strategy.md#L46-L56)
@@ -2467,6 +2489,7 @@ NEXUS 的原则包括：阶段质量门、上下文连续性、并行执行、�
 
 <!-- source-snippets:end -->
 </details>
+
 ## Dev-QA Loop
 
 Phase 3 playbook 把构建阶段定义为按 RICE 排序的 backlog 循环：分配给开发 agent、实现、Evidence Collector 测试、PASS 则进入下一任务、FAIL 且尝试次数小于 3 则带反馈回到开发、大于等于 3 则升级给 Orchestrator。Sources: [strategy/playbooks/phase-3-build.md:19-43](../../../project-repos/agency-agents/strategy/playbooks/phase-3-build.md#L19-L43)
@@ -2508,6 +2531,7 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Task["Sprint task"] --> Dev["Developer Agent"]
@@ -2624,6 +2648,7 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 编排角色
 
 `specialized/agents-orchestrator.md` 把 Agents Orchestrator 定义为完整开发 workflow 的 pipeline manager：协调 handoff、维护状态、执行质量门、失败重试和升级。Sources: [specialized/agents-orchestrator.md:19-38](../../../project-repos/agency-agents/specialized/agents-orchestrator.md#L19-L38), [specialized/agents-orchestrator.md:39-52](../../../project-repos/agency-agents/specialized/agents-orchestrator.md#L39-L52), [specialized/agents-orchestrator.md:149-168](../../../project-repos/agency-agents/specialized/agents-orchestrator.md#L149-L168)
@@ -2704,6 +2729,7 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Agent 目录与专业分工](agent-catalog.md)
@@ -2785,6 +2811,7 @@ These examples answer the question: *"What does it actually look like when the f
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Mission["共享任务"] --> Product["Trend Researcher"]
@@ -2847,6 +2874,7 @@ Sources: [examples/README.md:13-40](../../../project-repos/agency-agents/example
 
 <!-- source-snippets:end -->
 </details>
+
 ## README 中的四类真实场景
 
 README 提供多种组合使用场景：Startup MVP、Marketing Campaign、Enterprise Feature Development、Paid Media Account Takeover 等，每个场景用一组 agent 覆盖从需求、设计、实现、增长到质量验证的不同环节。Sources: [README.md:385-423](../../../project-repos/agency-agents/README.md#L385-L423), [README.md:427-437](../../../project-repos/agency-agents/README.md#L427-L437)
@@ -2918,6 +2946,7 @@ README 提供多种组合使用场景：Startup MVP、Marketing Campaign、Enter
 
 <!-- source-snippets:end -->
 </details>
+
 ## NEXUS 快速入口
 
 Quickstart 提供可复制 prompt：Full 模式覆盖 Phase 0 到 Phase 6，Sprint 模式跳过市场验证从架构与 sprint planning 开始，Micro 模式提供 bug fix、marketing campaign、compliance audit、performance investigation、market research、UX improvement 等短流程。Sources: [strategy/QUICKSTART.md:21-42](../../../project-repos/agency-agents/strategy/QUICKSTART.md#L21-L42), [strategy/QUICKSTART.md:46-67](../../../project-repos/agency-agents/strategy/QUICKSTART.md#L46-L67), [strategy/QUICKSTART.md:71-119](../../../project-repos/agency-agents/strategy/QUICKSTART.md#L71-L119)
@@ -3037,6 +3066,7 @@ Evidence Collector verifies improvements.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 示例贡献要求
 
 examples 文档要求新示例体现多个 agent 围绕共享目标协作、展示 The Agency 能力广度，并具备真实应用价值。Sources: [examples/README.md:42-49](../../../project-repos/agency-agents/examples/README.md#L42-L49)
@@ -3060,6 +3090,7 @@ If you run an interesting multi-agent exercise, consider adding it here. Good ex
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [NEXUS 多 Agent 编排](nexus-orchestration.md)
@@ -3148,6 +3179,7 @@ If you add or modify agents, regenerate all integration files:
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Source["category/*.md"] --> Parse["frontmatter + body"]
@@ -3372,6 +3404,7 @@ convert_qwen() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 转换规则
 
 | 目标工具 | 输出形态 | 关键代码证据 |
@@ -3589,6 +3622,7 @@ HEREDOC
 
 <!-- source-snippets:end -->
 </details>
+
 ## OpenClaw 拆分逻辑
 
 OpenClaw 是最有结构化语义的转换目标：脚本读取每个 `##` 标题，如果标题包含 identity、learning memory、communication、style、critical rules 等关键词，就写入 `SOUL.md`；其他 mission、deliverables、workflow 进入 `AGENTS.md`；frontmatter 的 `emoji` 和 `vibe` 被用于 `IDENTITY.md`。Sources: [scripts/convert.sh:251-341](../../../project-repos/agency-agents/scripts/convert.sh#L251-L341)
@@ -3696,6 +3730,7 @@ HEREDOC
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [安装与工具集成](installation-and-tooling.md)
@@ -3807,6 +3842,7 @@ See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for f
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   User["用户"] --> Choose目标工具
@@ -4052,6 +4088,7 @@ install_kimi() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 支持工具
 
 `install.sh` 的 `ALL_TOOLS` 包含 `claude-code`、`copilot`、`antigravity`、`gemini-cli`、`opencode`、`openclaw`、`cursor`、`aider`、`windsurf`、`qwen`、`kimi`。Sources: [scripts/install.sh:104-110](../../../project-repos/agency-agents/scripts/install.sh#L104-L110)
@@ -4075,6 +4112,7 @@ AGENT_DIRS=(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Home-scoped 与 Project-scoped
 
 | 类型 | 工具 | 安装目标 |
@@ -4326,6 +4364,7 @@ This creates `.cursor/rules/<agent-slug>.mdc` files in your project.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 工具特例
 
 Gemini CLI 和 Qwen Code 在 fresh clone 后需要先运行 `convert.sh` 生成文件；OpenClaw 生成 workspaces 后安装，若 gateway 已运行则需要 restart。Sources: [integrations/README.md:32-39](../../../project-repos/agency-agents/integrations/README.md#L32-L39), [integrations/gemini-cli/README.md:6-14](../../../project-repos/agency-agents/integrations/gemini-cli/README.md#L6-L14), [integrations/openclaw/README.md:8-28](../../../project-repos/agency-agents/integrations/openclaw/README.md#L8-L28), [integrations/README.md:224-240](../../../project-repos/agency-agents/integrations/README.md#L224-L240)
@@ -4412,6 +4451,7 @@ See [qwen/README.md](qwen/README.md) for details.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [转换流水线](conversion-pipeline.md)
@@ -4453,6 +4493,7 @@ Localize agent `name` and `description` fields in YAML frontmatter to Simplified
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Install["install.sh --tool copilot"] --> Installed["installed agent files"]
@@ -4504,6 +4545,7 @@ powershell -ExecutionPolicy Bypass -File scripts/i18n/localize-agents-zh.ps1
 
 <!-- source-snippets:end -->
 </details>
+
 ## 文件职责
 
 | 文件 | 职责 |
@@ -4533,6 +4575,7 @@ Sources: [scripts/i18n/README.md:5-11](../../../project-repos/agency-agents/scri
 
 <!-- source-snippets:end -->
 </details>
+
 ## 处理范围
 
 默认脚本处理 `%USERPROFILE%\.githubgents\` 和 `%USERPROFILE%\.copilotgents\`，也可传入自定义路径；它只修改已安装副本，不修改源仓库，因此每次 `install.sh` 覆盖后需要重新运行。Sources: [scripts/i18n/README.md:21-29](../../../project-repos/agency-agents/scripts/i18n/README.md#L21-L29), [scripts/i18n/README.md:58-63](../../../project-repos/agency-agents/scripts/i18n/README.md#L58-L63)
@@ -4569,6 +4612,7 @@ powershell -File scripts/i18n/localize-agents-zh.ps1 -TargetDirs @("C:\custom\pa
 
 <!-- source-snippets:end -->
 </details>
+
 ## 与 DeepWiki skill 翻译不同
 
 本仓库没有 `SKILL.md` skill 源文件，因此本次 DeepWiki 没有生成 `<output-root>/skills/` 翻译树。这里的 i18n 是仓库自身面向已安装 Copilot agent 的 frontmatter 本地化机制。Sources: [00-repo-inventory.md:58-60](../00-repo-inventory.md#L58-L60), [scripts/i18n/README.md:31-39](../../../project-repos/agency-agents/scripts/i18n/README.md#L31-L39)
@@ -4602,6 +4646,7 @@ powershell -File scripts/i18n/localize-agents-zh.ps1 -TargetDirs @("C:\custom\pa
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [安装与工具集成](installation-and-tooling.md)
@@ -4745,6 +4790,7 @@ lint_file() {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   PR["Pull Request"] --> Changed["changed agent files"]
@@ -4803,12 +4849,12 @@ jobs:
       - name: Get changed agent files
         id: changed
         run: |
-          FILES=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- \
+          FILES=$(git diff --name-only --diff-filter=ACMR origin/$&lt;span v-pre>&#123;&#123;&lt;/span> github.base_ref &#125;&#125;...HEAD -- \
             'academic/**/*.md' 'design/**/*.md' 'engineering/**/*.md' 'finance/**/*.md' 'game-development/**/*.md' 'marketing/**/*.md' 'paid-media/**/*.md' 'sales/**/*.md' 'product/**/*.md' \
             'project-management/**/*.md' 'testing/**/*.md' 'support/**/*.md' \
             'spatial-computing/**/*.md' 'specialized/**/*.md')
           {
-            echo "files<<ENDOFLIST"
+            echo "files<&lt;ENDOFLIST"
             echo "$FILES"
             echo "ENDOFLIST"
           } >> "$GITHUB_OUTPUT"
@@ -4822,7 +4868,7 @@ jobs:
       - name: Run agent linter
         if: steps.changed.outputs.files != ''
         env:
-          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+          CHANGED_FILES: $&lt;span v-pre>&#123;&#123;&lt;/span> steps.changed.outputs.files &#125;&#125;
         run: |
           chmod +x scripts/lint-agents.sh
           ./scripts/lint-agents.sh $CHANGED_FILES
@@ -4845,6 +4891,7 @@ fi
 
 <!-- source-snippets:end -->
 </details>
+
 ## CI 工作流
 
 `.github/workflows/lint-agents.yml` 仅在 PR 修改 agent category 目录时触发，先通过 `git diff` 找出变更的 Markdown agent 文件，再对这些文件运行 `scripts/lint-agents.sh`。Sources: [github/workflows/lint-agents.yml:1-20](../../../project-repos/agency-agents/.github/workflows/lint-agents.yml#L1-L20), [github/workflows/lint-agents.yml:30-55](../../../project-repos/agency-agents/.github/workflows/lint-agents.yml#L30-L55)
@@ -4885,12 +4932,12 @@ on:
       - name: Get changed agent files
         id: changed
         run: |
-          FILES=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- \
+          FILES=$(git diff --name-only --diff-filter=ACMR origin/$&lt;span v-pre>&#123;&#123;&lt;/span> github.base_ref &#125;&#125;...HEAD -- \
             'academic/**/*.md' 'design/**/*.md' 'engineering/**/*.md' 'finance/**/*.md' 'game-development/**/*.md' 'marketing/**/*.md' 'paid-media/**/*.md' 'sales/**/*.md' 'product/**/*.md' \
             'project-management/**/*.md' 'testing/**/*.md' 'support/**/*.md' \
             'spatial-computing/**/*.md' 'specialized/**/*.md')
           {
-            echo "files<<ENDOFLIST"
+            echo "files<&lt;ENDOFLIST"
             echo "$FILES"
             echo "ENDOFLIST"
           } >> "$GITHUB_OUTPUT"
@@ -4904,7 +4951,7 @@ on:
       - name: Run agent linter
         if: steps.changed.outputs.files != ''
         env:
-          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+          CHANGED_FILES: $&lt;span v-pre>&#123;&#123;&lt;/span> steps.changed.outputs.files &#125;&#125;
         run: |
           chmod +x scripts/lint-agents.sh
           ./scripts/lint-agents.sh $CHANGED_FILES
@@ -4912,6 +4959,7 @@ on:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 贡献质量要求
 
 贡献指南要求新增 agent 在提交前真实测试、匹配模板、包含 2-3 个代码或模板示例、定义可衡量 success criteria、完成校对；同时建议大范围工具和架构变化先开 Discussion。Sources: [CONTRIBUTING.md:243-275](../../../project-repos/agency-agents/CONTRIBUTING.md#L243-L275), [CONTRIBUTING.md:276-318](../../../project-repos/agency-agents/CONTRIBUTING.md#L276-L318)
@@ -5009,6 +5057,7 @@ We love ambitious ideas — a [Discussion](https://github.com/msitarzewski/agenc
 
 <!-- source-snippets:end -->
 </details>
+
 ## 安全边界
 
 安全政策把 agent files 视为非执行 prompt definitions，并明确禁止存储 API keys、tokens、credentials；shell scripts 是可执行入口，需要合并前审查，且应报告 suspicious prompt injection。Sources: [SECURITY.md:13-24](../../../project-repos/agency-agents/SECURITY.md#L13-L24), [SECURITY.md:25-30](../../../project-repos/agency-agents/SECURITY.md#L25-L30)
@@ -5048,6 +5097,7 @@ This repository contains Markdown-based agent definitions and shell scripts for 
 
 <!-- source-snippets:end -->
 </details>
+
 ## 质量文化
 
 Testing division 中的 Reality Checker 代表仓库质量哲学：默认 `NEEDS WORK`，拒绝没有证据的 production ready 声明，要求截图、测试结果、用户旅程和性能数据支撑。Sources: [testing/testing-reality-checker.md:19-39](../../../project-repos/agency-agents/testing/testing-reality-checker.md#L19-L39), [testing/testing-reality-checker.md:122-141](../../../project-repos/agency-agents/testing/testing-reality-checker.md#L122-L141)
@@ -5085,7 +5135,7 @@ Testing division 中的 Reality Checker 代表仓库质量哲学：默认 `NEEDS
 
 #### `testing/testing-reality-checker.md:122-141`
 
-```markdown
+````markdown
 ## 🚫 Your "AUTOMATIC FAIL" Triggers
 
 ### Fantasy Assessment Indicators
@@ -5106,10 +5156,13 @@ Testing division 中的 Reality Checker 代表仓库质量哲学：默认 `NEEDS
 - Performance problems (>3 second load times)
 - Interactive elements not functioning
 
-```
+
+
+
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Agent 编写模型](agent-authoring-model.md)

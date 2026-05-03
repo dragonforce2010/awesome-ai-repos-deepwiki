@@ -239,6 +239,7 @@ export async function* query(
 
 <!-- source-snippets:end -->
 </details>
+
 ## QueryEngine 状态
 
 `QueryEngine` 内部持有 message history、累计 usage、默认模型、会话内模型 override、当前 permission mode、进入 plan mode 前的 mode、permission settings、session rules、AbortController 和 usage anchor。  
@@ -289,6 +290,7 @@ export class QueryEngine {
 
 <!-- source-snippets:end -->
 </details>
+
 | 状态 | 用途 |
 |------|------|
 | `messages` | 传给模型的 conversation history |
@@ -375,6 +377,7 @@ export class QueryEngine {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 输入分流
 
 `submitMessage()` 对空输入直接忽略；以 `/` 开头的输入先尝试 skill slash command 展开，匹配成功后写入可见 marker message，再把隐藏的 skill body 当作真实 prompt 重新进入普通提交；否则进入内置命令处理。普通文本则进入 `submitInternal()`。  
@@ -504,6 +507,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Input["submitMessage(input)"] --> Empty{"empty?"}
@@ -755,6 +759,7 @@ Sources: [src/core/queryEngine.ts:170-219](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## Turn 前处理
 
 进入模型调用前，`submitInternal()` 先构建预览 system prompt；如果已有历史，先执行 micro compaction，再按 token budget 触发 auto compaction 和 warning。之后根据当前 mode 注入 plan mode attachment 或 plan exit attachment，再追加用户消息。  
@@ -846,6 +851,7 @@ Sources: [src/core/queryEngine.ts:288-340](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 Plan mode attachment 是 user message，不是 system prompt 文本；第一次进入 plan mode 注入完整说明，后续每 5 个 human turn 以完整/简短提醒交替注入。  
 Sources: [src/context/planAttachments.ts:1-19](../../../project-repos/easy-agent/src/context/planAttachments.ts#L1-L19), [src/context/planAttachments.ts:23-70](../../../project-repos/easy-agent/src/context/planAttachments.ts#L23-L70), [src/context/planAttachments.ts:129-168](../../../project-repos/easy-agent/src/context/planAttachments.ts#L129-L168)
 
@@ -978,6 +984,7 @@ export function getPlanModeExitAttachment(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心 Agentic Loop
 
 `agenticLoop.query()` 的外层 while 最多执行 `MAX_TOOL_TURNS = 50` 次。每轮先检查 abort 和 token blocking limit，然后调用 `streamMessage()`。如果模型 stop reason 不是 `tool_use`，turn 完成；如果是 `tool_use`，就执行工具并把 tool_result message 追加到 history，继续下一轮。  
@@ -1117,6 +1124,7 @@ export type LoopTerminationReason =
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 stateDiagram-v2
   [*] --> Stream
@@ -1272,6 +1280,7 @@ Sources: [src/core/agenticLoop.ts:257-299](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## 工具执行与权限
 
 `runTools()` 从 assistant content blocks 中筛出 `tool_use`，通过 tool registry 查找工具，执行前调用 `checkPermission()`。deny 会直接生成 error tool_result；ask 会触发 `onPermissionRequest()`，用户拒绝同样生成 error tool_result，`allow_always` 会把 ruleHint 加入 session allow rules。  
@@ -1388,6 +1397,7 @@ export async function runTools(
 
 <!-- source-snippets:end -->
 </details>
+
 工具调用成功后，结果会按工具自己的 `maxResultSizeChars` 截断；非错误工具调用还会把 Read/Write/Edit/Glob 涉及的路径交给 conditional skill activation。  
 Sources: [src/core/agenticLoop.ts:191-213](../../../project-repos/easy-agent/src/core/agenticLoop.ts#L191-L213), [src/tools/Tool.ts:91-107](../../../project-repos/easy-agent/src/tools/Tool.ts#L91-L107)
 
@@ -1448,6 +1458,7 @@ export function toolToApiParam(tool: Tool): Anthropic.Tool {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Plan Mode 进出
 
 `EnterPlanMode` 会创建 plans 目录、设置 session permission mode 为 `plan`，并返回探索、写计划、退出的操作说明。`ExitPlanMode` 只允许在 plan mode 中调用，会读取或写入 plan 文件，把 `allowedPrompts` 转换为 session allow rules，然后恢复 default mode 并返回批准后的 plan 内容。  
@@ -1577,6 +1588,7 @@ Sources: [src/tools/enterPlanModeTool.ts:34-80](../../../project-repos/easy-agen
 
 <!-- source-snippets:end -->
 </details>
+
 `QueryEngine` 记录进入 plan 前的 mode；离开 plan 时恢复之前的 mode，并设置 `needsPlanModeExitAttachment`，让下一次普通提交知道已经恢复全工具权限。  
 Sources: [src/core/queryEngine.ts:113-129](../../../project-repos/easy-agent/src/core/queryEngine.ts#L113-L129), [src/core/queryEngine.ts:342-353](../../../project-repos/easy-agent/src/core/queryEngine.ts#L342-L353)
 
@@ -1626,6 +1638,7 @@ Sources: [src/core/queryEngine.ts:113-129](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## Slash Command 表面
 
 内置命令覆盖帮助、MCP、Skills、mode、tasks、clear、cost、model、history、compact。它们通过 `QueryEngineEvent` 传给 UI，不直接进模型，除非是 skill slash command 被展开成真实 user prompt。  
@@ -1890,6 +1903,7 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [模型通信与 Streaming](model-streaming.md)

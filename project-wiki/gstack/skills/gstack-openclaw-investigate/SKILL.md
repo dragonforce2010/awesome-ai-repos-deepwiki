@@ -24,7 +24,7 @@ OpenClaw 原生系统性调试技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: gstack-openclaw-investigate
 description: Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working.
@@ -50,7 +50,7 @@ Gather context before forming any hypothesis.
 
 3. **Check recent changes:**
    ```bash
-   git log --oneline -20 -- <affected-files>
+   git log --oneline -20 -- &lt;affected-files&gt;
    ```
    Was this working before? What changed? A regression means the root cause is in the diff.
 
@@ -159,6 +159,6 @@ Save the report to `memory/` with today's date so future sessions can reference 
   - DONE ... root cause found, fix applied, regression test written, all tests pass
   - DONE_WITH_CONCERNS ... fixed but cannot fully verify (e.g., intermittent bug, requires staging)
   - BLOCKED ... root cause unclear after investigation, escalated
-```
+````
 
 </details>

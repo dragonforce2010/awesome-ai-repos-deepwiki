@@ -112,6 +112,7 @@ The entire skill creation process follows RED-GREEN-REFACTOR.
 
 <!-- source-snippets:end -->
 </details>
+
 ### 何时创建技能
 
 **创建：**
@@ -171,6 +172,7 @@ skills/
 
 <!-- source-snippets:end -->
 </details>
+
 ### 技能目录结构
 
 ```text
@@ -236,6 +238,7 @@ description: Use when [specific triggering conditions and symptoms]
 
 <!-- source-snippets:end -->
 </details>
+
 ### 用子代理测试技能
 
 `testing-skills-with-subagents.md` 提供了使用子代理进行技能压力测试的详细方法：
@@ -381,6 +384,7 @@ C) Write tests now (30 min), then commit
 
 <!-- source-snippets:end -->
 </details>
+
 ## 版本管理
 
 ### bump-version.sh
@@ -388,7 +392,7 @@ C) Write tests now (30 min), then commit
 自动化版本号更新脚本，支持三种模式：
 
 ```bash
-./scripts/bump-version.sh <new-version>   # 更新所有声明文件到新版本
+./scripts/bump-version.sh &lt;new-version&gt;   # 更新所有声明文件到新版本
 ./scripts/bump-version.sh --check         # 报告当前版本（检测漂移）
 ./scripts/bump-version.sh --audit         # 检查 + grep 仓库查找遗漏的旧版本字符串
 ```
@@ -415,7 +419,7 @@ Sources: [scripts/bump-version.sh:1-100](../../../project-repos/superpowers/scri
 # with drift detection and repo-wide audit for missed files.
 #
 # Usage:
-#   bump-version.sh <new-version>   Bump all declared files to new version
+#   bump-version.sh &lt;new-version&gt;   Bump all declared files to new version
 #   bump-version.sh --check         Report current versions (detect drift)
 #   bump-version.sh --audit         Check + grep repo for old version strings
 #
@@ -452,7 +456,7 @@ write_json_field() {
 }
 
 # Read the list of declared files from config.
-# Outputs lines of "path<TAB>field"
+# Outputs lines of "path&lt;TAB&gt;field"
 declared_files() {
   jq -r '.files[] | "\(.path)\t\(.field)"' "$CONFIG"
 }
@@ -517,6 +521,7 @@ cmd_audit() {
 
 <!-- source-snippets:end -->
 </details>
+
 ### sync-to-codex-plugin.sh
 
 将 Superpowers 仓库同步到 `prime-radiant-inc/openai-codex-plugins` 仓库：
@@ -656,6 +661,7 @@ ignored_directory_has_tracked_descendants() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 贡献规范
 
 ### PR 要求
@@ -804,6 +810,7 @@ Before proposing changes to skill design, workflow philosophy, or architecture, 
 
 <!-- source-snippets:end -->
 </details>
+
 ### 新平台集成要求
 
 如果 PR 添加新平台（IDE、CLI 工具、代理运行器）支持，**必须包含端到端会话记录**。
@@ -865,6 +872,7 @@ Skills are not prose — they are code that shapes agent behavior. If you modify
 
 <!-- source-snippets:end -->
 </details>
+
 ### 技能变更要求
 
 技能是塑造代理行为的代码，不是散文。修改技能内容需要：
@@ -905,6 +913,7 @@ Before proposing changes to skill design, workflow philosophy, or architecture, 
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能体系](skills-system.md)

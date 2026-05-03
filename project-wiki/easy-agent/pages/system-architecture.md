@@ -254,6 +254,7 @@ export async function* query(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 分层视图
 
 ```mermaid
@@ -631,6 +632,7 @@ export function App({ model, permissionMode, shouldResume, resumeSessionId }: Ap
 
 <!-- source-snippets:end -->
 </details>
+
 ## 启动装配
 
 CLI 入口先加载环境变量，再处理 `--version`、`--help`、`--model`、`--resume`、`--plan`、`--auto`、`--permission-mode` 和 `--dump-system-prompt`。Skills 在渲染 system prompt 之前启动，因为 system prompt 会读取 skill registry；MCP 则以 fire-and-forget 的方式后台连接，避免慢 server 启动阻塞首帧 UI。  
@@ -753,6 +755,7 @@ Commands (in REPL):
 
 <!-- source-snippets:end -->
 </details>
+
 | 启动步骤 | 代码位置 | 目的 |
 |----------|----------|------|
 | `loadEnv()` | `src/entrypoint/cli.ts` | 加载 API 相关环境变量 |
@@ -844,6 +847,7 @@ loadEnv();
 
 <!-- source-snippets:end -->
 </details>
+
 ## 编排与核心循环边界
 
 `QueryEngine` 的状态包括 message history、usage、默认模型、会话内模型 override、当前权限模式、session allow rules、AbortController 和 token usage anchor。它会在每个用户提交前重建 system prompt，必要时执行 micro/full compaction，再调用 `agenticLoop.query()`。  
@@ -982,6 +986,7 @@ export class QueryEngine {
 
 <!-- source-snippets:end -->
 </details>
+
 `agenticLoop.query()` 是更低层的单轮循环：它用当前 messages 和 tools 发起 streaming 请求，收到 assistant message 后根据 stop reason 判断是否需要执行工具。如果 stop reason 是 `tool_use`，它执行 `runTools()`，把 tool_result 作为 user message 追加回去，然后继续下一轮。  
 Sources: [src/core/agenticLoop.ts:239-299](../../../project-repos/easy-agent/src/core/agenticLoop.ts#L239-L299), [src/core/agenticLoop.ts:349-399](../../../project-repos/easy-agent/src/core/agenticLoop.ts#L349-L399)
 
@@ -1114,6 +1119,7 @@ export async function* query(
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant U as User
@@ -1379,6 +1385,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
+
 ## 工具与扩展边界
 
 工具注册表由两部分组成：编译期内置工具数组和运行时 MCP 工具数组。`getAllTools()` 会合并两者并过滤 `isEnabled()`，`getToolsApiParams()` 会根据 plan mode 隐藏 `EnterPlanMode` 或 `ExitPlanMode`，但其他工具的模式限制交给权限层执行。  
@@ -1457,6 +1464,7 @@ export function getToolsApiParams(mode?: PermissionMode): Anthropic.Tool[] {
 
 <!-- source-snippets:end -->
 </details>
+
 System prompt 动态部分会合并环境、Git 状态、`AGENT.md`、项目 memory、session instructions 和 skills reminder。因此架构上，`context/` 是每轮 prompt 的上下文聚合层，而不是只存静态 prompt 文本。  
 Sources: [src/context/systemPrompt.ts:45-72](../../../project-repos/easy-agent/src/context/systemPrompt.ts#L45-L72), [src/context/systemPrompt.ts:95-140](../../../project-repos/easy-agent/src/context/systemPrompt.ts#L95-L140)
 
@@ -1551,6 +1559,7 @@ export async function buildSystemPrompt(options: BuildSystemPromptOptions): Prom
 
 <!-- source-snippets:end -->
 </details>
+
 ## 关键设计取舍
 
 | 取舍 | 当前实现 |
@@ -1814,6 +1823,7 @@ export function getToolsApiParams(mode?: PermissionMode): Anthropic.Tool[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [CLI 与终端 UI](cli-and-ui.md)

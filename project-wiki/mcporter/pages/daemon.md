@@ -179,6 +179,7 @@ function coerceLifecycle(raw: RawLifecycle): ServerLifecycle | undefined {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 客户端：KeepAliveRuntime
 
 `createKeepAliveRuntime(base, opts)` 在 [src/daemon/runtime-wrapper.ts:13-18]() 实现：
@@ -348,6 +349,7 @@ class KeepAliveRuntime implements Runtime {
 
 <!-- source-snippets:end -->
 </details>
+
 ## DaemonClient
 
 `DaemonClient`（[src/daemon/client.ts:52-271]()）是与 daemon 通信的入口。每个 `DaemonClient` 实例都绑定一组 `(socketPath, metadataPath)`，由 `resolveDaemonPaths(configPath)` 通过对 `configPath` 求 SHA-1 前 12 字符派生（[src/daemon/client.ts:43-50](), [src/daemon/client.ts:273-276]()）。**这意味着不同的主 config 路径对应不同的 daemon 实例**——切换 `--config` 不会污染默认 daemon。
@@ -583,6 +585,7 @@ function resolveCliEntry(): string | undefined {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Daemon 协议
 
 定义在 [src/daemon/protocol.ts:1-58]()：
@@ -677,6 +680,7 @@ export interface StatusResult {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Daemon Host 主循环
 
 `runDaemonHost(options)`（[src/daemon/host.ts:44-194]()）启动后做的事：
@@ -897,6 +901,7 @@ export async function evictIdleServers(
 
 <!-- source-snippets:end -->
 </details>
+
 ### 空闲清理
 
 `evictIdleServers`（[src/daemon/request-utils.ts:27-50]()）每 30s 跑一次：
@@ -943,11 +948,12 @@ export async function evictIdleServers(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 路径布局
 
 | 文件 | 默认位置 | 用途 |
 |------|----------|------|
-| socket | `~/.mcporter/daemon/daemon-<key>.sock`（Unix）<br>`\\.\pipe\mcporter-daemon-<key>`（Windows） | IPC 端点 |
+| socket | `~/.mcporter/daemon/daemon-<key>.sock`（Unix）&lt;br>`\\.\pipe\mcporter-daemon-<key>`（Windows） | IPC 端点 |
 | metadata | `~/.mcporter/daemon/daemon-<key>.json` | 含 `pid/startedAt/configLayers/socketPath/logPath` |
 | log | `~/.mcporter/daemon/daemon-<key>.log` | `--log` 启用时的 stdout/stderr 流 |
 
@@ -1001,6 +1007,7 @@ export function getDaemonDir(): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 日志策略
 
 `--log` / `--log-file` / `--log-servers` 三个 flag 共同决定 daemon 的日志行为，由 `resolveDaemonLoggingOptions` 解析（[src/cli/daemon-command.ts:220-249]()）。
@@ -1196,6 +1203,7 @@ export function formatError(error: unknown): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ## CLI 入口（再看一遍）
 
 `mcporter daemon start/stop/status/restart` 在 [src/cli/daemon-command.ts:26-138]() 的逻辑：
@@ -1362,6 +1370,7 @@ async function handleDaemonRestart(args: string[], options: DaemonCliOptions, cl
 
 <!-- source-snippets:end -->
 </details>
+
 ## 设计取舍
 
 - **shared runtime in daemon**：daemon 内部的 `Runtime` 与 CLI 进程的 `Runtime` 是不同实例，但**共享同一份 stdio 子进程**——chrome 浏览器、mobile-mcp 的设备会话等只活在 daemon 里，多个 agent 共用。
@@ -1537,6 +1546,7 @@ export function resolveDaemonPaths(configPath: string): DaemonPaths {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [运行时与传输层](runtime-transport.md)

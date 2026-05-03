@@ -238,6 +238,7 @@ Scholarly rigor for world-building, storytelling, and narrative design.
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Catalog["Agent 目录"] --> Eng["Engineering"]
@@ -559,6 +560,7 @@ Scholarly rigor for world-building, storytelling, and narrative design.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 分类规模
 
 本地盘点显示当前源码中主要分类文件数如下：Engineering 29、Marketing 30、Specialized 41、Game Development 20、Testing 8、Design 8、Sales 8、Paid Media 7、Support 6、Spatial Computing 6、Product 5、Finance 5、Academic 5。这个分布说明仓库重点覆盖软件工程、增长营销、专门业务职能和多 agent 编排。Sources: [00-repo-inventory.md:10-18](../00-repo-inventory.md#L10-L18), [README.md:75-381](../../../project-repos/agency-agents/README.md#L75-L381)
@@ -710,6 +712,7 @@ Growing your audience, one authentic interaction at a time.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 代表性 agent 类型
 
 | Agent | 分类 | 特征 |
@@ -772,6 +775,7 @@ You are **AgentsOrchestrator**, the autonomous pipeline manager who runs complet
 
 <!-- source-snippets:end -->
 </details>
+
 ## 目录与 NEXUS 的关系
 
 NEXUS 文档把 division 进一步映射成 pipeline 角色：Engineering 负责构建、Design 负责体验与品牌、Testing 负责证据化质量验证、Support 负责运营与合规，Specialized 承担编排、分析和代码智能等跨切面任务。Sources: [strategy/nexus-strategy.md:57-70](../../../project-repos/agency-agents/strategy/nexus-strategy.md#L57-L70)
@@ -802,6 +806,7 @@ NEXUS 文档把 division 进一步映射成 pipeline 角色：Engineering 负责
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

@@ -24,7 +24,7 @@ OpenClaw 原生每周工程复盘技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: gstack-openclaw-retro
 description: "Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and growth areas. Use when asked for weekly retro, what shipped this week, or engineering retrospective."
@@ -66,31 +66,31 @@ Run ALL of these git commands (they are independent):
 
 ```bash
 # All commits with timestamps, subject, hash, author, files changed
-git log origin/main --since="<window>" --format="%H|%aN|%ae|%ai|%s" --shortstat
+git log origin/main --since="&lt;window&gt;" --format="%H|%aN|%ae|%ai|%s" --shortstat
 
 # Per-commit test vs total LOC breakdown with author
-git log origin/main --since="<window>" --format="COMMIT:%H|%aN" --numstat
+git log origin/main --since="&lt;window&gt;" --format="COMMIT:%H|%aN" --numstat
 
 # Commit timestamps for session detection and hourly distribution
-git log origin/main --since="<window>" --format="%at|%aN|%ai|%s" | sort -n
+git log origin/main --since="&lt;window&gt;" --format="%at|%aN|%ai|%s" | sort -n
 
 # Files most frequently changed (hotspot analysis)
-git log origin/main --since="<window>" --format="" --name-only | grep -v '^$' | sort | uniq -c | sort -rn
+git log origin/main --since="&lt;window&gt;" --format="" --name-only | grep -v '^$' | sort | uniq -c | sort -rn
 
 # PR numbers from commit messages
-git log origin/main --since="<window>" --format="%s" | grep -oE '[#!][0-9]+' | sort -t'#' -k1 | uniq
+git log origin/main --since="&lt;window&gt;" --format="%s" | grep -oE '[#!][0-9]+' | sort -t'#' -k1 | uniq
 
 # Per-author file hotspots
-git log origin/main --since="<window>" --format="AUTHOR:%aN" --name-only
+git log origin/main --since="&lt;window&gt;" --format="AUTHOR:%aN" --name-only
 
 # Per-author commit counts
-git shortlog origin/main --since="<window>" -sn --no-merges
+git shortlog origin/main --since="&lt;window&gt;" -sn --no-merges
 
 # Test file count
 find . -name '*.test.*' -o -name '*.spec.*' -o -name '*_test.*' -o -name '*_spec.*' 2>/dev/null | grep -v node_modules | wc -l
 
 # Test files changed in window
-git log origin/main --since="<window>" --format="" --name-only | grep -E '\.(test|spec)\.' | sort -u | wc -l
+git log origin/main --since="&lt;window&gt;" --format="" --name-only | grep -E '\.(test|spec)\.' | sort -u | wc -l
 ```
 
 ---
@@ -245,7 +245,7 @@ Count consecutive days with at least 1 commit, going back from today:
 git log origin/main --format="%ad" --date=format:"%Y-%m-%d" | sort -u
 
 # Personal streak
-git log origin/main --author="<user_name>" --format="%ad" --date=format:"%Y-%m-%d" | sort -u
+git log origin/main --author="&lt;user_name&gt;" --format="%ad" --date=format:"%Y-%m-%d" | sort -u
 ```
 
 Display both:
@@ -324,6 +324,6 @@ When the user says "compare":
   - DONE ... retro generated, history saved
   - DONE_WITH_CONCERNS ... generated but missing data (e.g., no prior retros for comparison)
   - BLOCKED ... not in a git repo or no commits in window
-```
+````
 
 </details>

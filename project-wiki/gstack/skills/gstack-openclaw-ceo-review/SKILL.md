@@ -24,7 +24,7 @@ OpenClaw 原生 CEO 计划审查技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: gstack-openclaw-ceo-review
 description: Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan.
@@ -216,6 +216,6 @@ Save the summary to `memory/` for future reference.
   - DONE ... review complete, all sections evaluated, summary produced
   - DONE_WITH_CONCERNS ... reviewed but with unresolved issues
   - BLOCKED ... cannot review without additional context
-```
+````
 
 </details>

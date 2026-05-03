@@ -58,6 +58,7 @@ Sources: [tests/fixtures/](../../../project-repos/mcporter/tests/fixtures), [pac
 
 <!-- source-snippets:end -->
 </details>
+
 ## 测试入口与脚本
 
 `package.json` 暴露的命令：
@@ -153,6 +154,7 @@ process.exit(result.status ?? 1);
 
 <!-- source-snippets:end -->
 </details>
+
 ## CI 矩阵
 
 `.github/workflows/ci.yml` 配置极简但重要（[.github/workflows/ci.yml:1-31]()）：
@@ -199,7 +201,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: $&#123;&#123; matrix.os &#125;&#125;
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -242,6 +244,7 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 单元测试的几个亮点
 
 ### `cli-call-execution.test.ts`（348 行）
@@ -413,6 +416,7 @@ await new Promise((resolve, reject) => {
 
 <!-- source-snippets:end -->
 </details>
+
 ### `daemon.integration.test.ts`（175 行）
 
 真启 daemon（`runDaemonHost` foreground 模式 + 临时 socket / metadata 路径）→ 通过 `DaemonClient` 发请求 → 校验 status / callTool / closeServer / stop 行为闭环。这是验证私有 JSON 协议、stale config 检测、idle eviction 的端到端测试。
@@ -510,6 +514,7 @@ function parseCliJson(output: string): { instanceId: string; count: number } {
 
 <!-- source-snippets:end -->
 </details>
+
 ### `build-bun.test.ts`
 
 只有 16 行：`describe.skip` 包了一个真正调外部 `bun build` 的检查。它不在默认 CI 上跑（OS 矩阵不要求装 Bun），用作开发者本地手动验证。Bun 编译路径主要靠 `cli-generate-cli.integration.test.ts` 提供间接覆盖。
@@ -543,6 +548,7 @@ describe('build-bun entrypoint', () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ### Live 测试 `tests/live/deepwiki-live.test.ts`
 
 ```ts
@@ -630,6 +636,7 @@ describe.skipIf(Boolean(skipReason()))('deepwiki live', () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## helpers/runtime-test-helpers.ts
 
 `tests/helpers/runtime-test-helpers.ts` 提供 mock Transport / Logger / OAuthSession 与 fluent stub builder（如 `stubHttpDefinition` / `stubOAuthHttpDefinition` / `createPromotionRecorder`）。这是 `runtime/transport.ts` 与 `runtime/oauth.ts` 大量分支被覆盖的关键——单测不需要真打开浏览器或开 socket。
@@ -699,6 +706,7 @@ export function createPromotionRecorder() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 可观测性与排查工具
 
 mcporter 在不依赖外部 APM 的前提下提供 4 类内置开关，全部通过环境变量启用：
@@ -929,6 +937,7 @@ function destroyStream(stream: unknown): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 失败模式 & flake 治理
 
 仓库里几个值得记的事实：
@@ -1035,6 +1044,7 @@ Sources: [package.json:53-111](../../../project-repos/mcporter/package.json#L53-
 
 <!-- source-snippets:end -->
 </details>
+
 ## 本地执行清单
 
 最小化跑通的步骤：
@@ -1134,7 +1144,7 @@ Sources: [package.json:42-103](../../../project-repos/mcporter/package.json#L42-
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: $&#123;&#123; matrix.os &#125;&#125;
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -1154,6 +1164,7 @@ Sources: [package.json:42-103](../../../project-repos/mcporter/package.json#L42-
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)

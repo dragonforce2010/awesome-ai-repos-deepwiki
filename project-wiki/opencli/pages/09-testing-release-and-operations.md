@@ -1,6 +1,7 @@
 # 测试、发布与日常运维
 
-<details><summary>相关源文件</summary>
+<details>
+<summary>相关源文件</summary>
 
 - `package.json`
 - `.github/workflows/ci.yml`
@@ -30,6 +31,7 @@ Sources: [package.json:10-15](../../../project-repos/opencli/package.json#L10-L1
 
 <!-- source-snippets:end -->
 </details>
+
 ## CI 分层
 
 CI 触发条件包括 push、PR、每周一 smoke test 和手动触发。并发组按 ref 取消旧任务。  
@@ -46,6 +48,7 @@ Sources: [github/workflows/ci.yml:1-15](../../../project-repos/opencli/github/wo
 
 <!-- source-snippets:end -->
 </details>
+
 主要 job：
 
 | Job | 目的 |
@@ -85,6 +88,7 @@ Sources: [github/workflows/ci.yml:16-52](../../../project-repos/opencli/github/w
 
 <!-- source-snippets:end -->
 </details>
+
 ## Manifest 漂移门禁
 
 CI build job 在 Linux 上执行 `git diff --exit-code -- cli-manifest.json`。这保证源码 adapter 与提交的 manifest 同步，避免用户或 Agent 在安装包里看到过期命令清单。  
@@ -101,6 +105,7 @@ Sources: [github/workflows/ci.yml:41-51](../../../project-repos/opencli/github/w
 
 <!-- source-snippets:end -->
 </details>
+
 ## Release 流程
 
 Release 由 `v*` tag 触发。流程包括：
@@ -134,6 +139,7 @@ Sources: [github/workflows/release.yml:1-12](../../../project-repos/opencli/gith
 
 <!-- source-snippets:end -->
 </details>
+
 ## Doctor
 
 `opencli doctor` 诊断的是 Browser Bridge，不是所有 opencli 能力。它会检查 daemon 是否运行、扩展是否连接、版本是否兼容；`--live` 时会真正创建 BrowserBridge 并执行 `page.evaluate('1 + 1')`。  
@@ -158,6 +164,7 @@ Sources: [src/doctor.ts:73-88](../../../project-repos/opencli/src/doctor.ts#L73-
 
 <!-- source-snippets:end -->
 </details>
+
 渲染报告会显示 daemon、extension、connectivity、sessions 和 issues。doctor 对 extension 版本过旧、daemon 版本不一致、扩展未连接都有明确提示。  
 Sources: [src/doctor.ts:213-273](../../../project-repos/opencli/src/doctor.ts#L213-L273)
 
@@ -172,6 +179,7 @@ Sources: [src/doctor.ts:213-273](../../../project-repos/opencli/src/doctor.ts#L2
 
 <!-- source-snippets:end -->
 </details>
+
 ## Validate 与 Verify
 
 `validate` 校验当前 registry 的命令定义。`verify` 先运行 validate，再可选运行 smoke。smoke 会找项目根的 `tests/smoke`，通过 `npx vitest run tests/smoke/ --reporter=dot` 执行。  
@@ -196,6 +204,7 @@ Sources: [src/validate.ts:27-79](../../../project-repos/opencli/src/validate.ts#
 
 <!-- source-snippets:end -->
 </details>
+
 browser-level `opencli browser verify <site>/<command>` 是用户 adapter 端到端验证，它会执行 adapter 并用 fixture 校验输出，更适合 adapter 作者日常闭环。  
 Sources: [src/cli.ts:1561-1698](../../../project-repos/opencli/src/cli.ts#L1561-L1698)
 
@@ -210,6 +219,7 @@ Sources: [src/cli.ts:1561-1698](../../../project-repos/opencli/src/cli.ts#L1561-
 
 <!-- source-snippets:end -->
 </details>
+
 ## 运维排障地图
 
 ```mermaid
@@ -248,7 +258,7 @@ Sources: [src/doctor.ts:121-175](../../../project-repos/opencli/src/doctor.ts#L1
 ## Step 1：收集诊断上下文
 
 ```bash
-OPENCLI_DIAGNOSTIC=1 opencli <site> <command> [args...] 2>diagnostic.json
+OPENCLI_DIAGNOSTIC=1 opencli &lt;site&gt; &lt;command&gt; [args...] 2>diagnostic.json
 ```
 
 stderr 中会在 `___OPENCLI_DIAGNOSTIC___` 标记之间输出 `RepairContext`：

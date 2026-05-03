@@ -1,4 +1,5 @@
-<details><summary>相关源文件</summary>
+<details>
+<summary>相关源文件</summary>
 
 生成本页时使用的主要源文件：
 

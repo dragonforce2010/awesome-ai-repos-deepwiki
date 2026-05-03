@@ -47,15 +47,6 @@ try {
             }
           }
           
-          // Add Exports link if exists
-          wikiSidebar.push({
-            text: 'Exports',
-            collapsed: false,
-            items: [
-              { text: 'Full Wiki', link: `/${wikiId}/exports/full-wiki` }
-            ]
-          });
-          
           sidebar[`/${wikiId}/`] = wikiSidebar;
         } catch(e) {
           console.error(`Error parsing ${structurePath}`, e);
@@ -70,6 +61,12 @@ try {
 export default withMermaid(defineConfig({
   title: "DeepWiki",
   description: "Unified Documentation Workspace",
+  // Exclude heavy export files and skill files that contain raw code snippets
+  // which break the Vue template compiler
+  srcExclude: [
+    '**/exports/**',
+    '**/skills/**',
+  ],
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -83,7 +80,9 @@ export default withMermaid(defineConfig({
       provider: 'local'
     }
   },
+  ignoreDeadLinks: true,
   mermaid: {
     // Mermaid plugin configuration
   }
 }));
+

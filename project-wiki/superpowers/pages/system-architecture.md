@@ -291,6 +291,7 @@ If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and a skill says "alw
 
 <!-- source-snippets:end -->
 </details>
+
 ## 会话启动流程
 
 Superpowers 的核心机制是在会话启动时自动注入 `using-superpowers` 技能内容。这个过程通过平台原生的 SessionStart 钩子实现。
@@ -416,6 +417,7 @@ exit 0
 
 <!-- source-snippets:end -->
 </details>
+
 ### OpenCode 插件
 
 OpenCode 使用完全不同的集成方式——一个 ES 模块插件 `superpowers.js`，它通过两个钩子实现引导：
@@ -535,6 +537,7 @@ ${toolMapping}
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能发现与加载
 
 `using-superpowers` 技能是整个系统的入口点。它建立了技能使用的核心规则：
@@ -665,6 +668,7 @@ Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 跨平台钩子包装器
 
 `run-hook.cmd` 是一个巧妙的多语言脚本，同时兼容 Windows 批处理和 Unix shell：
@@ -734,6 +738,7 @@ exec bash "${SCRIPT_DIR}/${SCRIPT_NAME}" "$@"
 
 <!-- source-snippets:end -->
 </details>
+
 ## 插件清单结构
 
 每个平台有独立的插件清单文件，定义元数据和技能路径：
@@ -872,6 +877,7 @@ Sources: [claude-plugin/plugin.json:1-20](../../../project-repos/superpowers/.cl
 
 <!-- source-snippets:end -->
 </details>
+
 ## 旧版技能迁移检测
 
 `session-start` 脚本包含向后兼容检测：如果发现旧版技能目录 `~/.config/superpowers/skills` 存在，会输出警告提示用户迁移到 `~/.claude/skills`。这确保了从旧版 Superpowers 升级的用户不会因自定义技能丢失而困惑。
@@ -895,6 +901,7 @@ fi
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [多平台集成](multi-platform-integration.md)

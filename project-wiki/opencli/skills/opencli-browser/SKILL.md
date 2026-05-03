@@ -29,7 +29,7 @@ opencli doctor
 1. **selector-first target contract**：每个交互命令的 `<target>` 要么是 `state/find` 里的数字 ref，要么是 CSS selector。CSS 多匹配时用 `--nth <n>`。
 2. **每个 envelope 都报告 `matches_n` 和 `match_level`**：`exact`、`stable`、`reidentified`。CLI 会帮你处理中等 DOM 漂移，但你要读置信度。
 3. **先拿紧凑输出，需要时再取完整 payload**：`state` 是预算受控快照；`get html --as json` 支持预算；`network` 默认给 shape preview，再用 `--detail <key>` 取 body。
-4. **结构化错误可机读**：失败时返回 `{error: {code, message, hint?, candidates?}}`。按 `code` 分支，不要解析自然语言 message。
+4. **结构化错误可机读**：失败时返回 `{error: {code, message, hint?, candidates?&#125;&#125;`。按 `code` 分支，不要解析自然语言 message。
 
 ## 关键规则
 

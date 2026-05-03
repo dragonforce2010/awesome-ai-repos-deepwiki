@@ -24,7 +24,7 @@ description: 组合 careful 与 freeze 的完整安全模式。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: guard
 version: 0.1.0
@@ -88,7 +88,7 @@ Once the user provides a directory path:
 
 1. Resolve it to an absolute path:
 ```bash
-FREEZE_DIR=$(cd "<user-provided-path>" 2>/dev/null && pwd)
+FREEZE_DIR=$(cd "&lt;user-provided-path&gt;" 2>/dev/null && pwd)
 echo "$FREEZE_DIR"
 ```
 
@@ -111,6 +111,6 @@ Tell the user:
 
 See `/careful` for the full list of destructive command patterns and safe exceptions.
 See `/freeze` for how edit boundary enforcement works.
-```
+````
 
 </details>

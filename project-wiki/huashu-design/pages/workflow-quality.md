@@ -67,11 +67,11 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 -->
 
 <!-- 然后是带placeholder的结构 -->
-<section class="hero">
-  <h1>[主标题位 - 等用户提供]</h1>
-  <p>[副标题位]</p>
-  <div class="cta-placeholder">[CTA按钮]</div>
-</section>
+&lt;section class="hero"&gt;
+  &lt;h1>[主标题位 - 等用户提供]&lt;/h1>
+  &lt;p>[副标题位]&lt;/p>
+  &lt;div class="cta-placeholder">[CTA按钮]&lt;/div>
+&lt;/section&gt;
 ```
 
 **保存 → show用户 → 等反馈再走下一步**。
@@ -155,6 +155,7 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 <!-- source-snippets:end -->
 </details>
+
 ## Junior Designer 关系
 
 skill 将 agent 定义为用户的 junior designer，用户是 manager。它要求一次性列出问题让用户批量回答，不要一问一答；早期 HTML 要写 assumptions、reasoning 和 placeholders，并在成本最低时 show 给用户。Sources: [references/workflow.md:1-18](../../../project-repos/huashu-design/references/workflow.md#L1-L18), [references/workflow.md:70-130](../../../project-repos/huashu-design/references/workflow.md#L70-L130), [SKILL.md:298-305](../../../project-repos/huashu-design/SKILL.md#L298-L305)
@@ -243,11 +244,11 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 -->
 
 <!-- 然后是带placeholder的结构 -->
-<section class="hero">
-  <h1>[主标题位 - 等用户提供]</h1>
-  <p>[副标题位]</p>
-  <div class="cta-placeholder">[CTA按钮]</div>
-</section>
+&lt;section class="hero"&gt;
+  &lt;h1>[主标题位 - 等用户提供]&lt;/h1>
+  &lt;p>[副标题位]&lt;/p>
+  &lt;div class="cta-placeholder">[CTA按钮]&lt;/div>
+&lt;/section&gt;
 ```
 
 **保存 → show用户 → 等反馈再走下一步**。
@@ -268,6 +269,7 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A["问题清单"] --> B["设计系统口头确认"]
@@ -366,6 +368,7 @@ Caveats + next steps，结束。
 
 <!-- source-snippets:end -->
 </details>
+
 ## 反 AI slop
 
 `content-guidelines.md` 列出视觉、字体、色彩、layout 和内容层面的黑名单：激进紫色渐变、emoji 装饰、圆角卡片加左 border、SVG 手画 imagery、编造 stats/quote、过度 bento 和模板化 landing page。正向策略是使用真实素材、品牌色或已知配色系统、明确字体配对、CSS Grid 和可解释的系统。Sources: [references/content-guidelines.md:5-111](../../../project-repos/huashu-design/references/content-guidelines.md#L5-L111), [references/content-guidelines.md:112-149](../../../project-repos/huashu-design/references/content-guidelines.md#L112-L149), [SKILL.md:326-369](../../../project-repos/huashu-design/SKILL.md#L326-L369)
@@ -581,6 +584,7 @@ Asymmetric、不同大小的cards、有的带image有的只有文字、有的跨
 
 <!-- source-snippets:end -->
 </details>
+
 ## 异常处理
 
 `SKILL.md` 为常见异常提供 fallback：用户拒绝回答就用 best judgment 做主方案加差异变体并标注 assumption；context 矛盾时停下让用户选择；Starter component 失败时查 `react-setup.md` 或降级纯 HTML/CSS；时间紧迫时跳过 Junior pass 但标注未经 early validation。Sources: [SKILL.md:658-672](../../../project-repos/huashu-design/SKILL.md#L658-L672)
@@ -612,6 +616,7 @@ Asymmetric、不同大小的cards、有的带image有的只有文字、有的跨
 
 <!-- source-snippets:end -->
 </details>
+
 ## 清洁边界
 
 `.gitignore` 忽略 `.video-tmp-*`、个人素材索引、验证截图和临时脚本，说明仓库预期生成中间产物，但不应把录制临时文件、个人隐私数据和验证残留纳入分发。Sources: [gitignore:1-23](../../../project-repos/huashu-design/gitignore#L1-L23)
@@ -627,6 +632,7 @@ Asymmetric、不同大小的cards、有的带image有的只有文字、有的跨
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Skill 编排与主提示词](skill-orchestration.md)

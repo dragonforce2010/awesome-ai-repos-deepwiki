@@ -77,6 +77,7 @@ program.parseAsync(process.argv);
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令注册图
 
 ```mermaid
@@ -120,6 +121,7 @@ program.parseAsync(process.argv);
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令职责
 
 | 命令 | 注册位置 | 主要职责 | 外部依赖 |
@@ -337,6 +339,7 @@ export function registerShowDoc(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 初始化命令
 
 `runInit` 先检查 `lark-cli --version`，检查失败就提示安装官方 CLI 并登录；之后加载路径配置，创建 memory/raw 目录，在配置文件不存在时写入空白配置，最后初始化 `raw.db` schema。Sources: [src/commands/init.ts:18-34](../../../project-repos/lark-context/src/commands/init.ts#L18-L34), [src/commands/init.ts:36-53](../../../project-repos/lark-context/src/commands/init.ts#L36-L53)
@@ -393,6 +396,7 @@ export async function runInit(opts: InitOpts = {}): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A["lark-context init"] --> B{"checkLarkCli?"}
@@ -448,6 +452,7 @@ export async function runInit(opts: InitOpts = {}): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 群白名单命令
 
 `groups add` 会解析配置、要求 DB 已初始化、决定 alias、拒绝重复 alias、保存 YAML，并 upsert `chats` 表。`groups rm` 从 YAML 删除该 alias，同时把 DB 中对应 chat 标为 disabled，而不是删除历史消息。Sources: [src/commands/groups.ts:31-58](../../../project-repos/lark-context/src/commands/groups.ts#L31-L58), [src/commands/groups.ts:73-90](../../../project-repos/lark-context/src/commands/groups.ts#L73-L90)
@@ -515,6 +520,7 @@ export async function runRm(opts: RmOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 `list-groups` 则不读本地白名单，它调用官方 CLI 列出用户所在群，默认输出表格，`--json` 输出原始 items 数组。Sources: [src/commands/listGroups.ts:9-44](../../../project-repos/lark-context/src/commands/listGroups.ts#L9-L44)
 
 <details class="source-snippets">
@@ -565,6 +571,7 @@ export async function runListGroups(opts: ListGroupsOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 数据命令的错误出口
 
 每个注册函数都把命令体包在 `try/catch` 中，出错时写 stderr 并 `process.exit(1)`。业务函数本身用抛错表达错误，这让测试能直接断言 `runXxx` 的异常，而 CLI 运行时能转成标准非零退出。Sources: [src/commands/init.ts:60-66](../../../project-repos/lark-context/src/commands/init.ts#L60-L66), [src/commands/groups.ts:101-129](../../../project-repos/lark-context/src/commands/groups.ts#L101-L129), [src/commands/pull.ts:460-470](../../../project-repos/lark-context/src/commands/pull.ts#L460-L470), [src/commands/show.ts:162-181](../../../project-repos/lark-context/src/commands/show.ts#L162-L181)
@@ -663,6 +670,7 @@ export function registerShowDoc(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Cmd["Commander action"] --> Run["runXxx"]
@@ -704,6 +712,7 @@ Sources: [src/commands/ingestDoc.ts:109-115](../../../project-repos/lark-context
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)

@@ -1,6 +1,10 @@
 node_modules/
 project-repos/
 .DS_Store
-.vitepress/cache/
-dist/
-.env
+*.log
+*.html
+*.mjs
+*.py
+project-wiki/.vitepress/dist/
+project-wiki/.vitepress/cache/
+project-wiki/test-vue-compile.md

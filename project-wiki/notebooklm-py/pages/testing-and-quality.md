@@ -219,6 +219,7 @@ Follow the existing commit style: `feat(cli): ...`, `fix(cli): ...`, `refactor(t
 
 <!-- source-snippets:end -->
 </details>
+
 ## VCR 录制机制
 
 集成测试使用 VCR.py 录制和回放 HTTP 交互：
@@ -242,6 +243,7 @@ Sources: [tests/cassettes/](../../../project-repos/notebooklm-py/tests/cassettes
 
 <!-- source-snippets:end -->
 </details>
+
 ## 测试配置
 
 ```toml
@@ -323,6 +325,7 @@ strict_optional = true
 
 <!-- source-snippets:end -->
 </details>
+
 ## 质量工具链
 
 | 工具 | 用途 | 配置 |
@@ -373,6 +376,7 @@ indent-style = "space"
 
 <!-- source-snippets:end -->
 </details>
+
 ## CI 测试矩阵
 
 ```yaml
@@ -406,7 +410,7 @@ on:
     branches: [main]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: $&#123;&#123; github.workflow &#125;&#125;-$&#123;&#123; github.ref &#125;&#125;
   cancel-in-progress: true
 
 jobs:
@@ -437,8 +441,8 @@ jobs:
       run: pytest tests/e2e --collect-only -q
 
   test:
-    name: Test (${{ matrix.os }}, Python ${{ matrix.python-version }})
-    runs-on: ${{ matrix.os }}
+    name: Test ($&#123;&#123; matrix.os &#125;&#125;, Python $&#123;&#123; matrix.python-version &#125;&#125;)
+    runs-on: $&#123;&#123; matrix.os &#125;&#125;
     needs: quality
     strategy:
       fail-fast: false
@@ -449,10 +453,10 @@ jobs:
     steps:
     - uses: actions/checkout@v6
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python $&#123;&#123; matrix.python-version &#125;&#125;
       uses: actions/setup-python@v6
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: $&#123;&#123; matrix.python-version &#125;&#125;
         cache: 'pip'
 
     - name: Install dependencies
@@ -472,7 +476,7 @@ jobs:
         path: |
           ~/.cache/ms-playwright
           ~/AppData/Local/ms-playwright
-        key: playwright-${{ matrix.os }}-${{ steps.playwright-version.outputs.version }}
+        key: playwright-$&#123;&#123; matrix.os &#125;&#125;-$&#123;&#123; steps.playwright-version.outputs.version &#125;&#125;
 
     - name: Install Playwright browsers
       run: playwright install chromium
@@ -487,6 +491,7 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
+
 ## E2E 测试
 
 E2E 测试需要真实认证和测试笔记本：
@@ -512,6 +517,7 @@ Sources: [tests/e2e/](../../../project-repos/notebooklm-py/tests/e2e)
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

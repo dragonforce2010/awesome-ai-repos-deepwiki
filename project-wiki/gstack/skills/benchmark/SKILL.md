@@ -24,7 +24,7 @@ description: 基于 Browse daemon 的网页性能回归检测技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: benchmark
 preamble-tier: 1
@@ -67,7 +67,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -99,7 +99,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -359,7 +359,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -531,7 +531,7 @@ git diff $(gh pr view --json baseRefName -q .baseRefName 2>/dev/null || gh repo 
 For each page, collect comprehensive performance metrics:
 
 ```bash
-$B goto <page-url>
+$B goto &lt;page-url&gt;
 $B perf
 ```
 
@@ -571,9 +571,9 @@ Save metrics to baseline file:
 
 ```json
 {
-  "url": "<url>",
-  "timestamp": "<ISO>",
-  "branch": "<branch>",
+  "url": "&lt;url&gt;",
+  "timestamp": "&lt;ISO&gt;",
+  "branch": "&lt;branch&gt;",
   "pages": {
     "/": {
       "ttfb_ms": 120,
@@ -702,6 +702,6 @@ Write to `.gstack/benchmark-reports/{date}-benchmark.md` and `.gstack/benchmark-
 - **Third-party scripts are context.** Flag them, but the user can't fix Google Analytics being slow. Focus recommendations on first-party resources.
 - **Bundle size is the leading indicator.** Load time varies with network. Bundle size is deterministic. Track it religiously.
 - **Read-only.** Produce the report. Don't modify code unless explicitly asked.
-```
+````
 
 </details>

@@ -77,6 +77,7 @@ If you add or modify agents, regenerate all integration files:
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Source["category/*.md"] --> Parse["frontmatter + body"]
@@ -301,6 +302,7 @@ convert_qwen() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 转换规则
 
 | 目标工具 | 输出形态 | 关键代码证据 |
@@ -518,6 +520,7 @@ HEREDOC
 
 <!-- source-snippets:end -->
 </details>
+
 ## OpenClaw 拆分逻辑
 
 OpenClaw 是最有结构化语义的转换目标：脚本读取每个 `##` 标题，如果标题包含 identity、learning memory、communication、style、critical rules 等关键词，就写入 `SOUL.md`；其他 mission、deliverables、workflow 进入 `AGENTS.md`；frontmatter 的 `emoji` 和 `vibe` 被用于 `IDENTITY.md`。Sources: [scripts/convert.sh:251-341](../../../project-repos/agency-agents/scripts/convert.sh#L251-L341)
@@ -625,6 +628,7 @@ HEREDOC
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [安装与工具集成](installation-and-tooling.md)

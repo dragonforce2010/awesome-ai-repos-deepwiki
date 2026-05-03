@@ -24,7 +24,7 @@ description: 清除 freeze 边界，恢复全局编辑权限。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: unfreeze
 version: 0.1.0
@@ -69,6 +69,6 @@ fi
 Tell the user the result. Note that `/freeze` hooks are still registered for the
 session — they will just allow everything since no state file exists. To re-freeze,
 run `/freeze` again.
-```
+````
 
 </details>

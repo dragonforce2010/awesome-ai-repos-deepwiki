@@ -103,7 +103,7 @@ mcporter/
 
 ## 来源
 
-- 仓库：<https://github.com/steipete/mcporter.git>
+- 仓库：&lt;https://github.com/steipete/mcporter.git&gt;
 - 分支：`main`
 - 提交：`324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09`（"build: require node 24 and tsgo"）
 - 本地路径：`/Users/bytedance/workspace/deepwiki/project-repos/mcporter`

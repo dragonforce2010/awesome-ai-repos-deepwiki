@@ -24,7 +24,7 @@ description: 检测 base、测试、审查、 bump、提交、推送和创建 PR
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: ship
 preamble-tier: 4
@@ -71,7 +71,7 @@ _SKILL_PREFIX=$(~/.claude/skills/gstack/bin/gstack-config get skill_prefix 2>/de
 echo "PROACTIVE: $_PROACTIVE"
 echo "PROACTIVE_PROMPTED: $_PROACTIVE_PROMPTED"
 echo "SKILL_PREFIX: $_SKILL_PREFIX"
-source <(~/.claude/skills/gstack/bin/gstack-repo-mode 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-repo-mode 2&gt;/dev/null) || true
 REPO_MODE=${REPO_MODE:-unknown}
 echo "REPO_MODE: $REPO_MODE"
 _LAKE_SEEN=$([ -f ~/.gstack/.completeness-intro-seen ] && echo "yes" || echo "no")
@@ -103,7 +103,7 @@ done
 eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)" 2>/dev/null || true
 _LEARN_FILE="${GSTACK_HOME:-$HOME/.gstack}/projects/${SLUG:-unknown}/learnings.jsonl"
 if [ -f "$_LEARN_FILE" ]; then
-  _LEARN_COUNT=$(wc -l < "$_LEARN_FILE" 2>/dev/null | tr -d ' ')
+  _LEARN_COUNT=$(wc -l &lt; "$_LEARN_FILE" 2&gt;/dev/null | tr -d ' ')
   echo "LEARNINGS: $_LEARN_COUNT entries loaded"
   if [ "$_LEARN_COUNT" -gt 5 ] 2>/dev/null; then
     ~/.claude/skills/gstack/bin/gstack-learnings-search --limit 3 2>/dev/null || true
@@ -308,20 +308,20 @@ AI orchestrator (e.g., OpenClaw). In spawned sessions:
 Every AskUserQuestion is a decision brief and must be sent as tool_use, not prose.
 
 ```
-D<N> — <one-line question title>
-Project/branch/task: <1 short grounding sentence using _BRANCH>
-ELI10: <plain English a 16-year-old could follow, 2-4 sentences, name the stakes>
-Stakes if we pick wrong: <one sentence on what breaks, what user sees, what's lost>
-Recommendation: <choice> because <one-line reason>
+D&lt;N&gt; — &lt;one-line question title&gt;
+Project/branch/task: &lt;1 short grounding sentence using _BRANCH&gt;
+ELI10: &lt;plain English a 16-year-old could follow, 2-4 sentences, name the stakes&gt;
+Stakes if we pick wrong: &lt;one sentence on what breaks, what user sees, what's lost&gt;
+Recommendation: &lt;choice&gt; because &lt;one-line reason&gt;
 Completeness: A=X/10, B=Y/10   (or: Note: options differ in kind, not coverage — no completeness score)
 Pros / cons:
-A) <option label> (recommended)
-  ✅ <pro — concrete, observable, ≥40 chars>
-  ❌ <con — honest, ≥40 chars>
-B) <option label>
-  ✅ <pro>
-  ❌ <con>
-Net: <one-line synthesis of what you're actually trading off>
+A) &lt;option label&gt; (recommended)
+  ✅ &lt;pro — concrete, observable, ≥40 chars&gt;
+  ❌ &lt;con — honest, ≥40 chars&gt;
+B) &lt;option label&gt;
+  ✅ &lt;pro&gt;
+  ❌ &lt;con&gt;
+Net: &lt;one-line synthesis of what you're actually trading off&gt;
 ```
 
 D-numbering: first question in a skill invocation is `D1`; increment yourself. This is a model-level instruction, not a runtime counter.
@@ -412,7 +412,7 @@ After answer:
 
 ```bash
 # Chosen mode: full | artifacts-only | off
-"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode <choice>
+"$_BRAIN_CONFIG_BIN" set gbrain_sync_mode &lt;choice&gt;
 "$_BRAIN_CONFIG_BIN" set gbrain_sync_mode_prompted true
 ```
 
@@ -596,13 +596,13 @@ Commit after new intentional files, completed functions/modules, verified bug fi
 Commit format:
 
 ```
-WIP: <concise description of what changed>
+WIP: &lt;concise description of what changed&gt;
 
 [gstack-context]
-Decisions: <key choices made this step>
-Remaining: <what's left in the logical unit>
-Tried: <failed approaches worth recording> (omit if none)
-Skill: </skill-name-if-running>
+Decisions: &lt;key choices made this step&gt;
+Remaining: &lt;what's left in the logical unit&gt;
+Tried: &lt;failed approaches worth recording&gt; (omit if none)
+Skill: &lt;/skill-name-if-running&gt;
 [/gstack-context]
 ```
 
@@ -624,7 +624,7 @@ Before each AskUserQuestion, choose `question_id` from `scripts/question-registr
 
 After answer, log best-effort:
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"ship","question_id":"<id>","question_summary":"<short>","category":"<approval|clarification|routing|cherry-pick|feedback-loop>","door_type":"<one-way|two-way>","options_count":N,"user_choice":"<key>","recommended":"<key>","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
+~/.claude/skills/gstack/bin/gstack-question-log '{"skill":"ship","question_id":"&lt;id&gt;","question_summary":"&lt;short&gt;","category":"&lt;approval|clarification|routing|cherry-pick|feedback-loop&gt;","door_type":"&lt;one-way|two-way&gt;","options_count":N,"user_choice":"&lt;key&gt;","recommended":"&lt;key&gt;","session_id":"'"$_SESSION_ID"'"}' 2>/dev/null || true
 ```
 
 For two-way questions, offer: "Tune this question? Reply `tune: never-ask`, `tune: always-ask`, or free-form."
@@ -633,7 +633,7 @@ User-origin gate (profile-poisoning defense): write tune events ONLY when `tune:
 
 Write (only after confirmation for free-form):
 ```bash
-~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"<id>","preference":"<pref>","source":"inline-user","free_text":"<optional original words>"}'
+~/.claude/skills/gstack/bin/gstack-question-preference --write '{"question_id":"&lt;id&gt;","preference":"&lt;pref&gt;","source":"inline-user","free_text":"&lt;optional original words&gt;"}'
 ```
 
 Exit code 2 = rejected as not user-originated; do not retry. On success: "Set `<id>` → `<preference>`. Active immediately."
@@ -873,7 +873,7 @@ service with existing deployment — verify that a distribution pipeline exists.
 
 1. Check if the diff adds a new `cmd/` directory, `main.go`, or `bin/` entry point:
    ```bash
-   git diff origin/<base> --name-only | grep -E '(cmd/.*/main\.go|bin/|Cargo\.toml|setup\.py|package\.json)' | head -5
+   git diff origin/&lt;base&gt; --name-only | grep -E '(cmd/.*/main\.go|bin/|Cargo\.toml|setup\.py|package\.json)' | head -5
    ```
 
 2. If new artifact detected, check for a release workflow:
@@ -899,7 +899,7 @@ service with existing deployment — verify that a distribution pipeline exists.
 Fetch and merge the base branch into the feature branch so tests run against the merged state:
 
 ```bash
-git fetch origin <base> && git merge origin/<base> --no-edit
+git fetch origin &lt;base&gt; && git merge origin/&lt;base&gt; --no-edit
 ```
 
 **If there are merge conflicts:** Try to auto-resolve if they are simple (VERSION, schema.rb, CHANGELOG ordering). If conflicts are complex or ambiguous, **STOP** and show them.
@@ -1094,7 +1094,7 @@ For each failing test:
 
 1. **Get the files changed on this branch:**
    ```bash
-   git diff origin/<base>...HEAD --name-only
+   git diff origin/&lt;base&gt;...HEAD --name-only
    ```
 
 2. **Classify the failure:**
@@ -1161,25 +1161,25 @@ Use AskUserQuestion:
 - Find who likely broke it. Check BOTH the test file AND the production code it tests:
   ```bash
   # Who last touched the failing test?
-  git log --format="%an (%ae)" -1 -- <failing-test-file>
+  git log --format="%an (%ae)" -1 -- &lt;failing-test-file&gt;
   # Who last touched the production code the test covers? (often the actual breaker)
-  git log --format="%an (%ae)" -1 -- <source-file-under-test>
+  git log --format="%an (%ae)" -1 -- &lt;source-file-under-test&gt;
   ```
   If these are different people, prefer the production code author — they likely introduced the regression.
 - Create an issue assigned to that person (use the platform detected in Step 0):
   - **If GitHub:**
     ```bash
     gh issue create \
-      --title "Pre-existing test failure: <test-name>" \
-      --body "Found failing on branch <current-branch>. Failure is pre-existing.\n\n**Error:**\n```\n<first 10 lines>\n```\n\n**Last modified by:** <author>\n**Noticed by:** gstack /ship on <date>" \
-      --assignee "<github-username>"
+      --title "Pre-existing test failure: &lt;test-name&gt;" \
+      --body "Found failing on branch &lt;current-branch&gt;. Failure is pre-existing.\n\n**Error:**\n```\n<first 10 lines>\n```\n\n**Last modified by:** &lt;author&gt;\n**Noticed by:** gstack /ship on &lt;date&gt;" \
+      --assignee "&lt;github-username&gt;"
     ```
   - **If GitLab:**
     ```bash
     glab issue create \
-      -t "Pre-existing test failure: <test-name>" \
-      -d "Found failing on branch <current-branch>. Failure is pre-existing.\n\n**Error:**\n```\n<first 10 lines>\n```\n\n**Last modified by:** <author>\n**Noticed by:** gstack /ship on <date>" \
-      -a "<gitlab-username>"
+      -t "Pre-existing test failure: &lt;test-name&gt;" \
+      -d "Found failing on branch &lt;current-branch&gt;. Failure is pre-existing.\n\n**Error:**\n```\n<first 10 lines>\n```\n\n**Last modified by:** &lt;author&gt;\n**Noticed by:** gstack /ship on &lt;date&gt;" \
+      -a "&lt;gitlab-username&gt;"
     ```
 - If neither CLI is available or `--assignee`/`-a` fails (user not in org, etc.), create the issue without assignee and note who should look at it in the body.
 - Continue with the workflow.
@@ -1201,7 +1201,7 @@ Evals are mandatory when prompt-related files change. Skip this step entirely if
 **1. Check if the diff touches prompt-related files:**
 
 ```bash
-git diff origin/<base> --name-only
+git diff origin/&lt;base&gt; --name-only
 ```
 
 Match against these patterns (from CLAUDE.md):
@@ -1235,7 +1235,7 @@ Map runner → test file: `post_generation_eval_runner.rb` → `post_generation_
 `/ship` is a pre-merge gate, so always use full tier (Sonnet structural + Opus persona judges).
 
 ```bash
-EVAL_JUDGE_TIER=full EVAL_VERBOSE=1 bin/test-lane --eval test/evals/<suite>_eval_test.rb 2>&1 | tee /tmp/ship_evals.txt
+EVAL_JUDGE_TIER=full EVAL_VERBOSE=1 bin/test-lane --eval test/evals/&lt;suite&gt;_eval_test.rb 2>&1 | tee /tmp/ship_evals.txt
 ```
 
 If multiple suites need to run, run them sequentially (each needs a test lane). If the first suite fails, stop immediately — don't burn API cost on remaining suites.
@@ -1828,7 +1828,7 @@ higher confidence.
 Check if the diff touches frontend files using `gstack-diff-scope`:
 
 ```bash
-source <(~/.claude/skills/gstack/bin/gstack-diff-scope <base> 2>/dev/null)
+source &lt;(~/.claude/skills/gstack/bin/gstack-diff-scope &lt;base&gt; 2&gt;/dev/null)
 ```
 
 **If `SCOPE_FRONTEND=false`:** Skip design review silently. No output.
@@ -1867,7 +1867,7 @@ If Codex is available, run a lightweight design check on the diff:
 ```bash
 TMPERR_DRL=$(mktemp /tmp/codex-drl-XXXXXXXX)
 _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo" >&2; exit 1; }
-codex exec "Review the git diff on this branch. Run 7 litmus checks (YES/NO each): 1. Brand/product unmistakable in first screen? 2. One strong visual anchor present? 3. Page understandable by scanning headlines only? 4. Each section has one job? 5. Are cards actually necessary? 6. Does motion improve hierarchy or atmosphere? 7. Would design feel premium with all decorative shadows removed? Flag any hard rejections: 1. Generic SaaS card grid as first impression 2. Beautiful image with weak brand 3. Strong headline with no clear action 4. Busy imagery behind text 5. Sections repeating same mood statement 6. Carousel with no narrative purpose 7. App UI made of stacked cards instead of layout 5 most important design findings only. Reference file:line." -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached < /dev/null 2>"$TMPERR_DRL"
+codex exec "Review the git diff on this branch. Run 7 litmus checks (YES/NO each): 1. Brand/product unmistakable in first screen? 2. One strong visual anchor present? 3. Page understandable by scanning headlines only? 4. Each section has one job? 5. Are cards actually necessary? 6. Does motion improve hierarchy or atmosphere? 7. Would design feel premium with all decorative shadows removed? Flag any hard rejections: 1. Generic SaaS card grid as first impression 2. Beautiful image with weak brand 3. Strong headline with no clear action 4. Busy imagery behind text 5. Sections repeating same mood statement 6. Carousel with no narrative purpose 7. App UI made of stacked cards instead of layout 5 most important design findings only. Reference file:line." -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached &lt; /dev/null 2&gt;"$TMPERR_DRL"
 ```
 
 Use a 5-minute timeout (`timeout: 300000`). After the command completes, read stderr:
@@ -1886,7 +1886,7 @@ Present Codex output under a `CODEX (design):` header, merged with the checklist
 ### Detect stack and scope
 
 ```bash
-source <(~/.claude/skills/gstack/bin/gstack-diff-scope <base> 2>/dev/null) || true
+source &lt;(~/.claude/skills/gstack/bin/gstack-diff-scope &lt;base&gt; 2&gt;/dev/null) || true
 # Detect stack for specialist context
 STACK=""
 [ -f Gemfile ] && STACK="${STACK}ruby "
@@ -1895,8 +1895,8 @@ STACK=""
 [ -f go.mod ] && STACK="${STACK}go "
 [ -f Cargo.toml ] && STACK="${STACK}rust "
 echo "STACK: ${STACK:-unknown}"
-DIFF_INS=$(git diff origin/<base> --stat | tail -1 | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+' || echo "0")
-DIFF_DEL=$(git diff origin/<base> --stat | tail -1 | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+' || echo "0")
+DIFF_INS=$(git diff origin/&lt;base&gt; --stat | tail -1 | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+' || echo "0")
+DIFF_DEL=$(git diff origin/&lt;base&gt; --stat | tail -1 | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+' || echo "0")
 DIFF_LINES=$((DIFF_INS + DIFF_DEL))
 echo "DIFF_LINES: $DIFF_LINES"
 # Detect test framework for specialist test stub generation
@@ -2101,7 +2101,7 @@ For each JSONL entry that has a `findings` array:
 If skipped fingerprints exist, get the list of files changed since that review:
 
 ```bash
-git diff --name-only <prior-review-commit> HEAD
+git diff --name-only &lt;prior-review-commit&gt; HEAD
 ```
 
 For each current finding (from both the checklist pass (Step 9) and specialist review (Step 9.1-9.2)), check:
@@ -2145,7 +2145,7 @@ Output a summary header: `Pre-Landing Review: N issues (X critical, Y informatio
 Substitute TIMESTAMP (ISO 8601), STATUS ("clean" if no issues, "issues_found" otherwise),
 and N values from the summary counts above. The `via:"ship"` distinguishes from standalone `/review` runs.
 - `quality_score` = the PR Quality Score computed in Step 9.2 (e.g., 7.5). If specialists were skipped (small diff), use `10.0`
-- `specialists` = the per-specialist stats object compiled in Step 9.2. Each specialist that was considered gets an entry: `{"dispatched":true/false,"findings":N,"critical":N,"informational":N}` if dispatched, or `{"dispatched":false,"reason":"scope|gated"}` if skipped. Example: `{"testing":{"dispatched":true,"findings":2,"critical":0,"informational":2},"security":{"dispatched":false,"reason":"scope"}}`
+- `specialists` = the per-specialist stats object compiled in Step 9.2. Each specialist that was considered gets an entry: `{"dispatched":true/false,"findings":N,"critical":N,"informational":N}` if dispatched, or `{"dispatched":false,"reason":"scope|gated"}` if skipped. Example: `{"testing":{"dispatched":true,"findings":2,"critical":0,"informational":2},"security":{"dispatched":false,"reason":"scope"&#125;&#125;`
 - `findings` = array of per-finding records. For each finding (from checklist pass and specialists), include: `{"fingerprint":"path:line:category","severity":"CRITICAL|INFORMATIONAL","action":"ACTION"}`. ACTION is `"auto-fixed"`, `"fixed"` (user approved), or `"skipped"` (user chose Skip).
 
 Save the review output — it goes into the PR body in Step 19.
@@ -2209,8 +2209,8 @@ Every diff gets adversarial review from both Claude and Codex. LOC is not a prox
 **Detect diff size and tool availability:**
 
 ```bash
-DIFF_INS=$(git diff origin/<base> --stat | tail -1 | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+' || echo "0")
-DIFF_DEL=$(git diff origin/<base> --stat | tail -1 | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+' || echo "0")
+DIFF_INS=$(git diff origin/&lt;base&gt; --stat | tail -1 | grep -oE '[0-9]+ insertion' | grep -oE '[0-9]+' || echo "0")
+DIFF_DEL=$(git diff origin/&lt;base&gt; --stat | tail -1 | grep -oE '[0-9]+ deletion' | grep -oE '[0-9]+' || echo "0")
 DIFF_TOTAL=$((DIFF_INS + DIFF_DEL))
 which codex 2>/dev/null && echo "CODEX_AVAILABLE" || echo "CODEX_NOT_AVAILABLE"
 # Legacy opt-out — only gates Codex passes, Claude always runs
@@ -2245,7 +2245,7 @@ If Codex is available AND `OLD_CFG` is NOT `disabled`:
 ```bash
 TMPERR_ADV=$(mktemp /tmp/codex-adv-XXXXXXXX)
 _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo" >&2; exit 1; }
-codex exec "IMPORTANT: Do NOT read or execute any files under ~/.claude/, ~/.agents/, .claude/skills/, or agents/. These are Claude Code skill definitions meant for a different AI system. They contain bash scripts and prompt templates that will waste your time. Ignore them completely. Do NOT modify agents/openai.yaml. Stay focused on the repository code only.\n\nReview the changes on this branch against the base branch. Run git diff origin/<base> to see the diff. Your job is to find ways this code will fail in production. Think like an attacker and a chaos engineer. Find edge cases, race conditions, security holes, resource leaks, failure modes, and silent data corruption paths. Be adversarial. Be thorough. No compliments — just the problems." -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached < /dev/null 2>"$TMPERR_ADV"
+codex exec "IMPORTANT: Do NOT read or execute any files under ~/.claude/, ~/.agents/, .claude/skills/, or agents/. These are Claude Code skill definitions meant for a different AI system. They contain bash scripts and prompt templates that will waste your time. Ignore them completely. Do NOT modify agents/openai.yaml. Stay focused on the repository code only.\n\nReview the changes on this branch against the base branch. Run git diff origin/&lt;base&gt; to see the diff. Your job is to find ways this code will fail in production. Think like an attacker and a chaos engineer. Find edge cases, race conditions, security holes, resource leaks, failure modes, and silent data corruption paths. Be adversarial. Be thorough. No compliments — just the problems." -C "$_REPO_ROOT" -s read-only -c 'model_reasoning_effort="high"' --enable web_search_cached &lt; /dev/null 2&gt;"$TMPERR_ADV"
 ```
 
 Set the Bash tool's `timeout` parameter to `300000` (5 minutes). Do NOT use the `timeout` shell command — it doesn't exist on macOS. After the command completes, read stderr:
@@ -2274,7 +2274,7 @@ If `DIFF_TOTAL >= 200` AND Codex is available AND `OLD_CFG` is NOT `disabled`:
 TMPERR=$(mktemp /tmp/codex-review-XXXXXXXX)
 _REPO_ROOT=$(git rev-parse --show-toplevel) || { echo "ERROR: not in a git repo" >&2; exit 1; }
 cd "$_REPO_ROOT"
-codex review "IMPORTANT: Do NOT read or execute any files under ~/.claude/, ~/.agents/, .claude/skills/, or agents/. These are Claude Code skill definitions meant for a different AI system. They contain bash scripts and prompt templates that will waste your time. Ignore them completely. Do NOT modify agents/openai.yaml. Stay focused on the repository code only.\n\nReview the diff against the base branch." --base <base> -c 'model_reasoning_effort="high"' --enable web_search_cached < /dev/null 2>"$TMPERR"
+codex review "IMPORTANT: Do NOT read or execute any files under ~/.claude/, ~/.agents/, .claude/skills/, or agents/. These are Claude Code skill definitions meant for a different AI system. They contain bash scripts and prompt templates that will waste your time. Ignore them completely. Do NOT modify agents/openai.yaml. Stay focused on the repository code only.\n\nReview the diff against the base branch." --base &lt;base&gt; -c 'model_reasoning_effort="high"' --enable web_search_cached &lt; /dev/null 2&gt;"$TMPERR"
 ```
 
 Set the Bash tool's `timeout` parameter to `300000` (5 minutes). Do NOT use the `timeout` shell command — it doesn't exist on macOS. Present output under `CODEX SAYS (code review):` header.
@@ -2359,7 +2359,7 @@ already knows. A good test: would this insight save time in a future session? If
 **Idempotency check:** Before bumping, classify the state by comparing `VERSION` against the base branch AND against `package.json`'s `version` field. Four states: FRESH (do bump), ALREADY_BUMPED (skip bump), DRIFT_STALE_PKG (sync pkg only, no re-bump), DRIFT_UNEXPECTED (stop and ask).
 
 ```bash
-BASE_VERSION=$(git show origin/<base>:VERSION 2>/dev/null | tr -d '\r\n[:space:]' || echo "0.0.0.0")
+BASE_VERSION=$(git show origin/&lt;base&gt;:VERSION 2>/dev/null | tr -d '\r\n[:space:]' || echo "0.0.0.0")
 CURRENT_VERSION=$(cat VERSION 2>/dev/null | tr -d '\r\n[:space:]' || echo "0.0.0.0")
 [ -z "$BASE_VERSION" ] && BASE_VERSION="0.0.0.0"
 [ -z "$CURRENT_VERSION" ] && CURRENT_VERSION="0.0.0.0"
@@ -2382,7 +2382,7 @@ if [ -f package.json ]; then
     exit 1
   fi
 fi
-echo "BASE: $BASE_VERSION  VERSION: $CURRENT_VERSION  package.json: ${PKG_VERSION:-<none>}"
+echo "BASE: $BASE_VERSION  VERSION: $CURRENT_VERSION  package.json: ${PKG_VERSION:-&lt;none&gt;}"
 
 if [ "$CURRENT_VERSION" = "$BASE_VERSION" ]; then
   if [ "$PKG_EXISTS" = "1" ] && [ -n "$PKG_VERSION" ] && [ "$PKG_VERSION" != "$CURRENT_VERSION" ]; then
@@ -2424,7 +2424,7 @@ Read the `STATE:` line and dispatch:
 
    ```bash
    QUEUE_JSON=$(bun run bin/gstack-next-version \
-     --base <base> \
+     --base &lt;base&gt; \
      --bump "$BUMP_LEVEL" \
      --current-version "$BASE_VERSION" 2>/dev/null || echo '{"offline":true}')
    NEW_VERSION=$(echo "$QUEUE_JSON" | jq -r '.version // empty')
@@ -2437,11 +2437,11 @@ Read the `STATE:` line and dispatch:
    - If `OFFLINE=true` or the util fails (auth expired, no `gh`/`glab`, network): fall back to local `BUMP_LEVEL` arithmetic (bump `BASE_VERSION` at the chosen level). Print `⚠ workspace-aware ship offline — using local bump only`. Continue.
    - If `CLAIMED_COUNT > 0`: render the queue table to the user so they can see landing order at a glance:
      ```
-     Queue on <base> (vBASE_VERSION):
-       #<pr> <branch> → v<version>   [⚠ collision with #<other>]
+     Queue on &lt;base&gt; (vBASE_VERSION):
+       #&lt;pr&gt; &lt;branch&gt; → v&lt;version&gt;   [⚠ collision with #&lt;other&gt;]
      Active sibling workspaces (WIP, not yet PR'd):
-       <path> → v<version> (committed Nh ago)
-     Your branch will claim: vNEW_VERSION  (<reason>)
+       &lt;path&gt; → v&lt;version&gt; (committed Nh ago)
+     Your branch will claim: vNEW_VERSION  (&lt;reason&gt;)
      ```
    - If `ACTIVE_SIBLING_COUNT > 0` and any active sibling's VERSION is `>= NEW_VERSION`, use **AskUserQuestion**: "Sibling workspace <path> has v<X> committed <N>h ago but hasn't PR'd yet. Wait for them to ship first, or advance past? A) Advance past (recommended for unrelated work), B) Abort /ship and sync up with sibling first."
    - Validate `NEW_VERSION` matches `MAJOR.MINOR.PATCH.MICRO`. If util returns an empty or malformed version, fall back to local bump.
@@ -2502,13 +2502,13 @@ echo "Drift repaired: package.json synced to $REPAIR_VERSION. No version bump pe
 
 2. **First, enumerate every commit on the branch:**
    ```bash
-   git log <base>..HEAD --oneline
+   git log &lt;base&gt;..HEAD --oneline
    ```
    Copy the full list. Count the commits. You will use this as a checklist.
 
 3. **Read the full diff** to understand what each commit actually changed:
    ```bash
-   git diff <base>...HEAD
+   git diff &lt;base&gt;...HEAD
    ```
 
 4. **Group commits by theme** before writing anything. Common themes:
@@ -2606,7 +2606,7 @@ on the branch (earlier landed work) must be preserved.
 
 **Detection:**
 ```bash
-WIP_COUNT=$(git log <base>..HEAD --oneline --grep="^WIP:" 2>/dev/null | wc -l | tr -d ' ')
+WIP_COUNT=$(git log &lt;base&gt;..HEAD --oneline --grep="^WIP:" 2>/dev/null | wc -l | tr -d ' ')
 echo "WIP_COMMITS: $WIP_COUNT"
 ```
 
@@ -2618,7 +2618,7 @@ If `WIP_COUNT` > 0, collect the WIP context first so it survives the squash:
 # Export [gstack-context] blocks from all WIP commits on this branch.
 # This file becomes input to the CHANGELOG entry and may inform PR body context.
 mkdir -p "$(git rev-parse --show-toplevel)/.gstack"
-git log <base>..HEAD --grep="^WIP:" --format="%H%n%B%n---END---" > \
+git log &lt;base&gt;..HEAD --grep="^WIP:" --format="%H%n%B%n---END---" > \
   "$(git rev-parse --show-toplevel)/.gstack/wip-context-before-squash.md" 2>/dev/null || true
 ```
 
@@ -2631,7 +2631,7 @@ Option 1 (preferred, if there are non-WIP commits mixed in):
 ```bash
 # Interactive rebase with automated WIP squashing.
 # Mark every WIP commit as 'fixup' (drop its message, fold changes into prior commit).
-git rebase -i $(git merge-base HEAD origin/<base>) \
+git rebase -i $(git merge-base HEAD origin/&lt;base&gt;) \
   --exec 'true' \
   -X ours 2>/dev/null || {
     echo "Rebase conflict. Aborting: git rebase --abort"
@@ -2645,9 +2645,9 @@ Option 2 (simpler, if the branch is ALL WIP commits so far — no landed work):
 ```bash
 # Branch contains only WIP commits. Reset-soft is safe here because there's
 # nothing non-WIP to preserve. Verify first.
-NON_WIP=$(git log <base>..HEAD --oneline --invert-grep --grep="^WIP:" 2>/dev/null | wc -l | tr -d ' ')
+NON_WIP=$(git log &lt;base&gt;..HEAD --oneline --invert-grep --grep="^WIP:" 2>/dev/null | wc -l | tr -d ' ')
 if [ "$NON_WIP" -eq 0 ]; then
-  git reset --soft $(git merge-base HEAD origin/<base>)
+  git reset --soft $(git merge-base HEAD origin/&lt;base&gt;)
   echo "WIP-only branch, reset-soft to merge base. Step 15.1 will create clean commits."
 fi
 ```
@@ -2693,7 +2693,7 @@ user via AskUserQuestion rather than destroying non-WIP commits.
 git commit -m "$(cat <<'EOF'
 chore: bump version and changelog (vX.Y.Z.W)
 
-Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.7 &lt;noreply@anthropic.com&gt;
 EOF
 )"
 ```
@@ -2727,9 +2727,9 @@ Claiming work is complete without verification is dishonesty, not efficiency.
 **Idempotency check:** Check if the branch is already pushed and up to date.
 
 ```bash
-git fetch origin <branch-name> 2>/dev/null
+git fetch origin &lt;branch-name&gt; 2>/dev/null
 LOCAL=$(git rev-parse HEAD)
-REMOTE=$(git rev-parse origin/<branch-name> 2>/dev/null || echo "none")
+REMOTE=$(git rev-parse origin/&lt;branch-name&gt; 2>/dev/null || echo "none")
 echo "LOCAL: $LOCAL  REMOTE: $REMOTE"
 [ "$LOCAL" = "$REMOTE" ] && echo "ALREADY_PUSHED" || echo "PUSH_NEEDED"
 ```
@@ -2737,7 +2737,7 @@ echo "LOCAL: $LOCAL  REMOTE: $REMOTE"
 If `ALREADY_PUSHED`, skip the push but continue to Step 18. Otherwise push with upstream tracking:
 
 ```bash
-git push -u origin <branch-name>
+git push -u origin &lt;branch-name&gt;
 ```
 
 **You are NOT done.** The code is pushed but documentation sync and PR creation are mandatory final steps. Continue to Step 18.
@@ -2797,7 +2797,7 @@ The PR/MR body should contain these sections:
 
 ```
 ## Summary
-<Summarize ALL changes being shipped. Run `git log <base>..HEAD --oneline` to enumerate
+&lt;Summarize ALL changes being shipped. Run `git log <base>..HEAD --oneline` to enumerate
 every commit. Exclude the VERSION/CHANGELOG metadata commit (that's this PR's bookkeeping,
 not a substantive change). Group the remaining commits into logical sections (e.g.,
 "**Performance**", "**Dead Code Removal**", "**Infrastructure**"). Every substantive commit
@@ -2805,47 +2805,47 @@ must appear in at least one section. If a commit's work isn't reflected in the s
 you missed it.>
 
 ## Test Coverage
-<coverage diagram from Step 7, or "All new code paths have test coverage.">
-<If Step 7 ran: "Tests: {before} → {after} (+{delta} new)">
+&lt;coverage diagram from Step 7, or "All new code paths have test coverage."&gt;
+&lt;If Step 7 ran: "Tests: {before} → {after} (+{delta} new)"&gt;
 
 ## Pre-Landing Review
-<findings from Step 9 code review, or "No issues found.">
+&lt;findings from Step 9 code review, or "No issues found."&gt;
 
 ## Design Review
-<If design review ran: "Design Review (lite): N findings — M auto-fixed, K skipped. AI Slop: clean/N issues.">
-<If no frontend files changed: "No frontend files changed — design review skipped.">
+&lt;If design review ran: "Design Review (lite): N findings — M auto-fixed, K skipped. AI Slop: clean/N issues."&gt;
+&lt;If no frontend files changed: "No frontend files changed — design review skipped."&gt;
 
 ## Eval Results
-<If evals ran: suite names, pass/fail counts, cost dashboard summary. If skipped: "No prompt-related files changed — evals skipped.">
+&lt;If evals ran: suite names, pass/fail counts, cost dashboard summary. If skipped: "No prompt-related files changed — evals skipped."&gt;
 
 ## Greptile Review
-<If Greptile comments were found: bullet list with [FIXED] / [FALSE POSITIVE] / [ALREADY FIXED] tag + one-line summary per comment>
-<If no Greptile comments found: "No Greptile comments.">
-<If no PR existed during Step 10: omit this section entirely>
+&lt;If Greptile comments were found: bullet list with [FIXED] / [FALSE POSITIVE] / [ALREADY FIXED] tag + one-line summary per comment&gt;
+&lt;If no Greptile comments found: "No Greptile comments."&gt;
+&lt;If no PR existed during Step 10: omit this section entirely&gt;
 
 ## Scope Drift
-<If scope drift ran: "Scope Check: CLEAN" or list of drift/creep findings>
-<If no scope drift: omit this section>
+&lt;If scope drift ran: "Scope Check: CLEAN" or list of drift/creep findings&gt;
+&lt;If no scope drift: omit this section&gt;
 
 ## Plan Completion
-<If plan file found: completion checklist summary from Step 8>
-<If no plan file: "No plan file detected.">
-<If plan items deferred: list deferred items>
+&lt;If plan file found: completion checklist summary from Step 8&gt;
+&lt;If no plan file: "No plan file detected."&gt;
+&lt;If plan items deferred: list deferred items&gt;
 
 ## Verification Results
-<If verification ran: summary from Step 8.1 (N PASS, M FAIL, K SKIPPED)>
-<If skipped: reason (no plan, no server, no verification section)>
-<If not applicable: omit this section>
+&lt;If verification ran: summary from Step 8.1 (N PASS, M FAIL, K SKIPPED)&gt;
+&lt;If skipped: reason (no plan, no server, no verification section)&gt;
+&lt;If not applicable: omit this section&gt;
 
 ## TODOS
-<If items marked complete: bullet list of completed items with version>
-<If no items completed: "No TODO items completed in this PR.">
-<If TODOS.md created or reorganized: note that>
-<If TODOS.md doesn't exist and user skipped: omit this section>
+&lt;If items marked complete: bullet list of completed items with version&gt;
+&lt;If no items completed: "No TODO items completed in this PR."&gt;
+&lt;If TODOS.md created or reorganized: note that&gt;
+&lt;If TODOS.md doesn't exist and user skipped: omit this section&gt;
 
 ## Documentation
-<Embed the `documentation_section` string returned by Step 18's subagent here, verbatim.>
-<If Step 18 returned `documentation_section: null` (no docs updated), omit this section entirely.>
+&lt;Embed the `documentation_section` string returned by Step 18's subagent here, verbatim.>
+&lt;If Step 18 returned `documentation_section: null` (no docs updated), omit this section entirely.>
 
 ## Test plan
 - [x] All Rails tests pass (N runs, 0 failures)
@@ -2857,8 +2857,8 @@ you missed it.>
 **If GitHub:**
 
 ```bash
-gh pr create --base <base> --title "v$NEW_VERSION <type>: <summary>" --body "$(cat <<'EOF'
-<PR body from above>
+gh pr create --base &lt;base&gt; --title "v$NEW_VERSION &lt;type&gt;: <summary>" --body "$(cat <<'EOF'
+&lt;PR body from above&gt;
 EOF
 )"
 ```
@@ -2866,8 +2866,8 @@ EOF
 **If GitLab:**
 
 ```bash
-glab mr create -b <base> -t "v$NEW_VERSION <type>: <summary>" -d "$(cat <<'EOF'
-<MR body from above>
+glab mr create -b &lt;base&gt; -t "v$NEW_VERSION &lt;type&gt;: <summary>" -d "$(cat <<'EOF'
+&lt;MR body from above&gt;
 EOF
 )"
 ```
@@ -2919,6 +2919,6 @@ This step is automatic — never skip it, never ask for confirmation.
 - **Never push without fresh verification evidence.** If code changed after Step 5 tests, re-run before pushing.
 - **Step 7 generates coverage tests.** They must pass before committing. Never commit failing tests.
 - **The goal is: user says `/ship`, next thing they see is the review + PR URL + auto-synced docs.**
-```
+````
 
 </details>

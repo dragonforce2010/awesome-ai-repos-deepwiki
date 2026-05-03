@@ -75,6 +75,7 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
+
 ## 目录导航
 
 | 分区 | 页面 | 重要性 | 内容简介 |
@@ -271,6 +272,7 @@ Sources: [00-repo-inventory.md:1-55](00-repo-inventory.md#L1-L55), [source-manif
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心入口
 
 | 源文件 | 角色 |
@@ -455,6 +457,7 @@ export async function* runNdjson(args: string[]): AsyncGenerator<unknown> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 快速导航
 
 - **想先看项目是什么？** 阅读 [项目概览](pages/overview.md)。
@@ -498,7 +501,7 @@ Sources: [README.md:11-35](../../project-repos/lark-context/README.md#L11-L35), 
                                    └─ 暴露子命令给 Claude shell 调用
                                            │
                                            ▼
-                                  /lark-context <自然语言>
+                                  /lark-context &lt;自然语言&gt;
                                  （skill 在 ~/.agents/skills/lark-context/）
                                            │
                                            ▼
@@ -534,7 +537,7 @@ You: /lark-context 拉一下最近 3 天的消息
 → lark-context pull --since 3d
 
 You: (粘贴飞书文档 URL) /lark-context 收下这个文档
-→ lark-context ingest-doc <url>
+→ lark-context ingest-doc &lt;url&gt;
 
 You: /lark-context 沉淀一下
 → skill 走 references/digest.md workflow：读 show 输出 → 更新 ~/.claude/lark-memory/
@@ -562,17 +565,18 @@ You: 项目 Alpha 最近啥情况？
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
-    └── <ISO-week>.md     # e.g. 2026-W16.md
+    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 可继续追问的主题
 
 - `pull` 的幂等性：重点看 `src/commands/pull.ts` 和 `test/cmd-pull.test.ts`。

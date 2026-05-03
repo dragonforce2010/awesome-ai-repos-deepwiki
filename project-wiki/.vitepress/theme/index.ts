@@ -1,4 +1,5 @@
 import DefaultTheme from 'vitepress/theme';
+import type { Theme } from 'vitepress';
 import './custom.css';
 
 export default {
@@ -6,4 +7,4 @@ export default {
   enhanceApp({ app }) {
     // register custom components here
   }
-};
+} satisfies Theme;

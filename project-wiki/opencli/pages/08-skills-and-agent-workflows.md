@@ -1,6 +1,7 @@
 # Skills 与 Agent 工作流
 
-<details><summary>相关源文件</summary>
+<details>
+<summary>相关源文件</summary>
 
 - `skills/opencli-usage/SKILL.md`
 - `skills/opencli-browser/SKILL.md`
@@ -52,6 +53,7 @@ OpenCLI 把网站、Electron 桌面应用和外部 CLI 统一成 `opencli <site>
 
 <!-- source-snippets:end -->
 </details>
+
 本 DeepWiki 已按要求在 `skills/` 目录下生成中文审阅副本，包括：
 
 - `skills/opencli-usage/SKILL.md`
@@ -101,6 +103,7 @@ opencli <site> <command> --help # 查看参数和命令专属 flag
 
 <!-- source-snippets:end -->
 </details>
+
 它还明确了不同 strategy 的前置条件：`PUBLIC/LOCAL` 不依赖浏览器，`COOKIE/HEADER/INTERCEPT/UI` 依赖已登录 Chrome 和 Browser Bridge 扩展。  
 Sources: [skills/opencli-usage/SKILL.md:32-43](../skills/opencli-usage/SKILL.md#L32-L43)
 
@@ -128,6 +131,7 @@ Electron 桌面应用（cursor、codex、chatwise、notion、discord-app、douba
 
 <!-- source-snippets:end -->
 </details>
+
 ## opencli-browser：真实浏览器操作规范
 
 `opencli-browser` 规定 Agent 使用浏览器命令时必须 inspect-first：先 `state` 或 `find`，再点击、输入或选择。它把 `match_level`、structured error codes、compound controls、network cache 都纳入操作规范。  
@@ -232,6 +236,7 @@ date/time、select、file input 都带 `compound`。必须使用它，不要 reg
 
 <!-- source-snippets:end -->
 </details>
+
 这个 skill 和 `src/cli.ts` 的实现是对齐的：代码确实为 click/type/select/get 输出结构化 envelope，为网络命令实现 cache 和 `--detail`。  
 Sources: [src/cli.ts:1053-1140](../../../project-repos/opencli/src/cli.ts#L1053-L1140), [src/cli.ts:1307-1489](../../../project-repos/opencli/src/cli.ts#L1307-L1489)
 
@@ -250,6 +255,7 @@ Sources: [src/cli.ts:1053-1140](../../../project-repos/opencli/src/cli.ts#L1053-
 
 <!-- source-snippets:end -->
 </details>
+
 ## opencli-adapter-author：写 adapter 的闭环
 
 `opencli-adapter-author` 是从站点侦察到 verify 的 runbook。它强调：
@@ -399,6 +405,7 @@ DONE
 
 <!-- source-snippets:end -->
 </details>
+
 ## opencli-autofix：失败 adapter 自修复
 
 `opencli-autofix` 只适用于 adapter 可修复失败，例如 selector 漂移、API schema 变化、endpoint 迁移、timeout 等。它设置了硬停止条件：`AUTH_REQUIRED`、`BROWSER_CONNECT`、验证码、限流都不是代码修复问题。  
@@ -455,6 +462,7 @@ Sources: [skills/opencli-autofix/SKILL.md:11-24](../skills/opencli-autofix/SKILL
 
 <!-- source-snippets:end -->
 </details>
+
 修复流程是：用 `OPENCLI_DIAGNOSTIC=1` 收集 RepairContext，分析 adapter source、DOM snapshot、networkRequests，然后只修改 `RepairContext.adapter.sourcePath`，最多 3 轮重试。  
 Sources: [skills/opencli-autofix/SKILL.md:52-90](../skills/opencli-autofix/SKILL.md#L52-L90), [skills/opencli-autofix/SKILL.md:91-147](../skills/opencli-autofix/SKILL.md#L91-L147), [skills/opencli-autofix/SKILL.md:175-191](../skills/opencli-autofix/SKILL.md#L175-L191)
 
@@ -593,6 +601,7 @@ OpenCLI autofix repaired this adapter locally, and the retry passed.
 
 <!-- source-snippets:end -->
 </details>
+
 ## smart-search：搜索路由器
 
 `smart-search` 已经是中文。它要求每次使用前先 `opencli list -f yaml`，再用站点 help 和命令 help 确认实时签名。默认无指定站点时只选一个 AI 源，信息不足再补 1-2 个专用源，并在答案末尾追加搜索摘要。  
@@ -652,14 +661,15 @@ Sources: [skills/smart-search/SKILL.md:10-23](../skills/smart-search/SKILL.md#L1
 
 ```md
 搜索摘要
-- 网站：<site1> | 查询词：<term1> | 次数：<n>
-- 网站：<site2> | 查询词：<term2>；<term3> | 次数：<n>
-- 已跳过：<site3>，原因：达到频率上限
+- 网站：&lt;site1&gt; | 查询词：&lt;term1&gt; | 次数：&lt;n&gt;
+- 网站：&lt;site2&gt; | 查询词：&lt;term2&gt;；&lt;term3&gt; | 次数：&lt;n&gt;
+- 已跳过：&lt;site3&gt;，原因：达到频率上限
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## Antigravity skill
 
 `clis/antigravity/SKILL.md` 说明 opencli 可以自动检测、启动并连接 Antigravity Electron app，通过 CDP 控制桌面 UI。能力包括发送消息、读取历史、提取代码、切换模型、清空上下文和 watch。  
@@ -680,6 +690,7 @@ Sources: [clis/antigravity/SKILL.md:5-24](../../../project-repos/opencli/clis/an
 
 <!-- source-snippets:end -->
 </details>
+
 ## Skill 维护建议
 
 这些 skills 和源码之间有明确对应关系：

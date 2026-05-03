@@ -71,6 +71,7 @@ The key insight: an AI agent interacting with a browser needs **sub-second laten
 
 <!-- source-snippets:end -->
 </details>
+
 ## 一句话定位
 
 | 维度 | 结论 | 证据 |
@@ -98,6 +99,7 @@ Swap `required` for `optional` if you'd rather nudge teammates than block them.
 
 <!-- source-snippets:end -->
 </details>
+
 | 核心形态 | Slash-command skills + compiled Bun tools + Playwright browser daemon | Sources: [package.json:7-19](../../../project-repos/gstack/package.json#L7-L19), [ARCHITECTURE.md:5-10](../../../project-repos/gstack/ARCHITECTURE.md#L5-L10) |
 
 <details class="source-snippets">
@@ -136,6 +138,7 @@ The key insight: an AI agent interacting with a browser needs **sub-second laten
 
 <!-- source-snippets:end -->
 </details>
+
 | 工作流理念 | Think → Plan → Build → Review → Test → Ship → Reflect | Sources: [README.md:169-177](../../../project-repos/gstack/README.md#L169-L177) |
 
 <details class="source-snippets">
@@ -159,6 +162,7 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 
 <!-- source-snippets:end -->
 </details>
+
 | 源码规模 | 687 个扫描文件，TypeScript、Markdown、shell 和工作流文件占主体 | Sources: [00-repo-inventory.md:11-33](../00-repo-inventory.md#L11-L33) |
 
 <details class="source-snippets">
@@ -196,6 +200,7 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 
 <!-- source-snippets:end -->
 </details>
+
 ## 仓库地形
 
 ```mermaid
@@ -298,6 +303,7 @@ gstack/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 主要子系统
 
 | 子系统 | 关键路径 | 作用 |
@@ -467,6 +473,7 @@ Beyond the slash-command skills, gstack ships standalone CLIs for workflows that
 
 <!-- source-snippets:end -->
 </details>
+
 ## Sprint 拓扑
 
 ```mermaid
@@ -519,6 +526,7 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 
 <!-- source-snippets:end -->
 </details>
+
 ## 角色分层
 
 | 阶段 | 代表技能 | 行为重点 |
@@ -646,6 +654,7 @@ Beyond the slash-command skills, gstack ships standalone CLIs for workflows that
 
 <!-- source-snippets:end -->
 </details>
+
 ## 决策传递
 
 技能之间通过文件系统和约定传递上下文。例如 `/office-hours` 会把设计文档写到 `~/.gstack/projects/`，后续 `/plan-ceo-review` 和 `/plan-eng-review` 会消费；`/plan-eng-review` 写出的测试计划会被 `/qa` 自动捡起。Sources: [docs/skills.md:94-99](../../../project-repos/gstack/docs/skills.md#L94-L99), [docs/skills.md:229-231](../../../project-repos/gstack/docs/skills.md#L229-L231)
@@ -676,6 +685,7 @@ When `/plan-eng-review` finishes the test review section, it writes a test plan 
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 sequenceDiagram
   participant User as User
@@ -745,6 +755,7 @@ triggers:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -967,6 +978,7 @@ if ! ensure_playwright_browser; then
 
 <!-- source-snippets:end -->
 </details>
+
 ## 安装主流程
 
 ```mermaid
@@ -1085,6 +1097,7 @@ fi
 
 <!-- source-snippets:end -->
 </details>
+
 ## 关键安装行为
 
 | 行为 | 实现位置 | 说明 |
@@ -1386,6 +1399,7 @@ create_codex_runtime_root() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 多宿主配置模型
 
 `hosts/index.ts` 注册了 Claude、Codex、Factory、Kiro、OpenCode、Slate、Cursor、OpenClaw、Hermes、GBrain 等配置；每个配置通过 `HostConfig` 声明路径、frontmatter 转换、生成策略、路径 rewrite、runtime assets 和安装策略。Sources: [hosts/index.ts:20-67](../../../project-repos/gstack/hosts/index.ts#L20-L67), [scripts/host-config.ts:17-112](../../../project-repos/gstack/scripts/host-config.ts#L17-L112)
@@ -1551,6 +1565,7 @@ export interface HostConfig {
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 classDiagram
   class HostConfig {
@@ -1645,6 +1660,7 @@ const codex: HostConfig = {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Team mode 与共享仓库
 
 README 推荐 team mode：全局安装 gstack，然后在项目里用 `gstack-team-init required` 让队友自动获得版本约束和启动检查；这种模式避免把完整 gstack vendor 到业务仓库里。Sources: [README.md:93-104](../../../project-repos/gstack/README.md#L93-L104), [README.md:419-447](../../../project-repos/gstack/README.md#L419-L447)
@@ -1707,6 +1723,7 @@ Data is stored in [Supabase](https://supabase.com) (open source Firebase alterna
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能生成系统](skill-generation.md)
@@ -1762,27 +1779,27 @@ Templates contain the workflows, tips, and examples that require human judgment.
 
 | Placeholder | Source | What it generates |
 |-------------|--------|-------------------|
-| `{{COMMAND_REFERENCE}}` | `commands.ts` | Categorized command table |
-| `{{SNAPSHOT_FLAGS}}` | `snapshot.ts` | Flag reference with examples |
-| `{{PREAMBLE}}` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
-| `{{BROWSE_SETUP}}` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
-| `{{BASE_BRANCH_DETECT}}` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
-| `{{QA_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
-| `{{DESIGN_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
-| `{{REVIEW_DASHBOARD}}` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
-| `{{TEST_BOOTSTRAP}}` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
-| `{{CODEX_PLAN_REVIEW}}` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
-| `{{DESIGN_SETUP}}` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `{{BROWSE_SETUP}}` |
-| `{{DESIGN_SHOTGUN_LOOP}}` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
-| `{{UX_PRINCIPLES}}` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
-| `{{GBRAIN_CONTEXT_LOAD}}` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
-| `{{GBRAIN_SAVE_RESULTS}}` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
+| `&#123;&#123;COMMAND_REFERENCE&#125;&#125;` | `commands.ts` | Categorized command table |
+| `&#123;&#123;SNAPSHOT_FLAGS&#125;&#125;` | `snapshot.ts` | Flag reference with examples |
+| `&#123;&#123;PREAMBLE&#125;&#125;` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
+| `&#123;&#123;BROWSE_SETUP&#125;&#125;` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
+| `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
+| `&#123;&#123;QA_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
+| `&#123;&#123;DESIGN_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
+| `&#123;&#123;REVIEW_DASHBOARD&#125;&#125;` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
+| `&#123;&#123;TEST_BOOTSTRAP&#125;&#125;` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
+| `&#123;&#123;CODEX_PLAN_REVIEW&#125;&#125;` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
+| `&#123;&#123;DESIGN_SETUP&#125;&#125;` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `&#123;&#123;BROWSE_SETUP&#125;&#125;` |
+| `&#123;&#123;DESIGN_SHOTGUN_LOOP&#125;&#125;` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
+| `&#123;&#123;UX_PRINCIPLES&#125;&#125;` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
+| `&#123;&#123;GBRAIN_CONTEXT_LOAD&#125;&#125;` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
+| `&#123;&#123;GBRAIN_SAVE_RESULTS&#125;&#125;` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
 
 This is structurally sound — if a command exists in code, it appears in docs. If it doesn't exist, it can't appear.
 
 ### The preamble
 
-Every skill starts with a `{{PREAMBLE}}` block that runs before the skill's own logic. It handles five things in a single bash command:
+Every skill starts with a `&#123;&#123;PREAMBLE&#125;&#125;` block that runs before the skill's own logic. It handles five things in a single bash command:
 
 1. **Update check** — calls `gstack-update-check`, reports if an upgrade is available.
 2. **Session tracking** — touches `~/.gstack/sessions/$PPID` and counts active sessions (files modified in the last 2 hours). When 3+ sessions are running, all skills enter "ELI16 mode" — every question re-grounds the user on context because they're juggling windows.
@@ -1821,20 +1838,21 @@ bun run skill:check
 bun run dev:skill
 ```
 
-For template authoring best practices (natural language over bash-isms, dynamic branch detection, `{{BASE_BRANCH_DETECT}}` usage), see CLAUDE.md's "Writing SKILL templates" section.
+For template authoring best practices (natural language over bash-isms, dynamic branch detection, `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` usage), see CLAUDE.md's "Writing SKILL templates" section.
 
 To add a browse command, add it to `browse/src/commands.ts`. To add a snapshot flag, add it to `SNAPSHOT_FLAGS` in `browse/src/snapshot.ts`. Then rebuild.
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 生成管线
 
 ```mermaid
 flowchart TD
   A[discoverTemplates] --> B[读取 SKILL.md.tmpl]
   B --> C[解析 frontmatter]
-  C --> D[替换 {{RESOLVERS}}]
+  C --> D[替换 &#123;&#123;RESOLVERS&#125;&#125;]
   D --> E[voice trigger 处理]
   E --> F{host == claude?}
   F -->|yes| G[transformFrontmatter]
@@ -1861,7 +1879,7 @@ flowchart TD
  * Generate SKILL.md files from .tmpl templates.
  *
  * Pipeline:
- *   read .tmpl → find {{PLACEHOLDERS}} → resolve from source → format → write .md
+ *   read .tmpl → find &#123;&#123;PLACEHOLDERS&#125;&#125; → resolve from source → format → write .md
  *
  * Supports --dry-run: generate to memory, exit 1 if different from committed file.
  * Used by skill:check and CI freshness checks.
@@ -1916,22 +1934,22 @@ function processTemplate(tmplPath: string, host: Host = 'claude'): { outputPath:
 
   const ctx: TemplateContext = { skillName, tmplPath, benefitsFrom, host, paths: HOST_PATHS[host], preambleTier, model: MODEL_ARG_VAL, interactive };
 
-  // Replace placeholders (supports parameterized: {{NAME:arg1:arg2}})
+  // Replace placeholders (supports parameterized: &#123;&#123;NAME:arg1:arg2&#125;&#125;)
   // Config-driven: suppressedResolvers return empty string for this host
   const currentHostConfig = getHostConfig(host);
   const suppressed = new Set(currentHostConfig.suppressedResolvers || []);
-  let content = tmplContent.replace(/\{\{(\w+(?::[^}]+)?)\}\}/g, (match, fullKey) => {
+  let content = tmplContent.replace(/&#123;&#123;(\w+(?::[^}]+)?)&#125;&#125;/g, (match, fullKey) => {
     const parts = fullKey.split(':');
     const resolverName = parts[0];
     const args = parts.slice(1);
     if (suppressed.has(resolverName)) return '';
     const resolver = RESOLVERS[resolverName];
-    if (!resolver) throw new Error(`Unknown placeholder {{${resolverName}}} in ${relTmplPath}`);
+    if (!resolver) throw new Error(`Unknown placeholder &#123;&#123;${resolverName&#125;&#125;} in ${relTmplPath}`);
     return args.length > 0 ? resolver(ctx, args) : resolver(ctx);
   });
 
   // Check for any remaining unresolved placeholders
-  const remaining = content.match(/\{\{(\w+(?::[^}]+)?)\}\}/g);
+  const remaining = content.match(/&#123;&#123;(\w+(?::[^}]+)?)&#125;&#125;/g);
   if (remaining) {
     throw new Error(`Unresolved placeholders in ${relTmplPath}: ${remaining.join(', ')}`);
   }
@@ -1958,7 +1976,7 @@ function processTemplate(tmplPath: string, host: Host = 'claude'): { outputPath:
   }
 
   // Prepend generated header (after frontmatter)
-  const header = GENERATED_HEADER.replace('{{SOURCE}}', path.basename(tmplPath));
+  const header = GENERATED_HEADER.replace('&#123;&#123;SOURCE&#125;&#125;', path.basename(tmplPath));
   const fmEnd = content.indexOf('---', content.indexOf('---') + 3);
   if (fmEnd !== -1) {
     const insertAt = content.indexOf('\n', fmEnd) + 1;
@@ -1972,9 +1990,10 @@ function processTemplate(tmplPath: string, host: Host = 'claude'): { outputPath:
 
 <!-- source-snippets:end -->
 </details>
+
 ## Template 发现与 resolver
 
-`discover-skills.ts` 只扫描仓库根和一级子目录，跳过 `node_modules`、`.git`、`dist`，寻找 `SKILL.md.tmpl` 与 `SKILL.md`。resolver registry 把 `{{COMMAND_REFERENCE}}`、`{{SNAPSHOT_FLAGS}}`、`{{PREAMBLE}}`、`{{BROWSE_SETUP}}`、`{{GBRAIN_CONTEXT_LOAD}}` 等占位符映射到具体生成函数。Sources: [scripts/discover-skills.ts:1-38](../../../project-repos/gstack/scripts/discover-skills.ts#L1-L38), [scripts/resolvers/index.ts:26-79](../../../project-repos/gstack/scripts/resolvers/index.ts#L26-L79)
+`discover-skills.ts` 只扫描仓库根和一级子目录，跳过 `node_modules`、`.git`、`dist`，寻找 `SKILL.md.tmpl` 与 `SKILL.md`。resolver registry 把 &lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>COMMAND_REFERENCE&#125;&#125;&lt;/code>、&lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>SNAPSHOT_FLAGS&#125;&#125;&lt;/code>、&lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>PREAMBLE&#125;&#125;&lt;/code>、&lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>BROWSE_SETUP&#125;&#125;&lt;/code>、&lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>GBRAIN_CONTEXT_LOAD&#125;&#125;&lt;/code> 等占位符映射到具体生成函数。Sources: [scripts/discover-skills.ts:1-38](../../../project-repos/gstack/scripts/discover-skills.ts#L1-L38), [scripts/resolvers/index.ts:26-79](../../../project-repos/gstack/scripts/resolvers/index.ts#L26-L79)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -2085,6 +2104,7 @@ export const RESOLVERS: Record<string, ResolverFn> = {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 为什么命令文档不手写
 
 Browse 命令表和 snapshot flag 来自源码，生成器把这些信息注入技能。`ARCHITECTURE.md` 明确把 `commands.ts`、`snapshot.ts` 和 `gen-skill-docs.ts` 作为防止文档漂移的结构性方案。Sources: [ARCHITECTURE.md:242-270](../../../project-repos/gstack/ARCHITECTURE.md#L242-L270)
@@ -2109,33 +2129,34 @@ Templates contain the workflows, tips, and examples that require human judgment.
 
 | Placeholder | Source | What it generates |
 |-------------|--------|-------------------|
-| `{{COMMAND_REFERENCE}}` | `commands.ts` | Categorized command table |
-| `{{SNAPSHOT_FLAGS}}` | `snapshot.ts` | Flag reference with examples |
-| `{{PREAMBLE}}` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
-| `{{BROWSE_SETUP}}` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
-| `{{BASE_BRANCH_DETECT}}` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
-| `{{QA_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
-| `{{DESIGN_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
-| `{{REVIEW_DASHBOARD}}` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
-| `{{TEST_BOOTSTRAP}}` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
-| `{{CODEX_PLAN_REVIEW}}` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
-| `{{DESIGN_SETUP}}` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `{{BROWSE_SETUP}}` |
-| `{{DESIGN_SHOTGUN_LOOP}}` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
-| `{{UX_PRINCIPLES}}` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
-| `{{GBRAIN_CONTEXT_LOAD}}` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
-| `{{GBRAIN_SAVE_RESULTS}}` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
+| `&#123;&#123;COMMAND_REFERENCE&#125;&#125;` | `commands.ts` | Categorized command table |
+| `&#123;&#123;SNAPSHOT_FLAGS&#125;&#125;` | `snapshot.ts` | Flag reference with examples |
+| `&#123;&#123;PREAMBLE&#125;&#125;` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
+| `&#123;&#123;BROWSE_SETUP&#125;&#125;` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
+| `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
+| `&#123;&#123;QA_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
+| `&#123;&#123;DESIGN_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
+| `&#123;&#123;REVIEW_DASHBOARD&#125;&#125;` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
+| `&#123;&#123;TEST_BOOTSTRAP&#125;&#125;` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
+| `&#123;&#123;CODEX_PLAN_REVIEW&#125;&#125;` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
+| `&#123;&#123;DESIGN_SETUP&#125;&#125;` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `&#123;&#123;BROWSE_SETUP&#125;&#125;` |
+| `&#123;&#123;DESIGN_SHOTGUN_LOOP&#125;&#125;` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
+| `&#123;&#123;UX_PRINCIPLES&#125;&#125;` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
+| `&#123;&#123;GBRAIN_CONTEXT_LOAD&#125;&#125;` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
+| `&#123;&#123;GBRAIN_SAVE_RESULTS&#125;&#125;` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
 
 This is structurally sound — if a command exists in code, it appears in docs. If it doesn't exist, it can't appear.
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 | Placeholder | 来源 | 产物 |
 |---|---|---|
-| `{{COMMAND_REFERENCE}}` | `browse/src/commands.ts` | 分类命令表 |
-| `{{SNAPSHOT_FLAGS}}` | `browse/src/snapshot.ts` | snapshot flag 文档 |
-| `{{PREAMBLE}}` | `scripts/resolvers/preamble.ts` | 更新检查、会话跟踪、telemetry、routing 等通用前置块 |
-| `{{GBRAIN_CONTEXT_LOAD}}` | `scripts/resolvers/gbrain.ts` | brain-aware 技能上下文加载 |
+| &lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>COMMAND_REFERENCE&#125;&#125;&lt;/code> | `browse/src/commands.ts` | 分类命令表 |
+| &lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>SNAPSHOT_FLAGS&#125;&#125;&lt;/code> | `browse/src/snapshot.ts` | snapshot flag 文档 |
+| &lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>PREAMBLE&#125;&#125;&lt;/code> | `scripts/resolvers/preamble.ts` | 更新检查、会话跟踪、telemetry、routing 等通用前置块 |
+| &lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>GBRAIN_CONTEXT_LOAD&#125;&#125;&lt;/code> | `scripts/resolvers/gbrain.ts` | brain-aware 技能上下文加载 |
 
 Sources: [ARCHITECTURE.md:250-269](../../../project-repos/gstack/ARCHITECTURE.md#L250-L269)
 
@@ -2151,26 +2172,27 @@ Templates contain the workflows, tips, and examples that require human judgment.
 
 | Placeholder | Source | What it generates |
 |-------------|--------|-------------------|
-| `{{COMMAND_REFERENCE}}` | `commands.ts` | Categorized command table |
-| `{{SNAPSHOT_FLAGS}}` | `snapshot.ts` | Flag reference with examples |
-| `{{PREAMBLE}}` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
-| `{{BROWSE_SETUP}}` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
-| `{{BASE_BRANCH_DETECT}}` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
-| `{{QA_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
-| `{{DESIGN_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
-| `{{REVIEW_DASHBOARD}}` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
-| `{{TEST_BOOTSTRAP}}` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
-| `{{CODEX_PLAN_REVIEW}}` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
-| `{{DESIGN_SETUP}}` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `{{BROWSE_SETUP}}` |
-| `{{DESIGN_SHOTGUN_LOOP}}` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
-| `{{UX_PRINCIPLES}}` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
-| `{{GBRAIN_CONTEXT_LOAD}}` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
-| `{{GBRAIN_SAVE_RESULTS}}` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
+| `&#123;&#123;COMMAND_REFERENCE&#125;&#125;` | `commands.ts` | Categorized command table |
+| `&#123;&#123;SNAPSHOT_FLAGS&#125;&#125;` | `snapshot.ts` | Flag reference with examples |
+| `&#123;&#123;PREAMBLE&#125;&#125;` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
+| `&#123;&#123;BROWSE_SETUP&#125;&#125;` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
+| `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
+| `&#123;&#123;QA_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
+| `&#123;&#123;DESIGN_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
+| `&#123;&#123;REVIEW_DASHBOARD&#125;&#125;` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
+| `&#123;&#123;TEST_BOOTSTRAP&#125;&#125;` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
+| `&#123;&#123;CODEX_PLAN_REVIEW&#125;&#125;` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
+| `&#123;&#123;DESIGN_SETUP&#125;&#125;` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `&#123;&#123;BROWSE_SETUP&#125;&#125;` |
+| `&#123;&#123;DESIGN_SHOTGUN_LOOP&#125;&#125;` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
+| `&#123;&#123;UX_PRINCIPLES&#125;&#125;` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
+| `&#123;&#123;GBRAIN_CONTEXT_LOAD&#125;&#125;` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
+| `&#123;&#123;GBRAIN_SAVE_RESULTS&#125;&#125;` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
 
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## Host-aware 输出
 
 外部宿主输出由 `processExternalHost` 处理：变换 frontmatter、插入安全 advisory、执行 `pathRewrites` 和 `toolRewrites`，并按配置生成 metadata。`HostConfig` 约束每个 host 的路径、安全、frontmatter 和 runtime root。Sources: [scripts/gen-skill-docs.ts:339-400](../../../project-repos/gstack/scripts/gen-skill-docs.ts#L339-L400), [scripts/host-config.ts:17-112](../../../project-repos/gstack/scripts/host-config.ts#L17-L112)
@@ -2350,6 +2372,7 @@ export interface HostConfig {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 风险点
 
 - 生成脚本目前既处理模板，也直接写外部宿主目录和 OpenClaw artifacts；这让 `gen-skill-docs` 同时承担文档生成和部分安装产物生成。Sources: [scripts/gen-skill-docs.ts:498-614](../../../project-repos/gstack/scripts/gen-skill-docs.ts#L498-L614)
@@ -2483,6 +2506,7 @@ The orchestrator will persist the plan link to its own memory/knowledge store.
 
 <!-- source-snippets:end -->
 </details>
+
 - `discoverTemplates` 只扫一级子目录，因此深层技能（如 `openclaw/skills/*`）不是普通 `.tmpl` 生成路径，属于手写/特殊产物。Sources: [scripts/discover-skills.ts:17-38](../../../project-repos/gstack/scripts/discover-skills.ts#L17-L38), [docs/OPENCLAW.md:104-113](../../../project-repos/gstack/docs/OPENCLAW.md#L104-L113)
 
 <details class="source-snippets">
@@ -2534,6 +2558,7 @@ No gstack infrastructure (no browse, no telemetry, no preamble).
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [安装与多宿主接入](setup-and-hosts.md)
@@ -2620,6 +2645,7 @@ First call starts everything (~3s). Every call after: ~100-200ms.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 运行时拓扑
 
 ```mermaid
@@ -2780,6 +2806,7 @@ async function startServer(extraEnv?: Record<string, string>): Promise<ServerSta
 
 <!-- source-snippets:end -->
 </details>
+
 ## 状态与配置解析
 
 `browse/src/config.ts` 的解析顺序是：`BROWSE_STATE_FILE` 环境变量、git 根目录、当前工作目录 fallback。所有日志和 state 都落在项目 `.gstack/` 下，`ensureStateDir` 会创建目录并尝试把 `.gstack/` 加到 `.gitignore`。Sources: [browse/src/config.ts:1-11](../../../project-repos/gstack/browse/src/config.ts#L1-L11), [browse/src/config.ts:50-75](../../../project-repos/gstack/browse/src/config.ts#L50-L75), [browse/src/config.ts:78-115](../../../project-repos/gstack/browse/src/config.ts#L78-L115)
@@ -2881,6 +2908,7 @@ export function ensureStateDir(config: BrowseConfig): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令分发
 
 `commands.ts` 是命令事实来源，并把命令分成 READ、WRITE、META 三类。server 内部按这些 set 分发到 `handleReadCommand`、`handleWriteCommand`、`handleMetaCommand`。Sources: [browse/src/commands.ts:1-50](../../../project-repos/gstack/browse/src/commands.ts#L1-L50), [ARCHITECTURE.md:300-317](../../../project-repos/gstack/ARCHITECTURE.md#L300-L317), [browse/src/server.ts:556-740](../../../project-repos/gstack/browse/src/server.ts#L556-L740)
@@ -3096,6 +3124,7 @@ async function handleCommandInternal(
 
 <!-- source-snippets:end -->
 </details>
+
 | 分类 | 示例 | 风险语义 |
 |---|---|---|
 | READ | `text`, `html`, `links`, `console`, `cookies`, `inspect` | 读取页面或运行时状态，适合封装 untrusted output |
@@ -3254,6 +3283,7 @@ export const COMMAND_DESCRIPTIONS: Record<string, { category: string; descriptio
 
 <!-- source-snippets:end -->
 </details>
+
 ## 生命周期
 
 ```mermaid
@@ -3301,6 +3331,7 @@ const idleCheckInterval = setInterval(() => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## BrowserManager 职责
 
 `BrowserManager` 持有 Playwright browser/context、tab map、tab session、额外 header、user agent、viewport/deviceScaleFactor、tab ownership、watch mode 和 headed mode 状态。Sources: [browse/src/browser-manager.ts:49-104](../../../project-repos/gstack/browse/src/browser-manager.ts#L49-L104), [browse/src/browser-manager.ts:177-234](../../../project-repos/gstack/browse/src/browser-manager.ts#L177-L234), [browse/src/browser-manager.ts:236-280](../../../project-repos/gstack/browse/src/browser-manager.ts#L236-L280)
@@ -3486,6 +3517,7 @@ export class BrowserManager {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [浏览器安全模型](browser-security.md)
@@ -3643,6 +3675,7 @@ const IDLE_TIMEOUT_MS = parseInt(process.env.BROWSE_IDLE_TIMEOUT || '1800000', 1
 
 <!-- source-snippets:end -->
 </details>
+
 ## 双监听器 tunnel
 
 ```mermaid
@@ -3809,6 +3842,7 @@ export function canDispatchOverTunnel(command: string | undefined | null): boole
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令面收敛
 
 `tunnel` 面只允许浏览器驱动类命令，例如 `goto`、`click`、`text`、`screenshot`、`snapshot`、`fill`、`newtab`、`tabs` 等；server 对 `/command` 再次调用 `canDispatchOverTunnel` 检查。Sources: [browse/src/server.ts:112-142](../../../project-repos/gstack/browse/src/server.ts#L112-L142), [browse/src/server.ts:1792-1817](../../../project-repos/gstack/browse/src/server.ts#L1792-L1817)
@@ -3887,6 +3921,7 @@ export function canDispatchOverTunnel(command: string | undefined | null): boole
 
 <!-- source-snippets:end -->
 </details>
+
 ## 内容安全层
 
 页面内容是攻击面。`content-security.ts` 提供 datamarking、隐藏元素/ARIA injection 检测、untrusted envelope 和可注册内容过滤器。`commands.ts` 还把 `snapshot` 纳入 `PAGE_CONTENT_COMMANDS`，因为 aria-label 也可能是攻击者控制的文本。Sources: [browse/src/content-security.ts:1-11](../../../project-repos/gstack/browse/src/content-security.ts#L1-L11), [browse/src/content-security.ts:60-88](../../../project-repos/gstack/browse/src/content-security.ts#L60-L88), [browse/src/content-security.ts:198-244](../../../project-repos/gstack/browse/src/content-security.ts#L198-L244), [browse/src/commands.ts:52-80](../../../project-repos/gstack/browse/src/commands.ts#L52-L80)
@@ -4034,6 +4069,7 @@ export const DOM_CONTENT_COMMANDS = new Set([
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A[DOM/page output] --> B[markHiddenElements]
@@ -4199,6 +4235,7 @@ export function combineVerdict(signals: LayerSignal[], opts: CombineVerdictOpts 
 
 <!-- source-snippets:end -->
 </details>
+
 ## CDP escape hatch
 
 `$B cdp` 是默认拒绝策略：每个允许的 CDP method 都必须声明 domain、method、scope、output 和 justification；危险方法如 `Runtime.evaluate`、`Network.getResponseBody`、`Page.navigate` 不在 allowlist 中。Sources: [browse/src/cdp-allowlist.ts:1-17](../../../project-repos/gstack/browse/src/cdp-allowlist.ts#L1-L17), [browse/src/cdp-allowlist.ts:30-214](../../../project-repos/gstack/browse/src/cdp-allowlist.ts#L30-L214)
@@ -4358,6 +4395,7 @@ export const CDP_ALLOWLIST: ReadonlyArray<CdpAllowEntry> = Object.freeze([
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [Browse 运行时](browse-runtime.md)
@@ -4425,6 +4463,7 @@ gstack works well with one sprint. It gets interesting with ten running at once.
 
 <!-- source-snippets:end -->
 </details>
+
 ## Design CLI
 
 `design/src/cli.ts` 明确说明它是 stateless CLI：每次调用解析参数、解析 OpenAI auth、执行 API 调用并写入 PNG/HTML，多轮迭代状态保存在 `/tmp` JSON 文件里。Sources: [design/src/cli.ts:1-13](../../../project-repos/gstack/design/src/cli.ts#L1-L13)
@@ -4454,6 +4493,7 @@ gstack works well with one sprint. It gets interesting with ten running at once.
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A[$D command] --> B[parseArgs]
@@ -4680,6 +4720,7 @@ export const COMMANDS = new Map<string, {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 图像生成与实现提示
 
 `generate.ts` 使用 OpenAI Responses API 的 `image_generation` tool，默认生成 `1536x1024`、`high` quality，并可选做视觉质量检查和重试。`design-to-code.ts` 则用 GPT-4o vision 从批准的 mockup 中提取颜色、排版、布局和组件，输出 JSON 结构化实现提示。Sources: [design/src/generate.ts:29-92](../../../project-repos/gstack/design/src/generate.ts#L29-L92), [design/src/generate.ts:97-160](../../../project-repos/gstack/design/src/generate.ts#L97-L160), [design/src/design-to-code.ts:1-18](../../../project-repos/gstack/design/src/design-to-code.ts#L1-L18), [design/src/design-to-code.ts:22-88](../../../project-repos/gstack/design/src/design-to-code.ts#L22-L88)
@@ -4924,6 +4965,7 @@ Be specific about every visual detail: exact hex colors, font sizes in px, spaci
 
 <!-- source-snippets:end -->
 </details>
+
 ## make-pdf CLI
 
 `make-pdf/src/cli.ts` 的输出契约很严格：成功时 stdout 只输出路径，stderr 输出进度和错误；exit code 区分 bad args、render error、Paged.js timeout、browse unavailable。CLI 支持 cover、TOC、page numbers、tagged PDF、outline、watermark、header/footer template、network control 等。Sources: [make-pdf/src/cli.ts:1-11](../../../project-repos/gstack/make-pdf/src/cli.ts#L1-L11), [make-pdf/src/cli.ts:56-99](../../../project-repos/gstack/make-pdf/src/cli.ts#L56-L99), [make-pdf/src/cli.ts:174-253](../../../project-repos/gstack/make-pdf/src/cli.ts#L174-L253)
@@ -5085,6 +5127,7 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 与技能层的关系
 
 ```mermaid
@@ -5146,6 +5189,7 @@ allowed-tools:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能工作流](skill-workflow.md)
@@ -5264,6 +5308,7 @@ Full guide: [docs/gbrain-sync.md](docs/gbrain-sync.md). Error index: [docs/gbrai
 
 <!-- source-snippets:end -->
 </details>
+
 ## `/setup-gbrain` 三条路径
 
 ```mermaid
@@ -5369,6 +5414,7 @@ One rule for every secret this skill touches: **env var only, never argv, never 
 
 <!-- source-snippets:end -->
 </details>
+
 ## Per-remote trust triad
 
 每个 repo 对 GBrain 有 `read-write`、`read-only`、`deny` 三档策略，按远端归一化后持久化到 `~/.gstack/gbrain-repo-policy.json`。这避免在客户仓库或敏感 repo 中把本地工作污染到共享 brain。Sources: [USING_GBRAIN_WITH_GSTACK.md:69-97](../../../project-repos/gstack/USING_GBRAIN_WITH_GSTACK.md#L69-L97)
@@ -5414,6 +5460,7 @@ Storage: `~/.gstack/gbrain-repo-policy.json`, mode 0600, schema-versioned so fut
 
 <!-- source-snippets:end -->
 </details>
+
 ## Memory sync
 
 `gstack-brain-init` 把 `~/.gstack/` 初始化为 git repo，写入 ignore-everything base、allowlist、privacy map、gitattributes、JSONL merge driver 和 pre-commit secret scan hook，然后推送到私有 remote。Sources: [bin/gstack-brain-init:1-24](../../../project-repos/gstack/bin/gstack-brain-init#L1-L24), [bin/gstack-brain-init:141-240](../../../project-repos/gstack/bin/gstack-brain-init#L141-L240)
@@ -5559,6 +5606,7 @@ chmod +x "$HOOK"
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A[~/.gstack local state] --> B[allowlist filter]
@@ -5618,6 +5666,7 @@ gstack-config set gbrain_sync_mode off
 
 <!-- source-snippets:end -->
 </details>
+
 ## Secret 保护
 
 同步前会扫描 AWS、GitHub token、OpenAI key、PEM、JWT、Bearer/API key 等模式；命中后保留队列并阻止 sync。`bin/gstack-brain-init` 还安装了 pre-commit hook 作为 defense-in-depth。Sources: [docs/gbrain-sync.md:114-142](../../../project-repos/gstack/docs/gbrain-sync.md#L114-L142), [bin/gstack-brain-init:203-240](../../../project-repos/gstack/bin/gstack-brain-init#L203-L240)
@@ -5646,7 +5695,7 @@ If a scan hits, sync stops, the queue is preserved, and your preamble
 prints:
 
 ```
-BRAIN_SYNC: blocked: <pattern-family>:<snippet>
+BRAIN_SYNC: blocked: &lt;pattern-family&gt;:&lt;snippet&gt;
 ```
 
 To remediate:
@@ -5706,6 +5755,7 @@ chmod +x "$HOOK"
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能工作流](skill-workflow.md)
@@ -5777,6 +5827,7 @@ No compatibility matrices. The prompt is the bridge.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 架构分工
 
 ```mermaid
@@ -5827,6 +5878,7 @@ OpenClaw decides at spawn time which tier of gstack support to use:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 生成产物
 
 | 产物 | 用途 | 来源 |
@@ -5860,6 +5912,7 @@ A/B tested: 2x time, meaningfully better output.
 
 <!-- source-snippets:end -->
 </details>
+
 | `openclaw/gstack-full-CLAUDE.md` | 完整 feature pipeline：理解项目、autoplan、实现、ship | Sources: [docs/OPENCLAW.md:85-92](../../../project-repos/gstack/docs/OPENCLAW.md#L85-L92) |
 
 <details class="source-snippets">
@@ -5882,6 +5935,7 @@ A/B tested: 2x time, meaningfully better output.
 
 <!-- source-snippets:end -->
 </details>
+
 | `openclaw/gstack-plan-CLAUDE.md` | 只做 planning gauntlet，不实现 | Sources: [docs/OPENCLAW.md:93-103](../../../project-repos/gstack/docs/OPENCLAW.md#L93-L103) |
 
 <details class="source-snippets">
@@ -5907,6 +5961,7 @@ ready to build, spawn a FULL session that references the saved plan.
 
 <!-- source-snippets:end -->
 </details>
+
 | `openclaw/skills/*` | 原生 conversational methodology skills | Sources: [docs/OPENCLAW.md:104-113](../../../project-repos/gstack/docs/OPENCLAW.md#L104-L113) |
 
 <details class="source-snippets">
@@ -5931,6 +5986,7 @@ No gstack infrastructure (no browse, no telemetry, no preamble).
 
 <!-- source-snippets:end -->
 </details>
+
 ## Host config 与 adapter
 
 `hosts/openclaw.ts` 声明 OpenClaw 的输出根、frontmatter、path rewrite、tool rewrite 和 suppressed resolvers；adapter 负责把 Claude tool 语义转换成 OpenClaw 能理解的 prose/session_spawn/browser exec 形态。Sources: [hosts/openclaw.ts:3-74](../../../project-repos/gstack/hosts/openclaw.ts#L3-L74), [scripts/host-adapters/openclaw-adapter.ts:1-45](../../../project-repos/gstack/scripts/host-adapters/openclaw-adapter.ts#L1-L45)
@@ -6069,6 +6125,7 @@ export function transform(content: string, _config: HostConfig): string {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 原生技能示例
 
 `gstack-openclaw-office-hours` 明确禁止实现，只产出 design document；它保留了 gstack 的产品诊断方法，但适配为 OpenClaw 聊天语境。Sources: [openclaw/skills/gstack-openclaw-office-hours/SKILL.md:1-22](../../../project-repos/gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md#L1-L22), [openclaw/skills/gstack-openclaw-office-hours/SKILL.md:48-126](../../../project-repos/gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md#L48-L126)
@@ -6191,6 +6248,7 @@ Ask these questions **ONE AT A TIME**. Push on each one until the answer is spec
 
 <!-- source-snippets:end -->
 </details>
+
 ## 不做什么
 
 OpenClaw 文档列出 non-goals：不做 dispatch daemon、不做 Clawvisor relay、不做 bidirectional learnings bridge、不做 JSON schema/protocol versioning、不完整移植所有 Claude Code coding skills。Sources: [docs/OPENCLAW.md:138-145](../../../project-repos/gstack/docs/OPENCLAW.md#L138-L145)
@@ -6215,6 +6273,7 @@ OpenClaw 文档列出 non-goals：不做 dispatch daemon、不做 Clawvisor rela
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [安装与多宿主接入](setup-and-hosts.md)
@@ -6311,6 +6370,7 @@ bun run test:evals           # Tier 2 + 3 combined (~$4/run)
 
 <!-- source-snippets:end -->
 </details>
+
 ## 测试分层
 
 ```mermaid
@@ -6522,6 +6582,7 @@ Tier 1 runs on every `bun test`. Tiers 2+3 are gated behind `EVALS=1`. The idea:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 静态验证重点
 
 `test/skill-validation.test.ts` 检查 `$B` 命令是否存在于 registry、snapshot flags 是否有效、`COMMAND_DESCRIPTIONS` 是否覆盖所有 command set、生成的 `SKILL.md` 是否没有未解析 placeholder。Sources: [test/skill-validation.test.ts:1-116](../../../project-repos/gstack/test/skill-validation.test.ts#L1-L116), [test/skill-validation.test.ts:118-224](../../../project-repos/gstack/test/skill-validation.test.ts#L118-L224)
@@ -6745,15 +6806,15 @@ describe('Usage string consistency', () => {
 });
 
 describe('Generated SKILL.md freshness', () => {
-  test('no unresolved {{placeholders}} in generated SKILL.md', () => {
+  test('no unresolved &#123;&#123;placeholders&#125;&#125; in generated SKILL.md', () => {
     const content = fs.readFileSync(path.join(ROOT, 'SKILL.md'), 'utf-8');
-    const unresolved = content.match(/\{\{\w+\}\}/g);
+    const unresolved = content.match(/&#123;&#123;\w+&#125;&#125;/g);
     expect(unresolved).toBeNull();
   });
 
-  test('no unresolved {{placeholders}} in generated browse/SKILL.md', () => {
+  test('no unresolved &#123;&#123;placeholders&#125;&#125; in generated browse/SKILL.md', () => {
     const content = fs.readFileSync(path.join(ROOT, 'browse', 'SKILL.md'), 'utf-8');
-    const unresolved = content.match(/\{\{\w+\}\}/g);
+    const unresolved = content.match(/&#123;&#123;\w+&#125;&#125;/g);
     expect(unresolved).toBeNull();
   });
 
@@ -6766,6 +6827,7 @@ describe('Generated SKILL.md freshness', () => {
 
 <!-- source-snippets:end -->
 </details>
+
 | 检查 | 目的 |
 |---|---|
 | `$B` command validation | 避免技能文档引用不存在的 Browse 命令 |
@@ -6985,15 +7047,15 @@ describe('Usage string consistency', () => {
 });
 
 describe('Generated SKILL.md freshness', () => {
-  test('no unresolved {{placeholders}} in generated SKILL.md', () => {
+  test('no unresolved &#123;&#123;placeholders&#125;&#125; in generated SKILL.md', () => {
     const content = fs.readFileSync(path.join(ROOT, 'SKILL.md'), 'utf-8');
-    const unresolved = content.match(/\{\{\w+\}\}/g);
+    const unresolved = content.match(/&#123;&#123;\w+&#125;&#125;/g);
     expect(unresolved).toBeNull();
   });
 
-  test('no unresolved {{placeholders}} in generated browse/SKILL.md', () => {
+  test('no unresolved &#123;&#123;placeholders&#125;&#125; in generated browse/SKILL.md', () => {
     const content = fs.readFileSync(path.join(ROOT, 'browse', 'SKILL.md'), 'utf-8');
-    const unresolved = content.match(/\{\{\w+\}\}/g);
+    const unresolved = content.match(/&#123;&#123;\w+&#125;&#125;/g);
     expect(unresolved).toBeNull();
   });
 
@@ -7006,6 +7068,7 @@ describe('Generated SKILL.md freshness', () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ## CI freshness gate
 
 `skill-docs.yml` 在 push/PR 上运行 `bun run gen:skill-docs`、检查 git diff，再对 Codex 和 Factory host 重复生成并比较 `.agents/`、`.factory/`。Sources: [github/workflows/skill-docs.yml:1-33](../../../project-repos/gstack/.github/workflows/skill-docs.yml#L1-L33)
@@ -7055,6 +7118,7 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
+
 ## E2E eval workflow
 
 `evals.yml` 使用预烘焙 Docker image、Ubicloud runners、矩阵拆分 12 个 suite，并在 PR 上上传 eval artifacts、汇总通过率和成本到评论。Sources: [github/workflows/evals.yml:1-15](../../../project-repos/gstack/.github/workflows/evals.yml#L1-L15), [github/workflows/evals.yml:58-147](../../../project-repos/gstack/.github/workflows/evals.yml#L58-L147), [github/workflows/evals.yml:149-240](../../../project-repos/gstack/.github/workflows/evals.yml#L149-L240)
@@ -7074,11 +7138,11 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: evals-${{ github.head_ref }}
+  group: evals-$&#123;&#123; github.head_ref &#125;&#125;
   cancel-in-progress: true
 
 env:
-  IMAGE: ghcr.io/${{ github.repository }}/ci
+  IMAGE: ghcr.io/$&#123;&#123; github.repository &#125;&#125;/ci
   EVALS_TIER: gate
 
 jobs:
@@ -7088,13 +7152,13 @@ jobs:
 
 ```yaml
   evals:
-    runs-on: ${{ matrix.suite.runner || 'ubicloud-standard-2' }}
+    runs-on: $&#123;&#123; matrix.suite.runner || 'ubicloud-standard-2' &#125;&#125;
     needs: build-image
     container:
-      image: ${{ needs.build-image.outputs.image-tag }}
+      image: $&#123;&#123; needs.build-image.outputs.image-tag &#125;&#125;
       credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: $&#123;&#123; github.actor &#125;&#125;
+        password: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;
       options: --user runner
     timeout-minutes: 25
     strategy:
@@ -7161,20 +7225,20 @@ jobs:
           touch /tmp/.bun-test && rm /tmp/.bun-test && echo "/tmp writable"
           bun -e "import {chromium} from 'playwright';const b=await chromium.launch({args:['--no-sandbox']});console.log('Chromium OK');await b.close()"
 
-      - name: Run ${{ matrix.suite.name }}
+      - name: Run $&#123;&#123; matrix.suite.name &#125;&#125;
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: $&#123;&#123; secrets.ANTHROPIC_API_KEY &#125;&#125;
+          OPENAI_API_KEY: $&#123;&#123; secrets.OPENAI_API_KEY &#125;&#125;
+          GEMINI_API_KEY: $&#123;&#123; secrets.GEMINI_API_KEY &#125;&#125;
           EVALS_CONCURRENCY: "40"
           PLAYWRIGHT_BROWSERS_PATH: /opt/playwright-browsers
-        run: EVALS=1 bun test --retry 2 --concurrent --max-concurrency 40 ${{ matrix.suite.file }}
+        run: EVALS=1 bun test --retry 2 --concurrent --max-concurrency 40 $&#123;&#123; matrix.suite.file &#125;&#125;
 
       - name: Upload eval results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: eval-${{ matrix.suite.name }}
+          name: eval-$&#123;&#123; matrix.suite.name &#125;&#125;
           path: ~/.gstack-dev/evals/*.json
           retention-days: 90
 ```
@@ -7204,7 +7268,7 @@ jobs:
 
       - name: Post PR comment
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;
         run: |
           # shellcheck disable=SC2086,SC2059
           RESULTS=$(find /tmp/eval-results -name '*.json' 2>/dev/null | sort)
@@ -7265,19 +7329,20 @@ jobs:
           fi
 
           # Update existing comment or create new one
-          COMMENT_ID=$(gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+          COMMENT_ID=$(gh api repos/$&#123;&#123; github.repository &#125;&#125;/issues/$&#123;&#123; github.event.pull_request.number &#125;&#125;/comments \
             --jq '.[] | select(.body | startswith("## E2E Evals")) | .id' | tail -1)
 
           if [ -n "$COMMENT_ID" ]; then
-            gh api "repos/${{ github.repository }}/issues/comments/${COMMENT_ID}" \
+            gh api "repos/$&#123;&#123; github.repository &#125;&#125;/issues/comments/${COMMENT_ID}" \
               -X PATCH -f body="$BODY"
           else
-            gh pr comment "${{ github.event.pull_request.number }}" --body "$BODY"
+            gh pr comment "$&#123;&#123; github.event.pull_request.number &#125;&#125;" --body "$BODY"
           fi
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## 质量风险
 
 - 大量技能依赖生成器输出，因此 PR 必须同时检查 `.tmpl`、生成结果和多宿主产物。
@@ -7318,7 +7383,7 @@ bun run skill:check
 bun run dev:skill
 ```
 
-For template authoring best practices (natural language over bash-isms, dynamic branch detection, `{{BASE_BRANCH_DETECT}}` usage), see CLAUDE.md's "Writing SKILL templates" section.
+For template authoring best practices (natural language over bash-isms, dynamic branch detection, `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` usage), see CLAUDE.md's "Writing SKILL templates" section.
 
 To add a browse command, add it to `browse/src/commands.ts`. To add a snapshot flag, add it to `SNAPSHOT_FLAGS` in `browse/src/snapshot.ts`. Then rebuild.
 ````
@@ -7412,6 +7477,7 @@ Zero generator, setup, or tooling code changes needed.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能生成系统](skill-generation.md)
@@ -7512,6 +7578,7 @@ This runs tests, reviews the diff, triages Greptile comments (with 2-tier escala
 
 <!-- source-snippets:end -->
 </details>
+
 ## Dev mode
 
 `bin/dev-setup` 会把当前 checkout symlink 到项目本地 `.claude/skills/`，让 Claude Code 直接读取工作树里的技能；`bin/dev-teardown` 恢复到全局安装。Sources: [CONTRIBUTING.md:5-24](../../../project-repos/gstack/CONTRIBUTING.md#L5-L24), [CONTRIBUTING.md:58-89](../../../project-repos/gstack/CONTRIBUTING.md#L58-L89), [CONTRIBUTING.md:90-107](../../../project-repos/gstack/CONTRIBUTING.md#L90-L107)
@@ -7608,6 +7675,7 @@ bin/dev-teardown
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   A[gstack checkout] --> B[bin/dev-setup]
@@ -7651,7 +7719,7 @@ bun run skill:check
 bun run dev:skill
 ```
 
-For template authoring best practices (natural language over bash-isms, dynamic branch detection, `{{BASE_BRANCH_DETECT}}` usage), see CLAUDE.md's "Writing SKILL templates" section.
+For template authoring best practices (natural language over bash-isms, dynamic branch detection, `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` usage), see CLAUDE.md's "Writing SKILL templates" section.
 
 To add a browse command, add it to `browse/src/commands.ts`. To add a snapshot flag, add it to `SNAPSHOT_FLAGS` in `browse/src/snapshot.ts`. Then rebuild.
 ````
@@ -7690,6 +7758,7 @@ generated output silently drops the other side's template changes.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 新增 host
 
 新增宿主是 declarative config，不需要改生成器核心：创建 `hosts/myhost.ts`、在 `hosts/index.ts` 注册、加 `.gitignore`、运行生成和测试。`docs/ADDING_A_HOST.md` 给出配置字段和 adapter pattern。Sources: [docs/ADDING_A_HOST.md:1-32](../../../project-repos/gstack/docs/ADDING_A_HOST.md#L1-L32), [docs/ADDING_A_HOST.md:34-147](../../../project-repos/gstack/docs/ADDING_A_HOST.md#L34-L147), [docs/ADDING_A_HOST.md:165-182](../../../project-repos/gstack/docs/ADDING_A_HOST.md#L165-L182)
@@ -7880,6 +7949,7 @@ Run `bun run scripts/host-config-export.ts validate` to check all configs.
 
 <!-- source-snippets:end -->
 </details>
+
 | 步骤 | 文件 |
 |---|---|
 | 定义 host | `hosts/<host>.ts` |
@@ -8080,6 +8150,7 @@ export function validateAllConfigs(configs: HostConfig[]): string[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 迁移与发布
 
 当版本改变 on-disk state，例如技能目录结构、配置 key 或 `~/.gstack/` 格式，贡献者需要在 `gstack-upgrade/migrations/v{VERSION}.sh` 添加幂等、非致命迁移脚本。Sources: [CONTRIBUTING.md:430-479](../../../project-repos/gstack/CONTRIBUTING.md#L430-L479)
@@ -8146,6 +8217,7 @@ executable and parse without syntax errors.
 
 <!-- source-snippets:end -->
 </details>
+
 社区 PR 积压时，贡献文档建议按主题 wave 批处理：分类、去重、collector branch、清晰关闭说明、单 PR ship。Sources: [CONTRIBUTING.md:413-428](../../../project-repos/gstack/CONTRIBUTING.md#L413-L428)
 
 <details class="source-snippets">
@@ -8176,6 +8248,7 @@ See [PR #205](../../pull/205) (v0.8.3) for the first wave as an example.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [安装与多宿主接入](setup-and-hosts.md)

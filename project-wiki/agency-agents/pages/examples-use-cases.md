@@ -70,6 +70,7 @@ These examples answer the question: *"What does it actually look like when the f
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Mission["共享任务"] --> Product["Trend Researcher"]
@@ -132,6 +133,7 @@ Sources: [examples/README.md:13-40](../../../project-repos/agency-agents/example
 
 <!-- source-snippets:end -->
 </details>
+
 ## README 中的四类真实场景
 
 README 提供多种组合使用场景：Startup MVP、Marketing Campaign、Enterprise Feature Development、Paid Media Account Takeover 等，每个场景用一组 agent 覆盖从需求、设计、实现、增长到质量验证的不同环节。Sources: [README.md:385-423](../../../project-repos/agency-agents/README.md#L385-L423), [README.md:427-437](../../../project-repos/agency-agents/README.md#L427-L437)
@@ -203,6 +205,7 @@ README 提供多种组合使用场景：Startup MVP、Marketing Campaign、Enter
 
 <!-- source-snippets:end -->
 </details>
+
 ## NEXUS 快速入口
 
 Quickstart 提供可复制 prompt：Full 模式覆盖 Phase 0 到 Phase 6，Sprint 模式跳过市场验证从架构与 sprint planning 开始，Micro 模式提供 bug fix、marketing campaign、compliance audit、performance investigation、market research、UX improvement 等短流程。Sources: [strategy/QUICKSTART.md:21-42](../../../project-repos/agency-agents/strategy/QUICKSTART.md#L21-L42), [strategy/QUICKSTART.md:46-67](../../../project-repos/agency-agents/strategy/QUICKSTART.md#L46-L67), [strategy/QUICKSTART.md:71-119](../../../project-repos/agency-agents/strategy/QUICKSTART.md#L71-L119)
@@ -322,6 +325,7 @@ Evidence Collector verifies improvements.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 示例贡献要求
 
 examples 文档要求新示例体现多个 agent 围绕共享目标协作、展示 The Agency 能力广度，并具备真实应用价值。Sources: [examples/README.md:42-49](../../../project-repos/agency-agents/examples/README.md#L42-L49)
@@ -345,6 +349,7 @@ If you run an interesting multi-agent exercise, consider adding it here. Good ex
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [NEXUS 多 Agent 编排](nexus-orchestration.md)

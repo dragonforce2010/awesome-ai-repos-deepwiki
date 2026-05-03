@@ -100,6 +100,7 @@ See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for f
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   User["用户"] --> Choose目标工具
@@ -345,6 +346,7 @@ install_kimi() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 支持工具
 
 `install.sh` 的 `ALL_TOOLS` 包含 `claude-code`、`copilot`、`antigravity`、`gemini-cli`、`opencode`、`openclaw`、`cursor`、`aider`、`windsurf`、`qwen`、`kimi`。Sources: [scripts/install.sh:104-110](../../../project-repos/agency-agents/scripts/install.sh#L104-L110)
@@ -368,6 +370,7 @@ AGENT_DIRS=(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Home-scoped 与 Project-scoped
 
 | 类型 | 工具 | 安装目标 |
@@ -619,6 +622,7 @@ This creates `.cursor/rules/<agent-slug>.mdc` files in your project.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 工具特例
 
 Gemini CLI 和 Qwen Code 在 fresh clone 后需要先运行 `convert.sh` 生成文件；OpenClaw 生成 workspaces 后安装，若 gateway 已运行则需要 restart。Sources: [integrations/README.md:32-39](../../../project-repos/agency-agents/integrations/README.md#L32-L39), [integrations/gemini-cli/README.md:6-14](../../../project-repos/agency-agents/integrations/gemini-cli/README.md#L6-L14), [integrations/openclaw/README.md:8-28](../../../project-repos/agency-agents/integrations/openclaw/README.md#L8-L28), [integrations/README.md:224-240](../../../project-repos/agency-agents/integrations/README.md#L224-L240)
@@ -705,6 +709,7 @@ See [qwen/README.md](qwen/README.md) for details.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [转换流水线](conversion-pipeline.md)

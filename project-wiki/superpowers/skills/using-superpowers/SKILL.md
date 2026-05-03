@@ -3,17 +3,17 @@ name: using-superpowers
 description: 在开始任何对话时使用 - 建立如何发现和使用技能的规则，要求在任何响应（包括澄清问题）之前调用 Skill 工具
 ---
 
-<SUBAGENT-STOP>
+&lt;SUBAGENT-STOP&gt;
 如果你是作为子代理被分派来执行特定任务的，跳过此技能。
-</SUBAGENT-STOP>
+&lt;/SUBAGENT-STOP&gt;
 
-<EXTREMELY-IMPORTANT>
+&lt;EXTREMELY-IMPORTANT&gt;
 如果你认为某个技能有哪怕 1% 的可能性适用于你正在做的事情，你绝对必须调用该技能。
 
 如果某个技能适用于你的任务，你没有选择。你必须使用它。
 
 这是不可协商的。这不是可选的。你不能用合理化来逃避。
-</EXTREMELY-IMPORTANT>
+&lt;/EXTREMELY-IMPORTANT&gt;
 
 ## 指令优先级
 

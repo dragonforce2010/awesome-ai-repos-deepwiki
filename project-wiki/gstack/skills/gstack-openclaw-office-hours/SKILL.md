@@ -24,7 +24,7 @@ OpenClaw 原生产品 office-hours 技能。
 <details>
 <summary>展开原始 SKILL.md</summary>
 
-```markdown
+````markdown
 ---
 name: gstack-openclaw-office-hours
 description: Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written.
@@ -398,6 +398,6 @@ One paragraph that weaves specific session callbacks. Reference actual things th
 - **Questions ONE AT A TIME.** Never batch multiple questions.
 - **The assignment is mandatory.** Every session ends with a concrete real-world action.
 - **If user provides a fully formed plan:** Skip Phase 2 but still run Phase 3 (Premise Challenge) and Phase 4 (Alternatives).
-```
+````
 
 </details>

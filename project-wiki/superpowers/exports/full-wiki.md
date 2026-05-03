@@ -73,6 +73,7 @@ Once it's teased a spec out of the conversation, it shows it to you in chunks sh
 
 <!-- source-snippets:end -->
 </details>
+
 ## 项目定位
 
 Superpowers 解决的核心问题是：编码代理倾向于直接跳入写代码，跳过设计、规划和测试环节。Superpowers 通过技能系统强制代理遵循结构化流程——先理解需求、再设计方案、然后编写计划、最后以 TDD 方式实施并审查。
@@ -146,6 +147,7 @@ If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and a skill says "alw
 
 <!-- source-snippets:end -->
 </details>
+
 ## 核心能力
 
 | 能力 | 说明 | 对应技能 |
@@ -221,6 +223,7 @@ gemini extensions update superpowers
 
 <!-- source-snippets:end -->
 </details>
+
 ## 设计哲学
 
 Superpowers 的设计哲学可以概括为四条原则：
@@ -307,6 +310,7 @@ Claiming work is complete without verification is dishonesty, not efficiency.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 仓库结构
 
 ```text
@@ -461,6 +465,7 @@ Sources: [00-repo-inventory.md](../00-repo-inventory.md)
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阅读路线
 
 - **想了解项目是什么？** → 继续阅读本页，然后看 [核心工作流](core-workflow.md)
@@ -773,6 +778,7 @@ If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and a skill says "alw
 
 <!-- source-snippets:end -->
 </details>
+
 ## 会话启动流程
 
 Superpowers 的核心机制是在会话启动时自动注入 `using-superpowers` 技能内容。这个过程通过平台原生的 SessionStart 钩子实现。
@@ -898,6 +904,7 @@ exit 0
 
 <!-- source-snippets:end -->
 </details>
+
 ### OpenCode 插件
 
 OpenCode 使用完全不同的集成方式——一个 ES 模块插件 `superpowers.js`，它通过两个钩子实现引导：
@@ -1017,6 +1024,7 @@ ${toolMapping}
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能发现与加载
 
 `using-superpowers` 技能是整个系统的入口点。它建立了技能使用的核心规则：
@@ -1147,6 +1155,7 @@ Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 跨平台钩子包装器
 
 `run-hook.cmd` 是一个巧妙的多语言脚本，同时兼容 Windows 批处理和 Unix shell：
@@ -1216,6 +1225,7 @@ exec bash "${SCRIPT_DIR}/${SCRIPT_NAME}" "$@"
 
 <!-- source-snippets:end -->
 </details>
+
 ## 插件清单结构
 
 每个平台有独立的插件清单文件，定义元数据和技能路径：
@@ -1354,6 +1364,7 @@ Sources: [claude-plugin/plugin.json:1-20](../../../project-repos/superpowers/.cl
 
 <!-- source-snippets:end -->
 </details>
+
 ## 旧版技能迁移检测
 
 `session-start` 脚本包含向后兼容检测：如果发现旧版技能目录 `~/.config/superpowers/skills` 存在，会输出警告提示用户迁移到 `~/.claude/skills`。这确保了从旧版 Superpowers 升级的用户不会因自定义技能丢失而困惑。
@@ -1377,6 +1388,7 @@ fi
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [多平台集成](multi-platform-integration.md)
@@ -1691,6 +1703,7 @@ ${toolMapping}
 
 <!-- source-snippets:end -->
 </details>
+
 ## Claude Code 集成
 
 Claude Code 是 Superpowers 的主要目标平台，拥有最完整的集成支持。
@@ -1765,6 +1778,7 @@ exit 0
 
 <!-- source-snippets:end -->
 </details>
+
 ## Cursor 集成
 
 Cursor 使用 `hooks-cursor.json`（v1 格式）注册 `sessionStart` 钩子。与 Claude Code 的区别：
@@ -1813,6 +1827,7 @@ elif [ -n "${CLAUDE_PLUGIN_ROOT:-}" ] && [ -z "${COPILOT_CLI:-}" ]; then
 
 <!-- source-snippets:end -->
 </details>
+
 ## Codex 集成
 
 Codex 有两种形态——CLI 和 App，共享相同的 `.codex-plugin/plugin.json` 清单。
@@ -2010,6 +2025,7 @@ Optionally delete the clone: `rm -rf ~/.codex/superpowers` (Windows: `Remove-Ite
 
 <!-- source-snippets:end -->
 </details>
+
 ## OpenCode 集成
 
 OpenCode 使用完全不同的集成架构——一个 ES 模块插件而非钩子脚本。
@@ -2373,6 +2389,7 @@ Skills written for Claude Code are automatically adapted for OpenCode:
 
 <!-- source-snippets:end -->
 </details>
+
 ## Gemini CLI 集成
 
 Gemini CLI 使用最简的集成方式——一个 `gemini-extension.json` 指定 `contextFileName: "GEMINI.md"`。
@@ -2420,6 +2437,7 @@ Sources: [gemini-extension.json:1-6](../../../project-repos/superpowers/gemini-e
 
 <!-- source-snippets:end -->
 </details>
+
 ## 跨平台兼容性设计
 
 ### 钩子脚本的多平台输出
@@ -2527,6 +2545,7 @@ exec bash "${SCRIPT_DIR}/${SCRIPT_NAME}" "$@"
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [系统架构](system-architecture.md)
@@ -2691,6 +2710,7 @@ Assume they are a skilled developer, but know almost nothing about our toolset o
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段一：头脑风暴（brainstorming）
 
 头脑风暴技能是整个工作流的入口。它强制代理在写任何代码之前先理解需求。
@@ -2850,6 +2870,7 @@ After writing the spec document, look at it with fresh eyes:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段二：创建隔离工作区（using-git-worktrees）
 
 设计审批后，代理创建 Git worktree 隔离工作区：
@@ -2915,7 +2936,7 @@ If no directory exists and no CLAUDE.md preference:
 No worktree directory found. Where should I create worktrees?
 
 1. .worktrees/ (project-local, hidden)
-2. ~/.config/superpowers/worktrees/<project-name>/ (global location)
+2. ~/.config/superpowers/worktrees/&lt;project-name&gt;/ (global location)
 
 Which would you prefer?
 ```
@@ -2995,6 +3016,7 @@ if [ -f go.mod ]; then go mod download; fi
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段三：编写计划（writing-plans）
 
 计划技能将设计分解为原子级任务，每个任务 2-5 分钟可完成。
@@ -3163,6 +3185,7 @@ Every step must contain the actual content an engineer needs. These are **plan f
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段四：执行实施
 
 计划完成后，用户选择执行方式：
@@ -3263,6 +3286,7 @@ After all tasks complete and verified:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段五：代码审查
 
 ### 请求审查（requesting-code-review）
@@ -3531,6 +3555,7 @@ Push back when:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 阶段六：分支完成（finishing-a-development-branch）
 
 所有任务完成并审查通过后：
@@ -3582,7 +3607,7 @@ npm test / cargo test / pytest / go test ./...
 
 **If tests fail:**
 ```
-Tests failing (<N> failures). Must fix before completing:
+Tests failing (&lt;N&gt; failures). Must fix before completing:
 
 [Show failures]
 
@@ -3609,7 +3634,7 @@ Present exactly these 4 options:
 ```
 Implementation complete. What would you like to do?
 
-1. Merge back to <base-branch> locally
+1. Merge back to &lt;base-branch&gt; locally
 2. Push and create a Pull Request
 3. Keep the branch as-is (I'll handle it later)
 4. Discard this work
@@ -3625,19 +3650,19 @@ Which option?
 
 ```bash
 # Switch to base branch
-git checkout <base-branch>
+git checkout &lt;base-branch&gt;
 
 # Pull latest
 git pull
 
 # Merge feature branch
-git merge <feature-branch>
+git merge &lt;feature-branch&gt;
 
 # Verify tests on merged result
-<test command>
+&lt;test command&gt;
 
 # If tests pass
-git branch -d <feature-branch>
+git branch -d &lt;feature-branch&gt;
 ```
 
 Then: Cleanup worktree (Step 5)
@@ -3646,15 +3671,15 @@ Then: Cleanup worktree (Step 5)
 
 ```bash
 # Push branch
-git push -u origin <feature-branch>
+git push -u origin &lt;feature-branch&gt;
 
 # Create PR
-gh pr create --title "<title>" --body "$(cat <<'EOF'
+gh pr create --title "&lt;title&gt;" --body "$(cat <<'EOF'
 ## Summary
-<2-3 bullets of what changed>
+&lt;2-3 bullets of what changed&gt;
 
 ## Test Plan
-- [ ] <verification steps>
+- [ ] &lt;verification steps&gt;
 EOF
 )"
 ```
@@ -3672,13 +3697,14 @@ Report: "Keeping branch <name>. Worktree preserved at <path>."
 **Confirm first:**
 ```
 This will permanently delete:
-- Branch <name>
-- All commits: <commit-list>
+- Branch &lt;name&gt;
+- All commits: &lt;commit-list&gt;
 ... snippet truncated ...
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证先行原则
 
 贯穿所有阶段的元原则：**没有新鲜验证证据就不能声称完成**。
@@ -3831,6 +3857,7 @@ From 24 failure memories:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [子代理驱动开发](subagent-driven-development.md)
@@ -3866,12 +3893,12 @@ From 24 failure memories:
 
 ```mermaid
 graph TD
-    A[读取计划<br/>提取所有任务] --> B[创建 TodoWrite]
+    A[读取计划&lt;br/&gt;提取所有任务] --> B[创建 TodoWrite]
     B --> C[分派实施子代理]
     C --> D{子代理提问?}
-    D -->|是| E[回答问题<br/>提供上下文]
+    D -->|是| E[回答问题&lt;br/&gt;提供上下文]
     E --> C
-    D -->|否| F[子代理实施<br/>测试、提交、自审]
+    D -->|否| F[子代理实施&lt;br/&gt;测试、提交、自审]
     F --> G[分派规格审查子代理]
     G --> H{规格合规?}
     H -->|否| I[子代理修复规格差距]
@@ -3951,6 +3978,7 @@ digraph process {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 何时使用 SDD
 
 | 条件 | SDD | executing-plans |
@@ -3997,6 +4025,7 @@ Sources: [skills/subagent-driven-development/SKILL.md:20-40](../../../project-re
 
 <!-- source-snippets:end -->
 </details>
+
 ## 三种子代理角色
 
 ### 实施者（Implementer）
@@ -4134,6 +4163,7 @@ Implementer subagents report one of four statuses. Handle each appropriately:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 模型选择策略
 
 使用能处理每个角色的最低能力模型，以节约成本和提高速度：
@@ -4184,6 +4214,7 @@ Implementer: "Got it. Implementing now..."
 
 <!-- source-snippets:end -->
 </details>
+
 ## 处理实施者状态
 
 | 状态 | 处理方式 |
@@ -4240,6 +4271,7 @@ Spec reviewer: ❌ Issues:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 并行代理调度
 
 `dispatching-parallel-agents` 技能处理多个独立问题的并行调查：
@@ -4416,6 +4448,7 @@ Return: Summary of what you found and what you fixed.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 红旗清单
 
 **绝不：**
@@ -4487,6 +4520,7 @@ Sources: [skills/subagent-driven-development/SKILL.md:200-240](../../../project-
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [核心工作流](core-workflow.md)
@@ -4736,6 +4770,7 @@ Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能一览表
 
 | 技能 | 类别 | 类型 | 核心原则 | 辅助文件 |
@@ -4768,6 +4803,7 @@ Sources: [skills/*/SKILL.md](../../../project-repos/superpowers/skills/%2A/SKILL
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能类型：刚性 vs 灵活
 
 技能分为两种类型，决定了遵循的严格程度：
@@ -4822,6 +4858,7 @@ Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
 
 <!-- source-snippets:end -->
 </details>
+
 ## SKILL.md 规范
 
 每个技能必须包含 YAML frontmatter 和结构化的 Markdown 内容。
@@ -4978,6 +5015,7 @@ Concrete results
 
 <!-- source-snippets:end -->
 </details>
+
 ## Claude 搜索优化（CSO）
 
 技能的发现依赖于 Claude 的搜索能力。CSO 策略确保技能能被正确找到和加载。
@@ -5153,6 +5191,7 @@ wc -w skills/path/SKILL.md
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能间的交叉引用
 
 技能之间使用名称引用，带明确的必需标记：
@@ -5209,6 +5248,7 @@ Use skill name only, with explicit requirement markers:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -5415,6 +5455,7 @@ test('retry works', async () => {
 
 <!-- source-snippets:end -->
 </details>
+
 ### 常见自我合理化
 
 | 借口 | 现实 |
@@ -5474,7 +5515,7 @@ Write simplest code to pass the test.
 
 <Good>
 ```typescript
-async function retryOperation<T>(fn: () => Promise<T>): Promise<T> {
+async function retryOperation&lt;T&gt;(fn: () => Promise&lt;T&gt;): Promise&lt;T&gt; {
   for (let i = 0; i < 3; i++) {
     try {
       return await fn();
@@ -5490,14 +5531,14 @@ Just enough to pass
 
 <Bad>
 ```typescript
-async function retryOperation<T>(
-  fn: () => Promise<T>,
+async function retryOperation&lt;T&gt;(
+  fn: () => Promise&lt;T&gt;,
   options?: {
     maxRetries?: number;
     backoff?: 'linear' | 'exponential';
     onRetry?: (attempt: number) => void;
   }
-): Promise<T> {
+): Promise&lt;T&gt; {
   // YAGNI
 }
 ```
@@ -5543,6 +5584,7 @@ Next failing test for next feature.
 
 <!-- source-snippets:end -->
 </details>
+
 ### 测试反模式
 
 - 测试 mock 行为而非真实行为
@@ -5585,7 +5627,7 @@ Tests must verify real behavior, not mock behavior. Mocks are a means to isolate
 ```typescript
 // ❌ BAD: Testing that the mock exists
 test('renders sidebar', () => {
-  render(<Page />);
+  render(&lt;Page /&gt;);
   expect(screen.getByTestId('sidebar-mock')).toBeInTheDocument();
 });
 ```
@@ -5601,7 +5643,7 @@ test('renders sidebar', () => {
 ```typescript
 // ✅ GOOD: Test real component or don't mock it
 test('renders sidebar', () => {
-  render(<Page />);  // Don't mock sidebar
+  render(&lt;Page /&gt;);  // Don't mock sidebar
   expect(screen.getByRole('navigation')).toBeInTheDocument();
 });
 
@@ -5683,6 +5725,7 @@ BEFORE adding any method to production class:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 系统化调试
 
 ### 铁律
@@ -5799,6 +5842,7 @@ You MUST complete each phase before proceeding to the next.
 
 <!-- source-snippets:end -->
 </details>
+
 ### 阶段一：根因调查
 
 在提出任何修复之前：
@@ -5884,6 +5928,7 @@ Sources: [skills/systematic-debugging/SKILL.md:60-120](../../../project-repos/su
 
 <!-- source-snippets:end -->
 </details>
+
 ### 阶段二：模式分析
 
 1. 找到同类工作的代码
@@ -6001,6 +6046,7 @@ Sources: [skills/systematic-debugging/SKILL.md:120-200](../../../project-repos/s
 
 <!-- source-snippets:end -->
 </details>
+
 ### 辅助技术
 
 | 技术 | 文件 | 用途 |
@@ -6054,6 +6100,7 @@ If systematic investigation reveals issue is truly environmental, timing-depende
 
 <!-- source-snippets:end -->
 </details>
+
 ## 验证先行原则
 
 验证先行是贯穿 TDD 和调试的元原则。
@@ -6221,6 +6268,7 @@ From 24 failure memories:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 三者的关系
 
 ```mermaid
@@ -6460,6 +6508,7 @@ From 24 failure memories:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能体系](skills-system.md)
@@ -6659,19 +6708,20 @@ const MIME_TYPES = {
 
 // ========== Templates and Constants ==========
 
-const WAITING_PAGE = `<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>Brainstorm Companion</title>
-<style>body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; }
-h1 { color: #333; } p { color: #666; }</style>
-</head>
-<body><h1>Brainstorm Companion</h1>
-<p>Waiting for the agent to push a screen...</p></body></html>`;
+const WAITING_PAGE = <!DOCTYPE html>
+&lt;html&gt;
+&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;Brainstorm Companion&lt;/title&gt;
+&lt;style&gt;body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; }
+h1 { color: #333; } p { color: #666; }&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;h1>Brainstorm Companion&lt;/h1>
+&lt;p>Waiting for the agent to push a screen...&lt;/p>&lt;/body&gt;&lt;/html&gt;;
 
 ```
 
 <!-- source-snippets:end -->
 </details>
+
 ## WebSocket 服务器实现
 
 `server.cjs` 是一个**零外部依赖**的 Node.js 服务器，手动实现了 RFC 6455 WebSocket 协议：
@@ -6736,6 +6786,7 @@ function decodeFrame(buffer) {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 交互循环
 
 ```mermaid
@@ -6826,12 +6877,13 @@ Use `--url-host` to control what hostname is printed in the returned URL JSON.
 
    ```html
    <!-- filename: waiting.html (or waiting-2.html, etc.) -->
-   <div style="display:flex;align-items:center;justify-content:center;min-height:60vh">
-     <p class="subtitle">Continuing in terminal...</p>
+   &lt;div style="display:flex;align-items:center;justify-content:center;min-height:60vh">
+     &lt;p class="subtitle">Continuing in terminal...&lt;/p>
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 内容模板系统
 
 服务器提供两种模式：
@@ -6864,8 +6916,8 @@ Sources: [skills/brainstorming/visual-companion.md:120-200](../../../project-rep
 #### `skills/brainstorming/visual-companion.md:120-200`
 
 ````markdown
-     <p class="subtitle">Continuing in terminal...</p>
-   </div>
+     &lt;p class="subtitle">Continuing in terminal...&lt;/p>
+   &lt;/div>
    ```
 
    This prevents the user from staring at a resolved choice while the conversation has moved on. When the next visual question comes up, push a new content file as usual.
@@ -6879,25 +6931,25 @@ Write just the content that goes inside the page. The server wraps it in the fra
 **Minimal example:**
 
 ```html
-<h2>Which layout works better?</h2>
-<p class="subtitle">Consider readability and visual hierarchy</p>
+&lt;h2>Which layout works better?&lt;/h2>
+&lt;p class="subtitle">Consider readability and visual hierarchy&lt;/p>
 
-<div class="options">
-  <div class="option" data-choice="a" onclick="toggleSelect(this)">
-    <div class="letter">A</div>
-    <div class="content">
-      <h3>Single Column</h3>
-      <p>Clean, focused reading experience</p>
-    </div>
-  </div>
-  <div class="option" data-choice="b" onclick="toggleSelect(this)">
-    <div class="letter">B</div>
-    <div class="content">
-      <h3>Two Column</h3>
-      <p>Sidebar navigation with main content</p>
-    </div>
-  </div>
-</div>
+&lt;div class="options">
+  &lt;div class="option" data-choice="a" onclick="toggleSelect(this)">
+    &lt;div class="letter">A&lt;/div>
+    &lt;div class="content">
+      &lt;h3>Single Column&lt;/h3>
+      &lt;p>Clean, focused reading experience&lt;/p>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="option" data-choice="b" onclick="toggleSelect(this)">
+    &lt;div class="letter">B&lt;/div>
+    &lt;div class="content">
+      &lt;h3>Two Column&lt;/h3>
+      &lt;p>Sidebar navigation with main content&lt;/p>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
 ```
 
 That's it. No `<html>`, no CSS, no `<script>` tags needed. The server provides all of that.
@@ -6909,37 +6961,37 @@ The frame template provides these CSS classes for your content:
 ### Options (A/B/C choices)
 
 ```html
-<div class="options">
-  <div class="option" data-choice="a" onclick="toggleSelect(this)">
-    <div class="letter">A</div>
-    <div class="content">
-      <h3>Title</h3>
-      <p>Description</p>
-    </div>
-  </div>
-</div>
+&lt;div class="options">
+  &lt;div class="option" data-choice="a" onclick="toggleSelect(this)">
+    &lt;div class="letter">A&lt;/div>
+    &lt;div class="content">
+      &lt;h3>Title&lt;/h3>
+      &lt;p>Description&lt;/p>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
 ```
 
 **Multi-select:** Add `data-multiselect` to the container to let users select multiple options. Each click toggles the item. The indicator bar shows the count.
 
 ```html
-<div class="options" data-multiselect>
+&lt;div class="options" data-multiselect>
   <!-- same option markup — users can select/deselect multiple -->
-</div>
+&lt;/div>
 ```
 
 ### Cards (visual designs)
 
 ```html
-<div class="cards">
-  <div class="card" data-choice="design1" onclick="toggleSelect(this)">
-    <div class="card-image"><!-- mockup content --></div>
-    <div class="card-body">
-      <h3>Name</h3>
-      <p>Description</p>
-    </div>
-  </div>
-</div>
+&lt;div class="cards">
+  &lt;div class="card" data-choice="design1" onclick="toggleSelect(this)">
+    &lt;div class="card-image"><!-- mockup content -->&lt;/div>
+    &lt;div class="card-body">
+      &lt;h3>Name&lt;/h3>
+      &lt;p>Description&lt;/p>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
 ```
 
 ### Mockup container
@@ -6949,6 +7001,7 @@ The frame template provides these CSS classes for your content:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 何时使用浏览器 vs 终端
 
 **逐问题决定，而非逐会话决定**。判断标准：用户通过看比通过读更能理解吗？
@@ -7017,6 +7070,7 @@ scripts/start-server.sh --project-dir /path/to/project
 
 <!-- source-snippets:end -->
 </details>
+
 ## 跨平台启动方式
 
 | 平台 | 启动命令 | 注意事项 |
@@ -7104,6 +7158,7 @@ Use `--url-host` to control what hostname is printed in the returned URL JSON.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 规格文档审查
 
 brainstorming 技能还包含一个 `spec-document-reviewer-prompt.md`，用于在头脑风暴完成后对生成的规格文档进行审查，确保文档质量符合标准。
@@ -7171,6 +7226,7 @@ Task tool (general-purpose):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [核心工作流](core-workflow.md)
@@ -7208,19 +7264,19 @@ Superpowers 的测试体系分为两层：**技能行为测试**（验证代理�
 ```mermaid
 graph TD
     subgraph ID1["技能行为测试"]
-        ST[skill-triggering<br/>技能触发测试]
-        ER[explicit-skill-requests<br/>显式技能请求测试]
-        SDD[subagent-driven-dev<br/>SDD 集成测试]
-        OC[opencode<br/>OpenCode 插件测试]
+        ST[skill-triggering&lt;br/&gt;技能触发测试]
+        ER[explicit-skill-requests&lt;br/&gt;显式技能请求测试]
+        SDD[subagent-driven-dev&lt;br/&gt;SDD 集成测试]
+        OC[opencode&lt;br/&gt;OpenCode 插件测试]
     end
 
     subgraph ID2["组件功能测试"]
-        BS[brainstorm-server<br/>WebSocket 服务器测试]
-        CS[codex-plugin-sync<br/>Codex 同步测试]
+        BS[brainstorm-server&lt;br/&gt;WebSocket 服务器测试]
+        CS[codex-plugin-sync&lt;br/&gt;Codex 同步测试]
     end
 
     subgraph ID3["分析工具"]
-        AT[analyze-token-usage.py<br/>Token 用量分析]
+        AT[analyze-token-usage.py&lt;br/&gt;Token 用量分析]
     end
 
     ST -->|验证| V1[技能是否被正确触发]
@@ -7421,6 +7477,7 @@ The integration test verifies the `subagent-driven-development` skill correctly:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 技能触发测试（skill-triggering）
 
 验证代理在收到特定提示时是否自动触发正确的技能。
@@ -7456,7 +7513,7 @@ Sources: [tests/skill-triggering/run-test.sh](../../../project-repos/superpowers
 ```bash
 #!/usr/bin/env bash
 # Test skill triggering with naive prompts
-# Usage: ./run-test.sh <skill-name> <prompt-file>
+# Usage: ./run-test.sh &lt;skill-name&gt; &lt;prompt-file&gt;
 #
 # Tests whether Claude triggers a skill based on a natural prompt
 # (without explicitly mentioning the skill)
@@ -7468,7 +7525,7 @@ PROMPT_FILE="$2"
 MAX_TURNS="${3:-3}"
 
 if [ -z "$SKILL_NAME" ] || [ -z "$PROMPT_FILE" ]; then
-    echo "Usage: $0 <skill-name> <prompt-file> [max-turns]"
+    echo "Usage: $0 &lt;skill-name&gt; &lt;prompt-file&gt; [max-turns]"
     echo "Example: $0 systematic-debugging ./test-prompts/debugging.txt"
     exit 1
 fi
@@ -7550,6 +7607,7 @@ fi
 
 <!-- source-snippets:end -->
 </details>
+
 ## 显式技能请求测试（explicit-skill-requests）
 
 验证用户以不同方式显式请求技能时，代理是否正确响应。
@@ -7591,7 +7649,7 @@ Sources: [tests/explicit-skill-requests/run-test.sh](../../../project-repos/supe
 ```bash
 #!/usr/bin/env bash
 # Test explicit skill requests (user names a skill directly)
-# Usage: ./run-test.sh <skill-name> <prompt-file>
+# Usage: ./run-test.sh &lt;skill-name&gt; &lt;prompt-file&gt;
 #
 # Tests whether Claude invokes a skill when the user explicitly requests it by name
 # (without using the plugin namespace prefix)
@@ -7605,7 +7663,7 @@ PROMPT_FILE="$2"
 MAX_TURNS="${3:-3}"
 
 if [ -z "$SKILL_NAME" ] || [ -z "$PROMPT_FILE" ]; then
-    echo "Usage: $0 <skill-name> <prompt-file> [max-turns]"
+    echo "Usage: $0 &lt;skill-name&gt; &lt;prompt-file&gt; [max-turns]"
     echo "Example: $0 subagent-driven-development ./prompts/subagent-driven-development-please.txt"
     exit 1
 fi
@@ -7717,6 +7775,7 @@ else
 
 <!-- source-snippets:end -->
 </details>
+
 ## SDD 集成测试
 
 最复杂的测试——验证 `subagent-driven-development` 技能在真实会话中的完整行为。
@@ -8012,12 +8071,13 @@ OUTPUT_FILE="$TEST_PROJECT/claude-output.txt"
 
 <!-- source-snippets:end -->
 </details>
+
 ## Token 用量分析工具
 
 `analyze-token-usage.py` 从 Claude Code 会话记录中提取 Token 用量：
 
 ```bash
-python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/<project-dir>/<session-id>.jsonl
+python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/&lt;project-dir&gt;/&lt;session-id&gt;.jsonl
 ```
 
 输出包括：
@@ -8088,7 +8148,7 @@ STATUS: PASSED
 Analyze token usage from any Claude Code session:
 
 ```bash
-python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/<project-dir>/<session-id>.jsonl
+python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/&lt;project-dir&gt;/&lt;session-id&gt;.jsonl
 ```
 
 ### Finding Session Files
@@ -8274,6 +8334,7 @@ def main():
 
 <!-- source-snippets:end -->
 </details>
+
 ## 可视化伴侣测试
 
 ### 服务器功能测试（server.test.js）
@@ -8551,6 +8612,7 @@ function runTests() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## OpenCode 插件测试
 
 验证 OpenCode 插件的加载、优先级和工具功能：
@@ -8698,6 +8760,7 @@ for test in "${tests[@]}"; do
 
 <!-- source-snippets:end -->
 </details>
+
 ## Codex 插件同步测试
 
 验证 `sync-to-codex-plugin.sh` 脚本正确同步上游内容到 Codex 插件仓库。
@@ -8836,6 +8899,7 @@ assert_file_equals() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [测试驱动与系统化调试](tdd-and-debugging.md)
@@ -8959,6 +9023,7 @@ The entire skill creation process follows RED-GREEN-REFACTOR.
 
 <!-- source-snippets:end -->
 </details>
+
 ### 何时创建技能
 
 **创建：**
@@ -9018,6 +9083,7 @@ skills/
 
 <!-- source-snippets:end -->
 </details>
+
 ### 技能目录结构
 
 ```text
@@ -9083,6 +9149,7 @@ description: Use when [specific triggering conditions and symptoms]
 
 <!-- source-snippets:end -->
 </details>
+
 ### 用子代理测试技能
 
 `testing-skills-with-subagents.md` 提供了使用子代理进行技能压力测试的详细方法：
@@ -9228,6 +9295,7 @@ C) Write tests now (30 min), then commit
 
 <!-- source-snippets:end -->
 </details>
+
 ## 版本管理
 
 ### bump-version.sh
@@ -9235,7 +9303,7 @@ C) Write tests now (30 min), then commit
 自动化版本号更新脚本，支持三种模式：
 
 ```bash
-./scripts/bump-version.sh <new-version>   # 更新所有声明文件到新版本
+./scripts/bump-version.sh &lt;new-version&gt;   # 更新所有声明文件到新版本
 ./scripts/bump-version.sh --check         # 报告当前版本（检测漂移）
 ./scripts/bump-version.sh --audit         # 检查 + grep 仓库查找遗漏的旧版本字符串
 ```
@@ -9262,7 +9330,7 @@ Sources: [scripts/bump-version.sh:1-100](../../../project-repos/superpowers/scri
 # with drift detection and repo-wide audit for missed files.
 #
 # Usage:
-#   bump-version.sh <new-version>   Bump all declared files to new version
+#   bump-version.sh &lt;new-version&gt;   Bump all declared files to new version
 #   bump-version.sh --check         Report current versions (detect drift)
 #   bump-version.sh --audit         Check + grep repo for old version strings
 #
@@ -9299,7 +9367,7 @@ write_json_field() {
 }
 
 # Read the list of declared files from config.
-# Outputs lines of "path<TAB>field"
+# Outputs lines of "path&lt;TAB&gt;field"
 declared_files() {
   jq -r '.files[] | "\(.path)\t\(.field)"' "$CONFIG"
 }
@@ -9364,6 +9432,7 @@ cmd_audit() {
 
 <!-- source-snippets:end -->
 </details>
+
 ### sync-to-codex-plugin.sh
 
 将 Superpowers 仓库同步到 `prime-radiant-inc/openai-codex-plugins` 仓库：
@@ -9503,6 +9572,7 @@ ignored_directory_has_tracked_descendants() {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 贡献规范
 
 ### PR 要求
@@ -9651,6 +9721,7 @@ Before proposing changes to skill design, workflow philosophy, or architecture, 
 
 <!-- source-snippets:end -->
 </details>
+
 ### 新平台集成要求
 
 如果 PR 添加新平台（IDE、CLI 工具、代理运行器）支持，**必须包含端到端会话记录**。
@@ -9712,6 +9783,7 @@ Skills are not prose — they are code that shapes agent behavior. If you modify
 
 <!-- source-snippets:end -->
 </details>
+
 ### 技能变更要求
 
 技能是塑造代理行为的代码，不是散文。修改技能内容需要：
@@ -9748,10 +9820,11 @@ Before proposing changes to skill design, workflow philosophy, or architecture, 
 - One problem per PR
 - Test on at least one harness and report results in the environment table
 - Describe the problem you solved, not just what you changed
-```
+
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [技能体系](skills-system.md)

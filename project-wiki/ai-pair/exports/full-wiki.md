@@ -70,6 +70,7 @@ AI-Pair 把模型差异变成结构化的工作流：给每个模型分配匹配
 
 <!-- source-snippets:end -->
 </details>
+
 ## 产物形态与版本
 
 
@@ -122,6 +123,7 @@ ai-pair/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 许可证
 
 MIT License，Copyright 2026 Axton Liu。
@@ -161,6 +163,7 @@ SOFTWARE.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [架构与角色分工](architecture-and-roles.md)
@@ -284,6 +287,7 @@ Team Lead (current Claude session)
 
 <!-- source-snippets:end -->
 </details>
+
 ## Agent 运行时假设
 
 `SKILL.md` 要求用 Agent 工具启动子代理时：`subagent_type: "general-purpose"` 且 `mode: "bypassPermissions"`，理由是审查者需要执行外部 CLI 并读取项目文件。
@@ -307,6 +311,7 @@ See Agent Prompt Templates below for each agent's startup prompt.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -381,6 +386,7 @@ The workflow is semi-automatic — you stay in control at every step:
 
 <!-- source-snippets:end -->
 </details>
+
 ## Team Lead 执行步骤（摘要）
 
 
@@ -435,6 +441,7 @@ If either CLI is missing, warn the user immediately and ask whether to proceed w
 
 <!-- source-snippets:end -->
 </details>
+
 ## CLI Invocation Protocol 要点
 
 共享协议（审查者 prompt 必须包含）规定：
@@ -499,6 +506,7 @@ CLI Invocation Protocol:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 项目 / 主题解析
 
 优先级：**显式参数** → **当前目录推断项目路径** → **含糊则询问用户**。
@@ -524,6 +532,7 @@ The project/topic is determined by:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [架构与角色分工](architecture-and-roles.md)
@@ -787,6 +796,7 @@ Follow the shared CLI Invocation Protocol (timeout + degradation retry). Stay ac
 
 <!-- source-snippets:end -->
 </details>
+
 ## team-stop
 
 用户执行 `/ai-pair team-stop` 时：向各 agent 发 `shutdown_request` → 等待确认 → `TeamDelete` → 输出关闭与资源清理摘要。
@@ -818,6 +828,7 @@ When user calls `/ai-pair team-stop` or chooses "end" in the workflow:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 与 examples 的对应关系
 
 ```mermaid
@@ -1034,6 +1045,7 @@ The author revises. You can send for another round of review or pass.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [半自动工作流与 CLI 调用协议](workflow-and-protocol.md)
@@ -1095,6 +1107,7 @@ All three CLIs must have authentication configured before use.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 安装 Skill
 
 **推荐**：克隆到全局目录：
@@ -1138,6 +1151,7 @@ For project-level installation, clone into `.claude/skills/ai-pair` within your 
 
 <!-- source-snippets:end -->
 </details>
+
 ## 命令一览
 
 ```mermaid
@@ -1209,6 +1223,7 @@ Team Lead creates | 团队领导创建:
 
 <!-- source-snippets:end -->
 </details>
+
 ## examples 阅读顺序
 
 
@@ -1246,6 +1261,7 @@ None of these overlapped. That's the point. See [`examples/`](examples/) for ste
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -1299,6 +1315,7 @@ Sources: [README.md:148-162](../../../project-repos/ai-pair/README.md#L148-L162)
 
 <!-- source-snippets:end -->
 </details>
+
 从模板层面，`SKILL.md` 用 **CRITICAL RULE** 与「禁止静默跳过 CLI」的协议段落对齐该问题。
 
 Sources: [SKILL.md:238-245](../../../project-repos/ai-pair/SKILL.md#L238-L245), [SKILL.md:176-181](../../../project-repos/ai-pair/SKILL.md#L176-L181)
@@ -1334,6 +1351,7 @@ If you skip the CLI call, the entire point of this multi-model team is defeated.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 开源版未包含的能力
 
 README 写明：公开仓库仅 **Agent Teams 模式**；完整私有版另有 **Manual 模式**（两 CLI 经共享文件通信）与 **iTerm2 编排**（文件监听驱动的 Author/Reviewer 中继），需单独本地配置。
@@ -1364,6 +1382,7 @@ These require specific local setup and are maintained separately.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 项目演进脉络
 
 AI-Pair 源自 Chrome 扩展 [AI Roundtable](https://github.com/axtonliu/ai-roundtable)（网页多模型同屏讨论）；本仓库将概念迁移到终端并结构化分工。
@@ -1387,9 +1406,10 @@ AI-Pair 从 [AI Roundtable](https://github.com/axtonliu/ai-roundtable) 演变而
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 graph TD
-  RT["AI Roundtable<br/>浏览器多模型"] --> AP["ai-pair<br/>CLI + Skill"]
+  RT["AI Roundtable&lt;br/&gt;浏览器多模型"] --> AP["ai-pair&lt;br/&gt;CLI + Skill"]
   AP --> Teams["Agent Teams 开源版"]
   AP -.-> Private["Manual / iTerm2 私有版"]
 ```

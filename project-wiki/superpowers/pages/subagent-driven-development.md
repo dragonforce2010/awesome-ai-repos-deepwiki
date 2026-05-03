@@ -108,6 +108,7 @@ digraph process {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 何时使用 SDD
 
 | 条件 | SDD | executing-plans |
@@ -154,6 +155,7 @@ Sources: [skills/subagent-driven-development/SKILL.md:20-40](../../../project-re
 
 <!-- source-snippets:end -->
 </details>
+
 ## 三种子代理角色
 
 ### 实施者（Implementer）
@@ -291,6 +293,7 @@ Implementer subagents report one of four statuses. Handle each appropriately:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 模型选择策略
 
 使用能处理每个角色的最低能力模型，以节约成本和提高速度：
@@ -341,6 +344,7 @@ Implementer: "Got it. Implementing now..."
 
 <!-- source-snippets:end -->
 </details>
+
 ## 处理实施者状态
 
 | 状态 | 处理方式 |
@@ -397,6 +401,7 @@ Spec reviewer: ❌ Issues:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 并行代理调度
 
 `dispatching-parallel-agents` 技能处理多个独立问题的并行调查：
@@ -573,6 +578,7 @@ Return: Summary of what you found and what you fixed.
 
 <!-- source-snippets:end -->
 </details>
+
 ## 红旗清单
 
 **绝不：**
@@ -644,6 +650,7 @@ Sources: [skills/subagent-driven-development/SKILL.md:200-240](../../../project-
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [核心工作流](core-workflow.md)

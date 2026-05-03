@@ -50,6 +50,7 @@ The key insight: an AI agent interacting with a browser needs **sub-second laten
 
 <!-- source-snippets:end -->
 </details>
+
 ## 一句话定位
 
 | 维度 | 结论 | 证据 |
@@ -77,6 +78,7 @@ Swap `required` for `optional` if you'd rather nudge teammates than block them.
 
 <!-- source-snippets:end -->
 </details>
+
 | 核心形态 | Slash-command skills + compiled Bun tools + Playwright browser daemon | Sources: [package.json:7-19](../../../project-repos/gstack/package.json#L7-L19), [ARCHITECTURE.md:5-10](../../../project-repos/gstack/ARCHITECTURE.md#L5-L10) |
 
 <details class="source-snippets">
@@ -115,6 +117,7 @@ The key insight: an AI agent interacting with a browser needs **sub-second laten
 
 <!-- source-snippets:end -->
 </details>
+
 | 工作流理念 | Think → Plan → Build → Review → Test → Ship → Reflect | Sources: [README.md:169-177](../../../project-repos/gstack/README.md#L169-L177) |
 
 <details class="source-snippets">
@@ -138,6 +141,7 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 
 <!-- source-snippets:end -->
 </details>
+
 | 源码规模 | 687 个扫描文件，TypeScript、Markdown、shell 和工作流文件占主体 | Sources: [00-repo-inventory.md:11-33](../00-repo-inventory.md#L11-L33) |
 
 <details class="source-snippets">
@@ -175,6 +179,7 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 
 <!-- source-snippets:end -->
 </details>
+
 ## 仓库地形
 
 ```mermaid
@@ -277,6 +282,7 @@ gstack/
 
 <!-- source-snippets:end -->
 </details>
+
 ## 主要子系统
 
 | 子系统 | 关键路径 | 作用 |

@@ -120,7 +120,7 @@ node "$OD_BIN" media generate \
   --prompt "<the full assembled prompt from Step 1>"
 ```
 
-The command prints one line of JSON: `{"file": {"name": "...", ...}}`.
+The command prints one line of JSON: `{"file": {"name": "...", ...&#125;&#125;`.
 The daemon writes the bytes into the project folder; the FileViewer
 picks it up automatically.
 

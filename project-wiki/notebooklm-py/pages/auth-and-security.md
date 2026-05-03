@@ -166,6 +166,7 @@ GOOGLE_REGIONAL_CCTLDS = frozenset(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Cookie 提取与域名处理
 
 ### 认证来源优先级
@@ -251,6 +252,7 @@ Sources: [src/notebooklm/auth.py:310-370](../../../project-repos/notebooklm-py/s
 
 <!-- source-snippets:end -->
 </details>
+
 ### 域名白名单
 
 `extract_cookies_from_storage()` 仅提取以下域名的 Cookie：
@@ -361,6 +363,7 @@ def convert_rookiepy_cookies_to_storage_state(
 
 <!-- source-snippets:end -->
 </details>
+
 ### 区域域名支持
 
 `GOOGLE_REGIONAL_CCTLDS` 定义了 60+ 个 Google 区域域名后缀，覆盖三种模式：
@@ -446,6 +449,7 @@ GOOGLE_REGIONAL_CCTLDS = frozenset(
 
 <!-- source-snippets:end -->
 </details>
+
 ## Token 提取
 
 ### CSRF Token（SNlM0e）
@@ -506,6 +510,7 @@ def extract_cookies_from_storage(storage_state: dict[str, Any]) -> dict[str, str
 
 <!-- source-snippets:end -->
 </details>
+
 ## 多账户 Profile 系统
 
 ```mermaid
@@ -597,6 +602,7 @@ def _read_default_profile() -> str | None:
 
 <!-- source-snippets:end -->
 </details>
+
 ### 路径遍历防护
 
 `get_profile_dir()` 对 Profile 名称进行路径遍历检查：
@@ -649,6 +655,7 @@ def resolve_profile(profile: str | None = None) -> str:
 
 <!-- source-snippets:end -->
 </details>
+
 ### 旧版兼容
 
 对于 `"default"` Profile，如果 Profile 目录下的文件不存在，会回退到 `~/.notebooklm/` 根目录的旧版路径，确保升级前的用户无缝迁移。
@@ -698,6 +705,7 @@ def get_profile_dir(profile: str | None = None, create: bool = False) -> Path:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 下载认证
 
 `load_httpx_cookies()` 返回带有域名信息的 `httpx.Cookies` 对象（而非简单字典），用于需要跨 Google 域名重定向的认证下载。域名检查使用后缀匹配，允许 `lh3.google.com` 等 Google 子域名。
@@ -767,6 +775,7 @@ def _load_storage_state(path: Path | None = None) -> dict[str, Any]:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 安全实践
 
 | 实践 | 实现 |
@@ -1037,6 +1046,7 @@ _UNSET = object()  # Sentinel to distinguish "not cached" from "cached as None"
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [RPC 协议层](rpc-protocol.md)

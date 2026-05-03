@@ -86,7 +86,7 @@ EOF
 
 #### 选项 3：保持现状
 
-报告："保持分支 <name>。Worktree 保留在 <path>。"
+报告："保持分支 &lt;name&gt;。Worktree 保留在 &lt;path&gt;。"
 
 **不清理 worktree。**
 

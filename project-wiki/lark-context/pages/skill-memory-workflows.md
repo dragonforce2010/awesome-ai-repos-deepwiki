@@ -66,6 +66,7 @@ metadata:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 意图路由
 
 ```mermaid
@@ -111,6 +112,7 @@ Sources: [skills/lark-context/SKILL.md:31-48](../../../project-repos/lark-contex
 
 <!-- source-snippets:end -->
 </details>
+
 skill 明确要求“只路由一次”，意图不明时反问，多意图时分两步执行。比如“拉一下最近消息然后沉淀”先执行 pull，再执行 digest，而不是混成一个命令。Sources: [skills/lark-context/SKILL.md:31-48](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L31-L48)
 
 <details class="source-snippets">
@@ -143,6 +145,7 @@ skill 明确要求“只路由一次”，意图不明时反问，多意图时�
 
 <!-- source-snippets:end -->
 </details>
+
 ## 前置检查和错误处理
 
 执行任何 workflow 前先跑 `lark-context --version`，要求至少 `0.1.0`。如果 `lark-cli` 未安装或未登录，skill 要透传 CLI stderr，不尝试替用户登录。Sources: [skills/lark-context/SKILL.md:15-29](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L15-L29)
@@ -174,6 +177,7 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
+
 错误处理原则是 CLI 非零退出时透传 stderr，不编造解释；references 缺失说明 skill 安装损坏；网络或超时不自动重试。Sources: [skills/lark-context/SKILL.md:69-73](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L69-L73)
 
 <details class="source-snippets">
@@ -193,6 +197,7 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
+
 ## digest 工作流
 
 digest 的输入是 `lark-context show` 原文，目标是更新 `journal/`、`entities/` 和 `MEMORY.md`，并在 `kv.last_digest_at` 写时间戳。workflow 强调 show 输出是唯一事实来源，不能从记忆中补 show 里没出现的事实。Sources: [skills/lark-context/references/digest.md:8-10](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L8-L10), [skills/lark-context/references/digest.md:42-50](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L42-L50)
@@ -216,7 +221,7 @@ digest 的输入是 `lark-context show` 原文，目标是更新 `journal/`、`e
 ## Step 3 — 读原始材料
 
 ```bash
-lark-context show [--chat <alias>] --since <window>
+lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
 ```
 
 输出是本次沉淀的**唯一事实来源**。不要捏造、不要从记忆里补 show 里没出现的事。
@@ -226,6 +231,7 @@ lark-context show [--chat <alias>] --since <window>
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Last["读取 kv.last_digest_at"] --> Window["决定 --since 窗口"]
@@ -284,7 +290,7 @@ lark-context groups list
 ## Step 3 — 读原始材料
 
 ```bash
-lark-context show [--chat <alias>] --since <window>
+lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
 ```
 
 输出是本次沉淀的**唯一事实来源**。不要捏造、不要从记忆里补 show 里没出现的事。
@@ -341,6 +347,7 @@ sqlite3 ~/.lark-context/raw.db "INSERT INTO kv(key,value) VALUES('last_digest_at
 
 <!-- source-snippets:end -->
 </details>
+
 entity 更新有强约束：保留用户手写段落，新事实追加或更新 summary，第一次短暂提及不建实体，出现多次、用户明确要求或可执行决策才建。Sources: [skills/lark-context/references/digest.md:61-78](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L61-L78), [skills/lark-context/references/digest.md:109-114](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L109-L114)
 
 <details class="source-snippets">
@@ -384,6 +391,7 @@ entity 更新有强约束：保留用户手写段落，新事实追加或更新 
 
 <!-- source-snippets:end -->
 </details>
+
 ## TODO 工作流
 
 TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识别直接点名、显式 ddl、`@all` 动作、被问未回等模式，排除闲聊、别人之间的对话和已有人接走的事项。Sources: [skills/lark-context/references/todo.md:1-8](../../../project-repos/lark-context/skills/lark-context/references/todo.md#L1-L8), [skills/lark-context/references/todo.md:21-34](../../../project-repos/lark-context/skills/lark-context/references/todo.md#L21-L34)
@@ -427,6 +435,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 
 <!-- source-snippets:end -->
 </details>
+
 排序先看明确 ddl，再看紧急关键词，最后按被 @ 次数；输出是 Markdown checklist，并且每条附原文摘要或链接。Sources: [skills/lark-context/references/todo.md:43-73](../../../project-repos/lark-context/skills/lark-context/references/todo.md#L43-L73)
 
 <details class="source-snippets">
@@ -453,8 +462,8 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 ## 待办（窗口：最近 N 天）
 
 ### 今天 / 最紧急
-- [ ] @张三 在 #群名 的话题：<一句简述>（ddl: 今天 18:00）
-  - 原文：<消息摘要 / 文档链接>
+- [ ] @张三 在 #群名 的话题：&lt;一句简述&gt;（ddl: 今天 18:00）
+  - 原文：&lt;消息摘要 / 文档链接&gt;
 
 ### 本周
 - [ ] ...
@@ -472,6 +481,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 
 <!-- source-snippets:end -->
 </details>
+
 ## pull/show/ingest 的 skill 约定
 
 `pull.md` 规定首次拉某个 alias 时由 skill 显式传 `--since 90d`，这是 skill 约定，不是 CLI 默认值。它还要求把 200 页上限提示原样转述给用户，并在常见错误上给具体操作建议。Sources: [skills/lark-context/references/pull.md:12-20](../../../project-repos/lark-context/skills/lark-context/references/pull.md#L12-L20), [skills/lark-context/references/pull.md:28-46](../../../project-repos/lark-context/skills/lark-context/references/pull.md#L28-L46)
@@ -503,7 +513,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 首次拉历史消息每群最多 200 页（约 10k 条）。到上限后 stderr 有：
 
 ```
-<alias>: hit MAX_PAGES=200 cap; re-run to continue
+&lt;alias&gt;: hit MAX_PAGES=200 cap; re-run to continue
 ```
 
 把这条原样转述给用户，**并建议**再跑一次 `lark-context pull --chat <alias>` 续拉。
@@ -521,6 +531,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 
 <!-- source-snippets:end -->
 </details>
+
 `ingest-doc.md` 说明支持的 URL 形态、底层 `docs +fetch`、同 token 幂等，以及老版 docs 或权限错误时透传。Sources: [skills/lark-context/references/ingest-doc.md:9-30](../../../project-repos/lark-context/skills/lark-context/references/ingest-doc.md#L9-L30), [skills/lark-context/references/ingest-doc.md:31-42](../../../project-repos/lark-context/skills/lark-context/references/ingest-doc.md#L31-L42)
 
 <details class="source-snippets">
@@ -544,7 +555,7 @@ TODO 不落盘，每次从 `show` 输出和最新 journal 临时抽取。它识�
 ## 工作流
 
 ```bash
-lark-context ingest-doc <url-or-token>
+lark-context ingest-doc &lt;url-or-token&gt;
 ```
 
 CLI 内部：
@@ -574,6 +585,7 @@ lark-context ingest-doc AbCdEfGh1234                  # bare token 也接受
 
 <!-- source-snippets:end -->
 </details>
+
 `show.md` 说明 show 只读本地 SQLite，不拉新数据，并定义了输出剪裁原则。Sources: [skills/lark-context/references/show.md:8-20](../../../project-repos/lark-context/skills/lark-context/references/show.md#L8-L20), [skills/lark-context/references/show.md:48-53](../../../project-repos/lark-context/skills/lark-context/references/show.md#L48-L53)
 
 <details class="source-snippets">
@@ -591,7 +603,7 @@ lark-context ingest-doc AbCdEfGh1234                  # bare token 也接受
 ## `show` 命令
 
 ```bash
-lark-context show [--chat <alias>|all] [--since <duration>]
+lark-context show [--chat &lt;alias&gt;|all] [--since &lt;duration&gt;]
 ```
 
 - **默认窗口** `--since 24h`
@@ -612,6 +624,7 @@ lark-context show [--chat <alias>|all] [--since <duration>]
 
 <!-- source-snippets:end -->
 </details>
+
 ## 记忆目录契约
 
 默认记忆目录是 `~/.claude/lark-memory/`，包含 `MEMORY.md`、`entities/people`、`entities/projects`、`entities/terms.md`、`entities/decisions` 和 `journal/<ISO-week>.md`。README 和 skill 都强调这些是 Markdown，用户可审可改。Sources: [README.md:148-175](../../../project-repos/lark-context/README.md#L148-L175), [GETTING_STARTED.md:92-107](../../../project-repos/lark-context/GETTING_STARTED.md#L92-L107), [skills/lark-context/SKILL.md:75-93](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L75-L93)
@@ -632,10 +645,10 @@ lark-context show [--chat <alias>|all] [--since <duration>]
 ~/.claude/lark-memory/
 ├── MEMORY.md            # 始终加载的索引
 ├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/             # 按 ISO 周的流水
     └── 2026-W16.md
 ```
@@ -663,10 +676,10 @@ source_hints:
 ~/.claude/lark-memory/
 ├── MEMORY.md                     # 总索引
 ├── entities/
-│   ├── people/<slug>.md          # 每个同事一个文件
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md          # 每个同事一个文件
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md                  # 术语表
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
     └── 2026-W17.md               # 每周一个流水文件
 ```
@@ -690,17 +703,18 @@ source_hints:
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
-    └── <ISO-week>.md     # e.g. 2026-W16.md
+    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ```mermaid
 flowchart TD
   Memory["~/.claude/lark-memory"] --> Index["MEMORY.md"]
@@ -734,17 +748,18 @@ Sources: [skills/lark-context/SKILL.md:75-93](../../../project-repos/lark-contex
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/<slug>.md
-│   ├── projects/<slug>.md
+│   ├── people/&lt;slug&gt;.md
+│   ├── projects/&lt;slug&gt;.md
 │   ├── terms.md
-│   └── decisions/<slug>.md
+│   └── decisions/&lt;slug&gt;.md
 └── journal/
-    └── <ISO-week>.md     # e.g. 2026-W16.md
+    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

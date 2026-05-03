@@ -104,7 +104,7 @@ opencli browser eval "fetch('...&fid=f237&po=1...').then(...)"
 
 ## §3 结构差分法（数组 / 嵌套对象类）
 
-响应顶层是 `{data: {diff: [...]}}` 还是 `{list: [{...}, {...}]}` 还是 `{rows: [{k:v}, ...]}`，不同接口差别大。
+响应顶层是 `{data: {diff: [...]&#125;&#125;` 还是 `{list: [{...}, {...}]}` 还是 `{rows: [{k:v}, ...]}`，不同接口差别大。
 
 ### 流程
 
@@ -117,7 +117,7 @@ opencli browser eval "fetch('...&fid=f237&po=1...').then(...)"
 2. **一层一层剥**
 
    ```bash
-   opencli browser eval "fetch('<url>').then(r=>r.json()).then(j=>{const d=j.data; return {keys:Object.keys(d), sample: d[Object.keys(d)[0]]}})"
+   opencli browser eval "fetch('<url>').then(r=>r.json()).then(j=>{const d=j.data; return {keys:Object.keys(d), sample: d[Object.keys(d)[0]]&#125;&#125;)"
    ```
 
 3. **数数组长度对照 pz / pageSize**

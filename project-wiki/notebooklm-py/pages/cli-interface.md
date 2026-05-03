@@ -276,6 +276,7 @@ def cli(ctx, storage, profile, verbose):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 分组帮助系统
 
 `SectionedGroup` 继承自 `click.Group`，将命令按功能分组显示帮助信息，而非默认的字母序排列：
@@ -343,6 +344,7 @@ Sources: [src/notebooklm/cli/grouped.py:12-50](../../../project-repos/notebooklm
 
 <!-- source-snippets:end -->
 </details>
+
 ## Session 上下文管理
 
 CLI 使用 `context.json` 文件维护当前笔记本上下文，避免每次命令都指定 notebook ID：
@@ -497,6 +499,7 @@ def _handle_rookiepy_error(e: Exception, browser_name: str) -> None:
 
 <!-- source-snippets:end -->
 </details>
+
 ## 全局选项
 
 | 选项 | 说明 |
@@ -551,6 +554,7 @@ from .cli.grouped import SectionedGroup
 
 <!-- source-snippets:end -->
 </details>
+
 ## Profile 管理
 
 | 命令 | 说明 |
@@ -695,6 +699,7 @@ def create_cmd(name):
 
 <!-- source-snippets:end -->
 </details>
+
 ## 错误处理
 
 `error_handler.py` 提供统一的 CLI 错误处理：
@@ -849,6 +854,7 @@ def handle_errors(verbose: bool = False, json_output: bool = False) -> Generator
 
 <!-- source-snippets:end -->
 </details>
+
 ## Windows 兼容性
 
 CLI 针对 Windows 做了两项特殊处理：
@@ -891,6 +897,7 @@ from . import __version__
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [项目概览](overview.md)

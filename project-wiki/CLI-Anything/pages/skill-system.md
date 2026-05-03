@@ -82,6 +82,7 @@ CI rule:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 1. 整体架构
@@ -270,6 +271,7 @@ def generate_skill_file(harness_path: str, output_path: Optional[str] = None,
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 2. 元数据提取：`extract_cli_metadata()`
@@ -348,6 +350,7 @@ class SkillMetadata:
 
 <!-- source-snippets:end -->
 </details>
+
 ### 2.2 扫描逻辑
 
 扫描流程按固定顺序从四个来源读取数据：
@@ -360,7 +363,7 @@ flowchart LR
     D --> E["generate_examples()<br/>依据命令组类型<br/>生成示例代码"]
 ```
 
-**README.md 解析规则**：跳过一级标题行，提取紧随其后的第一段文字作为 `skill_intro`；用正则 `` `apt install <pkg>` / `brew install <pkg>` `` 提取 `system_package`。
+**README.md 解析规则**：跳过一级标题行，提取紧随其后的第一段文字作为 `skill_intro`；用正则 ` `apt install &lt;pkg&gt;` / `brew install &lt;pkg&gt;` `` 提取 `system_package。
 
 **版本提取**：正则 `version\s*=\s*["']([^"']+)["']`，未匹配则回退到 `"1.0.0"`。
 
@@ -511,6 +514,7 @@ def extract_version_from_setup(setup_path: Path) -> str:
 
 <!-- source-snippets:end -->
 </details>
+
 ### 2.3 规范技能名：`_canonical_skill_name()`
 
 ```python
@@ -544,6 +548,7 @@ def _canonical_skill_name(harness_path: Path, software_name: str) -> str:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 3. 命令提取：`extract_commands_from_cli()`
@@ -663,6 +668,7 @@ def extract_commands_from_cli(cli_path: Path) -> list[CommandGroup]:
 
 <!-- source-snippets:end -->
 </details>
+
 ### 3.3 命令表示例（Blender）
 
 以 `cli-anything-blender` 为例，解析结果包含 9 个命令组，共 40+ 条命令：
@@ -814,6 +820,7 @@ Real preview bundle capture and live preview session commands.
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 4. SKILL.md 文件格式
@@ -877,28 +884,28 @@ Sources: [cli-anything-plugin/templates/SKILL.md.template:1-124](../../../projec
 ````
 ---
 name: >-
-  {{ skill_name }}
+  &#123;&#123; skill_name &#125;&#125;
 description: >-
-  {{ skill_description }}
+  &#123;&#123; skill_description &#125;&#125;
 ---
 
-# {{ skill_name }}
+# &#123;&#123; skill_name &#125;&#125;
 
-{{ skill_intro }}
+&#123;&#123; skill_intro &#125;&#125;
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-{{ software_name }} package:
+This CLI is installed as part of the cli-anything-&#123;&#123; software_name &#125;&#125; package:
 
 ```bash
-pip install cli-anything-{{ software_name }}
+pip install cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125;
 ```
 
 **Prerequisites:**
 - Python 3.10+
-- {{ software_name }} must be installed on your system
+- &#123;&#123; software_name &#125;&#125; must be installed on your system
 {% if system_package %}
-- Install {{ software_name }}: `{{ system_package }}`
+- Install &#123;&#123; software_name &#125;&#125;: `&#123;&#123; system_package &#125;&#125;`
 {% endif %}
 
 ## Usage
@@ -907,16 +914,16 @@ pip install cli-anything-{{ software_name }}
 
 ```bash
 # Show help
-cli-anything-{{ software_name }} --help
+cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; --help
 
 # Start interactive REPL mode
-cli-anything-{{ software_name }}
+cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125;
 
 # Create a new project
-cli-anything-{{ software_name }} project new -o project.json
+cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-{{ software_name }} --json project info -p project.json
+cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -924,7 +931,7 @@ cli-anything-{{ software_name }} --json project info -p project.json
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-{{ software_name }}
+cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125;
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -932,14 +939,14 @@ cli-anything-{{ software_name }}
 ## Command Groups
 
 {% for group in command_groups %}
-### {{ group.name }}
+### &#123;&#123; group.name &#125;&#125;
 
-{{ group.description }}
+&#123;&#123; group.description &#125;&#125;
 
 | Command | Description |
 |---------|-------------|
 {% for cmd in group.commands %}
-| `{{ cmd.name }}` | {{ cmd.description }} |
+| `&#123;&#123; cmd.name &#125;&#125;` | &#123;&#123; cmd.description &#125;&#125; |
 {% endfor %}
 
 {% endfor %}
@@ -947,12 +954,12 @@ cli-anything-{{ software_name }}
 ## Examples
 
 {% for example in examples %}
-### {{ example.title }}
+### &#123;&#123; example.title &#125;&#125;
 
-{{ example.description }}
+&#123;&#123; example.description &#125;&#125;
 
 ```bash
-{{ example.code }}
+&lt;span v-pre>&#123;&#123;&lt;/span> example.code &#125;&#125;
 ```
 
 {% endfor %}
@@ -973,10 +980,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-{{ software_name }} project info -p project.json
+cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; project info -p project.json
 
 # JSON output for agents
-cli-anything-{{ software_name }} --json project info -p project.json
+cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -1000,6 +1007,7 @@ When using this CLI programmatically:
 
 <!-- source-snippets:end -->
 </details>
+
 ### 4.3 模板回退机制
 
 `generate_skill_md()` 优先使用 Jinja2；若环境中未安装 `jinja2` 包，或模板文件不存在，则自动回退到 `generate_skill_md_simple()`，用纯字符串拼接生成结构相同（略有精简）的内容。
@@ -1181,6 +1189,7 @@ def generate_skill_md_simple(metadata: SkillMetadata) -> str:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 5. 文件分发：双副本策略
@@ -1291,6 +1300,7 @@ CI rule:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 6. skills/ 目录结构
@@ -1362,6 +1372,7 @@ CI rule:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 7. Agent 使用规范（For AI Agents）
@@ -1439,6 +1450,7 @@ When using this CLI programmatically:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 8. Meta-Skill：跨 CLI 发现
@@ -1649,7 +1661,7 @@ def main():
         "cli-hub search ai",
         "",
         "# Launch an installed CLI",
-        "cli-hub launch <name> [args...]",
+        "cli-hub launch &lt;name> [args...]",
         "```",
         "",
         "## CLI-Anything Harness CLIs",
@@ -1710,6 +1722,7 @@ def main():
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 9. CI 验证：双副本一致性
@@ -1942,6 +1955,7 @@ if __name__ == "__main__":
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 10. 关键设计决策
@@ -2021,6 +2035,7 @@ def extract_commands_from_cli(cli_path: Path) -> list[CommandGroup]:
 
 <!-- source-snippets:end -->
 </details>
+
 ---
 
 ## 相关页面

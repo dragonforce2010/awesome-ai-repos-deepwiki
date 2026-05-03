@@ -279,6 +279,7 @@ export function coerceValue(value: string, coercionMode: CoercionMode = 'default
 
 <!-- source-snippets:end -->
 </details>
+
 ## 解析管线
 
 `parseCallArguments(args)` 是入口（[src/cli/call-arguments.ts:67-81]()）。它分 5 步把原始 argv 逐步压缩为 `CallArgsParseResult`：
@@ -530,6 +531,7 @@ function warnMissingNamedArgumentValue(key: string): void {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 值类型推导（`coerceValue`）
 
 `coerceValue(value, mode)` 决定一个字符串字面量在没有 schema 信息时被翻译成什么 JS 值（[src/cli/call-argument-values.ts:40-65]()）：
@@ -668,6 +670,7 @@ async function enforceSchemaStringTypes(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 函数式调用表达式
 
 第一个 positional 如果包含 `(` 且以 `)` 结尾，进入 `parseLeadingCallExpression`（[src/cli/call-argument-expression.ts:7-13]()）。它会先尝试 `extractHttpCallExpression`（处理 `https://host/path.tool(...)` 这种 URL + 函数调用混合），再回退到通用的 `parseCallExpressionFragment`。
@@ -814,6 +817,7 @@ export function parseCallExpressionFragment(raw: string): ParsedCallExpression |
 
 <!-- source-snippets:end -->
 </details>
+
 ## URL 选择器
 
 `splitHttpToolSelector(token)`（在 `src/cli/http-utils.ts` 中）识别 `https://host/path.tool` 这样的形态——把 URL 作为 `baseUrl`，最后一段 `.tool` 作为 tool 名。它在三处被调用：
@@ -981,6 +985,7 @@ async function normalizeParsedCallArguments(runtime: Runtime, parsed: CallArgsPa
 
 <!-- source-snippets:end -->
 </details>
+
 ## 选择器决议（server / tool）
 
 `resolveSelectorAndTool`（[src/cli/call-arguments.ts:145-173]()）+ `resolveServerAndTool`（[src/cli/call-command.ts:126-140]()）共同决定最终 `(server, tool)`：
@@ -1094,6 +1099,7 @@ export function shouldPromoteSelectorToCommand(selector: string): boolean {
 
 <!-- source-snippets:end -->
 </details>
+
 ## Schema 驱动的位置参数 hydration
 
 CLI 收到的位置参数（裸值或函数表达式中的非 named arg）会被 `hydratePositionalArguments` 映射到 schema 字段（[src/cli/call-command.ts:327-373]()）：
@@ -1217,6 +1223,7 @@ export function extractOptions(tool: ServerToolInfo): GeneratedOption[] {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 自动纠错（Levenshtein）
 
 `identifier-helpers.ts` 提供两类纠错：server 名（在 `command-inference` 与 `list-command` 使用）与 tool 名（在 `call-command.attemptCall` 失败路径上使用）。
@@ -1383,6 +1390,7 @@ async function maybeResolveToolName(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 临时服务器（`--http-url` / `--stdio`）
 
 `extractEphemeralServerFlags`（[src/cli/ephemeral-flags.ts:9-128]()）扫描 argv 抽走以下 flag：
@@ -1683,6 +1691,7 @@ export function extractEphemeralServerFlags(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 几个边界规则
 
 - `--` **后**的 token 全部当作字面量位置参数：`mcporter call x.y -- --start-with-dashes` 把 `--start-with-dashes` 当成 string 传给 tool（[src/cli/call-arguments.ts:93-95](), [src/cli/call-arguments.ts:216-228]()）。
@@ -1854,6 +1863,7 @@ export async function persistEphemeralServer(resolution: EphemeralServerResoluti
 
 <!-- source-snippets:end -->
 </details>
+
 ## 最终的 CallArgsParseResult
 
 CallArgsParseResult 是这一切解析的输出（[src/cli/call-arguments.ts:16-29]()）：
@@ -1982,6 +1992,7 @@ async function prepareCallRequest(runtime: Runtime, args: string[]): Promise<Pre
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [CLI 命令体系](cli-commands.md)

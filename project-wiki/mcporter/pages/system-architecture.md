@@ -290,6 +290,7 @@ export { createServerProxy } from './server-proxy.js';
 
 <!-- source-snippets:end -->
 </details>
+
 ## 子系统边界与依赖方向
 
 mcporter 的设计目标是让"库使用者"只看到 Runtime 与 Config 这两个子系统，CLI 与 Daemon 完全可选。下表把每个子系统的输入、输出和外部依赖列清楚：
@@ -373,6 +374,7 @@ export interface Runtime {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 一次 `mcporter call` 的请求路径
 
 ```mermaid
@@ -604,6 +606,7 @@ async function attemptCall(
 
 <!-- source-snippets:end -->
 </details>
+
 ## 关键抽象的责任划分
 
 ### `ServerDefinition` 是合约边界
@@ -771,6 +774,7 @@ export interface ServerDefinition {
 
 <!-- source-snippets:end -->
 </details>
+
 ### `ServerProxy` 把 MCP "对象化"
 
 `createServerProxy(runtime, name)` 返回一个 ES Proxy，把 `proxy.takeSnapshot()` 这样的 camelCase 调用映射到 kebab-case 工具名（`take-snapshot`）。它在 [src/server-proxy.ts:283-407]() 实现，并对 schema 做了三件事：
@@ -1025,6 +1029,7 @@ export function createCallResult<T = unknown>(raw: T): CallResult<T> {
 
 <!-- source-snippets:end -->
 </details>
+
 ## 进程模型与执行环境
 
 ```mermaid
@@ -1241,6 +1246,7 @@ Sources: [src/cli.ts:168-204](../../../project-repos/mcporter/src/cli.ts#L168-L2
 
 <!-- source-snippets:end -->
 </details>
+
 ## 跨边界的错误模型
 
 错误从底层传输冒到 CLI 时会被 `analyzeConnectionError` 归一成 5 类：`auth | offline | http | stdio-exit | other`（[src/error-classifier.ts:3-63]()）。`callTool` 失败时 Runtime 会根据 `shouldResetConnection` 决定是否重置缓存的 `ClientContext`（[src/runtime.ts:308-323]()）；CLI 层进一步把这些分类翻译成黄/红/dim 的可读提示，并在 `--output json` 模式下封装成 `{ server, tool, issue, error }` 的稳定信封（[src/cli/call-command.ts:494-521](), [src/cli/json-output.ts]()）。
@@ -1349,6 +1355,7 @@ function maybeReportConnectionIssue(server: string, tool: string, error: unknown
 
 <!-- source-snippets:end -->
 </details>
+
 ## 设计取舍
 
 - **库优先 vs CLI 优先** — 公共 API 仅 9 行（[src/index.ts]()），把绝大多数复杂度藏在 `src/cli/**`。库使用者拿到的依然是干净的 `Runtime`，CLI 是它的一个调用方而不是反过来。
@@ -1601,6 +1608,7 @@ export async function loadServerDefinitions(options: LoadConfigOptions = {}): Pr
 
 <!-- source-snippets:end -->
 </details>
+
 ## 相关页面
 
 - [运行时与传输层](runtime-transport.md)

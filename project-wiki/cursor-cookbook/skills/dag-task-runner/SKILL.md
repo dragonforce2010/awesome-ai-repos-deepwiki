@@ -127,7 +127,7 @@ Canvas 画布的路径为：
 
 既然文件已经在磁盘上存在，请发布一个 Markdown 超链接，要求超链接文字正好为 `Open Canvas`，对应的 URL 采用 `file://` 格式，同时给出绝对路径以作后备：
 
-> I created a live canvas: [Open Canvas](file:///Users/<user>/.cursor/projects/<workspace-slug>/canvases/dag-<slug>.canvas.tsx)
+> I created a live canvas: [Open Canvas](file:///Users/&lt;user&gt;/.cursor/projects/&lt;workspace-slug&gt;/canvases/dag-&lt;slug&gt;.canvas.tsx)
 > Fallback path: `/Users/<user>/.cursor/projects/<workspace-slug>/canvases/dag-<slug>.canvas.tsx`
 
 必须始终使用链接文本 `Open Canvas`。在 `file://` URL 与备用路径中都要采用绝对路径，绝对不能使用 `~/`。务必在 **第 3 步之前** 执行此操作，这样用户便可以在子智能体还在启动时点击打开该 canvas。尽管第 1 步的 shell 脚本里已尝试用 `open` 自动打开，若该命令失效，依旧可通过此处聊天对话中的链接作保证。
