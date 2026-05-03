@@ -1,0 +1,266 @@
+{
+  "title": "mcporter DeepWiki",
+  "description": "面向 MCP（Model Context Protocol）的 TypeScript 运行时、CLI 与代码生成工具集 mcporter 的中文导览。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/steipete/mcporter.git",
+    "commit": "324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09",
+    "branch": "main"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"]
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构",
+      "pages": ["system-architecture"]
+    },
+    {
+      "id": "section-config",
+      "title": "配置与导入",
+      "pages": ["configuration"]
+    },
+    {
+      "id": "section-runtime",
+      "title": "运行时与传输",
+      "pages": ["runtime-transport"]
+    },
+    {
+      "id": "section-cli",
+      "title": "CLI 命令体系",
+      "pages": ["cli-commands"]
+    },
+    {
+      "id": "section-call-syntax",
+      "title": "调用语法与参数",
+      "pages": ["call-syntax"]
+    },
+    {
+      "id": "section-codegen",
+      "title": "代码生成（generate-cli / emit-ts）",
+      "pages": ["code-generation"]
+    },
+    {
+      "id": "section-daemon",
+      "title": "Keep-Alive 守护进程",
+      "pages": ["daemon"]
+    },
+    {
+      "id": "section-oauth",
+      "title": "OAuth 与凭证仓库",
+      "pages": ["oauth"]
+    },
+    {
+      "id": "section-quality",
+      "title": "测试、CI 与可观测性",
+      "pages": ["testing-ci"]
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-config",
+    "section-runtime",
+    "section-cli",
+    "section-call-syntax",
+    "section-codegen",
+    "section-daemon",
+    "section-oauth",
+    "section-quality"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "mcporter 的定位、能力矩阵、目标受众与阅读路径。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "package.json",
+        "src/index.ts",
+        "src/cli.ts",
+        "CHANGELOG.md"
+      ],
+      "relatedPages": ["system-architecture", "cli-commands", "configuration"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "顶层架构、模块边界与依赖方向：CLI、Runtime、Config、Daemon、OAuth 五大子系统的协作关系。",
+      "importance": "high",
+      "filePaths": [
+        "src/cli.ts",
+        "src/runtime.ts",
+        "src/config.ts",
+        "src/daemon/runtime-wrapper.ts",
+        "src/server-proxy.ts",
+        "src/index.ts"
+      ],
+      "relatedPages": ["runtime-transport", "configuration", "daemon", "cli-commands"]
+    },
+    {
+      "id": "configuration",
+      "title": "配置加载与导入",
+      "file": "pages/configuration.md",
+      "description": "mcporter.json/jsonc 的解析顺序、JSONC 注释、imports 机制以及 7 种编辑器配置导入。",
+      "importance": "high",
+      "filePaths": [
+        "src/config.ts",
+        "src/config-schema.ts",
+        "src/config-normalize.ts",
+        "src/config/path-discovery.ts",
+        "src/config/read-config.ts",
+        "src/config/imports/external.ts",
+        "src/config/imports/paths.ts",
+        "src/env.ts"
+      ],
+      "relatedPages": ["overview", "system-architecture", "runtime-transport"]
+    },
+    {
+      "id": "runtime-transport",
+      "title": "运行时与传输层",
+      "file": "pages/runtime-transport.md",
+      "description": "createRuntime / callOnce 入口、连接池缓存、StreamableHTTP→SSE 回退、stdio 子进程、过滤器与超时。",
+      "importance": "high",
+      "filePaths": [
+        "src/runtime.ts",
+        "src/runtime/transport.ts",
+        "src/runtime/oauth.ts",
+        "src/runtime/utils.ts",
+        "src/runtime/errors.ts",
+        "src/server-proxy.ts",
+        "src/result-utils.ts",
+        "src/tool-filters.ts",
+        "src/error-classifier.ts",
+        "src/sdk-patches.ts"
+      ],
+      "relatedPages": ["system-architecture", "oauth", "daemon", "call-syntax"]
+    },
+    {
+      "id": "cli-commands",
+      "title": "CLI 命令体系",
+      "file": "pages/cli-commands.md",
+      "description": "mcporter list / call / auth / config / daemon / generate-cli / inspect-cli / emit-ts 的命令路由与执行流。",
+      "importance": "high",
+      "filePaths": [
+        "src/cli.ts",
+        "src/cli/cli-factory.ts",
+        "src/cli/command-inference.ts",
+        "src/cli/list-command.ts",
+        "src/cli/call-command.ts",
+        "src/cli/auth-command.ts",
+        "src/cli/config-command.ts",
+        "src/cli/daemon-command.ts",
+        "src/cli/generate-cli-runner.ts",
+        "src/cli/inspect-cli-command.ts",
+        "src/cli/emit-ts-command.ts"
+      ],
+      "relatedPages": ["call-syntax", "code-generation", "daemon", "oauth"]
+    },
+    {
+      "id": "call-syntax",
+      "title": "调用语法、自动纠错与临时服务器",
+      "file": "pages/call-syntax.md",
+      "description": "key=value / 函数调用 / URL 选择器、Levenshtein 自动纠错、--http-url/--stdio 临时连接与持久化。",
+      "importance": "medium",
+      "filePaths": [
+        "src/cli/call-arguments.ts",
+        "src/cli/call-argument-values.ts",
+        "src/cli/call-argument-expression.ts",
+        "src/cli/call-expression-parser.ts",
+        "src/cli/identifier-helpers.ts",
+        "src/cli/adhoc-server.ts",
+        "src/cli/ephemeral-flags.ts",
+        "src/cli/ephemeral-target.ts",
+        "src/cli/http-utils.ts"
+      ],
+      "relatedPages": ["cli-commands", "runtime-transport"]
+    },
+    {
+      "id": "code-generation",
+      "title": "代码生成：generate-cli 与 emit-ts",
+      "file": "pages/code-generation.md",
+      "description": "把 MCP 服务器物化为单文件 CLI / Bun 二进制 / TypeScript 类型与客户端模块的生成管线。",
+      "importance": "high",
+      "filePaths": [
+        "src/generate-cli.ts",
+        "src/cli/generate/template.ts",
+        "src/cli/generate/template-data.ts",
+        "src/cli/generate/template-help.ts",
+        "src/cli/generate/tools.ts",
+        "src/cli/generate/definition.ts",
+        "src/cli/generate/artifacts.ts",
+        "src/cli/generate/runtime.ts",
+        "src/cli/emit-ts-command.ts",
+        "src/cli/emit-ts-templates.ts",
+        "src/cli-metadata.ts",
+        "src/cli/inspect-cli-command.ts"
+      ],
+      "relatedPages": ["cli-commands", "runtime-transport"]
+    },
+    {
+      "id": "daemon",
+      "title": "Keep-Alive 守护进程",
+      "file": "pages/daemon.md",
+      "description": "为 chrome-devtools / mobile-mcp / playwright 等有状态 MCP 维持长连接的本地 socket 守护进程。",
+      "importance": "medium",
+      "filePaths": [
+        "src/daemon/host.ts",
+        "src/daemon/client.ts",
+        "src/daemon/runtime-wrapper.ts",
+        "src/daemon/protocol.ts",
+        "src/daemon/launch.ts",
+        "src/daemon/paths.ts",
+        "src/daemon/config-layers.ts",
+        "src/daemon/log-context.ts",
+        "src/daemon/request-utils.ts",
+        "src/lifecycle.ts",
+        "src/cli/daemon-command.ts"
+      ],
+      "relatedPages": ["runtime-transport", "system-architecture", "cli-commands"]
+    },
+    {
+      "id": "oauth",
+      "title": "OAuth 流程与凭证仓库",
+      "file": "pages/oauth.md",
+      "description": "PersistentOAuthClientProvider、本地回调服务器、文件目录 / vault 持久化与缓存令牌注入。",
+      "importance": "medium",
+      "filePaths": [
+        "src/oauth.ts",
+        "src/oauth-persistence.ts",
+        "src/oauth-vault.ts",
+        "src/runtime/oauth.ts",
+        "src/runtime-oauth-support.ts",
+        "src/runtime-header-utils.ts",
+        "src/cli/auth-command.ts",
+        "src/cli/config/auth.ts"
+      ],
+      "relatedPages": ["runtime-transport", "configuration", "cli-commands"]
+    },
+    {
+      "id": "testing-ci",
+      "title": "测试、CI 与可观测性",
+      "file": "pages/testing-ci.md",
+      "description": "Vitest 套件结构、跨平台 CI 矩阵、stdio 调试钩子、运行时 hang 排查与日志策略。",
+      "importance": "low",
+      "filePaths": [
+        ".github/workflows/ci.yml",
+        "package.json",
+        "scripts/test-runner.js",
+        "tests/build-bun.test.ts",
+        "src/cli/runtime-debug.ts",
+        "src/sdk-patches.ts",
+        "src/logging.ts",
+        "docs/hang-debug.md",
+        "docs/livetests.md"
+      ],
+      "relatedPages": ["system-architecture", "runtime-transport"]
+    }
+  ]
+}

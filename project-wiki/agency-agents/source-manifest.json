@@ -1,0 +1,1657 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/agency-agents",
+    "remote": "https://github.com/msitarzewski/agency-agents",
+    "branch": "main",
+    "commit": "783f6a72bfd7f3135700ac273c619d92821b419a"
+  },
+  "file_count": 235,
+  "skipped_count": 4,
+  "files": [
+    {
+      "path": ".github/FUNDING.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug-report.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/new-agent-request.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/lint-agents.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 428,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING_zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 318,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 920,
+      "symbols": []
+    },
+    {
+      "path": "SECURITY.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "academic/academic-anthropologist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 125,
+      "symbols": []
+    },
+    {
+      "path": "academic/academic-geographer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 127,
+      "symbols": []
+    },
+    {
+      "path": "academic/academic-historian.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 123,
+      "symbols": []
+    },
+    {
+      "path": "academic/academic-narratologist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 118,
+      "symbols": []
+    },
+    {
+      "path": "academic/academic-psychologist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 118,
+      "symbols": []
+    },
+    {
+      "path": "design/design-brand-guardian.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 322,
+      "symbols": []
+    },
+    {
+      "path": "design/design-image-prompt-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 236,
+      "symbols": []
+    },
+    {
+      "path": "design/design-inclusive-visuals-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "design/design-ui-designer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 383,
+      "symbols": []
+    },
+    {
+      "path": "design/design-ux-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 469,
+      "symbols": []
+    },
+    {
+      "path": "design/design-ux-researcher.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 329,
+      "symbols": []
+    },
+    {
+      "path": "design/design-visual-storyteller.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 149,
+      "symbols": []
+    },
+    {
+      "path": "design/design-whimsy-injector.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 438,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-ai-data-remediation-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 211,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-ai-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 146,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-autonomous-optimization-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 107,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-backend-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 235,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-cms-developer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 536,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-code-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-codebase-onboarding-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 173,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-data-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 306,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-database-optimizer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 176,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-devops-automator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 376,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-email-intelligence-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 353,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-embedded-firmware-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 173,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-feishu-integration-developer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 598,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-filament-optimization-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 283,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-frontend-developer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 225,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-git-workflow-master.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 84,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-incident-response-commander.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 444,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-minimal-change-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 207,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-mobile-app-builder.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 493,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-rapid-prototyper.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 462,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-security-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 304,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-senior-developer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 176,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-software-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-solidity-smart-contract-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 522,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-sre.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 90,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-technical-writer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 393,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-threat-detection-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 534,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-voice-ai-integration-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 561,
+      "symbols": []
+    },
+    {
+      "path": "engineering/engineering-wechat-mini-program-developer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 350,
+      "symbols": []
+    },
+    {
+      "path": "examples/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "examples/nexus-spatial-discovery.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 852,
+      "symbols": []
+    },
+    {
+      "path": "examples/workflow-book-chapter.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "examples/workflow-landing-page.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "examples/workflow-startup-mvp.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 155,
+      "symbols": []
+    },
+    {
+      "path": "examples/workflow-with-memory.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 238,
+      "symbols": []
+    },
+    {
+      "path": "finance/finance-bookkeeper-controller.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 260,
+      "symbols": []
+    },
+    {
+      "path": "finance/finance-financial-analyst.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 234,
+      "symbols": []
+    },
+    {
+      "path": "finance/finance-fpa-analyst.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 263,
+      "symbols": []
+    },
+    {
+      "path": "finance/finance-investment-researcher.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 272,
+      "symbols": []
+    },
+    {
+      "path": "finance/finance-tax-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 239,
+      "symbols": []
+    },
+    {
+      "path": "game-development/blender/blender-addon-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 234,
+      "symbols": []
+    },
+    {
+      "path": "game-development/game-audio-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 264,
+      "symbols": []
+    },
+    {
+      "path": "game-development/game-designer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 167,
+      "symbols": []
+    },
+    {
+      "path": "game-development/godot/godot-gameplay-scripter.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 334,
+      "symbols": []
+    },
+    {
+      "path": "game-development/godot/godot-multiplayer-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 297,
+      "symbols": []
+    },
+    {
+      "path": "game-development/godot/godot-shader-developer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 266,
+      "symbols": []
+    },
+    {
+      "path": "game-development/level-designer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 208,
+      "symbols": []
+    },
+    {
+      "path": "game-development/narrative-designer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 243,
+      "symbols": []
+    },
+    {
+      "path": "game-development/roblox-studio/roblox-avatar-creator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 297,
+      "symbols": []
+    },
+    {
+      "path": "game-development/roblox-studio/roblox-experience-designer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 305,
+      "symbols": []
+    },
+    {
+      "path": "game-development/roblox-studio/roblox-systems-scripter.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 325,
+      "symbols": []
+    },
+    {
+      "path": "game-development/technical-artist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 229,
+      "symbols": []
+    },
+    {
+      "path": "game-development/unity/unity-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 271,
+      "symbols": []
+    },
+    {
+      "path": "game-development/unity/unity-editor-tool-developer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 310,
+      "symbols": []
+    },
+    {
+      "path": "game-development/unity/unity-multiplayer-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 321,
+      "symbols": []
+    },
+    {
+      "path": "game-development/unity/unity-shader-graph-artist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 269,
+      "symbols": []
+    },
+    {
+      "path": "game-development/unreal-engine/unreal-multiplayer-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 313,
+      "symbols": []
+    },
+    {
+      "path": "game-development/unreal-engine/unreal-systems-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 310,
+      "symbols": []
+    },
+    {
+      "path": "game-development/unreal-engine/unreal-technical-artist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 256,
+      "symbols": []
+    },
+    {
+      "path": "game-development/unreal-engine/unreal-world-builder.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 273,
+      "symbols": []
+    },
+    {
+      "path": "integrations/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 240,
+      "symbols": []
+    },
+    {
+      "path": "integrations/aider/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "integrations/antigravity/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "integrations/claude-code/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "integrations/cursor/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "integrations/gemini-cli/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "integrations/github-copilot/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "integrations/kimi/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 108,
+      "symbols": []
+    },
+    {
+      "path": "integrations/mcp-memory/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 79,
+      "symbols": []
+    },
+    {
+      "path": "integrations/mcp-memory/backend-architect-with-memory.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 247,
+      "symbols": []
+    },
+    {
+      "path": "integrations/mcp-memory/setup.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 74,
+      "symbols": []
+    },
+    {
+      "path": "integrations/openclaw/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "integrations/opencode/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "integrations/qwen/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "integrations/windsurf/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-agentic-search-optimizer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 311,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-ai-citation-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 170,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-app-store-optimizer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 321,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-baidu-seo-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 226,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-bilibili-content-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 199,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-book-co-author.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 110,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-carousel-growth-engine.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 199,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-china-ecommerce-operator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 283,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-china-market-localization-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 283,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-content-creator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-cross-border-ecommerce.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 259,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-douyin-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 149,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-growth-hacker.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-instagram-curator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-kuaishou-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 223,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-linkedin-content-creator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 214,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-livestream-commerce-coach.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 305,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-podcast-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 277,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-private-domain-operator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 308,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-reddit-community-builder.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 123,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-seo-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 321,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-short-video-editing-coach.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 412,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-social-media-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 125,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-tiktok-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 125,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-twitter-engager.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 126,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-video-optimization-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-wechat-official-account.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 145,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-weibo-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 240,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-xiaohongshu-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 138,
+      "symbols": []
+    },
+    {
+      "path": "marketing/marketing-zhihu-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 162,
+      "symbols": []
+    },
+    {
+      "path": "paid-media/paid-media-auditor.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "paid-media/paid-media-creative-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "paid-media/paid-media-paid-social-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "paid-media/paid-media-ppc-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "paid-media/paid-media-programmatic-buyer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "paid-media/paid-media-search-query-analyst.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "paid-media/paid-media-tracking-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "product/product-behavioral-nudge-engine.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 80,
+      "symbols": []
+    },
+    {
+      "path": "product/product-feedback-synthesizer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "product/product-manager.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 469,
+      "symbols": []
+    },
+    {
+      "path": "product/product-sprint-prioritizer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 154,
+      "symbols": []
+    },
+    {
+      "path": "product/product-trend-researcher.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 159,
+      "symbols": []
+    },
+    {
+      "path": "project-management/project-management-experiment-tracker.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 198,
+      "symbols": []
+    },
+    {
+      "path": "project-management/project-management-jira-workflow-steward.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 230,
+      "symbols": []
+    },
+    {
+      "path": "project-management/project-management-project-shepherd.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 194,
+      "symbols": []
+    },
+    {
+      "path": "project-management/project-management-studio-operations.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 200,
+      "symbols": []
+    },
+    {
+      "path": "project-management/project-management-studio-producer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 203,
+      "symbols": []
+    },
+    {
+      "path": "project-management/project-manager-senior.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 135,
+      "symbols": []
+    },
+    {
+      "path": "sales/sales-account-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 227,
+      "symbols": []
+    },
+    {
+      "path": "sales/sales-coach.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 271,
+      "symbols": []
+    },
+    {
+      "path": "sales/sales-deal-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 180,
+      "symbols": []
+    },
+    {
+      "path": "sales/sales-discovery-coach.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 225,
+      "symbols": []
+    },
+    {
+      "path": "sales/sales-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 182,
+      "symbols": []
+    },
+    {
+      "path": "sales/sales-outbound-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 201,
+      "symbols": []
+    },
+    {
+      "path": "sales/sales-pipeline-analyst.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 267,
+      "symbols": []
+    },
+    {
+      "path": "sales/sales-proposal-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 217,
+      "symbols": []
+    },
+    {
+      "path": "scripts/convert.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 639,
+      "symbols": []
+    },
+    {
+      "path": "scripts/i18n/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "scripts/i18n/agent-names-zh.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 154,
+      "symbols": []
+    },
+    {
+      "path": "scripts/install.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 664,
+      "symbols": []
+    },
+    {
+      "path": "scripts/lint-agents.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 170,
+      "symbols": []
+    },
+    {
+      "path": "spatial-computing/macos-spatial-metal-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 337,
+      "symbols": []
+    },
+    {
+      "path": "spatial-computing/terminal-integration-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "spatial-computing/visionos-spatial-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "spatial-computing/xr-cockpit-interaction-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "spatial-computing/xr-immersive-developer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "spatial-computing/xr-interface-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "specialized/accounts-payable-agent.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 185,
+      "symbols": []
+    },
+    {
+      "path": "specialized/agentic-identity-trust.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 387,
+      "symbols": []
+    },
+    {
+      "path": "specialized/agents-orchestrator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 367,
+      "symbols": []
+    },
+    {
+      "path": "specialized/automation-governance-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 216,
+      "symbols": []
+    },
+    {
+      "path": "specialized/blockchain-security-auditor.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 463,
+      "symbols": []
+    },
+    {
+      "path": "specialized/compliance-auditor.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 158,
+      "symbols": []
+    },
+    {
+      "path": "specialized/corporate-training-designer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 192,
+      "symbols": []
+    },
+    {
+      "path": "specialized/customer-service.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 398,
+      "symbols": []
+    },
+    {
+      "path": "specialized/data-consolidation-agent.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "specialized/government-digital-presales-consultant.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 363,
+      "symbols": []
+    },
+    {
+      "path": "specialized/healthcare-customer-service.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 389,
+      "symbols": []
+    },
+    {
+      "path": "specialized/healthcare-marketing-compliance.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 395,
+      "symbols": []
+    },
+    {
+      "path": "specialized/hospitality-guest-services.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 603,
+      "symbols": []
+    },
+    {
+      "path": "specialized/hr-onboarding.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 451,
+      "symbols": []
+    },
+    {
+      "path": "specialized/identity-graph-operator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 260,
+      "symbols": []
+    },
+    {
+      "path": "specialized/language-translator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 264,
+      "symbols": []
+    },
+    {
+      "path": "specialized/legal-billing-time-tracking.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 569,
+      "symbols": []
+    },
+    {
+      "path": "specialized/legal-client-intake.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 492,
+      "symbols": []
+    },
+    {
+      "path": "specialized/legal-document-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 454,
+      "symbols": []
+    },
+    {
+      "path": "specialized/loan-officer-assistant.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 555,
+      "symbols": []
+    },
+    {
+      "path": "specialized/lsp-index-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 314,
+      "symbols": []
+    },
+    {
+      "path": "specialized/real-estate-buyer-seller.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 596,
+      "symbols": []
+    },
+    {
+      "path": "specialized/recruitment-specialist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 509,
+      "symbols": []
+    },
+    {
+      "path": "specialized/report-distribution-agent.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "specialized/retail-customer-returns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 566,
+      "symbols": []
+    },
+    {
+      "path": "specialized/sales-data-extraction-agent.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": "specialized/sales-outreach.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 425,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-chief-of-staff.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 279,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-civil-engineer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 356,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-cultural-intelligence-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-developer-advocate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 317,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-document-generator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-french-consulting-market.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 192,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-korean-business-navigator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 216,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-mcp-builder.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 248,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-model-qa.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 488,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-salesforce-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 180,
+      "symbols": []
+    },
+    {
+      "path": "specialized/specialized-workflow-architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 597,
+      "symbols": []
+    },
+    {
+      "path": "specialized/study-abroad-advisor.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 282,
+      "symbols": []
+    },
+    {
+      "path": "specialized/supply-chain-strategist.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 582,
+      "symbols": []
+    },
+    {
+      "path": "specialized/zk-steward.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 211,
+      "symbols": []
+    },
+    {
+      "path": "strategy/EXECUTIVE-BRIEF.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 95,
+      "symbols": []
+    },
+    {
+      "path": "strategy/QUICKSTART.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 194,
+      "symbols": []
+    },
+    {
+      "path": "strategy/coordination/agent-activation-prompts.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 401,
+      "symbols": []
+    },
+    {
+      "path": "strategy/coordination/handoff-templates.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 357,
+      "symbols": []
+    },
+    {
+      "path": "strategy/nexus-strategy.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1110,
+      "symbols": []
+    },
+    {
+      "path": "strategy/playbooks/phase-0-discovery.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 178,
+      "symbols": []
+    },
+    {
+      "path": "strategy/playbooks/phase-1-strategy.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 238,
+      "symbols": []
+    },
+    {
+      "path": "strategy/playbooks/phase-2-foundation.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 278,
+      "symbols": []
+    },
+    {
+      "path": "strategy/playbooks/phase-3-build.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 286,
+      "symbols": []
+    },
+    {
+      "path": "strategy/playbooks/phase-4-hardening.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 332,
+      "symbols": []
+    },
+    {
+      "path": "strategy/playbooks/phase-5-launch.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 277,
+      "symbols": []
+    },
+    {
+      "path": "strategy/playbooks/phase-6-operate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 318,
+      "symbols": []
+    },
+    {
+      "path": "strategy/runbooks/scenario-enterprise-feature.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 157,
+      "symbols": []
+    },
+    {
+      "path": "strategy/runbooks/scenario-incident-response.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 217,
+      "symbols": []
+    },
+    {
+      "path": "strategy/runbooks/scenario-marketing-campaign.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 187,
+      "symbols": []
+    },
+    {
+      "path": "strategy/runbooks/scenario-startup-mvp.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 154,
+      "symbols": []
+    },
+    {
+      "path": "support/support-analytics-reporter.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 365,
+      "symbols": []
+    },
+    {
+      "path": "support/support-executive-summary-generator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 212,
+      "symbols": []
+    },
+    {
+      "path": "support/support-finance-tracker.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 442,
+      "symbols": []
+    },
+    {
+      "path": "support/support-infrastructure-maintainer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 618,
+      "symbols": []
+    },
+    {
+      "path": "support/support-legal-compliance-checker.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 588,
+      "symbols": []
+    },
+    {
+      "path": "support/support-support-responder.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 585,
+      "symbols": []
+    },
+    {
+      "path": "testing/testing-accessibility-auditor.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 316,
+      "symbols": []
+    },
+    {
+      "path": "testing/testing-api-tester.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 306,
+      "symbols": []
+    },
+    {
+      "path": "testing/testing-evidence-collector.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 210,
+      "symbols": []
+    },
+    {
+      "path": "testing/testing-performance-benchmarker.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 268,
+      "symbols": []
+    },
+    {
+      "path": "testing/testing-reality-checker.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 236,
+      "symbols": []
+    },
+    {
+      "path": "testing/testing-test-results-analyzer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 305,
+      "symbols": []
+    },
+    {
+      "path": "testing/testing-tool-evaluator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 394,
+      "symbols": []
+    },
+    {
+      "path": "testing/testing-workflow-optimizer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 450,
+      "symbols": []
+    }
+  ]
+}

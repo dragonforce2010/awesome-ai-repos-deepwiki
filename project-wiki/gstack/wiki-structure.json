@@ -1,0 +1,320 @@
+{
+  "title": "gstack DeepWiki",
+  "description": "gstack 中文技术 Wiki：AI 编码工作流技能包、浏览器运行时、多宿主生成器和记忆/质量体系。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/garrytan/gstack",
+    "commit": "454423aeb3d3dafa88d5b57bfbe0ead05569d21e",
+    "localPath": "/Users/bytedance/workspace/deepwiki/project-repos/gstack"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": [
+        "overview"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-core",
+      "title": "核心功能",
+      "pages": [
+        "skill-workflow"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-interfaces",
+      "title": "接口与入口",
+      "pages": [
+        "setup-and-hosts",
+        "openclaw-integration"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-internals",
+      "title": "内部机制",
+      "pages": [
+        "skill-generation"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-runtime",
+      "title": "浏览器运行时",
+      "pages": [
+        "browse-runtime",
+        "browser-security"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-tools",
+      "title": "工具链",
+      "pages": [
+        "design-pdf-tools"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-data",
+      "title": "数据与记忆",
+      "pages": [
+        "gbrain-memory"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-quality",
+      "title": "测试与质量",
+      "pages": [
+        "testing-ci-quality"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-extension",
+      "title": "扩展与贡献",
+      "pages": [
+        "contributing-extension"
+      ],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-core",
+    "section-interfaces",
+    "section-internals",
+    "section-runtime",
+    "section-tools",
+    "section-data",
+    "section-quality",
+    "section-extension"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "importance": "high",
+      "description": "gstack 的定位、仓库边界、主要能力和阅读路线。",
+      "filePaths": [
+        "README.md",
+        "ARCHITECTURE.md",
+        "CLAUDE.md",
+        "package.json"
+      ],
+      "relatedPages": [
+        "skill-workflow",
+        "browse-runtime",
+        "setup-and-hosts"
+      ],
+      "file": "pages/overview.md"
+    },
+    {
+      "id": "skill-workflow",
+      "title": "技能工作流",
+      "importance": "high",
+      "description": "gstack 如何把产品、工程、设计、QA、发布和复盘组织成连续技能链。",
+      "filePaths": [
+        "README.md",
+        "docs/skills.md",
+        "office-hours/SKILL.md",
+        "plan-eng-review/SKILL.md",
+        "qa/SKILL.md",
+        "ship/SKILL.md"
+      ],
+      "relatedPages": [
+        "overview",
+        "skill-generation",
+        "testing-ci-quality"
+      ],
+      "file": "pages/skill-workflow.md"
+    },
+    {
+      "id": "setup-and-hosts",
+      "title": "安装与多宿主接入",
+      "importance": "high",
+      "description": "安装脚本、team mode、技能链接策略和 Claude/Codex/OpenCode/OpenClaw 等宿主差异。",
+      "filePaths": [
+        "README.md",
+        "setup",
+        "hosts/index.ts",
+        "hosts/codex.ts",
+        "hosts/openclaw.ts",
+        "CONTRIBUTING.md"
+      ],
+      "relatedPages": [
+        "skill-generation",
+        "openclaw-integration",
+        "contributing-extension"
+      ],
+      "file": "pages/setup-and-hosts.md"
+    },
+    {
+      "id": "skill-generation",
+      "title": "技能生成系统",
+      "importance": "high",
+      "description": "`.tmpl` 到 `SKILL.md` 的生成、resolver、host rewrite、验证和新技能扩展方式。",
+      "filePaths": [
+        "ARCHITECTURE.md",
+        "scripts/gen-skill-docs.ts",
+        "scripts/discover-skills.ts",
+        "scripts/resolvers/index.ts",
+        "scripts/host-config.ts",
+        "package.json",
+        "CONTRIBUTING.md"
+      ],
+      "relatedPages": [
+        "setup-and-hosts",
+        "testing-ci-quality",
+        "contributing-extension"
+      ],
+      "file": "pages/skill-generation.md"
+    },
+    {
+      "id": "browse-runtime",
+      "title": "Browse 运行时",
+      "importance": "high",
+      "description": "Browse CLI、localhost HTTP 守护进程、Playwright 浏览器、命令分发和状态文件。",
+      "filePaths": [
+        "ARCHITECTURE.md",
+        "browse/src/cli.ts",
+        "browse/src/server.ts",
+        "browse/src/commands.ts",
+        "browse/src/browser-manager.ts",
+        "browse/src/config.ts"
+      ],
+      "relatedPages": [
+        "browser-security",
+        "skill-workflow",
+        "design-pdf-tools"
+      ],
+      "file": "pages/browse-runtime.md"
+    },
+    {
+      "id": "browser-security",
+      "title": "浏览器安全模型",
+      "importance": "high",
+      "description": "localhost 绑定、Bearer token、双监听器 tunnel、scoped token、内容安全和 CDP allowlist。",
+      "filePaths": [
+        "ARCHITECTURE.md",
+        "browse/src/server.ts",
+        "browse/src/content-security.ts",
+        "browse/src/security.ts",
+        "browse/src/cdp-allowlist.ts",
+        "browse/src/token-registry.ts",
+        "browse/src/commands.ts"
+      ],
+      "relatedPages": [
+        "browse-runtime",
+        "testing-ci-quality",
+        "openclaw-integration"
+      ],
+      "file": "pages/browser-security.md"
+    },
+    {
+      "id": "design-pdf-tools",
+      "title": "设计与 PDF 工具",
+      "importance": "medium",
+      "description": "Design CLI、设计技能、mockup-to-code、比较板和 make-pdf CLI 的职责边界。",
+      "filePaths": [
+        "README.md",
+        "design/src/cli.ts",
+        "design/src/commands.ts",
+        "design/src/generate.ts",
+        "design/src/design-to-code.ts",
+        "make-pdf/src/cli.ts",
+        "make-pdf/SKILL.md"
+      ],
+      "relatedPages": [
+        "skill-workflow",
+        "browse-runtime",
+        "testing-ci-quality"
+      ],
+      "file": "pages/design-pdf-tools.md"
+    },
+    {
+      "id": "gbrain-memory",
+      "title": "GBrain 与记忆系统",
+      "importance": "medium",
+      "description": "setup-gbrain、per-remote trust policy、memory sync、secret scanning 和跨机器恢复。",
+      "filePaths": [
+        "README.md",
+        "USING_GBRAIN_WITH_GSTACK.md",
+        "docs/gbrain-sync.md",
+        "bin/gstack-brain-init",
+        "setup-gbrain/SKILL.md"
+      ],
+      "relatedPages": [
+        "skill-workflow",
+        "setup-and-hosts",
+        "testing-ci-quality"
+      ],
+      "file": "pages/gbrain-memory.md"
+    },
+    {
+      "id": "openclaw-integration",
+      "title": "OpenClaw 集成",
+      "importance": "medium",
+      "description": "gstack 如何以 methodology source 方式接入 OpenClaw，而不是把完整运行时移植过去。",
+      "filePaths": [
+        "README.md",
+        "docs/OPENCLAW.md",
+        "hosts/openclaw.ts",
+        "scripts/host-adapters/openclaw-adapter.ts",
+        "openclaw/skills/gstack-openclaw-office-hours/SKILL.md"
+      ],
+      "relatedPages": [
+        "setup-and-hosts",
+        "skill-generation",
+        "skill-workflow"
+      ],
+      "file": "pages/openclaw-integration.md"
+    },
+    {
+      "id": "testing-ci-quality",
+      "title": "测试、CI 与质量门",
+      "importance": "high",
+      "description": "bun test、技能静态验证、LLM/E2E eval、workflow freshness gate 和 Docker CI。",
+      "filePaths": [
+        "package.json",
+        "CONTRIBUTING.md",
+        "test/skill-validation.test.ts",
+        ".github/workflows/skill-docs.yml",
+        ".github/workflows/evals.yml",
+        "ARCHITECTURE.md",
+        "browse/src/cdp-allowlist.ts"
+      ],
+      "relatedPages": [
+        "skill-generation",
+        "browser-security",
+        "contributing-extension"
+      ],
+      "file": "pages/testing-ci-quality.md"
+    },
+    {
+      "id": "contributing-extension",
+      "title": "贡献、扩展与新增宿主",
+      "importance": "medium",
+      "description": "开发模式、编辑技能模板、新增 host、迁移脚本、社区 PR wave 和贡献注意事项。",
+      "filePaths": [
+        "CONTRIBUTING.md",
+        "docs/ADDING_A_HOST.md",
+        "setup",
+        "CLAUDE.md",
+        "scripts/host-config.ts",
+        "hosts/index.ts"
+      ],
+      "relatedPages": [
+        "setup-and-hosts",
+        "skill-generation",
+        "testing-ci-quality"
+      ],
+      "file": "pages/contributing-extension.md"
+    }
+  ]
+}

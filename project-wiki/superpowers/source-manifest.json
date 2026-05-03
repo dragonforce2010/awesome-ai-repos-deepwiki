@@ -1,0 +1,1028 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/superpowers",
+    "remote": "https://github.com/obra/superpowers",
+    "branch": "main",
+    "commit": "e7a2d16476bf042e9add4699c9d018a90f86e4a6"
+  },
+  "file_count": 122,
+  "skipped_count": 25,
+  "files": [
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": ".codex-plugin/plugin.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": ".codex/INSTALL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": ".cursor-plugin/plugin.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 3,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/platform_support.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 126,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/INSTALL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/plugins/superpowers.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 112,
+      "symbols": [
+        {
+          "name": "extractAndStripFrontmatter",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "normalizePath",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "SuperpowersPlugin",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "getBootstrapContent",
+          "type": "function",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": ".version-bump.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 128,
+      "symbols": []
+    },
+    {
+      "path": "GEMINI.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 2,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 198,
+      "symbols": []
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1096,
+      "symbols": []
+    },
+    {
+      "path": "agents/code-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "commands/brainstorm.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "commands/execute-plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "commands/write-plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "docs/README.codex.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 126,
+      "symbols": []
+    },
+    {
+      "path": "docs/README.opencode.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 130,
+      "symbols": []
+    },
+    {
+      "path": "docs/plans/2025-11-22-opencode-support-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 294,
+      "symbols": []
+    },
+    {
+      "path": "docs/plans/2025-11-22-opencode-support-implementation.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1095,
+      "symbols": []
+    },
+    {
+      "path": "docs/plans/2025-11-28-skills-improvements-from-user-feedback.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 711,
+      "symbols": []
+    },
+    {
+      "path": "docs/plans/2026-01-17-visual-brainstorming.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 571,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-01-22-document-review-system.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 301,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-02-19-visual-brainstorming-refactor.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 523,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-03-11-zero-dep-brainstorm-server.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 479,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-03-23-codex-app-compatibility.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 564,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-01-22-document-review-system-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 136,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-02-19-visual-brainstorming-refactor-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 162,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-03-11-zero-dep-brainstorm-server-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 118,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-03-23-codex-app-compatibility-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 244,
+      "symbols": []
+    },
+    {
+      "path": "docs/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 303,
+      "symbols": []
+    },
+    {
+      "path": "docs/windows/polyglot-hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 212,
+      "symbols": []
+    },
+    {
+      "path": "gemini-extension.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "hooks/hooks-cursor.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "hooks/hooks.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 16,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "scripts/bump-version.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 220,
+      "symbols": []
+    },
+    {
+      "path": "scripts/sync-to-codex-plugin.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 430,
+      "symbols": []
+    },
+    {
+      "path": "skills/brainstorming/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 164,
+      "symbols": []
+    },
+    {
+      "path": "skills/brainstorming/scripts/helper.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 88,
+      "symbols": [
+        {
+          "name": "connect",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "sendEvent",
+          "type": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "skills/brainstorming/scripts/start-server.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 148,
+      "symbols": []
+    },
+    {
+      "path": "skills/brainstorming/scripts/stop-server.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "skills/brainstorming/spec-document-reviewer-prompt.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "skills/brainstorming/visual-companion.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 287,
+      "symbols": []
+    },
+    {
+      "path": "skills/dispatching-parallel-agents/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 182,
+      "symbols": []
+    },
+    {
+      "path": "skills/executing-plans/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "skills/finishing-a-development-branch/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 200,
+      "symbols": []
+    },
+    {
+      "path": "skills/receiving-code-review/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 213,
+      "symbols": []
+    },
+    {
+      "path": "skills/requesting-code-review/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 105,
+      "symbols": []
+    },
+    {
+      "path": "skills/requesting-code-review/code-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 146,
+      "symbols": []
+    },
+    {
+      "path": "skills/subagent-driven-development/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 277,
+      "symbols": []
+    },
+    {
+      "path": "skills/subagent-driven-development/code-quality-reviewer-prompt.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "skills/subagent-driven-development/implementer-prompt.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "skills/subagent-driven-development/spec-reviewer-prompt.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/CREATION-LOG.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 296,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 158,
+      "symbols": [
+        {
+          "name": "waitForEvent",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "waitForEventCount",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "waitForEventMatch",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "path": "skills/systematic-debugging/condition-based-waiting.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 115,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/defense-in-depth.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 122,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/find-polluter.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/root-cause-tracing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 169,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/test-academic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/test-pressure-1.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 58,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/test-pressure-2.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 68,
+      "symbols": []
+    },
+    {
+      "path": "skills/systematic-debugging/test-pressure-3.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 69,
+      "symbols": []
+    },
+    {
+      "path": "skills/test-driven-development/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 371,
+      "symbols": []
+    },
+    {
+      "path": "skills/test-driven-development/testing-anti-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 299,
+      "symbols": []
+    },
+    {
+      "path": "skills/using-git-worktrees/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 218,
+      "symbols": []
+    },
+    {
+      "path": "skills/using-superpowers/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 117,
+      "symbols": []
+    },
+    {
+      "path": "skills/using-superpowers/references/codex-tools.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "skills/using-superpowers/references/copilot-tools.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/using-superpowers/references/gemini-tools.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "skills/verification-before-completion/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 139,
+      "symbols": []
+    },
+    {
+      "path": "skills/writing-plans/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 152,
+      "symbols": []
+    },
+    {
+      "path": "skills/writing-plans/plan-document-reviewer-prompt.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "skills/writing-skills/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 655,
+      "symbols": []
+    },
+    {
+      "path": "skills/writing-skills/anthropic-best-practices.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1150,
+      "symbols": []
+    },
+    {
+      "path": "skills/writing-skills/examples/CLAUDE_MD_TESTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 189,
+      "symbols": []
+    },
+    {
+      "path": "skills/writing-skills/persuasion-principles.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 187,
+      "symbols": []
+    },
+    {
+      "path": "skills/writing-skills/render-graphs.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 168,
+      "symbols": [
+        {
+          "name": "extractDotBlocks",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "extractGraphBody",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "combineGraphs",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "renderToSvg",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "path": "skills/writing-skills/testing-skills-with-subagents.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 384,
+      "symbols": []
+    },
+    {
+      "path": "tests/brainstorm-server/package-lock.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "tests/brainstorm-server/package.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "tests/brainstorm-server/server.test.js",
+      "language": "javascript",
+      "kind": "test",
+      "lines": 427,
+      "symbols": [
+        {
+          "name": "cleanup",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "sleep",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "fetch",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "startServer",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "waitForServer",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "runTests",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "test",
+          "type": "function",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "path": "tests/brainstorm-server/windows-lifecycle.test.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 351,
+      "symbols": []
+    },
+    {
+      "path": "tests/brainstorm-server/ws-protocol.test.js",
+      "language": "javascript",
+      "kind": "test",
+      "lines": 392,
+      "symbols": [
+        {
+          "name": "runTests",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "test",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "makeClientFrame",
+          "type": "function",
+          "line": 149
+        }
+      ]
+    },
+    {
+      "path": "tests/claude-code/README.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 158,
+      "symbols": []
+    },
+    {
+      "path": "tests/claude-code/analyze-token-usage.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 168,
+      "symbols": [
+        {
+          "name": "analyze_main_session",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "format_tokens",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "calculate_cost",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "path": "tests/claude-code/run-skill-tests.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 187,
+      "symbols": []
+    },
+    {
+      "path": "tests/claude-code/test-document-review-system.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 177,
+      "symbols": []
+    },
+    {
+      "path": "tests/claude-code/test-helpers.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 202,
+      "symbols": []
+    },
+    {
+      "path": "tests/claude-code/test-subagent-driven-development-integration.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 314,
+      "symbols": []
+    },
+    {
+      "path": "tests/claude-code/test-subagent-driven-development.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 165,
+      "symbols": []
+    },
+    {
+      "path": "tests/codex-plugin-sync/test-sync-to-codex-plugin.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 571,
+      "symbols": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-all.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-claude-describes-sdd.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-haiku-test.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 144,
+      "symbols": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-multiturn-test.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 143,
+      "symbols": []
+    },
+    {
+      "path": "tests/explicit-skill-requests/run-test.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 136,
+      "symbols": []
+    },
+    {
+      "path": "tests/opencode/run-tests.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 163,
+      "symbols": []
+    },
+    {
+      "path": "tests/opencode/setup.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "tests/opencode/test-plugin-loading.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 82,
+      "symbols": []
+    },
+    {
+      "path": "tests/opencode/test-priority.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 198,
+      "symbols": []
+    },
+    {
+      "path": "tests/opencode/test-tools.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 104,
+      "symbols": []
+    },
+    {
+      "path": "tests/skill-triggering/run-all.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "tests/skill-triggering/run-test.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "tests/subagent-driven-dev/go-fractals/design.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "tests/subagent-driven-dev/go-fractals/plan.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 172,
+      "symbols": []
+    },
+    {
+      "path": "tests/subagent-driven-dev/go-fractals/scaffold.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "tests/subagent-driven-dev/run-test.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "tests/subagent-driven-dev/svelte-todo/design.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "tests/subagent-driven-dev/svelte-todo/plan.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 222,
+      "symbols": []
+    },
+    {
+      "path": "tests/subagent-driven-dev/svelte-todo/scaffold.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 46,
+      "symbols": []
+    }
+  ]
+}

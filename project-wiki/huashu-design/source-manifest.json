@@ -1,0 +1,563 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/huashu-design",
+    "remote": "https://github.com/alchaincyf/huashu-design",
+    "branch": "master",
+    "commit": "23f60d9b4304f20851469987c6e2c92242b94a45"
+  },
+  "file_count": 38,
+  "skipped_count": 117,
+  "files": [
+    {
+      "path": "README.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 311,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 324,
+      "symbols": []
+    },
+    {
+      "path": "SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 801,
+      "symbols": []
+    },
+    {
+      "path": "assets/android_frame.jsx",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 175,
+      "symbols": [
+        {
+          "name": "AndroidFrame",
+          "type": "function",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "path": "assets/animations.jsx",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 340,
+      "symbols": [
+        {
+          "name": "c",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "adjusted",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "interpolate",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "useTime",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "useSprite",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "Stage",
+          "type": "function",
+          "line": 165
+        },
+        {
+          "name": "effectiveLoop",
+          "type": "function",
+          "line": 177
+        },
+        {
+          "name": "updateScale",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "tick",
+          "type": "function",
+          "line": 196
+        },
+        {
+          "name": "delta",
+          "type": "function",
+          "line": 207
+        },
+        {
+          "name": "startAfterFonts",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "ratio",
+          "type": "function",
+          "line": 242
+        },
+        {
+          "name": "Sprite",
+          "type": "function",
+          "line": 307
+        }
+      ]
+    },
+    {
+      "path": "assets/browser_window.jsx",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 166,
+      "symbols": [
+        {
+          "name": "BrowserWindow",
+          "type": "function",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "path": "assets/deck_stage.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 420,
+      "symbols": [
+        {
+          "name": "DeckStage",
+          "type": "class",
+          "line": 33
+        },
+        {
+          "name": "init",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "offsetX",
+          "type": "function",
+          "line": 316
+        },
+        {
+          "name": "offsetY",
+          "type": "function",
+          "line": 317
+        }
+      ]
+    },
+    {
+      "path": "assets/design_canvas.jsx",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 205,
+      "symbols": [
+        {
+          "name": "DesignCanvas",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "Variation",
+          "type": "function",
+          "line": 169
+        }
+      ]
+    },
+    {
+      "path": "assets/ios_frame.jsx",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 192,
+      "symbols": [
+        {
+          "name": "IosFrame",
+          "type": "function",
+          "line": 123
+        }
+      ]
+    },
+    {
+      "path": "assets/macos_window.jsx",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 96,
+      "symbols": [
+        {
+          "name": "MacosWindow",
+          "type": "function",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "path": "assets/personal-asset-index.example.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "assets/showcases/INDEX.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 115,
+      "symbols": []
+    },
+    {
+      "path": "references/animation-best-practices.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 506,
+      "symbols": []
+    },
+    {
+      "path": "references/animation-pitfalls.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 380,
+      "symbols": []
+    },
+    {
+      "path": "references/animations.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 249,
+      "symbols": []
+    },
+    {
+      "path": "references/apple-gallery-showcase.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 338,
+      "symbols": []
+    },
+    {
+      "path": "references/audio-design-rules.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 260,
+      "symbols": []
+    },
+    {
+      "path": "references/cinematic-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 264,
+      "symbols": []
+    },
+    {
+      "path": "references/content-guidelines.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 260,
+      "symbols": []
+    },
+    {
+      "path": "references/critique-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 199,
+      "symbols": []
+    },
+    {
+      "path": "references/design-context.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 213,
+      "symbols": []
+    },
+    {
+      "path": "references/design-styles.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 591,
+      "symbols": []
+    },
+    {
+      "path": "references/editable-pptx.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 301,
+      "symbols": []
+    },
+    {
+      "path": "references/hero-animation-case-study.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 250,
+      "symbols": []
+    },
+    {
+      "path": "references/react-setup.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 276,
+      "symbols": []
+    },
+    {
+      "path": "references/scene-templates.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 262,
+      "symbols": []
+    },
+    {
+      "path": "references/sfx-library.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 226,
+      "symbols": []
+    },
+    {
+      "path": "references/slide-decks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 726,
+      "symbols": []
+    },
+    {
+      "path": "references/tweaks-system.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 313,
+      "symbols": []
+    },
+    {
+      "path": "references/verification.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 189,
+      "symbols": []
+    },
+    {
+      "path": "references/video-export.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 209,
+      "symbols": []
+    },
+    {
+      "path": "references/workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 216,
+      "symbols": []
+    },
+    {
+      "path": "scripts/add-music.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 108,
+      "symbols": []
+    },
+    {
+      "path": "scripts/convert-formats.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "scripts/html2pptx.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 979,
+      "symbols": [
+        {
+          "name": "getBodyDimensions",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "validateDimensions",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "validateTextBoxPosition",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "getText",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "addBackground",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "addElements",
+          "type": "function",
+          "line": 133
+        },
+        {
+          "name": "extractSlideData",
+          "type": "function",
+          "line": 244
+        },
+        {
+          "name": "shouldSkipBold",
+          "type": "function",
+          "line": 254
+        },
+        {
+          "name": "pxToInch",
+          "type": "function",
+          "line": 261
+        },
+        {
+          "name": "pxToPoints",
+          "type": "function",
+          "line": 262
+        },
+        {
+          "name": "rgbToHex",
+          "type": "function",
+          "line": 263
+        },
+        {
+          "name": "extractAlpha",
+          "type": "function",
+          "line": 272
+        },
+        {
+          "name": "applyTextTransform",
+          "type": "function",
+          "line": 279
+        },
+        {
+          "name": "getRotation",
+          "type": "function",
+          "line": 289
+        },
+        {
+          "name": "getPositionAndSize",
+          "type": "function",
+          "line": 329
+        },
+        {
+          "name": "parseBoxShadow",
+          "type": "function",
+          "line": 365
+        },
+        {
+          "name": "parseInlineFormatting",
+          "type": "function",
+          "line": 419
+        },
+        {
+          "name": "hasBorder",
+          "type": "function",
+          "line": 541
+        },
+        {
+          "name": "inset",
+          "type": "function",
+          "line": 645
+        },
+        {
+          "name": "inset",
+          "type": "function",
+          "line": 655
+        },
+        {
+          "name": "inset",
+          "type": "function",
+          "line": 665
+        },
+        {
+          "name": "inset",
+          "type": "function",
+          "line": 675
+        },
+        {
+          "name": "html2pptx",
+          "type": "function",
+          "line": 896
+        }
+      ]
+    },
+    {
+      "path": "scripts/render-video.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 289,
+      "symbols": [
+        {
+          "name": "arg",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "hasFlag",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "injectStyle",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "hideChromeBars",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "start",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "mp4Size",
+          "type": "function",
+          "line": 287
+        }
+      ]
+    },
+    {
+      "path": "scripts/verify.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 154,
+      "symbols": [
+        {
+          "name": "parse_viewport",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "verify_html",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "path": "test-prompts.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 38,
+      "symbols": []
+    }
+  ]
+}

@@ -1,0 +1,1695 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/lark-context",
+    "remote": "git@code.byted.org:tiktok/lark-context.git",
+    "branch": "master",
+    "commit": "8099f2131ca597a21e77346ce2e272a5e0bf0554"
+  },
+  "file_count": 87,
+  "skipped_count": 3,
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "GETTING_STARTED.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 126,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 234,
+      "symbols": []
+    },
+    {
+      "path": "docs/slash-commands/lark-digest.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-04-19-lark-context-v1.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 2428,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-04-20-lark-context-skillification.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 2441,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-04-20-lark-context-thread-replies.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1539,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-04-19-lark-context-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 319,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-04-20-lark-context-skillification-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 426,
+      "symbols": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-04-20-lark-context-thread-replies-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 193,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/pyproject.toml",
+      "language": "toml",
+      "kind": "manifest",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/src/lark_context/__init__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/src/lark_context/__main__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 4,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/src/lark_context/cli.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 27,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/commands/__init__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/src/lark_context/commands/groups.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 91,
+      "symbols": [
+        {
+          "name": "_slugify",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "groups_cmd",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "groups_add",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "groups_list",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "groups_rm",
+          "type": "function",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/commands/ingest_doc.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 101,
+      "symbols": [
+        {
+          "name": "extract_token",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "_extract_content",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "ingest_doc_cmd",
+          "type": "function",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/commands/init.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 34,
+      "symbols": [
+        {
+          "name": "init_cmd",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/commands/list_groups.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 32,
+      "symbols": [
+        {
+          "name": "list_groups_cmd",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/commands/pull.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 215,
+      "symbols": [
+        {
+          "name": "_to_iso",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "_one_page",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "_write_page",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "_pull_chat",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "_disable_chat",
+          "type": "function",
+          "line": 167
+        },
+        {
+          "name": "pull_cmd",
+          "type": "function",
+          "line": 186
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/commands/show.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 112,
+      "symbols": [
+        {
+          "name": "_token_from_ref",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "show_cmd",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "show_doc_cmd",
+          "type": "function",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/config.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 144,
+      "symbols": [
+        {
+          "name": "GroupConfig",
+          "type": "class",
+          "line": 18
+        },
+        {
+          "name": "Config",
+          "type": "class",
+          "line": 26
+        },
+        {
+          "name": "_default_config_path",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "_resolve_path",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "_parse_groups",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "load_config",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "_contract_home",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "save_config",
+          "type": "function",
+          "line": 125
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/db.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 87,
+      "symbols": [
+        {
+          "name": "connect",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "init_schema",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "kv_set",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "kv_get",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "ensure_initialized",
+          "type": "function",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/durations.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 30,
+      "symbols": [
+        {
+          "name": "parse_duration",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/lark.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 58,
+      "symbols": [
+        {
+          "name": "LarkCLIError",
+          "type": "class",
+          "line": 16
+        },
+        {
+          "name": "LarkNotFoundError",
+          "type": "class",
+          "line": 20
+        },
+        {
+          "name": "_run",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "_invoke",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "run_json",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "run_ndjson",
+          "type": "function",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/src/lark_context/render.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "_fmt_time",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "render_chat_window",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/__init__.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/tests/conftest.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 8,
+      "symbols": [
+        {
+          "name": "tmp_home",
+          "type": "function",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/fixtures/lark_chats_list.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/tests/fixtures/lark_docx_blocks.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/tests/fixtures/lark_messages_page1.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/tests/fixtures/lark_messages_page2.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/tests/unit/__init__.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "legacy/python/tests/unit/test_cli_smoke.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 10,
+      "symbols": [
+        {
+          "name": "test_cli_shows_help",
+          "type": "function",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_cmd_groups.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "_init",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "test_groups_add_writes_yaml_and_db",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "test_groups_add_rejects_duplicate_alias",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "test_groups_list_prints_aliases",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "test_groups_add_without_init_gives_friendly_error",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "test_groups_rm_removes_and_disables",
+          "type": "function",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_cmd_ingest_doc.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 88,
+      "symbols": [
+        {
+          "name": "_init",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "test_extract_token_from_url_variants",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "test_extract_token_accepts_bare_token",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "test_extract_token_rejects_non_feishu",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "test_ingest_doc_persists_markdown",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "test_ingest_doc_is_idempotent",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "test_ingest_doc_surfaces_api_error",
+          "type": "function",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_cmd_init.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 31,
+      "symbols": [
+        {
+          "name": "test_init_creates_paths_and_config",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "test_init_fails_without_lark_binary",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "test_init_is_idempotent",
+          "type": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_cmd_list_groups.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 66,
+      "symbols": [
+        {
+          "name": "test_list_groups_text_output",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "test_list_groups_json_output",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "test_list_groups_empty",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "test_list_groups_passes_no_pagination_cap",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "fake",
+          "type": "function",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_cmd_pull.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 172,
+      "symbols": [
+        {
+          "name": "_load",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "_setup",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "test_pull_inserts_messages_and_updates_cursor",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "test_pull_is_idempotent",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "two_pages",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "test_pull_all_loops_over_enabled_chats",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "fake",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "test_pull_chat_all_is_synonym_for_all",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "fake",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "test_pull_handles_hand_edited_yaml_without_groups_add",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "test_pull_all_disables_chat_on_per_chat_failure",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "fake",
+          "type": "function",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_cmd_show.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 113,
+      "symbols": [
+        {
+          "name": "_init",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "_insert_message",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "test_show_filters_by_since",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "test_show_lists_recent_docs",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "test_show_doc_prints_stored_markdown",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "test_show_doc_errors_on_missing",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "test_show_chat_all_is_synonym_for_all",
+          "type": "function",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_config.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 120,
+      "symbols": [
+        {
+          "name": "_write_config",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "test_defaults_when_no_file",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "test_yaml_overrides_defaults",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "test_env_overrides_yaml",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "test_flag_overrides_env",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "test_save_round_trip",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "test_save_contracts_home_to_tilde",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "test_save_keeps_out_of_home_paths_absolute",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "test_rejects_duplicate_alias",
+          "type": "function",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_db.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "test_init_schema_is_idempotent",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "test_messages_pk_dedup",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "test_kv_round_trip",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_durations.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 24,
+      "symbols": [
+        {
+          "name": "test_parse_duration_valid",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "test_parse_duration_rejects_garbage",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_lark_wrapper.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "_ok",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "_fail",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "test_run_json_parses_stdout",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "test_run_json_raises_on_nonzero",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "test_run_ndjson_yields_per_line",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "test_missing_binary_raises_explicit",
+          "type": "function",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "legacy/python/tests/unit/test_render.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 80,
+      "symbols": [
+        {
+          "name": "test_render_chat_window_produces_expected_markdown",
+          "type": "function",
+          "line": 4
+        },
+        {
+          "name": "test_render_chat_window_indents_replies",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "test_render_chat_window_handles_empty",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "test_render_chat_window_preserves_unparseable_timestamp",
+          "type": "function",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2093,
+      "symbols": []
+    },
+    {
+      "path": "skills/lark-context/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 95,
+      "symbols": []
+    },
+    {
+      "path": "skills/lark-context/references/digest.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 114,
+      "symbols": []
+    },
+    {
+      "path": "skills/lark-context/references/ingest-doc.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "skills/lark-context/references/pull.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 57,
+      "symbols": []
+    },
+    {
+      "path": "skills/lark-context/references/show.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "skills/lark-context/references/todo.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 73,
+      "symbols": []
+    },
+    {
+      "path": "spec.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "src/cli.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 49,
+      "symbols": [
+        {
+          "name": "readPkgVersion",
+          "type": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "src/commands/groups.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 131,
+      "symbols": [
+        {
+          "name": "slugify",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "AddOpts",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "ListOpts",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "RmOpts",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "runAdd",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "runList",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "runRm",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "registerGroups",
+          "type": "function",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "path": "src/commands/ingestDoc.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 117,
+      "symbols": [
+        {
+          "name": "isLarkHost",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "extractToken",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "extractContent",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "IngestDocOpts",
+          "type": "interface",
+          "line": 53
+        },
+        {
+          "name": "runIngestDoc",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "response",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "now",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "registerIngestDoc",
+          "type": "function",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "src/commands/init.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 68,
+      "symbols": [
+        {
+          "name": "InitOpts",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "defaultPathCheck",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "runInit",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "registerInit",
+          "type": "function",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": "src/commands/listGroups.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 59,
+      "symbols": [
+        {
+          "name": "ListGroupsOpts",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "runListGroups",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "chatId",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "registerListGroups",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "src/commands/pull.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 473,
+      "symbols": [
+        {
+          "name": "PullOpts",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "ThreadOpts",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "toIso",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "PageResult",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "onePage",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "response",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "writePage",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "pullThreadsPage",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "response",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "writeThreadPage",
+          "type": "function",
+          "line": 198
+        },
+        {
+          "name": "pullThreads",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "pullChat",
+          "type": "function",
+          "line": 293
+        },
+        {
+          "name": "disableChat",
+          "type": "function",
+          "line": 391
+        },
+        {
+          "name": "runPull",
+          "type": "function",
+          "line": 401
+        },
+        {
+          "name": "now",
+          "type": "function",
+          "line": 422
+        },
+        {
+          "name": "registerPull",
+          "type": "function",
+          "line": 443
+        }
+      ]
+    },
+    {
+      "path": "src/commands/show.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 184,
+      "symbols": [
+        {
+          "name": "tokenFromRef",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "ShowOpts",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "runShow",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "now",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "ShowDocOpts",
+          "type": "interface",
+          "line": 129
+        },
+        {
+          "name": "runShowDoc",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "registerShow",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "registerShowDoc",
+          "type": "function",
+          "line": 172
+        }
+      ]
+    },
+    {
+      "path": "src/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 165,
+      "symbols": [
+        {
+          "name": "homedir",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "GroupConfig",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "Config",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "LoadConfigOptions",
+          "type": "interface",
+          "line": 32
+        },
+        {
+          "name": "expandHome",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "defaultConfigPath",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "resolvePath",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "parseGroups",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "loadConfig",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "contractHome",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "saveConfig",
+          "type": "function",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "path": "src/db.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 120,
+      "symbols": [
+        {
+          "name": "connect",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "initSchema",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "migrateMessagesColumns",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "kvSet",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "kvGet",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "ensureInitialized",
+          "type": "function",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "path": "src/durations.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 29,
+      "symbols": [
+        {
+          "name": "Duration",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "parseDuration",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "src/lark.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 35,
+      "symbols": [
+        {
+          "name": "LarkCLIError",
+          "type": "class",
+          "line": 5
+        },
+        {
+          "name": "LarkNotFoundError",
+          "type": "class",
+          "line": 6
+        },
+        {
+          "name": "invoke",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "stderr",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "runJson",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "src/render.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 41,
+      "symbols": [
+        {
+          "name": "Message",
+          "type": "interface",
+          "line": 1
+        },
+        {
+          "name": "fmtTime",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "renderChatWindow",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "test/cli-smoke.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "test/cmd-groups.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 123,
+      "symbols": [
+        {
+          "name": "freshInit",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "test/cmd-ingest-doc.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 148,
+      "symbols": [
+        {
+          "name": "freshInit",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "count",
+          "type": "function",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "path": "test/cmd-init.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "test/cmd-list-groups.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 84,
+      "symbols": []
+    },
+    {
+      "path": "test/cmd-pull.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 1130,
+      "symbols": [
+        {
+          "name": "loadFixture",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "setup",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "count",
+          "type": "function",
+          "line": 192
+        },
+        {
+          "name": "count",
+          "type": "function",
+          "line": 784
+        },
+        {
+          "name": "enabled",
+          "type": "function",
+          "line": 954
+        },
+        {
+          "name": "enabled",
+          "type": "function",
+          "line": 1028
+        }
+      ]
+    },
+    {
+      "path": "test/cmd-show.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 376,
+      "symbols": [
+        {
+          "name": "setup",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "insertMessage",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "insertThreadReply",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "insertTopLevel",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "t",
+          "type": "function",
+          "line": 244
+        },
+        {
+          "name": "t",
+          "type": "function",
+          "line": 294
+        },
+        {
+          "name": "insertDoc",
+          "type": "function",
+          "line": 339
+        }
+      ]
+    },
+    {
+      "path": "test/config.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 149,
+      "symbols": [
+        {
+          "name": "writeYaml",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "test/db.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 279,
+      "symbols": [
+        {
+          "name": "count",
+          "type": "function",
+          "line": 138
+        }
+      ]
+    },
+    {
+      "path": "test/durations.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "test/fixtures/lark_chats_list.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "test/fixtures/lark_docx_blocks.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "test/fixtures/lark_messages_page1.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "test/fixtures/lark_messages_page2.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "test/fixtures/lark_thread_replies.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "test/lark.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 116,
+      "symbols": [
+        {
+          "name": "err",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "err",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "run",
+          "type": "function",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "path": "test/render.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 133,
+      "symbols": []
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "tsup.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "vitest.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    }
+  ]
+}

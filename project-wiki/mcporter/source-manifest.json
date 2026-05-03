@@ -1,0 +1,7117 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/mcporter",
+    "remote": "https://github.com/steipete/mcporter.git",
+    "branch": "main",
+    "commit": "324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09"
+  },
+  "file_count": 286,
+  "skipped_count": 16,
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": ".oxfmtrc.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": ".oxlintrc.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 121,
+      "symbols": []
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 471,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 485,
+      "symbols": []
+    },
+    {
+      "path": "config/mcporter.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 108,
+      "symbols": []
+    },
+    {
+      "path": "docs/RELEASE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 101,
+      "symbols": []
+    },
+    {
+      "path": "docs/adhoc.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": "docs/call-heuristic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "docs/call-syntax.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 77,
+      "symbols": []
+    },
+    {
+      "path": "docs/cli-generator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 118,
+      "symbols": []
+    },
+    {
+      "path": "docs/cli-reference.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "docs/config.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 229,
+      "symbols": []
+    },
+    {
+      "path": "docs/daemon.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 95,
+      "symbols": []
+    },
+    {
+      "path": "docs/emit-ts.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 98,
+      "symbols": []
+    },
+    {
+      "path": "docs/hang-debug.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "docs/import.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "docs/known-issues.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "docs/livetests.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "docs/local.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 73,
+      "symbols": []
+    },
+    {
+      "path": "docs/logging.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": "docs/manual-testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "docs/mcp.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "docs/migration.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 77,
+      "symbols": []
+    },
+    {
+      "path": "docs/pnpm-mcp-migration.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "docs/refactor.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "docs/shortcuts.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "docs/spec.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 96,
+      "symbols": []
+    },
+    {
+      "path": "docs/subagent.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "docs/supabase-auth-issue.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "docs/tmux.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "docs/tool-calling.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": "docs/windows.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "examples/context7-headlines.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 66,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "extractContext7LibraryId",
+          "type": "function",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "mcporter.schema.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 275,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 112,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2932,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2,
+      "symbols": []
+    },
+    {
+      "path": "scripts/agent-send.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 179,
+      "symbols": [
+        {
+          "name": "EntryMode",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "CliOptions",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "usage",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "parseArgs",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "runTmux",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "ensureSession",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "sleep",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "sendMessage",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "pressEnter",
+          "type": "function",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "path": "scripts/build-bun.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 154,
+      "symbols": [
+        {
+          "name": "Options",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "PackageJson",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "parseArgs",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "requireValue",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "readPackageVersion",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "createCompiledEntrypoint",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "formatSize",
+          "type": "function",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "path": "scripts/docs-list.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 132,
+      "symbols": [
+        {
+          "name": "walkMarkdownFiles",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "extractMetadata",
+          "type": "function",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "scripts/generate-json-schema.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 50,
+      "symbols": [
+        {
+          "name": "buildConfigJsonSchema",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "writeConfigJsonSchema",
+          "type": "function",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "path": "scripts/git-policy.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 165,
+      "symbols": [
+        {
+          "name": "GitInvocation",
+          "type": "type",
+          "line": 3
+        },
+        {
+          "name": "GitCommandInfo",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "GitExecutionContext",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "GitPolicyEvaluation",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "extractGitInvocation",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "findGitSubcommand",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "determineGitWorkdir",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "analyzeGitExecution",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "requiresCommitHelper",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "requiresExplicitGitConsent",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "isDestructiveGitSubcommand",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "evaluateGitPolicies",
+          "type": "function",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "path": "scripts/release.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 86,
+      "symbols": []
+    },
+    {
+      "path": "scripts/runner.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1556,
+      "symbols": [
+        {
+          "name": "SummaryStyle",
+          "type": "type",
+          "line": 40
+        },
+        {
+          "name": "RunnerExecutionContext",
+          "type": "type",
+          "line": 59
+        },
+        {
+          "name": "CommandInterceptionResult",
+          "type": "type",
+          "line": 65
+        },
+        {
+          "name": "GitRmPlan",
+          "type": "type",
+          "line": 67
+        },
+        {
+          "name": "MoveResult",
+          "type": "type",
+          "line": 74
+        },
+        {
+          "name": "parseArgs",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "determineEffectiveTimeoutMs",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "shouldExtendTimeout",
+          "type": "function",
+          "line": 165
+        },
+        {
+          "name": "shouldExtendViaPnpm",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "shouldExtendViaBun",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "shouldExtendForScript",
+          "type": "function",
+          "line": 237
+        },
+        {
+          "name": "shouldUseLintTimeout",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "shouldUseLintTimeoutViaPnpm",
+          "type": "function",
+          "line": 266
+        },
+        {
+          "name": "shouldUseLintTimeoutViaBun",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "isSingleTestInvocation",
+          "type": "function",
+          "line": 307
+        },
+        {
+          "name": "isSingleTestViaPnpm",
+          "type": "function",
+          "line": 335
+        },
+        {
+          "name": "isSingleTestViaBun",
+          "type": "function",
+          "line": 353
+        },
+        {
+          "name": "normalizeForPathComparison",
+          "type": "function",
+          "line": 375
+        },
+        {
+          "name": "tokenReferencesIntegrationTest",
+          "type": "function",
+          "line": 380
+        },
+        {
+          "name": "referencesIntegrationSpec",
+          "type": "function",
+          "line": 393
+        },
+        {
+          "name": "matchesScriptKeyword",
+          "type": "function",
+          "line": 413
+        },
+        {
+          "name": "stripWrappersAndAssignments",
+          "type": "function",
+          "line": 419
+        },
+        {
+          "name": "isEnvAssignment",
+          "type": "function",
+          "line": 458
+        },
+        {
+          "name": "isTestRunnerSuiteInvocation",
+          "type": "function",
+          "line": 463
+        },
+        {
+          "name": "shouldUseLongTimeout",
+          "type": "function",
+          "line": 487
+        },
+        {
+          "name": "matches",
+          "type": "function",
+          "line": 498
+        },
+        {
+          "name": "runCommand",
+          "type": "function",
+          "line": 538
+        },
+        {
+          "name": "runCommandWithoutTimeout",
+          "type": "function",
+          "line": 634
+        },
+        {
+          "name": "buildExecutionParams",
+          "type": "function",
+          "line": 668
+        },
+        {
+          "name": "registerSignalForwarding",
+          "type": "function",
+          "line": 695
+        },
+        {
+          "name": "handler",
+          "type": "function",
+          "line": 700
+        },
+        {
+          "name": "exitCodeFromSignal",
+          "type": "function",
+          "line": 717
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 721
+        },
+        {
+          "name": "resolveCommandInterception",
+          "type": "function",
+          "line": 729
+        },
+        {
+          "name": "enforceGitPolicies",
+          "type": "function",
+          "line": 753
+        },
+        {
+          "name": "maybeHandleFindInvocation",
+          "type": "function",
+          "line": 793
+        },
+        {
+          "name": "maybeHandleRmInvocation",
+          "type": "function",
+          "line": 822
+        },
+        {
+          "name": "maybeHandleGitRm",
+          "type": "function",
+          "line": 851
+        },
+        {
+          "name": "maybeHandleSleepInvocation",
+          "type": "function",
+          "line": 887
+        },
+        {
+          "name": "maybeHandleTmuxInvocation",
+          "type": "function",
+          "line": 927
+        },
+        {
+          "name": "parseSleepDurationSeconds",
+          "type": "function",
+          "line": 944
+        },
+        {
+          "name": "formatSleepArgument",
+          "type": "function",
+          "line": 958
+        },
+        {
+          "name": "formatSleepDuration",
+          "type": "function",
+          "line": 962
+        },
+        {
+          "name": "isSleepBinary",
+          "type": "function",
+          "line": 969
+        },
+        {
+          "name": "extractFindInvocation",
+          "type": "function",
+          "line": 974
+        },
+        {
+          "name": "extractRmInvocation",
+          "type": "function",
+          "line": 984
+        },
+        {
+          "name": "buildFindDeletePlan",
+          "type": "function",
+          "line": 1036
+        },
+        {
+          "name": "parseRmArguments",
+          "type": "function",
+          "line": 1104
+        },
+        {
+          "name": "parseGitRmArguments",
+          "type": "function",
+          "line": 1149
+        },
+        {
+          "name": "reportMissingForRm",
+          "type": "function",
+          "line": 1228
+        },
+        {
+          "name": "movePathsToTrash",
+          "type": "function",
+          "line": 1239
+        },
+        {
+          "name": "resolvePath",
+          "type": "function",
+          "line": 1316
+        },
+        {
+          "name": "getTrashDirectory",
+          "type": "function",
+          "line": 1324
+        },
+        {
+          "name": "buildTrashTarget",
+          "type": "function",
+          "line": 1337
+        },
+        {
+          "name": "isCrossDeviceError",
+          "type": "function",
+          "line": 1350
+        },
+        {
+          "name": "formatTrashError",
+          "type": "function",
+          "line": 1355
+        },
+        {
+          "name": "stageGitRm",
+          "type": "function",
+          "line": 1363
+        },
+        {
+          "name": "findTrashCliCommand",
+          "type": "function",
+          "line": 1380
+        },
+        {
+          "name": "readProcessStream",
+          "type": "function",
+          "line": 1431
+        },
+        {
+          "name": "printUsage",
+          "type": "function",
+          "line": 1457
+        },
+        {
+          "name": "formatDuration",
+          "type": "function",
+          "line": 1471
+        },
+        {
+          "name": "resolveSummaryStyle",
+          "type": "function",
+          "line": 1495
+        },
+        {
+          "name": "formatCompletionSummary",
+          "type": "function",
+          "line": 1512
+        },
+        {
+          "name": "formatDisplayCommand",
+          "type": "function",
+          "line": 1545
+        },
+        {
+          "name": "isRunnerTmuxSession",
+          "type": "function",
+          "line": 1550
+        }
+      ]
+    },
+    {
+      "path": "scripts/test-runner.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "src/cli-metadata.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 170,
+      "symbols": [
+        {
+          "name": "CliArtifactKind",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "SerializedServerDefinition",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "CliArtifactMetadata",
+          "type": "interface",
+          "line": 32
+        },
+        {
+          "name": "metadataPathForArtifact",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "readCliMetadata",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "readMetadataFromCli",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "isErrno",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "serializeDefinition",
+          "type": "function",
+          "line": 132
+        }
+      ]
+    },
+    {
+      "path": "src/cli.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 234,
+      "symbols": [
+        {
+          "name": "runCli",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "scheduleExit",
+          "type": "function",
+          "line": 196
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 210
+        },
+        {
+          "name": "invokeAuthCommand",
+          "type": "function",
+          "line": 227
+        }
+      ]
+    },
+    {
+      "path": "src/cli/adhoc-server.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 263,
+      "symbols": [
+        {
+          "name": "EphemeralServerSpec",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "EphemeralServerResolution",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "resolveEphemeralServer",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "persistEphemeralServer",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "inferNameFromUrl",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "inferNameFromCommand",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "inferPackageFromWrapper",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "stripPackageVersion",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "slugify",
+          "type": "function",
+          "line": 196
+        },
+        {
+          "name": "splitCommandLine",
+          "type": "function",
+          "line": 205
+        },
+        {
+          "name": "serializeLifecycle",
+          "type": "function",
+          "line": 250
+        }
+      ]
+    },
+    {
+      "path": "src/cli/auth-command.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 144,
+      "symbols": [
+        {
+          "name": "Runtime",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "handleAuth",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "runStdioAuth",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "shouldRetryAuthError",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "printAuthHelp",
+          "type": "function",
+          "line": 114
+        }
+      ]
+    },
+    {
+      "path": "src/cli/call-argument-expression.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 61,
+      "symbols": [
+        {
+          "name": "ParsedCallExpression",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "parseLeadingCallExpression",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "extractHttpCallExpression",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "buildCallExpressionUsageError",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "src/cli/call-argument-values.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 95,
+      "symbols": [
+        {
+          "name": "CoercionMode",
+          "type": "type",
+          "line": 1
+        },
+        {
+          "name": "ParsedKeyValueToken",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "parseKeyValueToken",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "coerceValue",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "shouldPromoteSelectorToCommand",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "warnMissingNamedArgumentValue",
+          "type": "function",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "path": "src/cli/call-arguments.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 302,
+      "symbols": [
+        {
+          "name": "CallArgsParseResult",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "FlagParseState",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "FlagHandlerContext",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "FlagHandler",
+          "type": "type",
+          "line": 42
+        },
+        {
+          "name": "ScannedCallTokens",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "CallExpressionResolution",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "parseCallArguments",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "scanCallTokens",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "applyLeadingCallExpression",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "resolveSelectorAndTool",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "applyTrailingArguments",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "appendLiteralPositionalArguments",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "handleServerFlag",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "handleToolFlag",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "handleTimeoutFlag",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "handleTailLogFlag",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "handleSaveImagesFlag",
+          "type": "function",
+          "line": 255
+        },
+        {
+          "name": "handleNoopFlag",
+          "type": "function",
+          "line": 265
+        },
+        {
+          "name": "handleRawStringsFlag",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "handleNoCoerceFlag",
+          "type": "function",
+          "line": 275
+        },
+        {
+          "name": "handleArgsFlag",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "consumeFlagValue",
+          "type": "function",
+          "line": 296
+        }
+      ]
+    },
+    {
+      "path": "src/cli/call-command.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 532,
+      "symbols": [
+        {
+          "name": "Runtime",
+          "type": "type",
+          "line": 28
+        },
+        {
+          "name": "ResolvedCallTarget",
+          "type": "interface",
+          "line": 30
+        },
+        {
+          "name": "PreparedCallRequest",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "handleCall",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "prepareCallRequest",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "normalizeParsedCallArguments",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "absorbUrlCandidate",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "resolveServerAndTool",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "invokePreparedCall",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "renderCallResult",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "printCallHelp",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "maybeDescribeServer",
+          "type": "function",
+          "line": 201
+        },
+        {
+          "name": "ResolveCallTargetOptions",
+          "type": "interface",
+          "line": 236
+        },
+        {
+          "name": "resolveCallTarget",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "enforceSchemaStringTypes",
+          "type": "function",
+          "line": 268
+        },
+        {
+          "name": "schemaAllowsString",
+          "type": "function",
+          "line": 306
+        },
+        {
+          "name": "hydratePositionalArguments",
+          "type": "function",
+          "line": 327
+        },
+        {
+          "name": "ToolResolution",
+          "type": "type",
+          "line": 375
+        },
+        {
+          "name": "inferSingleToolName",
+          "type": "function",
+          "line": 377
+        },
+        {
+          "name": "invokeWithAutoCorrection",
+          "type": "function",
+          "line": 393
+        },
+        {
+          "name": "attemptCall",
+          "type": "function",
+          "line": 404
+        },
+        {
+          "name": "maybeResolveToolName",
+          "type": "function",
+          "line": 454
+        },
+        {
+          "name": "extractMissingToolFromError",
+          "type": "function",
+          "line": 485
+        },
+        {
+          "name": "maybeReportConnectionIssue",
+          "type": "function",
+          "line": 494
+        },
+        {
+          "name": "summarizeIssueMessage",
+          "type": "function",
+          "line": 523
+        }
+      ]
+    },
+    {
+      "path": "src/cli/call-expression-parser.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 210,
+      "symbols": [
+        {
+          "name": "ParsedCallExpression",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "parseCallExpressionFragment",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "splitPrefix",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "extractObject",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "extractKey",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "extractValue",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "extractArray",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "elementType",
+          "type": "function",
+          "line": 161
+        },
+        {
+          "name": "extractUnary",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "buildParseAttempts",
+          "type": "function",
+          "line": 188
+        },
+        {
+          "name": "isSupportedValue",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "type",
+          "type": "function",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "path": "src/cli/call-help.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 46,
+      "symbols": [
+        {
+          "name": "buildUnknownCallFlagMessage",
+          "type": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "src/cli/cli-factory.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "GlobalCliContext",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "buildGlobalContext",
+          "type": "function",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "src/cli/command-inference.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 99,
+      "symbols": [
+        {
+          "name": "CommandResult",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "inferCommandRouting",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "isCallLikeToken",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "isExplicitCommand",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "isUrlToken",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "isHttpToolToken",
+          "type": "function",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config-command.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 72,
+      "symbols": [
+        {
+          "name": "handleConfigCli",
+          "type": "function",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/add.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 311,
+      "symbols": [
+        {
+          "name": "AddFlags",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "handleAddCommand",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "resolveWriteTarget",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "extractAddFlags",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "parseTransport",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "parseKeyValue",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "requireValue",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "resolveBaseEntry",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "applyTargetToEntry",
+          "type": "function",
+          "line": 248
+        },
+        {
+          "name": "applyFlagsToEntry",
+          "type": "function",
+          "line": 268
+        },
+        {
+          "name": "validateTransportChoice",
+          "type": "function",
+          "line": 295
+        },
+        {
+          "name": "looksLikeHttp",
+          "type": "function",
+          "line": 309
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/auth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": [
+        {
+          "name": "handleLoginCommand",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "handleLogoutCommand",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/doctor.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 27,
+      "symbols": [
+        {
+          "name": "handleDoctorCommand",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/get.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 47,
+      "symbols": [
+        {
+          "name": "handleGetCommand",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "extractGetFlags",
+          "type": "function",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/help.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 213,
+      "symbols": [
+        {
+          "name": "ConfigSubcommand",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "ConfigHelpEntry",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "isHelpToken",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "consumeInlineHelpTokens",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "printConfigHelp",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "resolveHelpSubcommand",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "printConfigOverview",
+          "type": "function",
+          "line": 163
+        },
+        {
+          "name": "printSubcommandHelp",
+          "type": "function",
+          "line": 188
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/import.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 97,
+      "symbols": [
+        {
+          "name": "ImportFlags",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "handleImportCommand",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "extractImportFlags",
+          "type": "function",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "src/cli/config/list.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 81,
+      "symbols": [
+        {
+          "name": "ListFlags",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "handleListCommand",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "extractListFlags",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "filterMatches",
+          "type": "function",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/remove.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": [
+        {
+          "name": "handleRemoveCommand",
+          "type": "function",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/render.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 133,
+      "symbols": [
+        {
+          "name": "SerializedServerDefinition",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "serializeDefinition",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "printServerSummary",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "label",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "printImportSummary",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "printConfigUsageExamples",
+          "type": "function",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/shared.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 159,
+      "symbols": [
+        {
+          "name": "COLOR_ENABLED",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "ConfigLocationSummary",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "cloneConfig",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "loadOrCreateConfig",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "resolveConfigLocations",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "logConfigLocations",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "findServerNameWithFuzzyMatch",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "resolveServerDefinition",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "buildSystemConfigCandidates",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "resolveFirstExisting",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "pathExists",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "formatPath",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "isErrno",
+          "type": "function",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 8,
+      "symbols": [
+        {
+          "name": "ConfigCliOptions",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "ConfigScope",
+          "type": "type",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "src/cli/daemon-command.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 260,
+      "symbols": [
+        {
+          "name": "DaemonCliOptions",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "DaemonLoggingOptions",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "handleDaemonCli",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "printDaemonHelp",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "handleDaemonStart",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "handleDaemonRestart",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "handleDaemonStatus",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "consumeFlag",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "consumeValueFlag",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "waitFor",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "delay",
+          "type": "function",
+          "line": 214
+        },
+        {
+          "name": "resolveDaemonLoggingOptions",
+          "type": "function",
+          "line": 220
+        },
+        {
+          "name": "parseServerList",
+          "type": "function",
+          "line": 251
+        }
+      ]
+    },
+    {
+      "path": "src/cli/emit-ts-command.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 260,
+      "symbols": [
+        {
+          "name": "EmitTsFlags",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "ParsedEmitTsOptions",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "handleEmitTs",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "parseEmitTsArgs",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "getServerDefinition",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "resolveHttpServerName",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "buildDocEntries",
+          "type": "function",
+          "line": 199
+        },
+        {
+          "name": "buildInterfaceName",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "deriveTypesOutPath",
+          "type": "function",
+          "line": 233
+        },
+        {
+          "name": "writeFile",
+          "type": "function",
+          "line": 239
+        },
+        {
+          "name": "computeImportPath",
+          "type": "function",
+          "line": 244
+        }
+      ]
+    },
+    {
+      "path": "src/cli/emit-ts-templates.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 161,
+      "symbols": [
+        {
+          "name": "ToolDocEntry",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "EmitMetadata",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "EmitTypesTemplateInput",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "EmitClientTemplateInput",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "renderTypesModule",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "renderClientModule",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "renderHeader",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "renderDocComment",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "toInterfaceSignature",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "returnType",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "describeTransport",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "describeSource",
+          "type": "function",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "path": "src/cli/ephemeral-flags.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 128,
+      "symbols": [
+        {
+          "name": "ExtractOptions",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "extractEphemeralServerFlags",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "ensureSpec",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "src/cli/ephemeral-target.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 134,
+      "symbols": [
+        {
+          "name": "PrepareEphemeralServerTargetOptions",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "PrepareEphemeralServerTargetResult",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "prepareEphemeralServerTarget",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "promoteUrlCandidate",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "applyNameHints",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "inferInlineStdioSpec",
+          "type": "function",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "path": "src/cli/errors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 6,
+      "symbols": [
+        {
+          "name": "CliUsageError",
+          "type": "class",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "src/cli/flag-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 29,
+      "symbols": [
+        {
+          "name": "FlagMap",
+          "type": "type",
+          "line": 1
+        },
+        {
+          "name": "extractFlags",
+          "type": "function",
+          "line": 4
+        },
+        {
+          "name": "expectValue",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate-cli-runner.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 82,
+      "symbols": [
+        {
+          "name": "handleGenerateCli",
+          "type": "function",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/artifacts.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 307,
+      "symbols": [
+        {
+          "name": "bundleOutput",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "bundleWithRolldown",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "bundleWithBun",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "compileBundleWithBun",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "resolveBundleTarget",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "computeCompileTarget",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "createLocalDependencyAliasPlugin",
+          "type": "function",
+          "line": 188
+        },
+        {
+          "name": "resolveLocalDependency",
+          "type": "function",
+          "line": 207
+        },
+        {
+          "name": "ensureBundlerDeps",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "resolveDependencyDirectory",
+          "type": "function",
+          "line": 260
+        },
+        {
+          "name": "linkOrCopyDependency",
+          "type": "function",
+          "line": 272
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 276
+        },
+        {
+          "name": "sanitizeFileName",
+          "type": "function",
+          "line": 291
+        },
+        {
+          "name": "resolveUniquePath",
+          "type": "function",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/definition.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 348,
+      "symbols": [
+        {
+          "name": "ResolvedServer",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "DefinitionInput",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "fileExists",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "ensureInvocationDefaults",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "resolveServerDefinition",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "fetchTools",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "deriveDefinitionDescription",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "pickDescription",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "normalizeDefinition",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "isServerDefinition",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "isCommandSpec",
+          "type": "function",
+          "line": 260
+        },
+        {
+          "name": "normalizeCommand",
+          "type": "function",
+          "line": 274
+        },
+        {
+          "name": "toCommandSpec",
+          "type": "function",
+          "line": 297
+        },
+        {
+          "name": "getStringArray",
+          "type": "function",
+          "line": 319
+        },
+        {
+          "name": "getOptionalStringArray",
+          "type": "function",
+          "line": 327
+        },
+        {
+          "name": "toStringRecord",
+          "type": "function",
+          "line": 337
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/flag-parser.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 50,
+      "symbols": [
+        {
+          "name": "GeneratorCommonFlags",
+          "type": "interface",
+          "line": 1
+        },
+        {
+          "name": "ExtractOptions",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "extractGeneratorFlags",
+          "type": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/flags.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 248,
+      "symbols": [
+        {
+          "name": "GenerateFlags",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "parseGenerateFlags",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "mergeCsvList",
+          "type": "function",
+          "line": 192
+        },
+        {
+          "name": "normalizeCommandInput",
+          "type": "function",
+          "line": 211
+        },
+        {
+          "name": "looksLikeInlineCommand",
+          "type": "function",
+          "line": 226
+        },
+        {
+          "name": "parseInlineCommand",
+          "type": "function",
+          "line": 241
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/fs-helpers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 34,
+      "symbols": [
+        {
+          "name": "markExecutable",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "safeCopyFile",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "shouldIgnorePosixPermissionError",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/name-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 175,
+      "symbols": [
+        {
+          "name": "inferNameFromCommand",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "normalizeCommandInput",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "looksLikeInlineCommand",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "parseInlineCommand",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "slugify",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "basename",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "stripExtension",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "findLastPositionalArg",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "deriveNameFromUrl",
+          "type": "function",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/output.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 27,
+      "symbols": [
+        {
+          "name": "performGenerateFromArtifact",
+          "type": "function",
+          "line": 4
+        },
+        {
+          "name": "performGenerateFromRequest",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "resolveRuntimeKind",
+          "type": "function",
+          "line": 3
+        },
+        {
+          "name": "verifyBunAvailable",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "isBunAvailable",
+          "type": "function",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/server-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "buildInlineServerDefinition",
+          "type": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/template-data.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 126,
+      "symbols": [
+        {
+          "name": "InspectableInvocation",
+          "type": "type",
+          "line": 4
+        },
+        {
+          "name": "GenerateCliContext",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "buildGenerateCliCommand",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "resolveGenerateRequestFromArtifact",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "shellQuote",
+          "type": "function",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/template-help.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 112,
+      "symbols": [
+        {
+          "name": "renderEmbeddedHelpSource",
+          "type": "function",
+          "line": 1
+        },
+        {
+          "name": "configureToolCommandHelps",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "renderStandaloneHelp",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "formatEmbeddedTools",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "formatGlobalFlags",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "formatQuickStart",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "quickStartExamples",
+          "type": "function",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/template.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 410,
+      "symbols": [
+        {
+          "name": "TemplateInput",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "writeTemplate",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "readPackageMetadata",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "renderTemplate",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "printResult",
+          "type": "function",
+          "line": 165
+        },
+        {
+          "name": "normalizeEmbeddedServer",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "determineArtifactKind",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "resolveArtifactPath",
+          "type": "function",
+          "line": 233
+        },
+        {
+          "name": "buildMetadataPayload",
+          "type": "function",
+          "line": 243
+        },
+        {
+          "name": "ensureRuntime",
+          "type": "function",
+          "line": 263
+        },
+        {
+          "name": "invokeWithTimeout",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "runCli",
+          "type": "function",
+          "line": 290
+        },
+        {
+          "name": "renderToolCommand",
+          "type": "function",
+          "line": 309
+        },
+        {
+          "name": "renderOption",
+          "type": "function",
+          "line": 381
+        },
+        {
+          "name": "optionParser",
+          "type": "function",
+          "line": 389
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/tools.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 362,
+      "symbols": [
+        {
+          "name": "ToolMetadata",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "GeneratedOption",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "resolveSchemaType",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "resolveArrayItemType",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "buildToolMetadata",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "buildEmbeddedSchemaMap",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "extractOptions",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "getEnumValues",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "getDescriptorDefault",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "buildPlaceholder",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "buildExampleValue",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "pickExampleLiteral",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "buildFallbackLiteral",
+          "type": "function",
+          "line": 226
+        },
+        {
+          "name": "inferType",
+          "type": "function",
+          "line": 248
+        },
+        {
+          "name": "type",
+          "type": "function",
+          "line": 252
+        },
+        {
+          "name": "inferArrayItemType",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "getDescriptorDescription",
+          "type": "function",
+          "line": 295
+        },
+        {
+          "name": "getDescriptorFormatHint",
+          "type": "function",
+          "line": 303
+        },
+        {
+          "name": "toProxyMethodName",
+          "type": "function",
+          "line": 345
+        },
+        {
+          "name": "toCliOption",
+          "type": "function",
+          "line": 351
+        }
+      ]
+    },
+    {
+      "path": "src/cli/generate/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1,
+      "symbols": [
+        {
+          "name": "CommandInput",
+          "type": "type",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "src/cli/help-output.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 207,
+      "symbols": [
+        {
+          "name": "HelpEntry",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "HelpSection",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "printHelp",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "buildCommandSections",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "formatCommandSection",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "formatGlobalFlags",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "formatQuickStart",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "formatHelpFooter",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "isHelpToken",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "consumeHelpTokens",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "isVersionToken",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "printVersion",
+          "type": "function",
+          "line": 194
+        },
+        {
+          "name": "resolveCliVersion",
+          "type": "function",
+          "line": 198
+        }
+      ]
+    },
+    {
+      "path": "src/cli/http-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 89,
+      "symbols": [
+        {
+          "name": "normalizeHttpUrlCandidate",
+          "type": "function",
+          "line": 3
+        },
+        {
+          "name": "looksLikeHttpUrl",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "splitHttpToolSelector",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "candidate",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "normalizeHttpUrl",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "extractHttpServerTarget",
+          "type": "function",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "path": "src/cli/identifier-helpers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 107,
+      "symbols": [
+        {
+          "name": "IdentifierResolution",
+          "type": "type",
+          "line": 4
+        },
+        {
+          "name": "chooseClosestIdentifier",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "normalizeIdentifier",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "IdentifierResolutionContext",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "renderIdentifierResolutionMessages",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "levenshtein",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "insertCost",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "deleteCost",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "replaceCost",
+          "type": "function",
+          "line": 98
+        }
+      ]
+    },
+    {
+      "path": "src/cli/image-output.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 62,
+      "symbols": [
+        {
+          "name": "saveCallImagesIfRequested",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "extensionFromMimeType",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "resolveImageOutputPath",
+          "type": "function",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "src/cli/inspect-cli-command.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 89,
+      "symbols": [
+        {
+          "name": "InspectFlags",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "handleInspectCli",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "parseInspectFlags",
+          "type": "function",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "path": "src/cli/json-output.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 60,
+      "symbols": [
+        {
+          "name": "ConnectionIssueEnvelope",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "SerializedConnectionIssue",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "buildConnectionIssueEnvelope",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "serializeConnectionIssue",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "formatErrorMessage",
+          "type": "function",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "src/cli/list-command.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 431,
+      "symbols": [
+        {
+          "name": "extractListFlags",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "ListOutputFormat",
+          "type": "type",
+          "line": 86
+        },
+        {
+          "name": "handleList",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "printListHelp",
+          "type": "function",
+          "line": 354
+        },
+        {
+          "name": "resolveServerDefinition",
+          "type": "function",
+          "line": 391
+        },
+        {
+          "name": "suggestServerName",
+          "type": "function",
+          "line": 424
+        }
+      ]
+    },
+    {
+      "path": "src/cli/list-detail-helpers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 179,
+      "symbols": [
+        {
+          "name": "SelectDisplayOptionsResult",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "ToolDocInput",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "ToolDocModel",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "ToolOptionDoc",
+          "type": "interface",
+          "line": 56
+        },
+        {
+          "name": "selectDisplayOptions",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "buildToolDoc",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "buildOptionDoc",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "formatOptionDescription",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "formatHelpValue",
+          "type": "function",
+          "line": 168
+        }
+      ]
+    },
+    {
+      "path": "src/cli/list-doc-comments.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 129,
+      "symbols": [
+        {
+          "name": "buildDocComment",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "formatParamDoc",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "wrapCommentText",
+          "type": "function",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "src/cli/list-format.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 150,
+      "symbols": [
+        {
+          "name": "StatusCategory",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "ListSummaryResult",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "renderServerListRow",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "truncateForSpinner",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "formatSourceSuffix",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "buildSourceLabel",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "classifyListError",
+          "type": "function",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "path": "src/cli/list-output.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 226,
+      "symbols": [
+        {
+          "name": "ToolDetailResult",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "ListJsonServerEntry",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "printSingleServerHeader",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "printToolDetail",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "buildExampleOptions",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "createEmptyStatusCounts",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "summarizeStatusCounts",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "buildJsonListEntry",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "createUnknownResult",
+          "type": "function",
+          "line": 188
+        },
+        {
+          "name": "buildAuthCommandHint",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "indent",
+          "type": "function",
+          "line": 214
+        },
+        {
+          "name": "quoteCommandSegment",
+          "type": "function",
+          "line": 221
+        }
+      ]
+    },
+    {
+      "path": "src/cli/list-signature.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 220,
+      "symbols": [
+        {
+          "name": "SignatureFormatOptions",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "FlagUsageExtra",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "formatFunctionSignature",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "formatOptionalSummary",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "formatFlagUsage",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "formatFlagLabel",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "formatCallExpressionExample",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "formatExampleBlock",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "truncateExample",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "formatInlineParameter",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "quoteShellExpression",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "inferReturnTypeName",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "inferSchemaDisplayType",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "values",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "formatTypeAnnotation",
+          "type": "function",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "path": "src/cli/logger-context.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": [
+        {
+          "name": "getActiveLogLevel",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "getActiveLogger",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "setLogLevel",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "setLogger",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "logInfo",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "logWarn",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "logError",
+          "type": "function",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "src/cli/output-format.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "ConsumeOutputOptions",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "consumeOutputFormat",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "isAllowed",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "isCliOutputFormat",
+          "type": "function",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "src/cli/output-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 171,
+      "symbols": [
+        {
+          "name": "OutputFormat",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "RenderableKind",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "RenderableOutput",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "printCallOutput",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "tailLogIfRequested",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "value",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "resolveRenderableOutput",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "emitRenderableOutput",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "attemptPrintJson",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "printRaw",
+          "type": "function",
+          "line": 138
+        }
+      ]
+    },
+    {
+      "path": "src/cli/path-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": [
+        {
+          "name": "formatPathForDisplay",
+          "type": "function",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "path": "src/cli/runtime-debug.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 141,
+      "symbols": [
+        {
+          "name": "ProcessWithHandles",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "describeHandle",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "ctor",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "addr",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "host",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "pipeName",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "pid",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "fd",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "dumpActiveHandles",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "terminateChildProcesses",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "ctor",
+          "type": "function",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "path": "src/cli/server-lookup.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 22,
+      "symbols": [
+        {
+          "name": "findServerByHttpUrl",
+          "type": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "src/cli/terminal.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 41,
+      "symbols": [
+        {
+          "name": "colorize",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "dimText",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "yellowText",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "redText",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "extraDimText",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "cyanText",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "boldText",
+          "type": "function",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "path": "src/cli/timeouts.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "parseTimeout",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "resolveCallTimeout",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "withTimeout",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "consumeTimeoutFlag",
+          "type": "function",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "src/cli/tool-cache.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 43,
+      "symbols": [
+        {
+          "name": "LoadToolMetadataOptions",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "cacheKey",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "loadToolMetadata",
+          "type": "function",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "src/cli/transport-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": [
+        {
+          "name": "formatTransportSummary",
+          "type": "function",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "path": "src/config-imports.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 12,
+      "symbols": [
+        {
+          "name": "toFileUrl",
+          "type": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "src/config-normalize.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 224,
+      "symbols": [
+        {
+          "name": "normalizeServerEntry",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "normalizeAuth",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "normalizePath",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "getUrl",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "getCommand",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "buildHeaders",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "ensureHttpAcceptHeader",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "hasRequiredAcceptTokens",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "parseCommandString",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "normalizeLogging",
+          "type": "function",
+          "line": 215
+        }
+      ]
+    },
+    {
+      "path": "src/config-schema.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 196,
+      "symbols": [
+        {
+          "name": "ImportKind",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "RawLifecycle",
+          "type": "type",
+          "line": 35
+        },
+        {
+          "name": "RawEntry",
+          "type": "type",
+          "line": 131
+        },
+        {
+          "name": "RawConfig",
+          "type": "type",
+          "line": 132
+        },
+        {
+          "name": "HttpCommand",
+          "type": "interface",
+          "line": 134
+        },
+        {
+          "name": "StdioCommand",
+          "type": "interface",
+          "line": 140
+        },
+        {
+          "name": "CommandSpec",
+          "type": "type",
+          "line": 147
+        },
+        {
+          "name": "ServerSource",
+          "type": "interface",
+          "line": 149
+        },
+        {
+          "name": "ServerLifecycle",
+          "type": "type",
+          "line": 155
+        },
+        {
+          "name": "ServerLoggingOptions",
+          "type": "interface",
+          "line": 164
+        },
+        {
+          "name": "ServerDefinition",
+          "type": "interface",
+          "line": 170
+        },
+        {
+          "name": "LoadConfigOptions",
+          "type": "interface",
+          "line": 193
+        }
+      ]
+    },
+    {
+      "path": "src/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 136,
+      "symbols": [
+        {
+          "name": "loadServerDefinitions",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "loadRawConfig",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "listConfigLayerPaths",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "writeRawConfig",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "resolveConfigPath",
+          "type": "function",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "path": "src/config/imports/external.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 284,
+      "symbols": [
+        {
+          "name": "ReadExternalEntryOptions",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "readExternalEntries",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "extractFromMcpJson",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "extractFromCodexConfig",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "convertExternalEntry",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "buildExternalHeaders",
+          "type": "function",
+          "line": 161
+        },
+        {
+          "name": "extractClaudeProjectEntries",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "addEntriesFromContainer",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "resolveContainerDescriptor",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "asString",
+          "type": "function",
+          "line": 257
+        },
+        {
+          "name": "asStringRecord",
+          "type": "function",
+          "line": 261
+        },
+        {
+          "name": "shouldIgnoreParseError",
+          "type": "function",
+          "line": 276
+        }
+      ]
+    },
+    {
+      "path": "src/config/imports/paths-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 29,
+      "symbols": [
+        {
+          "name": "normalizeProjectPath",
+          "type": "function",
+          "line": 4
+        },
+        {
+          "name": "expandHomeShortcut",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "pathsEqual",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "src/config/imports/paths.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 145,
+      "symbols": [
+        {
+          "name": "pathsForImport",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "defaultCursorUserConfigPaths",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "defaultWindsurfConfigPaths",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "defaultVscodeConfigPaths",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "opencodeConfigPaths",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "defaultOpencodeConfigDirs",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "defaultClaudeDesktopConfigPath",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "dedupePaths",
+          "type": "function",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "path": "src/config/imports/shared.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 27,
+      "symbols": [
+        {
+          "name": "fileExists",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "parseJsonBuffer",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "isRecord",
+          "type": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "src/config/path-discovery.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 79,
+      "symbols": [
+        {
+          "name": "ResolvedConfigPath",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "listConfigLayerPaths",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "resolveConfigPath",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "homeConfigCandidates",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "pathExists",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "pathExistsAsync",
+          "type": "function",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "path": "src/config/read-config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 91,
+      "symbols": [
+        {
+          "name": "ConfigLayer",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "loadConfigLayers",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "readConfigFile",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "isErrno",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "isMissingConfigError",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "isSyntaxError",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "warnConfigFallback",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "includesErrnoMessage",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "message",
+          "type": "function",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/client.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 350,
+      "symbols": [
+        {
+          "name": "DaemonClientOptions",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "DaemonPaths",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "DaemonMetadata",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "resolveDaemonPaths",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "DaemonClient",
+          "type": "class",
+          "line": 52
+        },
+        {
+          "name": "finishReject",
+          "type": "function",
+          "line": 210
+        },
+        {
+          "name": "finishResolve",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "deriveConfigKey",
+          "type": "function",
+          "line": 273
+        },
+        {
+          "name": "isTransportError",
+          "type": "function",
+          "line": 278
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 282
+        },
+        {
+          "name": "resolveDaemonTimeout",
+          "type": "function",
+          "line": 286
+        },
+        {
+          "name": "statConfigMtime",
+          "type": "function",
+          "line": 301
+        },
+        {
+          "name": "collectConfigLayers",
+          "type": "function",
+          "line": 310
+        },
+        {
+          "name": "readDaemonMetadata",
+          "type": "function",
+          "line": 329
+        },
+        {
+          "name": "delay",
+          "type": "function",
+          "line": 338
+        },
+        {
+          "name": "normalizeLayers",
+          "type": "function",
+          "line": 344
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/config-layers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": [
+        {
+          "name": "statConfigMtime",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "collectConfigLayers",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/host.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 455,
+      "symbols": [
+        {
+          "name": "DaemonHostOptions",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "runDaemonHost",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "tryHandle",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "shutdown",
+          "type": "function",
+          "line": 177
+        },
+        {
+          "name": "prepareSocket",
+          "type": "function",
+          "line": 196
+        },
+        {
+          "name": "cleanupArtifacts",
+          "type": "function",
+          "line": 210
+        },
+        {
+          "name": "handleSocketRequest",
+          "type": "function",
+          "line": 225
+        },
+        {
+          "name": "processRequest",
+          "type": "function",
+          "line": 261
+        },
+        {
+          "name": "__testProcessRequest",
+          "type": "function",
+          "line": 438
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/launch.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "DaemonLaunchOptions",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "launchDaemonDetached",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "resolveCliEntry",
+          "type": "function",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/log-context.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 78,
+      "symbols": [
+        {
+          "name": "LogContext",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "createLogContext",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "logEvent",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "disposeLogContext",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "shouldLogServer",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "formatError",
+          "type": "function",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/paths.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 35,
+      "symbols": [
+        {
+          "name": "resolveBaseDir",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "ensureRunDir",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "getDaemonMetadataPath",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "getDaemonSocketPath",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "getDaemonLogPath",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "getDaemonDir",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/protocol.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 57,
+      "symbols": [
+        {
+          "name": "DaemonRequestMethod",
+          "type": "type",
+          "line": 1
+        },
+        {
+          "name": "DaemonRequest",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "DaemonResponse",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "CallToolParams",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "ListToolsParams",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "ListResourcesParams",
+          "type": "interface",
+          "line": 32
+        },
+        {
+          "name": "CloseServerParams",
+          "type": "interface",
+          "line": 37
+        },
+        {
+          "name": "StatusResult",
+          "type": "interface",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/request-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "ServerActivity",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "ensureManaged",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "markActivity",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "evictIdleServers",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "buildErrorResponse",
+          "type": "function",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/runtime-wrapper.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 153,
+      "symbols": [
+        {
+          "name": "KeepAliveRuntimeOptions",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "createKeepAliveRuntime",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "KeepAliveRuntime",
+          "type": "class",
+          "line": 20
+        },
+        {
+          "name": "shouldRestartDaemonServer",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "logDaemonRetry",
+          "type": "function",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "path": "src/env.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 107,
+      "symbols": [
+        {
+          "name": "expandHome",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "resolveEnvValue",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "resolveEnvPlaceholders",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "withEnvOverrides",
+          "type": "function",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "path": "src/error-classifier.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 169,
+      "symbols": [
+        {
+          "name": "ConnectionIssueKind",
+          "type": "type",
+          "line": 3
+        },
+        {
+          "name": "ConnectionIssue",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "analyzeConnectionError",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "isAuthIssue",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "extractMessage",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "extractErrorCode",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "extractStatusCode",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "containsAuthToken",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "extractStdioExit",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "findStatusInObject",
+          "type": "function",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "path": "src/fs-json.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": [
+        {
+          "name": "readJsonFile",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "writeJsonFile",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "src/generate-cli.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 211,
+      "symbols": [
+        {
+          "name": "GenerateCliOptions",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "generateCli",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "applyToolFilters",
+          "type": "function",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "path": "src/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "src/lifecycle.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 138,
+      "symbols": [
+        {
+          "name": "OverrideSet",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "CommandSignature",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "resolveLifecycle",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "canonicalKeepAliveName",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "commandRequiresDynamicChromePort",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "parseList",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "matchesOverride",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "coerceLifecycle",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "isKeepAliveServer",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "keepAliveIdleTimeout",
+          "type": "function",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "path": "src/logging.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 93,
+      "symbols": [
+        {
+          "name": "LogLevelKey",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "LogLevel",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "Logger",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "parseLogLevel",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "resolveLogLevelFromEnv",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "shouldLog",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "createPrefixedConsoleLogger",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "format",
+          "type": "function",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "src/oauth-persistence.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 316,
+      "symbols": [
+        {
+          "name": "OAuthClearScope",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "OAuthPersistence",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "DirectoryPersistence",
+          "type": "class",
+          "line": 25
+        },
+        {
+          "name": "VaultPersistence",
+          "type": "class",
+          "line": 121
+        },
+        {
+          "name": "CompositePersistence",
+          "type": "class",
+          "line": 165
+        },
+        {
+          "name": "buildOAuthPersistence",
+          "type": "function",
+          "line": 233
+        },
+        {
+          "name": "clearOAuthCaches",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "readCachedAccessToken",
+          "type": "function",
+          "line": 306
+        }
+      ]
+    },
+    {
+      "path": "src/oauth-vault.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 121,
+      "symbols": [
+        {
+          "name": "VaultKey",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "VaultEntry",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "VaultFile",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "vaultPath",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "readVault",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "writeVault",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "vaultKeyForDefinition",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "loadVaultEntry",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "saveVaultEntry",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "clearVaultEntry",
+          "type": "function",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "path": "src/oauth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 347,
+      "symbols": [
+        {
+          "name": "Deferred",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "createDeferred",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "openExternal",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "PersistentOAuthClientProvider",
+          "type": "class",
+          "line": 64
+        },
+        {
+          "name": "OAuthSession",
+          "type": "interface",
+          "line": 309
+        },
+        {
+          "name": "createOAuthSession",
+          "type": "function",
+          "line": 318
+        },
+        {
+          "name": "waitForAuthorizationCode",
+          "type": "function",
+          "line": 320
+        },
+        {
+          "name": "OAuthLogger",
+          "type": "interface",
+          "line": 327
+        },
+        {
+          "name": "firstRedirectUri",
+          "type": "function",
+          "line": 333
+        },
+        {
+          "name": "redirectUris",
+          "type": "function",
+          "line": 337
+        }
+      ]
+    },
+    {
+      "path": "src/result-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 321,
+      "symbols": [
+        {
+          "name": "ImageContent",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "CallResult",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "ExtractedEnvelope",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "CollectedCallContent",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "extractEnvelope",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "asString",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "text",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "collectCallContent",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "collectText",
+          "type": "function",
+          "line": 167
+        },
+        {
+          "name": "collectImages",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "unwrapJsonEnvelope",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "parseStructuredContent",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "tryParseJson",
+          "type": "function",
+          "line": 207
+        },
+        {
+          "name": "createCallResult",
+          "type": "function",
+          "line": 228
+        },
+        {
+          "name": "getCollectedContent",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "markdown",
+          "type": "function",
+          "line": 259
+        },
+        {
+          "name": "describeConnectionIssue",
+          "type": "function",
+          "line": 315
+        },
+        {
+          "name": "wrapCallResult",
+          "type": "function",
+          "line": 319
+        }
+      ]
+    },
+    {
+      "path": "src/runtime-header-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": [
+        {
+          "name": "materializeHeaders",
+          "type": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "src/runtime-oauth-support.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 24,
+      "symbols": [
+        {
+          "name": "maybeEnableOAuth",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "isUnauthorizedError",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "src/runtime-process-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 333,
+      "symbols": [
+        {
+          "name": "closeTransportAndWait",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "getTransportPid",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "rawPid",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "ensureProcessTerminated",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "waitForChildClose",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "timeout",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "cleanup",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "stdio",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "isProcessAlive",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "ensureProcessTreeTerminated",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "sendSignalToTargets",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "sendSignal",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "listDescendantPids",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "listDescendantPidsWindows",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "execFileAsync",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "collectProcessTreePids",
+          "type": "function",
+          "line": 282
+        },
+        {
+          "name": "collectDescendantsFromChildren",
+          "type": "function",
+          "line": 287
+        },
+        {
+          "name": "waitForTreeExit",
+          "type": "function",
+          "line": 312
+        },
+        {
+          "name": "delay",
+          "type": "function",
+          "line": 326
+        }
+      ]
+    },
+    {
+      "path": "src/runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 332,
+      "symbols": [
+        {
+          "name": "CLIENT_VERSION",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "RuntimeOptions",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "RuntimeLogger",
+          "type": "type",
+          "line": 38
+        },
+        {
+          "name": "CallOptions",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "ListToolsOptions",
+          "type": "interface",
+          "line": 45
+        },
+        {
+          "name": "ConnectOptions",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "Runtime",
+          "type": "interface",
+          "line": 57
+        },
+        {
+          "name": "ServerToolInfo",
+          "type": "interface",
+          "line": 69
+        },
+        {
+          "name": "createRuntime",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "callOnce",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "McpRuntime",
+          "type": "class",
+          "line": 107
+        },
+        {
+          "name": "createConsoleLogger",
+          "type": "function",
+          "line": 328
+        }
+      ]
+    },
+    {
+      "path": "src/runtime/errors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 17,
+      "symbols": [
+        {
+          "name": "shouldResetConnection",
+          "type": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "src/runtime/oauth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 220,
+      "symbols": [
+        {
+          "name": "OAuthCapableTransport",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "ConnectWithAuthOptions",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "OAuthConnectState",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "OAuthTimeoutError",
+          "type": "class",
+          "line": 29
+        },
+        {
+          "name": "markOAuthFlowError",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "isOAuthFlowError",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "markPostAuthConnectError",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "isPostAuthConnectError",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "markError",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "hasErrorMarker",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "connectWithAuth",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "attemptTransportConnect",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "shouldRetryAuthorization",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "closeReplacementTransport",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "completeAuthorizationChallenge",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "waitForAuthorizationCodeWithTimeout",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "parseOAuthTimeout",
+          "type": "function",
+          "line": 207
+        },
+        {
+          "name": "resolveOAuthTimeoutFromEnv",
+          "type": "function",
+          "line": 218
+        }
+      ]
+    },
+    {
+      "path": "src/runtime/transport.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 380,
+      "symbols": [
+        {
+          "name": "extractTransportStatusCode",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "isLegacySseTransportMismatch",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "ResolvedHttpTransportOptions",
+          "type": "interface",
+          "line": 57
+        },
+        {
+          "name": "HttpClientContextAttempt",
+          "type": "type",
+          "line": 62
+        },
+        {
+          "name": "attachStdioTraceLogging",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "ClientContext",
+          "type": "interface",
+          "line": 71
+        },
+        {
+          "name": "CreateClientContextOptions",
+          "type": "interface",
+          "line": 78
+        },
+        {
+          "name": "removeAuthorizationHeader",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "createHttpTransportOptions",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "closeOAuthSession",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "shouldAbortSseFallback",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "maybePromoteHttpDefinition",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "connectHttpTransport",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "applyCachedOAuthHeaderIfAvailable",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "createStdioClientContext",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "retryHttpTransportWithFallback",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "attemptHttpClientContext",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "connectPrimaryHttpTransport",
+          "type": "function",
+          "line": 299
+        },
+        {
+          "name": "createStreamableTransport",
+          "type": "function",
+          "line": 308
+        },
+        {
+          "name": "connectSseFallbackTransport",
+          "type": "function",
+          "line": 323
+        },
+        {
+          "name": "createClientContext",
+          "type": "function",
+          "line": 361
+        }
+      ]
+    },
+    {
+      "path": "src/runtime/utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "resolveCommandArgument",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "resolveCommandArguments",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "normalizeTimeout",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "raceWithTimeout",
+          "type": "function",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "path": "src/schema-cache.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 49,
+      "symbols": [
+        {
+          "name": "SchemaCacheSnapshot",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "resolveSchemaCacheDir",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "resolveSchemaCachePath",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "readSchemaCache",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "writeSchemaCache",
+          "type": "function",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "src/sdk-patches.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 504,
+      "symbols": [
+        {
+          "name": "MaybeChildProcess",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "ProcessStreamMeta",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "StdioLogMode",
+          "type": "type",
+          "line": 35
+        },
+        {
+          "name": "getStdioLogMode",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "setStdioLogMode",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "evaluateStdioLogPolicy",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "shouldPrintStdioLogs",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "ignoreEmitterError",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "destroyStream",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "waitForChildClose",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "timeout",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "cleanup",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "flushProcessLogs",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "patchStdioClose",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "meta",
+          "type": "function",
+          "line": 255
+        },
+        {
+          "name": "patchStdioStart",
+          "type": "function",
+          "line": 338
+        },
+        {
+          "name": "handleChunk",
+          "type": "function",
+          "line": 397
+        },
+        {
+          "name": "handleStdout",
+          "type": "function",
+          "line": 426
+        },
+        {
+          "name": "patchStdioSend",
+          "type": "function",
+          "line": 469
+        }
+      ]
+    },
+    {
+      "path": "src/server-proxy.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 407,
+      "symbols": [
+        {
+          "name": "ToolCallOptions",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "ToolArguments",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "ServerProxy",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "ToolSchemaInfo",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "ServerProxyOptions",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "defaultToolNameMapper",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "canonicalizeToolName",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "isPlainObject",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "createToolSchemaInfo",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "applyDefaults",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "validateRequired",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "createServerProxy",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "consumePersist",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "ensureMetadata",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "storeSchema",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "loadSchemasFromDisk",
+          "type": "function",
+          "line": 254
+        },
+        {
+          "name": "persistSchemas",
+          "type": "function",
+          "line": 269
+        }
+      ]
+    },
+    {
+      "path": "src/tool-filters.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 30,
+      "symbols": [
+        {
+          "name": "ToolFilterConfig",
+          "type": "interface",
+          "line": 1
+        },
+        {
+          "name": "validateToolFilters",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "isToolAllowed",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "filterTools",
+          "type": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "tests/adhoc-server.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "tests/build-bun.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 16,
+      "symbols": []
+    },
+    {
+      "path": "tests/call-arguments.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 126,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-auth-help.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-auth-retry.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-auth.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 96,
+      "symbols": [
+        {
+          "name": "createRuntimeDouble",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-call-args.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 69,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-call-errors.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-call-execution.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 348,
+      "symbols": [
+        {
+          "name": "createRuntimeStub",
+          "type": "function",
+          "line": 303
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-call-help.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-command-inference.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 73,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-config-command.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 371,
+      "symbols": [
+        {
+          "name": "captureLog",
+          "type": "function",
+          "line": 328
+        },
+        {
+          "name": "buildOptions",
+          "type": "function",
+          "line": 363
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-config-fallback.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 259,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-config-routing.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-ephemeral-flags.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-flag-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-generate-artifacts.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-generate-cli.integration.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 675,
+      "symbols": [
+        {
+          "name": "pnpmArgs",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "ensureDistBuilt",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "hasBun",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "ensureBunSupport",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "/mcp",
+          "type": "route",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-generate-runner.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 156,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-global-flags.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 61,
+      "symbols": [
+        {
+          "name": "readPackageVersion",
+          "type": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-help-shortcuts.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-image-output.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-inspect-command.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-list-classification.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 291,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-list-flags.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-list-formatting.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 358,
+      "symbols": [
+        {
+          "name": "list_documents",
+          "type": "function",
+          "line": 335
+        },
+        {
+          "name": "create_comment",
+          "type": "function",
+          "line": 345
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-list-help.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-list-json.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 55,
+      "symbols": [
+        {
+          "name": "createRuntime",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-list-stdio-logs.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 108,
+      "symbols": [
+        {
+          "name": "buildServerDefinition",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "createRuntime",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-list-verbose-e2e.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 83,
+      "symbols": [
+        {
+          "name": "sources",
+          "type": "function",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-oauth-timeout-flag.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 94,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-output-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 192,
+      "symbols": []
+    },
+    {
+      "path": "tests/cli-regenerate.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 261,
+      "symbols": [
+        {
+          "name": "ArtifactKind",
+          "type": "type",
+          "line": 187
+        },
+        {
+          "name": "writeMetadataFixture",
+          "type": "function",
+          "line": 189
+        }
+      ]
+    },
+    {
+      "path": "tests/cli-version.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-add-dry-run.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-add-flags.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 87,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-add-imports.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-add-persist.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-add-scope-behavior.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-add-scope.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 101,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-add-sse.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-command-string.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 96,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-doctor.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-get-json.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-import-dedupe.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-import-paths.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-import.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 64,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-imports-unit.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 337,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-imports.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 417,
+      "symbols": [
+        {
+          "name": "ensureFakeHomeDir",
+          "type": "function",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "tests/config-layered.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 178,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-list-text-footer.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-list.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-missing.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 140,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-normalize.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-remove.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-render.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-resolution.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 94,
+      "symbols": [
+        {
+          "name": "makeTempDir",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "tests/config-schema-file.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "tests/config-shared.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 41,
+      "symbols": [
+        {
+          "name": "buildServers",
+          "type": "function",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "path": "tests/config-sources.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 58,
+      "symbols": []
+    },
+    {
+      "path": "tests/daemon-cli-command.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 112,
+      "symbols": []
+    },
+    {
+      "path": "tests/daemon-client-config-stale.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 222,
+      "symbols": [
+        {
+          "name": "MockSocket",
+          "type": "class",
+          "line": 11
+        },
+        {
+          "name": "buildResponse",
+          "type": "function",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "path": "tests/daemon-client-timeout.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 114,
+      "symbols": [
+        {
+          "name": "MockSocket",
+          "type": "class",
+          "line": 6
+        },
+        {
+          "name": "buildResponse",
+          "type": "function",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": "tests/daemon-client.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "tests/daemon-host.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "tests/daemon.integration.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 175,
+      "symbols": [
+        {
+          "name": "pnpmArgs",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "readFileWithRetries",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "ensureDistBuilt",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "runCli",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "parseCliJson",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "cli",
+          "type": "function",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "path": "tests/emit-ts.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 125,
+      "symbols": [
+        {
+          "name": "createRuntimeStub",
+          "type": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "tests/ephemeral-target.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 26,
+      "symbols": [
+        {
+          "name": "createRuntimeStub",
+          "type": "function",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "path": "tests/error-classifier.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 82,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/ansi.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 18,
+      "symbols": [
+        {
+          "name": "stripAnsi",
+          "type": "function",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "tests/fixtures/cli-list-fixtures.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 43,
+      "symbols": [
+        {
+          "name": "buildLinearDocumentsTool",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "tests/fixtures/config-fixture.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 29,
+      "symbols": [
+        {
+          "name": "TempConfigCtx",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "createTempConfig",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "tests/fixtures/imports/.claude/mcp.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/.claude/settings.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/.claude/settings.local.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/.codeium/windsurf/mcp_config.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/.codex/config.toml",
+      "language": "toml",
+      "kind": "test",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/.cursor/mcp.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/Library/Application Support/Code/User/mcp.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/config/mcporter.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/home/.claude/settings.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/home/.codeium/windsurf/mcp_config.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/home/.codex/config.toml",
+      "language": "toml",
+      "kind": "test",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/imports/home/Library/Application Support/Code/User/mcp.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/mcporter.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 64,
+      "symbols": []
+    },
+    {
+      "path": "tests/fixtures/test-helpers.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 24,
+      "symbols": [
+        {
+          "name": "makeShortTempDir",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "restoreCwdSafely",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "tests/fixtures/tool-fixtures.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "tests/fs-json.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "tests/generate-cli-helpers.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 174,
+      "symbols": []
+    },
+    {
+      "path": "tests/generate-cli.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 666,
+      "symbols": [
+        {
+          "name": "/mcp",
+          "type": "route",
+          "line": 130
+        },
+        {
+          "name": "exists",
+          "type": "function",
+          "line": 640
+        },
+        {
+          "name": "execOptions",
+          "type": "function",
+          "line": 652
+        },
+        {
+          "name": "hasBun",
+          "type": "function",
+          "line": 660
+        }
+      ]
+    },
+    {
+      "path": "tests/generate-definition.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "tests/generator-flag-parser.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "tests/helpers/runtime-test-helpers.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 112,
+      "symbols": [
+        {
+          "name": "LoggerSpy",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "createLogger",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "resetLogger",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "stubHttpDefinition",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "stubOAuthHttpDefinition",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "createPromotionRecorder",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "createMockOAuthSession",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "MockTransport",
+          "type": "class",
+          "line": 65
+        },
+        {
+          "name": "createPendingAuthorizationSession",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "flushAuthLoop",
+          "type": "function",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "path": "tests/index-api.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 136,
+      "symbols": [
+        {
+          "name": "CallLogEntry",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "createComposableRuntime",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "args",
+          "type": "function",
+          "line": 73
+        }
+      ]
+    },
+    {
+      "path": "tests/keep-alive-runtime.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 185,
+      "symbols": [
+        {
+          "name": "FakeRuntime",
+          "type": "class",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "tests/lifecycle.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "tests/list-detail-helpers.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 204,
+      "symbols": [
+        {
+          "name": "baseOption",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "printable",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "stripAnsi",
+          "type": "function",
+          "line": 190
+        }
+      ]
+    },
+    {
+      "path": "tests/list-format.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "tests/list-inline-stdio.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 71,
+      "symbols": [
+        {
+          "name": "createRuntimeStub",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "getDefinition",
+          "type": "function",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "tests/list-output.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 138,
+      "symbols": []
+    },
+    {
+      "path": "tests/live/deepwiki-live.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 62,
+      "symbols": [
+        {
+          "name": "skipReason",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "normalized",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "tests/oauth-callback.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 108,
+      "symbols": [
+        {
+          "name": "makeDefinition",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "StatefulProvider",
+          "type": "type",
+          "line": 19
+        },
+        {
+          "name": "requestStatus",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "tests/oauth-open-external.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "tests/oauth-persistence.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 146,
+      "symbols": [
+        {
+          "name": "mkDef",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "cacheTokens",
+          "type": "function",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "tests/oauth-session.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 216,
+      "symbols": [
+        {
+          "name": "StatefulProvider",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "requestStatus",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "tests/result-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 427,
+      "symbols": []
+    },
+    {
+      "path": "tests/runtime-call-timeout.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 75,
+      "symbols": [
+        {
+          "name": "ClientContext",
+          "type": "type",
+          "line": 27
+        },
+        {
+          "name": "ClientContext",
+          "type": "type",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "tests/runtime-compose.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 298,
+      "symbols": [
+        {
+          "name": "MockClient",
+          "type": "class",
+          "line": 12
+        },
+        {
+          "name": "MockStreamableHTTPClientTransport",
+          "type": "class",
+          "line": 39
+        },
+        {
+          "name": "MockSSEClientTransport",
+          "type": "class",
+          "line": 50
+        },
+        {
+          "name": "MockStdioClientTransport",
+          "type": "class",
+          "line": 59
+        },
+        {
+          "name": "MockUnauthorizedError",
+          "type": "class",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "tests/runtime-error-reset.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 65,
+      "symbols": [
+        {
+          "name": "ClientContext",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "ClientContext",
+          "type": "type",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "path": "tests/runtime-header-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "tests/runtime-integration.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 113,
+      "symbols": [
+        {
+          "name": "/mcp",
+          "type": "route",
+          "line": 12
+        },
+        {
+          "name": "/mcp",
+          "type": "route",
+          "line": 59
+        },
+        {
+          "name": "result",
+          "type": "function",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "tests/runtime-oauth-connect.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 190,
+      "symbols": []
+    },
+    {
+      "path": "tests/runtime-oauth-detection.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 77,
+      "symbols": []
+    },
+    {
+      "path": "tests/runtime-oauth-timeout.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "tests/runtime-oauth-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "tests/runtime-process-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": "tests/runtime-transport.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 269,
+      "symbols": [
+        {
+          "name": "requestInit",
+          "type": "function",
+          "line": 259
+        }
+      ]
+    },
+    {
+      "path": "tests/runtime-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "tests/runtime.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 94,
+      "symbols": []
+    },
+    {
+      "path": "tests/sdk-patches.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 81,
+      "symbols": [
+        {
+          "name": "evaluate",
+          "type": "function",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "tests/server-proxy.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 336,
+      "symbols": [
+        {
+          "name": "createMockRuntime",
+          "type": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "tests/stdio-servers.integration.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 134,
+      "symbols": [
+        {
+          "name": "pnpmArgs",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "ensureDistBuilt",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "runCli",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "tests/tool-cache.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 42,
+      "symbols": [
+        {
+          "name": "createRuntimeStub",
+          "type": "function",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "tests/tool-filters.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 128,
+      "symbols": [
+        {
+          "name": "httpDefinition",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "writeConfig",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "ClientContext",
+          "type": "type",
+          "line": 80
+        },
+        {
+          "name": "ClientContext",
+          "type": "type",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "path": "tests/version-consistency.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "tsconfig.build.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "vitest.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    }
+  ]
+}

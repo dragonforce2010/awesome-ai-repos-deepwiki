@@ -1,0 +1,255 @@
+{
+  "count": 50,
+  "skills": [
+    {
+      "source": "SKILL.md",
+      "output": "skills/gstack/SKILL.md",
+      "name": "gstack"
+    },
+    {
+      "source": "autoplan/SKILL.md",
+      "output": "skills/autoplan/SKILL.md",
+      "name": "autoplan"
+    },
+    {
+      "source": "benchmark-models/SKILL.md",
+      "output": "skills/benchmark-models/SKILL.md",
+      "name": "benchmark-models"
+    },
+    {
+      "source": "benchmark/SKILL.md",
+      "output": "skills/benchmark/SKILL.md",
+      "name": "benchmark"
+    },
+    {
+      "source": "browse/SKILL.md",
+      "output": "skills/browse/SKILL.md",
+      "name": "browse"
+    },
+    {
+      "source": "browser-skills/hackernews-frontpage/SKILL.md",
+      "output": "skills/hackernews-frontpage/SKILL.md",
+      "name": "hackernews-frontpage"
+    },
+    {
+      "source": "canary/SKILL.md",
+      "output": "skills/canary/SKILL.md",
+      "name": "canary"
+    },
+    {
+      "source": "careful/SKILL.md",
+      "output": "skills/careful/SKILL.md",
+      "name": "careful"
+    },
+    {
+      "source": "codex/SKILL.md",
+      "output": "skills/codex/SKILL.md",
+      "name": "codex"
+    },
+    {
+      "source": "context-restore/SKILL.md",
+      "output": "skills/context-restore/SKILL.md",
+      "name": "context-restore"
+    },
+    {
+      "source": "context-save/SKILL.md",
+      "output": "skills/context-save/SKILL.md",
+      "name": "context-save"
+    },
+    {
+      "source": "cso/SKILL.md",
+      "output": "skills/cso/SKILL.md",
+      "name": "cso"
+    },
+    {
+      "source": "design-consultation/SKILL.md",
+      "output": "skills/design-consultation/SKILL.md",
+      "name": "design-consultation"
+    },
+    {
+      "source": "design-html/SKILL.md",
+      "output": "skills/design-html/SKILL.md",
+      "name": "design-html"
+    },
+    {
+      "source": "design-review/SKILL.md",
+      "output": "skills/design-review/SKILL.md",
+      "name": "design-review"
+    },
+    {
+      "source": "design-shotgun/SKILL.md",
+      "output": "skills/design-shotgun/SKILL.md",
+      "name": "design-shotgun"
+    },
+    {
+      "source": "devex-review/SKILL.md",
+      "output": "skills/devex-review/SKILL.md",
+      "name": "devex-review"
+    },
+    {
+      "source": "document-release/SKILL.md",
+      "output": "skills/document-release/SKILL.md",
+      "name": "document-release"
+    },
+    {
+      "source": "freeze/SKILL.md",
+      "output": "skills/freeze/SKILL.md",
+      "name": "freeze"
+    },
+    {
+      "source": "gstack-upgrade/SKILL.md",
+      "output": "skills/gstack-upgrade/SKILL.md",
+      "name": "gstack-upgrade"
+    },
+    {
+      "source": "guard/SKILL.md",
+      "output": "skills/guard/SKILL.md",
+      "name": "guard"
+    },
+    {
+      "source": "health/SKILL.md",
+      "output": "skills/health/SKILL.md",
+      "name": "health"
+    },
+    {
+      "source": "investigate/SKILL.md",
+      "output": "skills/investigate/SKILL.md",
+      "name": "investigate"
+    },
+    {
+      "source": "land-and-deploy/SKILL.md",
+      "output": "skills/land-and-deploy/SKILL.md",
+      "name": "land-and-deploy"
+    },
+    {
+      "source": "landing-report/SKILL.md",
+      "output": "skills/landing-report/SKILL.md",
+      "name": "landing-report"
+    },
+    {
+      "source": "learn/SKILL.md",
+      "output": "skills/learn/SKILL.md",
+      "name": "learn"
+    },
+    {
+      "source": "make-pdf/SKILL.md",
+      "output": "skills/make-pdf/SKILL.md",
+      "name": "make-pdf"
+    },
+    {
+      "source": "office-hours/SKILL.md",
+      "output": "skills/office-hours/SKILL.md",
+      "name": "office-hours"
+    },
+    {
+      "source": "open-gstack-browser/SKILL.md",
+      "output": "skills/open-gstack-browser/SKILL.md",
+      "name": "open-gstack-browser"
+    },
+    {
+      "source": "openclaw/skills/gstack-openclaw-ceo-review/SKILL.md",
+      "output": "skills/gstack-openclaw-ceo-review/SKILL.md",
+      "name": "gstack-openclaw-ceo-review"
+    },
+    {
+      "source": "openclaw/skills/gstack-openclaw-investigate/SKILL.md",
+      "output": "skills/gstack-openclaw-investigate/SKILL.md",
+      "name": "gstack-openclaw-investigate"
+    },
+    {
+      "source": "openclaw/skills/gstack-openclaw-office-hours/SKILL.md",
+      "output": "skills/gstack-openclaw-office-hours/SKILL.md",
+      "name": "gstack-openclaw-office-hours"
+    },
+    {
+      "source": "openclaw/skills/gstack-openclaw-retro/SKILL.md",
+      "output": "skills/gstack-openclaw-retro/SKILL.md",
+      "name": "gstack-openclaw-retro"
+    },
+    {
+      "source": "pair-agent/SKILL.md",
+      "output": "skills/pair-agent/SKILL.md",
+      "name": "pair-agent"
+    },
+    {
+      "source": "plan-ceo-review/SKILL.md",
+      "output": "skills/plan-ceo-review/SKILL.md",
+      "name": "plan-ceo-review"
+    },
+    {
+      "source": "plan-design-review/SKILL.md",
+      "output": "skills/plan-design-review/SKILL.md",
+      "name": "plan-design-review"
+    },
+    {
+      "source": "plan-devex-review/SKILL.md",
+      "output": "skills/plan-devex-review/SKILL.md",
+      "name": "plan-devex-review"
+    },
+    {
+      "source": "plan-eng-review/SKILL.md",
+      "output": "skills/plan-eng-review/SKILL.md",
+      "name": "plan-eng-review"
+    },
+    {
+      "source": "plan-tune/SKILL.md",
+      "output": "skills/plan-tune/SKILL.md",
+      "name": "plan-tune"
+    },
+    {
+      "source": "qa-only/SKILL.md",
+      "output": "skills/qa-only/SKILL.md",
+      "name": "qa-only"
+    },
+    {
+      "source": "qa/SKILL.md",
+      "output": "skills/qa/SKILL.md",
+      "name": "qa"
+    },
+    {
+      "source": "retro/SKILL.md",
+      "output": "skills/retro/SKILL.md",
+      "name": "retro"
+    },
+    {
+      "source": "review/SKILL.md",
+      "output": "skills/review/SKILL.md",
+      "name": "review"
+    },
+    {
+      "source": "scrape/SKILL.md",
+      "output": "skills/scrape/SKILL.md",
+      "name": "scrape"
+    },
+    {
+      "source": "setup-browser-cookies/SKILL.md",
+      "output": "skills/setup-browser-cookies/SKILL.md",
+      "name": "setup-browser-cookies"
+    },
+    {
+      "source": "setup-deploy/SKILL.md",
+      "output": "skills/setup-deploy/SKILL.md",
+      "name": "setup-deploy"
+    },
+    {
+      "source": "setup-gbrain/SKILL.md",
+      "output": "skills/setup-gbrain/SKILL.md",
+      "name": "setup-gbrain"
+    },
+    {
+      "source": "ship/SKILL.md",
+      "output": "skills/ship/SKILL.md",
+      "name": "ship"
+    },
+    {
+      "source": "skillify/SKILL.md",
+      "output": "skills/skillify/SKILL.md",
+      "name": "skillify"
+    },
+    {
+      "source": "unfreeze/SKILL.md",
+      "output": "skills/unfreeze/SKILL.md",
+      "name": "unfreeze"
+    }
+  ]
+}

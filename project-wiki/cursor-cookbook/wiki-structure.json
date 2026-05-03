@@ -1,0 +1,139 @@
+{
+  "title": "Cursor Cookbook DeepWiki",
+  "description": "Cursor SDK 官方实战示例库全解析",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/cursor/cookbook.git",
+    "commit": "2f326663d3be5a3a86a4d11b679dbe8355259a36"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview", "repository-structure"],
+      "subsections": []
+    },
+    {
+      "id": "section-core-examples",
+      "title": "核心功能与示例",
+      "pages": ["coding-agent-cli", "app-builder", "agent-kanban"],
+      "subsections": []
+    },
+    {
+      "id": "section-complex-workflows",
+      "title": "复杂流编排",
+      "pages": ["dag-task-runner", "canvas-rendering"],
+      "subsections": []
+    },
+    {
+      "id": "section-extensions",
+      "title": "扩展与定制",
+      "pages": ["cursor-skills"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-core-examples",
+    "section-complex-workflows",
+    "section-extensions"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "定位、核心示例与学习路线",
+      "importance": "high",
+      "filePaths": ["README.md"],
+      "relatedPages": ["repository-structure"]
+    },
+    {
+      "id": "repository-structure",
+      "title": "仓库结构与运行模式",
+      "file": "pages/repository-structure.md",
+      "description": "Monorepo 结构与 Cursor SDK 工作模式（Local/Cloud）",
+      "importance": "medium",
+      "filePaths": [
+        "sdk/quickstart/package.json",
+        "sdk/app-builder/package.json",
+        "sdk/agent-kanban/package.json",
+        "sdk/coding-agent-cli/package.json",
+        "sdk/dag-task-runner/package.json"
+      ],
+      "relatedPages": ["overview", "coding-agent-cli"]
+    },
+    {
+      "id": "coding-agent-cli",
+      "title": "CLI 与基础接入",
+      "file": "pages/coding-agent-cli.md",
+      "description": "Node.js/Bun 环境下的基础 Agent 接入示例",
+      "importance": "high",
+      "filePaths": [
+        "sdk/quickstart/README.md",
+        "sdk/coding-agent-cli/README.md"
+      ],
+      "relatedPages": ["repository-structure", "dag-task-runner"]
+    },
+    {
+      "id": "app-builder",
+      "title": "App Builder 原型构建器",
+      "file": "pages/app-builder.md",
+      "description": "利用 Cursor Agent 在沙盒环境中快速构建 React 应用预览",
+      "importance": "high",
+      "filePaths": ["sdk/app-builder/README.md"],
+      "relatedPages": ["agent-kanban"]
+    },
+    {
+      "id": "agent-kanban",
+      "title": "Agent Kanban 看板",
+      "file": "pages/agent-kanban.md",
+      "description": "云端 Agent 任务状态管理与可视化前端",
+      "importance": "high",
+      "filePaths": [
+        "sdk/agent-kanban/README.md",
+        "sdk/agent-kanban/src/components/agent-kanban-app.tsx",
+        "sdk/agent-kanban/src/app/api/agents/route.ts"
+      ],
+      "relatedPages": ["app-builder"]
+    },
+    {
+      "id": "dag-task-runner",
+      "title": "DAG 任务流运行器",
+      "file": "pages/dag-task-runner.md",
+      "description": "基于拓扑排序的子智能体并发任务编排",
+      "importance": "high",
+      "filePaths": [
+        "sdk/dag-task-runner/README.md",
+        ".cursor/skills/dag-task-runner/scripts/dag.ts",
+        ".cursor/skills/dag-task-runner/scripts/run_dag.ts"
+      ],
+      "relatedPages": ["canvas-rendering", "cursor-skills"]
+    },
+    {
+      "id": "canvas-rendering",
+      "title": "Canvas 动态渲染集成",
+      "file": "pages/canvas-rendering.md",
+      "description": "如何将 Agent 状态流式写入 Cursor Canvas 实时展示",
+      "importance": "medium",
+      "filePaths": [
+        "sdk/dag-task-runner/README.md",
+        ".cursor/skills/dag-task-runner/scripts/canvas_writer.ts"
+      ],
+      "relatedPages": ["dag-task-runner"]
+    },
+    {
+      "id": "cursor-skills",
+      "title": "Cursor 技能封装",
+      "file": "pages/cursor-skills.md",
+      "description": "以 dag-task-runner 为例的本地 Skill 封装与分发机制",
+      "importance": "high",
+      "filePaths": [
+        ".cursor/skills/dag-task-runner/SKILL.md",
+        ".cursor/skills/dag-task-runner/scripts/sync-copyable-skill.sh"
+      ],
+      "relatedPages": ["dag-task-runner"]
+    }
+  ]
+}

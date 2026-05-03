@@ -1,0 +1,135 @@
+{
+  "title": "lark-context DeepWiki",
+  "description": "飞书群聊和文档到 Claude 本地长期记忆的 TypeScript CLI 与 skill 工作流解析。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repository": "git@code.byted.org:tiktok/lark-context.git",
+    "clonePath": "/Users/bytedance/workspace/deepwiki/project-repos/lark-context",
+    "branch": "master",
+    "commit": "8099f2131ca597a21e77346ce2e272a5e0bf0554"
+  },
+  "outputRoot": "/Users/bytedance/workspace/deepwiki/lark-context",
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构",
+      "pages": ["system-architecture", "cli-command-surface", "lark-cli-integration"],
+      "subsections": []
+    },
+    {
+      "id": "section-data-flows",
+      "title": "数据管理与流程",
+      "pages": ["configuration-and-storage", "pull-thread-pipeline", "document-ingestion-and-show"],
+      "subsections": []
+    },
+    {
+      "id": "section-agent-workflows",
+      "title": "Agent 工作流",
+      "pages": ["skill-memory-workflows"],
+      "subsections": []
+    },
+    {
+      "id": "section-quality-ops",
+      "title": "质量、发布与边界",
+      "pages": ["testing-release-and-boundaries"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-data-flows",
+    "section-agent-workflows",
+    "section-quality-ops"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "项目定位、使用路径、仓库地图和阅读路线。",
+      "importance": "high",
+      "filePaths": ["README.md", "GETTING_STARTED.md", "package.json", "spec.md", "skills/lark-context/SKILL.md"],
+      "relatedPages": ["system-architecture", "cli-command-surface", "skill-memory-workflows"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "从用户、Claude skill、TS CLI、lark-cli、SQLite 到记忆文件的端到端结构。",
+      "importance": "high",
+      "filePaths": ["README.md", "src/cli.ts", "src/config.ts", "src/db.ts", "src/lark.ts", "skills/lark-context/SKILL.md"],
+      "relatedPages": ["overview", "configuration-and-storage", "pull-thread-pipeline"]
+    },
+    {
+      "id": "cli-command-surface",
+      "title": "CLI 命令面",
+      "file": "pages/cli-command-surface.md",
+      "description": "Commander 注册、命令职责、参数和错误出口。",
+      "importance": "high",
+      "filePaths": ["src/cli.ts", "src/commands/init.ts", "src/commands/groups.ts", "src/commands/listGroups.ts", "src/commands/pull.ts", "src/commands/ingestDoc.ts", "src/commands/show.ts", "README.md"],
+      "relatedPages": ["system-architecture", "lark-cli-integration", "document-ingestion-and-show"]
+    },
+    {
+      "id": "lark-cli-integration",
+      "title": "lark-cli 集成",
+      "file": "pages/lark-cli-integration.md",
+      "description": "官方 lark-cli 的调用封装、JSON/NDJSON 协议、缺失二进制和 API 错误处理。",
+      "importance": "medium",
+      "filePaths": ["src/lark.ts", "src/commands/listGroups.ts", "src/commands/pull.ts", "src/commands/ingestDoc.ts", "src/commands/init.ts", "test/lark.test.ts"],
+      "relatedPages": ["cli-command-surface", "pull-thread-pipeline", "document-ingestion-and-show"]
+    },
+    {
+      "id": "configuration-and-storage",
+      "title": "配置与 SQLite 存储",
+      "file": "pages/configuration-and-storage.md",
+      "description": "路径解析、配置优先级、群白名单、SQLite schema、迁移和 KV 状态。",
+      "importance": "high",
+      "filePaths": ["src/config.ts", "src/db.ts", "src/commands/init.ts", "src/commands/groups.ts", "README.md", "test/config.test.ts", "test/db.test.ts"],
+      "relatedPages": ["system-architecture", "pull-thread-pipeline", "skill-memory-workflows"]
+    },
+    {
+      "id": "pull-thread-pipeline",
+      "title": "消息拉取与话题回复流水线",
+      "file": "pages/pull-thread-pipeline.md",
+      "description": "增量 pull、分页、last_cursor、thread reply 两阶段刷新、幂等与失败隔离。",
+      "importance": "high",
+      "filePaths": ["src/commands/pull.ts", "src/db.ts", "src/durations.ts", "README.md", "skills/lark-context/references/pull.md", "test/cmd-pull.test.ts"],
+      "relatedPages": ["configuration-and-storage", "lark-cli-integration", "document-ingestion-and-show"]
+    },
+    {
+      "id": "document-ingestion-and-show",
+      "title": "文档入库与 Markdown 输出",
+      "file": "pages/document-ingestion-and-show.md",
+      "description": "飞书文档 token 解析、docs +fetch、docs 表 upsert、show/show-doc 渲染和话题缩进展示。",
+      "importance": "high",
+      "filePaths": ["src/commands/ingestDoc.ts", "src/commands/show.ts", "src/render.ts", "src/durations.ts", "README.md", "skills/lark-context/references/ingest-doc.md", "skills/lark-context/references/show.md", "test/cmd-ingest-doc.test.ts", "test/cmd-show.test.ts"],
+      "relatedPages": ["pull-thread-pipeline", "skill-memory-workflows", "cli-command-surface"]
+    },
+    {
+      "id": "skill-memory-workflows",
+      "title": "Skill 与记忆工作流",
+      "file": "pages/skill-memory-workflows.md",
+      "description": "lark-context skill 的自然语言路由、digest、TODO、pull、show、ingest-doc 工作流和记忆文件约束。",
+      "importance": "high",
+      "filePaths": ["skills/lark-context/SKILL.md", "skills/lark-context/references/digest.md", "skills/lark-context/references/todo.md", "skills/lark-context/references/pull.md", "skills/lark-context/references/show.md", "skills/lark-context/references/ingest-doc.md", "README.md", "GETTING_STARTED.md"],
+      "relatedPages": ["overview", "document-ingestion-and-show", "configuration-and-storage"]
+    },
+    {
+      "id": "testing-release-and-boundaries",
+      "title": "测试、发布与边界",
+      "file": "pages/testing-release-and-boundaries.md",
+      "description": "Vitest 覆盖面、构建发布脚本、Node 运行条件、legacy Python 对照和 V1/V2 边界。",
+      "importance": "medium",
+      "filePaths": ["package.json", "tsup.config.ts", "tsconfig.json", "vitest.config.ts", "README.md", "legacy/python/README.md", "legacy/python/pyproject.toml", "test/cmd-pull.test.ts", "test/db.test.ts"],
+      "relatedPages": ["overview", "pull-thread-pipeline", "skill-memory-workflows"]
+    }
+  ]
+}

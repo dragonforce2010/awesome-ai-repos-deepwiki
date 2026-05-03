@@ -1,0 +1,162 @@
+{
+  "title": "CLI-Anything DeepWiki",
+  "description": "CLI-Anything 中文仓库深度解析 — 让所有软件变为 Agent 原生",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/HKUDS/CLI-Anything",
+    "commit": "26bd973431dea8d41851ed7d1c5a765e1230d9b3"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构",
+      "pages": ["system-architecture"],
+      "subsections": []
+    },
+    {
+      "id": "section-core",
+      "title": "核心功能",
+      "pages": ["seven-phase-pipeline", "harness-structure"],
+      "subsections": []
+    },
+    {
+      "id": "section-cli-hub",
+      "title": "CLI-Hub 包管理器",
+      "pages": ["cli-hub"],
+      "subsections": []
+    },
+    {
+      "id": "section-skills",
+      "title": "技能系统与 Agent 集成",
+      "pages": ["skill-system", "agent-platform-integration"],
+      "subsections": []
+    },
+    {
+      "id": "section-preview",
+      "title": "预览与可视化",
+      "pages": ["preview-system"],
+      "subsections": []
+    },
+    {
+      "id": "section-testing",
+      "title": "测试与质量",
+      "pages": ["testing-and-quality"],
+      "subsections": []
+    },
+    {
+      "id": "section-infra",
+      "title": "部署与基础设施",
+      "pages": ["ci-cd-and-registry"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-core",
+    "section-cli-hub",
+    "section-skills",
+    "section-preview",
+    "section-testing",
+    "section-infra"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "CLI-Anything 的定位、核心理念、支持的软件目录和阅读路径",
+      "importance": "high",
+      "filePaths": ["README.md", "README_CN.md", "CONTRIBUTING.md", "registry.json", "LICENSE"],
+      "relatedPages": ["system-architecture", "seven-phase-pipeline"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "整体架构分层、模块边界、数据流方向和依赖关系",
+      "importance": "high",
+      "filePaths": ["README.md", "cli-anything-plugin/HARNESS.md", "cli-hub/cli_hub/cli.py", "cli-hub/cli_hub/registry.py", "cli-anything-plugin/repl_skin.py"],
+      "relatedPages": ["overview", "harness-structure", "cli-hub"]
+    },
+    {
+      "id": "seven-phase-pipeline",
+      "title": "七阶段生成流水线",
+      "file": "pages/seven-phase-pipeline.md",
+      "description": "从代码分析到 PyPI 发布的七阶段自动化 CLI 生成方法论",
+      "importance": "high",
+      "filePaths": ["cli-anything-plugin/HARNESS.md", "cli-anything-plugin/commands/cli-anything.md", "cli-anything-plugin/commands/refine.md", "cli-anything-plugin/skill_generator.py"],
+      "relatedPages": ["system-architecture", "harness-structure", "skill-system"]
+    },
+    {
+      "id": "harness-structure",
+      "title": "Harness 包结构与实现模式",
+      "file": "pages/harness-structure.md",
+      "description": "agent-harness 包的标准目录布局、Click CLI 架构、REPL 交互和后端集成模式",
+      "importance": "high",
+      "filePaths": ["cli-anything-plugin/HARNESS.md", "cli-anything-plugin/repl_skin.py", "blender/agent-harness/setup.py", "gimp/agent-harness/GIMP.md"],
+      "relatedPages": ["seven-phase-pipeline", "system-architecture", "testing-and-quality"]
+    },
+    {
+      "id": "cli-hub",
+      "title": "CLI-Hub 包管理器",
+      "file": "pages/cli-hub.md",
+      "description": "CLI-Hub 的注册表机制、安装策略分发、搜索发现和预览功能",
+      "importance": "high",
+      "filePaths": ["cli-hub/cli_hub/cli.py", "cli-hub/cli_hub/registry.py", "cli-hub/cli_hub/installer.py", "cli-hub/cli_hub/analytics.py", "cli-hub/setup.py", "registry.json", "public_registry.json"],
+      "relatedPages": ["system-architecture", "ci-cd-and-registry", "preview-system"]
+    },
+    {
+      "id": "skill-system",
+      "title": "SKILL.md 技能系统",
+      "file": "pages/skill-system.md",
+      "description": "SKILL.md 的自动生成、规范格式、技能发现和 npx skills 集成",
+      "importance": "medium",
+      "filePaths": ["cli-anything-plugin/skill_generator.py", "cli-anything-plugin/templates/SKILL.md.template", "skills/cli-anything-blender/SKILL.md", "skills/README.md", "cli-hub-meta-skill/SKILL.md"],
+      "relatedPages": ["seven-phase-pipeline", "agent-platform-integration"]
+    },
+    {
+      "id": "agent-platform-integration",
+      "title": "多 Agent 平台集成",
+      "file": "pages/agent-platform-integration.md",
+      "description": "Claude Code 插件、Pi 扩展、OpenCode 命令、OpenClaw 技能和 Codex 集成",
+      "importance": "medium",
+      "filePaths": ["cli-anything-plugin/README.md", "cli-anything-plugin/commands/cli-anything.md", ".pi-extension/cli-anything/index.ts", "opencode-commands/cli-anything.md", "openclaw-skill/SKILL.md", "codex-skill/SKILL.md"],
+      "relatedPages": ["skill-system", "overview"]
+    },
+    {
+      "id": "preview-system",
+      "title": "预览与轨迹系统",
+      "file": "pages/preview-system.md",
+      "description": "preview bundle、live session、trajectory 可视化和 HTML 渲染机制",
+      "importance": "medium",
+      "filePaths": ["cli-hub/cli_hub/preview.py", "cli-hub/cli_hub/cli.py", "docs/PREVIEW_PROTOCOL.md", "docs/PREVIEW_MECHANISM_PROGRESS.md"],
+      "relatedPages": ["cli-hub", "harness-structure"]
+    },
+    {
+      "id": "testing-and-quality",
+      "title": "测试与质量保障",
+      "file": "pages/testing-and-quality.md",
+      "description": "多层测试策略、2280+ 测试用例、E2E 验证和测试规范",
+      "importance": "medium",
+      "filePaths": ["README.md", "cli-anything-plugin/HARNESS.md", "blender/agent-harness/cli_anything/blender/tests/test_core.py", "cli-hub/tests/test_cli_hub.py"],
+      "relatedPages": ["harness-structure", "ci-cd-and-registry"]
+    },
+    {
+      "id": "ci-cd-and-registry",
+      "title": "CI/CD 与注册表基础设施",
+      "file": "pages/ci-cd-and-registry.md",
+      "description": "GitHub Actions 流水线、PyPI 自动发布、GitHub Pages 部署和注册表同步",
+      "importance": "medium",
+      "filePaths": [".github/workflows/deploy-pages.yml", ".github/workflows/publish-cli-hub.yml", ".github/workflows/check-root-skills.yml", ".github/scripts/generate_meta_skill.py", ".github/scripts/update_registry_dates.py", "registry.json"],
+      "relatedPages": ["cli-hub", "testing-and-quality"]
+    }
+  ]
+}

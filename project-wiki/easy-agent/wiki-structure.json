@@ -1,0 +1,168 @@
+{
+  "title": "easy-agent DeepWiki",
+  "description": "Easy Agent 的中文技术维基：面向 TypeScript/Node.js 终端 Agentic Coding CLI 的架构、核心链路、扩展、安全与质量说明。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/ConardLi/easy-agent",
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/easy-agent",
+    "branch": "main",
+    "commit": "c24463e07dd136d41f6ab28edb33a3eaf0b209c1"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构",
+      "pages": ["system-architecture", "cli-and-ui"],
+      "subsections": []
+    },
+    {
+      "id": "section-core-flow",
+      "title": "核心执行链路",
+      "pages": ["query-engine-agentic-loop", "model-streaming"],
+      "subsections": []
+    },
+    {
+      "id": "section-tools-extension",
+      "title": "工具与扩展",
+      "pages": ["tools-permissions", "mcp-integration", "skills-system"],
+      "subsections": []
+    },
+    {
+      "id": "section-context-state",
+      "title": "上下文与状态",
+      "pages": ["context-memory-compaction", "sessions-tasks"],
+      "subsections": []
+    },
+    {
+      "id": "section-quality-security",
+      "title": "安全、部署与质量",
+      "pages": ["sandbox-security", "testing-and-roadmap"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-core-flow",
+    "section-tools-extension",
+    "section-context-state",
+    "section-quality-security"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "项目定位、实现状态、仓库结构和阅读路线。",
+      "importance": "high",
+      "filePaths": ["README.md", "README.zh-CN.md", "package.json", "tsconfig.json"],
+      "relatedPages": ["system-architecture", "query-engine-agentic-loop", "testing-and-roadmap"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "从 CLI、UI、编排、核心循环、工具和模型通信看整体分层。",
+      "importance": "high",
+      "filePaths": ["README.md", "src/entrypoint/cli.ts", "src/ui/App.tsx", "src/core/queryEngine.ts", "src/core/agenticLoop.ts", "src/tools/index.ts", "src/services/api/streaming.ts", "src/context/systemPrompt.ts"],
+      "relatedPages": ["cli-and-ui", "query-engine-agentic-loop", "tools-permissions"]
+    },
+    {
+      "id": "cli-and-ui",
+      "title": "CLI 与终端 UI",
+      "file": "pages/cli-and-ui.md",
+      "description": "命令行参数、Ink 组件树、输入建议、会话 hook 和终端渲染策略。",
+      "importance": "high",
+      "filePaths": ["src/entrypoint/cli.ts", "src/ui/App.tsx", "src/ui/hooks/useAgentSession.ts", "src/ui/hooks/usePromptInput.ts", "src/ui/components/ConversationView.tsx", "src/ui/components/StatusBar.tsx", "src/ui/components/TaskList.tsx", "src/ui/components/TodoList.tsx"],
+      "relatedPages": ["system-architecture", "sessions-tasks", "skills-system"]
+    },
+    {
+      "id": "query-engine-agentic-loop",
+      "title": "QueryEngine 与 Agentic Loop",
+      "file": "pages/query-engine-agentic-loop.md",
+      "description": "多轮状态、slash command、权限模式、上下文压缩和 tool_use 循环。",
+      "importance": "high",
+      "filePaths": ["src/core/queryEngine.ts", "src/core/agenticLoop.ts", "src/tools/index.ts", "src/permissions/permissions.ts", "src/context/planAttachments.ts", "src/tools/enterPlanModeTool.ts", "src/tools/exitPlanModeTool.ts"],
+      "relatedPages": ["model-streaming", "tools-permissions", "context-memory-compaction"]
+    },
+    {
+      "id": "model-streaming",
+      "title": "模型通信与 Streaming",
+      "file": "pages/model-streaming.md",
+      "description": "Anthropic SDK 客户端、SSE 事件组装、thinking/tool_use 保留和调试日志。",
+      "importance": "medium",
+      "filePaths": ["src/services/api/client.ts", "src/services/api/streaming.ts", "src/types/message.ts", "src/utils/loadEnv.ts", "src/utils/streamDebug.ts", "src/scripts/test-streaming.ts"],
+      "relatedPages": ["query-engine-agentic-loop", "testing-and-roadmap", "context-memory-compaction"]
+    },
+    {
+      "id": "tools-permissions",
+      "title": "工具系统与权限模型",
+      "file": "pages/tools-permissions.md",
+      "description": "Tool 抽象、内置工具注册、文件/搜索/Bash 工具、路径边界和权限决策树。",
+      "importance": "high",
+      "filePaths": ["src/tools/Tool.ts", "src/tools/index.ts", "src/tools/fileReadTool.ts", "src/tools/fileWriteTool.ts", "src/tools/fileEditTool.ts", "src/tools/bashTool.ts", "src/tools/pathUtils.ts", "src/permissions/permissions.ts"],
+      "relatedPages": ["sandbox-security", "mcp-integration", "query-engine-agentic-loop"]
+    },
+    {
+      "id": "mcp-integration",
+      "title": "MCP 集成",
+      "file": "pages/mcp-integration.md",
+      "description": "mcpServers 配置、stdio/http/sse 连接、pending registry、tools/list 适配与 /mcp 命令。",
+      "importance": "medium",
+      "filePaths": ["src/services/mcp/config.ts", "src/services/mcp/bootstrap.ts", "src/services/mcp/client.ts", "src/services/mcp/fetchTools.ts", "src/services/mcp/registry.ts", "src/services/mcp/mcpStringUtils.ts", "src/services/mcp/normalization.ts", "src/types/mcp.ts", "src/scripts/test-mcp.ts"],
+      "relatedPages": ["tools-permissions", "skills-system", "testing-and-roadmap"]
+    },
+    {
+      "id": "skills-system",
+      "title": "Skills 系统",
+      "file": "pages/skills-system.md",
+      "description": "SKILL.md 加载、frontmatter 归一化、动态/条件 registry、Skill 工具和用户 slash 调用。",
+      "importance": "medium",
+      "filePaths": ["src/services/skills/bootstrap.ts", "src/services/skills/loadSkillsDir.ts", "src/services/skills/parseFrontmatter.ts", "src/services/skills/registry.ts", "src/services/skills/budget.ts", "src/services/skills/conditional.ts", "src/tools/skillTool.ts", "src/types/types.ts", "src/scripts/test-skills.ts"],
+      "relatedPages": ["cli-and-ui", "mcp-integration", "context-memory-compaction"]
+    },
+    {
+      "id": "context-memory-compaction",
+      "title": "上下文、记忆与压缩",
+      "file": "pages/context-memory-compaction.md",
+      "description": "system prompt 组装、AGENT.md、项目记忆、token 预算、micro/full compaction 和 plan attachment。",
+      "importance": "high",
+      "filePaths": ["src/context/systemPrompt.ts", "src/context/claudeMd.ts", "src/context/memory/memdir.ts", "src/context/memory/memoryTypes.ts", "src/context/autoCompact.ts", "src/context/compaction.ts", "src/context/planAttachments.ts", "src/utils/tokens.ts"],
+      "relatedPages": ["query-engine-agentic-loop", "sessions-tasks", "skills-system"]
+    },
+    {
+      "id": "sessions-tasks",
+      "title": "会话持久化与任务系统",
+      "file": "pages/sessions-tasks.md",
+      "description": "JSONL transcript、/resume、TodoWrite V1、Task V2 磁盘任务图、UI 同步与任务工具。",
+      "importance": "high",
+      "filePaths": ["src/session/storage.ts", "src/session/history.ts", "src/state/todoStore.ts", "src/state/taskStore.ts", "src/state/taskModeStore.ts", "src/types/todo.ts", "src/types/task.ts", "src/tools/todoWriteTool.ts", "src/tools/taskCreateTool.ts", "src/tools/taskUpdateTool.ts", "src/tools/taskGetTool.ts", "src/tools/taskListTool.ts", "src/ui/hooks/useAgentSession.ts"],
+      "relatedPages": ["cli-and-ui", "context-memory-compaction", "testing-and-roadmap"]
+    },
+    {
+      "id": "sandbox-security",
+      "title": "Sandbox 与安全边界",
+      "file": "pages/sandbox-security.md",
+      "description": "macOS sandbox-exec 支持、settings 合并、权限规则派生 profile、Bash 包装和违规反馈。",
+      "importance": "high",
+      "filePaths": ["src/sandbox/settings.ts", "src/sandbox/availability.ts", "src/sandbox/shouldUseSandbox.ts", "src/sandbox/buildProfile.ts", "src/sandbox/macosProfile.ts", "src/sandbox/wrapWithSandbox.ts", "src/sandbox/violations.ts", "src/sandbox/types.ts", "src/tools/bashTool.ts", "src/scripts/test-sandbox.ts", "src/scripts/smoke-sandbox.ts", "src/scripts/smoke-bash-sandbox.ts"],
+      "relatedPages": ["tools-permissions", "testing-and-roadmap", "query-engine-agentic-loop"]
+    },
+    {
+      "id": "testing-and-roadmap",
+      "title": "测试、构建与路线图",
+      "file": "pages/testing-and-roadmap.md",
+      "description": "npm scripts、TypeScript 配置、smoke/test 脚本、step 教程线和未完成能力边界。",
+      "importance": "medium",
+      "filePaths": ["README.md", "README.zh-CN.md", "package.json", "tsconfig.json", "src/scripts/test-streaming.ts", "src/scripts/test-tools.ts", "src/scripts/test-tasks.ts", "src/scripts/test-mcp.ts", "src/scripts/test-skills.ts", "src/scripts/test-sandbox.ts", "step/step1.js", "step/step4.js", "step/step8.js", "step/step16.js", "step/step17.js", "step/step18.js"],
+      "relatedPages": ["overview", "model-streaming", "sandbox-security"]
+    }
+  ]
+}

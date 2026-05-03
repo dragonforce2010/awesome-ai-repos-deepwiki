@@ -1,0 +1,116 @@
+---
+name: guard
+description: 组合 careful 与 freeze 的完整安全模式。
+---
+
+# guard 中文审阅副本
+
+> 来源：`guard/SKILL.md`  
+> 生成说明：本副本面向中文审阅，保留 `name`、命令、路径、代码块和原始行为要求。原始 `SKILL.md` 完整收录在下方折叠块中，便于逐条比对可执行指令。
+
+## 中文概要
+
+组合 careful 与 freeze 的完整安全模式。
+
+## 审阅重点
+
+- **触发语义**：确认此技能只在描述的任务场景中调用。
+- **工具权限**：检查 `allowed-tools`、preamble、shell 命令和写入路径是否符合预期。
+- **行为约束**：保留原文中的 `must`、`never`、`always`、STOP、AskUserQuestion、commit/test 等强制要求。
+- **可执行内容**：代码块、命令、路径、环境变量、API 名称和占位符不做语义改写。
+
+## 原始技能正文（完整保留）
+
+<details>
+<summary>展开原始 SKILL.md</summary>
+
+```markdown
+---
+name: guard
+version: 0.1.0
+description: |
+  Full safety mode: destructive command warnings + directory-scoped edits.
+  Combines /careful (warns before rm -rf, DROP TABLE, force-push, etc.) with
+  /freeze (blocks edits outside a specified directory). Use for maximum safety
+  when touching prod or debugging live systems. Use when asked to "guard mode",
+  "full safety", "lock it down", or "maximum safety". (gstack)
+triggers:
+  - full safety mode
+  - guard against mistakes
+  - maximum safety
+allowed-tools:
+  - Bash
+  - Read
+  - AskUserQuestion
+hooks:
+  PreToolUse:
+    - matcher: "Bash"
+      hooks:
+        - type: command
+          command: "bash ${CLAUDE_SKILL_DIR}/../careful/bin/check-careful.sh"
+          statusMessage: "Checking for destructive commands..."
+    - matcher: "Edit"
+      hooks:
+        - type: command
+          command: "bash ${CLAUDE_SKILL_DIR}/../freeze/bin/check-freeze.sh"
+          statusMessage: "Checking freeze boundary..."
+    - matcher: "Write"
+      hooks:
+        - type: command
+          command: "bash ${CLAUDE_SKILL_DIR}/../freeze/bin/check-freeze.sh"
+          statusMessage: "Checking freeze boundary..."
+---
+<!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly -->
+<!-- Regenerate: bun run gen:skill-docs -->
+
+# /guard — Full Safety Mode
+
+Activates both destructive command warnings and directory-scoped edit restrictions.
+This is the combination of `/careful` + `/freeze` in a single command.
+
+**Dependency note:** This skill references hook scripts from the sibling `/careful`
+and `/freeze` skill directories. Both must be installed (they are installed together
+by the gstack setup script).
+
+```bash
+mkdir -p ~/.gstack/analytics
+echo '{"skill":"guard","ts":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","repo":"'$(basename "$(git rev-parse --show-toplevel 2>/dev/null)" 2>/dev/null || echo "unknown")'"}'  >> ~/.gstack/analytics/skill-usage.jsonl 2>/dev/null || true
+```
+
+## Setup
+
+Ask the user which directory to restrict edits to. Use AskUserQuestion:
+
+- Question: "Guard mode: which directory should edits be restricted to? Destructive command warnings are always on. Files outside the chosen path will be blocked from editing."
+- Text input (not multiple choice) — the user types a path.
+
+Once the user provides a directory path:
+
+1. Resolve it to an absolute path:
+```bash
+FREEZE_DIR=$(cd "<user-provided-path>" 2>/dev/null && pwd)
+echo "$FREEZE_DIR"
+```
+
+2. Ensure trailing slash and save to the freeze state file:
+```bash
+FREEZE_DIR="${FREEZE_DIR%/}/"
+STATE_DIR="${CLAUDE_PLUGIN_DATA:-$HOME/.gstack}"
+mkdir -p "$STATE_DIR"
+echo "$FREEZE_DIR" > "$STATE_DIR/freeze-dir.txt"
+echo "Freeze boundary set: $FREEZE_DIR"
+```
+
+Tell the user:
+- "**Guard mode active.** Two protections are now running:"
+- "1. **Destructive command warnings** — rm -rf, DROP TABLE, force-push, etc. will warn before executing (you can override)"
+- "2. **Edit boundary** — file edits restricted to `<path>/`. Edits outside this directory are blocked."
+- "To remove the edit boundary, run `/unfreeze`. To deactivate everything, end the session."
+
+## What's protected
+
+See `/careful` for the full list of destructive command patterns and safe exceptions.
+See `/freeze` for how edit boundary enforcement works.
+```
+
+</details>

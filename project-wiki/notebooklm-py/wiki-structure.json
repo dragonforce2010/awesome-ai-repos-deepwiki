@@ -1,0 +1,171 @@
+{
+  "title": "notebooklm-py DeepWiki",
+  "description": "Google NotebookLM 非官方 Python API 与 CLI 工具的中文技术百科，涵盖架构、RPC 协议、认证、客户端 API、CLI、制品生成、测试与部署",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/teng-lin/notebooklm-py",
+    "commit": "d6cef809dee4f03794e89bd089dd426b34a67345"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构",
+      "pages": ["system-architecture", "rpc-protocol"],
+      "subsections": []
+    },
+    {
+      "id": "section-core",
+      "title": "核心功能",
+      "pages": ["auth-and-security", "client-api"],
+      "subsections": []
+    },
+    {
+      "id": "section-interfaces",
+      "title": "接口与入口",
+      "pages": ["cli-interface", "artifact-generation"],
+      "subsections": []
+    },
+    {
+      "id": "section-data",
+      "title": "数据管理与流程",
+      "pages": ["data-types-and-models"],
+      "subsections": []
+    },
+    {
+      "id": "section-quality",
+      "title": "测试与质量",
+      "pages": ["testing-and-quality"],
+      "subsections": []
+    },
+    {
+      "id": "section-deploy",
+      "title": "部署与基础设施",
+      "pages": ["deployment-and-ci"],
+      "subsections": []
+    },
+    {
+      "id": "section-extension",
+      "title": "扩展与定制",
+      "pages": ["agent-skill-integration"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-core",
+    "section-interfaces",
+    "section-data",
+    "section-quality",
+    "section-deploy",
+    "section-extension"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "定位、核心能力、仓库结构与阅读路线",
+      "importance": "high",
+      "filePaths": ["README.md", "pyproject.toml", "src/notebooklm/__init__.py", "AGENTS.md"],
+      "relatedPages": ["system-architecture", "client-api", "cli-interface"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "顶层架构、模块边界、依赖方向与核心数据流",
+      "importance": "high",
+      "filePaths": ["src/notebooklm/client.py", "src/notebooklm/_core.py", "src/notebooklm/__init__.py", "pyproject.toml"],
+      "relatedPages": ["overview", "rpc-protocol", "client-api"]
+    },
+    {
+      "id": "rpc-protocol",
+      "title": "RPC 协议层",
+      "file": "pages/rpc-protocol.md",
+      "description": "batchexecute 编解码、请求构建、响应解析与错误处理",
+      "importance": "high",
+      "filePaths": ["src/notebooklm/rpc/__init__.py", "src/notebooklm/rpc/encoder.py", "src/notebooklm/rpc/decoder.py", "src/notebooklm/rpc/types.py"],
+      "relatedPages": ["system-architecture", "auth-and-security", "client-api"]
+    },
+    {
+      "id": "auth-and-security",
+      "title": "认证与安全",
+      "file": "pages/auth-and-security.md",
+      "description": "Cookie 认证、Token 提取、多账户 Profile、区域域名处理与安全实践",
+      "importance": "high",
+      "filePaths": ["src/notebooklm/auth.py", "src/notebooklm/paths.py", "src/notebooklm/_url_utils.py", "src/notebooklm/migration.py"],
+      "relatedPages": ["rpc-protocol", "client-api", "cli-interface"]
+    },
+    {
+      "id": "client-api",
+      "title": "客户端 API",
+      "file": "pages/client-api.md",
+      "description": "NotebookLMClient 入口、子 API 模块（Notebooks、Sources、Chat、Artifacts、Research、Notes、Settings、Sharing）",
+      "importance": "high",
+      "filePaths": ["src/notebooklm/client.py", "src/notebooklm/_notebooks.py", "src/notebooklm/_sources.py", "src/notebooklm/_chat.py", "src/notebooklm/_artifacts.py", "src/notebooklm/_research.py", "src/notebooklm/_notes.py", "src/notebooklm/_settings.py", "src/notebooklm/_sharing.py"],
+      "relatedPages": ["system-architecture", "rpc-protocol", "data-types-and-models"]
+    },
+    {
+      "id": "cli-interface",
+      "title": "CLI 界面",
+      "file": "pages/cli-interface.md",
+      "description": "Click 命令结构、分组帮助、Session 上下文、Profile 管理与错误处理",
+      "importance": "medium",
+      "filePaths": ["src/notebooklm/notebooklm_cli.py", "src/notebooklm/cli/__init__.py", "src/notebooklm/cli/grouped.py", "src/notebooklm/cli/session.py", "src/notebooklm/cli/helpers.py", "src/notebooklm/cli/error_handler.py", "src/notebooklm/cli/profile.py"],
+      "relatedPages": ["overview", "client-api", "auth-and-security"]
+    },
+    {
+      "id": "artifact-generation",
+      "title": "制品生成与下载",
+      "file": "pages/artifact-generation.md",
+      "description": "Audio、Video、Report、Quiz、Flashcards、Mind Map、Infographic、Slide Deck、Data Table 的生成流程与下载机制",
+      "importance": "medium",
+      "filePaths": ["src/notebooklm/_artifacts.py", "src/notebooklm/cli/generate.py", "src/notebooklm/cli/download.py", "src/notebooklm/cli/download_helpers.py"],
+      "relatedPages": ["client-api", "data-types-and-models", "rpc-protocol"]
+    },
+    {
+      "id": "data-types-and-models",
+      "title": "数据类型与模型",
+      "file": "pages/data-types-and-models.md",
+      "description": "Notebook、Source、Artifact、GenerationStatus 等数据类与枚举映射",
+      "importance": "medium",
+      "filePaths": ["src/notebooklm/types.py", "src/notebooklm/rpc/types.py", "src/notebooklm/exceptions.py"],
+      "relatedPages": ["client-api", "artifact-generation", "rpc-protocol"]
+    },
+    {
+      "id": "testing-and-quality",
+      "title": "测试与质量",
+      "file": "pages/testing-and-quality.md",
+      "description": "三层测试架构（Unit/Integration/E2E）、VCR 录制、覆盖率门槛与质量工具链",
+      "importance": "medium",
+      "filePaths": ["tests/conftest.py", "pyproject.toml", ".pre-commit-config.yaml", ".github/workflows/test.yml"],
+      "relatedPages": ["overview", "deployment-and-ci"]
+    },
+    {
+      "id": "deployment-and-ci",
+      "title": "部署与 CI/CD",
+      "file": "pages/deployment-and-ci.md",
+      "description": "PyPI 发布、CI 工作流、RPC 健康检查与打包验证",
+      "importance": "medium",
+      "filePaths": [".github/workflows/test.yml", ".github/workflows/publish.yml", ".github/workflows/rpc-health.yml", ".github/workflows/verify-artifacts.yml", "pyproject.toml", "scripts/check_rpc_health.py"],
+      "relatedPages": ["testing-and-quality", "overview"]
+    },
+    {
+      "id": "agent-skill-integration",
+      "title": "Agent Skill 集成",
+      "file": "pages/agent-skill-integration.md",
+      "description": "SKILL.md 定义、Claude Code / Codex / npx skills 生态、自动安装与 Agent 工作流",
+      "importance": "medium",
+      "filePaths": ["SKILL.md", "AGENTS.md", "src/notebooklm/cli/agent.py", "src/notebooklm/cli/agent_templates.py", "src/notebooklm/cli/skill.py"],
+      "relatedPages": ["cli-interface", "overview"]
+    }
+  ]
+}

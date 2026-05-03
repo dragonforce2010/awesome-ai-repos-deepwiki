@@ -1,0 +1,270 @@
+{
+  "title": "Huashu Design DeepWiki",
+  "description": "一个面向 agent 的 HTML 高保真设计 skill，覆盖原型、幻灯片、动画、视频导出、设计方向顾问和专家评审。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/alchaincyf/huashu-design",
+    "commit": "23f60d9b4304f20851469987c6e2c92242b94a45"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": [
+        "overview"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-system",
+      "title": "系统架构",
+      "pages": [
+        "skill-orchestration",
+        "starter-components"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-core",
+      "title": "核心功能",
+      "pages": [
+        "design-context-assets",
+        "fallback-design-styles",
+        "prototypes-tweaks-verification"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-pipelines",
+      "title": "交付管线",
+      "pages": [
+        "slide-deck-pptx",
+        "motion-video-audio"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-quality",
+      "title": "质量与分发",
+      "pages": [
+        "workflow-quality",
+        "repository-assets-license"
+      ],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-system",
+    "section-core",
+    "section-pipelines",
+    "section-quality"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "description": "仓库定位、交付能力、目录地图与阅读路线。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "README.en.md",
+        "SKILL.md",
+        "LICENSE",
+        "00-repo-inventory.md"
+      ],
+      "relatedPages": [
+        "skill-orchestration",
+        "starter-components",
+        "workflow-quality"
+      ],
+      "file": "pages/overview.md"
+    },
+    {
+      "id": "skill-orchestration",
+      "title": "Skill 编排与主提示词",
+      "description": "解释 SKILL.md 如何把事实验证、资产协议、工作流和任务路由组织成 agent 行为。",
+      "importance": "high",
+      "filePaths": [
+        "SKILL.md",
+        "references/workflow.md",
+        "references/design-context.md",
+        "references/content-guidelines.md",
+        "test-prompts.json"
+      ],
+      "relatedPages": [
+        "design-context-assets",
+        "fallback-design-styles",
+        "workflow-quality"
+      ],
+      "file": "pages/skill-orchestration.md"
+    },
+    {
+      "id": "design-context-assets",
+      "title": "Design Context 与核心资产协议",
+      "description": "解析从已有上下文出发、事实验证和品牌/产品资产采集的硬流程。",
+      "importance": "high",
+      "filePaths": [
+        "SKILL.md",
+        "references/design-context.md",
+        "assets/personal-asset-index.example.json",
+        "README.md",
+        "LICENSE"
+      ],
+      "relatedPages": [
+        "skill-orchestration",
+        "fallback-design-styles",
+        "prototypes-tweaks-verification"
+      ],
+      "file": "pages/design-context-assets.md"
+    },
+    {
+      "id": "fallback-design-styles",
+      "title": "设计方向顾问与风格库",
+      "description": "覆盖需求模糊时的 Fallback 模式、20 种设计哲学和 24 个 showcase。",
+      "importance": "high",
+      "filePaths": [
+        "SKILL.md",
+        "references/design-styles.md",
+        "assets/showcases/INDEX.md",
+        "references/scene-templates.md",
+        "README.md"
+      ],
+      "relatedPages": [
+        "design-context-assets",
+        "starter-components",
+        "workflow-quality"
+      ],
+      "file": "pages/fallback-design-styles.md"
+    },
+    {
+      "id": "starter-components",
+      "title": "Starter Components 架构",
+      "description": "说明 assets 下的动画、幻灯片、设备边框和变体画布组件边界。",
+      "importance": "high",
+      "filePaths": [
+        "assets/animations.jsx",
+        "assets/deck_stage.js",
+        "assets/deck_index.html",
+        "assets/design_canvas.jsx",
+        "assets/ios_frame.jsx",
+        "assets/android_frame.jsx",
+        "assets/browser_window.jsx",
+        "assets/macos_window.jsx",
+        "SKILL.md"
+      ],
+      "relatedPages": [
+        "slide-deck-pptx",
+        "motion-video-audio",
+        "prototypes-tweaks-verification"
+      ],
+      "file": "pages/starter-components.md"
+    },
+    {
+      "id": "slide-deck-pptx",
+      "title": "幻灯片、PDF 与可编辑 PPTX 管线",
+      "description": "解释 HTML-first deck 架构、PDF/PPTX 分支和 html2pptx 的约束。",
+      "importance": "high",
+      "filePaths": [
+        "references/slide-decks.md",
+        "references/editable-pptx.md",
+        "assets/deck_index.html",
+        "assets/deck_stage.js",
+        "scripts/html2pptx.js",
+        "scripts/export_deck_pptx.mjs"
+      ],
+      "relatedPages": [
+        "starter-components",
+        "workflow-quality",
+        "prototypes-tweaks-verification"
+      ],
+      "file": "pages/slide-deck-pptx.md"
+    },
+    {
+      "id": "motion-video-audio",
+      "title": "Motion、视频导出与音频系统",
+      "description": "覆盖 Stage/Sprite 时间轴、Playwright 录制、MP4/GIF 派生、BGM+SFX 双轨。",
+      "importance": "high",
+      "filePaths": [
+        "assets/animations.jsx",
+        "references/animation-pitfalls.md",
+        "references/animation-best-practices.md",
+        "references/video-export.md",
+        "references/audio-design-rules.md",
+        "references/sfx-library.md",
+        "scripts/render-video.js",
+        "scripts/convert-formats.sh",
+        "scripts/add-music.sh"
+      ],
+      "relatedPages": [
+        "starter-components",
+        "workflow-quality",
+        "repository-assets-license"
+      ],
+      "file": "pages/motion-video-audio.md"
+    },
+    {
+      "id": "prototypes-tweaks-verification",
+      "title": "原型、Tweaks 与验证闭环",
+      "description": "说明移动原型交付形态、Tweaks localStorage 模式和 Playwright 验证。",
+      "importance": "medium",
+      "filePaths": [
+        "SKILL.md",
+        "references/tweaks-system.md",
+        "references/verification.md",
+        "scripts/verify.py",
+        "assets/ios_frame.jsx",
+        "assets/design_canvas.jsx",
+        "test-prompts.json"
+      ],
+      "relatedPages": [
+        "starter-components",
+        "workflow-quality",
+        "design-context-assets"
+      ],
+      "file": "pages/prototypes-tweaks-verification.md"
+    },
+    {
+      "id": "workflow-quality",
+      "title": "工作流、质量门与测试提示",
+      "description": "整理 Junior Designer 检查点、反 AI slop、异常处理和测试 prompt。",
+      "importance": "medium",
+      "filePaths": [
+        "SKILL.md",
+        "references/workflow.md",
+        "references/content-guidelines.md",
+        "references/verification.md",
+        "test-prompts.json",
+        ".gitignore"
+      ],
+      "relatedPages": [
+        "skill-orchestration",
+        "prototypes-tweaks-verification",
+        "repository-assets-license"
+      ],
+      "file": "pages/workflow-quality.md"
+    },
+    {
+      "id": "repository-assets-license",
+      "title": "仓库资产、分发边界与授权",
+      "description": "总结仓库静态资产、忽略规则、个人素材隐私和个人使用许可证。",
+      "importance": "medium",
+      "filePaths": [
+        "README.md",
+        "README.en.md",
+        "LICENSE",
+        ".gitignore",
+        "assets/personal-asset-index.example.json",
+        "references/sfx-library.md",
+        "00-repo-inventory.md"
+      ],
+      "relatedPages": [
+        "overview",
+        "motion-video-audio",
+        "workflow-quality"
+      ],
+      "file": "pages/repository-assets-license.md"
+    }
+  ]
+}

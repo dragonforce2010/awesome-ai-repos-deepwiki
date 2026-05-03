@@ -1,0 +1,256 @@
+{
+  "title": "agency-agents DeepWiki",
+  "description": "面向 The Agency agent 目录库的中文源码导览，覆盖 agent 编写、目录分工、多工具转换、安装、本地化、NEXUS 编排和质量安全边界。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/msitarzewski/agency-agents",
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/agency-agents",
+    "commit": "783f6a72bfd7f3135700ac273c619d92821b419a"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": [
+        "overview",
+        "repository-map"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-agents",
+      "title": "Agent 资产模型",
+      "pages": [
+        "agent-authoring-model",
+        "agent-catalog"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-orchestration",
+      "title": "编排与使用",
+      "pages": [
+        "nexus-orchestration",
+        "examples-use-cases"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-tooling",
+      "title": "转换、安装与本地化",
+      "pages": [
+        "conversion-pipeline",
+        "installation-and-tooling",
+        "localization"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-quality",
+      "title": "质量与安全",
+      "pages": [
+        "quality-security"
+      ],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-agents",
+    "section-orchestration",
+    "section-tooling",
+    "section-quality"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "仓库定位、核心资产、阅读路线和使用边界。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "examples/README.md",
+        "integrations/README.md",
+        "SECURITY.md"
+      ],
+      "relatedPages": [
+        "repository-map",
+        "agent-catalog",
+        "installation-and-tooling"
+      ]
+    },
+    {
+      "id": "repository-map",
+      "title": "仓库结构与内容地图",
+      "file": "pages/repository-map.md",
+      "description": "解释顶层目录、文件类型、文档与自动化入口。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "integrations/README.md",
+        "scripts/install.sh",
+        "scripts/convert.sh",
+        "scripts/lint-agents.sh"
+      ],
+      "relatedPages": [
+        "overview",
+        "agent-catalog",
+        "conversion-pipeline"
+      ]
+    },
+    {
+      "id": "agent-authoring-model",
+      "title": "Agent 编写模型",
+      "file": "pages/agent-authoring-model.md",
+      "description": "说明 agent Markdown frontmatter、正文结构、设计原则和贡献流程。",
+      "importance": "high",
+      "filePaths": [
+        "CONTRIBUTING.md",
+        "engineering/engineering-frontend-developer.md",
+        "testing/testing-reality-checker.md",
+        "specialized/agents-orchestrator.md",
+        "scripts/lint-agents.sh"
+      ],
+      "relatedPages": [
+        "agent-catalog",
+        "quality-security",
+        "conversion-pipeline"
+      ]
+    },
+    {
+      "id": "agent-catalog",
+      "title": "Agent 目录与专业分工",
+      "file": "pages/agent-catalog.md",
+      "description": "梳理各 category 的 agent 数量、分工和代表性角色。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "engineering/engineering-frontend-developer.md",
+        "testing/testing-reality-checker.md",
+        "specialized/agents-orchestrator.md"
+      ],
+      "relatedPages": [
+        "overview",
+        "agent-authoring-model",
+        "nexus-orchestration"
+      ]
+    },
+    {
+      "id": "nexus-orchestration",
+      "title": "NEXUS 多 Agent 编排",
+      "file": "pages/nexus-orchestration.md",
+      "description": "解释 NEXUS 的七阶段流水线、模式、质量门和 Dev-QA 循环。",
+      "importance": "high",
+      "filePaths": [
+        "strategy/QUICKSTART.md",
+        "strategy/nexus-strategy.md",
+        "strategy/playbooks/phase-3-build.md",
+        "specialized/agents-orchestrator.md",
+        "examples/README.md"
+      ],
+      "relatedPages": [
+        "agent-catalog",
+        "examples-use-cases",
+        "quality-security"
+      ]
+    },
+    {
+      "id": "conversion-pipeline",
+      "title": "转换流水线",
+      "file": "pages/conversion-pipeline.md",
+      "description": "说明 convert.sh 如何把 Markdown agent 转成各工具格式。",
+      "importance": "medium",
+      "filePaths": [
+        "scripts/convert.sh",
+        "integrations/README.md",
+        "integrations/cursor/README.md",
+        "integrations/gemini-cli/README.md",
+        "integrations/openclaw/README.md"
+      ],
+      "relatedPages": [
+        "installation-and-tooling",
+        "agent-authoring-model",
+        "repository-map"
+      ]
+    },
+    {
+      "id": "installation-and-tooling",
+      "title": "安装与工具集成",
+      "file": "pages/installation-and-tooling.md",
+      "description": "说明 install.sh 的检测、安装目标和 home/project scoped 区别。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "integrations/README.md",
+        "scripts/install.sh",
+        "integrations/cursor/README.md",
+        "integrations/gemini-cli/README.md",
+        "integrations/openclaw/README.md"
+      ],
+      "relatedPages": [
+        "conversion-pipeline",
+        "repository-map",
+        "localization"
+      ]
+    },
+    {
+      "id": "quality-security",
+      "title": "质量门禁与安全边界",
+      "file": "pages/quality-security.md",
+      "description": "覆盖 lint 规则、CI、贡献前检查和安全政策。",
+      "importance": "medium",
+      "filePaths": [
+        "scripts/lint-agents.sh",
+        ".github/workflows/lint-agents.yml",
+        "CONTRIBUTING.md",
+        "SECURITY.md",
+        "testing/testing-reality-checker.md"
+      ],
+      "relatedPages": [
+        "agent-authoring-model",
+        "nexus-orchestration",
+        "installation-and-tooling"
+      ]
+    },
+    {
+      "id": "localization",
+      "title": "中文本地化支持",
+      "file": "pages/localization.md",
+      "description": "说明 i18n 脚本、中文 agent 名称映射和 Copilot 安装后的本地化路径。",
+      "importance": "medium",
+      "filePaths": [
+        "scripts/i18n/README.md",
+        "scripts/i18n/agent-names-zh.json",
+        "scripts/i18n/localize-agents-zh.ps1",
+        "scripts/install.sh"
+      ],
+      "relatedPages": [
+        "installation-and-tooling",
+        "agent-catalog",
+        "quality-security"
+      ]
+    },
+    {
+      "id": "examples-use-cases",
+      "title": "示例与使用场景",
+      "file": "pages/examples-use-cases.md",
+      "description": "总结 README、examples 和 NEXUS quickstart 中的组合使用方式。",
+      "importance": "medium",
+      "filePaths": [
+        "examples/README.md",
+        "README.md",
+        "strategy/QUICKSTART.md",
+        "strategy/nexus-strategy.md",
+        "strategy/playbooks/phase-3-build.md"
+      ],
+      "relatedPages": [
+        "nexus-orchestration",
+        "agent-catalog",
+        "overview"
+      ]
+    }
+  ]
+}

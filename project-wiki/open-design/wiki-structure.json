@@ -1,0 +1,183 @@
+{
+  "projectName": "open-design",
+  "repoUrl": "https://github.com/nexu-io/open-design",
+  "sourceCommit": "9d700ec74fc671af845d68af472f7c5c6e0fcfc9",
+  "language": "zh-CN",
+  "outputContract": "deepwiki-it",
+  "description": "Open Design 是一个 local-first 的设计 agent 工作台：以 Web/daemon/desktop 三层结构组织多 agent CLI、技能文件、设计系统、媒体生成和 artifact 预览交付。",
+  "sections": [
+    {
+      "title": "入口与总体模型",
+      "pages": [
+        "overview",
+        "system-architecture"
+      ]
+    },
+    {
+      "title": "运行时链路",
+      "pages": [
+        "agent-runtime",
+        "daemon-api"
+      ]
+    },
+    {
+      "title": "创作体验",
+      "pages": [
+        "web-workspace",
+        "prompt-artifact-flow"
+      ]
+    },
+    {
+      "title": "能力资产",
+      "pages": [
+        "skills-design-systems",
+        "media-generation"
+      ]
+    },
+    {
+      "title": "交付与质量",
+      "pages": [
+        "desktop-packaging-lifecycle",
+        "testing-release-ops"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "path": "pages/overview.md",
+      "summary": "解释 Open Design 的定位、仓库构成、核心对象和使用入口。",
+      "filePaths": [
+        "README.md",
+        "package.json",
+        "pnpm-workspace.yaml",
+        "docs/architecture.md"
+      ]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与拓扑",
+      "path": "pages/system-architecture.md",
+      "summary": "梳理 Web、daemon、agent CLI、桌面容器和静态部署之间的拓扑关系。",
+      "filePaths": [
+        "docs/architecture.md",
+        "apps/daemon/src/server.ts",
+        "apps/web/src/App.tsx",
+        "apps/desktop/src/main/runtime.ts"
+      ]
+    },
+    {
+      "id": "agent-runtime",
+      "title": "Agent 适配器与运行链路",
+      "path": "pages/agent-runtime.md",
+      "summary": "说明 agent 检测、适配器接口、run 生命周期、SSE 事件和取消/恢复机制。",
+      "filePaths": [
+        "docs/agent-adapters.md",
+        "apps/daemon/src/agents.ts",
+        "apps/daemon/src/server.ts",
+        "apps/daemon/src/runs.ts",
+        "apps/web/src/providers/daemon.ts"
+      ]
+    },
+    {
+      "id": "daemon-api",
+      "title": "Daemon API、本地数据与安全边界",
+      "path": "pages/daemon-api.md",
+      "summary": "覆盖 daemon 路由、SQLite 元数据、项目文件边界、BYOK 代理和 SSRF 防护。",
+      "filePaths": [
+        "apps/daemon/src/server.ts",
+        "apps/daemon/src/db.ts",
+        "apps/daemon/src/projects.ts",
+        "apps/daemon/src/media.ts",
+        "apps/daemon/src/app-config.ts",
+        "packages/contracts/src/api/app-config.ts"
+      ]
+    },
+    {
+      "id": "web-workspace",
+      "title": "Web 工作台、预览与导出",
+      "path": "pages/web-workspace.md",
+      "summary": "跟踪前端状态加载、项目视图、iframe 预览、artifact manifest 和导出能力。",
+      "filePaths": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/components/ProjectView.tsx",
+        "apps/web/src/components/FileWorkspace.tsx",
+        "apps/web/src/runtime/srcdoc.ts",
+        "apps/web/src/artifacts/manifest.ts",
+        "apps/web/src/runtime/exports.ts",
+        "apps/web/src/state/config.ts",
+        "apps/web/src/types.ts"
+      ]
+    },
+    {
+      "id": "skills-design-systems",
+      "title": "Skills、Design Systems 与 Craft 注入",
+      "path": "pages/skills-design-systems.md",
+      "summary": "解释 SKILL.md 协议、注册表优先级、design-system 解析、craft references 和输出镜像。",
+      "filePaths": [
+        "README.md",
+        "docs/skills-protocol.md",
+        "docs/modes.md",
+        "apps/daemon/src/skills.ts",
+        "apps/daemon/src/design-systems.ts",
+        "apps/daemon/src/prompts/system.ts"
+      ]
+    },
+    {
+      "id": "prompt-artifact-flow",
+      "title": "Prompt 栈、发现表单与 Artifact 交付",
+      "path": "pages/prompt-artifact-flow.md",
+      "summary": "描述 discovery form、prompt 分层、metadata 注入、artifact 保存和 lint 反馈闭环。",
+      "filePaths": [
+        "apps/daemon/src/prompts/system.ts",
+        "apps/daemon/src/prompts/discovery.ts",
+        "apps/daemon/src/server.ts",
+        "apps/web/src/components/NewProjectPanel.tsx",
+        "apps/web/src/components/ProjectView.tsx"
+      ]
+    },
+    {
+      "id": "media-generation",
+      "title": "图像、视频、音频生成与模板库",
+      "path": "pages/media-generation.md",
+      "summary": "解释媒体 surface 的模型选择、prompt template、dispatcher 契约和长任务等待。",
+      "filePaths": [
+        "README.md",
+        "apps/daemon/src/media.ts",
+        "apps/daemon/src/media-models.ts",
+        "apps/daemon/src/prompt-templates.ts",
+        "apps/daemon/src/prompts/media-contract.ts",
+        "apps/daemon/src/server.ts"
+      ]
+    },
+    {
+      "id": "desktop-packaging-lifecycle",
+      "title": "Desktop、Sidecar 与本地生命周期",
+      "path": "pages/desktop-packaging-lifecycle.md",
+      "summary": "说明 desktop runtime、packaged sidecars、tools-dev 生命周期管理和平台差异。",
+      "filePaths": [
+        "apps/desktop/src/main/index.ts",
+        "apps/desktop/src/main/runtime.ts",
+        "apps/packaged/src/index.ts",
+        "apps/packaged/src/sidecars.ts",
+        "tools/dev/src/index.ts"
+      ]
+    },
+    {
+      "id": "testing-release-ops",
+      "title": "测试、CI、发布与运维边界",
+      "path": "pages/testing-release-ops.md",
+      "summary": "汇总 monorepo 脚本、E2E 覆盖、GitHub Actions 验证和稳定/测试版发布流水线。",
+      "filePaths": [
+        "package.json",
+        "e2e/package.json",
+        "e2e/specs/app.spec.ts",
+        ".github/workflows/ci.yml",
+        ".github/workflows/release-stable.yml",
+        ".github/workflows/release-beta.yml",
+        "apps/daemon/tests/app-config.test.ts"
+      ]
+    }
+  ]
+}

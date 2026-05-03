@@ -1,0 +1,447 @@
+{
+  "count": 55,
+  "translationMode": "chinese-guide-with-full-original",
+  "modelAttempt": "ollama kimi-k2.5:cloud returned 403 Forbidden",
+  "entries": [
+    {
+      "slug": "saas-landing-skill",
+      "name": "saas-landing",
+      "zhTitle": "SaaS 落地页示例技能",
+      "sourcePath": "docs/examples/saas-landing-skill/SKILL.md",
+      "outputPath": "skills/saas-landing-skill/SKILL.md",
+      "lines": 121
+    },
+    {
+      "slug": "audio-jingle",
+      "name": "audio-jingle",
+      "zhTitle": "音频广告短铃技能",
+      "sourcePath": "skills/audio-jingle/SKILL.md",
+      "outputPath": "skills/audio-jingle/SKILL.md",
+      "lines": 133
+    },
+    {
+      "slug": "blog-post",
+      "name": "blog-post",
+      "zhTitle": "长篇博客文章技能",
+      "sourcePath": "skills/blog-post/SKILL.md",
+      "outputPath": "skills/blog-post/SKILL.md",
+      "lines": 80
+    },
+    {
+      "slug": "critique",
+      "name": "critique",
+      "zhTitle": "设计批评与质量审查技能",
+      "sourcePath": "skills/critique/SKILL.md",
+      "outputPath": "skills/critique/SKILL.md",
+      "lines": 259
+    },
+    {
+      "slug": "dashboard",
+      "name": "dashboard",
+      "zhTitle": "数据仪表盘技能",
+      "sourcePath": "skills/dashboard/SKILL.md",
+      "outputPath": "skills/dashboard/SKILL.md",
+      "lines": 75
+    },
+    {
+      "slug": "dating-web",
+      "name": "dating-web",
+      "zhTitle": "约会网站原型技能",
+      "sourcePath": "skills/dating-web/SKILL.md",
+      "outputPath": "skills/dating-web/SKILL.md",
+      "lines": 94
+    },
+    {
+      "slug": "design-brief",
+      "name": "design-brief",
+      "zhTitle": "设计简报技能",
+      "sourcePath": "skills/design-brief/SKILL.md",
+      "outputPath": "skills/design-brief/SKILL.md",
+      "lines": 253
+    },
+    {
+      "slug": "digital-eguide",
+      "name": "digital-eguide",
+      "zhTitle": "数字指南电子书技能",
+      "sourcePath": "skills/digital-eguide/SKILL.md",
+      "outputPath": "skills/digital-eguide/SKILL.md",
+      "lines": 92
+    },
+    {
+      "slug": "docs-page",
+      "name": "docs-page",
+      "zhTitle": "文档页技能",
+      "sourcePath": "skills/docs-page/SKILL.md",
+      "outputPath": "skills/docs-page/SKILL.md",
+      "lines": 74
+    },
+    {
+      "slug": "email-marketing",
+      "name": "email-marketing",
+      "zhTitle": "邮件营销技能",
+      "sourcePath": "skills/email-marketing/SKILL.md",
+      "outputPath": "skills/email-marketing/SKILL.md",
+      "lines": 86
+    },
+    {
+      "slug": "eng-runbook",
+      "name": "eng-runbook",
+      "zhTitle": "工程运行手册技能",
+      "sourcePath": "skills/eng-runbook/SKILL.md",
+      "outputPath": "skills/eng-runbook/SKILL.md",
+      "lines": 52
+    },
+    {
+      "slug": "finance-report",
+      "name": "finance-report",
+      "zhTitle": "财务报告技能",
+      "sourcePath": "skills/finance-report/SKILL.md",
+      "outputPath": "skills/finance-report/SKILL.md",
+      "lines": 61
+    },
+    {
+      "slug": "gamified-app",
+      "name": "gamified-app",
+      "zhTitle": "游戏化应用技能",
+      "sourcePath": "skills/gamified-app/SKILL.md",
+      "outputPath": "skills/gamified-app/SKILL.md",
+      "lines": 108
+    },
+    {
+      "slug": "guizang-ppt",
+      "name": "magazine-web-ppt",
+      "zhTitle": "归藏风格网页 PPT 技能",
+      "sourcePath": "skills/guizang-ppt/SKILL.md",
+      "outputPath": "skills/guizang-ppt/SKILL.md",
+      "lines": 315
+    },
+    {
+      "slug": "hatch-pet",
+      "name": "hatch-pet",
+      "zhTitle": "孵化宠物互动体验技能",
+      "sourcePath": "skills/hatch-pet/SKILL.md",
+      "outputPath": "skills/hatch-pet/SKILL.md",
+      "lines": 356
+    },
+    {
+      "slug": "hr-onboarding",
+      "name": "hr-onboarding",
+      "zhTitle": "HR 入职引导技能",
+      "sourcePath": "skills/hr-onboarding/SKILL.md",
+      "outputPath": "skills/hr-onboarding/SKILL.md",
+      "lines": 51
+    },
+    {
+      "slug": "html-ppt",
+      "name": "html-ppt",
+      "zhTitle": "通用 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt/SKILL.md",
+      "outputPath": "skills/html-ppt/SKILL.md",
+      "lines": 252
+    },
+    {
+      "slug": "html-ppt-course-module",
+      "name": "html-ppt-course-module",
+      "zhTitle": "HTML PPT 课程模块技能",
+      "sourcePath": "skills/html-ppt-course-module/SKILL.md",
+      "outputPath": "skills/html-ppt-course-module/SKILL.md",
+      "lines": 80
+    },
+    {
+      "slug": "html-ppt-dir-key-nav-minimal",
+      "name": "html-ppt-dir-key-nav-minimal",
+      "zhTitle": "极简目录键盘导航 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-dir-key-nav-minimal/SKILL.md",
+      "outputPath": "skills/html-ppt-dir-key-nav-minimal/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "html-ppt-graphify-dark-graph",
+      "name": "html-ppt-graphify-dark-graph",
+      "zhTitle": "深色图谱 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-graphify-dark-graph/SKILL.md",
+      "outputPath": "skills/html-ppt-graphify-dark-graph/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "html-ppt-hermes-cyber-terminal",
+      "name": "html-ppt-hermes-cyber-terminal",
+      "zhTitle": "Hermes 赛博终端 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-hermes-cyber-terminal/SKILL.md",
+      "outputPath": "skills/html-ppt-hermes-cyber-terminal/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "html-ppt-knowledge-arch-blueprint",
+      "name": "html-ppt-knowledge-arch-blueprint",
+      "zhTitle": "知识架构蓝图 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-knowledge-arch-blueprint/SKILL.md",
+      "outputPath": "skills/html-ppt-knowledge-arch-blueprint/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "html-ppt-obsidian-claude-gradient",
+      "name": "html-ppt-obsidian-claude-gradient",
+      "zhTitle": "Obsidian/Claude 渐变 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-obsidian-claude-gradient/SKILL.md",
+      "outputPath": "skills/html-ppt-obsidian-claude-gradient/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "html-ppt-pitch-deck",
+      "name": "html-ppt-pitch-deck",
+      "zhTitle": "Pitch Deck HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-pitch-deck/SKILL.md",
+      "outputPath": "skills/html-ppt-pitch-deck/SKILL.md",
+      "lines": 80
+    },
+    {
+      "slug": "html-ppt-presenter-mode-reveal",
+      "name": "html-ppt-presenter-mode",
+      "zhTitle": "演讲者模式 Reveal HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-presenter-mode-reveal/SKILL.md",
+      "outputPath": "skills/html-ppt-presenter-mode-reveal/SKILL.md",
+      "lines": 80
+    },
+    {
+      "slug": "html-ppt-product-launch",
+      "name": "html-ppt-product-launch",
+      "zhTitle": "产品发布 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-product-launch/SKILL.md",
+      "outputPath": "skills/html-ppt-product-launch/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "html-ppt-tech-sharing",
+      "name": "html-ppt-tech-sharing",
+      "zhTitle": "技术分享 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-tech-sharing/SKILL.md",
+      "outputPath": "skills/html-ppt-tech-sharing/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "html-ppt-testing-safety-alert",
+      "name": "html-ppt-testing-safety-alert",
+      "zhTitle": "测试安全警示 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-testing-safety-alert/SKILL.md",
+      "outputPath": "skills/html-ppt-testing-safety-alert/SKILL.md",
+      "lines": 80
+    },
+    {
+      "slug": "html-ppt-weekly-report",
+      "name": "html-ppt-weekly-report",
+      "zhTitle": "周报 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-weekly-report/SKILL.md",
+      "outputPath": "skills/html-ppt-weekly-report/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "html-ppt-xhs-pastel-card",
+      "name": "html-ppt-xhs-pastel-card",
+      "zhTitle": "小红书粉彩卡片 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-xhs-pastel-card/SKILL.md",
+      "outputPath": "skills/html-ppt-xhs-pastel-card/SKILL.md",
+      "lines": 80
+    },
+    {
+      "slug": "html-ppt-xhs-post",
+      "name": "html-ppt-xhs-post",
+      "zhTitle": "小红书图文 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-xhs-post/SKILL.md",
+      "outputPath": "skills/html-ppt-xhs-post/SKILL.md",
+      "lines": 80
+    },
+    {
+      "slug": "html-ppt-xhs-white-editorial",
+      "name": "html-ppt-xhs-white-editorial",
+      "zhTitle": "小红书白色编辑风 HTML PPT 技能",
+      "sourcePath": "skills/html-ppt-xhs-white-editorial/SKILL.md",
+      "outputPath": "skills/html-ppt-xhs-white-editorial/SKILL.md",
+      "lines": 79
+    },
+    {
+      "slug": "hyperframes",
+      "name": "hyperframes",
+      "zhTitle": "HyperFrames 视频合成技能",
+      "sourcePath": "skills/hyperframes/SKILL.md",
+      "outputPath": "skills/hyperframes/SKILL.md",
+      "lines": 494
+    },
+    {
+      "slug": "image-poster",
+      "name": "image-poster",
+      "zhTitle": "图像海报技能",
+      "sourcePath": "skills/image-poster/SKILL.md",
+      "outputPath": "skills/image-poster/SKILL.md",
+      "lines": 105
+    },
+    {
+      "slug": "invoice",
+      "name": "invoice",
+      "zhTitle": "发票/账单技能",
+      "sourcePath": "skills/invoice/SKILL.md",
+      "outputPath": "skills/invoice/SKILL.md",
+      "lines": 49
+    },
+    {
+      "slug": "kanban-board",
+      "name": "kanban-board",
+      "zhTitle": "看板技能",
+      "sourcePath": "skills/kanban-board/SKILL.md",
+      "outputPath": "skills/kanban-board/SKILL.md",
+      "lines": 49
+    },
+    {
+      "slug": "magazine-poster",
+      "name": "magazine-poster",
+      "zhTitle": "杂志海报技能",
+      "sourcePath": "skills/magazine-poster/SKILL.md",
+      "outputPath": "skills/magazine-poster/SKILL.md",
+      "lines": 89
+    },
+    {
+      "slug": "meeting-notes",
+      "name": "meeting-notes",
+      "zhTitle": "会议纪要技能",
+      "sourcePath": "skills/meeting-notes/SKILL.md",
+      "outputPath": "skills/meeting-notes/SKILL.md",
+      "lines": 48
+    },
+    {
+      "slug": "mobile-app",
+      "name": "mobile-app",
+      "zhTitle": "移动应用技能",
+      "sourcePath": "skills/mobile-app/SKILL.md",
+      "outputPath": "skills/mobile-app/SKILL.md",
+      "lines": 101
+    },
+    {
+      "slug": "mobile-onboarding",
+      "name": "mobile-onboarding",
+      "zhTitle": "移动端新手引导技能",
+      "sourcePath": "skills/mobile-onboarding/SKILL.md",
+      "outputPath": "skills/mobile-onboarding/SKILL.md",
+      "lines": 53
+    },
+    {
+      "slug": "motion-frames",
+      "name": "motion-frames",
+      "zhTitle": "动效分镜技能",
+      "sourcePath": "skills/motion-frames/SKILL.md",
+      "outputPath": "skills/motion-frames/SKILL.md",
+      "lines": 91
+    },
+    {
+      "slug": "pm-spec",
+      "name": "pm-spec",
+      "zhTitle": "产品规格文档技能",
+      "sourcePath": "skills/pm-spec/SKILL.md",
+      "outputPath": "skills/pm-spec/SKILL.md",
+      "lines": 53
+    },
+    {
+      "slug": "pptx-html-fidelity-audit",
+      "name": "pptx-html-fidelity-audit",
+      "zhTitle": "PPTX/HTML 保真审计技能",
+      "sourcePath": "skills/pptx-html-fidelity-audit/SKILL.md",
+      "outputPath": "skills/pptx-html-fidelity-audit/SKILL.md",
+      "lines": 255
+    },
+    {
+      "slug": "pricing-page",
+      "name": "pricing-page",
+      "zhTitle": "定价页技能",
+      "sourcePath": "skills/pricing-page/SKILL.md",
+      "outputPath": "skills/pricing-page/SKILL.md",
+      "lines": 78
+    },
+    {
+      "slug": "replit-deck",
+      "name": "replit-deck",
+      "zhTitle": "Replit 风格演示文稿技能",
+      "sourcePath": "skills/replit-deck/SKILL.md",
+      "outputPath": "skills/replit-deck/SKILL.md",
+      "lines": 234
+    },
+    {
+      "slug": "saas-landing",
+      "name": "saas-landing",
+      "zhTitle": "SaaS 落地页技能",
+      "sourcePath": "skills/saas-landing/SKILL.md",
+      "outputPath": "skills/saas-landing/SKILL.md",
+      "lines": 125
+    },
+    {
+      "slug": "simple-deck",
+      "name": "simple-deck",
+      "zhTitle": "简洁演示文稿技能",
+      "sourcePath": "skills/simple-deck/SKILL.md",
+      "outputPath": "skills/simple-deck/SKILL.md",
+      "lines": 121
+    },
+    {
+      "slug": "social-carousel",
+      "name": "social-carousel",
+      "zhTitle": "社交媒体轮播技能",
+      "sourcePath": "skills/social-carousel/SKILL.md",
+      "outputPath": "skills/social-carousel/SKILL.md",
+      "lines": 93
+    },
+    {
+      "slug": "sprite-animation",
+      "name": "sprite-animation",
+      "zhTitle": "精灵动画技能",
+      "sourcePath": "skills/sprite-animation/SKILL.md",
+      "outputPath": "skills/sprite-animation/SKILL.md",
+      "lines": 96
+    },
+    {
+      "slug": "team-okrs",
+      "name": "team-okrs",
+      "zhTitle": "团队 OKR 技能",
+      "sourcePath": "skills/team-okrs/SKILL.md",
+      "outputPath": "skills/team-okrs/SKILL.md",
+      "lines": 48
+    },
+    {
+      "slug": "tweaks",
+      "name": "tweaks",
+      "zhTitle": "局部调整技能",
+      "sourcePath": "skills/tweaks/SKILL.md",
+      "outputPath": "skills/tweaks/SKILL.md",
+      "lines": 241
+    },
+    {
+      "slug": "video-shortform",
+      "name": "video-shortform",
+      "zhTitle": "短视频技能",
+      "sourcePath": "skills/video-shortform/SKILL.md",
+      "outputPath": "skills/video-shortform/SKILL.md",
+      "lines": 129
+    },
+    {
+      "slug": "web-prototype",
+      "name": "web-prototype",
+      "zhTitle": "Web 原型技能",
+      "sourcePath": "skills/web-prototype/SKILL.md",
+      "outputPath": "skills/web-prototype/SKILL.md",
+      "lines": 98
+    },
+    {
+      "slug": "weekly-update",
+      "name": "weekly-update",
+      "zhTitle": "周更新技能",
+      "sourcePath": "skills/weekly-update/SKILL.md",
+      "outputPath": "skills/weekly-update/SKILL.md",
+      "lines": 51
+    },
+    {
+      "slug": "wireframe-sketch",
+      "name": "wireframe-sketch",
+      "zhTitle": "线框草图技能",
+      "sourcePath": "skills/wireframe-sketch/SKILL.md",
+      "outputPath": "skills/wireframe-sketch/SKILL.md",
+      "lines": 98
+    }
+  ]
+}

@@ -1,0 +1,3799 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/cursor-cookbook",
+    "remote": "https://github.com/cursor/cookbook.git",
+    "branch": "main",
+    "commit": "2f326663d3be5a3a86a4d11b679dbe8355259a36"
+  },
+  "file_count": 95,
+  "skipped_count": 22,
+  "files": [
+    {
+      "path": ".cursor/skills/dag-task-runner/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 225,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/dag-task-runner/examples/example_dag.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/dag-task-runner/scripts/canvas_writer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 649,
+      "symbols": [
+        {
+          "name": "TaskStatus",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "TaskState",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "RunState",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "initialRunState",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "CanvasWriter",
+          "type": "class",
+          "line": 61
+        },
+        {
+          "name": "renderCanvasSource",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "TaskStatus",
+          "type": "type",
+          "line": 149
+        },
+        {
+          "name": "Complexity",
+          "type": "type",
+          "line": 150
+        },
+        {
+          "name": "TaskState",
+          "type": "interface",
+          "line": 152
+        },
+        {
+          "name": "RunState",
+          "type": "interface",
+          "line": 168
+        },
+        {
+          "name": "pillToneFor",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "complexityTone",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "formatDuration",
+          "type": "function",
+          "line": 206
+        },
+        {
+          "name": "elapsed",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "totalTokens",
+          "type": "function",
+          "line": 221
+        },
+        {
+          "name": "taskElementId",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "getScrollY",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "saveScrollY",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "restoreScrollY",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "tick",
+          "type": "function",
+          "line": 265
+        },
+        {
+          "name": "DAGGraph",
+          "type": "function",
+          "line": 285
+        },
+        {
+          "name": "nodeFill",
+          "type": "function",
+          "line": 308
+        },
+        {
+          "name": "nodeStroke",
+          "type": "function",
+          "line": 321
+        },
+        {
+          "name": "statusGlyph",
+          "type": "function",
+          "line": 334
+        },
+        {
+          "name": "statusGlyphColor",
+          "type": "function",
+          "line": 347
+        },
+        {
+          "name": "TaskList",
+          "type": "function",
+          "line": 456
+        },
+        {
+          "name": "trailing",
+          "type": "function",
+          "line": 467
+        },
+        {
+          "name": "onScroll",
+          "type": "function",
+          "line": 552
+        },
+        {
+          "name": "handleNodeClick",
+          "type": "function",
+          "line": 560
+        },
+        {
+          "name": "scrollToTask",
+          "type": "function",
+          "line": 569
+        }
+      ]
+    },
+    {
+      "path": ".cursor/skills/dag-task-runner/scripts/dag.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 217,
+      "symbols": [
+        {
+          "name": "Complexity",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "ModelMap",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "ModelMapOverride",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "RawTask",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "DAG",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "parseDAG",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "validateTask",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "detectCycle",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "computeRanks",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "validateModelMap",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "createModelResolver",
+          "type": "function",
+          "line": 209
+        }
+      ]
+    },
+    {
+      "path": ".cursor/skills/dag-task-runner/scripts/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/dag-task-runner/scripts/run_dag.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 653,
+      "symbols": [
+        {
+          "name": "CliArgs",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "RunnerTaskRun",
+          "type": "interface",
+          "line": 54
+        },
+        {
+          "name": "parseArgs",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "parsePositiveInt",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "ModelOverrideSources",
+          "type": "interface",
+          "line": 135
+        },
+        {
+          "name": "mergeModelOverrides",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "defaultCanvasesDir",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "onUnhandledRejection",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "onUncaughtException",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "onSignal",
+          "type": "function",
+          "line": 218
+        },
+        {
+          "name": "failAndExit",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "runTask",
+          "type": "function",
+          "line": 321
+        },
+        {
+          "name": "publishIfDue",
+          "type": "function",
+          "line": 349
+        },
+        {
+          "name": "RunTaskOptions",
+          "type": "interface",
+          "line": 468
+        },
+        {
+          "name": "TimeoutError",
+          "type": "class",
+          "line": 489
+        },
+        {
+          "name": "isTimeoutError",
+          "type": "function",
+          "line": 496
+        },
+        {
+          "name": "StreamWaitTimeoutMessageOptions",
+          "type": "interface",
+          "line": 500
+        },
+        {
+          "name": "streamWaitTimeoutMessage",
+          "type": "function",
+          "line": 506
+        },
+        {
+          "name": "withTimeout",
+          "type": "function",
+          "line": 518
+        },
+        {
+          "name": "bestEffortCancel",
+          "type": "function",
+          "line": 536
+        },
+        {
+          "name": "BoundedTextBuffer",
+          "type": "class",
+          "line": 549
+        },
+        {
+          "name": "skipTask",
+          "type": "function",
+          "line": 570
+        },
+        {
+          "name": "markRunTerminated",
+          "type": "function",
+          "line": 587
+        },
+        {
+          "name": "buildUpstreamContext",
+          "type": "function",
+          "line": 609
+        },
+        {
+          "name": "truncate",
+          "type": "function",
+          "line": 631
+        },
+        {
+          "name": "formatMs",
+          "type": "function",
+          "line": 636
+        },
+        {
+          "name": "structuredCloneState",
+          "type": "function",
+          "line": 646
+        }
+      ]
+    },
+    {
+      "path": ".cursor/skills/dag-task-runner/scripts/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/components.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/next-env.d.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/next.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7086,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/pnpm-workspace.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/api/agents/[agentId]/artifacts/download/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 30,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/api/agents/[agentId]/artifacts/media/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 45,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/api/agents/[agentId]/artifacts/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/api/agents/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 37,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "body",
+          "type": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/api/models/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/api/repositories/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/api/session/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 65,
+      "symbols": [
+        {
+          "name": "SessionRequest",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "body",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "DELETE",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "jsonSession",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "sessionCookieAttributes",
+          "type": "function",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/layout.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/src/app/page.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/agent-kanban-app.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1350,
+      "symbols": [
+        {
+          "name": "GroupBy",
+          "type": "type",
+          "line": 54
+        },
+        {
+          "name": "IconComponent",
+          "type": "type",
+          "line": 55
+        },
+        {
+          "name": "GroupOption",
+          "type": "type",
+          "line": 57
+        },
+        {
+          "name": "SelectableGroupOption",
+          "type": "type",
+          "line": 64
+        },
+        {
+          "name": "SidebarFilter",
+          "type": "type",
+          "line": 68
+        },
+        {
+          "name": "AppStatus",
+          "type": "type",
+          "line": 70
+        },
+        {
+          "name": "ApiError",
+          "type": "type",
+          "line": 72
+        },
+        {
+          "name": "AgentKanbanApp",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "restore",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "handleSessionCreated",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "handleRefresh",
+          "type": "function",
+          "line": 198
+        },
+        {
+          "name": "handleForgetKey",
+          "type": "function",
+          "line": 205
+        },
+        {
+          "name": "handleAgentCreated",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "LoadingScreen",
+          "type": "function",
+          "line": 479
+        },
+        {
+          "name": "OnboardingScreen",
+          "type": "function",
+          "line": 492
+        },
+        {
+          "name": "handleSubmit",
+          "type": "function",
+          "line": 502
+        },
+        {
+          "name": "BoardColumn",
+          "type": "function",
+          "line": 580
+        },
+        {
+          "name": "BoardLoadingSkeleton",
+          "type": "function",
+          "line": 607
+        },
+        {
+          "name": "GroupOptionContent",
+          "type": "function",
+          "line": 717
+        },
+        {
+          "name": "AgentCardPreview",
+          "type": "function",
+          "line": 728
+        },
+        {
+          "name": "ArtifactTile",
+          "type": "function",
+          "line": 774
+        },
+        {
+          "name": "CreateAgentDialog",
+          "type": "function",
+          "line": 834
+        },
+        {
+          "name": "handleSubmit",
+          "type": "function",
+          "line": 859
+        },
+        {
+          "name": "SidebarItem",
+          "type": "function",
+          "line": 1040
+        },
+        {
+          "name": "EmptyBoard",
+          "type": "function",
+          "line": 1086
+        },
+        {
+          "name": "StatusBadge",
+          "type": "function",
+          "line": 1107
+        },
+        {
+          "name": "groupAgents",
+          "type": "function",
+          "line": 1121
+        },
+        {
+          "name": "dateBucketRank",
+          "type": "function",
+          "line": 1145
+        },
+        {
+          "name": "groupTitle",
+          "type": "function",
+          "line": 1149
+        },
+        {
+          "name": "searchAgents",
+          "type": "function",
+          "line": 1162
+        },
+        {
+          "name": "filterAgentsBySidebar",
+          "type": "function",
+          "line": 1182
+        },
+        {
+          "name": "isRecentlyActive",
+          "type": "function",
+          "line": 1198
+        },
+        {
+          "name": "getPreviewArtifact",
+          "type": "function",
+          "line": 1212
+        },
+        {
+          "name": "apiFetch",
+          "type": "function",
+          "line": 1220
+        },
+        {
+          "name": "fetchJson",
+          "type": "function",
+          "line": 1234
+        },
+        {
+          "name": "payload",
+          "type": "function",
+          "line": 1236
+        },
+        {
+          "name": "errorMessage",
+          "type": "function",
+          "line": 1245
+        },
+        {
+          "name": "getSelectableGroupOptions",
+          "type": "function",
+          "line": 1249
+        },
+        {
+          "name": "hasAgentValue",
+          "type": "function",
+          "line": 1263
+        },
+        {
+          "name": "groupOptionLabel",
+          "type": "function",
+          "line": 1272
+        },
+        {
+          "name": "isSelectableGroupBy",
+          "type": "function",
+          "line": 1276
+        },
+        {
+          "name": "titleCase",
+          "type": "function",
+          "line": 1283
+        },
+        {
+          "name": "formatStatusLabel",
+          "type": "function",
+          "line": 1289
+        },
+        {
+          "name": "dateBucket",
+          "type": "function",
+          "line": 1298
+        },
+        {
+          "name": "formatRelativeTime",
+          "type": "function",
+          "line": 1327
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/ui/badge.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 52,
+      "symbols": [
+        {
+          "name": "Badge",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/ui/button.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 58,
+      "symbols": [
+        {
+          "name": "Button",
+          "type": "function",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/ui/card.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 103,
+      "symbols": [
+        {
+          "name": "Card",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "CardHeader",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "CardTitle",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "CardDescription",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "CardAction",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "CardContent",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "CardFooter",
+          "type": "function",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/ui/input.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": [
+        {
+          "name": "Input",
+          "type": "function",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/ui/scroll-area.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "ScrollArea",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "ScrollBar",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/ui/select.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 202,
+      "symbols": [
+        {
+          "name": "SelectGroup",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "SelectValue",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "SelectTrigger",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "SelectContent",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "SelectLabel",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "SelectItem",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "SelectSeparator",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "SelectScrollUpButton",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "SelectScrollDownButton",
+          "type": "function",
+          "line": 173
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/ui/separator.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 25,
+      "symbols": [
+        {
+          "name": "Separator",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/components/ui/textarea.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 18,
+      "symbols": [
+        {
+          "name": "Textarea",
+          "type": "function",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/lib/agents/http.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 35,
+      "symbols": [
+        {
+          "name": "jsonError",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/lib/agents/server.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 974,
+      "symbols": [
+        {
+          "name": "Settings",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "Session",
+          "type": "type",
+          "line": 24
+        },
+        {
+          "name": "UnknownRecord",
+          "type": "type",
+          "line": 30
+        },
+        {
+          "name": "SdkAgentLike",
+          "type": "type",
+          "line": 32
+        },
+        {
+          "name": "AgentNamespace",
+          "type": "type",
+          "line": 40
+        },
+        {
+          "name": "CursorNamespace",
+          "type": "type",
+          "line": 48
+        },
+        {
+          "name": "RepositoryCacheEntry",
+          "type": "type",
+          "line": 54
+        },
+        {
+          "name": "RunSummary",
+          "type": "type",
+          "line": 60
+        },
+        {
+          "name": "MissingCursorApiKeyError",
+          "type": "class",
+          "line": 92
+        },
+        {
+          "name": "InvalidCursorApiKeyError",
+          "type": "class",
+          "line": 101
+        },
+        {
+          "name": "UnknownSessionError",
+          "type": "class",
+          "line": 110
+        },
+        {
+          "name": "publicSession",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "createSession",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "restoreSession",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "persistedApiKey",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "clearPersistedKey",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "requireSession",
+          "type": "function",
+          "line": 183
+        },
+        {
+          "name": "getCookie",
+          "type": "function",
+          "line": 205
+        },
+        {
+          "name": "listCloudAgents",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "createCloudAgent",
+          "type": "function",
+          "line": 262
+        },
+        {
+          "name": "listModels",
+          "type": "function",
+          "line": 303
+        },
+        {
+          "name": "listRepositories",
+          "type": "function",
+          "line": 315
+        },
+        {
+          "name": "listArtifactsForAgent",
+          "type": "function",
+          "line": 353
+        },
+        {
+          "name": "listRunsForAgent",
+          "type": "function",
+          "line": 379
+        },
+        {
+          "name": "downloadArtifact",
+          "type": "function",
+          "line": 397
+        },
+        {
+          "name": "readArtifactContent",
+          "type": "function",
+          "line": 425
+        },
+        {
+          "name": "validateCursorApiKey",
+          "type": "function",
+          "line": 479
+        },
+        {
+          "name": "getCurrentUser",
+          "type": "function",
+          "line": 495
+        },
+        {
+          "name": "resolveRepository",
+          "type": "function",
+          "line": 511
+        },
+        {
+          "name": "attachAgent",
+          "type": "function",
+          "line": 536
+        },
+        {
+          "name": "disposeAgent",
+          "type": "function",
+          "line": 548
+        },
+        {
+          "name": "readSettings",
+          "type": "function",
+          "line": 552
+        },
+        {
+          "name": "writeSettings",
+          "type": "function",
+          "line": 564
+        },
+        {
+          "name": "normalizeAgent",
+          "type": "function",
+          "line": 569
+        },
+        {
+          "name": "enrichAgentCardFromRuns",
+          "type": "function",
+          "line": 619
+        },
+        {
+          "name": "normalizeRun",
+          "type": "function",
+          "line": 648
+        },
+        {
+          "name": "normalizeAgentStatus",
+          "type": "function",
+          "line": 665
+        },
+        {
+          "name": "normalizeArtifact",
+          "type": "function",
+          "line": 687
+        },
+        {
+          "name": "withArtifactMediaUrl",
+          "type": "function",
+          "line": 708
+        },
+        {
+          "name": "compareArtifactPreviews",
+          "type": "function",
+          "line": 724
+        },
+        {
+          "name": "artifactRank",
+          "type": "function",
+          "line": 728
+        },
+        {
+          "name": "normalizeModel",
+          "type": "function",
+          "line": 738
+        },
+        {
+          "name": "normalizeRepository",
+          "type": "function",
+          "line": 752
+        },
+        {
+          "name": "extractArray",
+          "type": "function",
+          "line": 782
+        },
+        {
+          "name": "asRecord",
+          "type": "function",
+          "line": 798
+        },
+        {
+          "name": "firstRecord",
+          "type": "function",
+          "line": 802
+        },
+        {
+          "name": "firstRecordFromArray",
+          "type": "function",
+          "line": 812
+        },
+        {
+          "name": "firstString",
+          "type": "function",
+          "line": 825
+        },
+        {
+          "name": "firstNumber",
+          "type": "function",
+          "line": 838
+        },
+        {
+          "name": "firstTimestamp",
+          "type": "function",
+          "line": 851
+        },
+        {
+          "name": "firstStringFromArray",
+          "type": "function",
+          "line": 867
+        },
+        {
+          "name": "normalizeRepositoryUrl",
+          "type": "function",
+          "line": 877
+        },
+        {
+          "name": "normalizeRepositoryListUrl",
+          "type": "function",
+          "line": 890
+        },
+        {
+          "name": "labelFromRepositoryUrl",
+          "type": "function",
+          "line": 909
+        },
+        {
+          "name": "labelFromRepositoryString",
+          "type": "function",
+          "line": 913
+        },
+        {
+          "name": "getArtifactPreviewKind",
+          "type": "function",
+          "line": 921
+        },
+        {
+          "name": "contentTypeForArtifactPath",
+          "type": "function",
+          "line": 943
+        },
+        {
+          "name": "isNodeFileError",
+          "type": "function",
+          "line": 972
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/lib/agents/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 69,
+      "symbols": [
+        {
+          "name": "PublicUser",
+          "type": "type",
+          "line": 1
+        },
+        {
+          "name": "PublicSession",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "ModelOption",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "RepositoryOption",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "ArtifactPreview",
+          "type": "type",
+          "line": 27
+        },
+        {
+          "name": "AgentCard",
+          "type": "type",
+          "line": 36
+        },
+        {
+          "name": "AgentListResponse",
+          "type": "type",
+          "line": 53
+        },
+        {
+          "name": "CreateAgentInput",
+          "type": "type",
+          "line": 58
+        },
+        {
+          "name": "CreateAgentResponse",
+          "type": "type",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/src/lib/utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 6,
+      "symbols": [
+        {
+          "name": "cn",
+          "type": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "sdk/agent-kanban/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/components.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/next.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7753,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/pnpm-workspace.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/src/app/api/chat/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 75,
+      "symbols": [
+        {
+          "name": "ChatRequest",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "body",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "send",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "getFriendlyErrorMessage",
+          "type": "function",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/app/api/project-name/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 77,
+      "symbols": [
+        {
+          "name": "ProjectNameRequest",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "body",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "toProjectNameMessages",
+          "type": "function",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/app/api/sessions/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 86,
+      "symbols": [
+        {
+          "name": "SessionRequest",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "body",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/app/api/settings/api-key/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 9,
+      "symbols": [
+        {
+          "name": "DELETE",
+          "type": "function",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/app/layout.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/src/app/page.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "sdk/app-builder/src/components/app-builder.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 4201,
+      "symbols": [
+        {
+          "name": "Session",
+          "type": "type",
+          "line": 68
+        },
+        {
+          "name": "CurrentUser",
+          "type": "type",
+          "line": 76
+        },
+        {
+          "name": "ModelCatalogItem",
+          "type": "type",
+          "line": 81
+        },
+        {
+          "name": "ModelParameterConfig",
+          "type": "type",
+          "line": 89
+        },
+        {
+          "name": "ModelParameterValue",
+          "type": "type",
+          "line": 95
+        },
+        {
+          "name": "ModelParam",
+          "type": "type",
+          "line": 100
+        },
+        {
+          "name": "ChatMessage",
+          "type": "type",
+          "line": 105
+        },
+        {
+          "name": "ProjectNameMessage",
+          "type": "type",
+          "line": 119
+        },
+        {
+          "name": "Conversation",
+          "type": "type",
+          "line": 124
+        },
+        {
+          "name": "PersistedAppState",
+          "type": "type",
+          "line": 135
+        },
+        {
+          "name": "ConversationRuntimeState",
+          "type": "type",
+          "line": 141
+        },
+        {
+          "name": "StreamPayload",
+          "type": "type",
+          "line": 148
+        },
+        {
+          "name": "ActivityDescriptor",
+          "type": "type",
+          "line": 162
+        },
+        {
+          "name": "ActivityState",
+          "type": "type",
+          "line": 172
+        },
+        {
+          "name": "ActivityIcon",
+          "type": "type",
+          "line": 174
+        },
+        {
+          "name": "ToolParamDisplay",
+          "type": "type",
+          "line": 188
+        },
+        {
+          "name": "ProjectContextMenuState",
+          "type": "type",
+          "line": 193
+        },
+        {
+          "name": "AppBuilder",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "setConversationRuntime",
+          "type": "function",
+          "line": 465
+        },
+        {
+          "name": "setConversationTitleGenerationState",
+          "type": "function",
+          "line": 480
+        },
+        {
+          "name": "updateConversation",
+          "type": "function",
+          "line": 497
+        },
+        {
+          "name": "setConversationMessages",
+          "type": "function",
+          "line": 508
+        },
+        {
+          "name": "setConversationInput",
+          "type": "function",
+          "line": 519
+        },
+        {
+          "name": "setConversationModel",
+          "type": "function",
+          "line": 527
+        },
+        {
+          "name": "createConversation",
+          "type": "function",
+          "line": 535
+        },
+        {
+          "name": "openOnboarding",
+          "type": "function",
+          "line": 553
+        },
+        {
+          "name": "renameConversation",
+          "type": "function",
+          "line": 562
+        },
+        {
+          "name": "setApiKeySettingsOpen",
+          "type": "function",
+          "line": 575
+        },
+        {
+          "name": "requestGeneratedConversationTitle",
+          "type": "function",
+          "line": 584
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 609
+        },
+        {
+          "name": "generateConversationTitle",
+          "type": "function",
+          "line": 652
+        },
+        {
+          "name": "applySession",
+          "type": "function",
+          "line": 674
+        },
+        {
+          "name": "selectModel",
+          "type": "function",
+          "line": 687
+        },
+        {
+          "name": "selectModelParameter",
+          "type": "function",
+          "line": 697
+        },
+        {
+          "name": "createSessionFromApiKey",
+          "type": "function",
+          "line": 718
+        },
+        {
+          "name": "submitApiKey",
+          "type": "function",
+          "line": 800
+        },
+        {
+          "name": "submitApiKeySettings",
+          "type": "function",
+          "line": 816
+        },
+        {
+          "name": "clearSavedApiKey",
+          "type": "function",
+          "line": 835
+        },
+        {
+          "name": "confirmClearSavedApiKey",
+          "type": "function",
+          "line": 849
+        },
+        {
+          "name": "retrySavedApiKey",
+          "type": "function",
+          "line": 859
+        },
+        {
+          "name": "sendMessage",
+          "type": "function",
+          "line": 930
+        },
+        {
+          "name": "readAgentStream",
+          "type": "function",
+          "line": 994
+        },
+        {
+          "name": "handleStreamChunk",
+          "type": "function",
+          "line": 1023
+        },
+        {
+          "name": "appendAssistantDelta",
+          "type": "function",
+          "line": 1061
+        },
+        {
+          "name": "updateActivity",
+          "type": "function",
+          "line": 1095
+        },
+        {
+          "name": "createAssistantSegmentId",
+          "type": "function",
+          "line": 1228
+        },
+        {
+          "name": "isAssistantSegment",
+          "type": "function",
+          "line": 1232
+        },
+        {
+          "name": "removeTrailingEmptyAssistantSegment",
+          "type": "function",
+          "line": 1239
+        },
+        {
+          "name": "canGroupActivityMessages",
+          "type": "function",
+          "line": 1256
+        },
+        {
+          "name": "findActivityMessageIndex",
+          "type": "function",
+          "line": 1494
+        },
+        {
+          "name": "finalizeActiveThinkingMessages",
+          "type": "function",
+          "line": 1504
+        },
+        {
+          "name": "finalizeThinkingContent",
+          "type": "function",
+          "line": 1529
+        },
+        {
+          "name": "mergeActivityContent",
+          "type": "function",
+          "line": 1536
+        },
+        {
+          "name": "getInlineActivityParams",
+          "type": "function",
+          "line": 1548
+        },
+        {
+          "name": "getActivityGroupKey",
+          "type": "function",
+          "line": 1553
+        },
+        {
+          "name": "formatActivity",
+          "type": "function",
+          "line": 1560
+        },
+        {
+          "name": "formatThinkingActivity",
+          "type": "function",
+          "line": 1618
+        },
+        {
+          "name": "getToolActivityIcon",
+          "type": "function",
+          "line": 1631
+        },
+        {
+          "name": "formatToolActivity",
+          "type": "function",
+          "line": 1679
+        },
+        {
+          "name": "appendInlineDetails",
+          "type": "function",
+          "line": 1721
+        },
+        {
+          "name": "getPathToolActivityLabel",
+          "type": "function",
+          "line": 1725
+        },
+        {
+          "name": "getExactToolFileTargets",
+          "type": "function",
+          "line": 1762
+        },
+        {
+          "name": "isExactFileToolName",
+          "type": "function",
+          "line": 1779
+        },
+        {
+          "name": "isExactFileActivityPath",
+          "type": "function",
+          "line": 1805
+        },
+        {
+          "name": "formatStatusActivity",
+          "type": "function",
+          "line": 1816
+        },
+        {
+          "name": "getRunningToolLabel",
+          "type": "function",
+          "line": 1826
+        },
+        {
+          "name": "getFinishedToolLabel",
+          "type": "function",
+          "line": 1830
+        },
+        {
+          "name": "getFailedToolLabel",
+          "type": "function",
+          "line": 1850
+        },
+        {
+          "name": "formatToolParams",
+          "type": "function",
+          "line": 1862
+        },
+        {
+          "name": "parseMaybeJson",
+          "type": "function",
+          "line": 1880
+        },
+        {
+          "name": "appendTruncatedDetails",
+          "type": "function",
+          "line": 1892
+        },
+        {
+          "name": "collectPathValues",
+          "type": "function",
+          "line": 1900
+        },
+        {
+          "name": "collectStringValues",
+          "type": "function",
+          "line": 1920
+        },
+        {
+          "name": "formatPathTarget",
+          "type": "function",
+          "line": 1938
+        },
+        {
+          "name": "formatPathDisplay",
+          "type": "function",
+          "line": 1954
+        },
+        {
+          "name": "formatParamDetails",
+          "type": "function",
+          "line": 1962
+        },
+        {
+          "name": "formatParamValue",
+          "type": "function",
+          "line": 1988
+        },
+        {
+          "name": "formatParamKey",
+          "type": "function",
+          "line": 2021
+        },
+        {
+          "name": "isEmptyParamValue",
+          "type": "function",
+          "line": 2025
+        },
+        {
+          "name": "isPathParamKey",
+          "type": "function",
+          "line": 2034
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/badge.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 52,
+      "symbols": [
+        {
+          "name": "Badge",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/button.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 58,
+      "symbols": [
+        {
+          "name": "Button",
+          "type": "function",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/card.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 103,
+      "symbols": [
+        {
+          "name": "Card",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "CardHeader",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "CardTitle",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "CardDescription",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "CardAction",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "CardContent",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "CardFooter",
+          "type": "function",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/field.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 238,
+      "symbols": [
+        {
+          "name": "FieldSet",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "FieldLegend",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "FieldGroup",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "Field",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "FieldContent",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "FieldLabel",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "FieldTitle",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "FieldDescription",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "FieldSeparator",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "FieldError",
+          "type": "function",
+          "line": 176
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/input.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": [
+        {
+          "name": "Input",
+          "type": "function",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/label.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": [
+        {
+          "name": "Label",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/popover.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 90,
+      "symbols": [
+        {
+          "name": "Popover",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "PopoverTrigger",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "PopoverContent",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "PopoverHeader",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "PopoverTitle",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "PopoverDescription",
+          "type": "function",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/scroll-area.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 55,
+      "symbols": [
+        {
+          "name": "ScrollArea",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "ScrollBar",
+          "type": "function",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/select.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 199,
+      "symbols": [
+        {
+          "name": "SelectGroup",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "SelectValue",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "SelectTrigger",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "SelectContent",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "SelectLabel",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "SelectItem",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "SelectSeparator",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "SelectScrollUpButton",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "SelectScrollDownButton",
+          "type": "function",
+          "line": 170
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/separator.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 25,
+      "symbols": [
+        {
+          "name": "Separator",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/textarea.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 18,
+      "symbols": [
+        {
+          "name": "Textarea",
+          "type": "function",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/toggle-group.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 89,
+      "symbols": [
+        {
+          "name": "ToggleGroup",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "ToggleGroupItem",
+          "type": "function",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/components/ui/toggle.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 45,
+      "symbols": [
+        {
+          "name": "Toggle",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/lib/app-builder/server.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1083,
+      "symbols": [
+        {
+          "name": "BuilderSession",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "PersistedSettings",
+          "type": "type",
+          "line": 35
+        },
+        {
+          "name": "PublicSession",
+          "type": "type",
+          "line": 39
+        },
+        {
+          "name": "PublicUser",
+          "type": "type",
+          "line": 47
+        },
+        {
+          "name": "ModelCatalogItem",
+          "type": "type",
+          "line": 52
+        },
+        {
+          "name": "ModelParameterConfig",
+          "type": "type",
+          "line": 60
+        },
+        {
+          "name": "ModelParameterValueConfig",
+          "type": "type",
+          "line": 66
+        },
+        {
+          "name": "ModelParamConfig",
+          "type": "type",
+          "line": 71
+        },
+        {
+          "name": "InvalidCursorApiKeyError",
+          "type": "class",
+          "line": 76
+        },
+        {
+          "name": "UnknownAppBuilderSessionError",
+          "type": "class",
+          "line": 85
+        },
+        {
+          "name": "ProjectNameGenerationTimeoutError",
+          "type": "class",
+          "line": 96
+        },
+        {
+          "name": "AgentStreamEvent",
+          "type": "type",
+          "line": 105
+        },
+        {
+          "name": "ProjectNameMessage",
+          "type": "type",
+          "line": 119
+        },
+        {
+          "name": "ProjectNameContext",
+          "type": "type",
+          "line": 124
+        },
+        {
+          "name": "readPersistedCursorApiKey",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "savePersistedCursorApiKey",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "validateCursorApiKey",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "clearPersistedCursorApiKey",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "createSession",
+          "type": "function",
+          "line": 200
+        },
+        {
+          "name": "restoreSession",
+          "type": "function",
+          "line": 237
+        },
+        {
+          "name": "getPublicSession",
+          "type": "function",
+          "line": 258
+        },
+        {
+          "name": "streamAgentResponse",
+          "type": "function",
+          "line": 265
+        },
+        {
+          "name": "generateProjectName",
+          "type": "function",
+          "line": 291
+        },
+        {
+          "name": "generateProjectNameForApiKey",
+          "type": "function",
+          "line": 299
+        },
+        {
+          "name": "promptProjectNameWithXml",
+          "type": "function",
+          "line": 326
+        },
+        {
+          "name": "collectProjectNameRun",
+          "type": "function",
+          "line": 357
+        },
+        {
+          "name": "extractProjectNameXml",
+          "type": "function",
+          "line": 381
+        },
+        {
+          "name": "getProjectNameTimeoutMs",
+          "type": "function",
+          "line": 388
+        },
+        {
+          "name": "normalizeProjectNameContext",
+          "type": "function",
+          "line": 395
+        },
+        {
+          "name": "messages",
+          "type": "function",
+          "line": 405
+        },
+        {
+          "name": "compactProjectNameContent",
+          "type": "function",
+          "line": 419
+        },
+        {
+          "name": "getSession",
+          "type": "function",
+          "line": 423
+        },
+        {
+          "name": "buildProjectNamePrompt",
+          "type": "function",
+          "line": 431
+        },
+        {
+          "name": "sanitizeProjectName",
+          "type": "function",
+          "line": 458
+        },
+        {
+          "name": "generateFallbackProjectName",
+          "type": "function",
+          "line": 484
+        },
+        {
+          "name": "readPersistedSettings",
+          "type": "function",
+          "line": 502
+        },
+        {
+          "name": "writePersistedSettings",
+          "type": "function",
+          "line": 526
+        },
+        {
+          "name": "isNodeFileError",
+          "type": "function",
+          "line": 534
+        },
+        {
+          "name": "toPublicSession",
+          "type": "function",
+          "line": 538
+        },
+        {
+          "name": "updateSessionApiKey",
+          "type": "function",
+          "line": 548
+        },
+        {
+          "name": "getCurrentUser",
+          "type": "function",
+          "line": 560
+        },
+        {
+          "name": "asRecord",
+          "type": "function",
+          "line": 578
+        },
+        {
+          "name": "firstString",
+          "type": "function",
+          "line": 584
+        },
+        {
+          "name": "listModels",
+          "type": "function",
+          "line": 598
+        },
+        {
+          "name": "modelToCatalogItem",
+          "type": "function",
+          "line": 608
+        },
+        {
+          "name": "buildModelParameters",
+          "type": "function",
+          "line": 618
+        },
+        {
+          "name": "getDefaultModelParams",
+          "type": "function",
+          "line": 656
+        },
+        {
+          "name": "sanitizeModelCatalog",
+          "type": "function",
+          "line": 666
+        },
+        {
+          "name": "labelFromId",
+          "type": "function",
+          "line": 677
+        },
+        {
+          "name": "parseModelSelection",
+          "type": "function",
+          "line": 685
+        },
+        {
+          "name": "encodeLocalSdkModelSelection",
+          "type": "function",
+          "line": 699
+        },
+        {
+          "name": "isEncodedLocalModelId",
+          "type": "function",
+          "line": 719
+        },
+        {
+          "name": "encodeKnownLocalModelId",
+          "type": "function",
+          "line": 728
+        },
+        {
+          "name": "SelectedModelConfig",
+          "type": "type",
+          "line": 764
+        },
+        {
+          "name": "getSelectedModelConfig",
+          "type": "function",
+          "line": 770
+        },
+        {
+          "name": "getEffortValue",
+          "type": "function",
+          "line": 801
+        },
+        {
+          "name": "isEnabledVariant",
+          "type": "function",
+          "line": 829
+        },
+        {
+          "name": "isFalseValue",
+          "type": "function",
+          "line": 841
+        },
+        {
+          "name": "normalizeModelToken",
+          "type": "function",
+          "line": 851
+        },
+        {
+          "name": "prepareSession",
+          "type": "function",
+          "line": 855
+        },
+        {
+          "name": "writeGeneratedApp",
+          "type": "function",
+          "line": 862
+        },
+        {
+          "name": "startDevServer",
+          "type": "function",
+          "line": 872
+        },
+        {
+          "name": "runCommand",
+          "type": "function",
+          "line": 906
+        },
+        {
+          "name": "pipeProcessLogs",
+          "type": "function",
+          "line": 938
+        },
+        {
+          "name": "append",
+          "type": "function",
+          "line": 943
+        },
+        {
+          "name": "waitForPort",
+          "type": "function",
+          "line": 952
+        },
+        {
+          "name": "attempt",
+          "type": "function",
+          "line": 956
+        },
+        {
+          "name": "getAvailablePort",
+          "type": "function",
+          "line": 976
+        },
+        {
+          "name": "getOrCreateAgent",
+          "type": "function",
+          "line": 995
+        },
+        {
+          "name": "assertSessionReady",
+          "type": "function",
+          "line": 1016
+        },
+        {
+          "name": "getErrorMessage",
+          "type": "function",
+          "line": 1022
+        },
+        {
+          "name": "buildPrompt",
+          "type": "function",
+          "line": 1026
+        },
+        {
+          "name": "emitSdkMessage",
+          "type": "function",
+          "line": 1038
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/lib/app-builder/template.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 168,
+      "symbols": [
+        {
+          "name": "TemplateFile",
+          "type": "type",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/src/lib/utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 6,
+      "symbols": [
+        {
+          "name": "cn",
+          "type": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "sdk/app-builder/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "sdk/coding-agent-cli/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "sdk/coding-agent-cli/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "sdk/coding-agent-cli/pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2086,
+      "symbols": []
+    },
+    {
+      "path": "sdk/coding-agent-cli/pnpm-workspace.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "sdk/coding-agent-cli/src/agent.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 602,
+      "symbols": [
+        {
+          "name": "AgentEvent",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "ModelChoice",
+          "type": "type",
+          "line": 26
+        },
+        {
+          "name": "TokenUsage",
+          "type": "type",
+          "line": 32
+        },
+        {
+          "name": "ExecutionMode",
+          "type": "type",
+          "line": 37
+        },
+        {
+          "name": "CloudRepository",
+          "type": "type",
+          "line": 39
+        },
+        {
+          "name": "CodingAgentSessionOptions",
+          "type": "type",
+          "line": 44
+        },
+        {
+          "name": "SendPromptOptions",
+          "type": "type",
+          "line": 52
+        },
+        {
+          "name": "CancelRunResult",
+          "type": "type",
+          "line": 57
+        },
+        {
+          "name": "CodingAgentSession",
+          "type": "class",
+          "line": 69
+        },
+        {
+          "name": "usage",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "buildPrompt",
+          "type": "function",
+          "line": 244
+        },
+        {
+          "name": "formatModelLabel",
+          "type": "function",
+          "line": 248
+        },
+        {
+          "name": "formatDuration",
+          "type": "function",
+          "line": 253
+        },
+        {
+          "name": "modelToChoices",
+          "type": "function",
+          "line": 261
+        },
+        {
+          "name": "buildVariantLabel",
+          "type": "function",
+          "line": 284
+        },
+        {
+          "name": "disambiguateDuplicateLabels",
+          "type": "function",
+          "line": 295
+        },
+        {
+          "name": "dedupeModelChoices",
+          "type": "function",
+          "line": 316
+        },
+        {
+          "name": "disambiguateGlobalDuplicateLabels",
+          "type": "function",
+          "line": 337
+        },
+        {
+          "name": "label",
+          "type": "function",
+          "line": 346
+        },
+        {
+          "name": "addSelectionDetail",
+          "type": "function",
+          "line": 362
+        },
+        {
+          "name": "selectionDetail",
+          "type": "function",
+          "line": 372
+        },
+        {
+          "name": "modelSelectionKey",
+          "type": "function",
+          "line": 383
+        },
+        {
+          "name": "detectCloudRepository",
+          "type": "function",
+          "line": 392
+        },
+        {
+          "name": "runGit",
+          "type": "function",
+          "line": 411
+        },
+        {
+          "name": "normalizeGitHubRemote",
+          "type": "function",
+          "line": 422
+        },
+        {
+          "name": "formatCloudRepository",
+          "type": "function",
+          "line": 432
+        },
+        {
+          "name": "formatParamsLabel",
+          "type": "function",
+          "line": 438
+        },
+        {
+          "name": "labelsMatch",
+          "type": "function",
+          "line": 459
+        },
+        {
+          "name": "normalizeLabel",
+          "type": "function",
+          "line": 463
+        },
+        {
+          "name": "labelFromId",
+          "type": "function",
+          "line": 467
+        },
+        {
+          "name": "emitSdkMessage",
+          "type": "function",
+          "line": 475
+        },
+        {
+          "name": "summarizeToolArgs",
+          "type": "function",
+          "line": 515
+        },
+        {
+          "name": "getToolSummaryKeys",
+          "type": "function",
+          "line": 534
+        },
+        {
+          "name": "summarizeFirstValue",
+          "type": "function",
+          "line": 563
+        },
+        {
+          "name": "formatArgValue",
+          "type": "function",
+          "line": 576
+        },
+        {
+          "name": "shortenValue",
+          "type": "function",
+          "line": 596
+        }
+      ]
+    },
+    {
+      "path": "sdk/coding-agent-cli/src/commands.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 48,
+      "symbols": [
+        {
+          "name": "SlashCommandName",
+          "type": "type",
+          "line": 1
+        },
+        {
+          "name": "SlashCommand",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "getSlashCommand",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "formatSlashCommandHelp",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "getSlashCommandItems",
+          "type": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "sdk/coding-agent-cli/src/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 290,
+      "symbols": [
+        {
+          "name": "CliOptions",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "prompt",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "parseArgs",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "readOptionValue",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "runPlainPrompt",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "annotate",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "renderPlainEvent",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "compactText",
+          "type": "function",
+          "line": 234
+        },
+        {
+          "name": "readStdin",
+          "type": "function",
+          "line": 238
+        },
+        {
+          "name": "waitUntilDestroyed",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "printHelp",
+          "type": "function",
+          "line": 259
+        }
+      ]
+    },
+    {
+      "path": "sdk/coding-agent-cli/src/tui/App.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1200,
+      "symbols": [
+        {
+          "name": "TuiInputProps",
+          "type": "type",
+          "line": 32
+        },
+        {
+          "name": "TuiInput",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "TuiAppProps",
+          "type": "type",
+          "line": 44
+        },
+        {
+          "name": "TranscriptEntry",
+          "type": "type",
+          "line": 51
+        },
+        {
+          "name": "ModelSelectItem",
+          "type": "type",
+          "line": 65
+        },
+        {
+          "name": "CommandSelectItem",
+          "type": "type",
+          "line": 67
+        },
+        {
+          "name": "ModelPreference",
+          "type": "type",
+          "line": 69
+        },
+        {
+          "name": "ViewMode",
+          "type": "type",
+          "line": 74
+        },
+        {
+          "name": "App",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "exitApp",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "submitInput",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "runCommand",
+          "type": "function",
+          "line": 256
+        },
+        {
+          "name": "openModelPicker",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "selectModel",
+          "type": "function",
+          "line": 320
+        },
+        {
+          "name": "toggleModelPreference",
+          "type": "function",
+          "line": 328
+        },
+        {
+          "name": "selectCommand",
+          "type": "function",
+          "line": 342
+        },
+        {
+          "name": "selectCommandOption",
+          "type": "function",
+          "line": 346
+        },
+        {
+          "name": "selectModelOption",
+          "type": "function",
+          "line": 353
+        },
+        {
+          "name": "resetAgent",
+          "type": "function",
+          "line": 360
+        },
+        {
+          "name": "switchExecutionMode",
+          "type": "function",
+          "line": 379
+        },
+        {
+          "name": "sendPrompt",
+          "type": "function",
+          "line": 407
+        },
+        {
+          "name": "cancelActiveRun",
+          "type": "function",
+          "line": 437
+        },
+        {
+          "name": "addEntry",
+          "type": "function",
+          "line": 460
+        },
+        {
+          "name": "nextId",
+          "type": "function",
+          "line": 476
+        },
+        {
+          "name": "TranscriptLine",
+          "type": "type",
+          "line": 577
+        },
+        {
+          "name": "TranscriptPart",
+          "type": "type",
+          "line": 584
+        },
+        {
+          "name": "TranscriptLine",
+          "type": "function",
+          "line": 591
+        },
+        {
+          "name": "partToAttributes",
+          "type": "function",
+          "line": 621
+        },
+        {
+          "name": "buildTranscriptLines",
+          "type": "function",
+          "line": 635
+        },
+        {
+          "name": "trimTrailingBlankLines",
+          "type": "function",
+          "line": 657
+        },
+        {
+          "name": "isBlankRenderedLine",
+          "type": "function",
+          "line": 667
+        },
+        {
+          "name": "renderMarkdownLines",
+          "type": "function",
+          "line": 671
+        },
+        {
+          "name": "wrapText",
+          "type": "function",
+          "line": 763
+        },
+        {
+          "name": "parseInlineMarkdown",
+          "type": "function",
+          "line": 790
+        },
+        {
+          "name": "appendAssistantDelta",
+          "type": "function",
+          "line": 824
+        },
+        {
+          "name": "applyAgentEvent",
+          "type": "function",
+          "line": 852
+        },
+        {
+          "name": "upsertEntry",
+          "type": "function",
+          "line": 916
+        },
+        {
+          "name": "makeEntry",
+          "type": "function",
+          "line": 934
+        },
+        {
+          "name": "compactText",
+          "type": "function",
+          "line": 947
+        },
+        {
+          "name": "formatToolStatus",
+          "type": "function",
+          "line": 951
+        },
+        {
+          "name": "formatToolIcon",
+          "type": "function",
+          "line": 966
+        },
+        {
+          "name": "formatRunStatus",
+          "type": "function",
+          "line": 997
+        },
+        {
+          "name": "getErrorMessage",
+          "type": "function",
+          "line": 1010
+        },
+        {
+          "name": "modelKey",
+          "type": "function",
+          "line": 1014
+        },
+        {
+          "name": "filterModelItems",
+          "type": "function",
+          "line": 1018
+        },
+        {
+          "name": "findPreferredSelection",
+          "type": "function",
+          "line": 1042
+        },
+        {
+          "name": "modelSupportsPreference",
+          "type": "function",
+          "line": 1077
+        },
+        {
+          "name": "getSelectionPreference",
+          "type": "function",
+          "line": 1086
+        },
+        {
+          "name": "selectionOverlapScore",
+          "type": "function",
+          "line": 1101
+        },
+        {
+          "name": "selectionSearchText",
+          "type": "function",
+          "line": 1111
+        },
+        {
+          "name": "toCommandSelectItem",
+          "type": "function",
+          "line": 1118
+        },
+        {
+          "name": "toModelSelectItem",
+          "type": "function",
+          "line": 1129
+        },
+        {
+          "name": "modelSelectionEquals",
+          "type": "function",
+          "line": 1137
+        },
+        {
+          "name": "modelKeyFromSelection",
+          "type": "function",
+          "line": 1141
+        },
+        {
+          "name": "isModelSelection",
+          "type": "function",
+          "line": 1150
+        },
+        {
+          "name": "hasStringProperty",
+          "type": "function",
+          "line": 1167
+        },
+        {
+          "name": "getInputCharacter",
+          "type": "function",
+          "line": 1175
+        },
+        {
+          "name": "isSearchInput",
+          "type": "function",
+          "line": 1183
+        },
+        {
+          "name": "isFalseValue",
+          "type": "function",
+          "line": 1187
+        },
+        {
+          "name": "normalizeToken",
+          "type": "function",
+          "line": 1198
+        }
+      ]
+    },
+    {
+      "path": "sdk/coding-agent-cli/src/tui/opentui.d.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 7,
+      "symbols": [
+        {
+          "name": "OpenTUIComponents",
+          "type": "interface",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "sdk/coding-agent-cli/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "sdk/dag-task-runner/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 202,
+      "symbols": []
+    },
+    {
+      "path": "sdk/dag-task-runner/examples/example_dag.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "sdk/dag-task-runner/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "sdk/dag-task-runner/pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 1488,
+      "symbols": []
+    },
+    {
+      "path": "sdk/dag-task-runner/pnpm-workspace.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2,
+      "symbols": []
+    },
+    {
+      "path": "sdk/dag-task-runner/scripts/sync-copyable-skill.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 86,
+      "symbols": []
+    },
+    {
+      "path": "sdk/dag-task-runner/skill/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 225,
+      "symbols": []
+    },
+    {
+      "path": "sdk/dag-task-runner/src/canvas_writer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 649,
+      "symbols": [
+        {
+          "name": "TaskStatus",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "TaskState",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "RunState",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "initialRunState",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "CanvasWriter",
+          "type": "class",
+          "line": 61
+        },
+        {
+          "name": "renderCanvasSource",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "TaskStatus",
+          "type": "type",
+          "line": 149
+        },
+        {
+          "name": "Complexity",
+          "type": "type",
+          "line": 150
+        },
+        {
+          "name": "TaskState",
+          "type": "interface",
+          "line": 152
+        },
+        {
+          "name": "RunState",
+          "type": "interface",
+          "line": 168
+        },
+        {
+          "name": "pillToneFor",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "complexityTone",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "formatDuration",
+          "type": "function",
+          "line": 206
+        },
+        {
+          "name": "elapsed",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "totalTokens",
+          "type": "function",
+          "line": 221
+        },
+        {
+          "name": "taskElementId",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "getScrollY",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "saveScrollY",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "restoreScrollY",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "tick",
+          "type": "function",
+          "line": 265
+        },
+        {
+          "name": "DAGGraph",
+          "type": "function",
+          "line": 285
+        },
+        {
+          "name": "nodeFill",
+          "type": "function",
+          "line": 308
+        },
+        {
+          "name": "nodeStroke",
+          "type": "function",
+          "line": 321
+        },
+        {
+          "name": "statusGlyph",
+          "type": "function",
+          "line": 334
+        },
+        {
+          "name": "statusGlyphColor",
+          "type": "function",
+          "line": 347
+        },
+        {
+          "name": "TaskList",
+          "type": "function",
+          "line": 456
+        },
+        {
+          "name": "trailing",
+          "type": "function",
+          "line": 467
+        },
+        {
+          "name": "onScroll",
+          "type": "function",
+          "line": 552
+        },
+        {
+          "name": "handleNodeClick",
+          "type": "function",
+          "line": 560
+        },
+        {
+          "name": "scrollToTask",
+          "type": "function",
+          "line": 569
+        }
+      ]
+    },
+    {
+      "path": "sdk/dag-task-runner/src/dag.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 217,
+      "symbols": [
+        {
+          "name": "Complexity",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "ModelMap",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "ModelMapOverride",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "RawTask",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "DAG",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "parseDAG",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "validateTask",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "detectCycle",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "computeRanks",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "validateModelMap",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "createModelResolver",
+          "type": "function",
+          "line": 209
+        }
+      ]
+    },
+    {
+      "path": "sdk/dag-task-runner/src/run_dag.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 653,
+      "symbols": [
+        {
+          "name": "CliArgs",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "RunnerTaskRun",
+          "type": "interface",
+          "line": 54
+        },
+        {
+          "name": "parseArgs",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "parsePositiveInt",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "ModelOverrideSources",
+          "type": "interface",
+          "line": 135
+        },
+        {
+          "name": "mergeModelOverrides",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "defaultCanvasesDir",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "onUnhandledRejection",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "onUncaughtException",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "onSignal",
+          "type": "function",
+          "line": 218
+        },
+        {
+          "name": "failAndExit",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "runTask",
+          "type": "function",
+          "line": 321
+        },
+        {
+          "name": "publishIfDue",
+          "type": "function",
+          "line": 349
+        },
+        {
+          "name": "RunTaskOptions",
+          "type": "interface",
+          "line": 468
+        },
+        {
+          "name": "TimeoutError",
+          "type": "class",
+          "line": 489
+        },
+        {
+          "name": "isTimeoutError",
+          "type": "function",
+          "line": 496
+        },
+        {
+          "name": "StreamWaitTimeoutMessageOptions",
+          "type": "interface",
+          "line": 500
+        },
+        {
+          "name": "streamWaitTimeoutMessage",
+          "type": "function",
+          "line": 506
+        },
+        {
+          "name": "withTimeout",
+          "type": "function",
+          "line": 518
+        },
+        {
+          "name": "bestEffortCancel",
+          "type": "function",
+          "line": 536
+        },
+        {
+          "name": "BoundedTextBuffer",
+          "type": "class",
+          "line": 549
+        },
+        {
+          "name": "skipTask",
+          "type": "function",
+          "line": 570
+        },
+        {
+          "name": "markRunTerminated",
+          "type": "function",
+          "line": 587
+        },
+        {
+          "name": "buildUpstreamContext",
+          "type": "function",
+          "line": 609
+        },
+        {
+          "name": "truncate",
+          "type": "function",
+          "line": 631
+        },
+        {
+          "name": "formatMs",
+          "type": "function",
+          "line": 636
+        },
+        {
+          "name": "structuredCloneState",
+          "type": "function",
+          "line": 646
+        }
+      ]
+    },
+    {
+      "path": "sdk/dag-task-runner/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "sdk/quickstart/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "sdk/quickstart/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "sdk/quickstart/pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 1475,
+      "symbols": []
+    },
+    {
+      "path": "sdk/quickstart/pnpm-workspace.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "sdk/quickstart/src/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "sdk/quickstart/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    }
+  ]
+}

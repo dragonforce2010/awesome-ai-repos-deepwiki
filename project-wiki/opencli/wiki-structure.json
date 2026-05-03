@@ -1,0 +1,83 @@
+{
+  "title": "opencli DeepWiki",
+  "language": "zh-CN",
+  "source": {
+    "repository": "https://github.com/jackwener/opencli",
+    "clonePath": "/tmp/deepwiki-it-sources/opencli",
+    "branch": "main",
+    "commit": "d9c96f7e3b0075be222d2c628ff8d4786cc2ebfb"
+  },
+  "outputRoot": "/Users/bytedance/workspace/deepwiki/opencli",
+  "pages": [
+    {
+      "id": "system-overview",
+      "title": "系统总览",
+      "path": "pages/01-system-overview.md",
+      "sources": ["README.md", "package.json", "src/main.ts", "src/cli.ts", "src/registry.ts", "src/discovery.ts"]
+    },
+    {
+      "id": "startup-discovery-command-lifecycle",
+      "title": "启动、发现与命令生命周期",
+      "path": "pages/02-startup-discovery-command-lifecycle.md",
+      "sources": ["src/main.ts", "src/discovery.ts", "src/commanderAdapter.ts", "src/execution.ts", "src/hooks.ts", "src/output.ts"]
+    },
+    {
+      "id": "adapter-model-and-strategies",
+      "title": "Adapter 模型与策略",
+      "path": "pages/03-adapter-model-and-strategies.md",
+      "sources": ["src/registry.ts", "src/capabilityRouting.ts", "src/execution.ts", "src/build-manifest.ts", "src/validate.ts"]
+    },
+    {
+      "id": "browser-bridge-and-extension",
+      "title": "浏览器桥接与 Chrome 扩展",
+      "path": "pages/04-browser-bridge-and-extension.md",
+      "sources": ["src/browser/bridge.ts", "src/browser/daemon-client.ts", "src/browser/page.ts", "extension/src/background.ts", "extension/src/cdp.ts", "extension/manifest.json"]
+    },
+    {
+      "id": "agent-browser-command-surface",
+      "title": "Agent 浏览器命令面",
+      "path": "pages/05-agent-browser-command-surface.md",
+      "sources": ["src/cli.ts", "src/browser/page.ts", "skills/opencli-browser/SKILL.md"]
+    },
+    {
+      "id": "pipeline-template-and-data-extraction",
+      "title": "Pipeline、模板与数据抽取",
+      "path": "pages/06-pipeline-template-and-data-extraction.md",
+      "sources": ["src/pipeline/executor.ts", "src/pipeline/template.ts", "src/capabilityRouting.ts", "src/cli.ts"]
+    },
+    {
+      "id": "plugin-and-external-cli-hub",
+      "title": "Plugin 与外部 CLI Hub",
+      "path": "pages/07-plugin-and-external-cli-hub.md",
+      "sources": ["src/plugin.ts", "src/plugin-manifest.ts", "src/discovery.ts", "src/external.ts", "src/cli.ts"]
+    },
+    {
+      "id": "skills-and-agent-workflows",
+      "title": "Skills 与 Agent 工作流",
+      "path": "pages/08-skills-and-agent-workflows.md",
+      "sources": ["skills/opencli-usage/SKILL.md", "skills/opencli-browser/SKILL.md", "skills/opencli-adapter-author/SKILL.md", "skills/opencli-autofix/SKILL.md", "skills/smart-search/SKILL.md", "clis/antigravity/SKILL.md"]
+    },
+    {
+      "id": "testing-release-and-operations",
+      "title": "测试、发布与日常运维",
+      "path": "pages/09-testing-release-and-operations.md",
+      "sources": ["package.json", ".github/workflows/ci.yml", ".github/workflows/release.yml", "src/doctor.ts", "src/verify.ts"]
+    },
+    {
+      "id": "security-privacy-and-boundaries",
+      "title": "安全、隐私与边界",
+      "path": "pages/10-security-privacy-and-boundaries.md",
+      "sources": ["src/diagnostic.ts", "src/external.ts", "extension/src/background.ts", "extension/src/cdp.ts", "src/cli.ts", "extension/manifest.json"]
+    }
+  ],
+  "relations": [
+    {"from": "system-overview", "to": "startup-discovery-command-lifecycle", "type": "drills_into"},
+    {"from": "startup-discovery-command-lifecycle", "to": "adapter-model-and-strategies", "type": "registers"},
+    {"from": "adapter-model-and-strategies", "to": "browser-bridge-and-extension", "type": "uses_when_browser_required"},
+    {"from": "agent-browser-command-surface", "to": "browser-bridge-and-extension", "type": "exposes"},
+    {"from": "adapter-model-and-strategies", "to": "pipeline-template-and-data-extraction", "type": "executes"},
+    {"from": "plugin-and-external-cli-hub", "to": "startup-discovery-command-lifecycle", "type": "extends_discovery"},
+    {"from": "skills-and-agent-workflows", "to": "agent-browser-command-surface", "type": "guides_agents"},
+    {"from": "testing-release-and-operations", "to": "security-privacy-and-boundaries", "type": "verifies_boundaries"}
+  ]
+}

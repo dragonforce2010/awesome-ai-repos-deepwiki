@@ -1,0 +1,4791 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/easy-agent",
+    "remote": "https://github.com/ConardLi/easy-agent.git",
+    "branch": "main",
+    "commit": "c24463e07dd136d41f6ab28edb33a3eaf0b209c1"
+  },
+  "file_count": 124,
+  "skipped_count": 2,
+  "files": [
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 203,
+      "symbols": []
+    },
+    {
+      "path": "README.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 203,
+      "symbols": []
+    },
+    {
+      "path": "package-lock.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 2390,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "src/constants/spinnerVerbs.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 197,
+      "symbols": [
+        {
+          "name": "sampleSpinnerVerb",
+          "type": "function",
+          "line": 194
+        }
+      ]
+    },
+    {
+      "path": "src/context/autoCompact.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 144,
+      "symbols": [
+        {
+          "name": "TokenWarningState",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "TokenWarningResult",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "resetAutoCompactFailures",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "scaleBuffer",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "getAutoCompactThreshold",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "getBlockingLimit",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "calculateTokenWarningState",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "isAtBlockingLimit",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "shouldAutoCompact",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "autoCompactIfNeeded",
+          "type": "function",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "path": "src/context/claudeMd.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 60,
+      "symbols": [
+        {
+          "name": "stripHtmlComments",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "readIfExists",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "getDirectoryChain",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "getAgentMdFiles",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "loadAgentMdContext",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "src/context/compaction.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 318,
+      "symbols": [
+        {
+          "name": "CompactBoundaryMetadata",
+          "type": "interface",
+          "line": 54
+        },
+        {
+          "name": "CompactBoundaryMessage",
+          "type": "interface",
+          "line": 61
+        },
+        {
+          "name": "CompactionResult",
+          "type": "interface",
+          "line": 66
+        },
+        {
+          "name": "CompactionCheckOptions",
+          "type": "interface",
+          "line": 73
+        },
+        {
+          "name": "isContentBlocks",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "collectToolIdsFromMessage",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "collectToolResultIdsFromMessage",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "microCompactToolResultContent",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "microCompactMessage",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "microCompactMessages",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "makeCompactBoundary",
+          "type": "function",
+          "line": 163
+        },
+        {
+          "name": "getMessagesAfterCompactBoundary",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "findPreservedTailStart",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "summarizeMessages",
+          "type": "function",
+          "line": 203
+        },
+        {
+          "name": "compactMessages",
+          "type": "function",
+          "line": 235
+        }
+      ]
+    },
+    {
+      "path": "src/context/memory/findRelevantMemories.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 3,
+      "symbols": [
+        {
+          "name": "findRelevantMemories",
+          "type": "function",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "src/context/memory/memdir.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 330,
+      "symbols": [
+        {
+          "name": "MemoryDocument",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "MemoryHeader",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "ProjectPathInfo",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "sanitizeSlug",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "normalizeLine",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "scoreTextMatch",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "findCanonicalGitRoot",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "getProjectPathInfo",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "getProjectMemoryDir",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "ensureMemoryDirExists",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "parseFrontmatter",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "stripFrontmatter",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "truncateEntrypoint",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "buildPointerLine",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "formatMemorySystemLocation",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "readMemoryEntrypoint",
+          "type": "function",
+          "line": 160
+        },
+        {
+          "name": "collectMemoryMarkdownFiles",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "loadMemoryHeaders",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "formatMemoryManifest",
+          "type": "function",
+          "line": 211
+        },
+        {
+          "name": "loadMemoryDocumentBodies",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "listMemoryFiles",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "slugifyMemoryFileName",
+          "type": "function",
+          "line": 246
+        },
+        {
+          "name": "rewriteEntrypoint",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "findExistingMemoryFile",
+          "type": "function",
+          "line": 263
+        },
+        {
+          "name": "writeProjectMemory",
+          "type": "function",
+          "line": 279
+        },
+        {
+          "name": "shouldIgnoreMemory",
+          "type": "function",
+          "line": 315
+        },
+        {
+          "name": "buildMemoryPromptInstructions",
+          "type": "function",
+          "line": 320
+        }
+      ]
+    },
+    {
+      "path": "src/context/memory/memoryTypes.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 86,
+      "symbols": [
+        {
+          "name": "MemoryType",
+          "type": "type",
+          "line": 3
+        },
+        {
+          "name": "MemoryFrontmatter",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "MemoryEntry",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "isMemoryType",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "buildMemoryTypeGuidance",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "buildMemoryAccessGuidance",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "buildMemoryValidationGuidance",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "buildMemoryExclusionGuidance",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "buildMemoryPersistenceBoundaryGuidance",
+          "type": "function",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "src/context/planAttachments.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 169,
+      "symbols": [
+        {
+          "name": "buildFullPlanModeText",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "buildSparsePlanModeText",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "buildPlanModeExitText",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "isAttachmentMessage",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "countHumanTurnsSinceLastAttachment",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "countPlanAttachmentsSinceLastExit",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "getPlanModeAttachment",
+          "type": "function",
+          "line": 133
+        },
+        {
+          "name": "getPlanModeExitAttachment",
+          "type": "function",
+          "line": 164
+        }
+      ]
+    },
+    {
+      "path": "src/context/plans.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "generateSlug",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "getPlanSlug",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "resetPlanSlug",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "getPlansDirectory",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "getPlanFilePath",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "ensurePlansDirectory",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "writePlan",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "readPlan",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "planExists",
+          "type": "function",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "path": "src/context/systemPrompt.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 145,
+      "symbols": [
+        {
+          "name": "RuntimeEnvironmentContext",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "BuildSystemPromptOptions",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "getStaticPromptSections",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "getGitContext",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "getRuntimeEnvironmentContext",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "formatEnvironmentContext",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "buildSystemPrompt",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "renderSystemPrompt",
+          "type": "function",
+          "line": 143
+        }
+      ]
+    },
+    {
+      "path": "src/core/agenticLoop.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 409,
+      "symbols": [
+        {
+          "name": "LoopTerminationReason",
+          "type": "type",
+          "line": 28
+        },
+        {
+          "name": "LoopState",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "ToolExecutionResult",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "AgenticLoopEvent",
+          "type": "type",
+          "line": 48
+        },
+        {
+          "name": "AgenticLoopResult",
+          "type": "interface",
+          "line": 65
+        },
+        {
+          "name": "QueryParams",
+          "type": "interface",
+          "line": 72
+        },
+        {
+          "name": "RunToolsOptions",
+          "type": "interface",
+          "line": 88
+        },
+        {
+          "name": "runTools",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "toolInput",
+          "type": "function",
+          "line": 118
+        }
+      ]
+    },
+    {
+      "path": "src/core/queryEngine.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 814,
+      "symbols": [
+        {
+          "name": "QueryEngineEvent",
+          "type": "type",
+          "line": 38
+        },
+        {
+          "name": "QueryEngineOptions",
+          "type": "interface",
+          "line": 50
+        },
+        {
+          "name": "QueryEngineState",
+          "type": "interface",
+          "line": 61
+        },
+        {
+          "name": "createEmptyUsage",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "QueryEngine",
+          "type": "class",
+          "line": 75
+        },
+        {
+          "name": "describeTransport",
+          "type": "function",
+          "line": 680
+        }
+      ]
+    },
+    {
+      "path": "src/entrypoint/cli.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 139,
+      "symbols": [
+        {
+          "name": "parsePermissionMode",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "src/permissions/permissions.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 444,
+      "symbols": [
+        {
+          "name": "PermissionBehavior",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "PermissionMode",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "PermissionDecision",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "PermissionRuleSet",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "PermissionSettings",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "PermissionRequest",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "PermissionResponse",
+          "type": "interface",
+          "line": 34
+        },
+        {
+          "name": "PermissionCheckParams",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "RawSettings",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "normalizeRuleList",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "normalizeMode",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "readPermissionsFromSettings",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "loadPermissionSettings",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "escapeRegExp",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "wildcardToRegExp",
+          "type": "function",
+          "line": 133
+        },
+        {
+          "name": "extractBashCommand",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "extractSkillName",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "matchesPermissionRule",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "matchesAnyRule",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "findFirstMatchingRule",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "checkSandboxAutoAllow",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "isDangerousBashCommand",
+          "type": "function",
+          "line": 262
+        },
+        {
+          "name": "summarizeInput",
+          "type": "function",
+          "line": 268
+        },
+        {
+          "name": "compact",
+          "type": "function",
+          "line": 274
+        },
+        {
+          "name": "summarizePermissionRequest",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "buildPermissionRuleHint",
+          "type": "function",
+          "line": 289
+        },
+        {
+          "name": "getRiskLabel",
+          "type": "function",
+          "line": 302
+        },
+        {
+          "name": "checkPermission",
+          "type": "function",
+          "line": 325
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/availability.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 88,
+      "symbols": [
+        {
+          "name": "isPlatformSupported",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "isSandboxExecAvailable",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "getSandboxUnavailableReason",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "isSandboxRuntimeReady",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "_resetAvailabilityCache",
+          "type": "function",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/buildProfile.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 206,
+      "symbols": [
+        {
+          "name": "canonicalize",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "PermissionRules",
+          "type": "interface",
+          "line": 55
+        },
+        {
+          "name": "ParsedRule",
+          "type": "interface",
+          "line": 62
+        },
+        {
+          "name": "parseRule",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "stripGlobSuffix",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "expandHome",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "resolveRulePath",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "getCriticalDenyPaths",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "buildSandboxProfile",
+          "type": "function",
+          "line": 125
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "src/sandbox/macosProfile.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 76,
+      "symbols": [
+        {
+          "name": "escapeSbplString",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "subpath",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "compileMacosProfile",
+          "type": "function",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/settings.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 168,
+      "symbols": [
+        {
+          "name": "RawRootSettings",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "asStringArray",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "pickFilesystem",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "pickNetwork",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "pickSandbox",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "readSandboxFromFile",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "mergeStringArrays",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "ResolvedSandboxSettings",
+          "type": "interface",
+          "line": 96
+        },
+        {
+          "name": "resolveSandboxSettings",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "loadSandboxSettings",
+          "type": "function",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/shouldUseSandbox.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 95,
+      "symbols": [
+        {
+          "name": "ShouldUseSandboxInput",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "matchesExcludedPattern",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "containsExcludedCommand",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "shouldUseSandbox",
+          "type": "function",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/splitCommand.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 84,
+      "symbols": [
+        {
+          "name": "splitCommand",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "flush",
+          "type": "function",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 80,
+      "symbols": [
+        {
+          "name": "SandboxFilesystemSettings",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "SandboxNetworkSettings",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "SandboxSettings",
+          "type": "interface",
+          "line": 34
+        },
+        {
+          "name": "SandboxProfile",
+          "type": "interface",
+          "line": 64
+        },
+        {
+          "name": "SandboxUnavailableReason",
+          "type": "type",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/violations.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 76,
+      "symbols": [
+        {
+          "name": "looksLikeSandboxViolation",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "annotateStderrWithSandboxFailures",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "removeSandboxViolationTags",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "hasSandboxViolationTag",
+          "type": "function",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "path": "src/sandbox/wrapWithSandbox.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 45,
+      "symbols": [
+        {
+          "name": "shellQuoteSingle",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "WrapWithSandboxResult",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "wrapWithSandbox",
+          "type": "function",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "path": "src/scripts/smoke-bash-sandbox.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 95,
+      "symbols": [
+        {
+          "name": "expect",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "src/scripts/smoke-sandbox.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 108,
+      "symbols": [
+        {
+          "name": "runSandboxed",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "section",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "expect",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "combined",
+          "type": "function",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "src/scripts/test-mcp.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 485,
+      "symbols": [
+        {
+          "name": "resetMcpStateForTest",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "pass",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "fail",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "testNormalization",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "testConfigValidation",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "writeInlineServer",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "testEndToEnd",
+          "type": "function",
+          "line": 205
+        },
+        {
+          "name": "testNonBlockingBootstrap",
+          "type": "function",
+          "line": 290
+        },
+        {
+          "name": "testHttpTransport",
+          "type": "function",
+          "line": 341
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 471
+        }
+      ]
+    },
+    {
+      "path": "src/scripts/test-sandbox.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 347,
+      "symbols": [
+        {
+          "name": "assert",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "assertEqual",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "section",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "makeSettings",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "canonicalCwd",
+          "type": "function",
+          "line": 228
+        },
+        {
+          "name": "canonicalTmp",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "escapeForCheck",
+          "type": "function",
+          "line": 340
+        }
+      ]
+    },
+    {
+      "path": "src/scripts/test-skills.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 156,
+      "symbols": [
+        {
+          "name": "assert",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "path": "src/scripts/test-streaming.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 111,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "src/scripts/test-tasks.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 115,
+      "symbols": [
+        {
+          "name": "assert",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "src/scripts/test-tools.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 86,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "src/services/api/client.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 77,
+      "symbols": [
+        {
+          "name": "getAnthropicClient",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "verifyApiKey",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "resetClient",
+          "type": "function",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "src/services/api/streaming.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 400,
+      "symbols": [
+        {
+          "name": "StreamRequestParams",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "StreamResult",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "sig",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "createMessage",
+          "type": "function",
+          "line": 300
+        }
+      ]
+    },
+    {
+      "path": "src/services/mcp/bootstrap.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 141,
+      "symbols": [
+        {
+          "name": "McpBootstrapResult",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "bootstrapMcp",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "connectAndRegister",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "refreshGlobalToolRegistry",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "reconnectMcpServer",
+          "type": "function",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "path": "src/services/mcp/client.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 445,
+      "symbols": [
+        {
+          "name": "getConnectTimeoutMs",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "getCacheKey",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "sleep",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "escalatedKill",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "aliveCheck",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "connectToServer",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "TransportBundle",
+          "type": "interface",
+          "line": 168
+        },
+        {
+          "name": "createStdioTransport",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "createHttpTransport",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "createSseTransport",
+          "type": "function",
+          "line": 238
+        },
+        {
+          "name": "doConnect",
+          "type": "function",
+          "line": 273
+        },
+        {
+          "name": "err",
+          "type": "function",
+          "line": 293
+        },
+        {
+          "name": "errMsg",
+          "type": "function",
+          "line": 324
+        },
+        {
+          "name": "cleanup",
+          "type": "function",
+          "line": 348
+        },
+        {
+          "name": "clearServerCache",
+          "type": "function",
+          "line": 375
+        },
+        {
+          "name": "registerMcpProcessCleanup",
+          "type": "function",
+          "line": 401
+        },
+        {
+          "name": "runCleanup",
+          "type": "function",
+          "line": 405
+        },
+        {
+          "name": "onSignal",
+          "type": "function",
+          "line": 414
+        },
+        {
+          "name": "getActiveMcpConnections",
+          "type": "function",
+          "line": 426
+        },
+        {
+          "name": "_resetMcpClientForTesting",
+          "type": "function",
+          "line": 438
+        }
+      ]
+    },
+    {
+      "path": "src/services/mcp/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 188,
+      "symbols": [
+        {
+          "name": "RawSettings",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "McpConfigLoadResult",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "validateServerConfig",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "validateStdioConfig",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "validateRemoteConfig",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "extractScopedServers",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "loadMcpConfigs",
+          "type": "function",
+          "line": 167
+        }
+      ]
+    },
+    {
+      "path": "src/services/mcp/fetchTools.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 165,
+      "symbols": [
+        {
+          "name": "stringifyMcpContent",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "truncateDescription",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "buildToolAdapter",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "inputSchema",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "fetchToolsForConnection",
+          "type": "function",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "path": "src/services/mcp/mcpStringUtils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": [
+        {
+          "name": "buildMcpToolName",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "isMcpToolName",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "parseMcpToolName",
+          "type": "function",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "path": "src/services/mcp/normalization.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": [
+        {
+          "name": "normalizeNameForMCP",
+          "type": "function",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "src/services/mcp/registry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 41,
+      "symbols": [
+        {
+          "name": "Entry",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "setMcpRegistryEntry",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "deleteMcpRegistryEntry",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "getMcpRegistry",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "getMcpRegistryEntry",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "clearMcpRegistry",
+          "type": "function",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "src/services/skills/bootstrap.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 39,
+      "symbols": [
+        {
+          "name": "SkillsBootstrapResult",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "bootstrapSkills",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "src/services/skills/budget.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 114,
+      "symbols": [
+        {
+          "name": "getSkillCharBudget",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "truncateDesc",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "buildLine",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "buildNameOnly",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "formatSkillsWithinBudget",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "formatSkillsSystemReminder",
+          "type": "function",
+          "line": 102
+        }
+      ]
+    },
+    {
+      "path": "src/services/skills/conditional.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 98,
+      "symbols": [
+        {
+          "name": "activateConditionalSkillsForPaths",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "extractToolFilePaths",
+          "type": "function",
+          "line": 73
+        }
+      ]
+    },
+    {
+      "path": "src/services/skills/loadSkillsDir.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 147,
+      "symbols": [
+        {
+          "name": "getUserSkillsDir",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "getProjectSkillsDir",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "LoadedFromDir",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "loadFromOneDir",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "LoadAllSkillsResult",
+          "type": "interface",
+          "line": 111
+        },
+        {
+          "name": "loadAllSkills",
+          "type": "function",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "path": "src/services/skills/parseFrontmatter.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 146,
+      "symbols": [
+        {
+          "name": "FrontmatterSplit",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "splitFrontmatter",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "asString",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "asStringArray",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "asBoolean",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "extractFallbackDescription",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "normalizeFrontmatter",
+          "type": "function",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "path": "src/services/skills/registry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 95,
+      "symbols": [
+        {
+          "name": "setSkills",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "isSkillsInitialized",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "getModelVisibleSkills",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "getAllUserInvocableSkills",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "findSkill",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "activateConditional",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "listConditionalSkills",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "clearSkills",
+          "type": "function",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "path": "src/session/history.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 29,
+      "symbols": [
+        {
+          "name": "formatSessionUsage",
+          "type": "function",
+          "line": 3
+        },
+        {
+          "name": "formatProjectSessionHistory",
+          "type": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "src/session/storage.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 362,
+      "symbols": [
+        {
+          "name": "SessionPaths",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "SessionMetadata",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "SessionSummary",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "TranscriptEntry",
+          "type": "type",
+          "line": 37
+        },
+        {
+          "name": "RestoredSession",
+          "type": "interface",
+          "line": 45
+        },
+        {
+          "name": "createEmptyUsage",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "isUsage",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "isMessageParam",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "parseJsonLine",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "getLastUpdatedAt",
+          "type": "function",
+          "line": 173
+        },
+        {
+          "name": "createSessionId",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "getProjectHash",
+          "type": "function",
+          "line": 185
+        },
+        {
+          "name": "getSessionPaths",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "ensureSessionDir",
+          "type": "function",
+          "line": 200
+        },
+        {
+          "name": "initSessionStorage",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "appendTranscriptEntry",
+          "type": "function",
+          "line": 221
+        },
+        {
+          "name": "readTranscriptEntries",
+          "type": "function",
+          "line": 228
+        },
+        {
+          "name": "getLatestSessionId",
+          "type": "function",
+          "line": 238
+        },
+        {
+          "name": "value",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "restoreSession",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "appendCompactionSnapshot",
+          "type": "function",
+          "line": 298
+        },
+        {
+          "name": "listProjectSessions",
+          "type": "function",
+          "line": 319
+        },
+        {
+          "name": "projectDir",
+          "type": "function",
+          "line": 320
+        }
+      ]
+    },
+    {
+      "path": "src/state/taskModeStore.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "TaskMode",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "Listener",
+          "type": "type",
+          "line": 19
+        },
+        {
+          "name": "getTaskMode",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "setTaskMode",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "subscribeTaskMode",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "isTaskModeEnabled",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "isTodoModeEnabled",
+          "type": "function",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "src/state/taskStore.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 411,
+      "symbols": [
+        {
+          "name": "sanitizePathComponent",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "getTaskListId",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "getTasksDir",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "getTaskPath",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "ensureTasksDir",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "ensureTaskListLockFile",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "getHighWaterMarkPath",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "readHighWaterMark",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "content",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "writeHighWaterMark",
+          "type": "function",
+          "line": 117
+        },
+        {
+          "name": "findHighestTaskIdFromFiles",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "findHighestTaskId",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "isTaskStatus",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "parseTask",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "TaskListener",
+          "type": "type",
+          "line": 179
+        },
+        {
+          "name": "subscribeTasks",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "notifyTasksUpdated",
+          "type": "function",
+          "line": 194
+        },
+        {
+          "name": "createTask",
+          "type": "function",
+          "line": 210
+        },
+        {
+          "name": "getTask",
+          "type": "function",
+          "line": 228
+        },
+        {
+          "name": "listTasks",
+          "type": "function",
+          "line": 239
+        },
+        {
+          "name": "updateTaskUnsafe",
+          "type": "function",
+          "line": 255
+        },
+        {
+          "name": "updateTask",
+          "type": "function",
+          "line": 272
+        },
+        {
+          "name": "deleteTask",
+          "type": "function",
+          "line": 296
+        },
+        {
+          "name": "blockTask",
+          "type": "function",
+          "line": 340
+        },
+        {
+          "name": "resetTaskList",
+          "type": "function",
+          "line": 367
+        },
+        {
+          "name": "isReady",
+          "type": "function",
+          "line": 407
+        }
+      ]
+    },
+    {
+      "path": "src/state/todoStore.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 49,
+      "symbols": [
+        {
+          "name": "Listener",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "getTodos",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "setTodos",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "subscribeTodos",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "clearTodos",
+          "type": "function",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "path": "src/tools/Tool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 108,
+      "symbols": [
+        {
+          "name": "ToolContext",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "ToolResult",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "Tool",
+          "type": "interface",
+          "line": 58
+        },
+        {
+          "name": "truncateToolResult",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "toolToApiParam",
+          "type": "function",
+          "line": 102
+        }
+      ]
+    },
+    {
+      "path": "src/tools/bashTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 216,
+      "symbols": [
+        {
+          "name": "BashInput",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "buildProfileForCwd",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "truncateOutput",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "splitCommandSegments",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "isReadOnlyCommand",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "onAbort",
+          "type": "function",
+          "line": 167
+        }
+      ]
+    },
+    {
+      "path": "src/tools/enterPlanModeTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 89,
+      "symbols": []
+    },
+    {
+      "path": "src/tools/exitPlanModeTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 137,
+      "symbols": [
+        {
+          "name": "AllowedPrompt",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "buildAllowRulesFromPrompts",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "summary",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "allowedPrompts",
+          "type": "function",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "path": "src/tools/fileEditTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 103,
+      "symbols": [
+        {
+          "name": "FileEditInput",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "normalizeQuotes",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "countOccurrences",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "buildEditPreview",
+          "type": "function",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "src/tools/fileReadTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 105,
+      "symbols": [
+        {
+          "name": "FileReadInput",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "addLineNumbers",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "src/tools/fileWriteTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 68,
+      "symbols": [
+        {
+          "name": "FileWriteInput",
+          "type": "interface",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "path": "src/tools/globTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 81,
+      "symbols": [
+        {
+          "name": "GlobInput",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "hasCommand",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "src/tools/grepTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 85,
+      "symbols": [
+        {
+          "name": "GrepInput",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "hasCommand",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "src/tools/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 90,
+      "symbols": [
+        {
+          "name": "registerMcpTools",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "clearMcpTools",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "getAllTools",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "findToolByName",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "getToolsApiParams",
+          "type": "function",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "path": "src/tools/memoryWriteTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "src/tools/pathUtils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 40,
+      "symbols": [
+        {
+          "name": "getToolAllowedRoots",
+          "type": "function",
+          "line": 4
+        },
+        {
+          "name": "describeAllowedRoots",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "expandHome",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "resolveSafePath",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "ensureInsideAllowedRoots",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "resolveWorkspacePath",
+          "type": "function",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "path": "src/tools/skillTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 152,
+      "symbols": [
+        {
+          "name": "SkillInput",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "readInput",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "substituteVariables",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "buildPromptText",
+          "type": "function",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "path": "src/tools/taskCreateTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 93,
+      "symbols": [
+        {
+          "name": "pickString",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "src/tools/taskGetTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "src/tools/taskListTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "src/tools/taskUpdateTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 200,
+      "symbols": [
+        {
+          "name": "UpdateStatus",
+          "type": "type",
+          "line": 33
+        },
+        {
+          "name": "pickString",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "pickStringArray",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "mergeMetadata",
+          "type": "function",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "src/tools/todoWriteTool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 150,
+      "symbols": [
+        {
+          "name": "isTodoItem",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "parseTodos",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "src/types/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "src/types/mcp.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 114,
+      "symbols": [
+        {
+          "name": "McpStdioServerConfig",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "McpHTTPServerConfig",
+          "type": "interface",
+          "line": 39
+        },
+        {
+          "name": "McpSSEServerConfig",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "McpServerConfig",
+          "type": "type",
+          "line": 57
+        },
+        {
+          "name": "McpJsonConfig",
+          "type": "interface",
+          "line": 63
+        },
+        {
+          "name": "ScopedMcpServerConfig",
+          "type": "type",
+          "line": 68
+        },
+        {
+          "name": "ConnectedMcpServer",
+          "type": "interface",
+          "line": 74
+        },
+        {
+          "name": "FailedMcpServer",
+          "type": "interface",
+          "line": 84
+        },
+        {
+          "name": "DisabledMcpServer",
+          "type": "interface",
+          "line": 91
+        },
+        {
+          "name": "PendingMcpServer",
+          "type": "interface",
+          "line": 103
+        },
+        {
+          "name": "McpServerConnection",
+          "type": "type",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "path": "src/types/message.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 111,
+      "symbols": [
+        {
+          "name": "TextBlock",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "ToolUseBlock",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "ToolResultBlock",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "ThinkingBlock",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "ContentBlock",
+          "type": "type",
+          "line": 41
+        },
+        {
+          "name": "UserMessage",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "AssistantMessage",
+          "type": "interface",
+          "line": 54
+        },
+        {
+          "name": "Message",
+          "type": "type",
+          "line": 59
+        },
+        {
+          "name": "Usage",
+          "type": "interface",
+          "line": 63
+        },
+        {
+          "name": "StreamTextEvent",
+          "type": "interface",
+          "line": 72
+        },
+        {
+          "name": "StreamToolUseStartEvent",
+          "type": "interface",
+          "line": 77
+        },
+        {
+          "name": "StreamToolUseInputEvent",
+          "type": "interface",
+          "line": 83
+        },
+        {
+          "name": "StreamMessageStartEvent",
+          "type": "interface",
+          "line": 89
+        },
+        {
+          "name": "StreamMessageDoneEvent",
+          "type": "interface",
+          "line": 94
+        },
+        {
+          "name": "StreamErrorEvent",
+          "type": "interface",
+          "line": 100
+        },
+        {
+          "name": "StreamEvent",
+          "type": "type",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "src/types/task.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": [
+        {
+          "name": "TaskStatus",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "Task",
+          "type": "interface",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "src/types/todo.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": [
+        {
+          "name": "TodoStatus",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "TodoItem",
+          "type": "interface",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "src/types/tool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "src/types/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 65,
+      "symbols": [
+        {
+          "name": "SkillSource",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "SkillFrontmatter",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "Skill",
+          "type": "interface",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "src/ui/App.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 110,
+      "symbols": [
+        {
+          "name": "AppProps",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "App",
+          "type": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/CommandSuggestions.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 29,
+      "symbols": [
+        {
+          "name": "CommandSuggestionsProps",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "CommandSuggestions",
+          "type": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/ConversationView.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 229,
+      "symbols": [
+        {
+          "name": "ConversationViewProps",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "ToolResultInfo",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "isInternalMessage",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "extractCommandMarker",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "buildToolResultMap",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "InlineToolCard",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "ConversationView",
+          "type": "function",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/InputPrompt.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": [
+        {
+          "name": "InputPromptProps",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "InputPrompt",
+          "type": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/MessageList.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 78,
+      "symbols": [
+        {
+          "name": "MessageListProps",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "MessageList",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "MessageItem",
+          "type": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/ModeSelector.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 46,
+      "symbols": [
+        {
+          "name": "SelectorItem",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "ModeSelectorProps",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "ModeSelector",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/PlanApprovalDialog.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 133,
+      "symbols": [
+        {
+          "name": "PlanApprovalDialogProps",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "PlanApprovalDialog",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/Spinner.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 89,
+      "symbols": [
+        {
+          "name": "SpinnerProps",
+          "type": "interface",
+          "line": 32
+        },
+        {
+          "name": "Spinner",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "sliceShimmer",
+          "type": "function",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/StatusBar.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 89,
+      "symbols": [
+        {
+          "name": "StatusBarProps",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "StatusBar",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/SystemPanel.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 25,
+      "symbols": [
+        {
+          "name": "SystemPanelProps",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "SystemPanel",
+          "type": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/TaskList.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 126,
+      "symbols": [
+        {
+          "name": "TaskListProps",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "TaskListInner",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "TaskRow",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "areTaskListsEqual",
+          "type": "function",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/TodoList.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 91,
+      "symbols": [
+        {
+          "name": "TodoListProps",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "TodoListInner",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "TodoRow",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "countBy",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "areTodoListsEqual",
+          "type": "function",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "path": "src/ui/components/ToolCallList.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 66,
+      "symbols": [
+        {
+          "name": "ToolCallListProps",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "ToolCallList",
+          "type": "function",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "path": "src/ui/hooks/useAgentSession.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 862,
+      "symbols": [
+        {
+          "name": "UseAgentSessionOptions",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "SubmitResult",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "ToolCallCompletion",
+          "type": "interface",
+          "line": 53
+        },
+        {
+          "name": "markToolCallComplete",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "buildCommandNotice",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "useAgentSession",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "refresh",
+          "type": "function",
+          "line": 260
+        },
+        {
+          "name": "initialize",
+          "type": "function",
+          "line": 307
+        }
+      ]
+    },
+    {
+      "path": "src/ui/hooks/usePromptInput.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 300,
+      "symbols": [
+        {
+          "name": "ModeSuggestion",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "TaskModeSuggestion",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "UsePromptInputOptions",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "usePromptInput",
+          "type": "function",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "src/ui/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 57,
+      "symbols": [
+        {
+          "name": "ToolCallInfo",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "UsageSummary",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "PermissionPromptState",
+          "type": "interface",
+          "line": 30
+        },
+        {
+          "name": "CommandSuggestion",
+          "type": "interface",
+          "line": 43
+        },
+        {
+          "name": "SystemNotice",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "SessionViewState",
+          "type": "interface",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "src/ui/utils/toolCardFormat.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 61,
+      "symbols": [
+        {
+          "name": "formatErrorBody",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "formatToolInputPreview",
+          "type": "function",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "path": "src/utils/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "src/utils/loadEnv.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 50,
+      "symbols": [
+        {
+          "name": "ClaudeConfig",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "readJsonEnv",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "loadEnv",
+          "type": "function",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "path": "src/utils/log.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 15,
+      "symbols": [
+        {
+          "name": "debugLog",
+          "type": "function",
+          "line": 1
+        },
+        {
+          "name": "logWarn",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "src/utils/paths.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 115,
+      "symbols": [
+        {
+          "name": "getEasyAgentHome",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "getEasyAgentPath",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "getUserSettingsPath",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "getGlobalAgentMdPath",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "getTasksRoot",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "getPlansRoot",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "getProjectsRoot",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "getStreamDebugLogPath",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "getProjectEasyAgentDir",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "getProjectSettingsPath",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "getSettingsPaths",
+          "type": "function",
+          "line": 113
+        }
+      ]
+    },
+    {
+      "path": "src/utils/settings.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 76,
+      "symbols": [
+        {
+          "name": "SettingsFileResult",
+          "type": "interface",
+          "line": 32
+        },
+        {
+          "name": "readJsonSettingsFile",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "src/utils/streamDebug.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "resolveLogPath",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "writeStreamDebug",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "isStreamDebugEnabled",
+          "type": "function",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "src/utils/tokens.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 155,
+      "symbols": [
+        {
+          "name": "getContextWindowForModel",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "getEffectiveContextWindowSize",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "roughTokenCountEstimation",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "estimateUnknownObjectTokens",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "estimateContentBlockTokens",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "estimateMessageTokens",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "roughTokenCountEstimationForMessages",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "estimateSystemPromptTokens",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "getTokenCountFromUsage",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "tokenCountWithEstimation",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "TokenBudgetSnapshot",
+          "type": "interface",
+          "line": 126
+        },
+        {
+          "name": "scaleBuffer",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "buildTokenBudgetSnapshot",
+          "type": "function",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "path": "step/step1.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 127,
+      "symbols": [
+        {
+          "name": "getClient",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "textBlock",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "toolUseBlock",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "step/step10.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 219,
+      "symbols": [
+        {
+          "name": "getProjectKey",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "getProjectMemoryPaths",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "ensureMemoryDir",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "slugify",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "stripHtmlComments",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "shouldStoreAsMemory",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "buildMemoryFileContent",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "parseFrontmatter",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "writeMemoryFile",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "readMemoryFile",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "listMemoryFiles",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "buildMemoryIndex",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "rebuildMemoryIndex",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "saveMemory",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "readMemoryEntrypoint",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "findRelevantMemories",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "loaded",
+          "type": "function",
+          "line": 199
+        }
+      ]
+    },
+    {
+      "path": "step/step11.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 275,
+      "symbols": [
+        {
+          "name": "roughTokenCount",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "estimateContentBlockTokens",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "estimateMessageTokens",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "estimateMessagesTokens",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "tokenCountWithEstimation",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "buildTokenBudgetSnapshot",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "microCompactMessage",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "microCompactMessages",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "findSafeTailStart",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "compactMessages",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 228
+        }
+      ]
+    },
+    {
+      "path": "step/step12.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 352,
+      "symbols": [
+        {
+          "name": "getContextWindowForModel",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "getEffectiveContextWindowSize",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "scaleBuffer",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "getAutoCompactThreshold",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "getBlockingLimit",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "getWarningThreshold",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "calculateTokenWarningState",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "resetAutoCompactFailures",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "shouldAutoCompact",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "autoCompactIfNeeded",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "truncateToolResult",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "streamMessageWithRetry",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "UsageAnchor",
+          "type": "class",
+          "line": 194
+        },
+        {
+          "name": "microCompactToolResultContent",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "microCompactMessageV2",
+          "type": "function",
+          "line": 234
+        },
+        {
+          "name": "isCompactMessage",
+          "type": "function",
+          "line": 262
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 272
+        }
+      ]
+    },
+    {
+      "path": "step/step13.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 228,
+      "symbols": [
+        {
+          "name": "generatePlanSlug",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "getPlanSlug",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "getPlanFilePath",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "ensurePlansDirectory",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "writePlan",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "readPlan",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "buildAllowRulesFromPrompts",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "isReadOnlyCommand",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "checkPermissionInPlanMode",
+          "type": "function",
+          "line": 185
+        },
+        {
+          "name": "getToolsApiParams",
+          "type": "function",
+          "line": 211
+        },
+        {
+          "name": "getPlanModeAttachment",
+          "type": "function",
+          "line": 218
+        }
+      ]
+    },
+    {
+      "path": "step/step14.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 217,
+      "symbols": [
+        {
+          "name": "isTodoItem",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "parseTodos",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "getTodos",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "setTodos",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "clearTodos",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "subscribeTodos",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "checkPermissionForTodoWrite",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "createToolContext",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "subscribeSessionTodos",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "countTodosByStatus",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "getInProgressTodo",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "getEffectiveSpinnerLabel",
+          "type": "function",
+          "line": 201
+        },
+        {
+          "name": "formatTodoRows",
+          "type": "function",
+          "line": 207
+        }
+      ]
+    },
+    {
+      "path": "step/step15.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 413,
+      "symbols": [
+        {
+          "name": "createTaskRecord",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "sanitizePathComponent",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "getTaskListId",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "getTasksDir",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "getTaskPath",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "getHighWaterMarkPath",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "ensureTasksDir",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "readHighWaterMark",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "content",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "writeHighWaterMark",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "findHighestTaskIdFromFiles",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "findHighestTaskId",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "parseTask",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "getTask",
+          "type": "function",
+          "line": 143
+        },
+        {
+          "name": "listTasks",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "writeTask",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "createTask",
+          "type": "function",
+          "line": 177
+        },
+        {
+          "name": "updateTask",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "deleteTask",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "resetTaskList",
+          "type": "function",
+          "line": 239
+        },
+        {
+          "name": "blockTask",
+          "type": "function",
+          "line": 266
+        },
+        {
+          "name": "isReady",
+          "type": "function",
+          "line": 284
+        },
+        {
+          "name": "getTaskMode",
+          "type": "function",
+          "line": 296
+        },
+        {
+          "name": "setTaskMode",
+          "type": "function",
+          "line": 300
+        },
+        {
+          "name": "isTaskModeEnabled",
+          "type": "function",
+          "line": 304
+        },
+        {
+          "name": "isTodoModeEnabled",
+          "type": "function",
+          "line": 308
+        }
+      ]
+    },
+    {
+      "path": "step/step16.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 333,
+      "symbols": [
+        {
+          "name": "validateServerConfig",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "normalizeNameForMcp",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "buildMcpToolName",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "parseMcpToolName",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "setMcpRegistryEntry",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "getMcpRegistry",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "getMcpRegistryEntry",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "clearMcpRegistry",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "createStdioTransport",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "createHttpTransport",
+          "type": "function",
+          "line": 133
+        },
+        {
+          "name": "createSseTransport",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "createTransportBundle",
+          "type": "function",
+          "line": 177
+        },
+        {
+          "name": "getCacheKey",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "connectToServer",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "doConnect",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "stringifyMcpContent",
+          "type": "function",
+          "line": 253
+        },
+        {
+          "name": "buildToolAdapter",
+          "type": "function",
+          "line": 265
+        },
+        {
+          "name": "fetchToolsForConnection",
+          "type": "function",
+          "line": 295
+        },
+        {
+          "name": "bootstrapMcp",
+          "type": "function",
+          "line": 308
+        }
+      ]
+    },
+    {
+      "path": "step/step17.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 488,
+      "symbols": [
+        {
+          "name": "getUserSkillsDir",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "getProjectSkillsDir",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "posixifyPath",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "asString",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "asStringArray",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "asBoolean",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "splitFrontmatter",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "extractFallbackDescription",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "normalizeFrontmatter",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "loadFromOneDir",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "loadAllSkills",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "setSkills",
+          "type": "function",
+          "line": 221
+        },
+        {
+          "name": "isSkillsInitialized",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "getModelVisibleSkills",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "getAllUserInvocableSkills",
+          "type": "function",
+          "line": 246
+        },
+        {
+          "name": "findSkill",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "activateConditionalSkill",
+          "type": "function",
+          "line": 254
+        },
+        {
+          "name": "truncateDescription",
+          "type": "function",
+          "line": 267
+        },
+        {
+          "name": "buildSkillLine",
+          "type": "function",
+          "line": 273
+        },
+        {
+          "name": "formatSkillsWithinBudget",
+          "type": "function",
+          "line": 283
+        },
+        {
+          "name": "formatSkillsSystemReminder",
+          "type": "function",
+          "line": 305
+        },
+        {
+          "name": "substituteSkillVariables",
+          "type": "function",
+          "line": 323
+        },
+        {
+          "name": "createSkillTool",
+          "type": "function",
+          "line": 330
+        },
+        {
+          "name": "expandSkillSlashCommand",
+          "type": "function",
+          "line": 399
+        },
+        {
+          "name": "activateConditionalSkillsForPaths",
+          "type": "function",
+          "line": 436
+        },
+        {
+          "name": "extractToolFilePaths",
+          "type": "function",
+          "line": 464
+        },
+        {
+          "name": "bootstrapSkills",
+          "type": "function",
+          "line": 478
+        }
+      ]
+    },
+    {
+      "path": "step/step18.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 592,
+      "symbols": [
+        {
+          "name": "getEasyAgentDir",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "getUserSettingsPath",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "getProjectSettingsPath",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "readJsonFile",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "asStringArray",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "uniqueMerge",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "pickFilesystem",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "pickNetwork",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "pickSandbox",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "resolveSandboxSettings",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "loadSandboxSettings",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "isPlatformSupported",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "isSandboxExecAvailable",
+          "type": "function",
+          "line": 173
+        },
+        {
+          "name": "isSandboxRuntimeReady",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "getSandboxUnavailableReason",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "splitCommand",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "flush",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "wildcardToRegExp",
+          "type": "function",
+          "line": 259
+        },
+        {
+          "name": "matchesExcludedPattern",
+          "type": "function",
+          "line": 267
+        },
+        {
+          "name": "containsExcludedCommand",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "shouldUseSandbox",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "canonicalize",
+          "type": "function",
+          "line": 305
+        },
+        {
+          "name": "expandHome",
+          "type": "function",
+          "line": 313
+        },
+        {
+          "name": "resolveRulePath",
+          "type": "function",
+          "line": 319
+        },
+        {
+          "name": "stripGlobSuffix",
+          "type": "function",
+          "line": 324
+        },
+        {
+          "name": "parsePermissionRule",
+          "type": "function",
+          "line": 328
+        },
+        {
+          "name": "getCriticalDenyPaths",
+          "type": "function",
+          "line": 334
+        },
+        {
+          "name": "buildSandboxProfile",
+          "type": "function",
+          "line": 347
+        },
+        {
+          "name": "escapeSbplString",
+          "type": "function",
+          "line": 424
+        },
+        {
+          "name": "subpath",
+          "type": "function",
+          "line": 428
+        },
+        {
+          "name": "compileMacosProfile",
+          "type": "function",
+          "line": 432
+        },
+        {
+          "name": "shellQuoteSingle",
+          "type": "function",
+          "line": 457
+        },
+        {
+          "name": "wrapWithSandbox",
+          "type": "function",
+          "line": 461
+        },
+        {
+          "name": "ruleMatchesBash",
+          "type": "function",
+          "line": 480
+        },
+        {
+          "name": "checkSandboxAutoAllow",
+          "type": "function",
+          "line": 486
+        },
+        {
+          "name": "looksLikeSandboxViolation",
+          "type": "function",
+          "line": 533
+        },
+        {
+          "name": "annotateStderrWithSandboxFailures",
+          "type": "function",
+          "line": 538
+        },
+        {
+          "name": "removeSandboxViolationTags",
+          "type": "function",
+          "line": 556
+        },
+        {
+          "name": "prepareBashCommand",
+          "type": "function",
+          "line": 564
+        }
+      ]
+    },
+    {
+      "path": "step/step2.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "runRepl",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "text",
+          "type": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "step/step3.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 97,
+      "symbols": [
+        {
+          "name": "resolveWorkspacePath",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "addLineNumbers",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "findToolByName",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "getToolsApiParams",
+          "type": "function",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "step/step4.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 89,
+      "symbols": [
+        {
+          "name": "runTools",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "step/step5.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 173,
+      "symbols": [
+        {
+          "name": "resolveWorkspacePath",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "countOccurrences",
+          "type": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "step/step6.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 68,
+      "symbols": [
+        {
+          "name": "readAgentMd",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "getGitSection",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "buildSystemPrompt",
+          "type": "function",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "step/step7.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 87,
+      "symbols": [
+        {
+          "name": "isReadOnlyCommand",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "isDangerousCommand",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "summarizePermissionRequest",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "checkPermission",
+          "type": "function",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "step/step8.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 116,
+      "symbols": [
+        {
+          "name": "emptyUsage",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "QueryEngine",
+          "type": "class",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "step/step9.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 338,
+      "symbols": [
+        {
+          "name": "createEmptyUsage",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "createSessionId",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "getProjectHash",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "getSessionPaths",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "ensureSessionDir",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "createSessionMetaEntry",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "createMessageEntry",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "createToolEventEntry",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "createUsageEntry",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "createSystemEntry",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "initSessionStorage",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "appendTranscriptEntry",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "isUsage",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "isMessageParam",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "parseJsonLine",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "readTranscriptEntries",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "getLatestSessionId",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "value",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "getLastUpdatedAt",
+          "type": "function",
+          "line": 225
+        },
+        {
+          "name": "restoreSession",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "listProjectSessions",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "formatProjectSessionHistory",
+          "type": "function",
+          "line": 316
+        }
+      ]
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    }
+  ]
+}
