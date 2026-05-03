@@ -31,7 +31,6 @@ Sources: [src/registry.ts:16-74](../../../project-repos/opencli/src/registry.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 最小心智模型：
 
 ```mermaid
@@ -86,7 +85,6 @@ Sources: [src/registry.ts:7-14](../../../project-repos/opencli/src/registry.ts#L
 
 <!-- source-snippets:end -->
 </details>
-
 `normalizeCommand` 会把 strategy 转成 browser 和 navigateBefore 等运行字段。例如需要 cookie、header、intercept、UI 的命令通常需要浏览器上下文；pipeline 中出现浏览器专属步骤也会触发浏览器 session。  
 Sources: [src/registry.ts:133-163](../../../project-repos/opencli/src/registry.ts#L133-L163), [src/capabilityRouting.ts:3-14](../../../project-repos/opencli/src/capabilityRouting.ts#L3-L14), [src/capabilityRouting.ts:23-31](../../../project-repos/opencli/src/capabilityRouting.ts#L23-L31)
 
@@ -109,7 +107,6 @@ Sources: [src/registry.ts:133-163](../../../project-repos/opencli/src/registry.t
 
 <!-- source-snippets:end -->
 </details>
-
 ## func 与 pipeline
 
 `executeCommand` 先处理参数，再决定是否创建页面。执行时：
@@ -144,7 +141,6 @@ Sources: [src/execution.ts:33-75](../../../project-repos/opencli/src/execution.t
 
 <!-- source-snippets:end -->
 </details>
-
 ## Manifest 的作用
 
 构建时的 manifest 编译器会扫描 `clis/`，导入 JS adapter 并捕获 registry 中新增的命令，然后写成 `cli-manifest.json`。运行时优先用 manifest 以降低启动时扫描和 import 成本。  
@@ -173,7 +169,6 @@ Sources: [src/build-manifest.ts:19-54](../../../project-repos/opencli/src/build-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 校验规则
 
 `validate` 不再扫文件本身，而是校验已加载 registry。它检查：
@@ -201,7 +196,6 @@ Sources: [src/validate.ts:27-45](../../../project-repos/opencli/src/validate.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 ## Adapter 输出契约
 
 adapter 的 `columns` 应和返回对象 key 对齐。最终输出由 `output.ts` 统一渲染成 table、json、plain、markdown、csv 或 yaml。Agent 场景优先使用 `-f json`，因为它避免 table 渲染和颜色文本干扰。  
@@ -245,7 +239,6 @@ Sources: [src/output.ts:20-28](../../../project-repos/opencli/src/output.ts#L20-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 编写 adapter 的推荐路径
 
 仓库内的 adapter-author skill 建议从站点侦察、API 发现、endpoint 验证、字段解码、columns 设计，再到 `opencli browser init` 和 `opencli browser verify`。它强调 memory 命中后也必须重新验证 endpoint，不要直接写 adapter。  
@@ -272,9 +265,9 @@ START
   ▼
 ┌────────────────────────────────────────────────────┐
 │ 读站点记忆：                                        │
-│   1. ~/.opencli/sites/&lt;site&gt;/endpoints.json         │
-│   2. ~/.opencli/sites/&lt;site&gt;/notes.md               │
-│   3. references/site-memory/&lt;site&gt;.md               │
+│   1. ~/.opencli/sites/<site>/endpoints.json         │
+│   2. ~/.opencli/sites/<site>/notes.md               │
+│   3. references/site-memory/<site>.md               │
 └────────────────────────────────────────────────────┘
   │ 命中 endpoint + 字段 → 直接跳到【endpoint 验证】（不跳写 adapter！memory 可能过期）
   │ 没命中 → 继续
@@ -308,7 +301,7 @@ START
   │
   ▼
 ┌──────────────────────────┐
-│ opencli browser init      │  生成 ~/.opencli/clis/&lt;site&gt;/&lt;name&gt;.js 骨架
+│ opencli browser init      │  生成 ~/.opencli/clis/<site>/<name>.js 骨架
 │ 复制最像的邻居 adapter    │
 │ 改 name / URL / 映射三处  │
 └──────────────────────────┘
@@ -341,8 +334,8 @@ DONE
 ```
 [ ] 1. opencli doctor 返回 "Everything looks good"
 [ ] 2. 读站点记忆：
-       [ ] ~/.opencli/sites/&lt;site&gt;/endpoints.json 存在？里面有想要的 endpoint？
-       [ ] references/site-memory/&lt;site&gt;.md 存在？看"已知 endpoint"节
+       [ ] ~/.opencli/sites/<site>/endpoints.json 存在？里面有想要的 endpoint？
+       [ ] references/site-memory/<site>.md 存在？看"已知 endpoint"节
        [ ] 命中后：**跳到第 5（endpoint 验证） + 第 7（字段核对）**，不能直接跳第 9 写 adapter
        [ ] memory 写入超过 30 天（看 `verified_at`）→ 当作过期，按冷启动走 Step 3 → 4
 [ ] 3. 侦察（site-recon.md）：
@@ -368,10 +361,10 @@ DONE
        [ ] 类型 / 单位 / 百分比格式清楚
        [ ] 顺序：识别列 → 业务数字 → metadata
 [ ] 9. 写 adapter（adapter-template.md）：
-       [ ] opencli browser init &lt;site&gt;/&lt;name&gt;
+       [ ] opencli browser init <site>/<name>
        [ ] 找同站点或同类型最像的 adapter，cp 过来
        [ ] 改 name / URL / 字段映射
-[ ] 10. opencli browser verify &lt;site&gt;/&lt;name&gt;
+[ ] 10. opencli browser verify <site>/<name>
         [ ] 首轮通过后立刻 `--write-fixture` 生成 `~/.opencli/sites/<site>/verify/<cmd>.json` 种子
         [ ] 手改种子：加 `patterns`（URL / 日期 / ID 格式）+ `notEmpty`（核心字段）+ 收紧 `rowCount`
         [ ] 再跑一次 `opencli browser verify <site>/<name>`，确认 ✓ matches fixture

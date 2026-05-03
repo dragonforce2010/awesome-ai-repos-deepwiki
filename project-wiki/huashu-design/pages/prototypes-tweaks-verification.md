@@ -67,16 +67,16 @@ App 和移动原型有独立规则：默认单文件 inline React，交付前先
 **Overview 平铺的骨架**（每屏独立一台 IosFrame 并排）：
 
 ```jsx
-&lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'&#125;&#125;>
+<div style={{display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'}}>
   {screens.map(s => (
-    &lt;div key={s.id}>
-      &lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'&#125;&#125;>{s.label}&lt;/div>
-      &lt;IosFrame&gt;
-        &lt;ScreenComponent data={s} /&gt;
-      &lt;/IosFrame&gt;
-    &lt;/div>
+    <div key={s.id}>
+      <div style={{fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'}}>{s.label}</div>
+      <IosFrame>
+        <ScreenComponent data={s} />
+      </IosFrame>
+    </div>
   ))}
-&lt;/div>
+</div>
 ```
 
 **Flow demo 的骨架**（单台 clickable 状态机）：
@@ -112,11 +112,11 @@ Screen 组件接 callback props（`onEnter`、`onClose`、`onTabChange`、`onOpe
 
 ```jsx
 // 步骤 1: Read 本 skill 的 assets/ios_frame.jsx（相对本 SKILL.md 的路径）
-// 步骤 2: 把整个 iosFrameStyles 常量 + IosFrame 组件贴进你的 &lt;script type="text/babel"&gt;
-// 步骤 3: 你自己的屏组件包在 &lt;IosFrame&gt;...&lt;/IosFrame&gt; 里，不碰 island/status bar/home indicator
-&lt;IosFrame time="9:41" battery={85}&gt;
-  &lt;YourScreen /&gt;  {/* 内容从 top 54 开始渲染，下边留给 home indicator，你不用管 */}
-&lt;/IosFrame&gt;
+// 步骤 2: 把整个 iosFrameStyles 常量 + IosFrame 组件贴进你的 <script type="text/babel">
+// 步骤 3: 你自己的屏组件包在 <IosFrame>...</IosFrame> 里，不碰 island/status bar/home indicator
+<IosFrame time="9:41" battery={85}>
+  <YourScreen />  {/* 内容从 top 54 开始渲染，下边留给 home indicator，你不用管 */}
+</IosFrame>
 ```
 
 **例外**：只有用户明确要求「假装是 iPhone 14 非 Pro 的刘海」「做 Android 不是 iOS」「自定义设备形态」时才绕过——此时读对应 `android_frame.jsx` 或修改 `ios_frame.jsx` 的常量，**不要**在项目 HTML 里另起一套 island/status bar。
@@ -145,7 +145,6 @@ Screen 组件接 callback props（`onEnter`、`onClose`、`onTabChange`、`onOpe
 
 <!-- source-snippets:end -->
 </details>
-
 ## Overview 与 Flow Demo
 
 Overview 平铺适合设计 review 和多屏一致性走查；Flow demo 单机适合演示特定用户路径，内部需要 `AppPhone` 状态管理器和 callback props。这个路由会影响成本、交互复杂度和验证重点。Sources: [SKILL.md:515-555](../../../project-repos/huashu-design/SKILL.md#L515-L555)
@@ -175,16 +174,16 @@ Overview 平铺适合设计 review 和多屏一致性走查；Flow demo 单机�
 **Overview 平铺的骨架**（每屏独立一台 IosFrame 并排）：
 
 ```jsx
-&lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'&#125;&#125;>
+<div style={{display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'}}>
   {screens.map(s => (
-    &lt;div key={s.id}>
-      &lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'&#125;&#125;>{s.label}&lt;/div>
-      &lt;IosFrame&gt;
-        &lt;ScreenComponent data={s} /&gt;
-      &lt;/IosFrame&gt;
-    &lt;/div>
+    <div key={s.id}>
+      <div style={{fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'}}>{s.label}</div>
+      <IosFrame>
+        <ScreenComponent data={s} />
+      </IosFrame>
+    </div>
   ))}
-&lt;/div>
+</div>
 ```
 
 **Flow demo 的骨架**（单台 clickable 状态机）：
@@ -203,7 +202,6 @@ Screen 组件接 callback props（`onEnter`、`onClose`、`onTabChange`、`onOpe
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A["App 原型任务"] --> B{"交付形态"}
@@ -281,7 +279,6 @@ python verify.py deck.html --slides 10  # 截前10张
 
 <!-- source-snippets:end -->
 </details>
-
 ## Tweaks 的跨 agent 实现
 
 `references/tweaks-system.md` 将 Tweaks 设计成纯前端 `localStorage` 方案，而不是依赖某个 host 的 postMessage 回写源码。这让颜色、字号、密度、暗黑模式等参数可在任何 agent 环境中刷新保留。Sources: [references/tweaks-system.md:1-15](../../../project-repos/huashu-design/references/tweaks-system.md#L1-L15), [references/tweaks-system.md:17-54](../../../project-repos/huashu-design/references/tweaks-system.md#L17-L54), [references/tweaks-system.md:177-207](../../../project-repos/huashu-design/references/tweaks-system.md#L177-L207)
@@ -366,15 +363,15 @@ function App() {
   const { tweaks } = useTweaks();
 
   return (
-    &lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>
+    <div style={{
       '--primary': tweaks.primaryColor,
       '--font-size': `${tweaks.fontSize}px`,
       background: tweaks.dark ? '#0A0A0A' : '#FAFAFA',
       color: tweaks.dark ? '#FAFAFA' : '#1A1A1A',
-    &#125;&#125;>
+    }}>
       {/* 你的内容 */}
-      &lt;TweaksPanel /&gt;
-    &lt;/div>
+      <TweaksPanel />
+    </div>
   );
 }
 ```
@@ -392,7 +389,6 @@ button.cta {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 验证闭环
 
 `references/verification.md` 和 `scripts/verify.py` 提供 Playwright 验证路径：打开 HTML、截图、抓 console/page errors、多视口检查、deck 逐页截图。`verify.py` 对每个 viewport 建 context，记录 page errors 与 console warning/error，最后输出验证报告。Sources: [references/verification.md:5-33](../../../project-repos/huashu-design/references/verification.md#L5-L33), [references/verification.md:35-60](../../../project-repos/huashu-design/references/verification.md#L35-L60), [scripts/verify.py:29-119](../../../project-repos/huashu-design/scripts/verify.py#L29-L119)
@@ -565,7 +561,6 @@ def verify_html(html_path, viewports=None, slides=0, output_dir=None, show=False
 
 <!-- source-snippets:end -->
 </details>
-
 ## 行为样例
 
 `test-prompts.json` 规定 Habit Tracker、读书笔记、跑步记录等 App 原型要走 overview 或询问形态，使用 `ios_frame.jsx`，并根据产品类型决定信息密度。Sources: [test-prompts.json:21-37](../../../project-repos/huashu-design/test-prompts.json#L21-L37)
@@ -599,7 +594,6 @@ def verify_html(html_path, viewports=None, slides=0, output_dir=None, show=False
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Starter Components 架构](starter-components.md)

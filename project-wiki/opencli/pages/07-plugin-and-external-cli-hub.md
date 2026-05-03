@@ -43,7 +43,6 @@ Sources: [src/plugin.ts:1-8](../../../project-repos/opencli/src/plugin.ts#L1-L8)
 
 <!-- source-snippets:end -->
 </details>
-
 ## Plugin manifest
 
 插件 manifest 文件名是 `opencli-plugin.json`。它支持单插件和 monorepo 两种模式；monorepo 可以声明多个 subplugin 及其 path、enabled、description、version、opencliVersion。  
@@ -64,7 +63,6 @@ Sources: [src/plugin-manifest.ts:1-37](../../../project-repos/opencli/src/plugin
 
 <!-- source-snippets:end -->
 </details>
-
 兼容性检查支持简单 semver range。版本解析和范围包含逻辑在 `plugin-manifest.ts` 中实现，避免安装明显不兼容的插件。  
 Sources: [src/plugin-manifest.ts:87-195](../../../project-repos/opencli/src/plugin-manifest.ts#L87-L195)
 
@@ -79,7 +77,6 @@ Sources: [src/plugin-manifest.ts:87-195](../../../project-repos/opencli/src/plug
 
 <!-- source-snippets:end -->
 </details>
-
 ## Plugin 安装与事务
 
 Plugin 安装涉及 clone、staging、替换目录、symlink 和 lock file。`plugin.ts` 有显式 transaction helper：每一步返回 handle，commit 时 finalize，失败时按相反顺序 rollback。替换目录时先移动到临时路径，再备份旧目录，最后 rename 到目标路径。  
@@ -108,7 +105,6 @@ Sources: [src/plugin.ts:227-252](../../../project-repos/opencli/src/plugin.ts#L2
 
 <!-- source-snippets:end -->
 </details>
-
 安全边界之一是 `resolveRepoContainedPath`：插件子路径必须留在 repo root 内，不能通过 `../` 逃逸。  
 Sources: [src/plugin.ts:271-277](../../../project-repos/opencli/src/plugin.ts#L271-L277)
 
@@ -123,7 +119,6 @@ Sources: [src/plugin.ts:271-277](../../../project-repos/opencli/src/plugin.ts#L2
 
 <!-- source-snippets:end -->
 </details>
-
 ## Plugin discovery
 
 发现插件时，discovery 会遍历 `~/.opencli/plugins`，处理普通插件和 symlink 插件目录，把命令注册到 registry。monorepo 插件通过 symlink 指向具体 subplugin。  
@@ -144,7 +139,6 @@ Sources: [src/discovery.ts:184-231](../../../project-repos/opencli/src/discovery
 
 <!-- source-snippets:end -->
 </details>
-
 ## CLI 管理命令
 
 `opencli plugin` 子命令包括 install、uninstall、update、list、create。install 成功后会立即 `discoverPlugins()`，让命令在当前进程中可用；list 支持 table 和 JSON 输出。  
@@ -173,7 +167,6 @@ Sources: [src/cli.ts:1731-1758](../../../project-repos/opencli/src/cli.ts#L1731-
 
 <!-- source-snippets:end -->
 </details>
-
 ## Adapter override 管理
 
 除了 plugin，用户也可以对内置 adapter 做本地 override：
@@ -203,7 +196,6 @@ Sources: [src/cli.ts:1926-1960](../../../project-repos/opencli/src/cli.ts#L1926-
 
 <!-- source-snippets:end -->
 </details>
-
 ## External CLI Hub
 
 外部 CLI 配置来自两个位置：
@@ -237,7 +229,6 @@ Sources: [src/external.ts:35-67](../../../project-repos/opencli/src/external.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 外部 CLI 安全处理
 
 安装命令不是直接交给 shell。`parseCommand` 会拒绝 `&&`、`||`、管道、重定向、反引号、变量展开、换行等 shell operator，并把命令拆成 binary + args 交给 `execFileSync`。  
@@ -258,7 +249,6 @@ Sources: [src/external.ts:89-123](../../../project-repos/opencli/src/external.ts
 
 <!-- source-snippets:end -->
 </details>
-
 未知命令不会自动映射到 PATH 上的任意 binary。`command:*` fallback 只提示用户 `opencli register <binary>`，这是显式注册模型。  
 Sources: [src/cli.ts:2129-2141](../../../project-repos/opencli/src/cli.ts#L2129-L2141)
 
@@ -273,7 +263,6 @@ Sources: [src/cli.ts:2129-2141](../../../project-repos/opencli/src/cli.ts#L2129-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 何时用哪种扩展
 
 | 需求 | 机制 |
@@ -306,10 +295,10 @@ Sources: [skills/opencli-usage/SKILL.md:93-121](../skills/opencli-usage/SKILL.md
 脚手架和验证：
 
 ```bash
-opencli browser init &lt;site&gt;/&lt;command&gt;   # 生成骨架
+opencli browser init <site>/<command>   # 生成骨架
 opencli validate [target]               # 校验 registry，无网络无浏览器
 opencli verify [target] [--smoke]       # 校验并可选跑 smoke
-opencli browser verify &lt;site&gt;/&lt;command&gt; # 通过 bridge 端到端验证
+opencli browser verify <site>/<command> # 通过 bridge 端到端验证
 ```
 
 adapter 只应导入 `@jackwener/opencli/registry` 和 `@jackwener/opencli/errors`。`columns` 必须和 `func` 返回对象的 key 名和顺序一致。完整流程见 `opencli-adapter-author`。
@@ -322,7 +311,7 @@ Plugins 是从 git 拉取的第三方扩展，和主 adapter registry 分离：
 opencli plugin install github:user/repo
 opencli plugin list [-f json]
 opencli plugin update [name] | --all
-opencli plugin uninstall &lt;name&gt;
+opencli plugin uninstall <name>
 ````
 
 #### `skills/opencli-usage/SKILL.md:123-138`

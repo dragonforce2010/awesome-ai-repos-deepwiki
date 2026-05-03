@@ -166,7 +166,6 @@ export function extractOptions(tool: ServerToolInfo): GeneratedOption[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## `generate-cli` 主流程
 
 `generateCli(options)`（[src/generate-cli.ts:33-152]()）的核心步骤：
@@ -452,7 +451,6 @@ async function bundleWithBun({
 
 <!-- source-snippets:end -->
 </details>
-
 ### server 引用解析
 
 `resolveServerDefinition(serverRef, configPath?, rootDir?)`（[src/cli/generate/definition.ts:46-122]()）按优先级尝试 4 种来源：
@@ -569,7 +567,6 @@ export async function resolveServerDefinition(
 
 <!-- source-snippets:end -->
 </details>
-
 ### `--from <artifact>`：基于既有产物再生成
 
 `resolveGenerateRequestFromArtifact`（在 `template-data.ts`）会读取产物中嵌入的 metadata（schemaVersion=1）并把当时的 `invocation` flags（`runtime/bundle/compile/timeoutMs/minify/includeTools/excludeTools/outputPath`）作为新一次 generate 的默认值。命令选项可以在 CLI 上覆盖任意一个，`--dry-run` 打印 reconstructed `mcporter generate-cli ...` 字符串而不实际执行。
@@ -721,7 +718,6 @@ async function readMetadataFromCli(artifactPath: string): Promise<CliArtifactMet
 
 <!-- source-snippets:end -->
 </details>
-
 ### renderTemplate 输出
 
 `renderTemplate`（[src/cli/generate/template.ts:53-122]()，省略到 410 行）输出一个完整的 Node / Bun 可执行 TypeScript 文件，关键嵌入：
@@ -823,7 +819,6 @@ program.option('-o, --output <format>', 'Output format: text|markdown|json|raw',
 
 <!-- source-snippets:end -->
 </details>
-
 ### Bundling
 
 `bundleOutput`（[src/cli/generate/artifacts.ts:19-83]()）有两条实现：
@@ -957,7 +952,6 @@ async function isBunAvailable(): Promise<boolean> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 工具过滤与 description 推导
 
 `fetchTools(definition, name, configPath, rootDir)` 在 `src/cli/generate/definition.ts` 中实现：连一次 runtime 拉 `listTools(includeSchema: true)`，如果 server 自身没填 description，再用 `client.listResources` / 服务端返回的 metadata 反推 description（具体在 `definition.ts` 后半部分）。`applyToolFilters`（[src/generate-cli.ts:154-209]()）实现 `--include-tools` / `--exclude-tools` 的互斥校验与缺名错误提示。
@@ -1053,7 +1047,6 @@ function applyToolFilters(tools: ServerToolInfo[], includeTools?: string[], excl
 
 <!-- source-snippets:end -->
 </details>
-
 ## `inspect-cli`
 
 `handleInspectCli(args)`（[src/cli/inspect-cli-command.ts:13-50]()）：
@@ -1121,7 +1114,6 @@ export async function handleInspectCli(args: string[]): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## emit-ts：类型与客户端模块
 
 `handleEmitTs`（[src/cli/emit-ts-command.ts:30-94]()）有两种模式：
@@ -1417,7 +1409,6 @@ function renderHeader(metadata: EmitMetadata): string[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 嵌入元数据（CliArtifactMetadata）
 
 `CliArtifactMetadata`（[src/cli-metadata.ts:32-62]()）是 generate 与 inspect 之间的合约：
@@ -1580,7 +1571,6 @@ export function serializeDefinition(definition: ServerDefinition): SerializedSer
 
 <!-- source-snippets:end -->
 </details>
-
 ## 一些设计决策
 
 - **listTools 在 generate 阶段就拉一次** — 由 `fetchTools` 完成，确保 schema 在生成时被冻结。即使后续 server 端工具列表变了，旧产物仍然是确定性的可执行单文件；要更新产物只需 `generate-cli --from`。
@@ -1866,7 +1856,6 @@ export async function handleGenerateCli(args: string[], globalFlags: FlagMap): P
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [CLI 命令体系](cli-commands.md)

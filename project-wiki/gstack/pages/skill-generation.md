@@ -45,27 +45,27 @@ Templates contain the workflows, tips, and examples that require human judgment.
 
 | Placeholder | Source | What it generates |
 |-------------|--------|-------------------|
-| `&#123;&#123;COMMAND_REFERENCE&#125;&#125;` | `commands.ts` | Categorized command table |
-| `&#123;&#123;SNAPSHOT_FLAGS&#125;&#125;` | `snapshot.ts` | Flag reference with examples |
-| `&#123;&#123;PREAMBLE&#125;&#125;` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
-| `&#123;&#123;BROWSE_SETUP&#125;&#125;` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
-| `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
-| `&#123;&#123;QA_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
-| `&#123;&#123;DESIGN_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
-| `&#123;&#123;REVIEW_DASHBOARD&#125;&#125;` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
-| `&#123;&#123;TEST_BOOTSTRAP&#125;&#125;` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
-| `&#123;&#123;CODEX_PLAN_REVIEW&#125;&#125;` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
-| `&#123;&#123;DESIGN_SETUP&#125;&#125;` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `&#123;&#123;BROWSE_SETUP&#125;&#125;` |
-| `&#123;&#123;DESIGN_SHOTGUN_LOOP&#125;&#125;` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
-| `&#123;&#123;UX_PRINCIPLES&#125;&#125;` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
-| `&#123;&#123;GBRAIN_CONTEXT_LOAD&#125;&#125;` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
-| `&#123;&#123;GBRAIN_SAVE_RESULTS&#125;&#125;` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
+| `{{COMMAND_REFERENCE}}` | `commands.ts` | Categorized command table |
+| `{{SNAPSHOT_FLAGS}}` | `snapshot.ts` | Flag reference with examples |
+| `{{PREAMBLE}}` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
+| `{{BROWSE_SETUP}}` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
+| `{{BASE_BRANCH_DETECT}}` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
+| `{{QA_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
+| `{{DESIGN_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
+| `{{REVIEW_DASHBOARD}}` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
+| `{{TEST_BOOTSTRAP}}` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
+| `{{CODEX_PLAN_REVIEW}}` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
+| `{{DESIGN_SETUP}}` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `{{BROWSE_SETUP}}` |
+| `{{DESIGN_SHOTGUN_LOOP}}` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
+| `{{UX_PRINCIPLES}}` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
+| `{{GBRAIN_CONTEXT_LOAD}}` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
+| `{{GBRAIN_SAVE_RESULTS}}` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
 
 This is structurally sound — if a command exists in code, it appears in docs. If it doesn't exist, it can't appear.
 
 ### The preamble
 
-Every skill starts with a `&#123;&#123;PREAMBLE&#125;&#125;` block that runs before the skill's own logic. It handles five things in a single bash command:
+Every skill starts with a `{{PREAMBLE}}` block that runs before the skill's own logic. It handles five things in a single bash command:
 
 1. **Update check** — calls `gstack-update-check`, reports if an upgrade is available.
 2. **Session tracking** — touches `~/.gstack/sessions/$PPID` and counts active sessions (files modified in the last 2 hours). When 3+ sessions are running, all skills enter "ELI16 mode" — every question re-grounds the user on context because they're juggling windows.
@@ -104,14 +104,13 @@ bun run skill:check
 bun run dev:skill
 ```
 
-For template authoring best practices (natural language over bash-isms, dynamic branch detection, `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` usage), see CLAUDE.md's "Writing SKILL templates" section.
+For template authoring best practices (natural language over bash-isms, dynamic branch detection, `{{BASE_BRANCH_DETECT}}` usage), see CLAUDE.md's "Writing SKILL templates" section.
 
 To add a browse command, add it to `browse/src/commands.ts`. To add a snapshot flag, add it to `SNAPSHOT_FLAGS` in `browse/src/snapshot.ts`. Then rebuild.
 ````
 
 <!-- source-snippets:end -->
 </details>
-
 ## 生成管线
 
 ```mermaid
@@ -145,7 +144,7 @@ flowchart TD
  * Generate SKILL.md files from .tmpl templates.
  *
  * Pipeline:
- *   read .tmpl → find &#123;&#123;PLACEHOLDERS&#125;&#125; → resolve from source → format → write .md
+ *   read .tmpl → find {{PLACEHOLDERS}} → resolve from source → format → write .md
  *
  * Supports --dry-run: generate to memory, exit 1 if different from committed file.
  * Used by skill:check and CI freshness checks.
@@ -200,22 +199,22 @@ function processTemplate(tmplPath: string, host: Host = 'claude'): { outputPath:
 
   const ctx: TemplateContext = { skillName, tmplPath, benefitsFrom, host, paths: HOST_PATHS[host], preambleTier, model: MODEL_ARG_VAL, interactive };
 
-  // Replace placeholders (supports parameterized: &#123;&#123;NAME:arg1:arg2&#125;&#125;)
+  // Replace placeholders (supports parameterized: {{NAME:arg1:arg2}})
   // Config-driven: suppressedResolvers return empty string for this host
   const currentHostConfig = getHostConfig(host);
   const suppressed = new Set(currentHostConfig.suppressedResolvers || []);
-  let content = tmplContent.replace(/&#123;&#123;(\w+(?::[^}]+)?)&#125;&#125;/g, (match, fullKey) => {
+  let content = tmplContent.replace(/\{\{(\w+(?::[^}]+)?)\}\}/g, (match, fullKey) => {
     const parts = fullKey.split(':');
     const resolverName = parts[0];
     const args = parts.slice(1);
     if (suppressed.has(resolverName)) return '';
     const resolver = RESOLVERS[resolverName];
-    if (!resolver) throw new Error(`Unknown placeholder &#123;&#123;${resolverName&#125;&#125;} in ${relTmplPath}`);
+    if (!resolver) throw new Error(`Unknown placeholder {{${resolverName}}} in ${relTmplPath}`);
     return args.length > 0 ? resolver(ctx, args) : resolver(ctx);
   });
 
   // Check for any remaining unresolved placeholders
-  const remaining = content.match(/&#123;&#123;(\w+(?::[^}]+)?)&#125;&#125;/g);
+  const remaining = content.match(/\{\{(\w+(?::[^}]+)?)\}\}/g);
   if (remaining) {
     throw new Error(`Unresolved placeholders in ${relTmplPath}: ${remaining.join(', ')}`);
   }
@@ -242,7 +241,7 @@ function processTemplate(tmplPath: string, host: Host = 'claude'): { outputPath:
   }
 
   // Prepend generated header (after frontmatter)
-  const header = GENERATED_HEADER.replace('&#123;&#123;SOURCE&#125;&#125;', path.basename(tmplPath));
+  const header = GENERATED_HEADER.replace('{{SOURCE}}', path.basename(tmplPath));
   const fmEnd = content.indexOf('---', content.indexOf('---') + 3);
   if (fmEnd !== -1) {
     const insertAt = content.indexOf('\n', fmEnd) + 1;
@@ -256,7 +255,6 @@ function processTemplate(tmplPath: string, host: Host = 'claude'): { outputPath:
 
 <!-- source-snippets:end -->
 </details>
-
 ## Template 发现与 resolver
 
 `discover-skills.ts` 只扫描仓库根和一级子目录，跳过 `node_modules`、`.git`、`dist`，寻找 `SKILL.md.tmpl` 与 `SKILL.md`。resolver registry 把 &lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>COMMAND_REFERENCE&#125;&#125;&lt;/code>、&lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>SNAPSHOT_FLAGS&#125;&#125;&lt;/code>、&lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>PREAMBLE&#125;&#125;&lt;/code>、&lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>BROWSE_SETUP&#125;&#125;&lt;/code>、&lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>GBRAIN_CONTEXT_LOAD&#125;&#125;&lt;/code> 等占位符映射到具体生成函数。Sources: [scripts/discover-skills.ts:1-38](../../../project-repos/gstack/scripts/discover-skills.ts#L1-L38), [scripts/resolvers/index.ts:26-79](../../../project-repos/gstack/scripts/resolvers/index.ts#L26-L79)
@@ -370,7 +368,6 @@ export const RESOLVERS: Record<string, ResolverFn> = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 为什么命令文档不手写
 
 Browse 命令表和 snapshot flag 来自源码，生成器把这些信息注入技能。`ARCHITECTURE.md` 明确把 `commands.ts`、`snapshot.ts` 和 `gen-skill-docs.ts` 作为防止文档漂移的结构性方案。Sources: [ARCHITECTURE.md:242-270](../../../project-repos/gstack/ARCHITECTURE.md#L242-L270)
@@ -395,28 +392,27 @@ Templates contain the workflows, tips, and examples that require human judgment.
 
 | Placeholder | Source | What it generates |
 |-------------|--------|-------------------|
-| `&#123;&#123;COMMAND_REFERENCE&#125;&#125;` | `commands.ts` | Categorized command table |
-| `&#123;&#123;SNAPSHOT_FLAGS&#125;&#125;` | `snapshot.ts` | Flag reference with examples |
-| `&#123;&#123;PREAMBLE&#125;&#125;` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
-| `&#123;&#123;BROWSE_SETUP&#125;&#125;` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
-| `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
-| `&#123;&#123;QA_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
-| `&#123;&#123;DESIGN_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
-| `&#123;&#123;REVIEW_DASHBOARD&#125;&#125;` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
-| `&#123;&#123;TEST_BOOTSTRAP&#125;&#125;` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
-| `&#123;&#123;CODEX_PLAN_REVIEW&#125;&#125;` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
-| `&#123;&#123;DESIGN_SETUP&#125;&#125;` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `&#123;&#123;BROWSE_SETUP&#125;&#125;` |
-| `&#123;&#123;DESIGN_SHOTGUN_LOOP&#125;&#125;` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
-| `&#123;&#123;UX_PRINCIPLES&#125;&#125;` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
-| `&#123;&#123;GBRAIN_CONTEXT_LOAD&#125;&#125;` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
-| `&#123;&#123;GBRAIN_SAVE_RESULTS&#125;&#125;` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
+| `{{COMMAND_REFERENCE}}` | `commands.ts` | Categorized command table |
+| `{{SNAPSHOT_FLAGS}}` | `snapshot.ts` | Flag reference with examples |
+| `{{PREAMBLE}}` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
+| `{{BROWSE_SETUP}}` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
+| `{{BASE_BRANCH_DETECT}}` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
+| `{{QA_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
+| `{{DESIGN_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
+| `{{REVIEW_DASHBOARD}}` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
+| `{{TEST_BOOTSTRAP}}` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
+| `{{CODEX_PLAN_REVIEW}}` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
+| `{{DESIGN_SETUP}}` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `{{BROWSE_SETUP}}` |
+| `{{DESIGN_SHOTGUN_LOOP}}` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
+| `{{UX_PRINCIPLES}}` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
+| `{{GBRAIN_CONTEXT_LOAD}}` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
+| `{{GBRAIN_SAVE_RESULTS}}` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
 
 This is structurally sound — if a command exists in code, it appears in docs. If it doesn't exist, it can't appear.
 ````
 
 <!-- source-snippets:end -->
 </details>
-
 | Placeholder | 来源 | 产物 |
 |---|---|---|
 | &lt;code v-pre>&lt;span v-pre>&#123;&#123;&lt;/span>COMMAND_REFERENCE&#125;&#125;&lt;/code> | `browse/src/commands.ts` | 分类命令表 |
@@ -438,27 +434,26 @@ Templates contain the workflows, tips, and examples that require human judgment.
 
 | Placeholder | Source | What it generates |
 |-------------|--------|-------------------|
-| `&#123;&#123;COMMAND_REFERENCE&#125;&#125;` | `commands.ts` | Categorized command table |
-| `&#123;&#123;SNAPSHOT_FLAGS&#125;&#125;` | `snapshot.ts` | Flag reference with examples |
-| `&#123;&#123;PREAMBLE&#125;&#125;` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
-| `&#123;&#123;BROWSE_SETUP&#125;&#125;` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
-| `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
-| `&#123;&#123;QA_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
-| `&#123;&#123;DESIGN_METHODOLOGY&#125;&#125;` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
-| `&#123;&#123;REVIEW_DASHBOARD&#125;&#125;` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
-| `&#123;&#123;TEST_BOOTSTRAP&#125;&#125;` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
-| `&#123;&#123;CODEX_PLAN_REVIEW&#125;&#125;` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
-| `&#123;&#123;DESIGN_SETUP&#125;&#125;` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `&#123;&#123;BROWSE_SETUP&#125;&#125;` |
-| `&#123;&#123;DESIGN_SHOTGUN_LOOP&#125;&#125;` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
-| `&#123;&#123;UX_PRINCIPLES&#125;&#125;` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
-| `&#123;&#123;GBRAIN_CONTEXT_LOAD&#125;&#125;` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
-| `&#123;&#123;GBRAIN_SAVE_RESULTS&#125;&#125;` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
+| `{{COMMAND_REFERENCE}}` | `commands.ts` | Categorized command table |
+| `{{SNAPSHOT_FLAGS}}` | `snapshot.ts` | Flag reference with examples |
+| `{{PREAMBLE}}` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
+| `{{BROWSE_SETUP}}` | `gen-skill-docs.ts` | Binary discovery + setup instructions |
+| `{{BASE_BRANCH_DETECT}}` | `gen-skill-docs.ts` | Dynamic base branch detection for PR-targeting skills (ship, review, qa, plan-ceo-review) |
+| `{{QA_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared QA methodology block for /qa and /qa-only |
+| `{{DESIGN_METHODOLOGY}}` | `gen-skill-docs.ts` | Shared design audit methodology for /plan-design-review and /design-review |
+| `{{REVIEW_DASHBOARD}}` | `gen-skill-docs.ts` | Review Readiness Dashboard for /ship pre-flight |
+| `{{TEST_BOOTSTRAP}}` | `gen-skill-docs.ts` | Test framework detection, bootstrap, CI/CD setup for /qa, /ship, /design-review |
+| `{{CODEX_PLAN_REVIEW}}` | `gen-skill-docs.ts` | Optional cross-model plan review (Codex or Claude subagent fallback) for /plan-ceo-review and /plan-eng-review |
+| `{{DESIGN_SETUP}}` | `resolvers/design.ts` | Discovery pattern for `$D` design binary, mirrors `{{BROWSE_SETUP}}` |
+| `{{DESIGN_SHOTGUN_LOOP}}` | `resolvers/design.ts` | Shared comparison board feedback loop for /design-shotgun, /plan-design-review, /design-consultation |
+| `{{UX_PRINCIPLES}}` | `resolvers/design.ts` | User behavioral foundations (scanning, satisficing, goodwill reservoir, trunk test) for /design-html, /design-shotgun, /design-review, /plan-design-review |
+| `{{GBRAIN_CONTEXT_LOAD}}` | `resolvers/gbrain.ts` | Brain-first context search with keyword extraction, health awareness, and data-research routing. Injected into 10 brain-aware skills. Suppressed on non-brain hosts. |
+| `{{GBRAIN_SAVE_RESULTS}}` | `resolvers/gbrain.ts` | Post-skill brain persistence with entity enrichment, throttle handling, and per-skill save instructions. 8 skill-specific save formats. |
 
 ```
 
 <!-- source-snippets:end -->
 </details>
-
 ## Host-aware 输出
 
 外部宿主输出由 `processExternalHost` 处理：变换 frontmatter、插入安全 advisory、执行 `pathRewrites` 和 `toolRewrites`，并按配置生成 metadata。`HostConfig` 约束每个 host 的路径、安全、frontmatter 和 runtime root。Sources: [scripts/gen-skill-docs.ts:339-400](../../../project-repos/gstack/scripts/gen-skill-docs.ts#L339-L400), [scripts/host-config.ts:17-112](../../../project-repos/gstack/scripts/host-config.ts#L17-L112)
@@ -638,7 +633,6 @@ export interface HostConfig {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 风险点
 
 - 生成脚本目前既处理模板，也直接写外部宿主目录和 OpenClaw artifacts；这让 `gen-skill-docs` 同时承担文档生成和部分安装产物生成。Sources: [scripts/gen-skill-docs.ts:498-614](../../../project-repos/gstack/scripts/gen-skill-docs.ts#L498-L614)
@@ -772,7 +766,6 @@ The orchestrator will persist the plan link to its own memory/knowledge store.
 
 <!-- source-snippets:end -->
 </details>
-
 - `discoverTemplates` 只扫一级子目录，因此深层技能（如 `openclaw/skills/*`）不是普通 `.tmpl` 生成路径，属于手写/特殊产物。Sources: [scripts/discover-skills.ts:17-38](../../../project-repos/gstack/scripts/discover-skills.ts#L17-L38), [docs/OPENCLAW.md:104-113](../../../project-repos/gstack/docs/OPENCLAW.md#L104-L113)
 
 <details class="source-snippets">
@@ -824,7 +817,6 @@ No gstack infrastructure (no browse, no telemetry, no preamble).
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [安装与多宿主接入](setup-and-hosts.md)

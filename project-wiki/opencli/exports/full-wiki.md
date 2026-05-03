@@ -41,7 +41,6 @@ Sources: [README.md:12-22](../README.md#L12-L22), [package.json:1-15](../../../p
 
 <!-- source-snippets:end -->
 </details>
-
 ## 阅读顺序
 
 1. [系统总览](pages/01-system-overview.md)
@@ -110,7 +109,6 @@ Sources: [src/main.ts:96-148](../../../project-repos/opencli/src/main.ts#L96-L14
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/01-system-overview.md -->
@@ -167,7 +165,6 @@ Sources: [README.md:12-22](../README.md#L12-L22), [package.json:1-15](../../../p
 
 <!-- source-snippets:end -->
 </details>
-
 ## 系统边界
 
 ```mermaid
@@ -216,7 +213,6 @@ Sources: [src/runtime.ts:7-14](../../../project-repos/opencli/src/runtime.ts#L7-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 启动时做什么
 
 `src/main.ts` 是实际启动器。它先设置内置和用户 adapter 目录，再处理全局 `--live`、`--focus`、版本、completion 等快路径；完整启动路径会动态导入 CLI、discovery、update check、hooks 等模块，随后确保用户 shim/adapter 目录存在、发现内置/用户/plugin adapter、触发启动 hook，最后调用 `runCli`。  
@@ -241,7 +237,6 @@ Sources: [src/main.ts:27-47](../../../project-repos/opencli/src/main.ts#L27-L47)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 目录级心智模型
 
 | 目录/文件 | 角色 |
@@ -280,7 +275,6 @@ Sources: [src/cli.ts:370-453](../../../project-repos/opencli/src/cli.ts#L370-L45
 
 <!-- source-snippets:end -->
 </details>
-
 ## 命令数量与规模
 
 当前源码清单显示仓库包含大量站点 adapter 和技能文档。构建产物 `cli-manifest.json` 是 adapter 的预编译清单，当前扫描到 628 个命令，覆盖 100+ 站点或应用；仓库盘点中 `.js`、`.ts`、`.md` 是主要文件类型。  
@@ -386,7 +380,6 @@ Sources: [src/build-manifest.ts:19-54](../../../project-repos/opencli/src/build-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 最重要的设计取舍
 
 opencli 把“发现”和“执行”分开：
@@ -421,7 +414,6 @@ Sources: [src/discovery.ts:91-148](../../../project-repos/opencli/src/discovery.
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/02-startup-discovery-command-lifecycle.md -->
@@ -465,7 +457,6 @@ Sources: [src/main.ts:27-47](../../../project-repos/opencli/src/main.ts#L27-L47)
 
 <!-- source-snippets:end -->
 </details>
-
 完整启动路径才会导入 CLI、discovery、版本检查和 hook 模块，并按顺序执行：安装 Node 网络兼容层、确保用户 shim、确保用户 adapters 目录、发现内置和用户 adapter、发现插件、检查更新、发 `onStartup` hook，最后 `runCli`。  
 Sources: [src/main.ts:96-148](../../../project-repos/opencli/src/main.ts#L96-L148)
 
@@ -480,7 +471,6 @@ Sources: [src/main.ts:96-148](../../../project-repos/opencli/src/main.ts#L96-L14
 
 <!-- source-snippets:end -->
 </details>
-
 ## Discovery 层
 
 ```mermaid
@@ -526,7 +516,6 @@ Sources: [src/discovery.ts:21-26](../../../project-repos/opencli/src/discovery.t
 
 <!-- source-snippets:end -->
 </details>
-
 ## Registry 到 Commander
 
 adapter 使用 `cli(opts)` 注册命令。注册时会规范化策略、浏览器需求、预导航行为和别名，然后把 canonical `site/name` 与 alias 都写入共享 registry。  
@@ -551,7 +540,6 @@ Sources: [src/registry.ts:95-119](../../../project-repos/opencli/src/registry.ts
 
 <!-- source-snippets:end -->
 </details>
-
 Commander Adapter 把每个 `CliCommand` 变成 CLI 子命令：
 
 - 逐个注册 positional args 和 named options。
@@ -579,7 +567,6 @@ Sources: [src/commanderAdapter.ts:30-56](../../../project-repos/opencli/src/comm
 
 <!-- source-snippets:end -->
 </details>
-
 ## 执行路径
 
 ```mermaid
@@ -631,7 +618,6 @@ Sources: [src/execution.ts:33-75](../../../project-repos/opencli/src/execution.t
 
 <!-- source-snippets:end -->
 </details>
-
 ## Hook 和诊断切入点
 
 插件可以注册 `onStartup`、`onBeforeExecute`、`onAfterExecute`。Hook 存在 `globalThis.__opencli_hooks__`，避免多份模块副本导致 hook store 分裂。hook 执行失败只记录 warning，不阻断主命令。  
@@ -656,7 +642,6 @@ Sources: [src/hooks.ts:1-12](../../../project-repos/opencli/src/hooks.ts#L1-L12)
 
 <!-- source-snippets:end -->
 </details>
-
 失败时，execution 层会给出 AutoFix 线索；如果启用 `OPENCLI_DIAGNOSTIC=1`，诊断模块会构造带 adapter 源码、页面状态、网络请求和 console error 的 RepairContext。  
 Sources: [src/commanderAdapter.ts:137-159](../../../project-repos/opencli/src/commanderAdapter.ts#L137-L159), [src/diagnostic.ts:1-13](../../../project-repos/opencli/src/diagnostic.ts#L1-L13), [src/diagnostic.ts:299-360](../../../project-repos/opencli/src/diagnostic.ts#L299-L360)
 
@@ -679,7 +664,6 @@ Sources: [src/commanderAdapter.ts:137-159](../../../project-repos/opencli/src/co
 
 <!-- source-snippets:end -->
 </details>
-
 ## 输出格式
 
 输出渲染支持 `table/json/plain/markdown/csv/yaml`。如果 stdout 不是 TTY 且用户没有显式传 `-f`，默认 table 会降级成 yaml，便于管道消费。  
@@ -704,7 +688,6 @@ Sources: [src/output.ts:30-48](../../../project-repos/opencli/src/output.ts#L30-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 常见调试入口
 
 | 问题 | 入口 |
@@ -740,7 +723,6 @@ Sources: [src/discovery.ts:150-182](../../../project-repos/opencli/src/discovery
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/03-adapter-model-and-strategies.md -->
@@ -778,7 +760,6 @@ Sources: [src/registry.ts:16-74](../../../project-repos/opencli/src/registry.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 最小心智模型：
 
 ```mermaid
@@ -833,7 +814,6 @@ Sources: [src/registry.ts:7-14](../../../project-repos/opencli/src/registry.ts#L
 
 <!-- source-snippets:end -->
 </details>
-
 `normalizeCommand` 会把 strategy 转成 browser 和 navigateBefore 等运行字段。例如需要 cookie、header、intercept、UI 的命令通常需要浏览器上下文；pipeline 中出现浏览器专属步骤也会触发浏览器 session。  
 Sources: [src/registry.ts:133-163](../../../project-repos/opencli/src/registry.ts#L133-L163), [src/capabilityRouting.ts:3-14](../../../project-repos/opencli/src/capabilityRouting.ts#L3-L14), [src/capabilityRouting.ts:23-31](../../../project-repos/opencli/src/capabilityRouting.ts#L23-L31)
 
@@ -856,7 +836,6 @@ Sources: [src/registry.ts:133-163](../../../project-repos/opencli/src/registry.t
 
 <!-- source-snippets:end -->
 </details>
-
 ## func 与 pipeline
 
 `executeCommand` 先处理参数，再决定是否创建页面。执行时：
@@ -891,7 +870,6 @@ Sources: [src/execution.ts:33-75](../../../project-repos/opencli/src/execution.t
 
 <!-- source-snippets:end -->
 </details>
-
 ## Manifest 的作用
 
 构建时的 manifest 编译器会扫描 `clis/`，导入 JS adapter 并捕获 registry 中新增的命令，然后写成 `cli-manifest.json`。运行时优先用 manifest 以降低启动时扫描和 import 成本。  
@@ -920,7 +898,6 @@ Sources: [src/build-manifest.ts:19-54](../../../project-repos/opencli/src/build-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 校验规则
 
 `validate` 不再扫文件本身，而是校验已加载 registry。它检查：
@@ -948,7 +925,6 @@ Sources: [src/validate.ts:27-45](../../../project-repos/opencli/src/validate.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 ## Adapter 输出契约
 
 adapter 的 `columns` 应和返回对象 key 对齐。最终输出由 `output.ts` 统一渲染成 table、json、plain、markdown、csv 或 yaml。Agent 场景优先使用 `-f json`，因为它避免 table 渲染和颜色文本干扰。  
@@ -992,7 +968,6 @@ Sources: [src/output.ts:20-28](../../../project-repos/opencli/src/output.ts#L20-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 编写 adapter 的推荐路径
 
 仓库内的 adapter-author skill 建议从站点侦察、API 发现、endpoint 验证、字段解码、columns 设计，再到 `opencli browser init` 和 `opencli browser verify`。它强调 memory 命中后也必须重新验证 endpoint，不要直接写 adapter。  
@@ -1019,9 +994,9 @@ START
   ▼
 ┌────────────────────────────────────────────────────┐
 │ 读站点记忆：                                        │
-│   1. ~/.opencli/sites/&lt;site&gt;/endpoints.json         │
-│   2. ~/.opencli/sites/&lt;site&gt;/notes.md               │
-│   3. references/site-memory/&lt;site&gt;.md               │
+│   1. ~/.opencli/sites/<site>/endpoints.json         │
+│   2. ~/.opencli/sites/<site>/notes.md               │
+│   3. references/site-memory/<site>.md               │
 └────────────────────────────────────────────────────┘
   │ 命中 endpoint + 字段 → 直接跳到【endpoint 验证】（不跳写 adapter！memory 可能过期）
   │ 没命中 → 继续
@@ -1055,7 +1030,7 @@ START
   │
   ▼
 ┌──────────────────────────┐
-│ opencli browser init      │  生成 ~/.opencli/clis/&lt;site&gt;/&lt;name&gt;.js 骨架
+│ opencli browser init      │  生成 ~/.opencli/clis/<site>/<name>.js 骨架
 │ 复制最像的邻居 adapter    │
 │ 改 name / URL / 映射三处  │
 └──────────────────────────┘
@@ -1088,8 +1063,8 @@ DONE
 ```
 [ ] 1. opencli doctor 返回 "Everything looks good"
 [ ] 2. 读站点记忆：
-       [ ] ~/.opencli/sites/&lt;site&gt;/endpoints.json 存在？里面有想要的 endpoint？
-       [ ] references/site-memory/&lt;site&gt;.md 存在？看"已知 endpoint"节
+       [ ] ~/.opencli/sites/<site>/endpoints.json 存在？里面有想要的 endpoint？
+       [ ] references/site-memory/<site>.md 存在？看"已知 endpoint"节
        [ ] 命中后：**跳到第 5（endpoint 验证） + 第 7（字段核对）**，不能直接跳第 9 写 adapter
        [ ] memory 写入超过 30 天（看 `verified_at`）→ 当作过期，按冷启动走 Step 3 → 4
 [ ] 3. 侦察（site-recon.md）：
@@ -1115,10 +1090,10 @@ DONE
        [ ] 类型 / 单位 / 百分比格式清楚
        [ ] 顺序：识别列 → 业务数字 → metadata
 [ ] 9. 写 adapter（adapter-template.md）：
-       [ ] opencli browser init &lt;site&gt;/&lt;name&gt;
+       [ ] opencli browser init <site>/<name>
        [ ] 找同站点或同类型最像的 adapter，cp 过来
        [ ] 改 name / URL / 字段映射
-[ ] 10. opencli browser verify &lt;site&gt;/&lt;name&gt;
+[ ] 10. opencli browser verify <site>/<name>
         [ ] 首轮通过后立刻 `--write-fixture` 生成 `~/.opencli/sites/<site>/verify/<cmd>.json` 种子
         [ ] 手改种子：加 `patterns`（URL / 日期 / ID 格式）+ `notEmpty`（核心字段）+ 收紧 `rowCount`
         [ ] 再跑一次 `opencli browser verify <site>/<name>`，确认 ✓ matches fixture
@@ -1135,7 +1110,6 @@ DONE
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/04-browser-bridge-and-extension.md -->
@@ -1182,7 +1156,6 @@ Sources: [src/runtime.ts:7-14](../../../project-repos/opencli/src/runtime.ts#L7-
 
 <!-- source-snippets:end -->
 </details>
-
 ## BrowserBridge 生命周期
 
 ```mermaid
@@ -1229,7 +1202,6 @@ Sources: [src/browser/bridge.ts:33-60](../../../project-repos/opencli/src/browse
 
 <!-- source-snippets:end -->
 </details>
-
 ## Daemon client 协议
 
 CLI 端通过 `daemon-client.ts` 用 HTTP 调 daemon。命令统一为 `DaemonCommand`，action 包含 `exec`、`navigate`、`tabs`、`cookies`、`screenshot`、`close-window`、`sessions`、`set-file-input`、`insert-text`、`bind-current`、`network-capture-*`、`cdp`、`frames`。  
@@ -1246,7 +1218,6 @@ Sources: [src/browser/daemon-client.ts:22-55](../../../project-repos/opencli/src
 
 <!-- source-snippets:end -->
 </details>
-
 发送命令时最多重试 4 次：网络错误固定延迟重试，浏览器瞬态错误根据分类建议延迟重试。page-scoped 命令可以返回 `page` identity，后续调用会带上它避免猜测目标 tab。  
 Sources: [src/browser/daemon-client.ts:129-185](../../../project-repos/opencli/src/browser/daemon-client.ts#L129-L185), [src/browser/daemon-client.ts:187-208](../../../project-repos/opencli/src/browser/daemon-client.ts#L187-L208), [src/browser/page.ts:40-67](../../../project-repos/opencli/src/browser/page.ts#L40-L67)
 
@@ -1269,7 +1240,6 @@ Sources: [src/browser/daemon-client.ts:129-185](../../../project-repos/opencli/s
 
 <!-- source-snippets:end -->
 </details>
-
 ## Page 抽象
 
 `Page` 是 CLI 侧的浏览器对象。它把高级操作转成 daemon action：
@@ -1304,7 +1274,6 @@ Sources: [src/browser/page.ts:59-104](../../../project-repos/opencli/src/browser
 
 <!-- source-snippets:end -->
 </details>
-
 ## 扩展侧分发
 
 Chrome 扩展是 MV3 service worker。它启动后会探测 `/ping`、打开 WebSocket，发送 hello 和版本兼容信息，然后等待 daemon 下发 command。  
@@ -1325,7 +1294,6 @@ Sources: [extension/src/background.ts:40-87](../../../project-repos/opencli/exte
 
 <!-- source-snippets:end -->
 </details>
-
 扩展的 `handleCommand` 是 action dispatcher：根据 command action 分发到 exec、navigate、tabs、cookies、screenshot、cdp、sessions、file input、insert text、bind current、network capture、frames 等 handler。  
 Sources: [extension/src/background.ts:301-350](../../../project-repos/opencli/extension/src/background.ts#L301-L350)
 
@@ -1340,7 +1308,6 @@ Sources: [extension/src/background.ts:301-350](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 ## 自动化窗口与 tab 绑定
 
 扩展维护 workspace 级 automation session。它会解析 page identity 到 tabId，校验 tab 仍在 automation window 中；若 tab 漂移到其他窗口，会尝试移回。导航只允许 http/https，并在跳转前按需 detach debugger。  
@@ -1361,7 +1328,6 @@ Sources: [extension/src/background.ts:452-557](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 ## CDP 能力与限制
 
 扩展侧 CDP helper 使用 `chrome.debugger` attach tab，并对 attach/evaluate 做重试。它只允许 http/https/about:blank/data 等可调试 URL。网络 capture 对响应体设置 8 MiB 上限，请求体 1 MiB 上限。  
@@ -1386,7 +1352,6 @@ Sources: [extension/src/cdp.ts:13-18](../../../project-repos/opencli/extension/s
 
 <!-- source-snippets:end -->
 </details>
-
 CDP passthrough 不是任意方法开放。`handleCdp` 只允许 allowlist 中的 DOM、Accessibility、Input、Page、Runtime.enable、Emulation 方法；`Runtime.evaluate` 走 `exec` action。  
 Sources: [extension/src/background.ts:816-860](../../../project-repos/opencli/extension/src/background.ts#L816-L860)
 
@@ -1401,7 +1366,6 @@ Sources: [extension/src/background.ts:816-860](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 ## 扩展权限
 
 扩展 manifest 声明权限包括 `debugger`、`tabs`、`cookies`、`activeTab`、`alarms`，host permissions 是 `<all_urls>`。这解释了为什么 doctor 和用户安装指引是关键运维步骤。  
@@ -1422,7 +1386,6 @@ Sources: [extension/manifest.json:1-15](../../../project-repos/opencli/extension
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/05-agent-browser-command-surface.md -->
@@ -1458,7 +1421,6 @@ Sources: [src/cli.ts:224-261](../../../project-repos/opencli/src/cli.ts#L224-L26
 
 <!-- source-snippets:end -->
 </details>
-
 ## 命令族
 
 ```mermaid
@@ -1525,7 +1487,6 @@ Sources: [src/cli.ts:478-486](../../../project-repos/opencli/src/cli.ts#L478-L48
 
 <!-- source-snippets:end -->
 </details>
-
 ## 目标选择契约
 
 交互命令采用 selector-first target contract：`<target>` 可以是 `state/find` 输出的数字 ref，也可以是 CSS selector。CSS 多匹配时，写操作要求显式 `--nth`，读操作可以默认取第一个并返回 `matches_n`。  
@@ -1550,7 +1511,6 @@ Sources: [src/cli.ts:487-510](../../../project-repos/opencli/src/cli.ts#L487-L51
 
 <!-- source-snippets:end -->
 </details>
-
 成功响应会包含可机读 envelope，例如点击会返回 `{clicked, target, matches_n, match_level}`，输入会额外返回 `autocomplete`。错误响应也结构化为 `{error: {code, message, hint, candidates&#125;&#125;`。  
 Sources: [src/cli.ts:527-538](../../../project-repos/opencli/src/cli.ts#L527-L538), [src/cli.ts:1053-1068](../../../project-repos/opencli/src/cli.ts#L1053-L1068), [src/cli.ts:1070-1099](../../../project-repos/opencli/src/cli.ts#L1070-L1099)
 
@@ -1573,7 +1533,6 @@ Sources: [src/cli.ts:527-538](../../../project-repos/opencli/src/cli.ts#L527-L53
 
 <!-- source-snippets:end -->
 </details>
-
 ## inspect-first 工作流
 
 opencli-browser skill 明确要求先 `state` 或 `find`，拿到 ref 后再执行 click/type/select。原因是数字 ref 带元素指纹，可以在中等 DOM 漂移时重新识别；页面跳转或 SPA 路由变化后必须重新 `state`。  
@@ -1603,7 +1562,7 @@ Sources: [skills/opencli-browser/SKILL.md:33-53](../skills/opencli-browser/SKILL
 ## `<target>` 契约
 
 ```text
-&lt;target&gt; ::= &lt;numeric-ref&gt; | &lt;css-selector&gt;
+<target> ::= <numeric-ref> | <css-selector>
 ```
 
 - **数字 ref**：来自 `state` 或 `find` 的 `[N]`，对轻微 DOM 漂移更稳。
@@ -1661,7 +1620,6 @@ Sources: [skills/opencli-browser/SKILL.md:33-53](../skills/opencli-browser/SKILL
 
 <!-- source-snippets:end -->
 </details>
-
 ## 页面读取
 
 `browser state` 输出 URL、title 和带 `[N]` 引用的交互元素快照。`browser find --css` 返回 JSON entries。`get html --as json` 能按 depth、children、text budget 输出结构化 DOM 树；长文应优先用 `extract`，它会返回 `next_start_char` 游标。  
@@ -1690,7 +1648,6 @@ Sources: [src/cli.ts:682-690](../../../project-repos/opencli/src/cli.ts#L682-L69
 
 <!-- source-snippets:end -->
 </details>
-
 ## 网络抓包
 
 `browser open` 会先尝试 session-level capture；如果扩展不支持，会注入 fetch/XHR interceptor 作为 fallback。`browser network` 默认输出 shape preview 和 stable key，并把缓存写到 `~/.opencli/cache/browser-network/`，后续 `--detail <key>` 从缓存取完整 body。  
@@ -1723,7 +1680,6 @@ Sources: [src/cli.ts:635-645](../../../project-repos/opencli/src/cli.ts#L635-L64
 
 <!-- source-snippets:end -->
 </details>
-
 ## analyze 命令
 
 `browser analyze <url>` 是面向 adapter 作者的站点侦察命令。它打开页面、抓网络、探测 cookie 和常见 initial state，并结合 registry 找最近 adapter，输出 pattern、anti-bot、nearest_adapter、recommended_next_step。  
@@ -1740,7 +1696,6 @@ Sources: [src/cli.ts:709-780](../../../project-repos/opencli/src/cli.ts#L709-L78
 
 <!-- source-snippets:end -->
 </details>
-
 ## init/verify
 
 `browser init <site>/<command>` 会在 `~/.opencli/clis/<site>/<command>.js` 生成 adapter 骨架。`browser verify <site>/<command>` 会执行用户 adapter、强制 JSON 输出、可写入/更新 fixture，并按 fixture 校验 rows、columns、types、patterns、notEmpty 等规则。  
@@ -1761,7 +1716,6 @@ Sources: [src/cli.ts:1491-1559](../../../project-repos/opencli/src/cli.ts#L1491-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 使用边界
 
 浏览器命令适合临时操作和 adapter 原型验证；一旦逻辑稳定，应沉淀成 adapter。skill 也提醒不要用 `eval` 做写操作，不要复用跨页面 ref，不要让截图替代结构化 state。  
@@ -1782,7 +1736,7 @@ Sources: [skills/opencli-browser/SKILL.md:42-53](../skills/opencli-browser/SKILL
 ## `<target>` 契约
 
 ```text
-&lt;target&gt; ::= &lt;numeric-ref&gt; | &lt;css-selector&gt;
+<target> ::= <numeric-ref> | <css-selector>
 ```
 
 - **数字 ref**：来自 `state` 或 `find` 的 `[N]`，对轻微 DOM 漂移更稳。
@@ -1797,7 +1751,6 @@ Sources: [skills/opencli-browser/SKILL.md:42-53](../skills/opencli-browser/SKILL
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/06-pipeline-template-and-data-extraction.md -->
@@ -1834,7 +1787,6 @@ Sources: [src/execution.ts:77-133](../../../project-repos/opencli/src/execution.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 浏览器步骤判定
 
 并不是所有 pipeline 都需要浏览器。`capabilityRouting.ts` 用 `BROWSER_ONLY_STEPS` 判断步骤是否涉及页面操作，包括 `navigate`、`click`、`type`、`wait`、`press`、`snapshot`、`evaluate`、`intercept`、`tap`。如果命令有 `navigateBefore`，即便 pipeline 没出现这些步骤，也会使用浏览器 session。  
@@ -1855,7 +1807,6 @@ Sources: [src/capabilityRouting.ts:3-14](../../../project-repos/opencli/src/capa
 
 <!-- source-snippets:end -->
 </details>
-
 ## 执行器
 
 ```mermaid
@@ -1891,7 +1842,6 @@ Sources: [src/pipeline/executor.ts:20-58](../../../project-repos/opencli/src/pip
 
 <!-- source-snippets:end -->
 </details>
-
 ## 模板表达式
 
 模板引擎支持 &lt;code v-pre>$&lt;span v-pre>&#123;&#123;&lt;/span> ... &#125;&#125;&lt;/code> 表达式：
@@ -1922,7 +1872,6 @@ Sources: [src/pipeline/template.ts:17-32](../../../project-repos/opencli/src/pip
 
 <!-- source-snippets:end -->
 </details>
-
 ## VM 沙箱
 
 当表达式不是简单路径或字面量时，模板引擎会在 `node:vm` 沙箱里求值。它有几层边界：
@@ -1954,7 +1903,6 @@ Sources: [src/pipeline/template.ts:176-218](../../../project-repos/opencli/src/p
 
 <!-- source-snippets:end -->
 </details>
-
 ## 浏览器抽取与网络形状
 
 浏览器命令的网络抽取不是 pipeline 专属，但它是 adapter 原型阶段的重要数据来源。`browser network` 会把 body shape 推断出来，默认只输出 key、method、status、url、content-type、size 和 shape，避免把完整 body 直接打进上下文。需要完整 body 时再用 `--detail <key>`。  
@@ -1979,7 +1927,6 @@ Sources: [src/cli.ts:1307-1322](../../../project-repos/opencli/src/cli.ts#L1307-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 数据抽取建议
 
 | 场景 | 首选 |
@@ -2020,10 +1967,10 @@ Sources: [skills/opencli-browser/SKILL.md:102-171](../skills/opencli-browser/SKI
 ### Wait
 
 ```bash
-browser wait selector "&lt;css&gt;" [--timeout ms]
-browser wait text "&lt;substring&gt;" [--timeout ms]
-browser wait time &lt;seconds&gt;
-browser wait xhr "&lt;regex&gt;" [--timeout ms]
+browser wait selector "<css>" [--timeout ms]
+browser wait text "<substring>" [--timeout ms]
+browser wait time <seconds>
+browser wait xhr "<regex>" [--timeout ms]
 ```
 
 默认 timeout 是 `10000` ms。SPA route、登录跳转、懒加载列表需要 wait 后再 `state/get`。
@@ -2037,11 +1984,11 @@ browser wait xhr "&lt;regex&gt;" [--timeout ms]
 
 ```bash
 browser network
-browser network --detail &lt;key&gt;
+browser network --detail <key>
 browser network --filter "field1,field2"
 browser network --all
 browser network --raw
-browser network --ttl &lt;ms&gt;
+browser network --ttl <ms>
 ```
 
 列表项包含 `{key, method, status, url, ct, size, shape, body_truncated?}`。detail envelope 包含完整 body 和截断信息。缓存位于 `~/.opencli/cache/browser-network/`。
@@ -2100,7 +2047,6 @@ opencli browser extract --start 8000 --chunk-size 8000
 
 <!-- source-snippets:end -->
 </details>
-
 ## 维护风险
 
 Pipeline 的主要风险不是执行顺序，而是模板表达式和浏览器步骤的隐式能力边界。新 step 加入后必须同步：
@@ -2130,7 +2076,6 @@ Sources: [src/validate.ts:4-10](../../../project-repos/opencli/src/validate.ts#L
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/07-plugin-and-external-cli-hub.md -->
@@ -2180,7 +2125,6 @@ Sources: [src/plugin.ts:1-8](../../../project-repos/opencli/src/plugin.ts#L1-L8)
 
 <!-- source-snippets:end -->
 </details>
-
 ## Plugin manifest
 
 插件 manifest 文件名是 `opencli-plugin.json`。它支持单插件和 monorepo 两种模式；monorepo 可以声明多个 subplugin 及其 path、enabled、description、version、opencliVersion。  
@@ -2201,7 +2145,6 @@ Sources: [src/plugin-manifest.ts:1-37](../../../project-repos/opencli/src/plugin
 
 <!-- source-snippets:end -->
 </details>
-
 兼容性检查支持简单 semver range。版本解析和范围包含逻辑在 `plugin-manifest.ts` 中实现，避免安装明显不兼容的插件。  
 Sources: [src/plugin-manifest.ts:87-195](../../../project-repos/opencli/src/plugin-manifest.ts#L87-L195)
 
@@ -2216,7 +2159,6 @@ Sources: [src/plugin-manifest.ts:87-195](../../../project-repos/opencli/src/plug
 
 <!-- source-snippets:end -->
 </details>
-
 ## Plugin 安装与事务
 
 Plugin 安装涉及 clone、staging、替换目录、symlink 和 lock file。`plugin.ts` 有显式 transaction helper：每一步返回 handle，commit 时 finalize，失败时按相反顺序 rollback。替换目录时先移动到临时路径，再备份旧目录，最后 rename 到目标路径。  
@@ -2245,7 +2187,6 @@ Sources: [src/plugin.ts:227-252](../../../project-repos/opencli/src/plugin.ts#L2
 
 <!-- source-snippets:end -->
 </details>
-
 安全边界之一是 `resolveRepoContainedPath`：插件子路径必须留在 repo root 内，不能通过 `../` 逃逸。  
 Sources: [src/plugin.ts:271-277](../../../project-repos/opencli/src/plugin.ts#L271-L277)
 
@@ -2260,7 +2201,6 @@ Sources: [src/plugin.ts:271-277](../../../project-repos/opencli/src/plugin.ts#L2
 
 <!-- source-snippets:end -->
 </details>
-
 ## Plugin discovery
 
 发现插件时，discovery 会遍历 `~/.opencli/plugins`，处理普通插件和 symlink 插件目录，把命令注册到 registry。monorepo 插件通过 symlink 指向具体 subplugin。  
@@ -2281,7 +2221,6 @@ Sources: [src/discovery.ts:184-231](../../../project-repos/opencli/src/discovery
 
 <!-- source-snippets:end -->
 </details>
-
 ## CLI 管理命令
 
 `opencli plugin` 子命令包括 install、uninstall、update、list、create。install 成功后会立即 `discoverPlugins()`，让命令在当前进程中可用；list 支持 table 和 JSON 输出。  
@@ -2310,7 +2249,6 @@ Sources: [src/cli.ts:1731-1758](../../../project-repos/opencli/src/cli.ts#L1731-
 
 <!-- source-snippets:end -->
 </details>
-
 ## Adapter override 管理
 
 除了 plugin，用户也可以对内置 adapter 做本地 override：
@@ -2340,7 +2278,6 @@ Sources: [src/cli.ts:1926-1960](../../../project-repos/opencli/src/cli.ts#L1926-
 
 <!-- source-snippets:end -->
 </details>
-
 ## External CLI Hub
 
 外部 CLI 配置来自两个位置：
@@ -2374,7 +2311,6 @@ Sources: [src/external.ts:35-67](../../../project-repos/opencli/src/external.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 外部 CLI 安全处理
 
 安装命令不是直接交给 shell。`parseCommand` 会拒绝 `&&`、`||`、管道、重定向、反引号、变量展开、换行等 shell operator，并把命令拆成 binary + args 交给 `execFileSync`。  
@@ -2395,7 +2331,6 @@ Sources: [src/external.ts:89-123](../../../project-repos/opencli/src/external.ts
 
 <!-- source-snippets:end -->
 </details>
-
 未知命令不会自动映射到 PATH 上的任意 binary。`command:*` fallback 只提示用户 `opencli register <binary>`，这是显式注册模型。  
 Sources: [src/cli.ts:2129-2141](../../../project-repos/opencli/src/cli.ts#L2129-L2141)
 
@@ -2410,7 +2345,6 @@ Sources: [src/cli.ts:2129-2141](../../../project-repos/opencli/src/cli.ts#L2129-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 何时用哪种扩展
 
 | 需求 | 机制 |
@@ -2443,10 +2377,10 @@ Sources: [skills/opencli-usage/SKILL.md:93-121](../skills/opencli-usage/SKILL.md
 脚手架和验证：
 
 ```bash
-opencli browser init &lt;site&gt;/&lt;command&gt;   # 生成骨架
+opencli browser init <site>/<command>   # 生成骨架
 opencli validate [target]               # 校验 registry，无网络无浏览器
 opencli verify [target] [--smoke]       # 校验并可选跑 smoke
-opencli browser verify &lt;site&gt;/&lt;command&gt; # 通过 bridge 端到端验证
+opencli browser verify <site>/<command> # 通过 bridge 端到端验证
 ```
 
 adapter 只应导入 `@jackwener/opencli/registry` 和 `@jackwener/opencli/errors`。`columns` 必须和 `func` 返回对象的 key 名和顺序一致。完整流程见 `opencli-adapter-author`。
@@ -2459,7 +2393,7 @@ Plugins 是从 git 拉取的第三方扩展，和主 adapter registry 分离：
 opencli plugin install github:user/repo
 opencli plugin list [-f json]
 opencli plugin update [name] | --all
-opencli plugin uninstall &lt;name&gt;
+opencli plugin uninstall <name>
 ````
 
 #### `skills/opencli-usage/SKILL.md:123-138`
@@ -2485,7 +2419,6 @@ opencli docker ps
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/08-skills-and-agent-workflows.md -->
@@ -2545,7 +2478,6 @@ OpenCLI 把网站、Electron 桌面应用和外部 CLI 统一成 `opencli <site>
 
 <!-- source-snippets:end -->
 </details>
-
 本 DeepWiki 已按要求在 `skills/` 目录下生成中文审阅副本，包括：
 
 - `skills/opencli-usage/SKILL.md`
@@ -2595,7 +2527,6 @@ opencli <site> <command> --help # 查看参数和命令专属 flag
 
 <!-- source-snippets:end -->
 </details>
-
 它还明确了不同 strategy 的前置条件：`PUBLIC/LOCAL` 不依赖浏览器，`COOKIE/HEADER/INTERCEPT/UI` 依赖已登录 Chrome 和 Browser Bridge 扩展。  
 Sources: [skills/opencli-usage/SKILL.md:32-43](../skills/opencli-usage/SKILL.md#L32-L43)
 
@@ -2623,7 +2554,6 @@ Electron 桌面应用（cursor、codex、chatwise、notion、discord-app、douba
 
 <!-- source-snippets:end -->
 </details>
-
 ## opencli-browser：真实浏览器操作规范
 
 `opencli-browser` 规定 Agent 使用浏览器命令时必须 inspect-first：先 `state` 或 `find`，再点击、输入或选择。它把 `match_level`、structured error codes、compound controls、network cache 都纳入操作规范。  
@@ -2728,7 +2658,6 @@ date/time、select、file input 都带 `compound`。必须使用它，不要 reg
 
 <!-- source-snippets:end -->
 </details>
-
 这个 skill 和 `src/cli.ts` 的实现是对齐的：代码确实为 click/type/select/get 输出结构化 envelope，为网络命令实现 cache 和 `--detail`。  
 Sources: [src/cli.ts:1053-1140](../../../project-repos/opencli/src/cli.ts#L1053-L1140), [src/cli.ts:1307-1489](../../../project-repos/opencli/src/cli.ts#L1307-L1489)
 
@@ -2747,7 +2676,6 @@ Sources: [src/cli.ts:1053-1140](../../../project-repos/opencli/src/cli.ts#L1053-
 
 <!-- source-snippets:end -->
 </details>
-
 ## opencli-adapter-author：写 adapter 的闭环
 
 `opencli-adapter-author` 是从站点侦察到 verify 的 runbook。它强调：
@@ -2897,7 +2825,6 @@ DONE
 
 <!-- source-snippets:end -->
 </details>
-
 ## opencli-autofix：失败 adapter 自修复
 
 `opencli-autofix` 只适用于 adapter 可修复失败，例如 selector 漂移、API schema 变化、endpoint 迁移、timeout 等。它设置了硬停止条件：`AUTH_REQUIRED`、`BROWSER_CONNECT`、验证码、限流都不是代码修复问题。  
@@ -2954,7 +2881,6 @@ Sources: [skills/opencli-autofix/SKILL.md:11-24](../skills/opencli-autofix/SKILL
 
 <!-- source-snippets:end -->
 </details>
-
 修复流程是：用 `OPENCLI_DIAGNOSTIC=1` 收集 RepairContext，分析 adapter source、DOM snapshot、networkRequests，然后只修改 `RepairContext.adapter.sourcePath`，最多 3 轮重试。  
 Sources: [skills/opencli-autofix/SKILL.md:52-90](../skills/opencli-autofix/SKILL.md#L52-L90), [skills/opencli-autofix/SKILL.md:91-147](../skills/opencli-autofix/SKILL.md#L91-L147), [skills/opencli-autofix/SKILL.md:175-191](../skills/opencli-autofix/SKILL.md#L175-L191)
 
@@ -3093,7 +3019,6 @@ OpenCLI autofix repaired this adapter locally, and the retry passed.
 
 <!-- source-snippets:end -->
 </details>
-
 ## smart-search：搜索路由器
 
 `smart-search` 已经是中文。它要求每次使用前先 `opencli list -f yaml`，再用站点 help 和命令 help 确认实时签名。默认无指定站点时只选一个 AI 源，信息不足再补 1-2 个专用源，并在答案末尾追加搜索摘要。  
@@ -3153,15 +3078,14 @@ Sources: [skills/smart-search/SKILL.md:10-23](../skills/smart-search/SKILL.md#L1
 
 ```md
 搜索摘要
-- 网站：&lt;site1&gt; | 查询词：&lt;term1&gt; | 次数：&lt;n&gt;
-- 网站：&lt;site2&gt; | 查询词：&lt;term2&gt;；&lt;term3&gt; | 次数：&lt;n&gt;
-- 已跳过：&lt;site3&gt;，原因：达到频率上限
+- 网站：<site1> | 查询词：<term1> | 次数：<n>
+- 网站：<site2> | 查询词：<term2>；<term3> | 次数：<n>
+- 已跳过：<site3>，原因：达到频率上限
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
-
 ## Antigravity skill
 
 `clis/antigravity/SKILL.md` 说明 opencli 可以自动检测、启动并连接 Antigravity Electron app，通过 CDP 控制桌面 UI。能力包括发送消息、读取历史、提取代码、切换模型、清空上下文和 watch。  
@@ -3182,7 +3106,6 @@ Sources: [clis/antigravity/SKILL.md:5-24](../../../project-repos/opencli/clis/an
 
 <!-- source-snippets:end -->
 </details>
-
 ## Skill 维护建议
 
 这些 skills 和源码之间有明确对应关系：
@@ -3217,7 +3140,6 @@ Sources: [src/cli.ts:1491-1698](../../../project-repos/opencli/src/cli.ts#L1491-
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/09-testing-release-and-operations.md -->
@@ -3255,7 +3177,6 @@ Sources: [package.json:10-15](../../../project-repos/opencli/package.json#L10-L1
 
 <!-- source-snippets:end -->
 </details>
-
 ## CI 分层
 
 CI 触发条件包括 push、PR、每周一 smoke test 和手动触发。并发组按 ref 取消旧任务。  
@@ -3272,7 +3193,6 @@ Sources: [github/workflows/ci.yml:1-15](../../../project-repos/opencli/github/wo
 
 <!-- source-snippets:end -->
 </details>
-
 主要 job：
 
 | Job | 目的 |
@@ -3312,7 +3232,6 @@ Sources: [github/workflows/ci.yml:16-52](../../../project-repos/opencli/github/w
 
 <!-- source-snippets:end -->
 </details>
-
 ## Manifest 漂移门禁
 
 CI build job 在 Linux 上执行 `git diff --exit-code -- cli-manifest.json`。这保证源码 adapter 与提交的 manifest 同步，避免用户或 Agent 在安装包里看到过期命令清单。  
@@ -3329,7 +3248,6 @@ Sources: [github/workflows/ci.yml:41-51](../../../project-repos/opencli/github/w
 
 <!-- source-snippets:end -->
 </details>
-
 ## Release 流程
 
 Release 由 `v*` tag 触发。流程包括：
@@ -3363,7 +3281,6 @@ Sources: [github/workflows/release.yml:1-12](../../../project-repos/opencli/gith
 
 <!-- source-snippets:end -->
 </details>
-
 ## Doctor
 
 `opencli doctor` 诊断的是 Browser Bridge，不是所有 opencli 能力。它会检查 daemon 是否运行、扩展是否连接、版本是否兼容；`--live` 时会真正创建 BrowserBridge 并执行 `page.evaluate('1 + 1')`。  
@@ -3388,7 +3305,6 @@ Sources: [src/doctor.ts:73-88](../../../project-repos/opencli/src/doctor.ts#L73-
 
 <!-- source-snippets:end -->
 </details>
-
 渲染报告会显示 daemon、extension、connectivity、sessions 和 issues。doctor 对 extension 版本过旧、daemon 版本不一致、扩展未连接都有明确提示。  
 Sources: [src/doctor.ts:213-273](../../../project-repos/opencli/src/doctor.ts#L213-L273)
 
@@ -3403,7 +3319,6 @@ Sources: [src/doctor.ts:213-273](../../../project-repos/opencli/src/doctor.ts#L2
 
 <!-- source-snippets:end -->
 </details>
-
 ## Validate 与 Verify
 
 `validate` 校验当前 registry 的命令定义。`verify` 先运行 validate，再可选运行 smoke。smoke 会找项目根的 `tests/smoke`，通过 `npx vitest run tests/smoke/ --reporter=dot` 执行。  
@@ -3428,7 +3343,6 @@ Sources: [src/validate.ts:27-79](../../../project-repos/opencli/src/validate.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 browser-level `opencli browser verify <site>/<command>` 是用户 adapter 端到端验证，它会执行 adapter 并用 fixture 校验输出，更适合 adapter 作者日常闭环。  
 Sources: [src/cli.ts:1561-1698](../../../project-repos/opencli/src/cli.ts#L1561-L1698)
 
@@ -3443,7 +3357,6 @@ Sources: [src/cli.ts:1561-1698](../../../project-repos/opencli/src/cli.ts#L1561-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 运维排障地图
 
 ```mermaid
@@ -3482,7 +3395,7 @@ Sources: [src/doctor.ts:121-175](../../../project-repos/opencli/src/doctor.ts#L1
 ## Step 1：收集诊断上下文
 
 ```bash
-OPENCLI_DIAGNOSTIC=1 opencli &lt;site&gt; &lt;command&gt; [args...] 2>diagnostic.json
+OPENCLI_DIAGNOSTIC=1 opencli <site> <command> [args...] 2>diagnostic.json
 ```
 
 stderr 中会在 `___OPENCLI_DIAGNOSTIC___` 标记之间输出 `RepairContext`：
@@ -3520,7 +3433,6 @@ cat diagnostic.json | sed -n '/___OPENCLI_DIAGNOSTIC___/{n;p;}'
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 <!-- Source: pages/10-security-privacy-and-boundaries.md -->
@@ -3578,7 +3490,6 @@ Sources: [src/diagnostic.ts:1-13](../../../project-repos/opencli/src/diagnostic.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 诊断输出脱敏
 
 `OPENCLI_DIAGNOSTIC=1` 会输出 RepairContext，其中可能包含 adapter source、DOM snapshot、network requests、console errors。诊断模块设置了硬预算：
@@ -3603,7 +3514,6 @@ Sources: [src/diagnostic.ts:22-42](../../../project-repos/opencli/src/diagnostic
 
 <!-- source-snippets:end -->
 </details>
-
 敏感信息会被处理：
 
 - header 中的 authorization、cookie、set-cookie、csrf、api key 等替换为 `[REDACTED]`。
@@ -3631,7 +3541,6 @@ Sources: [src/diagnostic.ts:43-68](../../../project-repos/opencli/src/diagnostic
 
 <!-- source-snippets:end -->
 </details>
-
 如果 JSON 超过总预算，先丢 page 中最大的 snapshot/network/captured payload；仍然过大时丢整个 page。  
 Sources: [src/diagnostic.ts:335-360](../../../project-repos/opencli/src/diagnostic.ts#L335-L360)
 
@@ -3646,7 +3555,6 @@ Sources: [src/diagnostic.ts:335-360](../../../project-repos/opencli/src/diagnost
 
 <!-- source-snippets:end -->
 </details>
-
 ## 浏览器导航和调试边界
 
 扩展侧明确区分可调试 URL 和用户可导航 URL。导航只允许 `http://` 和 `https://`；可调试 URL 还允许 `about:blank` 和 `data:`，用于内部空页和调试场景。  
@@ -3663,7 +3571,6 @@ Sources: [extension/src/background.ts:354-366](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 CDP attach 前会确认 tab URL 可调试；如果 tab 已经不可调试，会删除 attach cache 并报错。attach 也会做有限重试，避免被其他扩展暂时占用 debugger 时立即失败。  
 Sources: [extension/src/cdp.ts:44-83](../../../project-repos/opencli/extension/src/cdp.ts#L44-L83), [extension/src/cdp.ts:87-139](../../../project-repos/opencli/extension/src/cdp.ts#L87-L139)
 
@@ -3682,7 +3589,6 @@ Sources: [extension/src/cdp.ts:44-83](../../../project-repos/opencli/extension/s
 
 <!-- source-snippets:end -->
 </details>
-
 ## CDP allowlist
 
 daemon 下发的 `cdp` action 不是万能通道。扩展只允许一组方法：
@@ -3707,7 +3613,6 @@ Sources: [extension/src/background.ts:816-860](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 ## Cookie 读取边界
 
 扩展的 cookie handler 要求传 domain 或 url；没有 scope 会拒绝，避免 dump 全部 cookie。返回字段包括 name、value、domain、path、secure、httpOnly、expirationDate。  
@@ -3724,7 +3629,6 @@ Sources: [extension/src/background.ts:781-799](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 ## 外部 CLI 边界
 
 external CLI 只从内置或用户 registry 加载，不会自动执行 PATH 上任意命令。未知命令 fallback 只提示用户注册。  
@@ -3745,7 +3649,6 @@ Sources: [src/external.ts:35-67](../../../project-repos/opencli/src/external.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 自动安装命令必须能被安全拆成 binary + args。`parseCommand` 拒绝 shell operator、重定向、变量展开和换行，执行时使用 `execFileSync(binary,args)`。  
 Sources: [src/external.ts:89-123](../../../project-repos/opencli/src/external.ts#L89-L123), [src/external.ts:130-142](../../../project-repos/opencli/src/external.ts#L130-L142)
 
@@ -3764,7 +3667,6 @@ Sources: [src/external.ts:89-123](../../../project-repos/opencli/src/external.ts
 
 <!-- source-snippets:end -->
 </details>
-
 ## 扩展权限现实
 
 扩展 manifest 需要 `debugger`、`tabs`、`cookies` 和 `<all_urls>`，这是它能做真实浏览器自动化的前提。对使用者而言，最重要的操作边界是：只在可信环境加载扩展，不要把诊断输出和抓包缓存上传到不可信位置。  
@@ -3785,7 +3687,6 @@ Sources: [extension/manifest.json:1-15](../../../project-repos/opencli/extension
 
 <!-- source-snippets:end -->
 </details>
-
 ## 安全审阅清单
 
 | 改动类型 | 必查点 |

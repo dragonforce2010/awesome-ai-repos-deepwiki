@@ -195,7 +195,6 @@ def _format_flashcards_markdown(title: str, cards: list[dict]) -> str:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 生成流程
 
 ```mermaid
@@ -352,7 +351,6 @@ def _format_flashcards_markdown(title: str, cards: list[dict]) -> str:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 轮询与等待
 
 `wait_for_completion()` 实现了带退避的轮询机制：
@@ -500,7 +498,6 @@ def _format_flashcards_markdown(title: str, cards: list[dict]) -> str:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 下载机制
 
 ### 媒体制品下载
@@ -629,7 +626,6 @@ def _format_quiz_markdown(title: str, questions: list[dict]) -> str:
 
 <!-- source-snippets:end -->
 </details>
-
 ### Mind Map 下载
 
 Mind Map 存储在笔记系统中（非标准制品列表），通过 `GET_NOTES_AND_MIND_MAPS` RPC 获取，返回层级 JSON 结构。
@@ -790,7 +786,6 @@ def _format_flashcards_markdown(title: str, cards: list[dict]) -> str:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [客户端 API](client-api.md)

@@ -241,7 +241,6 @@ export async function compactMessages(
 
 <!-- source-snippets:end -->
 </details>
-
 ## System Prompt 组成
 
 静态部分是 Easy Agent 的操作原则；动态部分包括 runtime 环境、Git branch/status/recent commit、AGENT.md 内容、memory 位置和索引、session instructions、skills reminder。静态和动态部分分别用 `<SYSTEM_STATIC_CONTEXT>` 与 `<SYSTEM_DYNAMIC_CONTEXT>` 包裹。  
@@ -370,7 +369,6 @@ export function renderSystemPrompt(parts: string[]): string {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Build["buildSystemPrompt"] --> Static["static instructions"]
@@ -450,7 +448,6 @@ export function renderSystemPrompt(parts: string[]): string {
 
 <!-- source-snippets:end -->
 </details>
-
 ## AGENT.md 链式加载
 
 `claudeMd.ts` 会读取全局 `~/.easy-agent/AGENT.md` 和 cwd 到根目录链路上的每个 `AGENT.md`，去掉 HTML 注释后按 source path 拼成上下文。  
@@ -527,7 +524,6 @@ export async function loadAgentMdContext(cwd: string): Promise<string> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 项目记忆目录
 
 memory 目录基于 canonical git root 计算项目 key：仓库目录 slug + git root 的 sha256 前 16 位。记忆存放在 `~/.easy-agent/projects/<projectKey>/memory/`，入口文件是 `MEMORY.md`，会被创建并限制行数/字节数。  
@@ -659,7 +655,6 @@ export async function readMemoryEntrypoint(cwd: string): Promise<string | null> 
 
 <!-- source-snippets:end -->
 </details>
-
 记忆类型有 `user`、`feedback`、`project`、`reference`。代码中的 guidance 明确要求：只有对未来对话有用且不能从当前 repo 派生的信息才保存；保存前要查现有 memory，避免把 memory 当活动日志。  
 Sources: [src/context/memory/memoryTypes.ts:1-20](../../../project-repos/easy-agent/src/context/memory/memoryTypes.ts#L1-L20), [src/context/memory/memoryTypes.ts:22-86](../../../project-repos/easy-agent/src/context/memory/memoryTypes.ts#L22-L86), [src/context/memory/memdir.ts:320-330](../../../project-repos/easy-agent/src/context/memory/memdir.ts#L320-L330)
 
@@ -781,7 +776,6 @@ export function buildMemoryPromptInstructions(): string[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## MemoryWrite 工具
 
 `MemoryWrite` 会校验 name、description、type、content，调用 `writeProjectMemory()` 写入 topic markdown，并重写 `MEMORY.md` 指针索引。若发现相同或相似 memory，会更新现有文件而不是新建。  
@@ -928,7 +922,6 @@ export async function writeProjectMemory(input: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Token 预算估算
 
 `tokens.ts` 用启发式估算 message 和 content block token：文本按 4 chars/token，JSON 按 2 chars/token，tool block 有固定 overhead，binary block 固定 2000。模型 context window 默认 200K，并为 summary output 预留最多 20K。  
@@ -1057,7 +1050,6 @@ export function tokenCountWithEstimation(
 
 <!-- source-snippets:end -->
 </details>
-
 ## Auto Compact
 
 `autoCompact.ts` 定义 warning/error/blocking 三类阈值：warning buffer、auto compact buffer、manual compact buffer 会按有效 context window 缩放。连续 auto compact 失败达到 3 次后触发 circuit breaker，避免无限重试。  
@@ -1208,7 +1200,6 @@ export async function autoCompactIfNeeded(
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Estimate["estimated tokens"] --> Warning{"warning threshold"}
@@ -1335,7 +1326,6 @@ export async function autoCompactIfNeeded(
 
 <!-- source-snippets:end -->
 </details>
-
 ## Micro 与 Full Compaction
 
 `compactMessages()` 先 micro-compact：对旧的 Read/Grep/Glob/Bash/Edit/Write tool_result 清内容或用 placeholder 替换 binary 内容，只保留最近 8 条消息。若估算 token 仍低于 auto 阈值，就只返回 micro 结果；否则调用 `createMessage()` 生成 summary，保留最近尾部消息并插入 `[CompactBoundary]`。  
@@ -1522,7 +1512,6 @@ export async function compactMessages(
 
 <!-- source-snippets:end -->
 </details>
-
 ## Plan Attachment
 
 Plan mode 的说明不是一段永久 system prompt，而是按节流规则注入 user message。第一次进入 plan mode 注入完整流程，后续按 turn 计数插入 sparse/full reminder；退出 plan mode 时注入一次 `[plan_mode_exit]`。  
@@ -1675,7 +1664,6 @@ export function getPlanModeExitAttachment(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [QueryEngine 与 Agentic Loop](query-engine-agentic-loop.md)

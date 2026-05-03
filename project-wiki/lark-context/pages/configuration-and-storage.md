@@ -90,7 +90,6 @@ CREATE TABLE IF NOT EXISTS kv (
 
 <!-- source-snippets:end -->
 </details>
-
 ## 路径优先级
 
 README 写明路径覆盖优先级是 CLI flag、环境变量、config.yaml、默认值。源码中的 `resolvePath` 与 `loadConfig` 实现了这个顺序，并支持 `~` 展开。Sources: [README.md:120-128](../../../project-repos/lark-context/README.md#L120-L128), [src/config.ts:38-63](../../../project-repos/lark-context/src/config.ts#L38-L63), [src/config.ts:95-133](../../../project-repos/lark-context/src/config.ts#L95-L133)
@@ -191,7 +190,6 @@ export function loadConfig(opts: LoadConfigOptions = {}): Config {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Flag["CLI override"] --> Resolve["resolvePath"]
@@ -294,7 +292,6 @@ function resolvePath(
 
 <!-- source-snippets:end -->
 </details>
-
 ## YAML 配置模型
 
 `groups` 在 YAML 中使用 `chat_id`，进入 TypeScript 后映射为 `chatId`。`parseGroups` 要求 `groups` 必须是列表，每个 entry 至少有 `alias` 和 `chat_id`，并拒绝重复 alias；`enabled` 缺省为 `true`。Sources: [src/config.ts:65-93](../../../project-repos/lark-context/src/config.ts#L65-L93), [test/config.test.ts:51-72](../../../project-repos/lark-context/test/config.test.ts#L51-L72), [test/config.test.ts:140-148](../../../project-repos/lark-context/test/config.test.ts#L140-L148)
@@ -381,7 +378,6 @@ function parseGroups(raw: unknown): GroupConfig[] {
 
 <!-- source-snippets:end -->
 </details>
-
 保存配置时，`saveConfig` 会把 HOME 下路径收缩回 `~/...`，并把 `chatId` 写回 `chat_id`。测试覆盖了 HOME 内路径收缩和 HOME 外绝对路径保留。Sources: [src/config.ts:135-164](../../../project-repos/lark-context/src/config.ts#L135-L164), [test/config.test.ts:93-138](../../../project-repos/lark-context/test/config.test.ts#L93-L138)
 
 <details class="source-snippets">
@@ -477,7 +473,6 @@ export function saveConfig(cfg: Config): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## SQLite schema
 
 ```mermaid
@@ -569,7 +564,6 @@ CREATE TABLE IF NOT EXISTS kv (
 
 <!-- source-snippets:end -->
 </details>
-
 连接数据库时会创建父目录、开启外键和 WAL；`initSchema` 执行 schema 后还会运行 `migrateMessagesColumns`。Sources: [src/db.ts:43-59](../../../project-repos/lark-context/src/db.ts#L43-L59)
 
 <details class="source-snippets">
@@ -601,7 +595,6 @@ export function initSchema(dbPath: string): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## thread 字段迁移
 
 `migrateMessagesColumns` 会检查 `messages` 表字段，补 `thread_id` 和 `is_thread_reply`；对旧数据，它从 `content_json` 的 `$.thread_id` 回填缺失的 `thread_id`，然后创建 `(chat_alias, thread_id, create_time)` 索引。Sources: [src/db.ts:61-91](../../../project-repos/lark-context/src/db.ts#L61-L91)
@@ -649,7 +642,6 @@ function migrateMessagesColumns(db: Database.Database): void {
 
 <!-- source-snippets:end -->
 </details>
-
 测试覆盖了新 schema 中字段和索引存在、旧 schema 原地迁移、JSON 回填、坏 JSON 不崩溃以及重复迁移幂等。Sources: [test/db.test.ts:48-80](../../../project-repos/lark-context/test/db.test.ts#L48-L80), [test/db.test.ts:82-145](../../../project-repos/lark-context/test/db.test.ts#L82-L145), [test/db.test.ts:147-206](../../../project-repos/lark-context/test/db.test.ts#L147-L206)
 
 <details class="source-snippets">
@@ -831,7 +823,6 @@ function migrateMessagesColumns(db: Database.Database): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 白名单与 DB 同步
 
 `groups add` 同时写 YAML 和 `chats` 表；`groups rm` 从 YAML 中移除，并把 DB 中的 chat 设为 disabled。这样历史消息仍保留，但后续 `pull`/`show` 默认不会遍历 disabled 群。Sources: [src/commands/groups.ts:31-58](../../../project-repos/lark-context/src/commands/groups.ts#L31-L58), [src/commands/groups.ts:73-90](../../../project-repos/lark-context/src/commands/groups.ts#L73-L90), [test/cmd-groups.test.ts:43-81](../../../project-repos/lark-context/test/cmd-groups.test.ts#L43-L81), [test/cmd-groups.test.ts:103-123](../../../project-repos/lark-context/test/cmd-groups.test.ts#L103-L123)
@@ -969,7 +960,6 @@ describe("groups rm", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Add["groups add"] --> Save["saveConfig(groups +1)"]
@@ -1079,7 +1069,6 @@ export async function runRm(opts: RmOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## KV 用途
 
 源码当前提供 `kvSet` 和 `kvGet`，skill 的 digest workflow 用 `kv.last_digest_at` 作为上次沉淀时间戳。也就是说 KV 是 CLI 与 workflow 之间的轻量状态面。Sources: [src/db.ts:93-114](../../../project-repos/lark-context/src/db.ts#L93-L114), [skills/lark-context/references/digest.md:14-29](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L14-L29), [skills/lark-context/references/digest.md:93-97](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L93-L97)
@@ -1149,7 +1138,6 @@ sqlite3 ~/.lark-context/raw.db "INSERT INTO kv(key,value) VALUES('last_digest_at
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](system-architecture.md)

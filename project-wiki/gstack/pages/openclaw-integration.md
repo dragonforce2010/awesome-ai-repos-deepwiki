@@ -61,7 +61,6 @@ No compatibility matrices. The prompt is the bridge.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 架构分工
 
 ```mermaid
@@ -112,7 +111,6 @@ OpenClaw decides at spawn time which tier of gstack support to use:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 生成产物
 
 | 产物 | 用途 | 来源 |
@@ -146,7 +144,6 @@ A/B tested: 2x time, meaningfully better output.
 
 <!-- source-snippets:end -->
 </details>
-
 | `openclaw/gstack-full-CLAUDE.md` | 完整 feature pipeline：理解项目、autoplan、实现、ship | Sources: [docs/OPENCLAW.md:85-92](../../../project-repos/gstack/docs/OPENCLAW.md#L85-L92) |
 
 <details class="source-snippets">
@@ -169,7 +166,6 @@ A/B tested: 2x time, meaningfully better output.
 
 <!-- source-snippets:end -->
 </details>
-
 | `openclaw/gstack-plan-CLAUDE.md` | 只做 planning gauntlet，不实现 | Sources: [docs/OPENCLAW.md:93-103](../../../project-repos/gstack/docs/OPENCLAW.md#L93-L103) |
 
 <details class="source-snippets">
@@ -195,7 +191,6 @@ ready to build, spawn a FULL session that references the saved plan.
 
 <!-- source-snippets:end -->
 </details>
-
 | `openclaw/skills/*` | 原生 conversational methodology skills | Sources: [docs/OPENCLAW.md:104-113](../../../project-repos/gstack/docs/OPENCLAW.md#L104-L113) |
 
 <details class="source-snippets">
@@ -220,7 +215,6 @@ No gstack infrastructure (no browse, no telemetry, no preamble).
 
 <!-- source-snippets:end -->
 </details>
-
 ## Host config 与 adapter
 
 `hosts/openclaw.ts` 声明 OpenClaw 的输出根、frontmatter、path rewrite、tool rewrite 和 suppressed resolvers；adapter 负责把 Claude tool 语义转换成 OpenClaw 能理解的 prose/session_spawn/browser exec 形态。Sources: [hosts/openclaw.ts:3-74](../../../project-repos/gstack/hosts/openclaw.ts#L3-L74), [scripts/host-adapters/openclaw-adapter.ts:1-45](../../../project-repos/gstack/scripts/host-adapters/openclaw-adapter.ts#L1-L45)
@@ -359,7 +353,6 @@ export function transform(content: string, _config: HostConfig): string {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 原生技能示例
 
 `gstack-openclaw-office-hours` 明确禁止实现，只产出 design document；它保留了 gstack 的产品诊断方法，但适配为 OpenClaw 聊天语境。Sources: [openclaw/skills/gstack-openclaw-office-hours/SKILL.md:1-22](../../../project-repos/gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md#L1-L22), [openclaw/skills/gstack-openclaw-office-hours/SKILL.md:48-126](../../../project-repos/gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md#L48-L126)
@@ -482,7 +475,6 @@ Ask these questions **ONE AT A TIME**. Push on each one until the answer is spec
 
 <!-- source-snippets:end -->
 </details>
-
 ## 不做什么
 
 OpenClaw 文档列出 non-goals：不做 dispatch daemon、不做 Clawvisor relay、不做 bidirectional learnings bridge、不做 JSON schema/protocol versioning、不完整移植所有 Claude Code coding skills。Sources: [docs/OPENCLAW.md:138-145](../../../project-repos/gstack/docs/OPENCLAW.md#L138-L145)
@@ -507,7 +499,6 @@ OpenClaw 文档列出 non-goals：不做 dispatch daemon、不做 Clawvisor rela
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [安装与多宿主接入](setup-and-hosts.md)

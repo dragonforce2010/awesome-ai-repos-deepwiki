@@ -87,7 +87,6 @@ NEXUS supports three deployment configurations:
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Discovery["Phase 0 Discovery"] --> Strategy["Phase 1 Strategy"]
@@ -215,7 +214,6 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 <!-- source-snippets:end -->
 </details>
-
 ## 核心原则
 
 NEXUS 的原则包括：阶段质量门、上下文连续性、并行执行、证据优先、最多 3 次重试、单一事实源。这些原则把 agent 协作从“逐个唤起”变成受控流水线。Sources: [strategy/nexus-strategy.md:46-56](../../../project-repos/agency-agents/strategy/nexus-strategy.md#L46-L56)
@@ -243,7 +241,6 @@ NEXUS 的原则包括：阶段质量门、上下文连续性、并行执行、�
 
 <!-- source-snippets:end -->
 </details>
-
 ## Dev-QA Loop
 
 Phase 3 playbook 把构建阶段定义为按 RICE 排序的 backlog 循环：分配给开发 agent、实现、Evidence Collector 测试、PASS 则进入下一任务、FAIL 且尝试次数小于 3 则带反馈回到开发、大于等于 3 则升级给 Orchestrator。Sources: [strategy/playbooks/phase-3-build.md:19-43](../../../project-repos/agency-agents/strategy/playbooks/phase-3-build.md#L19-L43)
@@ -285,7 +282,6 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Task["Sprint task"] --> Dev["Developer Agent"]
@@ -402,7 +398,6 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 <!-- source-snippets:end -->
 </details>
-
 ## 编排角色
 
 `specialized/agents-orchestrator.md` 把 Agents Orchestrator 定义为完整开发 workflow 的 pipeline manager：协调 handoff、维护状态、执行质量门、失败重试和升级。Sources: [specialized/agents-orchestrator.md:19-38](../../../project-repos/agency-agents/specialized/agents-orchestrator.md#L19-L38), [specialized/agents-orchestrator.md:39-52](../../../project-repos/agency-agents/specialized/agents-orchestrator.md#L39-L52), [specialized/agents-orchestrator.md:149-168](../../../project-repos/agency-agents/specialized/agents-orchestrator.md#L149-L168)
@@ -483,7 +478,6 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Agent 目录与专业分工](agent-catalog.md)

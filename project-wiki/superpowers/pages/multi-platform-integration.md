@@ -302,7 +302,6 @@ ${toolMapping}
 
 <!-- source-snippets:end -->
 </details>
-
 ## Claude Code 集成
 
 Claude Code 是 Superpowers 的主要目标平台，拥有最完整的集成支持。
@@ -377,7 +376,6 @@ exit 0
 
 <!-- source-snippets:end -->
 </details>
-
 ## Cursor 集成
 
 Cursor 使用 `hooks-cursor.json`（v1 格式）注册 `sessionStart` 钩子。与 Claude Code 的区别：
@@ -426,7 +424,6 @@ elif [ -n "${CLAUDE_PLUGIN_ROOT:-}" ] && [ -z "${COPILOT_CLI:-}" ]; then
 
 <!-- source-snippets:end -->
 </details>
-
 ## Codex 集成
 
 Codex 有两种形态——CLI 和 App，共享相同的 `.codex-plugin/plugin.json` 清单。
@@ -624,7 +621,6 @@ Optionally delete the clone: `rm -rf ~/.codex/superpowers` (Windows: `Remove-Ite
 
 <!-- source-snippets:end -->
 </details>
-
 ## OpenCode 集成
 
 OpenCode 使用完全不同的集成架构——一个 ES 模块插件而非钩子脚本。
@@ -988,7 +984,6 @@ Skills written for Claude Code are automatically adapted for OpenCode:
 
 <!-- source-snippets:end -->
 </details>
-
 ## Gemini CLI 集成
 
 Gemini CLI 使用最简的集成方式——一个 `gemini-extension.json` 指定 `contextFileName: "GEMINI.md"`。
@@ -1036,7 +1031,6 @@ Sources: [gemini-extension.json:1-6](../../../project-repos/superpowers/gemini-e
 
 <!-- source-snippets:end -->
 </details>
-
 ## 跨平台兼容性设计
 
 ### 钩子脚本的多平台输出
@@ -1144,7 +1138,6 @@ exec bash "${SCRIPT_DIR}/${SCRIPT_NAME}" "$@"
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](system-architecture.md)

@@ -112,7 +112,6 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 <!-- source-snippets:end -->
 </details>
-
 ## 构建入口
 
 包名是 `easy-agent`，运行时产物入口是 `dist/entrypoint/cli.js`，命令行 bin 名称是 `agent`。项目使用 ESM、TypeScript、React/Ink、Anthropic SDK、MCP SDK、proper-lockfile 和 yaml。  
@@ -162,7 +161,6 @@ Sources: [package.json:1-9](../../../project-repos/easy-agent/package.json#L1-L9
 
 <!-- source-snippets:end -->
 </details>
-
 `npm run dev` 直接用 `tsx src/entrypoint/cli.ts`，`npm run build` 调 `tsc`，`npm start` 运行构建后的 CLI。README 要求 Node.js、npm 和 Anthropic-compatible model access，并列出 `ANTHROPIC_MODEL`、`ANTHROPIC_BASE_URL`、`ANTHROPIC_AUTH_TOKEN`。  
 Sources: [package.json:10-20](../../../project-repos/easy-agent/package.json#L10-L20), [README.md:137-180](../../../project-repos/easy-agent/README.md#L137-L180)
 
@@ -238,7 +236,6 @@ agent --dump-system-prompt
 
 <!-- source-snippets:end -->
 </details>
-
 `tsconfig.json` 目标是 ES2022 与 NodeNext module resolution，开启 strict、source map、declaration、JSX React，并把源码从 `src` 输出到 `dist`。  
 Sources: [tsconfig.json:2-20](../../../project-repos/easy-agent/tsconfig.json#L2-L20)
 
@@ -273,7 +270,6 @@ Sources: [tsconfig.json:2-20](../../../project-repos/easy-agent/tsconfig.json#L2
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart LR
   Dev["npm run dev"] --> TSX["tsx src/entrypoint/cli.ts"]
@@ -312,7 +308,6 @@ Sources: [package.json:6-20](../../../project-repos/easy-agent/package.json#L6-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 专项测试脚本
 
 `test:streaming` 校验环境加载、API key、streaming 生命周期和事件输出，适合作为模型通信层的 smoke test。它会真实访问 Anthropic-compatible endpoint，因此依赖环境变量。  
@@ -430,7 +425,6 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 `test:tools` 覆盖工具 registry、Read 工具读取、offset/limit、缺失文件错误和 API 参数转换。  
 Sources: [src/scripts/test-tools.ts:5-13](../../../project-repos/easy-agent/src/scripts/test-tools.ts#L5-L13), [src/scripts/test-tools.ts:20-80](../../../project-repos/easy-agent/src/scripts/test-tools.ts#L20-L80)
 
@@ -521,7 +515,6 @@ async function main() {
 
 <!-- source-snippets:end -->
 </details>
-
 `test:tasks` 覆盖 Task V2 的 create/get/list/update、依赖级联、delete cascade、reset 和 high water mark 保留。  
 Sources: [src/scripts/test-tasks.ts:1-8](../../../project-repos/easy-agent/src/scripts/test-tasks.ts#L1-L8), [src/scripts/test-tasks.ts:33-110](../../../project-repos/easy-agent/src/scripts/test-tasks.ts#L33-L110)
 
@@ -628,7 +621,6 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 `test:mcp` 覆盖 MCP config validation、工具名归一化、连接注册和 stdio/http/sse 相关行为；`test:skills` 覆盖 frontmatter、skills 加载、registry 和 skill tool；`test:sandbox` 覆盖 sandbox 决策与 profile 生成。  
 Sources: [src/scripts/test-mcp.ts:1-22](../../../project-repos/easy-agent/src/scripts/test-mcp.ts#L1-L22), [src/scripts/test-mcp.ts:72-142](../../../project-repos/easy-agent/src/scripts/test-mcp.ts#L72-L142), [src/scripts/test-mcp.ts:144-338](../../../project-repos/easy-agent/src/scripts/test-mcp.ts#L144-L338), [src/scripts/test-skills.ts:1-14](../../../project-repos/easy-agent/src/scripts/test-skills.ts#L1-L14), [src/scripts/test-skills.ts:40-150](../../../project-repos/easy-agent/src/scripts/test-skills.ts#L40-L150), [src/scripts/test-sandbox.ts:1-14](../../../project-repos/easy-agent/src/scripts/test-sandbox.ts#L1-L14), [src/scripts/test-sandbox.ts:69-347](../../../project-repos/easy-agent/src/scripts/test-sandbox.ts#L69-L347)
 
@@ -1148,7 +1140,6 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Step 教程线
 
 `step/` 目录是路线图的可复现实验线。`step1` 从 Anthropic streaming 最小闭环开始；`step4` 引入 agentic loop；`step8` 把多轮状态、system prompt、usage 和 slash command 收进 QueryEngine。  
@@ -1464,7 +1455,6 @@ export class QueryEngine {
 
 <!-- source-snippets:end -->
 </details>
-
 后续 step 对应更复杂能力：`step16` 是 MCP，`step17` 是 Skills，`step18` 是 Sandbox。这些 step 与 `src/` 下当前实现并存，用作教学里程碑和架构对照。  
 Sources: [README.md:105-108](../../../project-repos/easy-agent/README.md#L105-L108), [step/step16.js:1-90](../../../project-repos/easy-agent/step/step16.js#L1-L90), [step/step17.js:1-130](../../../project-repos/easy-agent/step/step17.js#L1-L130), [step/step18.js:1-160](../../../project-repos/easy-agent/step/step18.js#L1-L160)
 
@@ -1831,7 +1821,6 @@ function pickSandbox(value) {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 路线图状态
 
 README 的 30 阶段路线图显示：阶段 1 到 18 已完成，覆盖模型通信、UI、工具、agentic loop、权限、QueryEngine、session、memory、compaction、token budget、plan mode、Todo、Task、MCP、Skills 和 Sandbox。  
@@ -1875,7 +1864,6 @@ The project follows a 30-phase roadmap designed to recreate the full Claude Code
 
 <!-- source-snippets:end -->
 </details>
-
 尚未开始的核心能力包括 sub-agents、自定义 agent、多 agent 协作、hooks lifecycle、文件历史与 rollback、pipe mode、multi-provider；部分完成的方向包括终端 UI 升级、配置改进、错误恢复、auto mode、打包发布和文档。  
 Sources: [README.md:108-121](../../../project-repos/easy-agent/README.md#L108-L121), [README.md:182-191](../../../project-repos/easy-agent/README.md#L182-L191)
 
@@ -1920,7 +1908,6 @@ The next major milestones are:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 当前质量边界
 
 仓库没有传统测试框架配置，也没有 CI 配置文件；质量入口集中在 npm scripts 和手写 `src/scripts/*`。这意味着它适合逐层验证关键子系统，但不等价于完整的回归测试矩阵。  
@@ -2281,7 +2268,6 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 贡献策略也说明项目仍在 active reconstruction，结构和开发约定会频繁变化，暂不接受外部 PR。读者应把当前接口视为学习和实验主线，而不是稳定扩展 API。  
 Sources: [README.md:193-199](../../../project-repos/easy-agent/README.md#L193-L199)
 
@@ -2304,7 +2290,6 @@ Until then, you are welcome to follow the project and reference the public roadm
 
 <!-- source-snippets:end -->
 </details>
-
 ## 建议验证顺序
 
 本地开发时可以先跑类型构建，再按改动面选择专项脚本：模型通信改动跑 `test:streaming`，工具 registry 改动跑 `test:tools`，任务系统改动跑 `test:tasks`，MCP/Skills/Sandbox 分别跑对应脚本。涉及真实 sandbox 行为时再补 `smoke:sandbox` 与 `smoke:bash-sandbox`。  
@@ -2394,7 +2379,6 @@ Sources: [package.json:10-20](../../../project-repos/easy-agent/package.json#L10
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

@@ -76,7 +76,6 @@ First call starts everything (~3s). Every call after: ~100-200ms.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 运行时拓扑
 
 ```mermaid
@@ -237,7 +236,6 @@ async function startServer(extraEnv?: Record<string, string>): Promise<ServerSta
 
 <!-- source-snippets:end -->
 </details>
-
 ## 状态与配置解析
 
 `browse/src/config.ts` 的解析顺序是：`BROWSE_STATE_FILE` 环境变量、git 根目录、当前工作目录 fallback。所有日志和 state 都落在项目 `.gstack/` 下，`ensureStateDir` 会创建目录并尝试把 `.gstack/` 加到 `.gitignore`。Sources: [browse/src/config.ts:1-11](../../../project-repos/gstack/browse/src/config.ts#L1-L11), [browse/src/config.ts:50-75](../../../project-repos/gstack/browse/src/config.ts#L50-L75), [browse/src/config.ts:78-115](../../../project-repos/gstack/browse/src/config.ts#L78-L115)
@@ -339,7 +337,6 @@ export function ensureStateDir(config: BrowseConfig): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 命令分发
 
 `commands.ts` 是命令事实来源，并把命令分成 READ、WRITE、META 三类。server 内部按这些 set 分发到 `handleReadCommand`、`handleWriteCommand`、`handleMetaCommand`。Sources: [browse/src/commands.ts:1-50](../../../project-repos/gstack/browse/src/commands.ts#L1-L50), [ARCHITECTURE.md:300-317](../../../project-repos/gstack/ARCHITECTURE.md#L300-L317), [browse/src/server.ts:556-740](../../../project-repos/gstack/browse/src/server.ts#L556-L740)
@@ -555,7 +552,6 @@ async function handleCommandInternal(
 
 <!-- source-snippets:end -->
 </details>
-
 | 分类 | 示例 | 风险语义 |
 |---|---|---|
 | READ | `text`, `html`, `links`, `console`, `cookies`, `inspect` | 读取页面或运行时状态，适合封装 untrusted output |
@@ -714,7 +710,6 @@ export const COMMAND_DESCRIPTIONS: Record<string, { category: string; descriptio
 
 <!-- source-snippets:end -->
 </details>
-
 ## 生命周期
 
 ```mermaid
@@ -762,7 +757,6 @@ const idleCheckInterval = setInterval(() => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## BrowserManager 职责
 
 `BrowserManager` 持有 Playwright browser/context、tab map、tab session、额外 header、user agent、viewport/deviceScaleFactor、tab ownership、watch mode 和 headed mode 状态。Sources: [browse/src/browser-manager.ts:49-104](../../../project-repos/gstack/browse/src/browser-manager.ts#L49-L104), [browse/src/browser-manager.ts:177-234](../../../project-repos/gstack/browse/src/browser-manager.ts#L177-L234), [browse/src/browser-manager.ts:236-280](../../../project-repos/gstack/browse/src/browser-manager.ts#L236-L280)
@@ -948,7 +942,6 @@ export class BrowserManager {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [浏览器安全模型](browser-security.md)

@@ -107,7 +107,6 @@ RECOMMENDED_SECTIONS=("Identity" "Core Mission" "Critical Rules")
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   File["agent.md"] --> FM["YAML frontmatter"]
@@ -237,7 +236,6 @@ RECOMMENDED_SECTIONS=("Identity" "Core Mission" "Critical Rules")
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计原则
 
 贡献指南强调优秀 agent 应该窄而深、有鲜明人格、包含具体代码或模板、具备可衡量指标、给出分步 workflow，并经过真实场景测试；应避免泛泛的“helpful assistant”、宽泛范围和未经验证的理论建议。Sources: [CONTRIBUTING.md:224-240](../../../project-repos/agency-agents/CONTRIBUTING.md#L224-L240)
@@ -271,7 +269,6 @@ RECOMMENDED_SECTIONS=("Identity" "Core Mission" "Critical Rules")
 
 <!-- source-snippets:end -->
 </details>
-
 `engineering/engineering-frontend-developer.md` 是一个典型样本：frontmatter 声明名称、描述、颜色、emoji、vibe；正文从身份、核心使命、关键规则、技术交付、工作流、交付模板到沟通风格逐层展开。Sources: [engineering/engineering-frontend-developer.md:1-18](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md#L1-L18), [engineering/engineering-frontend-developer.md:19-64](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md#L19-L64), [engineering/engineering-frontend-developer.md:122-176](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md#L122-L176)
 
 <details class="source-snippets">
@@ -415,7 +412,6 @@ You are **Frontend Developer**, an expert frontend developer who specializes in 
 
 <!-- source-snippets:end -->
 </details>
-
 ## Persona 与 Operations 分组
 
 贡献文档明确把 agent 正文拆成 persona 与 operations 两组；`convert_openclaw` 也按 `##` 标题关键词把 identity、learning & memory、communication、style、critical rules 放入 `SOUL.md`，其他 mission、deliverables、workflow 等放入 `AGENTS.md`。Sources: [CONTRIBUTING.md:154-175](../../../project-repos/agency-agents/CONTRIBUTING.md#L154-L175), [scripts/convert.sh:251-323](../../../project-repos/agency-agents/scripts/convert.sh#L251-L323)
@@ -532,7 +528,6 @@ HEREDOC
 
 <!-- source-snippets:end -->
 </details>
-
 ## 贡献流程
 
 新增 agent 的理想 PR 是一个 Markdown 文件；新工具、构建系统、CI、跨文件大规模变更要先开 Discussion。提交前需要真实测试、匹配模板、提供 2-3 个示例、定义可衡量指标并校对。Sources: [CONTRIBUTING.md:243-275](../../../project-repos/agency-agents/CONTRIBUTING.md#L243-L275), [CONTRIBUTING.md:276-318](../../../project-repos/agency-agents/CONTRIBUTING.md#L276-L318)
@@ -630,7 +625,6 @@ We love ambitious ideas — a [Discussion](https://github.com/msitarzewski/agenc
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Agent 目录与专业分工](agent-catalog.md)

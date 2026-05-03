@@ -68,7 +68,6 @@ export async function* runNdjson(args: string[]): AsyncGenerator<unknown> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 封装层
 
 ```mermaid
@@ -179,7 +178,6 @@ describe("runJson", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 `runJson` 会在参数末尾追加 `--format json`，`runNdjson` 追加 `--format ndjson` 并逐行解析非空行。测试明确覆盖了追加格式参数、JSON 解析、空行跳过、ENOENT 和 stderr 透传。Sources: [src/lark.ts:24-35](../../../project-repos/lark-context/src/lark.ts#L24-L35), [test/lark.test.ts:20-39](../../../project-repos/lark-context/test/lark.test.ts#L20-L39), [test/lark.test.ts:74-101](../../../project-repos/lark-context/test/lark.test.ts#L74-L101)
 
 <details class="source-snippets">
@@ -264,7 +262,6 @@ describe("runNdjson", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 调用点
 
 | 业务 | 调用参数 | 返回处理 |
@@ -396,7 +393,6 @@ async function pullThreadsPage(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 初始化检查
 
 `init` 不通过 `src/lark.ts`，而是直接执行 `lark-cli --version` 做 PATH 检查。失败时提示安装 `@larksuite/cli` 并执行 `lark-cli auth login`。这是一种启动前置检查，而不是业务调用。Sources: [src/commands/init.ts:18-34](../../../project-repos/lark-context/src/commands/init.ts#L18-L34), [skills/lark-context/SKILL.md:15-29](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L15-L29)
@@ -450,7 +446,6 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 sequenceDiagram
   participant User as 用户
@@ -520,7 +515,6 @@ export async function runInit(opts: InitOpts = {}): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 错误传播策略
 
 `LarkNotFoundError` 在 `pullThreads` 中会继续向上抛；`LarkCLIError` 在单个 thread 失败时只跳过该 thread，写 warning 后继续。对群级 `pull` 来说，`LarkCLIError` 会把该 chat disable，并继续处理其他群。Sources: [src/commands/pull.ts:279-285](../../../project-repos/lark-context/src/commands/pull.ts#L279-L285), [src/commands/pull.ts:391-399](../../../project-repos/lark-context/src/commands/pull.ts#L391-L399), [src/commands/pull.ts:424-437](../../../project-repos/lark-context/src/commands/pull.ts#L424-L437)
@@ -577,7 +571,6 @@ function disableChat(dbPath: string, alias: string, reason: string): void {
 
 <!-- source-snippets:end -->
 </details>
-
 测试覆盖了群级 `LarkCLIError` 会禁用失败群但保留其他群，也覆盖了单 thread 权限错误不会禁用 chat，非 Lark 错误不会被吞掉。Sources: [test/cmd-pull.test.ts:240-265](../../../project-repos/lark-context/test/cmd-pull.test.ts#L240-L265), [test/cmd-pull.test.ts:908-963](../../../project-repos/lark-context/test/cmd-pull.test.ts#L908-L963), [test/cmd-pull.test.ts:998-1033](../../../project-repos/lark-context/test/cmd-pull.test.ts#L998-L1033)
 
 <details class="source-snippets">
@@ -720,7 +713,6 @@ function disableChat(dbPath: string, alias: string, reason: string): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Pull["runPull"] --> Chat["pullChat"]
@@ -852,7 +844,6 @@ export async function runPull(opts: PullOpts): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 与 skill 的契约
 
 skill 文档要求 CLI 非零退出时透传 stderr，不编造解释；命中已知场景时才补操作建议。`pull.md` 还列出了 scope、chat_not_found、ENOENT、自动 disable 等常见错误的用户建议。Sources: [skills/lark-context/SKILL.md:69-73](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L69-L73), [skills/lark-context/references/pull.md:38-46](../../../project-repos/lark-context/skills/lark-context/references/pull.md#L38-L46)
@@ -888,7 +879,6 @@ skill 文档要求 CLI 非零退出时透传 stderr，不编造解释；命中�
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [CLI 命令面](cli-command-surface.md)

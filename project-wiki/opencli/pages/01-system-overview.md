@@ -50,7 +50,6 @@ Sources: [README.md:12-22](../README.md#L12-L22), [package.json:1-15](../../../p
 
 <!-- source-snippets:end -->
 </details>
-
 ## 系统边界
 
 ```mermaid
@@ -99,7 +98,6 @@ Sources: [src/runtime.ts:7-14](../../../project-repos/opencli/src/runtime.ts#L7-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 启动时做什么
 
 `src/main.ts` 是实际启动器。它先设置内置和用户 adapter 目录，再处理全局 `--live`、`--focus`、版本、completion 等快路径；完整启动路径会动态导入 CLI、discovery、update check、hooks 等模块，随后确保用户 shim/adapter 目录存在、发现内置/用户/plugin adapter、触发启动 hook，最后调用 `runCli`。  
@@ -124,7 +122,6 @@ Sources: [src/main.ts:27-47](../../../project-repos/opencli/src/main.ts#L27-L47)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 目录级心智模型
 
 | 目录/文件 | 角色 |
@@ -163,7 +160,6 @@ Sources: [src/cli.ts:370-453](../../../project-repos/opencli/src/cli.ts#L370-L45
 
 <!-- source-snippets:end -->
 </details>
-
 ## 命令数量与规模
 
 当前源码清单显示仓库包含大量站点 adapter 和技能文档。构建产物 `cli-manifest.json` 是 adapter 的预编译清单，当前扫描到 628 个命令，覆盖 100+ 站点或应用；仓库盘点中 `.js`、`.ts`、`.md` 是主要文件类型。  
@@ -269,7 +265,6 @@ Sources: [src/build-manifest.ts:19-54](../../../project-repos/opencli/src/build-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 最重要的设计取舍
 
 opencli 把“发现”和“执行”分开：

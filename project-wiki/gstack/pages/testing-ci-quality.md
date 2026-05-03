@@ -86,7 +86,6 @@ bun run test:evals           # Tier 2 + 3 combined (~$4/run)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 测试分层
 
 ```mermaid
@@ -298,7 +297,6 @@ Tier 1 runs on every `bun test`. Tiers 2+3 are gated behind `EVALS=1`. The idea:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 静态验证重点
 
 `test/skill-validation.test.ts` 检查 `$B` 命令是否存在于 registry、snapshot flags 是否有效、`COMMAND_DESCRIPTIONS` 是否覆盖所有 command set、生成的 `SKILL.md` 是否没有未解析 placeholder。Sources: [test/skill-validation.test.ts:1-116](../../../project-repos/gstack/test/skill-validation.test.ts#L1-L116), [test/skill-validation.test.ts:118-224](../../../project-repos/gstack/test/skill-validation.test.ts#L118-L224)
@@ -522,15 +520,15 @@ describe('Usage string consistency', () => {
 });
 
 describe('Generated SKILL.md freshness', () => {
-  test('no unresolved &#123;&#123;placeholders&#125;&#125; in generated SKILL.md', () => {
+  test('no unresolved {{placeholders}} in generated SKILL.md', () => {
     const content = fs.readFileSync(path.join(ROOT, 'SKILL.md'), 'utf-8');
-    const unresolved = content.match(/&#123;&#123;\w+&#125;&#125;/g);
+    const unresolved = content.match(/\{\{\w+\}\}/g);
     expect(unresolved).toBeNull();
   });
 
-  test('no unresolved &#123;&#123;placeholders&#125;&#125; in generated browse/SKILL.md', () => {
+  test('no unresolved {{placeholders}} in generated browse/SKILL.md', () => {
     const content = fs.readFileSync(path.join(ROOT, 'browse', 'SKILL.md'), 'utf-8');
-    const unresolved = content.match(/&#123;&#123;\w+&#125;&#125;/g);
+    const unresolved = content.match(/\{\{\w+\}\}/g);
     expect(unresolved).toBeNull();
   });
 
@@ -543,7 +541,6 @@ describe('Generated SKILL.md freshness', () => {
 
 <!-- source-snippets:end -->
 </details>
-
 | 检查 | 目的 |
 |---|---|
 | `$B` command validation | 避免技能文档引用不存在的 Browse 命令 |
@@ -763,15 +760,15 @@ describe('Usage string consistency', () => {
 });
 
 describe('Generated SKILL.md freshness', () => {
-  test('no unresolved &#123;&#123;placeholders&#125;&#125; in generated SKILL.md', () => {
+  test('no unresolved {{placeholders}} in generated SKILL.md', () => {
     const content = fs.readFileSync(path.join(ROOT, 'SKILL.md'), 'utf-8');
-    const unresolved = content.match(/&#123;&#123;\w+&#125;&#125;/g);
+    const unresolved = content.match(/\{\{\w+\}\}/g);
     expect(unresolved).toBeNull();
   });
 
-  test('no unresolved &#123;&#123;placeholders&#125;&#125; in generated browse/SKILL.md', () => {
+  test('no unresolved {{placeholders}} in generated browse/SKILL.md', () => {
     const content = fs.readFileSync(path.join(ROOT, 'browse', 'SKILL.md'), 'utf-8');
-    const unresolved = content.match(/&#123;&#123;\w+&#125;&#125;/g);
+    const unresolved = content.match(/\{\{\w+\}\}/g);
     expect(unresolved).toBeNull();
   });
 
@@ -784,7 +781,6 @@ describe('Generated SKILL.md freshness', () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## CI freshness gate
 
 `skill-docs.yml` 在 push/PR 上运行 `bun run gen:skill-docs`、检查 git diff，再对 Codex 和 Factory host 重复生成并比较 `.agents/`、`.factory/`。Sources: [github/workflows/skill-docs.yml:1-33](../../../project-repos/gstack/.github/workflows/skill-docs.yml#L1-L33)
@@ -834,7 +830,6 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
-
 ## E2E eval workflow
 
 `evals.yml` 使用预烘焙 Docker image、Ubicloud runners、矩阵拆分 12 个 suite，并在 PR 上上传 eval artifacts、汇总通过率和成本到评论。Sources: [github/workflows/evals.yml:1-15](../../../project-repos/gstack/.github/workflows/evals.yml#L1-L15), [github/workflows/evals.yml:58-147](../../../project-repos/gstack/.github/workflows/evals.yml#L58-L147), [github/workflows/evals.yml:149-240](../../../project-repos/gstack/.github/workflows/evals.yml#L149-L240)
@@ -854,11 +849,11 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: evals-$&#123;&#123; github.head_ref &#125;&#125;
+  group: evals-${{ github.head_ref }}
   cancel-in-progress: true
 
 env:
-  IMAGE: ghcr.io/$&#123;&#123; github.repository &#125;&#125;/ci
+  IMAGE: ghcr.io/${{ github.repository }}/ci
   EVALS_TIER: gate
 
 jobs:
@@ -868,13 +863,13 @@ jobs:
 
 ```yaml
   evals:
-    runs-on: $&#123;&#123; matrix.suite.runner || 'ubicloud-standard-2' &#125;&#125;
+    runs-on: ${{ matrix.suite.runner || 'ubicloud-standard-2' }}
     needs: build-image
     container:
-      image: $&#123;&#123; needs.build-image.outputs.image-tag &#125;&#125;
+      image: ${{ needs.build-image.outputs.image-tag }}
       credentials:
-        username: $&#123;&#123; github.actor &#125;&#125;
-        password: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
       options: --user runner
     timeout-minutes: 25
     strategy:
@@ -941,20 +936,20 @@ jobs:
           touch /tmp/.bun-test && rm /tmp/.bun-test && echo "/tmp writable"
           bun -e "import {chromium} from 'playwright';const b=await chromium.launch({args:['--no-sandbox']});console.log('Chromium OK');await b.close()"
 
-      - name: Run $&#123;&#123; matrix.suite.name &#125;&#125;
+      - name: Run ${{ matrix.suite.name }}
         env:
-          ANTHROPIC_API_KEY: $&#123;&#123; secrets.ANTHROPIC_API_KEY &#125;&#125;
-          OPENAI_API_KEY: $&#123;&#123; secrets.OPENAI_API_KEY &#125;&#125;
-          GEMINI_API_KEY: $&#123;&#123; secrets.GEMINI_API_KEY &#125;&#125;
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           EVALS_CONCURRENCY: "40"
           PLAYWRIGHT_BROWSERS_PATH: /opt/playwright-browsers
-        run: EVALS=1 bun test --retry 2 --concurrent --max-concurrency 40 $&#123;&#123; matrix.suite.file &#125;&#125;
+        run: EVALS=1 bun test --retry 2 --concurrent --max-concurrency 40 ${{ matrix.suite.file }}
 
       - name: Upload eval results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: eval-$&#123;&#123; matrix.suite.name &#125;&#125;
+          name: eval-${{ matrix.suite.name }}
           path: ~/.gstack-dev/evals/*.json
           retention-days: 90
 ```
@@ -984,7 +979,7 @@ jobs:
 
       - name: Post PR comment
         env:
-          GH_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # shellcheck disable=SC2086,SC2059
           RESULTS=$(find /tmp/eval-results -name '*.json' 2>/dev/null | sort)
@@ -1045,20 +1040,19 @@ jobs:
           fi
 
           # Update existing comment or create new one
-          COMMENT_ID=$(gh api repos/$&#123;&#123; github.repository &#125;&#125;/issues/$&#123;&#123; github.event.pull_request.number &#125;&#125;/comments \
+          COMMENT_ID=$(gh api repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
             --jq '.[] | select(.body | startswith("## E2E Evals")) | .id' | tail -1)
 
           if [ -n "$COMMENT_ID" ]; then
-            gh api "repos/$&#123;&#123; github.repository &#125;&#125;/issues/comments/${COMMENT_ID}" \
+            gh api "repos/${{ github.repository }}/issues/comments/${COMMENT_ID}" \
               -X PATCH -f body="$BODY"
           else
-            gh pr comment "$&#123;&#123; github.event.pull_request.number &#125;&#125;" --body "$BODY"
+            gh pr comment "${{ github.event.pull_request.number }}" --body "$BODY"
           fi
 ```
 
 <!-- source-snippets:end -->
 </details>
-
 ## 质量风险
 
 - 大量技能依赖生成器输出，因此 PR 必须同时检查 `.tmpl`、生成结果和多宿主产物。
@@ -1099,7 +1093,7 @@ bun run skill:check
 bun run dev:skill
 ```
 
-For template authoring best practices (natural language over bash-isms, dynamic branch detection, `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` usage), see CLAUDE.md's "Writing SKILL templates" section.
+For template authoring best practices (natural language over bash-isms, dynamic branch detection, `{{BASE_BRANCH_DETECT}}` usage), see CLAUDE.md's "Writing SKILL templates" section.
 
 To add a browse command, add it to `browse/src/commands.ts`. To add a snapshot flag, add it to `SNAPSHOT_FLAGS` in `browse/src/snapshot.ts`. Then rebuild.
 ````
@@ -1193,7 +1187,6 @@ Zero generator, setup, or tooling code changes needed.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [技能生成系统](skill-generation.md)

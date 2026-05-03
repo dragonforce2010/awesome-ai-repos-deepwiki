@@ -68,7 +68,6 @@
 
 <!-- source-snippets:end -->
 </details>
-
 ## 组件边界
 
 | 文件 | 角色 | 关键能力 |
@@ -275,7 +274,6 @@ Sources: [assets/animations.jsx:1-25](../../../project-repos/huashu-design/asset
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A["设计任务"] --> B{"产物类型"}
@@ -349,7 +347,6 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 动画运行时
 
 `animations.jsx` 采用轻量 Remotion-like 模型：`Stage` 提供全局时间、播放控制和 canvas 缩放；`Sprite` 在 `start/end` 时间片段内显示并提供本地进度；`Easing` 内置 `expoOut`、`overshoot`、`spring` 等曲线。它还在录制模式检测 `window.__recording` 并强制不 loop，同时在首个 tick 设置 `window.__ready`。Sources: [assets/animations.jsx:33-83](../../../project-repos/huashu-design/assets/animations.jsx#L33-L83), [assets/animations.jsx:165-238](../../../project-repos/huashu-design/assets/animations.jsx#L165-L238), [assets/animations.jsx:307-340](../../../project-repos/huashu-design/assets/animations.jsx#L307-L340)
@@ -513,7 +510,7 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
     return (
       <SpriteContext.Provider value={spriteValue}>
-        <div style=&#123;&#123; position: 'absolute', inset: 0, ...style &#125;&#125;>
+        <div style={{ position: 'absolute', inset: 0, ...style }}>
           {children}
         </div>
       </SpriteContext.Provider>
@@ -535,7 +532,6 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## Deck 外壳分工
 
 `deck_stage.js` 是 web component，适合单文件短 deck；`deck_index.html` 是多文件 iframe 聚合器，适合长 deck、多 agent 并行和逐页调试。两者都处理固定画布、缩放和键盘导航，但多文件方案天然隔离每页 CSS/JS。Sources: [assets/deck_stage.js:1-28](../../../project-repos/huashu-design/assets/deck_stage.js#L1-L28), [assets/deck_stage.js:226-420](../../../project-repos/huashu-design/assets/deck_stage.js#L226-L420), [assets/deck_index.html:6-27](../../../project-repos/huashu-design/assets/deck_index.html#L6-L27), [assets/deck_index.html:144-234](../../../project-repos/huashu-design/assets/deck_index.html#L144-L234), [references/slide-decks.md:191-216](../../../project-repos/huashu-design/references/slide-decks.md#L191-L216)
@@ -860,7 +856,6 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [幻灯片、PDF 与可编辑 PPTX 管线](slide-deck-pptx.md)

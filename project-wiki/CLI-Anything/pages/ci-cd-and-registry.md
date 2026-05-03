@@ -37,7 +37,6 @@ Sources: [github/workflows/](../../../project-repos/CLI-Anything/.github/workflo
 
 <!-- source-snippets:end -->
 </details>
-
 ### 1. `deploy-pages.yml` — GitHub Pages 部署
 
 **触发条件**：push 到 `main` 分支，且变更路径包含以下任一项：
@@ -97,7 +96,6 @@ Sources: [github/scripts/](../../../project-repos/CLI-Anything/.github/scripts)
 
 <!-- source-snippets:end -->
 </details>
-
 | 脚本 | 功能 |
 |------|------|
 | `generate_meta_skill.py` | 读取 `registry.json`，生成供 Agent 使用的 CLI-Hub meta-skill（`SKILL.md`） |
@@ -492,7 +490,6 @@ Sources: [registry.json](../../../project-repos/CLI-Anything/registry.json), [pu
 
 <!-- source-snippets:end -->
 </details>
-
 ### 数据源
 
 - **`registry.json`**（仓库根目录）— 所有自有 harness CLI 的事实来源，包含名称、版本、描述、skill 路径等字段

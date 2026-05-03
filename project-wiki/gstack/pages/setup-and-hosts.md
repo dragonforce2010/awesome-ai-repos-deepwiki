@@ -212,7 +212,6 @@ if ! ensure_playwright_browser; then
 
 <!-- source-snippets:end -->
 </details>
-
 ## 安装主流程
 
 ```mermaid
@@ -331,7 +330,6 @@ fi
 
 <!-- source-snippets:end -->
 </details>
-
 ## 关键安装行为
 
 | 行为 | 实现位置 | 说明 |
@@ -633,7 +631,6 @@ create_codex_runtime_root() {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 多宿主配置模型
 
 `hosts/index.ts` 注册了 Claude、Codex、Factory、Kiro、OpenCode、Slate、Cursor、OpenClaw、Hermes、GBrain 等配置；每个配置通过 `HostConfig` 声明路径、frontmatter 转换、生成策略、路径 rewrite、runtime assets 和安装策略。Sources: [hosts/index.ts:20-67](../../../project-repos/gstack/hosts/index.ts#L20-L67), [scripts/host-config.ts:17-112](../../../project-repos/gstack/scripts/host-config.ts#L17-L112)
@@ -799,7 +796,6 @@ export interface HostConfig {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 classDiagram
   class HostConfig {
@@ -894,7 +890,6 @@ const codex: HostConfig = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Team mode 与共享仓库
 
 README 推荐 team mode：全局安装 gstack，然后在项目里用 `gstack-team-init required` 让队友自动获得版本约束和启动检查；这种模式避免把完整 gstack vendor 到业务仓库里。Sources: [README.md:93-104](../../../project-repos/gstack/README.md#L93-L104), [README.md:419-447](../../../project-repos/gstack/README.md#L419-L447)
@@ -957,7 +952,6 @@ Data is stored in [Supabase](https://supabase.com) (open source Firebase alterna
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [技能生成系统](skill-generation.md)

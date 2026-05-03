@@ -51,7 +51,6 @@ Sources: [src/diagnostic.ts:1-13](../../../project-repos/opencli/src/diagnostic.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 诊断输出脱敏
 
 `OPENCLI_DIAGNOSTIC=1` 会输出 RepairContext，其中可能包含 adapter source、DOM snapshot、network requests、console errors。诊断模块设置了硬预算：
@@ -76,7 +75,6 @@ Sources: [src/diagnostic.ts:22-42](../../../project-repos/opencli/src/diagnostic
 
 <!-- source-snippets:end -->
 </details>
-
 敏感信息会被处理：
 
 - header 中的 authorization、cookie、set-cookie、csrf、api key 等替换为 `[REDACTED]`。
@@ -104,7 +102,6 @@ Sources: [src/diagnostic.ts:43-68](../../../project-repos/opencli/src/diagnostic
 
 <!-- source-snippets:end -->
 </details>
-
 如果 JSON 超过总预算，先丢 page 中最大的 snapshot/network/captured payload；仍然过大时丢整个 page。  
 Sources: [src/diagnostic.ts:335-360](../../../project-repos/opencli/src/diagnostic.ts#L335-L360)
 
@@ -119,7 +116,6 @@ Sources: [src/diagnostic.ts:335-360](../../../project-repos/opencli/src/diagnost
 
 <!-- source-snippets:end -->
 </details>
-
 ## 浏览器导航和调试边界
 
 扩展侧明确区分可调试 URL 和用户可导航 URL。导航只允许 `http://` 和 `https://`；可调试 URL 还允许 `about:blank` 和 `data:`，用于内部空页和调试场景。  
@@ -136,7 +132,6 @@ Sources: [extension/src/background.ts:354-366](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 CDP attach 前会确认 tab URL 可调试；如果 tab 已经不可调试，会删除 attach cache 并报错。attach 也会做有限重试，避免被其他扩展暂时占用 debugger 时立即失败。  
 Sources: [extension/src/cdp.ts:44-83](../../../project-repos/opencli/extension/src/cdp.ts#L44-L83), [extension/src/cdp.ts:87-139](../../../project-repos/opencli/extension/src/cdp.ts#L87-L139)
 
@@ -155,7 +150,6 @@ Sources: [extension/src/cdp.ts:44-83](../../../project-repos/opencli/extension/s
 
 <!-- source-snippets:end -->
 </details>
-
 ## CDP allowlist
 
 daemon 下发的 `cdp` action 不是万能通道。扩展只允许一组方法：
@@ -180,7 +174,6 @@ Sources: [extension/src/background.ts:816-860](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 ## Cookie 读取边界
 
 扩展的 cookie handler 要求传 domain 或 url；没有 scope 会拒绝，避免 dump 全部 cookie。返回字段包括 name、value、domain、path、secure、httpOnly、expirationDate。  
@@ -197,7 +190,6 @@ Sources: [extension/src/background.ts:781-799](../../../project-repos/opencli/ex
 
 <!-- source-snippets:end -->
 </details>
-
 ## 外部 CLI 边界
 
 external CLI 只从内置或用户 registry 加载，不会自动执行 PATH 上任意命令。未知命令 fallback 只提示用户注册。  
@@ -218,7 +210,6 @@ Sources: [src/external.ts:35-67](../../../project-repos/opencli/src/external.ts#
 
 <!-- source-snippets:end -->
 </details>
-
 自动安装命令必须能被安全拆成 binary + args。`parseCommand` 拒绝 shell operator、重定向、变量展开和换行，执行时使用 `execFileSync(binary,args)`。  
 Sources: [src/external.ts:89-123](../../../project-repos/opencli/src/external.ts#L89-L123), [src/external.ts:130-142](../../../project-repos/opencli/src/external.ts#L130-L142)
 
@@ -237,7 +228,6 @@ Sources: [src/external.ts:89-123](../../../project-repos/opencli/src/external.ts
 
 <!-- source-snippets:end -->
 </details>
-
 ## 扩展权限现实
 
 扩展 manifest 需要 `debugger`、`tabs`、`cookies` 和 `<all_urls>`，这是它能做真实浏览器自动化的前提。对使用者而言，最重要的操作边界是：只在可信环境加载扩展，不要把诊断输出和抓包缓存上传到不可信位置。  
@@ -258,7 +248,6 @@ Sources: [extension/manifest.json:1-15](../../../project-repos/opencli/extension
 
 <!-- source-snippets:end -->
 </details>
-
 ## 安全审阅清单
 
 | 改动类型 | 必查点 |

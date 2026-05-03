@@ -53,7 +53,6 @@
 
 <!-- source-snippets:end -->
 </details>
-
 ## 交付格式决策树
 
 `references/slide-decks.md` 要求开工前确认是否需要 PDF 或可编辑 PPTX，因为 PPTX 路径会反过来约束 HTML 写法：可编辑 PPTX 必须从第一行开始遵守 html2pptx 的 4 条约束，否则事后补救会返工。Sources: [references/slide-decks.md:22-85](../../../project-repos/huashu-design/references/slide-decks.md#L22-L85), [references/editable-pptx.md:1-8](../../../project-repos/huashu-design/references/editable-pptx.md#L1-L8)
@@ -147,7 +146,6 @@ PPTX 可编辑的前提是 `html2pptx.js` 能把 DOM 逐元素翻译为 PowerPoi
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A["Deck 任务"] --> B["HTML 聚合演示版"]
@@ -251,7 +249,6 @@ pptx.layout = 'LAYOUT_WIDE';  // 13.333 × 7.5 inch, 无需自定义
 
 <!-- source-snippets:end -->
 </details>
-
 ## html2pptx 的物理约束
 
 可编辑 PPTX 需要 `html2pptx.js` 把 DOM 元素翻译成 PowerPoint 原生对象。约束包括：body 尺寸匹配 `LAYOUT_WIDE`，文字必须在 `<p>` 或 heading 标签里，不支持 CSS 渐变，文字标签不能承载背景/边框/阴影，`div` 不能用 `background-image`。Sources: [references/editable-pptx.md:42-104](../../../project-repos/huashu-design/references/editable-pptx.md#L42-L104), [scripts/html2pptx.js:36-86](../../../project-repos/huashu-design/scripts/html2pptx.js#L36-L86), [scripts/html2pptx.js:88-118](../../../project-repos/huashu-design/scripts/html2pptx.js#L88-L118)
@@ -272,11 +269,11 @@ pptx.layout = 'LAYOUT_WIDE';  // 13.333 × 7.5 inch, 无需自定义
 
 ```html
 <!-- ❌ 错误：文字直接在 div 里 -->
-&lt;div class="title">Q3营收增长23%&lt;/div>
+<div class="title">Q3营收增长23%</div>
 
-<!-- ✅ 正确：文字在 &lt;p> 或 &lt;h1>-&lt;h6> 里 -->
-&lt;div class="title">&lt;h1>Q3营收增长23%&lt;/h1>&lt;/div>
-&lt;div class="body">&lt;p>新用户是主要驱动力&lt;/p>&lt;/div>
+<!-- ✅ 正确：文字在 <p> 或 <h1>-<h6> 里 -->
+<div class="title"><h1>Q3营收增长23%</h1></div>
+<div class="body"><p>新用户是主要驱动力</p></div>
 ```
 
 **为什么**：PowerPoint 文本必须存在 text frame 里，text frame 对应 HTML 的段落级元素（p/h*/li）。裸 `<div>` 在 PPTX 里没有对应的文本容器。
@@ -304,13 +301,13 @@ background: #FF6B6B;
 ### 规则 3：背景/边框/阴影只能在 DIV 上，不能在文字标签上
 
 ```html
-<!-- ❌ 错误：&lt;p> 有背景色 -->
-&lt;p style="background: #FFD700; border-radius: 4px;">重点内容&lt;/p>
+<!-- ❌ 错误：<p> 有背景色 -->
+<p style="background: #FFD700; border-radius: 4px;">重点内容</p>
 
-<!-- ✅ 正确：外层 div 承载背景/边框，&lt;p> 只负责文字 -->
-&lt;div style="background: #FFD700; border-radius: 4px; padding: 8pt 12pt;">
-  &lt;p>重点内容&lt;/p>
-&lt;/div>
+<!-- ✅ 正确：外层 div 承载背景/边框，<p> 只负责文字 -->
+<div style="background: #FFD700; border-radius: 4px; padding: 8pt 12pt;">
+  <p>重点内容</p>
+</div>
 ```
 
 **为什么**：PowerPoint 里 shape（方块/圆角矩形）和 text frame 是两个对象。HTML 的 `<p>` 只翻译成 text frame，背景/边框/阴影属于 shape——必须在**包裹 text 的 div** 上写。
@@ -319,10 +316,10 @@ background: #FF6B6B;
 
 ```html
 <!-- ❌ 错误 -->
-&lt;div style="background-image: url('chart.png')">&lt;/div>
+<div style="background-image: url('chart.png')"></div>
 
 <!-- ✅ 正确 -->
-&lt;img src="chart.png" style="position: absolute; left: 50%; top: 20%; width: 300pt; height: 200pt;" />
+<img src="chart.png" style="position: absolute; left: 50%; top: 20%; width: 300pt; height: 200pt;" />
 ```
 
 **为什么**：`html2pptx.js` 只从 `<img>` 元素提取图片路径，不解析 CSS 的 `background-image` URL。
@@ -423,7 +420,6 @@ function validateTextBoxPosition(slideData, bodyDimensions) {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 多文件优先
 
 对 ≥10 页、课件、长 deck 或多 agent 并行场景，多文件 + `deck_index.html` 是推荐主路径；它通过 iframe 隔离 CSS/JS，使每页可单独打开验证，也降低多人/多 agent 修改冲突。Sources: [references/slide-decks.md:191-216](../../../project-repos/huashu-design/references/slide-decks.md#L191-L216), [assets/deck_index.html:6-27](../../../project-repos/huashu-design/assets/deck_index.html#L6-L27)
@@ -493,7 +489,6 @@ function validateTextBoxPosition(slideData, bodyDimensions) {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 质量检查点
 
 Deck ≥5 页时，规范要求先做 2 页视觉差异最大的 showcase 定 grammar，再批量推进剩余页面。这是为了把方向错误的返工从 N 页降低到 2 页。Sources: [references/slide-decks.md:89-100](../../../project-repos/huashu-design/references/slide-decks.md#L89-L100)
@@ -522,7 +517,6 @@ Deck ≥5 页时，规范要求先做 2 页视觉差异最大的 showcase 定 gr
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Starter Components 架构](starter-components.md)

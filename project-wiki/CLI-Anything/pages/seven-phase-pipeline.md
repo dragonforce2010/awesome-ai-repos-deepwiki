@@ -54,7 +54,6 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)  [commands
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 触发方式
@@ -113,7 +112,7 @@ Refine an existing CLI harness to improve coverage of the software's functions a
 ## Usage
 
 ```bash
-/cli-anything:refine &lt;software-path&gt; [focus]
+/cli-anything:refine <software-path> [focus]
 ```
 
 ## Arguments
@@ -210,7 +209,6 @@ This command is used **after** a CLI harness has already been built with `/cli-a
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 1：代码分析（Codebase Analysis）
@@ -240,7 +238,6 @@ Sources: [HARNESS.md — Phase 1](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 2：CLI 架构设计（Architecture Design）
@@ -308,7 +305,6 @@ Sources: [HARNESS.md — Phase 2](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 3：实现（Implementation）
@@ -388,7 +384,6 @@ Sources: [HARNESS.md — Phase 3](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 4：测试规划（Test Planning）
@@ -415,7 +410,6 @@ Sources: [HARNESS.md — Phase 4](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 5：测试实现（Test Implementation）
@@ -493,7 +487,6 @@ Sources: [HARNESS.md — Phase 5](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 6：文档（Documentation）
@@ -519,7 +512,6 @@ Sources: [HARNESS.md — Phase 6](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 6.5：SKILL.md 生成
@@ -610,7 +602,6 @@ Sources: [HARNESS.md — Phase 6.5](../../../project-repos/CLI-Anything/HARNESS.
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 7：发布（Publish）
@@ -679,7 +670,6 @@ Sources: [HARNESS.md — Phase 7](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 架构陷阱与关键原则
@@ -733,7 +723,6 @@ Sources: [HARNESS.md — Architecture Patterns & Pitfalls](../../../project-repo
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 完整目录结构参考
@@ -783,7 +772,6 @@ Sources: [HARNESS.md — Directory Structure](../../../project-repos/CLI-Anythin
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 相关页面

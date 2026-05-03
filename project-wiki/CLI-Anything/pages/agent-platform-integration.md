@@ -88,7 +88,6 @@ Sources: [`cli-anything-plugin/README.md`](../../../project-repos/CLI-Anything/%
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 1. Claude Code（主要支持平台）
@@ -190,7 +189,6 @@ Sources: [`cli-anything-plugin/README.md`](../../../project-repos/CLI-Anything/%
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 2. Pi Coding Agent
@@ -270,7 +268,6 @@ Sources: [`.pi-extension/cli-anything/index.ts`](../../../project-repos/CLI-Anyt
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 3. OpenCode
@@ -331,7 +328,6 @@ Sources: [`opencode-commands/cli-anything.md`](../../../project-repos/CLI-Anythi
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 4. OpenClaw（社区）
@@ -377,7 +373,6 @@ Sources: [`openclaw-skill/SKILL.md`](../../../project-repos/CLI-Anything/%60open
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 5. Codex（社区，实验性）
@@ -451,7 +446,6 @@ Sources: [`codex-skill/SKILL.md`](../../../project-repos/CLI-Anything/%60codex-s
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 6. Qodercli（社区）
@@ -483,7 +477,6 @@ Sources: [`qoder-plugin/setup-qodercli.sh`](../../../project-repos/CLI-Anything/
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 7. GitHub Copilot CLI（社区）
@@ -585,7 +578,6 @@ Sources: [`cli-anything-plugin/README.md`](../../../project-repos/CLI-Anything/%
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 快速开始：选择平台

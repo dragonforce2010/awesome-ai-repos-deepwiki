@@ -101,7 +101,6 @@ dev = [
 
 <!-- source-snippets:end -->
 </details>
-
 ### 入口点
 
 ```toml
@@ -164,7 +163,6 @@ Sources: [github/workflows/](../../../project-repos/notebooklm-py/.github/workfl
 
 <!-- source-snippets:end -->
 </details>
-
 ## RPC 健康检查
 
 `rpc-health.yml` 是项目特有的 CI 工作流，定期验证 Google NotebookLM 的 RPC 方法标识是否仍然有效：
@@ -326,7 +324,7 @@ on:
   workflow_dispatch:  # Allow manual trigger
 
 concurrency:
-  group: $&#123;&#123; github.workflow &#125;&#125;
+  group: ${{ github.workflow }}
   cancel-in-progress: true
 
 permissions:
@@ -359,9 +357,9 @@ jobs:
       continue-on-error: true
       shell: bash
       env:
-        NOTEBOOKLM_AUTH_JSON: $&#123;&#123; secrets.NOTEBOOKLM_AUTH_JSON &#125;&#125;
-        NOTEBOOKLM_READ_ONLY_NOTEBOOK_ID: $&#123;&#123; secrets.NOTEBOOKLM_READ_ONLY_NOTEBOOK_ID &#125;&#125;
-        NOTEBOOKLM_GENERATION_NOTEBOOK_ID: $&#123;&#123; secrets.NOTEBOOKLM_GENERATION_NOTEBOOK_ID &#125;&#125;
+        NOTEBOOKLM_AUTH_JSON: ${{ secrets.NOTEBOOKLM_AUTH_JSON }}
+        NOTEBOOKLM_READ_ONLY_NOTEBOOK_ID: ${{ secrets.NOTEBOOKLM_READ_ONLY_NOTEBOOK_ID }}
+        NOTEBOOKLM_GENERATION_NOTEBOOK_ID: ${{ secrets.NOTEBOOKLM_GENERATION_NOTEBOOK_ID }}
       run: |
         set +e
         python scripts/check_rpc_health.py --full 2>&1 | tee health-report.txt
@@ -403,13 +401,12 @@ jobs:
     - name: Fail if health check failed
       if: steps.health.outcome == 'failure'
       run: |
-        echo "RPC Health Check failed (exit code: $&#123;&#123; steps.health.outputs.exit_code &#125;&#125;). See report above."
+        echo "RPC Health Check failed (exit code: ${{ steps.health.outputs.exit_code }}). See report above."
         exit 1
 ```
 
 <!-- source-snippets:end -->
 </details>
-
 ## 制品验证
 
 `verify-artifacts.yml` 验证构建产物：
@@ -459,8 +456,8 @@ jobs:
 
     - name: Verify artifacts exist
       env:
-        NOTEBOOKLM_AUTH_JSON: $&#123;&#123; secrets.NOTEBOOKLM_AUTH_JSON &#125;&#125;
-        NOTEBOOKLM_GENERATION_NOTEBOOK_ID: $&#123;&#123; secrets.NOTEBOOKLM_GENERATION_NOTEBOOK_ID &#125;&#125;
+        NOTEBOOKLM_AUTH_JSON: ${{ secrets.NOTEBOOKLM_AUTH_JSON }}
+        NOTEBOOKLM_GENERATION_NOTEBOOK_ID: ${{ secrets.NOTEBOOKLM_GENERATION_NOTEBOOK_ID }}
       run: |
         python -c "
         import asyncio
@@ -553,7 +550,6 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 发布流程
 
 1. 更新 `pyproject.toml` 中的版本号
@@ -700,7 +696,6 @@ check_untyped_defs = true
 
 <!-- source-snippets:end -->
 </details>
-
 ## 依赖管理
 
 ### 运行时依赖
@@ -759,7 +754,6 @@ dev = [
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [测试与质量](testing-and-quality.md)

@@ -130,7 +130,6 @@ export async function* streamMessage(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 环境加载
 
 CLI 启动时先调用 `loadEnv()`。它按低到高优先级合并 `~/.claude.json`、`~/.claude/settings.json` 和当前工作目录 `.env`，其中 `.env` 使用 `dotenv.config({ override: true })` 覆盖前者。  
@@ -189,7 +188,6 @@ export function loadEnv(): void {
 
 <!-- source-snippets:end -->
 </details>
-
 客户端默认读取这些环境变量：
 
 | 变量 | 用途 |
@@ -261,7 +259,6 @@ const DEBUG_STREAM = process.env.EASY_AGENT_DEBUG_STREAM === "1";
 
 <!-- source-snippets:end -->
 </details>
-
 ## Streaming 事件模型
 
 内部消息类型接近 Anthropic content block：text、tool_use、tool_result、thinking。Stream event 包括 text delta、tool_use_start、tool_use_input、message_start、message_done 和 error。  
@@ -362,7 +359,6 @@ export type StreamEvent =
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   SDK["Anthropic stream event"] --> Switch["streaming.ts switch"]
@@ -555,7 +551,6 @@ Sources: [src/services/api/streaming.ts:109-156](../../../project-repos/easy-age
 
 <!-- source-snippets:end -->
 </details>
-
 ## Tool Input 组装
 
 `streamMessage()` 用 `toolInputJsonByIndex` 为每个 content block index 保存独立 JSON buffer，避免多个 `tool_use` block 交错 streaming 时共用字符串导致输入错配或丢失。`content_block_stop` 时尝试 JSON.parse，失败则保留 `_raw` 便于调试。  
@@ -642,7 +637,6 @@ Sources: [src/services/api/streaming.ts:85-94](../../../project-repos/easy-agent
 
 <!-- source-snippets:end -->
 </details>
-
 ## Thinking Block 保留
 
 当 provider 返回 `thinking` 或 `signature_delta`，实现会把 thinking block 和 signature 保留进 content history。注释说明这是为了兼容 extended-thinking 和 Anthropic-compatible endpoint，否则后续 turn 可能重复 tool call 或产生空输入。  
@@ -687,7 +681,6 @@ Sources: [src/services/api/streaming.ts:167-177](../../../project-repos/easy-age
 
 <!-- source-snippets:end -->
 </details>
-
 ## 非 streaming 调用
 
 `createMessage()` 提供一次性调用，主要供内部任务使用，例如上下文压缩生成 summary。它接受和 streaming 类似的参数，但不带 AbortSignal，并把 response content 映射回内部 content block。  
@@ -794,7 +787,6 @@ async function summarizeMessages(messages: MessageParam[], focus?: string): Prom
 
 <!-- source-snippets:end -->
 </details>
-
 ## Debug 日志
 
 `writeStreamDebug()` 在 `EASY_AGENT_DEBUG_STREAM=1` 时向 `~/.easy-agent/stream-debug.log` 追加 JSONL，记录 request、raw event、assembled 和 error。日志函数吞掉自身错误，避免调试日志影响模型通信。  
@@ -896,7 +888,6 @@ export function writeStreamDebug(kind: string, payload: unknown): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 验证脚本
 
 `src/scripts/test-streaming.ts` 是手动 smoke 脚本：检查 `ANTHROPIC_AUTH_TOKEN`，发起中文 prompt，逐字输出 text delta，并打印 stop reason、usage 和 content block 类型。  
@@ -1014,7 +1005,6 @@ async function main(): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [QueryEngine 与 Agentic Loop](query-engine-agentic-loop.md)

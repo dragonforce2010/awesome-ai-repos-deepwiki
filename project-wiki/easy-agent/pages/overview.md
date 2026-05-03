@@ -44,7 +44,6 @@ Easy Agent should currently be understood as a serious open-source rebuild in pr
 
 <!-- source-snippets:end -->
 </details>
-
 ## 定位与边界
 
 项目定位可以概括为：**面向真实工程系统的本地 Agentic Coding CLI**。它强调五层架构、持久化、上下文压缩、MCP、Skills、Sandbox、任务系统等长期能力，但 README 也明确指出当前不是面向终端用户完全交付的成品。  
@@ -86,7 +85,6 @@ Core goals:
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Vision["复刻 Claude Code 风格"] --> Runtime["本地 Agent CLI"]
@@ -186,7 +184,6 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 <!-- source-snippets:end -->
 </details>
-
 ## 技术栈与运行方式
 
 仓库是 ESM TypeScript 项目，`bin.agent` 指向编译后的 `dist/entrypoint/cli.js`，开发入口是 `tsx src/entrypoint/cli.ts`，构建命令是 `tsc`。依赖显示它基于 Anthropic SDK、MCP SDK、React/Ink、dotenv、proper-lockfile、yaml 和 ignore。  
@@ -246,7 +243,6 @@ Sources: [package.json:2-20](../../../project-repos/easy-agent/package.json#L2-L
 
 <!-- source-snippets:end -->
 </details>
-
 TypeScript 配置使用 `NodeNext` 模块系统、`ES2022` target、`strict: true`、React JSX、声明文件和 sourcemap 输出。  
 Sources: [tsconfig.json:2-20](../../../project-repos/easy-agent/tsconfig.json#L2-L20)
 
@@ -281,7 +277,6 @@ Sources: [tsconfig.json:2-20](../../../project-repos/easy-agent/tsconfig.json#L2
 
 <!-- source-snippets:end -->
 </details>
-
 | 维度 | 证据 | 说明 |
 |------|------|------|
 | 语言 | `package.json` + `tsconfig.json` | TypeScript、ESM、NodeNext |
@@ -339,7 +334,6 @@ Sources: [package.json:36-46](../../../project-repos/easy-agent/package.json#L36
 
 <!-- source-snippets:end -->
 </details>
-
 ## 仓库组织
 
 README 给出的主结构与当前源文件一致：`entrypoint` 负责 CLI bootstrap，`ui` 负责 Ink 终端界面，`core` 放 agentic loop 与 query orchestration，`tools` 放本地工具和注册系统，`services/api` 放模型客户端与 streaming wrapper，`context/session/state/sandbox` 分别承载上下文、持久化、状态和安全边界。  
@@ -400,7 +394,6 @@ easy-agent/
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Repo["easy-agent"] --> Src["src/"]
@@ -455,7 +448,6 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 <!-- source-snippets:end -->
 </details>
-
 ## 路线图状态
 
 README 的路线图列出 30 个阶段，其中 1-18 已完成，19-22 等高级能力仍未开始，UI 升级、配置、错误处理、auto mode、发布文档等属于部分完成或待推进项。`step/` 目录保存教程化里程碑代码，便于把正式 `src/` 实现和单文件教学版本对照阅读。  
@@ -556,7 +548,6 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 <!-- source-snippets:end -->
 </details>
-
 ## 阅读路线
 
 | 目标 | 建议路径 |

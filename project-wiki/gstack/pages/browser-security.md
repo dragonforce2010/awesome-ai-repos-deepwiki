@@ -147,7 +147,6 @@ const IDLE_TIMEOUT_MS = parseInt(process.env.BROWSE_IDLE_TIMEOUT || '1800000', 1
 
 <!-- source-snippets:end -->
 </details>
-
 ## 双监听器 tunnel
 
 ```mermaid
@@ -314,7 +313,6 @@ export function canDispatchOverTunnel(command: string | undefined | null): boole
 
 <!-- source-snippets:end -->
 </details>
-
 ## 命令面收敛
 
 `tunnel` 面只允许浏览器驱动类命令，例如 `goto`、`click`、`text`、`screenshot`、`snapshot`、`fill`、`newtab`、`tabs` 等；server 对 `/command` 再次调用 `canDispatchOverTunnel` 检查。Sources: [browse/src/server.ts:112-142](../../../project-repos/gstack/browse/src/server.ts#L112-L142), [browse/src/server.ts:1792-1817](../../../project-repos/gstack/browse/src/server.ts#L1792-L1817)
@@ -393,7 +391,6 @@ export function canDispatchOverTunnel(command: string | undefined | null): boole
 
 <!-- source-snippets:end -->
 </details>
-
 ## 内容安全层
 
 页面内容是攻击面。`content-security.ts` 提供 datamarking、隐藏元素/ARIA injection 检测、untrusted envelope 和可注册内容过滤器。`commands.ts` 还把 `snapshot` 纳入 `PAGE_CONTENT_COMMANDS`，因为 aria-label 也可能是攻击者控制的文本。Sources: [browse/src/content-security.ts:1-11](../../../project-repos/gstack/browse/src/content-security.ts#L1-L11), [browse/src/content-security.ts:60-88](../../../project-repos/gstack/browse/src/content-security.ts#L60-L88), [browse/src/content-security.ts:198-244](../../../project-repos/gstack/browse/src/content-security.ts#L198-L244), [browse/src/commands.ts:52-80](../../../project-repos/gstack/browse/src/commands.ts#L52-L80)
@@ -541,7 +538,6 @@ export const DOM_CONTENT_COMMANDS = new Set([
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[DOM/page output] --> B[markHiddenElements]
@@ -707,7 +703,6 @@ export function combineVerdict(signals: LayerSignal[], opts: CombineVerdictOpts 
 
 <!-- source-snippets:end -->
 </details>
-
 ## CDP escape hatch
 
 `$B cdp` 是默认拒绝策略：每个允许的 CDP method 都必须声明 domain、method、scope、output 和 justification；危险方法如 `Runtime.evaluate`、`Network.getResponseBody`、`Page.navigate` 不在 allowlist 中。Sources: [browse/src/cdp-allowlist.ts:1-17](../../../project-repos/gstack/browse/src/cdp-allowlist.ts#L1-L17), [browse/src/cdp-allowlist.ts:30-214](../../../project-repos/gstack/browse/src/cdp-allowlist.ts#L30-L214)
@@ -867,7 +862,6 @@ export const CDP_ALLOWLIST: ReadonlyArray<CdpAllowEntry> = Object.freeze([
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Browse 运行时](browse-runtime.md)

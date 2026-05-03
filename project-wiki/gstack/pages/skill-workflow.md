@@ -141,7 +141,6 @@ Beyond the slash-command skills, gstack ships standalone CLIs for workflows that
 
 <!-- source-snippets:end -->
 </details>
-
 ## Sprint 拓扑
 
 ```mermaid
@@ -194,7 +193,6 @@ Each skill feeds into the next. `/office-hours` writes a design doc that `/plan-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 角色分层
 
 | 阶段 | 代表技能 | 行为重点 |
@@ -322,7 +320,6 @@ Beyond the slash-command skills, gstack ships standalone CLIs for workflows that
 
 <!-- source-snippets:end -->
 </details>
-
 ## 决策传递
 
 技能之间通过文件系统和约定传递上下文。例如 `/office-hours` 会把设计文档写到 `~/.gstack/projects/`，后续 `/plan-ceo-review` 和 `/plan-eng-review` 会消费；`/plan-eng-review` 写出的测试计划会被 `/qa` 自动捡起。Sources: [docs/skills.md:94-99](../../../project-repos/gstack/docs/skills.md#L94-L99), [docs/skills.md:229-231](../../../project-repos/gstack/docs/skills.md#L229-L231)
@@ -353,7 +350,6 @@ When `/plan-eng-review` finishes the test review section, it writes a test plan 
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 sequenceDiagram
   participant User as User
@@ -423,7 +419,6 @@ triggers:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

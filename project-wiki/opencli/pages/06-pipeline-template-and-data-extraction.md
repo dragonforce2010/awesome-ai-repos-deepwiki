@@ -30,7 +30,6 @@ Sources: [src/execution.ts:77-133](../../../project-repos/opencli/src/execution.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 浏览器步骤判定
 
 并不是所有 pipeline 都需要浏览器。`capabilityRouting.ts` 用 `BROWSER_ONLY_STEPS` 判断步骤是否涉及页面操作，包括 `navigate`、`click`、`type`、`wait`、`press`、`snapshot`、`evaluate`、`intercept`、`tap`。如果命令有 `navigateBefore`，即便 pipeline 没出现这些步骤，也会使用浏览器 session。  
@@ -51,7 +50,6 @@ Sources: [src/capabilityRouting.ts:3-14](../../../project-repos/opencli/src/capa
 
 <!-- source-snippets:end -->
 </details>
-
 ## 执行器
 
 ```mermaid
@@ -87,7 +85,6 @@ Sources: [src/pipeline/executor.ts:20-58](../../../project-repos/opencli/src/pip
 
 <!-- source-snippets:end -->
 </details>
-
 ## 模板表达式
 
 模板引擎支持 &lt;code v-pre>$&lt;span v-pre>&#123;&#123;&lt;/span> ... &#125;&#125;&lt;/code> 表达式：
@@ -118,7 +115,6 @@ Sources: [src/pipeline/template.ts:17-32](../../../project-repos/opencli/src/pip
 
 <!-- source-snippets:end -->
 </details>
-
 ## VM 沙箱
 
 当表达式不是简单路径或字面量时，模板引擎会在 `node:vm` 沙箱里求值。它有几层边界：
@@ -150,7 +146,6 @@ Sources: [src/pipeline/template.ts:176-218](../../../project-repos/opencli/src/p
 
 <!-- source-snippets:end -->
 </details>
-
 ## 浏览器抽取与网络形状
 
 浏览器命令的网络抽取不是 pipeline 专属，但它是 adapter 原型阶段的重要数据来源。`browser network` 会把 body shape 推断出来，默认只输出 key、method、status、url、content-type、size 和 shape，避免把完整 body 直接打进上下文。需要完整 body 时再用 `--detail <key>`。  
@@ -175,7 +170,6 @@ Sources: [src/cli.ts:1307-1322](../../../project-repos/opencli/src/cli.ts#L1307-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 数据抽取建议
 
 | 场景 | 首选 |
@@ -216,10 +210,10 @@ Sources: [skills/opencli-browser/SKILL.md:102-171](../skills/opencli-browser/SKI
 ### Wait
 
 ```bash
-browser wait selector "&lt;css&gt;" [--timeout ms]
-browser wait text "&lt;substring&gt;" [--timeout ms]
-browser wait time &lt;seconds&gt;
-browser wait xhr "&lt;regex&gt;" [--timeout ms]
+browser wait selector "<css>" [--timeout ms]
+browser wait text "<substring>" [--timeout ms]
+browser wait time <seconds>
+browser wait xhr "<regex>" [--timeout ms]
 ```
 
 默认 timeout 是 `10000` ms。SPA route、登录跳转、懒加载列表需要 wait 后再 `state/get`。
@@ -233,11 +227,11 @@ browser wait xhr "&lt;regex&gt;" [--timeout ms]
 
 ```bash
 browser network
-browser network --detail &lt;key&gt;
+browser network --detail <key>
 browser network --filter "field1,field2"
 browser network --all
 browser network --raw
-browser network --ttl &lt;ms&gt;
+browser network --ttl <ms>
 ```
 
 列表项包含 `{key, method, status, url, ct, size, shape, body_truncated?}`。detail envelope 包含完整 body 和截断信息。缓存位于 `~/.opencli/cache/browser-network/`。
@@ -296,7 +290,6 @@ opencli browser extract --start 8000 --chunk-size 8000
 
 <!-- source-snippets:end -->
 </details>
-
 ## 维护风险
 
 Pipeline 的主要风险不是执行顺序，而是模板表达式和浏览器步骤的隐式能力边界。新 step 加入后必须同步：

@@ -59,7 +59,6 @@ AGENT_DIRS=(
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Root["repo root"] --> Categories["agent category 目录"]
@@ -152,7 +151,6 @@ AGENT_DIRS=(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 目录角色
 
 | 区域 | 作用 | 证据 |
@@ -251,7 +249,6 @@ Sources: [integrations/README.md:6-19](../../../project-repos/agency-agents/inte
 
 <!-- source-snippets:end -->
 </details>
-
 ## 文件类型说明
 
 inventory 显示 `.md` 占绝大多数，且没有检测到传统 build manifest；因此本仓库的“源码”主要是 prompt 文档和 shell glue，而不是 TypeScript/Python 应用。Sources: [00-repo-inventory.md:15-26](../00-repo-inventory.md#L15-L26)
@@ -280,7 +277,6 @@ inventory 显示 `.md` 占绝大多数，且没有检测到传统 build manifest
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

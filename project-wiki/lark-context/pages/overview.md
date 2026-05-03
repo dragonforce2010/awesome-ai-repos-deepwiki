@@ -46,10 +46,10 @@
 ~/.claude/lark-memory/
 ├── MEMORY.md            # 始终加载的索引
 ├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
-│   ├── people/&lt;slug&gt;.md
-│   ├── projects/&lt;slug&gt;.md
+│   ├── people/<slug>.md
+│   ├── projects/<slug>.md
 │   ├── terms.md
-│   └── decisions/&lt;slug&gt;.md
+│   └── decisions/<slug>.md
 └── journal/             # 按 ISO 周的流水
     └── 2026-W16.md
 ```
@@ -70,7 +70,6 @@ source_hints:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 解决的问题
 
 仓库的原始需求很直接：用户在字节内部大量使用飞书群聊和文档，希望 AI 能持续从飞书获取上下文，自动沉淀长期记忆、短期记忆和 TODO，但只读取指定群聊。Sources: [spec.md:1-7](../../../project-repos/lark-context/spec.md#L1-L7)
@@ -94,7 +93,6 @@ https://github.com/larksuite/cli
 
 <!-- source-snippets:end -->
 </details>
-
 README 把能力拆成五类：指定群增量拉取、手动喂飞书文档、由 Claude 本地提炼、`entities/` + `journal/` 两层记忆结构，以及通过 TS CLI 和 skill 分发。Sources: [README.md:5-10](../../../project-repos/lark-context/README.md#L5-L10)
 
 <details class="source-snippets">
@@ -115,7 +113,6 @@ README 把能力拆成五类：指定群增量拉取、手动喂飞书文档、�
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Need["飞书上下文散落"] --> Pull["指定群增量拉取"]
@@ -160,10 +157,10 @@ Sources: [README.md:3-10](../../../project-repos/lark-context/README.md#L3-L10),
 ~/.claude/lark-memory/
 ├── MEMORY.md            # 始终加载的索引
 ├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
-│   ├── people/&lt;slug&gt;.md
-│   ├── projects/&lt;slug&gt;.md
+│   ├── people/<slug>.md
+│   ├── projects/<slug>.md
 │   ├── terms.md
-│   └── decisions/&lt;slug&gt;.md
+│   └── decisions/<slug>.md
 └── journal/             # 按 ISO 周的流水
     └── 2026-W16.md
 ```
@@ -208,7 +205,6 @@ Claude 提炼成 entities（人 / 项目 / 术语 / 决策）+ journal（按周�
 
 <!-- source-snippets:end -->
 </details>
-
 ## 使用者视角
 
 常规路径是先安装官方 `lark-cli` 并 OAuth 登录，再安装 `@tiktok-fe/lark-context` 和全局 skill，执行 `lark-context init` 初始化配置、SQLite 和记忆目录。之后用户在 Claude 里用自然语言触发 `/lark-context`，由 skill 路由到对应 CLI 或引用工作流。Sources: [README.md:37-67](../../../project-repos/lark-context/README.md#L37-L67), [GETTING_STARTED.md:31-61](../../../project-repos/lark-context/GETTING_STARTED.md#L31-L61), [skills/lark-context/SKILL.md:13-29](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L13-L29)
@@ -234,7 +230,7 @@ lark-cli auth login            # 浏览器 OAuth 授权
 
 ```bash
 bnpm i -g @tiktok-fe/lark-context     # 安装 lark-context 二进制
-npx skills add &lt;you&gt;/lark-context -g -y   # 安装 /lark-context skill
+npx skills add <you>/lark-context -g -y   # 安装 /lark-context skill
 ```
 
 替换 `<you>` 为实际的 GitHub 用户名 / 组织。
@@ -314,7 +310,6 @@ lark-context --version
 
 <!-- source-snippets:end -->
 </details>
-
 | 阶段 | 用户动作 | 底层动作 |
 |---|---|---|
 | 安装 | 装 `@larksuite/cli` 与 `@tiktok-fe/lark-context` | 提供官方飞书访问和本项目二进制 |
@@ -349,7 +344,7 @@ You: /lark-context 拉一下最近 3 天的消息
 → lark-context pull --since 3d
 
 You: (粘贴飞书文档 URL) /lark-context 收下这个文档
-→ lark-context ingest-doc &lt;url&gt;
+→ lark-context ingest-doc <url>
 
 You: /lark-context 沉淀一下
 → skill 走 references/digest.md workflow：读 show 输出 → 更新 ~/.claude/lark-memory/
@@ -476,7 +471,6 @@ export async function runAdd(opts: AddOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 仓库形态
 
 当前主实现是 TypeScript ESM CLI：`package.json` 声明包名 `@tiktok-fe/lark-context`、二进制 `lark-context`、Node `>=18`、构建用 `tsup`、测试用 `vitest`。`legacy/python/` 是 V1 前的冻结实现，用来对照但不再演进。Sources: [package.json:1-18](../../../project-repos/lark-context/package.json#L1-L18), [package.json:20-35](../../../project-repos/lark-context/package.json#L20-L35), [README.md:208-219](../../../project-repos/lark-context/README.md#L208-L219)
@@ -549,7 +543,6 @@ V1 正式发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，可以删掉这个
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Repo["lark-context repo"] --> TS["src/ TypeScript CLI"]
@@ -613,7 +606,7 @@ export default defineConfig({
 
 ```bash
 # 克隆 + 装依赖
-git clone https://github.com/&lt;you&gt;/lark-context.git
+git clone https://github.com/<you>/lark-context.git
 cd lark-context
 pnpm install
 
@@ -647,7 +640,6 @@ V1 正式发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，可以删掉这个
 
 <!-- source-snippets:end -->
 </details>
-
 ## 项目边界
 
 工具本身不调用外部 LLM API；它只通过官方 `lark-cli` 读取飞书数据，并把原始材料落在本地 SQLite。摘要、实体合并和 TODO 判断由 Claude 在 skill workflow 中本地完成。Sources: [README.md:5-8](../../../project-repos/lark-context/README.md#L5-L8), [GETTING_STARTED.md:25-29](../../../project-repos/lark-context/GETTING_STARTED.md#L25-L29), [skills/lark-context/SKILL.md:69-73](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L69-L73)
@@ -688,7 +680,6 @@ V1 正式发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，可以删掉这个
 
 <!-- source-snippets:end -->
 </details>
-
 当前 README 同时记录了 V1 边界：不自动调度、只读指定群聊、文档类型受 `lark-cli` 支持范围限制、工具本身不调 LLM API。README 的“已知限制”里还保留了“不拉回复线程”的旧描述，但当前代码已经实现 `thread_id`、`is_thread_reply` 和话题回复拉取；这说明该限制文本滞后于源码。Sources: [README.md:177-185](../../../project-repos/lark-context/README.md#L177-L185), [src/db.ts:14-28](../../../project-repos/lark-context/src/db.ts#L14-L28), [src/commands/pull.ts:123-145](../../../project-repos/lark-context/src/commands/pull.ts#L123-L145), [src/commands/pull.ts:240-290](../../../project-repos/lark-context/src/commands/pull.ts#L240-L290)
 
 <details class="source-snippets">
@@ -816,7 +807,6 @@ async function pullThreads(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 阅读路线
 
 1. 先读 [系统架构](system-architecture.md)，建立从自然语言到 SQLite 和记忆文件的主链路。

@@ -87,7 +87,6 @@ huashu-design/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 资产分类
 
 ```mermaid
@@ -252,7 +251,6 @@ assets/sfx/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 授权模型
 
 `LICENSE` 是 Personal Use License：个人学习研究、个人创作、非营利分享和个人派生可以免费使用；公司、团队、工作室、机构集成到内部工具链或对外产品，将产物作为付费客户交付手段，或做商业软件/付费培训，都必须事先获得书面授权。Sources: [LICENSE:1-25](../../../project-repos/huashu-design/LICENSE#L1-L25), [README.md:296-306](../../../project-repos/huashu-design/README.md#L296-L306)
@@ -310,7 +308,6 @@ Copyright (c) 2026 alchaincyf (花叔 · 花生)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 隐私与分发边界
 
 仓库提供个人素材索引模板，但真实个人数据必须放在私有路径；`.gitignore` 明确忽略真实 `assets/personal-asset-index.json`。这与 skill 的真实素材优先原则并不冲突：模板分发，真实数据由用户本地维护。Sources: [assets/personal-asset-index.example.json:1-71](../../../project-repos/huashu-design/assets/personal-asset-index.example.json#L1-L71), [gitignore:9-10](../../../project-repos/huashu-design/gitignore#L9-L10), [SKILL.md:458-462](../../../project-repos/huashu-design/SKILL.md#L458-L462)
@@ -412,7 +409,6 @@ Copyright (c) 2026 alchaincyf (花叔 · 花生)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 运维和安全观察
 
 仓库没有 CI、manifest 或自动测试目录，验证主要由 `scripts/verify.py`、`test-prompts.json` 和人工 Playwright 流程承担。对于维护者，新增脚本或资产时应注意不要把临时录制目录、验证截图、私有素材或商业授权外的第三方资产误提交。Sources: [00-repo-inventory.md:30-49](../00-repo-inventory.md#L30-L49), [gitignore:5-23](../../../project-repos/huashu-design/gitignore#L5-L23), [scripts/verify.py:1-15](../../../project-repos/huashu-design/scripts/verify.py#L1-L15), [test-prompts.json:1-38](../../../project-repos/huashu-design/test-prompts.json#L1-L38)
@@ -516,7 +512,6 @@ Usage:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

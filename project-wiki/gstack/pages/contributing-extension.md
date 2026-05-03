@@ -90,7 +90,6 @@ This runs tests, reviews the diff, triages Greptile comments (with 2-tier escala
 
 <!-- source-snippets:end -->
 </details>
-
 ## Dev mode
 
 `bin/dev-setup` 会把当前 checkout symlink 到项目本地 `.claude/skills/`，让 Claude Code 直接读取工作树里的技能；`bin/dev-teardown` 恢复到全局安装。Sources: [CONTRIBUTING.md:5-24](../../../project-repos/gstack/CONTRIBUTING.md#L5-L24), [CONTRIBUTING.md:58-89](../../../project-repos/gstack/CONTRIBUTING.md#L58-L89), [CONTRIBUTING.md:90-107](../../../project-repos/gstack/CONTRIBUTING.md#L90-L107)
@@ -187,7 +186,6 @@ bin/dev-teardown
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[gstack checkout] --> B[bin/dev-setup]
@@ -231,7 +229,7 @@ bun run skill:check
 bun run dev:skill
 ```
 
-For template authoring best practices (natural language over bash-isms, dynamic branch detection, `&#123;&#123;BASE_BRANCH_DETECT&#125;&#125;` usage), see CLAUDE.md's "Writing SKILL templates" section.
+For template authoring best practices (natural language over bash-isms, dynamic branch detection, `{{BASE_BRANCH_DETECT}}` usage), see CLAUDE.md's "Writing SKILL templates" section.
 
 To add a browse command, add it to `browse/src/commands.ts`. To add a snapshot flag, add it to `SNAPSHOT_FLAGS` in `browse/src/snapshot.ts`. Then rebuild.
 ````
@@ -270,7 +268,6 @@ generated output silently drops the other side's template changes.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 新增 host
 
 新增宿主是 declarative config，不需要改生成器核心：创建 `hosts/myhost.ts`、在 `hosts/index.ts` 注册、加 `.gitignore`、运行生成和测试。`docs/ADDING_A_HOST.md` 给出配置字段和 adapter pattern。Sources: [docs/ADDING_A_HOST.md:1-32](../../../project-repos/gstack/docs/ADDING_A_HOST.md#L1-L32), [docs/ADDING_A_HOST.md:34-147](../../../project-repos/gstack/docs/ADDING_A_HOST.md#L34-L147), [docs/ADDING_A_HOST.md:165-182](../../../project-repos/gstack/docs/ADDING_A_HOST.md#L165-L182)
@@ -461,7 +458,6 @@ Run `bun run scripts/host-config-export.ts validate` to check all configs.
 
 <!-- source-snippets:end -->
 </details>
-
 | 步骤 | 文件 |
 |---|---|
 | 定义 host | `hosts/<host>.ts` |
@@ -662,7 +658,6 @@ export function validateAllConfigs(configs: HostConfig[]): string[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 迁移与发布
 
 当版本改变 on-disk state，例如技能目录结构、配置 key 或 `~/.gstack/` 格式，贡献者需要在 `gstack-upgrade/migrations/v{VERSION}.sh` 添加幂等、非致命迁移脚本。Sources: [CONTRIBUTING.md:430-479](../../../project-repos/gstack/CONTRIBUTING.md#L430-L479)
@@ -729,7 +724,6 @@ executable and parse without syntax errors.
 
 <!-- source-snippets:end -->
 </details>
-
 社区 PR 积压时，贡献文档建议按主题 wave 批处理：分类、去重、collector branch、清晰关闭说明、单 PR ship。Sources: [CONTRIBUTING.md:413-428](../../../project-repos/gstack/CONTRIBUTING.md#L413-L428)
 
 <details class="source-snippets">
@@ -760,7 +754,6 @@ See [PR #205](../../pull/205) (v0.8.3) for the first wave as an example.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [安装与多宿主接入](setup-and-hosts.md)

@@ -108,7 +108,6 @@ Full guide: [docs/gbrain-sync.md](docs/gbrain-sync.md). Error index: [docs/gbrai
 
 <!-- source-snippets:end -->
 </details>
-
 ## `/setup-gbrain` 三条路径
 
 ```mermaid
@@ -214,7 +213,6 @@ One rule for every secret this skill touches: **env var only, never argv, never 
 
 <!-- source-snippets:end -->
 </details>
-
 ## Per-remote trust triad
 
 每个 repo 对 GBrain 有 `read-write`、`read-only`、`deny` 三档策略，按远端归一化后持久化到 `~/.gstack/gbrain-repo-policy.json`。这避免在客户仓库或敏感 repo 中把本地工作污染到共享 brain。Sources: [USING_GBRAIN_WITH_GSTACK.md:69-97](../../../project-repos/gstack/USING_GBRAIN_WITH_GSTACK.md#L69-L97)
@@ -260,7 +258,6 @@ Storage: `~/.gstack/gbrain-repo-policy.json`, mode 0600, schema-versioned so fut
 
 <!-- source-snippets:end -->
 </details>
-
 ## Memory sync
 
 `gstack-brain-init` 把 `~/.gstack/` 初始化为 git repo，写入 ignore-everything base、allowlist、privacy map、gitattributes、JSONL merge driver 和 pre-commit secret scan hook，然后推送到私有 remote。Sources: [bin/gstack-brain-init:1-24](../../../project-repos/gstack/bin/gstack-brain-init#L1-L24), [bin/gstack-brain-init:141-240](../../../project-repos/gstack/bin/gstack-brain-init#L141-L240)
@@ -406,7 +403,6 @@ chmod +x "$HOOK"
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[~/.gstack local state] --> B[allowlist filter]
@@ -466,7 +462,6 @@ gstack-config set gbrain_sync_mode off
 
 <!-- source-snippets:end -->
 </details>
-
 ## Secret 保护
 
 同步前会扫描 AWS、GitHub token、OpenAI key、PEM、JWT、Bearer/API key 等模式；命中后保留队列并阻止 sync。`bin/gstack-brain-init` 还安装了 pre-commit hook 作为 defense-in-depth。Sources: [docs/gbrain-sync.md:114-142](../../../project-repos/gstack/docs/gbrain-sync.md#L114-L142), [bin/gstack-brain-init:203-240](../../../project-repos/gstack/bin/gstack-brain-init#L203-L240)
@@ -495,7 +490,7 @@ If a scan hits, sync stops, the queue is preserved, and your preamble
 prints:
 
 ```
-BRAIN_SYNC: blocked: &lt;pattern-family&gt;:&lt;snippet&gt;
+BRAIN_SYNC: blocked: <pattern-family>:<snippet>
 ```
 
 To remediate:
@@ -555,7 +550,6 @@ chmod +x "$HOOK"
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [技能工作流](skill-workflow.md)

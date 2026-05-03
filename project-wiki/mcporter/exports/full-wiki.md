@@ -234,7 +234,6 @@ export async function runCli(argv: string[]): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 核心定位
 
 mcporter 解决三个高频痛点：
@@ -570,7 +569,6 @@ export async function handleEmitTs(runtime: Runtime, args: string[]): Promise<vo
 
 <!-- source-snippets:end -->
 </details>
-
 ## 公共 API 切面
 
 `src/index.ts` 暴露的入口非常克制——只 9 行。这是 mcporter 作为 npm 库时使用者真正能拿到的全部类型与函数：
@@ -624,7 +622,6 @@ export { createServerProxy } from './server-proxy.js';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 受众与使用场景
 
 - **写 Agent / 脚本的工程师**：用 `createRuntime()` 直接合并多客户端配置，在脚本里调用 MCP 工具，不需要重新写配置文件。
@@ -774,7 +771,6 @@ export { toFileUrl } from './config-imports.js';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 阅读路径建议
 
 ```mermaid
@@ -1044,7 +1040,6 @@ Helpful flags:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 0.10.0 与最近迭代
 
 `package.json:3` 声明 `"version": "0.10.0"`，README 的"What's New"块仍记录了 0.9.0 的关键变更（per-server tool filtering、stdio shutdown 加固、Windows OAuth URL、`auth --json` 结构化失败信封、`call` 字符串参数不再被强制数字化等）。日常迭代以 `CHANGELOG.md` 为准，但仓库默认会在 `mcporter list <server>` 输出区分 healthy / auth required / offline / http / 其它错误并按数量汇总（[src/cli/list-command.ts:217-233]()），这是早期版本不具备的能力。
@@ -1096,7 +1091,6 @@ Sources: [package.json:3](../../../project-repos/mcporter/package.json:3), [READ
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](#system-architecture)
@@ -1401,7 +1395,6 @@ export { createServerProxy } from './server-proxy.js';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 子系统边界与依赖方向
 
 mcporter 的设计目标是让"库使用者"只看到 Runtime 与 Config 这两个子系统，CLI 与 Daemon 完全可选。下表把每个子系统的输入、输出和外部依赖列清楚：
@@ -1485,7 +1478,6 @@ export interface Runtime {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 一次 `mcporter call` 的请求路径
 
 ```mermaid
@@ -1717,7 +1709,6 @@ async function attemptCall(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 关键抽象的责任划分
 
 ### `ServerDefinition` 是合约边界
@@ -1885,7 +1876,6 @@ export interface ServerDefinition {
 
 <!-- source-snippets:end -->
 </details>
-
 ### `ServerProxy` 把 MCP "对象化"
 
 `createServerProxy(runtime, name)` 返回一个 ES Proxy，把 `proxy.takeSnapshot()` 这样的 camelCase 调用映射到 kebab-case 工具名（`take-snapshot`）。它在 [src/server-proxy.ts:283-407]() 实现，并对 schema 做了三件事：
@@ -2140,7 +2130,6 @@ export function createCallResult<T = unknown>(raw: T): CallResult<T> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 进程模型与执行环境
 
 ```mermaid
@@ -2357,7 +2346,6 @@ Sources: [src/cli.ts:168-204](../../../project-repos/mcporter/src/cli.ts#L168-L2
 
 <!-- source-snippets:end -->
 </details>
-
 ## 跨边界的错误模型
 
 错误从底层传输冒到 CLI 时会被 `analyzeConnectionError` 归一成 5 类：`auth | offline | http | stdio-exit | other`（[src/error-classifier.ts:3-63]()）。`callTool` 失败时 Runtime 会根据 `shouldResetConnection` 决定是否重置缓存的 `ClientContext`（[src/runtime.ts:308-323]()）；CLI 层进一步把这些分类翻译成黄/红/dim 的可读提示，并在 `--output json` 模式下封装成 `{ server, tool, issue, error }` 的稳定信封（[src/cli/call-command.ts:494-521](), [src/cli/json-output.ts]()）。
@@ -2466,7 +2454,6 @@ function maybeReportConnectionIssue(server: string, tool: string, error: unknown
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计取舍
 
 - **库优先 vs CLI 优先** — 公共 API 仅 9 行（[src/index.ts]()），把绝大多数复杂度藏在 `src/cli/**`。库使用者拿到的依然是干净的 `Runtime`，CLI 是它的一个调用方而不是反过来。
@@ -2719,7 +2706,6 @@ export async function loadServerDefinitions(options: LoadConfigOptions = {}): Pr
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [运行时与传输层](#runtime-transport)
@@ -2879,7 +2865,6 @@ export async function loadConfigLayers(options: LoadConfigOptions, rootDir: stri
 
 <!-- source-snippets:end -->
 </details>
-
 ## 解析顺序与显式 vs 隐式
 
 `resolveConfigPath(configPath, rootDir)` 用同样的优先级表决定**单次写操作**的目标文件路径（[src/config/path-discovery.ts:37-55]()）。`mcporter config add/remove` 命令使用它，运行时则使用更宽松的 `loadConfigLayers`：
@@ -2990,7 +2975,6 @@ export async function readConfigFile(configPath: string, explicit: boolean): Pro
 
 <!-- source-snippets:end -->
 </details>
-
 ## 配置文件 schema
 
 `mcporter.json` / `mcporter.jsonc` 的根 schema 定义在 [src/config-schema.ts:121-129]()：
@@ -3120,7 +3104,6 @@ export const RawConfigSchema = z
 
 <!-- source-snippets:end -->
 </details>
-
 ### `mcpServers` 与 `imports` 的相互作用
 
 `imports` 默认值定义在 [src/config-schema.ts:9-17]()：
@@ -3284,7 +3267,6 @@ function defaultClaudeDesktopConfigPath(): string {
 
 <!-- source-snippets:end -->
 </details>
-
 `readExternalEntries(filePath, opts)` 处理读取与解析（[src/config/imports/external.ts:14-41]()）：
 
 - `.toml` → `parseToml` → 抽取 `mcp_servers` 节（codex 风格）。
@@ -3531,7 +3513,6 @@ function convertExternalEntry(value: Record<string, unknown>): RawEntry | null {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 优先级与冲突解决规则
 
 合并循环里有两条铁律（[src/config.ts:60-95]()）：
@@ -3609,7 +3590,6 @@ Sources: [src/config.ts:42-96](../../../project-repos/mcporter/src/config.ts#L42
 
 <!-- source-snippets:end -->
 </details>
-
 ## RawEntry → ServerDefinition 的规范化
 
 `normalizeServerEntry` 是规范化的核心（[src/config-normalize.ts:5-73]()）。它的输入是 `RawEntry + baseDir + source + sources`，输出是稳定的 `ServerDefinition`：
@@ -3826,7 +3806,6 @@ export interface ServerDefinition {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 环境变量与占位符
 
 `env.ts` 提供三种 token：
@@ -3959,7 +3938,6 @@ export async function withEnvOverrides<T>(
 
 <!-- source-snippets:end -->
 </details>
-
 ## `mcporter config` 命令
 
 `mcporter config <subcommand>` 是把上面这套加载/规范化流程暴露成可读写操作的命令族，路由在 [src/cli/config-command.ts:12-67]()：
@@ -4065,7 +4043,6 @@ export function resolveWriteTarget(flags: AddFlags, loadOptions: LoadConfigOptio
 
 <!-- source-snippets:end -->
 </details>
-
 ## 失败模式与降级
 
 `readConfigFile` 在隐式打开时对两类错误做降级，避免开发机上没有任何配置就直接报错：
@@ -4124,7 +4101,6 @@ function shouldIgnoreParseError(error: unknown): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 一图总结
 
 ```mermaid
@@ -4333,7 +4309,6 @@ export function normalizeServerEntry(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](#overview)
@@ -4440,7 +4415,6 @@ export async function callOnce(params: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## `createRuntime` 与 `McpRuntime`
 
 `createRuntime` 既可以从 `configPath` / `rootDir` 自动加载 `ServerDefinition[]`，也可以接受调用方提供的 `servers` 数组（[src/runtime.ts:77-88]()）。底层实现 `McpRuntime` 在 `src/runtime.ts:107-125` 一次性完成三件事：
@@ -4542,7 +4516,6 @@ class McpRuntime implements Runtime {
 
 <!-- source-snippets:end -->
 </details>
-
 ### 连接池
 
 `McpRuntime.connect(server)` 的核心数据结构是 `clients: Map<string, Promise<ClientContext>>`（[src/runtime.ts:109]()）。注意值是 **Promise**，不是已经 resolve 的对象——这样并发的 `connect` 调用会复用同一个 in-flight 连接，避免双开 stdio 子进程或重复触发 OAuth。
@@ -4615,7 +4588,6 @@ Sources: [src/runtime.ts:243-279](../../../project-repos/mcporter/src/runtime.ts
 
 <!-- source-snippets:end -->
 </details>
-
 ### `listTools` 与过滤
 
 `listTools(server, opts)` 在 [src/runtime.ts:156-193]() 实现。值得注意的几个点：
@@ -4716,7 +4688,6 @@ export function filterTools<T extends { readonly name: string }>(
 
 <!-- source-snippets:end -->
 </details>
-
 ### `callTool` 与超时
 
 `callTool` 把超时管理委托给 SDK 客户端（[src/runtime.ts:196-228]()），同时自己加一层 `raceWithTimeout` 兜底：
@@ -4837,7 +4808,6 @@ export function shouldResetConnection(error: unknown): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 传输层（`createClientContext`）
 
 `runtime/transport.ts` 是把 `ServerDefinition` 转成 `ClientContext`（client + transport + 可选 oauthSession）的工厂。入口 `createClientContext`（[src/runtime/transport.ts:361-380]()）首先做两件事：
@@ -5003,7 +4973,6 @@ async function connectSseFallbackTransport(
 
 <!-- source-snippets:end -->
 </details>
-
 ### StreamableHTTP → SSE 回退
 
 mcporter 默认假设远端支持 [Streamable HTTP](https://modelcontextprotocol.io/) 传输；当首次连接失败时会按以下规则判断是否回退到 SSE（[src/runtime/transport.ts:46-55]()，[src/runtime/transport.ts:269-296]()）：
@@ -5120,7 +5089,6 @@ export function maybeEnableOAuth(definition: ServerDefinition, logger: Logger): 
 
 <!-- source-snippets:end -->
 </details>
-
 ### `connectWithAuth` 的重试循环
 
 最里层的 `connectWithAuth`（[src/runtime/oauth.ts:79-123]()）负责真正的 OAuth challenge：
@@ -5234,7 +5202,6 @@ async function closeReplacementTransport(
 
 <!-- source-snippets:end -->
 </details>
-
 ### stdio 子进程
 
 `createStdioClientContext`（[src/runtime/transport.ts:189-222]()）：
@@ -5348,7 +5315,6 @@ export function resolveCommandArguments(args: readonly string[]): string[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## SDK Patches：StdioClientTransport.close
 
 mcporter 在 [src/sdk-patches.ts:236-336]() 直接 monkey-patch `StdioClientTransport.prototype.close`，原因是上游 SDK 在某些 npm wrapper（`npx`、`npm exec`）下不会真正杀掉子进程：
@@ -5540,7 +5506,6 @@ function patchStdioClose(): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## `ServerProxy` 与 `CallResult`
 
 `createServerProxy(runtime, name)` 是面向"对象式"用法的薄封装。它把每个属性访问转成 kebab-case 工具调用：
@@ -5839,7 +5804,6 @@ function collectCallContent(raw: unknown): CollectedCallContent {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 错误分类
 
 `describeConnectionIssue(error)` 把 SDK / fetch / stdio 的混合错误归一化（[src/error-classifier.ts:41-63]()）：
@@ -6021,7 +5985,6 @@ function maybeReportConnectionIssue(server: string, tool: string, error: unknown
 
 <!-- source-snippets:end -->
 </details>
-
 ## 关闭与清理
 
 `runtime.close(server?)`：
@@ -6100,7 +6063,6 @@ export async function closeTransportAndWait(
 
 <!-- source-snippets:end -->
 </details>
-
 ## OAuth header 物化
 
 HTTP 头里的 `${VAR}` / `$env:VAR` 在每次请求前由 `materializeHeaders` 解析（[src/runtime-header-utils.ts:4-23]()）。OAuth 流程会**移除** `Authorization` 头让 SDK 自己写入 token（`removeAuthorizationHeader`，[src/runtime/transport.ts:85-95]()），避免静态 bearer 与浏览器流程冲突；非 OAuth 路径则保留头不变。
@@ -6174,7 +6136,6 @@ function createHttpTransportOptions(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计取舍
 
 - **缓存的是 Promise 不是值** — 让并发的同名 `connect()` 自动合流；缺点是 reject 后必须主动 `delete`，否则下次会拿到失败 promise。代码里在 catch 中显式 `clients.delete(normalized)`（[src/runtime.ts:268-275]()）。
@@ -6507,7 +6468,6 @@ export function createCallResult<T = unknown>(raw: T): CallResult<T> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](#system-architecture)
@@ -6720,7 +6680,6 @@ export function buildGlobalContext(argv: string[]): GlobalCliContext | { exit: t
 
 <!-- source-snippets:end -->
 </details>
-
 ## 命令路由与隐式命令
 
 `runCli` 的命令分发流程：
@@ -6982,7 +6941,6 @@ function isHttpToolToken(token: string): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 命令分组详解
 
 ### `mcporter list`
@@ -7178,7 +7136,6 @@ export function printSingleServerHeader(
 
 <!-- source-snippets:end -->
 </details>
-
 ### `mcporter call`
 
 `handleCall`（[src/cli/call-command.ts:41-53]()）的执行流：
@@ -7479,7 +7436,6 @@ function applyTrailingArguments(positional: string[], result: CallArgsParseResul
 
 <!-- source-snippets:end -->
 </details>
-
 ### `mcporter auth`
 
 `handleAuth`（[src/cli/auth-command.ts:16-86]()）：
@@ -7575,7 +7531,6 @@ export async function handleAuth(runtime: Runtime, args: string[]): Promise<void
 
 <!-- source-snippets:end -->
 </details>
-
 ### `mcporter config`
 
 `handleConfigCli` 是一个简单的子命令分发表（[src/cli/config-command.ts:12-67]()）：
@@ -7662,7 +7617,6 @@ export async function handleConfigCli(options: ConfigCliOptions, args: string[])
 
 <!-- source-snippets:end -->
 </details>
-
 ### `mcporter daemon`
 
 `handleDaemonCli`（[src/cli/daemon-command.ts:26-58]()）只有 4 个动作：
@@ -7811,7 +7765,6 @@ async function handleDaemonStart(args: string[], options: DaemonCliOptions, clie
 
 <!-- source-snippets:end -->
 </details>
-
 ### `mcporter generate-cli` / `inspect-cli` / `emit-ts`
 
 这三个生成相关命令的入口在 [代码生成章节](#code-generation) 详细展开。从命令路由角度看：
@@ -8002,7 +7955,6 @@ export async function handleInspectCli(args: string[]): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Help / version 路由
 
 `isHelpToken` / `isVersionToken` 在 [src/cli/help-output.ts:174-192]() 定义，识别 `--help|-h|help` 与 `--version|-v|-V`。`consumeHelpTokens` 反向扫描 args 数组、把所有 help token 摘掉（[src/cli/help-output.ts:178-188]()）——这让 `mcporter list --help`、`mcporter call linear --help linear.list_issues` 这样的写法都能进入对应子命令的 `printXxxHelp`。
@@ -8056,7 +8008,6 @@ async function resolveCliVersion(): Promise<string> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 进程退出与"force exit"
 
 `runCli` 的 finally 块（[src/cli.ts:168-203]()）执行三步：
@@ -8117,7 +8068,6 @@ Sources: [src/cli.ts:168-204](../../../project-repos/mcporter/src/cli.ts#L168-L2
 
 <!-- source-snippets:end -->
 </details>
-
 ## CliUsageError 与统一错误信封
 
 `runCli` 抛 `CliUsageError` 时仅打印 message + 退出 1，不带 stacktrace（[src/cli.ts:215-223]()）。其它 Error 走默认 `logError(message, error)`。`call` / `auth` / `list` 在 `--output json` 模式下统一用 `buildConnectionIssueEnvelope` 输出 `{ server, tool?, issue: { kind, statusCode, ... }, error: <message> }`，方便上游脚本机读处理。
@@ -8242,7 +8192,6 @@ function maybeReportConnectionIssue(server: string, tool: string, error: unknown
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [调用语法、自动纠错与临时服务器](#call-syntax)
@@ -8537,7 +8486,6 @@ export function coerceValue(value: string, coercionMode: CoercionMode = 'default
 
 <!-- source-snippets:end -->
 </details>
-
 ## 解析管线
 
 `parseCallArguments(args)` 是入口（[src/cli/call-arguments.ts:67-81]()）。它分 5 步把原始 argv 逐步压缩为 `CallArgsParseResult`：
@@ -8789,7 +8737,6 @@ function warnMissingNamedArgumentValue(key: string): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 值类型推导（`coerceValue`）
 
 `coerceValue(value, mode)` 决定一个字符串字面量在没有 schema 信息时被翻译成什么 JS 值（[src/cli/call-argument-values.ts:40-65]()）：
@@ -8928,7 +8875,6 @@ async function enforceSchemaStringTypes(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 函数式调用表达式
 
 第一个 positional 如果包含 `(` 且以 `)` 结尾，进入 `parseLeadingCallExpression`（[src/cli/call-argument-expression.ts:7-13]()）。它会先尝试 `extractHttpCallExpression`（处理 `https://host/path.tool(...)` 这种 URL + 函数调用混合），再回退到通用的 `parseCallExpressionFragment`。
@@ -9075,7 +9021,6 @@ export function parseCallExpressionFragment(raw: string): ParsedCallExpression |
 
 <!-- source-snippets:end -->
 </details>
-
 ## URL 选择器
 
 `splitHttpToolSelector(token)`（在 `src/cli/http-utils.ts` 中）识别 `https://host/path.tool` 这样的形态——把 URL 作为 `baseUrl`，最后一段 `.tool` 作为 tool 名。它在三处被调用：
@@ -9243,7 +9188,6 @@ async function normalizeParsedCallArguments(runtime: Runtime, parsed: CallArgsPa
 
 <!-- source-snippets:end -->
 </details>
-
 ## 选择器决议（server / tool）
 
 `resolveSelectorAndTool`（[src/cli/call-arguments.ts:145-173]()）+ `resolveServerAndTool`（[src/cli/call-command.ts:126-140]()）共同决定最终 `(server, tool)`：
@@ -9357,7 +9301,6 @@ export function shouldPromoteSelectorToCommand(selector: string): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Schema 驱动的位置参数 hydration
 
 CLI 收到的位置参数（裸值或函数表达式中的非 named arg）会被 `hydratePositionalArguments` 映射到 schema 字段（[src/cli/call-command.ts:327-373]()）：
@@ -9481,7 +9424,6 @@ export function extractOptions(tool: ServerToolInfo): GeneratedOption[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 自动纠错（Levenshtein）
 
 `identifier-helpers.ts` 提供两类纠错：server 名（在 `command-inference` 与 `list-command` 使用）与 tool 名（在 `call-command.attemptCall` 失败路径上使用）。
@@ -9648,7 +9590,6 @@ async function maybeResolveToolName(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 临时服务器（`--http-url` / `--stdio`）
 
 `extractEphemeralServerFlags`（[src/cli/ephemeral-flags.ts:9-128]()）扫描 argv 抽走以下 flag：
@@ -9949,7 +9890,6 @@ export function extractEphemeralServerFlags(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 几个边界规则
 
 - `--` **后**的 token 全部当作字面量位置参数：`mcporter call x.y -- --start-with-dashes` 把 `--start-with-dashes` 当成 string 传给 tool（[src/cli/call-arguments.ts:93-95](), [src/cli/call-arguments.ts:216-228]()）。
@@ -10121,7 +10061,6 @@ export async function persistEphemeralServer(resolution: EphemeralServerResoluti
 
 <!-- source-snippets:end -->
 </details>
-
 ## 最终的 CallArgsParseResult
 
 CallArgsParseResult 是这一切解析的输出（[src/cli/call-arguments.ts:16-29]()）：
@@ -10250,7 +10189,6 @@ async function prepareCallRequest(runtime: Runtime, args: string[]): Promise<Pre
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [CLI 命令体系](#cli-commands)
@@ -10430,7 +10368,6 @@ export function extractOptions(tool: ServerToolInfo): GeneratedOption[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## `generate-cli` 主流程
 
 `generateCli(options)`（[src/generate-cli.ts:33-152]()）的核心步骤：
@@ -10716,7 +10653,6 @@ async function bundleWithBun({
 
 <!-- source-snippets:end -->
 </details>
-
 ### server 引用解析
 
 `resolveServerDefinition(serverRef, configPath?, rootDir?)`（[src/cli/generate/definition.ts:46-122]()）按优先级尝试 4 种来源：
@@ -10833,7 +10769,6 @@ export async function resolveServerDefinition(
 
 <!-- source-snippets:end -->
 </details>
-
 ### `--from <artifact>`：基于既有产物再生成
 
 `resolveGenerateRequestFromArtifact`（在 `template-data.ts`）会读取产物中嵌入的 metadata（schemaVersion=1）并把当时的 `invocation` flags（`runtime/bundle/compile/timeoutMs/minify/includeTools/excludeTools/outputPath`）作为新一次 generate 的默认值。命令选项可以在 CLI 上覆盖任意一个，`--dry-run` 打印 reconstructed `mcporter generate-cli ...` 字符串而不实际执行。
@@ -10985,7 +10920,6 @@ async function readMetadataFromCli(artifactPath: string): Promise<CliArtifactMet
 
 <!-- source-snippets:end -->
 </details>
-
 ### renderTemplate 输出
 
 `renderTemplate`（[src/cli/generate/template.ts:53-122]()，省略到 410 行）输出一个完整的 Node / Bun 可执行 TypeScript 文件，关键嵌入：
@@ -11087,7 +11021,6 @@ program.option('-o, --output <format>', 'Output format: text|markdown|json|raw',
 
 <!-- source-snippets:end -->
 </details>
-
 ### Bundling
 
 `bundleOutput`（[src/cli/generate/artifacts.ts:19-83]()）有两条实现：
@@ -11221,7 +11154,6 @@ async function isBunAvailable(): Promise<boolean> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 工具过滤与 description 推导
 
 `fetchTools(definition, name, configPath, rootDir)` 在 `src/cli/generate/definition.ts` 中实现：连一次 runtime 拉 `listTools(includeSchema: true)`，如果 server 自身没填 description，再用 `client.listResources` / 服务端返回的 metadata 反推 description（具体在 `definition.ts` 后半部分）。`applyToolFilters`（[src/generate-cli.ts:154-209]()）实现 `--include-tools` / `--exclude-tools` 的互斥校验与缺名错误提示。
@@ -11317,7 +11249,6 @@ function applyToolFilters(tools: ServerToolInfo[], includeTools?: string[], excl
 
 <!-- source-snippets:end -->
 </details>
-
 ## `inspect-cli`
 
 `handleInspectCli(args)`（[src/cli/inspect-cli-command.ts:13-50]()）：
@@ -11385,7 +11316,6 @@ export async function handleInspectCli(args: string[]): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## emit-ts：类型与客户端模块
 
 `handleEmitTs`（[src/cli/emit-ts-command.ts:30-94]()）有两种模式：
@@ -11681,7 +11611,6 @@ function renderHeader(metadata: EmitMetadata): string[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 嵌入元数据（CliArtifactMetadata）
 
 `CliArtifactMetadata`（[src/cli-metadata.ts:32-62]()）是 generate 与 inspect 之间的合约：
@@ -11844,7 +11773,6 @@ export function serializeDefinition(definition: ServerDefinition): SerializedSer
 
 <!-- source-snippets:end -->
 </details>
-
 ## 一些设计决策
 
 - **listTools 在 generate 阶段就拉一次** — 由 `fetchTools` 完成，确保 schema 在生成时被冻结。即使后续 server 端工具列表变了，旧产物仍然是确定性的可执行单文件；要更新产物只需 `generate-cli --from`。
@@ -12130,7 +12058,6 @@ export async function handleGenerateCli(args: string[], globalFlags: FlagMap): P
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [CLI 命令体系](#cli-commands)
@@ -12323,7 +12250,6 @@ function coerceLifecycle(raw: RawLifecycle): ServerLifecycle | undefined {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 客户端：KeepAliveRuntime
 
 `createKeepAliveRuntime(base, opts)` 在 [src/daemon/runtime-wrapper.ts:13-18]() 实现：
@@ -12493,7 +12419,6 @@ class KeepAliveRuntime implements Runtime {
 
 <!-- source-snippets:end -->
 </details>
-
 ## DaemonClient
 
 `DaemonClient`（[src/daemon/client.ts:52-271]()）是与 daemon 通信的入口。每个 `DaemonClient` 实例都绑定一组 `(socketPath, metadataPath)`，由 `resolveDaemonPaths(configPath)` 通过对 `configPath` 求 SHA-1 前 12 字符派生（[src/daemon/client.ts:43-50](), [src/daemon/client.ts:273-276]()）。**这意味着不同的主 config 路径对应不同的 daemon 实例**——切换 `--config` 不会污染默认 daemon。
@@ -12729,7 +12654,6 @@ function resolveCliEntry(): string | undefined {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Daemon 协议
 
 定义在 [src/daemon/protocol.ts:1-58]()：
@@ -12824,7 +12748,6 @@ export interface StatusResult {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Daemon Host 主循环
 
 `runDaemonHost(options)`（[src/daemon/host.ts:44-194]()）启动后做的事：
@@ -13045,7 +12968,6 @@ export async function evictIdleServers(
 
 <!-- source-snippets:end -->
 </details>
-
 ### 空闲清理
 
 `evictIdleServers`（[src/daemon/request-utils.ts:27-50]()）每 30s 跑一次：
@@ -13092,7 +13014,6 @@ export async function evictIdleServers(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 路径布局
 
 | 文件 | 默认位置 | 用途 |
@@ -13151,7 +13072,6 @@ export function getDaemonDir(): string {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 日志策略
 
 `--log` / `--log-file` / `--log-servers` 三个 flag 共同决定 daemon 的日志行为，由 `resolveDaemonLoggingOptions` 解析（[src/cli/daemon-command.ts:220-249]()）。
@@ -13347,7 +13267,6 @@ export function formatError(error: unknown): string {
 
 <!-- source-snippets:end -->
 </details>
-
 ## CLI 入口（再看一遍）
 
 `mcporter daemon start/stop/status/restart` 在 [src/cli/daemon-command.ts:26-138]() 的逻辑：
@@ -13514,7 +13433,6 @@ async function handleDaemonRestart(args: string[], options: DaemonCliOptions, cl
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计取舍
 
 - **shared runtime in daemon**：daemon 内部的 `Runtime` 与 CLI 进程的 `Runtime` 是不同实例，但**共享同一份 stdio 子进程**——chrome 浏览器、mobile-mcp 的设备会话等只活在 daemon 里，多个 agent 共用。
@@ -13690,7 +13608,6 @@ export function resolveDaemonPaths(configPath: string): DaemonPaths {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [运行时与传输层](#runtime-transport)
@@ -13899,7 +13816,6 @@ export async function connectWithAuth(
 
 <!-- source-snippets:end -->
 </details>
-
 ## PersistentOAuthClientProvider
 
 `PersistentOAuthClientProvider` 在 [src/oauth.ts:64-307]() 实现 `OAuthClientProvider` 接口。`create(definition, logger)` 静态构造器（[src/oauth.ts:96-167]()）做的事比类名暗示的多：
@@ -14007,7 +13923,6 @@ Sources: [src/oauth.ts:96-167](../../../project-repos/mcporter/src/oauth.ts#L96-
 
 <!-- source-snippets:end -->
 </details>
-
 ### `clientMetadata` / `state` / 授权码
 
 `PersistentOAuthClientProvider` 实现的 `OAuthClientProvider` 关键方法：
@@ -14159,7 +14074,6 @@ class PersistentOAuthClientProvider implements OAuthClientProvider {
 
 <!-- source-snippets:end -->
 </details>
-
 ### 跨平台浏览器打开
 
 `openExternal(url, platform, launch)`（[src/oauth.ts:36-61]()）：
@@ -14211,7 +14125,6 @@ function openExternal(url: string, platform: NodeJS.Platform = process.platform,
 
 <!-- source-snippets:end -->
 </details>
-
 ## 持久化分层
 
 `buildOAuthPersistence(definition, logger)` 在 [src/oauth-persistence.ts:233-267]() 创建一个分层 persistence：
@@ -14500,7 +14413,6 @@ export async function clearVaultEntry(
 
 <!-- source-snippets:end -->
 </details>
-
 ### 缓存 token 直接注入（fast-path）
 
 `applyCachedOAuthHeaderIfAvailable`（[src/runtime/transport.ts:151-187]()）在 OAuth 流程之前先尝试一次"fast-path"：如果 vault/dir 里已经有 `access_token`，且 definition headers 里没有 Authorization，就**临时 clone 一份 definition**，把 `Authorization: Bearer ${cached}` 注入头里。如果服务器接受 → 直接 200，没必要建 callback server。如果服务器 401 → 走完整 OAuth 流程刷 token。
@@ -14590,7 +14502,6 @@ export async function readCachedAccessToken(
 
 <!-- source-snippets:end -->
 </details>
-
 ## OAuth header 物化
 
 HTTP 头里支持 `${VAR}` / `$env:VAR` 占位符，每次请求前由 `materializeHeaders` 解析（[src/runtime-header-utils.ts:4-23]()）。OAuth 启用时 `removeAuthorizationHeader` 把任何静态 Authorization 头去掉，由 SDK 自己注入 token（[src/runtime/transport.ts:85-95]()）；没启用 OAuth 时静态头保留，包括 `bearerToken` / `bearerTokenEnv` 在 normalize 阶段写入的 `Authorization: Bearer $env:NAME`。
@@ -14664,7 +14575,6 @@ function createHttpTransportOptions(
 
 <!-- source-snippets:end -->
 </details>
-
 ## connectWithAuth 重试模型
 
 `connectWithAuth`（[src/runtime/oauth.ts:79-123]()）已经在 [运行时与传输层](#runtime-transport) 概要描述。这里补充几点：
@@ -14810,7 +14720,6 @@ export async function connectWithAuth(
 
 <!-- source-snippets:end -->
 </details>
-
 ## CLI 入口
 
 ### `mcporter auth <server | url>`
@@ -14968,7 +14877,6 @@ async function invokeAuthCommand(runtimeOptions: Parameters<typeof createRuntime
 
 <!-- source-snippets:end -->
 </details>
-
 ## 失败模式速览
 
 | 现象 | 触发 | 处理 |
@@ -15165,7 +15073,6 @@ export async function connectWithAuth(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计取舍
 
 - **Vault 默认而非 keychain**：跨平台一致；用 sha256 哈希派生 key，不在凭证仓库里存裸服务器 URL。代价是没有系统级加密保护，靠文件权限隔离。
@@ -15275,7 +15182,6 @@ async function applyCachedOAuthHeaderIfAvailable(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [运行时与传输层](#runtime-transport)
@@ -15348,7 +15254,6 @@ Sources: [tests/fixtures/](../../../project-repos/mcporter/tests/fixtures), [pac
 
 <!-- source-snippets:end -->
 </details>
-
 ## 测试入口与脚本
 
 `package.json` 暴露的命令：
@@ -15444,7 +15349,6 @@ process.exit(result.status ?? 1);
 
 <!-- source-snippets:end -->
 </details>
-
 ## CI 矩阵
 
 `.github/workflows/ci.yml` 配置极简但重要（[.github/workflows/ci.yml:1-31]()）：
@@ -15491,7 +15395,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: $&#123;&#123; matrix.os &#125;&#125;
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -15534,7 +15438,6 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 单元测试的几个亮点
 
 ### `cli-call-execution.test.ts`（348 行）
@@ -15706,7 +15609,6 @@ await new Promise((resolve, reject) => {
 
 <!-- source-snippets:end -->
 </details>
-
 ### `daemon.integration.test.ts`（175 行）
 
 真启 daemon（`runDaemonHost` foreground 模式 + 临时 socket / metadata 路径）→ 通过 `DaemonClient` 发请求 → 校验 status / callTool / closeServer / stop 行为闭环。这是验证私有 JSON 协议、stale config 检测、idle eviction 的端到端测试。
@@ -15804,7 +15706,6 @@ function parseCliJson(output: string): { instanceId: string; count: number } {
 
 <!-- source-snippets:end -->
 </details>
-
 ### `build-bun.test.ts`
 
 只有 16 行：`describe.skip` 包了一个真正调外部 `bun build` 的检查。它不在默认 CI 上跑（OS 矩阵不要求装 Bun），用作开发者本地手动验证。Bun 编译路径主要靠 `cli-generate-cli.integration.test.ts` 提供间接覆盖。
@@ -15838,7 +15739,6 @@ describe('build-bun entrypoint', () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ### Live 测试 `tests/live/deepwiki-live.test.ts`
 
 ```ts
@@ -15926,7 +15826,6 @@ describe.skipIf(Boolean(skipReason()))('deepwiki live', () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## helpers/runtime-test-helpers.ts
 
 `tests/helpers/runtime-test-helpers.ts` 提供 mock Transport / Logger / OAuthSession 与 fluent stub builder（如 `stubHttpDefinition` / `stubOAuthHttpDefinition` / `createPromotionRecorder`）。这是 `runtime/transport.ts` 与 `runtime/oauth.ts` 大量分支被覆盖的关键——单测不需要真打开浏览器或开 socket。
@@ -15996,7 +15895,6 @@ export function createPromotionRecorder() {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 可观测性与排查工具
 
 mcporter 在不依赖外部 APM 的前提下提供 4 类内置开关，全部通过环境变量启用：
@@ -16227,7 +16125,6 @@ function destroyStream(stream: unknown): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 失败模式 & flake 治理
 
 仓库里几个值得记的事实：
@@ -16334,7 +16231,6 @@ Sources: [package.json:53-111](../../../project-repos/mcporter/package.json#L53-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 本地执行清单
 
 最小化跑通的步骤：
@@ -16434,7 +16330,7 @@ Sources: [package.json:42-103](../../../project-repos/mcporter/package.json#L42-
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: $&#123;&#123; matrix.os &#125;&#125;
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -16454,7 +16350,6 @@ Sources: [package.json:42-103](../../../project-repos/mcporter/package.json#L42-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](#system-architecture)

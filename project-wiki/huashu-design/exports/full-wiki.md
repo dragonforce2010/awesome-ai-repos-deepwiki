@@ -110,7 +110,6 @@ description: 花叔Design（Huashu-Design）——用HTML做高保真原型、�
 
 <!-- source-snippets:end -->
 </details>
-
 ## 仓库形态
 
 这个仓库不是传统 npm 包：清单脚本没有检测到 `package.json`、CI 或测试目录，主要内容是一个根 `SKILL.md`、一组 `references/` 规则文档、`assets/` starter components、`scripts/` 导出工具链和 `demos/` 示例。Sources: [00-repo-inventory.md:10-49](../00-repo-inventory.md#L10-L49), [README.md:248-281](../../../project-repos/huashu-design/README.md#L248-L281)
@@ -206,7 +205,6 @@ huashu-design/
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[README 用户入口] --> B[SKILL.md Agent 主规则]
@@ -296,7 +294,6 @@ huashu-design/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 核心能力地图
 
 | 能力 | 主要文件 | 交付物 |
@@ -409,7 +406,6 @@ Sources: [README.md:79-89](../../../project-repos/huashu-design/README.md#L79-L8
 
 <!-- source-snippets:end -->
 </details>
-
 ## 读者路线
 
 新维护者应先读 `SKILL.md` 的 frontmatter 和「核心哲学」，再按任务类型跳到 `references/`。如果要理解可复用代码，先读 `assets/animations.jsx`、`assets/deck_index.html`、`assets/deck_stage.js`、`assets/ios_frame.jsx`。如果要理解交付工具链，读 `scripts/render-video.js`、`scripts/html2pptx.js` 与对应 reference。Sources: [SKILL.md:61-80](../../../project-repos/huashu-design/SKILL.md#L61-L80), [SKILL.md:703-748](../../../project-repos/huashu-design/SKILL.md#L703-L748), [assets/animations.jsx:1-25](../../../project-repos/huashu-design/assets/animations.jsx#L1-L25), [scripts/render-video.js:1-38](../../../project-repos/huashu-design/scripts/render-video.js#L1-L38)
@@ -570,7 +566,6 @@ Sources: [README.md:79-89](../../../project-repos/huashu-design/README.md#L79-L8
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Skill 编排与主提示词](skill-orchestration.md)
@@ -741,7 +736,6 @@ description: 花叔Design（Huashu-Design）——用HTML做高保真原型、�
 
 <!-- source-snippets:end -->
 </details>
-
 ## 优先级结构
 
 `SKILL.md` 把「事实验证先于假设」列为核心原则 #0，要求涉及具体产品、技术、事件或版本时先 `WebSearch` 验证，再进入提问或设计。随后才是从 existing context 出发、核心资产协议、Junior Designer 展示假设、给 variations、placeholder 优先和反 AI slop。Sources: [SKILL.md:24-57](../../../project-repos/huashu-design/SKILL.md#L24-L57), [SKILL.md:61-68](../../../project-repos/huashu-design/SKILL.md#L61-L68), [SKILL.md:298-317](../../../project-repos/huashu-design/SKILL.md#L298-L317), [SKILL.md:326-369](../../../project-repos/huashu-design/SKILL.md#L326-L369)
@@ -879,7 +873,6 @@ description: 花叔Design（Huashu-Design）——用HTML做高保真原型、�
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[用户设计请求] --> B{涉及具体事实}
@@ -1051,7 +1044,6 @@ Sources: [SKILL.md:34-38](../../../project-repos/huashu-design/SKILL.md#L34-L38)
 
 <!-- source-snippets:end -->
 </details>
-
 ## References 路由
 
 主提示词没有把所有细节塞进一个文件，而是在 `References路由表` 中按任务类型路由：幻灯片读 `slide-decks.md`，可编辑 PPTX 读 `editable-pptx.md`，动画读 `animation-pitfalls.md` 和 `animations.md`，验证读 `verification.md`，视频和音频读 `video-export.md`、`audio-design-rules.md`、`sfx-library.md`。Sources: [SKILL.md:724-748](../../../project-repos/huashu-design/SKILL.md#L724-L748)
@@ -1093,7 +1085,6 @@ Sources: [SKILL.md:34-38](../../../project-repos/huashu-design/SKILL.md#L34-L38)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 行为检查点
 
 工作流中的多个 `🛑` 检查点要求 agent 在提问、资产自检、四问系统、Junior pass 和交付前验证处停下来等待用户确认。这让 skill 更像「junior designer 向 manager 汇报」，而不是单轮自动完成。Sources: [SKILL.md:603-648](../../../project-repos/huashu-design/SKILL.md#L603-L648), [references/workflow.md:99-153](../../../project-repos/huashu-design/references/workflow.md#L99-L153)
@@ -1181,11 +1172,11 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 -->
 
 <!-- 然后是带placeholder的结构 -->
-&lt;section class="hero"&gt;
-  &lt;h1>[主标题位 - 等用户提供]&lt;/h1>
-  &lt;p>[副标题位]&lt;/p>
-  &lt;div class="cta-placeholder">[CTA按钮]&lt;/div>
-&lt;/section&gt;
+<section class="hero">
+  <h1>[主标题位 - 等用户提供]</h1>
+  <p>[副标题位]</p>
+  <div class="cta-placeholder">[CTA按钮]</div>
+</section>
 ```
 
 **保存 → show用户 → 等反馈再走下一步**。
@@ -1216,7 +1207,6 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 <!-- source-snippets:end -->
 </details>
-
 ## 测试提示作为行为规格
 
 `test-prompts.json` 用 6 个自然语言 prompt 描述预期行为，例如登录页要触发 design context 询问和 3 个 variation，iOS/Tracker 类原型要用 `ios_frame.jsx` 且体现高密度信息。这些不是自动化测试，但为 reviewer 提供了可人工核验的行为样例。Sources: [test-prompts.json:1-38](../../../project-repos/huashu-design/test-prompts.json#L1-L38)
@@ -1271,7 +1261,6 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Design Context 与核心资产协议](design-context-assets.md)
@@ -1358,7 +1347,6 @@ npx playwright screenshot https://example.com screenshot.png --viewport-size=192
 
 <!-- source-snippets:end -->
 </details>
-
 ## 资产协议的执行边界
 
 `SKILL.md` 将「核心资产协议」设置为涉及具体品牌时的强制流程：先问用户手头资产，再按 Logo、产品图/UI 截图、色值、字体等类型搜索官方渠道，随后下载、验证、提取并固化到 `brand-spec.md`。它明确强调资产优先级高于色值，Logo、实体产品图、数字产品 UI 截图是识别度根基。Sources: [SKILL.md:69-98](../../../project-repos/huashu-design/SKILL.md#L69-L98), [SKILL.md:100-130](../../../project-repos/huashu-design/SKILL.md#L100-L130), [SKILL.md:198-267](../../../project-repos/huashu-design/SKILL.md#L198-L267)
@@ -1411,7 +1399,7 @@ npx playwright screenshot https://example.com screenshot.png --viewport-size=192
 不要只问「有 brand guidelines 吗？」——太宽泛，用户不知道该给什么。按清单逐项问：
 
 ```
-关于 &lt;brand/product&gt;，你手上有以下哪些资料？我按优先级列：
+关于 <brand/product>，你手上有以下哪些资料？我按优先级列：
 1. Logo（SVG / 高清 PNG）—— 任何品牌必备
 2. 产品图 / 官方渲染图 —— 实体产品必备（如 DJI Pocket 4 的产品照）
 3. UI 截图 / 界面素材 —— 数字产品必备（如 App 主要页面截图）
@@ -1458,52 +1446,52 @@ npx playwright screenshot https://example.com screenshot.png --viewport-size=192
 ##### Step 5 · 固化为 `brand-spec.md` 文件（模板必须覆盖所有资产）
 
 ```markdown
-# &lt;Brand&gt; · Brand Spec
+# <Brand> · Brand Spec
 > 采集日期：YYYY-MM-DD
-> 资产来源：&lt;列出下载来源&gt;
-> 资产完整度：&lt;完整 / 部分 / 推断&gt;
+> 资产来源：<列出下载来源>
+> 资产完整度：<完整 / 部分 / 推断>
 
 ## 🎯 核心资产（一等公民）
 
 ### Logo
 - 主版本：`assets/<brand>-brand/logo.svg`
 - 浅底反色版：`assets/<brand>-brand/logo-white.svg`
-- 使用场景：&lt;片头/片尾/角落水印/全局&gt;
-- 禁用变形：&lt;不能拉伸/改色/加描边&gt;
+- 使用场景：<片头/片尾/角落水印/全局>
+- 禁用变形：<不能拉伸/改色/加描边>
 
 ### 产品图（实体产品必填）
 - 主视角：`assets/<brand>-brand/product-hero.png`（2000×1500）
 - 细节图：`assets/<brand>-brand/product-detail-1.png` / `product-detail-2.png`
 - 场景图：`assets/<brand>-brand/product-scene.png`
-- 使用场景：&lt;特写/旋转/对比&gt;
+- 使用场景：<特写/旋转/对比>
 
 ### UI 截图（数字产品必填）
 - 主页：`assets/<brand>-brand/ui-home.png`
 - 核心功能：`assets/<brand>-brand/ui-feature-<name>.png`
-- 使用场景：&lt;产品展示/Dashboard 渐现/对比演示&gt;
+- 使用场景：<产品展示/Dashboard 渐现/对比演示>
 
 ## 🎨 辅助资产
 
 ### 色板
-- Primary: #XXXXXX  &lt;来源标注&gt;
+- Primary: #XXXXXX  <来源标注>
 - Background: #XXXXXX
 - Ink: #XXXXXX
 - Accent: #XXXXXX
-- 禁用色: &lt;品牌明确不用的色系&gt;
+- 禁用色: <品牌明确不用的色系>
 
 ### 字型
-- Display: &lt;font stack&gt;
-- Body: &lt;font stack&gt;
-- Mono（数据 HUD 用）: &lt;font stack&gt;
+- Display: <font stack>
+- Body: <font stack>
+- Mono（数据 HUD 用）: <font stack>
 
 ### 签名细节
-- &lt;哪些细节是「120% 做到」的&gt;
+- <哪些细节是「120% 做到」的>
 
 ### 禁区
-- &lt;明确不能做的：比如 Lovart 不用蓝色、Stripe 不用低饱和暖色&gt;
+- <明确不能做的：比如 Lovart 不用蓝色、Stripe 不用低饱和暖色>
 
 ### 气质关键词
-- &lt;3-5 个形容词&gt;
+- <3-5 个形容词>
 ```
 
 **写完 spec 后的执行纪律（硬要求）**：
@@ -1516,7 +1504,6 @@ npx playwright screenshot https://example.com screenshot.png --viewport-size=192
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[具体品牌或产品任务] --> B[事实验证]
@@ -1552,7 +1539,7 @@ Sources: [SKILL.md:75-78](../../../project-repos/huashu-design/SKILL.md#L75-L78)
 不要只问「有 brand guidelines 吗？」——太宽泛，用户不知道该给什么。按清单逐项问：
 
 ```
-关于 &lt;brand/product&gt;，你手上有以下哪些资料？我按优先级列：
+关于 <brand/product>，你手上有以下哪些资料？我按优先级列：
 1. Logo（SVG / 高清 PNG）—— 任何品牌必备
 2. 产品图 / 官方渲染图 —— 实体产品必备（如 DJI Pocket 4 的产品照）
 3. UI 截图 / 界面素材 —— 数字产品必备（如 App 主要页面截图）
@@ -1585,13 +1572,13 @@ Sources: [SKILL.md:75-78](../../../project-repos/huashu-design/SKILL.md#L75-L78)
 三条路径按成功率递减：
 1. 独立 SVG/PNG 文件（最理想）：
    ```bash
-   curl -o assets/&lt;brand&gt;-brand/logo.svg https://&lt;brand&gt;.com/logo.svg
-   curl -o assets/&lt;brand&gt;-brand/logo-white.svg https://&lt;brand&gt;.com/logo-white.svg
+   curl -o assets/<brand>-brand/logo.svg https://<brand>.com/logo.svg
+   curl -o assets/<brand>-brand/logo-white.svg https://<brand>.com/logo-white.svg
    ```
 2. 官网 HTML 全文提取 inline SVG（80% 场景必用）：
    ```bash
-   curl -A "Mozilla/5.0" -L https://&lt;brand&gt;.com -o assets/&lt;brand&gt;-brand/homepage.html
-   # 然后 grep &lt;svg&gt;...&lt;/svg&gt; 提取 logo 节点
+   curl -A "Mozilla/5.0" -L https://<brand>.com -o assets/<brand>-brand/homepage.html
+   # 然后 grep <svg>...</svg> 提取 logo 节点
    ```
 3. 官方社交媒体 avatar（最后手段）：GitHub/Twitter/LinkedIn 的公司头像通常是 400×400 或 800×800 透明底 PNG
 
@@ -1606,7 +1593,7 @@ Sources: [SKILL.md:75-78](../../../project-repos/huashu-design/SKILL.md#L75-L78)
 
 ```bash
 # 示例：下载 DJI 官网产品 hero image
-curl -A "Mozilla/5.0" -L "&lt;hero-image-url&gt;" -o assets/&lt;brand&gt;-brand/product-hero.png
+curl -A "Mozilla/5.0" -L "<hero-image-url>" -o assets/<brand>-brand/product-hero.png
 ```
 ````
 
@@ -1648,52 +1635,52 @@ curl -A "Mozilla/5.0" -L "&lt;hero-image-url&gt;" -o assets/&lt;brand&gt;-brand/
 ##### Step 5 · 固化为 `brand-spec.md` 文件（模板必须覆盖所有资产）
 
 ```markdown
-# &lt;Brand&gt; · Brand Spec
+# <Brand> · Brand Spec
 > 采集日期：YYYY-MM-DD
-> 资产来源：&lt;列出下载来源&gt;
-> 资产完整度：&lt;完整 / 部分 / 推断&gt;
+> 资产来源：<列出下载来源>
+> 资产完整度：<完整 / 部分 / 推断>
 
 ## 🎯 核心资产（一等公民）
 
 ### Logo
 - 主版本：`assets/<brand>-brand/logo.svg`
 - 浅底反色版：`assets/<brand>-brand/logo-white.svg`
-- 使用场景：&lt;片头/片尾/角落水印/全局&gt;
-- 禁用变形：&lt;不能拉伸/改色/加描边&gt;
+- 使用场景：<片头/片尾/角落水印/全局>
+- 禁用变形：<不能拉伸/改色/加描边>
 
 ### 产品图（实体产品必填）
 - 主视角：`assets/<brand>-brand/product-hero.png`（2000×1500）
 - 细节图：`assets/<brand>-brand/product-detail-1.png` / `product-detail-2.png`
 - 场景图：`assets/<brand>-brand/product-scene.png`
-- 使用场景：&lt;特写/旋转/对比&gt;
+- 使用场景：<特写/旋转/对比>
 
 ### UI 截图（数字产品必填）
 - 主页：`assets/<brand>-brand/ui-home.png`
 - 核心功能：`assets/<brand>-brand/ui-feature-<name>.png`
-- 使用场景：&lt;产品展示/Dashboard 渐现/对比演示&gt;
+- 使用场景：<产品展示/Dashboard 渐现/对比演示>
 
 ## 🎨 辅助资产
 
 ### 色板
-- Primary: #XXXXXX  &lt;来源标注&gt;
+- Primary: #XXXXXX  <来源标注>
 - Background: #XXXXXX
 - Ink: #XXXXXX
 - Accent: #XXXXXX
-- 禁用色: &lt;品牌明确不用的色系&gt;
+- 禁用色: <品牌明确不用的色系>
 
 ### 字型
-- Display: &lt;font stack&gt;
-- Body: &lt;font stack&gt;
-- Mono（数据 HUD 用）: &lt;font stack&gt;
+- Display: <font stack>
+- Body: <font stack>
+- Mono（数据 HUD 用）: <font stack>
 
 ### 签名细节
-- &lt;哪些细节是「120% 做到」的&gt;
+- <哪些细节是「120% 做到」的>
 
 ### 禁区
-- &lt;明确不能做的：比如 Lovart 不用蓝色、Stripe 不用低饱和暖色&gt;
+- <明确不能做的：比如 Lovart 不用蓝色、Stripe 不用低饱和暖色>
 
 ### 气质关键词
-- &lt;3-5 个形容词&gt;
+- <3-5 个形容词>
 ```
 
 **写完 spec 后的执行纪律（硬要求）**：
@@ -1706,7 +1693,6 @@ curl -A "Mozilla/5.0" -L "&lt;hero-image-url&gt;" -o assets/&lt;brand&gt;-brand/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 失败兜底
 
 协议不鼓励静默编造：Logo 找不到要停下问用户，产品图缺失时优先基于官方参考走 AI 生成或向用户索取，UI 截图缺失则找官方演示或用户账号截图。用 CSS 剪影或通用渐变硬做被标为核心反模式。Sources: [SKILL.md:269-287](../../../project-repos/huashu-design/SKILL.md#L269-L287)
@@ -1742,7 +1728,6 @@ curl -A "Mozilla/5.0" -L "&lt;hero-image-url&gt;" -o assets/&lt;brand&gt;-brand/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 私有素材索引
 
 仓库提供 `assets/personal-asset-index.example.json` 作为用户私有素材索引模板，说明真实数据应复制到私有 memory 路径，而不是放进 skill 目录分发。`.gitignore` 也忽略了 `assets/personal-asset-index.json`，避免用户真实身份、产品和素材路径泄露。Sources: [assets/personal-asset-index.example.json:1-71](../../../project-repos/huashu-design/assets/personal-asset-index.example.json#L1-L71), [gitignore:9-10](../../../project-repos/huashu-design/gitignore#L9-L10)
@@ -1834,7 +1819,6 @@ curl -A "Mozilla/5.0" -L "&lt;hero-image-url&gt;" -o assets/&lt;brand&gt;-brand/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Skill 编排与主提示词](skill-orchestration.md)
@@ -1956,7 +1940,6 @@ curl -A "Mozilla/5.0" -L "&lt;hero-image-url&gt;" -o assets/&lt;brand&gt;-brand/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 风格库模型
 
 `references/design-styles.md` 将风格分为信息建筑派、运动诗学派、极简主义派、实验先锋派、东方哲学派等体系，并为每种风格提供适配场景、最佳执行路径和 prompt DNA。例如 Pentagram 偏 HTML 与信息建筑，Field.io 和 Active Theory 更偏 AI 生成或混合路径。Sources: [references/design-styles.md:6-35](../../../project-repos/huashu-design/references/design-styles.md#L6-L35), [references/design-styles.md:39-63](../../../project-repos/huashu-design/references/design-styles.md#L39-L63), [references/design-styles.md:138-210](../../../project-repos/huashu-design/references/design-styles.md#L138-L210)
@@ -2111,7 +2094,6 @@ Field.io generative design style:
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[模糊需求] --> B[理解目标受众与情绪]
@@ -2249,7 +2231,6 @@ Sources: [SKILL.md:386-456](../../../project-repos/huashu-design/SKILL.md#L386-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## Showcase 索引
 
 `assets/showcases/INDEX.md` 提供 8 个场景乘以 3 种风格的预制样例，场景覆盖公众号封面、PPT 数据页、竖版信息图、个人主页、AI 导航站、AI 写作工具、SaaS 落地页和开发者文档；三种风格是 Pentagram、Build、Takram。Sources: [assets/showcases/INDEX.md:1-34](../../../project-repos/huashu-design/assets/showcases/INDEX.md#L1-L34), [assets/showcases/INDEX.md:55-103](../../../project-repos/huashu-design/assets/showcases/INDEX.md#L55-L103)
@@ -2354,7 +2335,6 @@ Sources: [SKILL.md:386-456](../../../project-repos/huashu-design/SKILL.md#L386-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计顾问的约束
 
 三套方向必须显著差异化，不能从同一流派推荐两个以上；推荐后要展示可视样例或 Demo，让用户「看到」而非只读风格名。Sources: [SKILL.md:394-413](../../../project-repos/huashu-design/SKILL.md#L394-L413), [SKILL.md:430-456](../../../project-repos/huashu-design/SKILL.md#L430-L456)
@@ -2423,7 +2403,6 @@ Sources: [SKILL.md:386-456](../../../project-repos/huashu-design/SKILL.md#L386-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Design Context 与核心资产协议](design-context-assets.md)
@@ -2503,7 +2482,6 @@ Sources: [SKILL.md:386-456](../../../project-repos/huashu-design/SKILL.md#L386-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 组件边界
 
 | 文件 | 角色 | 关键能力 |
@@ -2710,7 +2688,6 @@ Sources: [assets/animations.jsx:1-25](../../../project-repos/huashu-design/asset
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[设计任务] --> B{产物类型}
@@ -2784,7 +2761,6 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 动画运行时
 
 `animations.jsx` 采用轻量 Remotion-like 模型：`Stage` 提供全局时间、播放控制和 canvas 缩放；`Sprite` 在 `start/end` 时间片段内显示并提供本地进度；`Easing` 内置 `expoOut`、`overshoot`、`spring` 等曲线。它还在录制模式检测 `window.__recording` 并强制不 loop，同时在首个 tick 设置 `window.__ready`。Sources: [assets/animations.jsx:33-83](../../../project-repos/huashu-design/assets/animations.jsx#L33-L83), [assets/animations.jsx:165-238](../../../project-repos/huashu-design/assets/animations.jsx#L165-L238), [assets/animations.jsx:307-340](../../../project-repos/huashu-design/assets/animations.jsx#L307-L340)
@@ -2948,7 +2924,7 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
     return (
       <SpriteContext.Provider value={spriteValue}>
-        <div style=&#123;&#123; position: 'absolute', inset: 0, ...style &#125;&#125;>
+        <div style={{ position: 'absolute', inset: 0, ...style }}>
           {children}
         </div>
       </SpriteContext.Provider>
@@ -2970,7 +2946,6 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## Deck 外壳分工
 
 `deck_stage.js` 是 web component，适合单文件短 deck；`deck_index.html` 是多文件 iframe 聚合器，适合长 deck、多 agent 并行和逐页调试。两者都处理固定画布、缩放和键盘导航，但多文件方案天然隔离每页 CSS/JS。Sources: [assets/deck_stage.js:1-28](../../../project-repos/huashu-design/assets/deck_stage.js#L1-L28), [assets/deck_stage.js:226-420](../../../project-repos/huashu-design/assets/deck_stage.js#L226-L420), [assets/deck_index.html:6-27](../../../project-repos/huashu-design/assets/deck_index.html#L6-L27), [assets/deck_index.html:144-234](../../../project-repos/huashu-design/assets/deck_index.html#L144-L234), [references/slide-decks.md:191-216](../../../project-repos/huashu-design/references/slide-decks.md#L191-L216)
@@ -3295,7 +3270,6 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [幻灯片、PDF 与可编辑 PPTX 管线](slide-deck-pptx.md)
@@ -3360,7 +3334,6 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 交付格式决策树
 
 `references/slide-decks.md` 要求开工前确认是否需要 PDF 或可编辑 PPTX，因为 PPTX 路径会反过来约束 HTML 写法：可编辑 PPTX 必须从第一行开始遵守 html2pptx 的 4 条约束，否则事后补救会返工。Sources: [references/slide-decks.md:22-85](../../../project-repos/huashu-design/references/slide-decks.md#L22-L85), [references/editable-pptx.md:1-8](../../../project-repos/huashu-design/references/editable-pptx.md#L1-L8)
@@ -3454,7 +3427,6 @@ PPTX 可编辑的前提是 `html2pptx.js` 能把 DOM 逐元素翻译为 PowerPoi
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[Deck 任务] --> B[HTML 聚合演示版]
@@ -3558,7 +3530,6 @@ pptx.layout = 'LAYOUT_WIDE';  // 13.333 × 7.5 inch, 无需自定义
 
 <!-- source-snippets:end -->
 </details>
-
 ## html2pptx 的物理约束
 
 可编辑 PPTX 需要 `html2pptx.js` 把 DOM 元素翻译成 PowerPoint 原生对象。约束包括：body 尺寸匹配 `LAYOUT_WIDE`，文字必须在 `<p>` 或 heading 标签里，不支持 CSS 渐变，文字标签不能承载背景/边框/阴影，`div` 不能用 `background-image`。Sources: [references/editable-pptx.md:42-104](../../../project-repos/huashu-design/references/editable-pptx.md#L42-L104), [scripts/html2pptx.js:36-86](../../../project-repos/huashu-design/scripts/html2pptx.js#L36-L86), [scripts/html2pptx.js:88-118](../../../project-repos/huashu-design/scripts/html2pptx.js#L88-L118)
@@ -3579,11 +3550,11 @@ pptx.layout = 'LAYOUT_WIDE';  // 13.333 × 7.5 inch, 无需自定义
 
 ```html
 <!-- ❌ 错误：文字直接在 div 里 -->
-&lt;div class="title">Q3营收增长23%&lt;/div>
+<div class="title">Q3营收增长23%</div>
 
-<!-- ✅ 正确：文字在 &lt;p> 或 &lt;h1>-&lt;h6> 里 -->
-&lt;div class="title">&lt;h1>Q3营收增长23%&lt;/h1>&lt;/div>
-&lt;div class="body">&lt;p>新用户是主要驱动力&lt;/p>&lt;/div>
+<!-- ✅ 正确：文字在 <p> 或 <h1>-<h6> 里 -->
+<div class="title"><h1>Q3营收增长23%</h1></div>
+<div class="body"><p>新用户是主要驱动力</p></div>
 ```
 
 **为什么**：PowerPoint 文本必须存在 text frame 里，text frame 对应 HTML 的段落级元素（p/h*/li）。裸 `<div>` 在 PPTX 里没有对应的文本容器。
@@ -3611,13 +3582,13 @@ background: #FF6B6B;
 ### 规则 3：背景/边框/阴影只能在 DIV 上，不能在文字标签上
 
 ```html
-<!-- ❌ 错误：&lt;p> 有背景色 -->
-&lt;p style="background: #FFD700; border-radius: 4px;">重点内容&lt;/p>
+<!-- ❌ 错误：<p> 有背景色 -->
+<p style="background: #FFD700; border-radius: 4px;">重点内容</p>
 
-<!-- ✅ 正确：外层 div 承载背景/边框，&lt;p> 只负责文字 -->
-&lt;div style="background: #FFD700; border-radius: 4px; padding: 8pt 12pt;">
-  &lt;p>重点内容&lt;/p>
-&lt;/div>
+<!-- ✅ 正确：外层 div 承载背景/边框，<p> 只负责文字 -->
+<div style="background: #FFD700; border-radius: 4px; padding: 8pt 12pt;">
+  <p>重点内容</p>
+</div>
 ```
 
 **为什么**：PowerPoint 里 shape（方块/圆角矩形）和 text frame 是两个对象。HTML 的 `<p>` 只翻译成 text frame，背景/边框/阴影属于 shape——必须在**包裹 text 的 div** 上写。
@@ -3626,10 +3597,10 @@ background: #FF6B6B;
 
 ```html
 <!-- ❌ 错误 -->
-&lt;div style="background-image: url('chart.png')">&lt;/div>
+<div style="background-image: url('chart.png')"></div>
 
 <!-- ✅ 正确 -->
-&lt;img src="chart.png" style="position: absolute; left: 50%; top: 20%; width: 300pt; height: 200pt;" />
+<img src="chart.png" style="position: absolute; left: 50%; top: 20%; width: 300pt; height: 200pt;" />
 ```
 
 **为什么**：`html2pptx.js` 只从 `<img>` 元素提取图片路径，不解析 CSS 的 `background-image` URL。
@@ -3730,7 +3701,6 @@ function validateTextBoxPosition(slideData, bodyDimensions) {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 多文件优先
 
 对 ≥10 页、课件、长 deck 或多 agent 并行场景，多文件 + `deck_index.html` 是推荐主路径；它通过 iframe 隔离 CSS/JS，使每页可单独打开验证，也降低多人/多 agent 修改冲突。Sources: [references/slide-decks.md:191-216](../../../project-repos/huashu-design/references/slide-decks.md#L191-L216), [assets/deck_index.html:6-27](../../../project-repos/huashu-design/assets/deck_index.html#L6-L27)
@@ -3800,7 +3770,6 @@ function validateTextBoxPosition(slideData, bodyDimensions) {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 质量检查点
 
 Deck ≥5 页时，规范要求先做 2 页视觉差异最大的 showcase 定 grammar，再批量推进剩余页面。这是为了把方向错误的返工从 N 页降低到 2 页。Sources: [references/slide-decks.md:89-100](../../../project-repos/huashu-design/references/slide-decks.md#L89-L100)
@@ -3829,7 +3798,6 @@ Deck ≥5 页时，规范要求先做 2 页视觉差异最大的 showcase 定 gr
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Starter Components 架构](starter-components.md)
@@ -3907,7 +3875,7 @@ Deck ≥5 页时，规范要求先做 2 页视觉差异最大的 showcase 定 gr
 录一个 25fps 的 MP4 基础版本。依赖全局 playwright。
 
 ```bash
-NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js &lt;html文件&gt;
+NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js <html文件>
 ```
 
 可选参数：
@@ -4035,7 +4003,6 @@ NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js &lt
 
 <!-- source-snippets:end -->
 </details>
-
 ## Stage/Sprite 模型
 
 `Stage` 持有全局 time、duration、playing、canvas scale；`Sprite` 按 `start/end` 切片显示，向子组件提供局部进度 `t`。这让动画更接近纯函数时间轴，而不是一串不可 seek 的 timeout。Sources: [assets/animations.jsx:30-83](../../../project-repos/huashu-design/assets/animations.jsx#L30-L83), [assets/animations.jsx:165-305](../../../project-repos/huashu-design/assets/animations.jsx#L165-L305), [assets/animations.jsx:307-340](../../../project-repos/huashu-design/assets/animations.jsx#L307-L340), [references/animation-pitfalls.md:77-94](../../../project-repos/huashu-design/references/animation-pitfalls.md#L77-L94)
@@ -4249,7 +4216,7 @@ NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js &lt
 
     return (
       <SpriteContext.Provider value={spriteValue}>
-        <div style=&#123;&#123; position: 'absolute', inset: 0, ...style &#125;&#125;>
+        <div style={{ position: 'absolute', inset: 0, ...style }}>
           {children}
         </div>
       </SpriteContext.Provider>
@@ -4294,7 +4261,6 @@ NODE_PATH=$(npm root -g) node /path/to/claude-design/scripts/render-video.js &lt
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[HTML 动画] --> B[Stage 全局时间]
@@ -4413,7 +4379,6 @@ ffmpeg -y -i video.mp4 -i sfx-track.mp3 -i bgm.mp3 \
 
 <!-- source-snippets:end -->
 </details>
-
 ## 录制抓手
 
 `render-video.js` 用 warmup context 缓存字体/资源，再用 fresh recording context 录制，等待 `window.__ready` 定位动画起点，注入 `window.__recording = true` 让 Stage 停止 loop，并隐藏常见 chrome 元素。Sources: [scripts/render-video.js:13-37](../../../project-repos/huashu-design/scripts/render-video.js#L13-L37), [scripts/render-video.js:100-128](../../../project-repos/huashu-design/scripts/render-video.js#L100-L128), [scripts/render-video.js:130-188](../../../project-repos/huashu-design/scripts/render-video.js#L130-L188), [scripts/render-video.js:197-238](../../../project-repos/huashu-design/scripts/render-video.js#L197-L238)
@@ -4600,7 +4565,6 @@ ffmpeg -y -i video.mp4 -i sfx-track.mp3 -i bgm.mp3 \
 
 <!-- source-snippets:end -->
 </details>
-
 ## MP4/GIF 派生
 
 `convert-formats.sh` 从 MP4 派生 60fps MP4 与 palette 优化 GIF。默认 60fps 是帧复制以保证 QuickTime/Safari/Chrome 兼容，`--minterpolate` 只用于需要真插帧且目标播放器已验证的场景。Sources: [scripts/convert-formats.sh:1-29](../../../project-repos/huashu-design/scripts/convert-formats.sh#L1-L29), [scripts/convert-formats.sh:54-83](../../../project-repos/huashu-design/scripts/convert-formats.sh#L54-L83), [references/video-export.md:84-108](../../../project-repos/huashu-design/references/video-export.md#L84-L108)
@@ -4687,7 +4651,7 @@ echo "  ✓ $GIF_SIZE"
 从已有 MP4 生成 60fps 版本和 GIF。
 
 ```bash
-bash /path/to/claude-design/scripts/convert-formats.sh &lt;input.mp4&gt; [gif_width] [--minterpolate]
+bash /path/to/claude-design/scripts/convert-formats.sh <input.mp4> [gif_width] [--minterpolate]
 ```
 
 输出（与输入同目录）：
@@ -4711,7 +4675,6 @@ bash /path/to/claude-design/scripts/convert-formats.sh &lt;input.mp4&gt; [gif_wi
 
 <!-- source-snippets:end -->
 </details>
-
 ## 音频双轨制
 
 音频规则要求动画音频分为 SFX 节拍层和 BGM 氛围底层：SFX 强同步视觉 beat、占高频；BGM 连续铺底、占中低频。`sfx-library.md` 列出 37 个 SFX，`add-music.sh` 支持按 mood 选择内置 BGM 并加淡入淡出。Sources: [references/audio-design-rules.md:8-18](../../../project-repos/huashu-design/references/audio-design-rules.md#L8-L18), [references/audio-design-rules.md:21-40](../../../project-repos/huashu-design/references/audio-design-rules.md#L21-L40), [references/sfx-library.md:1-26](../../../project-repos/huashu-design/references/sfx-library.md#L1-L26), [scripts/add-music.sh:65-108](../../../project-repos/huashu-design/scripts/add-music.sh#L65-L108)
@@ -4844,7 +4807,6 @@ echo "✓ Done: $OUTPUT ($SIZE)"
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Starter Components 架构](starter-components.md)
@@ -4923,16 +4885,16 @@ App 和移动原型有独立规则：默认单文件 inline React，交付前先
 **Overview 平铺的骨架**（每屏独立一台 IosFrame 并排）：
 
 ```jsx
-&lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'&#125;&#125;>
+<div style={{display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'}}>
   {screens.map(s => (
-    &lt;div key={s.id}>
-      &lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'&#125;&#125;>{s.label}&lt;/div>
-      &lt;IosFrame&gt;
-        &lt;ScreenComponent data={s} /&gt;
-      &lt;/IosFrame&gt;
-    &lt;/div>
+    <div key={s.id}>
+      <div style={{fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'}}>{s.label}</div>
+      <IosFrame>
+        <ScreenComponent data={s} />
+      </IosFrame>
+    </div>
   ))}
-&lt;/div>
+</div>
 ```
 
 **Flow demo 的骨架**（单台 clickable 状态机）：
@@ -4968,11 +4930,11 @@ Screen 组件接 callback props（`onEnter`、`onClose`、`onTabChange`、`onOpe
 
 ```jsx
 // 步骤 1: Read 本 skill 的 assets/ios_frame.jsx（相对本 SKILL.md 的路径）
-// 步骤 2: 把整个 iosFrameStyles 常量 + IosFrame 组件贴进你的 &lt;script type="text/babel"&gt;
-// 步骤 3: 你自己的屏组件包在 &lt;IosFrame&gt;...&lt;/IosFrame&gt; 里，不碰 island/status bar/home indicator
-&lt;IosFrame time="9:41" battery={85}&gt;
-  &lt;YourScreen /&gt;  {/* 内容从 top 54 开始渲染，下边留给 home indicator，你不用管 */}
-&lt;/IosFrame&gt;
+// 步骤 2: 把整个 iosFrameStyles 常量 + IosFrame 组件贴进你的 <script type="text/babel">
+// 步骤 3: 你自己的屏组件包在 <IosFrame>...</IosFrame> 里，不碰 island/status bar/home indicator
+<IosFrame time="9:41" battery={85}>
+  <YourScreen />  {/* 内容从 top 54 开始渲染，下边留给 home indicator，你不用管 */}
+</IosFrame>
 ```
 
 **例外**：只有用户明确要求「假装是 iPhone 14 非 Pro 的刘海」「做 Android 不是 iOS」「自定义设备形态」时才绕过——此时读对应 `android_frame.jsx` 或修改 `ios_frame.jsx` 的常量，**不要**在项目 HTML 里另起一套 island/status bar。
@@ -5001,7 +4963,6 @@ Screen 组件接 callback props（`onEnter`、`onClose`、`onTabChange`、`onOpe
 
 <!-- source-snippets:end -->
 </details>
-
 ## Overview 与 Flow Demo
 
 Overview 平铺适合设计 review 和多屏一致性走查；Flow demo 单机适合演示特定用户路径，内部需要 `AppPhone` 状态管理器和 callback props。这个路由会影响成本、交互复杂度和验证重点。Sources: [SKILL.md:515-555](../../../project-repos/huashu-design/SKILL.md#L515-L555)
@@ -5031,16 +4992,16 @@ Overview 平铺适合设计 review 和多屏一致性走查；Flow demo 单机�
 **Overview 平铺的骨架**（每屏独立一台 IosFrame 并排）：
 
 ```jsx
-&lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'&#125;&#125;>
+<div style={{display: 'flex', gap: 32, flexWrap: 'wrap', padding: 48, alignItems: 'flex-start'}}>
   {screens.map(s => (
-    &lt;div key={s.id}>
-      &lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'&#125;&#125;>{s.label}&lt;/div>
-      &lt;IosFrame&gt;
-        &lt;ScreenComponent data={s} /&gt;
-      &lt;/IosFrame&gt;
-    &lt;/div>
+    <div key={s.id}>
+      <div style={{fontSize: 13, color: '#666', marginBottom: 8, fontStyle: 'italic'}}>{s.label}</div>
+      <IosFrame>
+        <ScreenComponent data={s} />
+      </IosFrame>
+    </div>
   ))}
-&lt;/div>
+</div>
 ```
 
 **Flow demo 的骨架**（单台 clickable 状态机）：
@@ -5059,7 +5020,6 @@ Screen 组件接 callback props（`onEnter`、`onClose`、`onTabChange`、`onOpe
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[App 原型任务] --> B{交付形态}
@@ -5137,7 +5097,6 @@ python verify.py deck.html --slides 10  # 截前10张
 
 <!-- source-snippets:end -->
 </details>
-
 ## Tweaks 的跨 agent 实现
 
 `references/tweaks-system.md` 将 Tweaks 设计成纯前端 `localStorage` 方案，而不是依赖某个 host 的 postMessage 回写源码。这让颜色、字号、密度、暗黑模式等参数可在任何 agent 环境中刷新保留。Sources: [references/tweaks-system.md:1-15](../../../project-repos/huashu-design/references/tweaks-system.md#L1-L15), [references/tweaks-system.md:17-54](../../../project-repos/huashu-design/references/tweaks-system.md#L17-L54), [references/tweaks-system.md:177-207](../../../project-repos/huashu-design/references/tweaks-system.md#L177-L207)
@@ -5222,15 +5181,15 @@ function App() {
   const { tweaks } = useTweaks();
 
   return (
-    &lt;div style=&lt;span v-pre>&#123;&#123;&lt;/span>
+    <div style={{
       '--primary': tweaks.primaryColor,
       '--font-size': `${tweaks.fontSize}px`,
       background: tweaks.dark ? '#0A0A0A' : '#FAFAFA',
       color: tweaks.dark ? '#FAFAFA' : '#1A1A1A',
-    &#125;&#125;>
+    }}>
       {/* 你的内容 */}
-      &lt;TweaksPanel /&gt;
-    &lt;/div>
+      <TweaksPanel />
+    </div>
   );
 }
 ```
@@ -5248,7 +5207,6 @@ button.cta {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 验证闭环
 
 `references/verification.md` 和 `scripts/verify.py` 提供 Playwright 验证路径：打开 HTML、截图、抓 console/page errors、多视口检查、deck 逐页截图。`verify.py` 对每个 viewport 建 context，记录 page errors 与 console warning/error，最后输出验证报告。Sources: [references/verification.md:5-33](../../../project-repos/huashu-design/references/verification.md#L5-L33), [references/verification.md:35-60](../../../project-repos/huashu-design/references/verification.md#L35-L60), [scripts/verify.py:29-119](../../../project-repos/huashu-design/scripts/verify.py#L29-L119)
@@ -5421,7 +5379,6 @@ def verify_html(html_path, viewports=None, slides=0, output_dir=None, show=False
 
 <!-- source-snippets:end -->
 </details>
-
 ## 行为样例
 
 `test-prompts.json` 规定 Habit Tracker、读书笔记、跑步记录等 App 原型要走 overview 或询问形态，使用 `ios_frame.jsx`，并根据产品类型决定信息密度。Sources: [test-prompts.json:21-37](../../../project-repos/huashu-design/test-prompts.json#L21-L37)
@@ -5455,7 +5412,6 @@ def verify_html(html_path, viewports=None, slides=0, output_dir=None, show=False
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Starter Components 架构](starter-components.md)
@@ -5534,11 +5490,11 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 -->
 
 <!-- 然后是带placeholder的结构 -->
-&lt;section class="hero"&gt;
-  &lt;h1>[主标题位 - 等用户提供]&lt;/h1>
-  &lt;p>[副标题位]&lt;/p>
-  &lt;div class="cta-placeholder">[CTA按钮]&lt;/div>
-&lt;/section&gt;
+<section class="hero">
+  <h1>[主标题位 - 等用户提供]</h1>
+  <p>[副标题位]</p>
+  <div class="cta-placeholder">[CTA按钮]</div>
+</section>
 ```
 
 **保存 → show用户 → 等反馈再走下一步**。
@@ -5622,7 +5578,6 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 <!-- source-snippets:end -->
 </details>
-
 ## Junior Designer 关系
 
 skill 将 agent 定义为用户的 junior designer，用户是 manager。它要求一次性列出问题让用户批量回答，不要一问一答；早期 HTML 要写 assumptions、reasoning 和 placeholders，并在成本最低时 show 给用户。Sources: [references/workflow.md:1-18](../../../project-repos/huashu-design/references/workflow.md#L1-L18), [references/workflow.md:70-130](../../../project-repos/huashu-design/references/workflow.md#L70-L130), [SKILL.md:298-305](../../../project-repos/huashu-design/SKILL.md#L298-L305)
@@ -5711,11 +5666,11 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 -->
 
 <!-- 然后是带placeholder的结构 -->
-&lt;section class="hero"&gt;
-  &lt;h1>[主标题位 - 等用户提供]&lt;/h1>
-  &lt;p>[副标题位]&lt;/p>
-  &lt;div class="cta-placeholder">[CTA按钮]&lt;/div>
-&lt;/section&gt;
+<section class="hero">
+  <h1>[主标题位 - 等用户提供]</h1>
+  <p>[副标题位]</p>
+  <div class="cta-placeholder">[CTA按钮]</div>
+</section>
 ```
 
 **保存 → show用户 → 等反馈再走下一步**。
@@ -5736,7 +5691,6 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A[问题清单] --> B[设计系统口头确认]
@@ -5835,7 +5789,6 @@ Caveats + next steps，结束。
 
 <!-- source-snippets:end -->
 </details>
-
 ## 反 AI slop
 
 `content-guidelines.md` 列出视觉、字体、色彩、layout 和内容层面的黑名单：激进紫色渐变、emoji 装饰、圆角卡片加左 border、SVG 手画 imagery、编造 stats/quote、过度 bento 和模板化 landing page。正向策略是使用真实素材、品牌色或已知配色系统、明确字体配对、CSS Grid 和可解释的系统。Sources: [references/content-guidelines.md:5-111](../../../project-repos/huashu-design/references/content-guidelines.md#L5-L111), [references/content-guidelines.md:112-149](../../../project-repos/huashu-design/references/content-guidelines.md#L112-L149), [SKILL.md:326-369](../../../project-repos/huashu-design/SKILL.md#L326-L369)
@@ -6051,7 +6004,6 @@ Asymmetric、不同大小的cards、有的带image有的只有文字、有的跨
 
 <!-- source-snippets:end -->
 </details>
-
 ## 异常处理
 
 `SKILL.md` 为常见异常提供 fallback：用户拒绝回答就用 best judgment 做主方案加差异变体并标注 assumption；context 矛盾时停下让用户选择；Starter component 失败时查 `react-setup.md` 或降级纯 HTML/CSS；时间紧迫时跳过 Junior pass 但标注未经 early validation。Sources: [SKILL.md:658-672](../../../project-repos/huashu-design/SKILL.md#L658-L672)
@@ -6083,7 +6035,6 @@ Asymmetric、不同大小的cards、有的带image有的只有文字、有的跨
 
 <!-- source-snippets:end -->
 </details>
-
 ## 清洁边界
 
 `.gitignore` 忽略 `.video-tmp-*`、个人素材索引、验证截图和临时脚本，说明仓库预期生成中间产物，但不应把录制临时文件、个人隐私数据和验证残留纳入分发。Sources: [gitignore:1-23](../../../project-repos/huashu-design/gitignore#L1-L23)
@@ -6099,7 +6050,6 @@ Asymmetric、不同大小的cards、有的带image有的只有文字、有的跨
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Skill 编排与主提示词](skill-orchestration.md)
@@ -6198,7 +6148,6 @@ huashu-design/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 资产分类
 
 ```mermaid
@@ -6363,7 +6312,6 @@ assets/sfx/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 授权模型
 
 `LICENSE` 是 Personal Use License：个人学习研究、个人创作、非营利分享和个人派生可以免费使用；公司、团队、工作室、机构集成到内部工具链或对外产品，将产物作为付费客户交付手段，或做商业软件/付费培训，都必须事先获得书面授权。Sources: [LICENSE:1-25](../../../project-repos/huashu-design/LICENSE#L1-L25), [README.md:296-306](../../../project-repos/huashu-design/README.md#L296-L306)
@@ -6421,7 +6369,6 @@ Copyright (c) 2026 alchaincyf (花叔 · 花生)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 隐私与分发边界
 
 仓库提供个人素材索引模板，但真实个人数据必须放在私有路径；`.gitignore` 明确忽略真实 `assets/personal-asset-index.json`。这与 skill 的真实素材优先原则并不冲突：模板分发，真实数据由用户本地维护。Sources: [assets/personal-asset-index.example.json:1-71](../../../project-repos/huashu-design/assets/personal-asset-index.example.json#L1-L71), [gitignore:9-10](../../../project-repos/huashu-design/gitignore#L9-L10), [SKILL.md:458-462](../../../project-repos/huashu-design/SKILL.md#L458-L462)
@@ -6523,7 +6470,6 @@ Copyright (c) 2026 alchaincyf (花叔 · 花生)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 运维和安全观察
 
 仓库没有 CI、manifest 或自动测试目录，验证主要由 `scripts/verify.py`、`test-prompts.json` 和人工 Playwright 流程承担。对于维护者，新增脚本或资产时应注意不要把临时录制目录、验证截图、私有素材或商业授权外的第三方资产误提交。Sources: [00-repo-inventory.md:30-49](../00-repo-inventory.md#L30-L49), [gitignore:5-23](../../../project-repos/huashu-design/gitignore#L5-L23), [scripts/verify.py:1-15](../../../project-repos/huashu-design/scripts/verify.py#L1-L15), [test-prompts.json:1-38](../../../project-repos/huashu-design/test-prompts.json#L1-L38)
@@ -6627,7 +6573,6 @@ Usage:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

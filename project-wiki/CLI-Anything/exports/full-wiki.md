@@ -80,7 +80,6 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 1. 项目定位与愿景
@@ -188,7 +187,6 @@ Sources: [README.md:30-80](../../../project-repos/CLI-Anything/README.md#L30-L80
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 2. 核心理念：为什么选择 CLI？
@@ -330,7 +328,6 @@ CLI-Anything 以 Claude Code 插件市场的形式托管在 GitHub 上。
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 3. 支持的软件目录
@@ -471,7 +468,6 @@ Sources: [registry.json](../../../project-repos/CLI-Anything/registry.json)
 
 <!-- source-snippets:end -->
 </details>
-
 ### 创意工具
 
 | 软件 | 类别 | 典型能力 |
@@ -645,7 +641,6 @@ Requirements for standalone CLIs:
 
 <!-- source-snippets:end -->
 </details>
-
 ### CLI-Hub 包管理器
 
 CLI-Anything 提供配套的包管理工具，一行命令安装任意软件的 CLI 封装：
@@ -799,7 +794,6 @@ cp -r CLI-Anything/cli-anything-plugin ~/.claude/plugins/cli-anything
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 5. 阅读路线
@@ -1006,7 +1000,6 @@ Once the extension is loaded, the following commands are available:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 相关页面
@@ -1188,9 +1181,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
+     from cli_anything.<software>.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
+     skin = ReplSkin("<software>", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -1484,7 +1477,6 @@ def update(name):
 
 <!-- source-snippets:end -->
 </details>
-
 ## Agent 平台层
 
 Agent 平台层是所有 AI Agent 触达 CLI-Anything 方法论的入口。五个平台适配器都读取同一份 `HARNESS.md`，确保行为一致。
@@ -1586,9 +1578,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
+     from cli_anything.<software>.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
+     skin = ReplSkin("<software>", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -1632,7 +1624,6 @@ MUST contain:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 方法论层
 
 `HARNESS.md` 是整个项目的单一权威来源（Single Source of Truth），定义了七个串行阶段的 CLI 生成方法论。四条命令从不同角度触发这个方法论：
@@ -1733,9 +1724,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
+     from cli_anything.<software>.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
+     skin = ReplSkin("<software>", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -1779,7 +1770,6 @@ MUST contain:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 生成的 Harness 层
 
 每次成功运行 `/cli-anything <path>` 都会在对应软件目录下生成一个 `agent-harness/` 子目录，形成标准化的 Python 包结构：
@@ -1887,9 +1877,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
+     from cli_anything.<software>.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
+     skin = ReplSkin("<software>", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -2058,7 +2048,6 @@ class ReplSkin:
 
 <!-- source-snippets:end -->
 </details>
-
 ## CLI-Hub 层
 
 CLI-Hub 是面向最终用户和 Agent 的包管理器，负责从注册表发现、安装和预览各种 CLI harness。
@@ -2457,7 +2446,6 @@ def update(name):
 
 <!-- source-snippets:end -->
 </details>
-
 ## 注册表层
 
 注册表层通过 GitHub Pages 以静态 JSON 文件对外服务，分两个文件管理不同来源的 CLI：
@@ -2602,7 +2590,6 @@ Sources: [registry.json](../../../project-repos/CLI-Anything/registry.json)
 
 <!-- source-snippets:end -->
 </details>
-
 ## 技能层
 
 技能层让 AI Agent 能自动发现并调用已安装的 CLI harness。每个 software 有对应的 `SKILL.md`，Agent 读取后知道该 CLI 的命令签名和 `--json` 输出格式：
@@ -2706,9 +2693,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
+     from cli_anything.<software>.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
+     skin = ReplSkin("<software>", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -2752,7 +2739,6 @@ MUST contain:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 核心数据流
 
 ### 数据流 1：生成新 harness
@@ -3173,7 +3159,6 @@ class ReplSkin:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 模块依赖关系
 
 ```mermaid
@@ -3279,9 +3264,9 @@ designed for humans, without needing a display or mouse.
      `utils/repl_skin.py` in your CLI package
    - Import and use `ReplSkin` for the REPL interface:
      ```python
-     from cli_anything.&lt;software&gt;.utils.repl_skin import ReplSkin
+     from cli_anything.<software>.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("&lt;software&gt;", version="1.0.0")
+     skin = ReplSkin("<software>", version="1.0.0")
      skin.print_banner()          # Branded startup box (prefers repo-root skills/, falls back to package)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
@@ -3820,7 +3805,6 @@ class ReplSkin:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计原则
 
 CLI-Anything 的架构体现了三个核心设计取舍：
@@ -3898,7 +3882,6 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)  [commands
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 触发方式
@@ -3957,7 +3940,7 @@ Refine an existing CLI harness to improve coverage of the software's functions a
 ## Usage
 
 ```bash
-/cli-anything:refine &lt;software-path&gt; [focus]
+/cli-anything:refine <software-path> [focus]
 ```
 
 ## Arguments
@@ -4054,7 +4037,6 @@ This command is used **after** a CLI harness has already been built with `/cli-a
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 1：代码分析（Codebase Analysis）
@@ -4084,7 +4066,6 @@ Sources: [HARNESS.md — Phase 1](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 2：CLI 架构设计（Architecture Design）
@@ -4152,7 +4133,6 @@ Sources: [HARNESS.md — Phase 2](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 3：实现（Implementation）
@@ -4232,7 +4212,6 @@ Sources: [HARNESS.md — Phase 3](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 4：测试规划（Test Planning）
@@ -4259,7 +4238,6 @@ Sources: [HARNESS.md — Phase 4](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 5：测试实现（Test Implementation）
@@ -4337,7 +4315,6 @@ Sources: [HARNESS.md — Phase 5](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 6：文档（Documentation）
@@ -4363,7 +4340,6 @@ Sources: [HARNESS.md — Phase 6](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 6.5：SKILL.md 生成
@@ -4454,7 +4430,6 @@ Sources: [HARNESS.md — Phase 6.5](../../../project-repos/CLI-Anything/HARNESS.
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## Phase 7：发布（Publish）
@@ -4523,7 +4498,6 @@ Sources: [HARNESS.md — Phase 7](../../../project-repos/CLI-Anything/HARNESS.md
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 架构陷阱与关键原则
@@ -4577,7 +4551,6 @@ Sources: [HARNESS.md — Architecture Patterns & Pitfalls](../../../project-repo
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 完整目录结构参考
@@ -4627,7 +4600,6 @@ Sources: [HARNESS.md — Directory Structure](../../../project-repos/CLI-Anythin
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 相关页面
@@ -4704,7 +4676,6 @@ Sources: [HARNESS.md:674-710](../../../project-repos/CLI-Anything/HARNESS.md#L67
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 2. 包结构与命名空间
@@ -4827,7 +4798,6 @@ setup(
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 3. 包组件关系图
@@ -4975,7 +4945,6 @@ Sources: [HARNESS.md:28-48, 99-109](../../../project-repos/CLI-Anything/HARNESS.
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 5. ReplSkin：统一 REPL 皮肤
@@ -5102,7 +5071,6 @@ Sources: [repl_skin.py:106-568](../../../project-repos/CLI-Anything/repl_skin.py
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 6. 后端集成模式
@@ -5168,7 +5136,6 @@ Sources: [HARNESS.md:308-347](../../../project-repos/CLI-Anything/HARNESS.md#L30
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 7. 状态模型与会话锁定
@@ -5222,7 +5189,6 @@ Sources: [HARNESS.md:69-73](../../../project-repos/CLI-Anything/HARNESS.md#L69-L
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 8. 已有 Harness 的统计概览
@@ -5274,7 +5240,6 @@ of C in GIMP's xcf-load.c). Instead:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 9. 文档必备文件
@@ -5318,7 +5283,6 @@ Sources: [HARNESS.md:111-231](../../../project-repos/CLI-Anything/HARNESS.md#L11
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 10. 包安装与命名空间共存
@@ -5355,7 +5319,6 @@ Sources: [HARNESS.md:296-305](../../../project-repos/CLI-Anything/HARNESS.md#L29
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [七阶段生成流水线](seven-phase-pipeline.md) — Harness 是如何通过流水线自动生成的
@@ -5933,7 +5896,6 @@ CI rule:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 1. 整体架构
@@ -6122,7 +6084,6 @@ def generate_skill_file(harness_path: str, output_path: Optional[str] = None,
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 2. 元数据提取：`extract_cli_metadata()`
@@ -6201,7 +6162,6 @@ class SkillMetadata:
 
 <!-- source-snippets:end -->
 </details>
-
 ### 2.2 扫描逻辑
 
 扫描流程按固定顺序从四个来源读取数据：
@@ -6365,7 +6325,6 @@ def extract_version_from_setup(setup_path: Path) -> str:
 
 <!-- source-snippets:end -->
 </details>
-
 ### 2.3 规范技能名：`_canonical_skill_name()`
 
 ```python
@@ -6399,7 +6358,6 @@ def _canonical_skill_name(harness_path: Path, software_name: str) -> str:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 3. 命令提取：`extract_commands_from_cli()`
@@ -6519,7 +6477,6 @@ def extract_commands_from_cli(cli_path: Path) -> list[CommandGroup]:
 
 <!-- source-snippets:end -->
 </details>
-
 ### 3.3 命令表示例（Blender）
 
 以 `cli-anything-blender` 为例，解析结果包含 9 个命令组，共 40+ 条命令：
@@ -6671,7 +6628,6 @@ Real preview bundle capture and live preview session commands.
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 4. SKILL.md 文件格式
@@ -6735,28 +6691,28 @@ Sources: [cli-anything-plugin/templates/SKILL.md.template:1-124](../../../projec
 ````
 ---
 name: >-
-  &#123;&#123; skill_name &#125;&#125;
+  {{ skill_name }}
 description: >-
-  &#123;&#123; skill_description &#125;&#125;
+  {{ skill_description }}
 ---
 
-# &#123;&#123; skill_name &#125;&#125;
+# {{ skill_name }}
 
-&#123;&#123; skill_intro &#125;&#125;
+{{ skill_intro }}
 
 ## Installation
 
-This CLI is installed as part of the cli-anything-&#123;&#123; software_name &#125;&#125; package:
+This CLI is installed as part of the cli-anything-{{ software_name }} package:
 
 ```bash
-pip install cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125;
+pip install cli-anything-{{ software_name }}
 ```
 
 **Prerequisites:**
 - Python 3.10+
-- &#123;&#123; software_name &#125;&#125; must be installed on your system
+- {{ software_name }} must be installed on your system
 {% if system_package %}
-- Install &#123;&#123; software_name &#125;&#125;: `&#123;&#123; system_package &#125;&#125;`
+- Install {{ software_name }}: `{{ system_package }}`
 {% endif %}
 
 ## Usage
@@ -6765,16 +6721,16 @@ pip install cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#1
 
 ```bash
 # Show help
-cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; --help
+cli-anything-{{ software_name }} --help
 
 # Start interactive REPL mode
-cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125;
+cli-anything-{{ software_name }}
 
 # Create a new project
-cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; project new -o project.json
+cli-anything-{{ software_name }} project new -o project.json
 
 # Run with JSON output (for agent consumption)
-cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; --json project info -p project.json
+cli-anything-{{ software_name }} --json project info -p project.json
 ```
 
 ### REPL Mode
@@ -6782,7 +6738,7 @@ cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; --
 When invoked without a subcommand, the CLI enters an interactive REPL session:
 
 ```bash
-cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125;
+cli-anything-{{ software_name }}
 # Enter commands interactively with tab-completion and history
 ```
 
@@ -6790,14 +6746,14 @@ cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125;
 ## Command Groups
 
 {% for group in command_groups %}
-### &#123;&#123; group.name &#125;&#125;
+### {{ group.name }}
 
-&#123;&#123; group.description &#125;&#125;
+{{ group.description }}
 
 | Command | Description |
 |---------|-------------|
 {% for cmd in group.commands %}
-| `&#123;&#123; cmd.name &#125;&#125;` | &#123;&#123; cmd.description &#125;&#125; |
+| `{{ cmd.name }}` | {{ cmd.description }} |
 {% endfor %}
 
 {% endfor %}
@@ -6805,12 +6761,12 @@ cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125;
 ## Examples
 
 {% for example in examples %}
-### &#123;&#123; example.title &#125;&#125;
+### {{ example.title }}
 
-&#123;&#123; example.description &#125;&#125;
+{{ example.description }}
 
 ```bash
-&lt;span v-pre>&#123;&#123;&lt;/span> example.code &#125;&#125;
+{{ example.code }}
 ```
 
 {% endfor %}
@@ -6831,10 +6787,10 @@ All commands support dual output modes:
 
 ```bash
 # Human output
-cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; project info -p project.json
+cli-anything-{{ software_name }} project info -p project.json
 
 # JSON output for agents
-cli-anything-&lt;span v-pre>&#123;&#123;&lt;/span> software_name &#125;&#125; --json project info -p project.json
+cli-anything-{{ software_name }} --json project info -p project.json
 ```
 
 ## For AI Agents
@@ -6858,7 +6814,6 @@ When using this CLI programmatically:
 
 <!-- source-snippets:end -->
 </details>
-
 ### 4.3 模板回退机制
 
 `generate_skill_md()` 优先使用 Jinja2；若环境中未安装 `jinja2` 包，或模板文件不存在，则自动回退到 `generate_skill_md_simple()`，用纯字符串拼接生成结构相同（略有精简）的内容。
@@ -7040,7 +6995,6 @@ def generate_skill_md_simple(metadata: SkillMetadata) -> str:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 5. 文件分发：双副本策略
@@ -7151,7 +7105,6 @@ CI rule:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 6. skills/ 目录结构
@@ -7223,7 +7176,6 @@ CI rule:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 7. Agent 使用规范（For AI Agents）
@@ -7301,7 +7253,6 @@ When using this CLI programmatically:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 8. Meta-Skill：跨 CLI 发现
@@ -7512,7 +7463,7 @@ def main():
         "cli-hub search ai",
         "",
         "# Launch an installed CLI",
-        "cli-hub launch &lt;name> [args...]",
+        "cli-hub launch <name> [args...]",
         "```",
         "",
         "## CLI-Anything Harness CLIs",
@@ -7573,7 +7524,6 @@ def main():
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 9. CI 验证：双副本一致性
@@ -7806,7 +7756,6 @@ if __name__ == "__main__":
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 10. 关键设计决策
@@ -7886,7 +7835,6 @@ def extract_commands_from_cli(cli_path: Path) -> list[CommandGroup]:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 相关页面
@@ -7969,25 +7917,24 @@ Sources: [`cli-anything-plugin/README.md`](../../../project-repos/CLI-Anything/%
 
 <!-- source-snippets:start -->
 
-#### `cli-anything-plugin/README.md`
+#### ``cli-anything-plugin/README.md``
 
-> 未找到引用文件：`cli-anything-plugin/README.md`
+> 未找到引用文件：``cli-anything-plugin/README.md``
 
-#### `opencode-commands/cli-anything.md`
+#### ``opencode-commands/cli-anything.md``
 
-> 未找到引用文件：`opencode-commands/cli-anything.md`
+> 未找到引用文件：``opencode-commands/cli-anything.md``
 
-#### `openclaw-skill/SKILL.md`
+#### ``openclaw-skill/SKILL.md``
 
-> 未找到引用文件：`openclaw-skill/SKILL.md`
+> 未找到引用文件：``openclaw-skill/SKILL.md``
 
-#### `codex-skill/SKILL.md`
+#### ``codex-skill/SKILL.md``
 
-> 未找到引用文件：`codex-skill/SKILL.md`
+> 未找到引用文件：``codex-skill/SKILL.md``
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 1. Claude Code（主要支持平台）
@@ -8075,21 +8022,20 @@ Sources: [`cli-anything-plugin/README.md`](../../../project-repos/CLI-Anything/%
 
 <!-- source-snippets:start -->
 
-#### `cli-anything-plugin/README.md`
+#### ``cli-anything-plugin/README.md``
 
-> 未找到引用文件：`cli-anything-plugin/README.md`
+> 未找到引用文件：``cli-anything-plugin/README.md``
 
-#### `cli-anything-plugin/commands/cli-anything.md`
+#### ``cli-anything-plugin/commands/cli-anything.md``
 
-> 未找到引用文件：`cli-anything-plugin/commands/cli-anything.md`
+> 未找到引用文件：``cli-anything-plugin/commands/cli-anything.md``
 
-#### `cli-anything-plugin/.claude-plugin/plugin.json`
+#### ``cli-anything-plugin/.claude-plugin/plugin.json``
 
-> 未找到引用文件：`cli-anything-plugin/.claude-plugin/plugin.json`
+> 未找到引用文件：``cli-anything-plugin/.claude-plugin/plugin.json``
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 2. Pi Coding Agent
@@ -8159,17 +8105,16 @@ Sources: [`.pi-extension/cli-anything/index.ts`](../../../project-repos/CLI-Anyt
 
 <!-- source-snippets:start -->
 
-#### `.pi-extension/cli-anything/index.ts`
+#### ``.pi-extension/cli-anything/index.ts``
 
-> 未找到引用文件：`.pi-extension/cli-anything/index.ts`
+> 未找到引用文件：``.pi-extension/cli-anything/index.ts``
 
-#### `.pi-extension/cli-anything/install.sh`
+#### ``.pi-extension/cli-anything/install.sh``
 
-> 未找到引用文件：`.pi-extension/cli-anything/install.sh`
+> 未找到引用文件：``.pi-extension/cli-anything/install.sh``
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 3. OpenCode
@@ -8224,13 +8169,12 @@ Sources: [`opencode-commands/cli-anything.md`](../../../project-repos/CLI-Anythi
 
 <!-- source-snippets:start -->
 
-#### `opencode-commands/cli-anything.md`
+#### ``opencode-commands/cli-anything.md``
 
-> 未找到引用文件：`opencode-commands/cli-anything.md`
+> 未找到引用文件：``opencode-commands/cli-anything.md``
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 4. OpenClaw（社区）
@@ -8270,13 +8214,12 @@ Sources: [`openclaw-skill/SKILL.md`](../../../project-repos/CLI-Anything/%60open
 
 <!-- source-snippets:start -->
 
-#### `openclaw-skill/SKILL.md`
+#### ``openclaw-skill/SKILL.md``
 
-> 未找到引用文件：`openclaw-skill/SKILL.md`
+> 未找到引用文件：``openclaw-skill/SKILL.md``
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 5. Codex（社区，实验性）
@@ -8336,21 +8279,20 @@ Sources: [`codex-skill/SKILL.md`](../../../project-repos/CLI-Anything/%60codex-s
 
 <!-- source-snippets:start -->
 
-#### `codex-skill/SKILL.md`
+#### ``codex-skill/SKILL.md``
 
-> 未找到引用文件：`codex-skill/SKILL.md`
+> 未找到引用文件：``codex-skill/SKILL.md``
 
-#### `codex-skill/scripts/install.sh`
+#### ``codex-skill/scripts/install.sh``
 
-> 未找到引用文件：`codex-skill/scripts/install.sh`
+> 未找到引用文件：``codex-skill/scripts/install.sh``
 
-#### `codex-skill/scripts/install.ps1`
+#### ``codex-skill/scripts/install.ps1``
 
-> 未找到引用文件：`codex-skill/scripts/install.ps1`
+> 未找到引用文件：``codex-skill/scripts/install.ps1``
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 6. Qodercli（社区）
@@ -8376,13 +8318,12 @@ Sources: [`qoder-plugin/setup-qodercli.sh`](../../../project-repos/CLI-Anything/
 
 <!-- source-snippets:start -->
 
-#### `qoder-plugin/setup-qodercli.sh`
+#### ``qoder-plugin/setup-qodercli.sh``
 
-> 未找到引用文件：`qoder-plugin/setup-qodercli.sh`
+> 未找到引用文件：``qoder-plugin/setup-qodercli.sh``
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 7. GitHub Copilot CLI（社区）
@@ -8478,13 +8419,12 @@ Sources: [`cli-anything-plugin/README.md`](../../../project-repos/CLI-Anything/%
 
 <!-- source-snippets:start -->
 
-#### `cli-anything-plugin/README.md`
+#### ``cli-anything-plugin/README.md``
 
-> 未找到引用文件：`cli-anything-plugin/README.md`
+> 未找到引用文件：``cli-anything-plugin/README.md``
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 快速开始：选择平台
@@ -8666,7 +8606,6 @@ def _normalize_index(value: Any, fallback: int) -> int:
 
 <!-- source-snippets:end -->
 </details>
-
 ### 引用解析函数
 
 在加载任何数据之前，系统需要将用户提供的字符串引用规范化为文件系统路径。
@@ -8841,7 +8780,6 @@ def update(name):
 
 <!-- source-snippets:end -->
 </details>
-
 所有预览相关命令均归属于 `cli-hub previews` 命令组。
 
 ### 命令列表
@@ -8913,7 +8851,6 @@ Sources: [agent-harness/freecad/](../../../project-repos/CLI-Anything/agent-harn
 
 <!-- source-snippets:end -->
 </details>
-
 - Agent 按装配步骤逐步构建漫游车模型
 - 每完成一个步骤后发布一个 preview bundle（含渲染图和 manifest）
 - Live session 持续追踪最新 head 步骤
@@ -8934,7 +8871,6 @@ Sources: [agent-harness/blender/](../../../project-repos/CLI-Anything/agent-harn
 
 <!-- source-snippets:end -->
 </details>
-
 - 每个渲染步骤生成带有 PNG 渲染结果的 bundle
 - Live session 允许在渲染过程中实时监控进度
 - Trajectory 文件记录材质、光照、相机调整的完整历史
@@ -8984,7 +8920,6 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)
 
 <!-- source-snippets:end -->
 </details>
-
 ### 第一层：单元测试（`test_core.py`）
 
 对每个核心函数进行隔离测试。使用合成数据，**不依赖任何外部程序**。这一层覆盖参数解析、路径构建、命令拼装逻辑，可在无软件安装的 CI 环境中快速运行。
@@ -9044,7 +8979,6 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)
 
 <!-- source-snippets:end -->
 </details>
-
 每个 harness 在**写代码之前**必须先创建 `TEST.md`，内容包括：
 
 1. **测试清单** — 列举所有待测函数与场景
@@ -9069,7 +9003,6 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)
 
 <!-- source-snippets:end -->
 </details>
-
 | Harness | 测试总数 | 备注 |
 |---------|---------|------|
 | blender | 208 | 渲染 PNG 验证 |
@@ -9102,7 +9035,6 @@ Sources: [HARNESS.md](../../../project-repos/CLI-Anything/HARNESS.md)
 
 <!-- source-snippets:end -->
 </details>
-
 退出码 0 不能作为测试通过的依据。每种输出类型都有对应的验证方法：
 
 | 输出类型 | 验证方法 |
@@ -9250,7 +9182,6 @@ def _make_preview_bundle(tmp_path: Path, *, with_trajectory: bool = False) -> Pa
 
 <!-- source-snippets:end -->
 </details>
-
 `cli-hub` 工具本身也有独立测试套件，覆盖：
 - bundle 发布与拉取流程
 - registry 查询与解析
@@ -9303,7 +9234,6 @@ Sources: [github/workflows/](../../../project-repos/CLI-Anything/.github/workflo
 
 <!-- source-snippets:end -->
 </details>
-
 ### 1. `deploy-pages.yml` — GitHub Pages 部署
 
 **触发条件**：push 到 `main` 分支，且变更路径包含以下任一项：
@@ -9363,7 +9293,6 @@ Sources: [github/scripts/](../../../project-repos/CLI-Anything/.github/scripts)
 
 <!-- source-snippets:end -->
 </details>
-
 | 脚本 | 功能 |
 |------|------|
 | `generate_meta_skill.py` | 读取 `registry.json`，生成供 Agent 使用的 CLI-Hub meta-skill（`SKILL.md`） |
@@ -9758,7 +9687,6 @@ Sources: [registry.json](../../../project-repos/CLI-Anything/registry.json), [pu
 
 <!-- source-snippets:end -->
 </details>
-
 ### 数据源
 
 - **`registry.json`**（仓库根目录）— 所有自有 harness CLI 的事实来源，包含名称、版本、描述、skill 路径等字段

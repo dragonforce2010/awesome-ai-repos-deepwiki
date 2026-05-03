@@ -53,7 +53,6 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 1. 项目定位与愿景
@@ -161,7 +160,6 @@ Sources: [README.md:30-80](../../../project-repos/CLI-Anything/README.md#L30-L80
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 2. 核心理念：为什么选择 CLI？
@@ -303,7 +301,6 @@ CLI-Anything 以 Claude Code 插件市场的形式托管在 GitHub 上。
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 3. 支持的软件目录
@@ -444,7 +441,6 @@ Sources: [registry.json](../../../project-repos/CLI-Anything/registry.json)
 
 <!-- source-snippets:end -->
 </details>
-
 ### 创意工具
 
 | 软件 | 类别 | 典型能力 |
@@ -618,7 +614,6 @@ Requirements for standalone CLIs:
 
 <!-- source-snippets:end -->
 </details>
-
 ### CLI-Hub 包管理器
 
 CLI-Anything 提供配套的包管理工具，一行命令安装任意软件的 CLI 封装：
@@ -772,7 +767,6 @@ cp -r CLI-Anything/cli-anything-plugin ~/.claude/plugins/cli-anything
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 5. 阅读路线
@@ -979,7 +973,6 @@ Once the extension is loaded, the following commands are available:
 
 <!-- source-snippets:end -->
 </details>
-
 ---
 
 ## 相关页面

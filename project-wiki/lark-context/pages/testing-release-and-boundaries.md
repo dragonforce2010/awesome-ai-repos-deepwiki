@@ -87,7 +87,6 @@ export default defineConfig({
 
 <!-- source-snippets:end -->
 </details>
-
 ## 构建与发布
 
 ```mermaid
@@ -179,7 +178,6 @@ export default defineConfig({
 
 <!-- source-snippets:end -->
 </details>
-
 `package.json` 只发布 `dist/*.js`，二进制入口是 `./dist/cli.js`。`better-sqlite3` 被列为 `onlyBuiltDependencies`，说明安装时需要允许该 native 依赖构建。Sources: [package.json:6-12](../../../project-repos/lark-context/package.json#L6-L12), [package.json:20-35](../../../project-repos/lark-context/package.json#L20-L35)
 
 <details class="source-snippets">
@@ -222,7 +220,6 @@ export default defineConfig({
 
 <!-- source-snippets:end -->
 </details>
-
 ## 测试布局
 
 Vitest 配置运行在 Node 环境，测试入口是 `test/**/*.test.ts`。测试覆盖了配置、DB、Lark CLI wrapper、初始化、群管理、拉取、文档入库、show 渲染和 CLI smoke。Sources: [vitest.config.ts:1-9](../../../project-repos/lark-context/vitest.config.ts#L1-L9), [00-repo-inventory.md:37-55](../00-repo-inventory.md#L37-L55)
@@ -272,7 +269,6 @@ export default defineConfig({
 
 <!-- source-snippets:end -->
 </details>
-
 | 测试文件 | 覆盖重点 |
 |---|---|
 | `test/config.test.ts` | 路径优先级、YAML 解析、保存回写、重复 alias |
@@ -867,7 +863,6 @@ describe("runShow", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 关键风险被哪些测试守住
 
 ```mermaid
@@ -1261,7 +1256,6 @@ describe("runPull — upsert thread_id on re-pull", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## V1 边界
 
 README 的 V1 边界包括不自动调度、首次 pull 上限 200 页、只读指定群聊、文档类型受官方 CLI 支持范围限制、工具不调 LLM API。源码中 200 页上限对应 `MAX_PAGES = 200`，命中后提示 re-run 继续。Sources: [README.md:177-185](../../../project-repos/lark-context/README.md#L177-L185), [src/commands/pull.ts:13-13](../../../project-repos/lark-context/src/commands/pull.ts#L13-L13), [src/commands/pull.ts:371-375](../../../project-repos/lark-context/src/commands/pull.ts#L371-L375)
@@ -1303,7 +1297,6 @@ export const MAX_PAGES = 200;
 
 <!-- source-snippets:end -->
 </details>
-
 需要注意：README 里仍写着“不拉回复线程”，但当前代码和测试已经支持 thread replies。维护文档时应以源码为准修正该条。Sources: [README.md:183-183](../../../project-repos/lark-context/README.md#L183-L183), [src/commands/pull.ts:171-290](../../../project-repos/lark-context/src/commands/pull.ts#L171-L290), [test/cmd-pull.test.ts:705-1129](../../../project-repos/lark-context/test/cmd-pull.test.ts#L705-L1129)
 
 <details class="source-snippets">
@@ -1570,7 +1563,6 @@ describe("runPull — phase 2 thread replies", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## legacy Python
 
 `legacy/python/` 是 V1 前实现，README 明确写着已冻结、不再演进、保留作对照。其 `pyproject.toml` 定义了 Python 包、依赖和 pytest/ruff/mypy 等 dev 依赖。Sources: [README.md:208-219](../../../project-repos/lark-context/README.md#L208-L219), [legacy/python/README.md:1-15](../../../project-repos/lark-context/legacy/python/README.md#L1-L15), [legacy/python/pyproject.toml:1-29](../../../project-repos/lark-context/legacy/python/pyproject.toml#L1-L29)
@@ -1653,7 +1645,6 @@ testpaths = ["tests"]
 
 <!-- source-snippets:end -->
 </details>
-
 ## V2 方向
 
 README 记录的 V2 规划包括 MCP server、自动调度、数据源扩展、TODO 持久化、语义检索、记忆整理/衰减。这些还没有在当前 TypeScript CLI 中形成对应实现，因此应视作路线图而不是现有能力。Sources: [README.md:221-228](../../../project-repos/lark-context/README.md#L221-L228), [src/cli.ts:41-49](../../../project-repos/lark-context/src/cli.ts#L41-L49)
@@ -1692,7 +1683,6 @@ program.parseAsync(process.argv);
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

@@ -132,7 +132,6 @@ lint_file() {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   PR["Pull Request"] --> Changed["changed agent files"]
@@ -191,7 +190,7 @@ jobs:
       - name: Get changed agent files
         id: changed
         run: |
-          FILES=$(git diff --name-only --diff-filter=ACMR origin/$&#123;&#123; github.base_ref &#125;&#125;...HEAD -- \
+          FILES=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- \
             'academic/**/*.md' 'design/**/*.md' 'engineering/**/*.md' 'finance/**/*.md' 'game-development/**/*.md' 'marketing/**/*.md' 'paid-media/**/*.md' 'sales/**/*.md' 'product/**/*.md' \
             'project-management/**/*.md' 'testing/**/*.md' 'support/**/*.md' \
             'spatial-computing/**/*.md' 'specialized/**/*.md')
@@ -210,7 +209,7 @@ jobs:
       - name: Run agent linter
         if: steps.changed.outputs.files != ''
         env:
-          CHANGED_FILES: $&#123;&#123; steps.changed.outputs.files &#125;&#125;
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
           chmod +x scripts/lint-agents.sh
           ./scripts/lint-agents.sh $CHANGED_FILES
@@ -233,7 +232,6 @@ fi
 
 <!-- source-snippets:end -->
 </details>
-
 ## CI 工作流
 
 `.github/workflows/lint-agents.yml` 仅在 PR 修改 agent category 目录时触发，先通过 `git diff` 找出变更的 Markdown agent 文件，再对这些文件运行 `scripts/lint-agents.sh`。Sources: [github/workflows/lint-agents.yml:1-20](../../../project-repos/agency-agents/.github/workflows/lint-agents.yml#L1-L20), [github/workflows/lint-agents.yml:30-55](../../../project-repos/agency-agents/.github/workflows/lint-agents.yml#L30-L55)
@@ -274,7 +272,7 @@ on:
       - name: Get changed agent files
         id: changed
         run: |
-          FILES=$(git diff --name-only --diff-filter=ACMR origin/$&#123;&#123; github.base_ref &#125;&#125;...HEAD -- \
+          FILES=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- \
             'academic/**/*.md' 'design/**/*.md' 'engineering/**/*.md' 'finance/**/*.md' 'game-development/**/*.md' 'marketing/**/*.md' 'paid-media/**/*.md' 'sales/**/*.md' 'product/**/*.md' \
             'project-management/**/*.md' 'testing/**/*.md' 'support/**/*.md' \
             'spatial-computing/**/*.md' 'specialized/**/*.md')
@@ -293,7 +291,7 @@ on:
       - name: Run agent linter
         if: steps.changed.outputs.files != ''
         env:
-          CHANGED_FILES: $&#123;&#123; steps.changed.outputs.files &#125;&#125;
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
           chmod +x scripts/lint-agents.sh
           ./scripts/lint-agents.sh $CHANGED_FILES
@@ -301,7 +299,6 @@ on:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 贡献质量要求
 
 贡献指南要求新增 agent 在提交前真实测试、匹配模板、包含 2-3 个代码或模板示例、定义可衡量 success criteria、完成校对；同时建议大范围工具和架构变化先开 Discussion。Sources: [CONTRIBUTING.md:243-275](../../../project-repos/agency-agents/CONTRIBUTING.md#L243-L275), [CONTRIBUTING.md:276-318](../../../project-repos/agency-agents/CONTRIBUTING.md#L276-L318)
@@ -399,7 +396,6 @@ We love ambitious ideas — a [Discussion](https://github.com/msitarzewski/agenc
 
 <!-- source-snippets:end -->
 </details>
-
 ## 安全边界
 
 安全政策把 agent files 视为非执行 prompt definitions，并明确禁止存储 API keys、tokens、credentials；shell scripts 是可执行入口，需要合并前审查，且应报告 suspicious prompt injection。Sources: [SECURITY.md:13-24](../../../project-repos/agency-agents/SECURITY.md#L13-L24), [SECURITY.md:25-30](../../../project-repos/agency-agents/SECURITY.md#L25-L30)
@@ -439,7 +435,6 @@ This repository contains Markdown-based agent definitions and shell scripts for 
 
 <!-- source-snippets:end -->
 </details>
-
 ## 质量文化
 
 Testing division 中的 Reality Checker 代表仓库质量哲学：默认 `NEEDS WORK`，拒绝没有证据的 production ready 声明，要求截图、测试结果、用户旅程和性能数据支撑。Sources: [testing/testing-reality-checker.md:19-39](../../../project-repos/agency-agents/testing/testing-reality-checker.md#L19-L39), [testing/testing-reality-checker.md:122-141](../../../project-repos/agency-agents/testing/testing-reality-checker.md#L122-L141)
@@ -502,7 +497,6 @@ Testing division 中的 Reality Checker 代表仓库质量哲学：默认 `NEEDS
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Agent 编写模型](agent-authoring-model.md)

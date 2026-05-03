@@ -217,7 +217,6 @@ Follow the existing commit style: `feat(cli): ...`, `fix(cli): ...`, `refactor(t
 
 <!-- source-snippets:end -->
 </details>
-
 ## SKILL.md 结构
 
 `SKILL.md` 是 Agent Skill 的核心定义文件，包含 YAML 前置元数据和完整的技能描述：
@@ -382,7 +381,6 @@ Before starting workflows, verify the CLI is ready:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 自主性规则
 
 Skill 定义了明确的自主性边界：
@@ -536,7 +534,6 @@ Before starting workflows, verify the CLI is ready:
 
 <!-- source-snippets:end -->
 </details>
-
 ## Agent 工作流模式
 
 ### 研究到播客（交互式）
@@ -710,7 +707,6 @@ Before starting workflows, verify the CLI is ready:
 
 <!-- source-snippets:end -->
 </details>
-
 ## CLI Agent 命令
 
 | 命令 | 说明 |
@@ -883,7 +879,6 @@ def skill():
 
 <!-- source-snippets:end -->
 </details>
-
 ## AGENTS.md（Codex 指南）
 
 `AGENTS.md` 为 Codex 和其他并行 Agent 提供仓库级指导：
@@ -944,7 +939,6 @@ Follow the existing commit style: `feat(cli): ...`, `fix(cli): ...`, `refactor(t
 
 <!-- source-snippets:end -->
 </details>
-
 ## Skill 打包
 
 `SKILL.md` 和 `AGENTS.md` 被打包进 wheel：
@@ -1093,7 +1087,6 @@ check_untyped_defs = true
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [CLI 界面](cli-interface.md)

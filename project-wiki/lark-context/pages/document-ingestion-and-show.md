@@ -209,7 +209,6 @@ export async function runShowDoc(opts: ShowDocOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 文档 token 解析
 
 `extractToken` 支持 bare token，也支持 host 包含 `feishu`、`larkoffice`、`larksuite`、`lark.com` 的 URL；路径必须是 `/docx/`、`/docs/`、`/wiki/`、`/file/`、`/base/` 加 token。非飞书 host、坏 URL 或带 slash 的非 URL 字符串会报错。Sources: [src/commands/ingestDoc.ts:10-39](../../../project-repos/lark-context/src/commands/ingestDoc.ts#L10-L39)
@@ -256,7 +255,6 @@ export function extractToken(ref: string): string {
 
 <!-- source-snippets:end -->
 </details>
-
 测试覆盖了 `/docx/`、`/docs/`、`/wiki/`、不同 larkoffice/larksuite host、bare token，以及非 Lark URL 和 `foo/bar` 拒绝。Sources: [test/cmd-ingest-doc.test.ts:65-97](../../../project-repos/lark-context/test/cmd-ingest-doc.test.ts#L65-L97)
 
 <details class="source-snippets">
@@ -304,7 +302,6 @@ describe("extractToken", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 入库流程
 
 ```mermaid
@@ -377,7 +374,6 @@ export async function runIngestDoc(opts: IngestDocOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 如果 `data` 没有 `content`、`markdown`、`text`、`body` 任一字符串字段，代码会把整个 data 作为 JSON code block 保存，确保仍有可展示内容。Sources: [src/commands/ingestDoc.ts:41-51](../../../project-repos/lark-context/src/commands/ingestDoc.ts#L41-L51)
 
 <details class="source-snippets">
@@ -403,7 +399,6 @@ function extractContent(data: Record<string, unknown>): { title: string; body: s
 
 <!-- source-snippets:end -->
 </details>
-
 `docs` 表用 `doc_token` 做主键，重复 ingest 同一 token 会更新 url、title、content_md、fetched_at，不产生重复行。Sources: [src/commands/ingestDoc.ts:89-98](../../../project-repos/lark-context/src/commands/ingestDoc.ts#L89-L98), [test/cmd-ingest-doc.test.ts:100-136](../../../project-repos/lark-context/test/cmd-ingest-doc.test.ts#L100-L136)
 
 <details class="source-snippets">
@@ -470,7 +465,6 @@ function extractContent(data: Record<string, unknown>): { title: string; body: s
 
 <!-- source-snippets:end -->
 </details>
-
 ## show 命令
 
 `runShow` 默认窗口是 `24h`，通过 `parseDuration` 解析；`--chat all` 和省略 `--chat` 都表示所有 enabled 群。未知 alias 会报错，完全没有关注群也会报错。Sources: [src/commands/show.ts:31-48](../../../project-repos/lark-context/src/commands/show.ts#L31-L48), [src/durations.ts:1-29](../../../project-repos/lark-context/src/durations.ts#L1-L29)
@@ -539,7 +533,6 @@ export function parseDuration(text: unknown): Duration {
 
 <!-- source-snippets:end -->
 </details>
-
 它先查顶层消息，再按顶层消息的 `thread_id` 查回复，把回复插回所属 root 后面，最后交给 `renderChatWindow`。这保证即使回复时间晚于下一条顶层消息，展示仍按话题归组。Sources: [src/commands/show.ts:50-109](../../../project-repos/lark-context/src/commands/show.ts#L50-L109), [test/cmd-show.test.ts:239-335](../../../project-repos/lark-context/test/cmd-show.test.ts#L239-L335)
 
 <details class="source-snippets">
@@ -716,7 +709,6 @@ export function parseDuration(text: unknown): Duration {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Show["runShow"] --> Targets["enabled groups"]
@@ -870,7 +862,6 @@ export function renderChatWindow(args: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 渲染格式
 
 `renderChatWindow` 输出二级标题、窗口范围、发送者和时间。`is_thread_reply` 为 true 的消息前缀是两个空格加 `↳`，正文每行也同样缩进；空窗口输出 `(no messages)`。Sources: [src/render.ts:16-40](../../../project-repos/lark-context/src/render.ts#L16-L40), [skills/lark-context/references/show.md:22-38](../../../project-repos/lark-context/skills/lark-context/references/show.md#L22-L38)
@@ -934,7 +925,6 @@ export function renderChatWindow(args: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## show-doc 命令
 
 `show-doc` 通过 token 或 URL 查找已入库文档。URL 会用路径第二段提 token；查询条件是 `doc_token=? OR url=?`。未找到时返回 `no ingested doc matches "<ref>"`，找到就原样输出保存的 Markdown。Sources: [src/commands/show.ts:11-22](../../../project-repos/lark-context/src/commands/show.ts#L11-L22), [src/commands/show.ts:129-154](../../../project-repos/lark-context/src/commands/show.ts#L129-L154), [test/cmd-show.test.ts:338-375](../../../project-repos/lark-context/test/cmd-show.test.ts#L338-L375)
@@ -1037,7 +1027,6 @@ describe("runShowDoc", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 与 skill 的剪裁契约
 
 `show.md` 要求消息超过 100 条时先询问是否收窄窗口，文档超过 5000 字时摘要而不是全文塞回对话。这个限制在 CLI 中没有实现，是 skill/agent 使用 CLI 输出时必须遵守的展示边界。Sources: [skills/lark-context/references/show.md:48-53](../../../project-repos/lark-context/skills/lark-context/references/show.md#L48-L53)
@@ -1060,7 +1049,6 @@ describe("runShowDoc", () => {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [消息拉取与话题回复流水线](pull-thread-pipeline.md)

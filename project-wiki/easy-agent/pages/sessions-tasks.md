@@ -86,7 +86,6 @@ export type TranscriptEntry =
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   UI["useAgentSession"] --> Session["JSONL transcript"]
@@ -275,7 +274,6 @@ async function ensureTaskListLockFile(taskListId: string): Promise<string> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Transcript 模型
 
 `TranscriptEntry` 是 append-only JSONL 事件流，覆盖 session metadata、user/assistant message、tool start/done、usage、system notice 和 compaction marker。会话路径由项目 key 决定，具体文件是 `<sessionId>.jsonl`，同目录还有 `latest` 指针。  
@@ -368,7 +366,6 @@ export async function initSessionStorage(metadata: SessionMetadata): Promise<Ses
 
 <!-- source-snippets:end -->
 </details>
-
 初始化会话时写入 `session_meta` 并更新 `latest`；每次追加事件也会重写 `latest`，所以 `/resume` 默认恢复最近一次活跃会话。  
 Sources: [src/session/storage.ts:204-226](../../../project-repos/easy-agent/src/session/storage.ts#L204-L226), [src/session/storage.ts:238-247](../../../project-repos/easy-agent/src/session/storage.ts#L238-L247)
 
@@ -422,7 +419,6 @@ export async function getLatestSessionId(cwd: string): Promise<string | null> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 恢复语义
 
 `restoreSession()` 先解析 JSONL，再定位最后一个 `compaction` marker，只把 marker 之后的 message 还原进模型上下文。它仍然从完整 transcript 中取最新 usage，用于 UI 的累计用量展示。  
@@ -487,7 +483,6 @@ export async function restoreSession(cwd: string, sessionId?: string): Promise<R
 
 <!-- source-snippets:end -->
 </details>
-
 `/history` 不是直接打印文件名，而是通过 `listProjectSessions()` 汇总最近 20 个 session，展示更新时间、消息数、token usage 和模型名。  
 Sources: [src/session/storage.ts:319-362](../../../project-repos/easy-agent/src/session/storage.ts#L319-L362), [src/session/history.ts:1-29](../../../project-repos/easy-agent/src/session/history.ts#L1-L29), [src/core/queryEngine.ts:597-603](../../../project-repos/easy-agent/src/core/queryEngine.ts#L597-L603)
 
@@ -593,7 +588,6 @@ export async function formatProjectSessionHistory(cwd: string): Promise<string> 
 
 <!-- source-snippets:end -->
 </details>
-
 ## UI 写入点
 
 UI hook 对 LLM 触发型输入写入用户原始文本，包括 skill slash invocation 的原始命令；工具开始和结束写入 `tool_event`；assistant message、tool_result message、usage、system notice 和 error 都分别追加 transcript entry。  
@@ -795,7 +789,6 @@ Sources: [src/ui/hooks/useAgentSession.ts:506-528](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
-
 非 micro compaction 会走 `appendCompactionSnapshot()`：先写一个 compaction marker，再把压缩后的 message snapshot 追加到 transcript。恢复时只读取 marker 之后的 message，避免旧上下文和 summary 同时进入模型。  
 Sources: [src/session/storage.ts:267-278](../../../project-repos/easy-agent/src/session/storage.ts#L267-L278), [src/session/storage.ts:298-317](../../../project-repos/easy-agent/src/session/storage.ts#L298-L317), [src/ui/hooks/useAgentSession.ts:689-715](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts#L689-L715)
 
@@ -880,7 +873,6 @@ export async function appendCompactionSnapshot(
 
 <!-- source-snippets:end -->
 </details>
-
 ## TodoWrite V1
 
 Todo V1 是按 sessionId 隔离的内存 Map。它只有 `content`、`status`、`activeForm` 三个字段，没有 id、依赖、owner，也不跨进程持久化。  
@@ -960,7 +952,6 @@ export function clearTodos(sessionId: string): void {
 
 <!-- source-snippets:end -->
 </details>
-
 `TodoWrite` 输入是完整 todo 列表，每次调用都会全量替换当前 session 的状态；如果所有 todo 都是 `completed`，它存空数组，避免 UI 长期堆积已完成项。该工具只在 `todo` 模式启用。  
 Sources: [src/tools/todoWriteTool.ts:1-18](../../../project-repos/easy-agent/src/tools/todoWriteTool.ts#L1-L18), [src/tools/todoWriteTool.ts:68-149](../../../project-repos/easy-agent/src/tools/todoWriteTool.ts#L68-L149)
 
@@ -1081,7 +1072,6 @@ export const todoWriteTool: Tool = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Task V2 持久任务图
 
 Task V2 默认启用，任务被写到 `~/.easy-agent/tasks/<taskListId>/` 下，每个任务一个 JSON 文件，并用 `.highwatermark` 保存历史最大 id，用 `.lock` 做列表级互斥。这个布局让任务跨重启保存，并避免 reset/delete 后复用旧 id。  
@@ -1253,7 +1243,6 @@ async function findHighestTaskId(taskListId: string): Promise<number> {
 
 <!-- source-snippets:end -->
 </details>
-
 Task schema 用递增字符串 id，包含 `subject`、`description`、可选 `activeForm`、`owner`、`status`、`blocks`、`blockedBy` 和 `metadata`。`owner` 与 metadata 为后续多 agent/扩展保留，当前单 agent 流程不会依赖它们。  
 Sources: [src/types/task.ts:1-36](../../../project-repos/easy-agent/src/types/task.ts#L1-L36)
 
@@ -1305,7 +1294,6 @@ export interface Task {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart LR
   Create["TaskCreate"] --> NewFile["N.json"]
@@ -1652,7 +1640,6 @@ export async function deleteTask(taskListId: string, taskId: string): Promise<bo
 
 <!-- source-snippets:end -->
 </details>
-
 ## 任务工具行为
 
 `TaskCreate` 创建 `pending` 任务并返回分配 id；`TaskUpdate` 支持字段编辑、状态迁移、metadata merge、`addBlocks`、`addBlockedBy`，并把 `status: "deleted"` 折叠为级联删除；`TaskList` 会过滤已经 completed 的上游 blocker，只报告仍未解除的阻塞。  
@@ -1832,7 +1819,6 @@ Sources: [src/tools/taskCreateTool.ts:61-84](../../../project-repos/easy-agent/s
 
 <!-- source-snippets:end -->
 </details>
-
 store 层保证依赖是双向维护的：`blockTask(from, to)` 会同时更新 `from.blocks` 和 `to.blockedBy`；删除任务后会遍历 sibling 清理所有引用；`isReady()` 只把 pending 且所有 blocker 已 completed 的任务视为可执行。  
 Sources: [src/state/taskStore.ts:291-357](../../../project-repos/easy-agent/src/state/taskStore.ts#L291-L357), [src/state/taskStore.ts:400-411](../../../project-repos/easy-agent/src/state/taskStore.ts#L400-L411)
 
@@ -1932,7 +1918,6 @@ export function isReady(task: Task, tasks: readonly Task[]): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 模式切换
 
 `taskModeStore` 是进程级 source of truth，`/tasks task|todo|reset` 通过 `QueryEngine` 切换模式或清空当前 task list。工具的 `isEnabled()` 读取该全局状态，因此 TodoWrite V1 和 Task V2 工具不会同时暴露。  
@@ -2060,7 +2045,6 @@ export function isTodoModeEnabled(): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ## UI 同步
 
 `useAgentSession` 订阅 todo store、task store 和 task mode store。Todo 是同步内存快照；Task V2 是磁盘状态，UI mount 时先 `listTasks()`，之后每次 mutation 触发 refresh。toolContext 暴露 live `sessionId` getter，避免 `/resume` 后工具仍写到旧 session。  
@@ -2143,7 +2127,6 @@ Sources: [src/ui/hooks/useAgentSession.ts:224-288](../../../project-repos/easy-a
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [CLI 与终端 UI](cli-and-ui.md)

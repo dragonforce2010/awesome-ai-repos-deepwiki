@@ -110,7 +110,6 @@
 
 <!-- source-snippets:end -->
 </details>
-
 ## 风格库模型
 
 `references/design-styles.md` 将风格分为信息建筑派、运动诗学派、极简主义派、实验先锋派、东方哲学派等体系，并为每种风格提供适配场景、最佳执行路径和 prompt DNA。例如 Pentagram 偏 HTML 与信息建筑，Field.io 和 Active Theory 更偏 AI 生成或混合路径。Sources: [references/design-styles.md:6-35](../../../project-repos/huashu-design/references/design-styles.md#L6-L35), [references/design-styles.md:39-63](../../../project-repos/huashu-design/references/design-styles.md#L39-L63), [references/design-styles.md:138-210](../../../project-repos/huashu-design/references/design-styles.md#L138-L210)
@@ -265,7 +264,6 @@ Field.io generative design style:
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   A["模糊需求"] --> B["理解目标受众与情绪"]
@@ -403,7 +401,6 @@ Sources: [SKILL.md:386-456](../../../project-repos/huashu-design/SKILL.md#L386-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## Showcase 索引
 
 `assets/showcases/INDEX.md` 提供 8 个场景乘以 3 种风格的预制样例，场景覆盖公众号封面、PPT 数据页、竖版信息图、个人主页、AI 导航站、AI 写作工具、SaaS 落地页和开发者文档；三种风格是 Pentagram、Build、Takram。Sources: [assets/showcases/INDEX.md:1-34](../../../project-repos/huashu-design/assets/showcases/INDEX.md#L1-L34), [assets/showcases/INDEX.md:55-103](../../../project-repos/huashu-design/assets/showcases/INDEX.md#L55-L103)
@@ -508,7 +505,6 @@ Sources: [SKILL.md:386-456](../../../project-repos/huashu-design/SKILL.md#L386-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计顾问的约束
 
 三套方向必须显著差异化，不能从同一流派推荐两个以上；推荐后要展示可视样例或 Demo，让用户「看到」而非只读风格名。Sources: [SKILL.md:394-413](../../../project-repos/huashu-design/SKILL.md#L394-L413), [SKILL.md:430-456](../../../project-repos/huashu-design/SKILL.md#L430-L456)
@@ -577,7 +573,6 @@ Sources: [SKILL.md:386-456](../../../project-repos/huashu-design/SKILL.md#L386-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Design Context 与核心资产协议](design-context-assets.md)

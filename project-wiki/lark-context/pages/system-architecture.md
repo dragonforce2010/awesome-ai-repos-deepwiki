@@ -33,7 +33,7 @@
                                    └─ 暴露子命令给 Claude shell 调用
                                            │
                                            ▼
-                                  /lark-context &lt;自然语言&gt;
+                                  /lark-context <自然语言>
                                  （skill 在 ~/.agents/skills/lark-context/）
                                            │
                                            ▼
@@ -96,7 +96,6 @@ program.parseAsync(process.argv);
 
 <!-- source-snippets:end -->
 </details>
-
 ## 端到端边界
 
 ```mermaid
@@ -131,7 +130,7 @@ Sources: [README.md:13-35](../../../project-repos/lark-context/README.md#L13-L35
                                    └─ 暴露子命令给 Claude shell 调用
                                            │
                                            ▼
-                                  /lark-context &lt;自然语言&gt;
+                                  /lark-context <自然语言>
                                  （skill 在 ~/.agents/skills/lark-context/）
                                            │
                                            ▼
@@ -263,18 +262,17 @@ export async function* runNdjson(args: string[]): AsyncGenerator<unknown> {
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/&lt;slug&gt;.md
-│   ├── projects/&lt;slug&gt;.md
+│   ├── people/<slug>.md
+│   ├── projects/<slug>.md
 │   ├── terms.md
-│   └── decisions/&lt;slug&gt;.md
+│   └── decisions/<slug>.md
 └── journal/
-    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
+    └── <ISO-week>.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
-
 ## 运行时模块
 
 | 模块 | 责任 | 关键事实 |
@@ -427,7 +425,6 @@ export async function* runNdjson(args: string[]): AsyncGenerator<unknown> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 数据落点
 
 默认数据分两类：原始数据在 `~/.lark-context/raw.db`，给 Claude 读的长期记忆在 `~/.claude/lark-memory/`。路径可以通过 `LARK_CONTEXT_CONFIG`、`LARK_CONTEXT_RAW_DIR`、`LARK_CONTEXT_MEMORY_DIR` 覆盖。Sources: [README.md:120-128](../../../project-repos/lark-context/README.md#L120-L128), [src/config.ts:6-8](../../../project-repos/lark-context/src/config.ts#L6-L8), [src/config.ts:111-126](../../../project-repos/lark-context/src/config.ts#L111-L126)
@@ -482,7 +479,6 @@ export const ENV_RAW = "LARK_CONTEXT_RAW_DIR";
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   ConfigYaml["~/.lark-context/config.yaml"] --> CLI["loadConfig"]
@@ -630,18 +626,17 @@ CREATE TABLE IF NOT EXISTS kv (
 ~/.claude/lark-memory/    # skill workflow 写这里
 ├── MEMORY.md             # 索引（总是被 @-load）
 ├── entities/
-│   ├── people/&lt;slug&gt;.md
-│   ├── projects/&lt;slug&gt;.md
+│   ├── people/<slug>.md
+│   ├── projects/<slug>.md
 │   ├── terms.md
-│   └── decisions/&lt;slug&gt;.md
+│   └── decisions/<slug>.md
 └── journal/
-    └── &lt;ISO-week&gt;.md     # e.g. 2026-W16.md
+    └── <ISO-week>.md     # e.g. 2026-W16.md
 ```
 ````
 
 <!-- source-snippets:end -->
 </details>
-
 ## 控制流与职责分离
 
 `lark-context` 的 CLI 层不做 LLM 级判断。`pull`、`ingest-doc`、`show` 只读取/写入本地 DB；digest 和 TODO 的“值得记什么”“是否是待办”等判断写在 skill references 中，由 Claude 执行。Sources: [README.md:5-8](../../../project-repos/lark-context/README.md#L5-L8), [src/commands/pull.ts:401-440](../../../project-repos/lark-context/src/commands/pull.ts#L401-L440), [src/commands/show.ts:31-127](../../../project-repos/lark-context/src/commands/show.ts#L31-L127), [skills/lark-context/references/digest.md:42-78](../../../project-repos/lark-context/skills/lark-context/references/digest.md#L42-L78), [skills/lark-context/references/todo.md:21-34](../../../project-repos/lark-context/skills/lark-context/references/todo.md#L21-L34)
@@ -813,7 +808,7 @@ export async function runShow(opts: ShowOpts): Promise<void> {
 ## Step 3 — 读原始材料
 
 ```bash
-lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
+lark-context show [--chat <alias>] --since <window>
 ```
 
 输出是本次沉淀的**唯一事实来源**。不要捏造、不要从记忆里补 show 里没出现的事。
@@ -870,7 +865,6 @@ lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 sequenceDiagram
   participant U as 用户
@@ -965,7 +959,7 @@ Sources: [skills/lark-context/references/pull.md:12-20](../../../project-repos/l
 ## Step 3 — 读原始材料
 
 ```bash
-lark-context show [--chat &lt;alias&gt;] --since &lt;window&gt;
+lark-context show [--chat <alias>] --since <window>
 ```
 
 输出是本次沉淀的**唯一事实来源**。不要捏造、不要从记忆里补 show 里没出现的事。
@@ -1022,7 +1016,6 @@ sqlite3 ~/.lark-context/raw.db "INSERT INTO kv(key,value) VALUES('last_digest_at
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计取舍
 
 - 使用官方 `lark-cli` 做 OAuth 和飞书 API 访问，避免在项目内重新实现认证和 API 客户端。Sources: [README.md:39-44](../../../project-repos/lark-context/README.md#L39-L44), [src/lark.ts:3-20](../../../project-repos/lark-context/src/lark.ts#L3-L20)
@@ -1068,7 +1061,6 @@ async function invoke(args: string[]): Promise<string> {
 
 <!-- source-snippets:end -->
 </details>
-
 - 使用 SQLite 存原始材料，Markdown 存提炼后的长期记忆，让数据可审、可迁移、可手工修改。Sources: [README.md:120-175](../../../project-repos/lark-context/README.md#L120-L175), [GETTING_STARTED.md:92-107](../../../project-repos/lark-context/GETTING_STARTED.md#L92-L107)
 
 <details class="source-snippets">
@@ -1115,10 +1107,10 @@ groups:
 ~/.claude/lark-memory/
 ├── MEMORY.md            # 始终加载的索引
 ├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
-│   ├── people/&lt;slug&gt;.md
-│   ├── projects/&lt;slug&gt;.md
+│   ├── people/<slug>.md
+│   ├── projects/<slug>.md
 │   ├── terms.md
-│   └── decisions/&lt;slug&gt;.md
+│   └── decisions/<slug>.md
 └── journal/             # 按 ISO 周的流水
     └── 2026-W16.md
 ```
@@ -1146,10 +1138,10 @@ source_hints:
 ~/.claude/lark-memory/
 ├── MEMORY.md                     # 总索引
 ├── entities/
-│   ├── people/&lt;slug&gt;.md          # 每个同事一个文件
-│   ├── projects/&lt;slug&gt;.md
+│   ├── people/<slug>.md          # 每个同事一个文件
+│   ├── projects/<slug>.md
 │   ├── terms.md                  # 术语表
-│   └── decisions/&lt;slug&gt;.md
+│   └── decisions/<slug>.md
 └── journal/
     └── 2026-W17.md               # 每周一个流水文件
 ```
@@ -1160,7 +1152,6 @@ source_hints:
 
 <!-- source-snippets:end -->
 </details>
-
 - 使用 skill 做自然语言路由和高层 workflow，避免 CLI 本身引入 LLM API 或复杂调度。Sources: [skills/lark-context/SKILL.md:31-48](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L31-L48), [README.md:177-185](../../../project-repos/lark-context/README.md#L177-L185)
 
 <details class="source-snippets">
@@ -1207,7 +1198,6 @@ source_hints:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

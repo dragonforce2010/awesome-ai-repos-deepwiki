@@ -47,7 +47,6 @@ Sources: [README.md:148-162](../../../project-repos/ai-pair/README.md#L148-L162)
 
 <!-- source-snippets:end -->
 </details>
-
 从模板层面，`SKILL.md` 用 **CRITICAL RULE** 与「禁止静默跳过 CLI」的协议段落对齐该问题。
 
 Sources: [SKILL.md:238-245](../../../project-repos/ai-pair/SKILL.md#L238-L245), [SKILL.md:176-181](../../../project-repos/ai-pair/SKILL.md#L176-L181)
@@ -83,7 +82,6 @@ If you skip the CLI call, the entire point of this multi-model team is defeated.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 开源版未包含的能力
 
 README 写明：公开仓库仅 **Agent Teams 模式**；完整私有版另有 **Manual 模式**（两 CLI 经共享文件通信）与 **iTerm2 编排**（文件监听驱动的 Author/Reviewer 中继），需单独本地配置。
@@ -114,7 +112,6 @@ These require specific local setup and are maintained separately.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 项目演进脉络
 
 AI-Pair 源自 Chrome 扩展 [AI Roundtable](https://github.com/axtonliu/ai-roundtable)（网页多模型同屏讨论）；本仓库将概念迁移到终端并结构化分工。
@@ -138,7 +135,6 @@ AI-Pair 从 [AI Roundtable](https://github.com/axtonliu/ai-roundtable) 演变而
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 graph TD
   RT["AI Roundtable&lt;br/&gt;浏览器多模型"] --> AP["ai-pair&lt;br/&gt;CLI + Skill"]

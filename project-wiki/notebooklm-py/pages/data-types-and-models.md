@@ -307,7 +307,6 @@ class ArtifactStatus(int, Enum):
 
 <!-- source-snippets:end -->
 </details>
-
 ## 核心数据类
 
 ### Notebook
@@ -397,7 +396,6 @@ class Notebook:
 
 <!-- source-snippets:end -->
 </details>
-
 ### Source
 
 | 字段 | 类型 | 说明 |
@@ -546,7 +544,6 @@ class Source:
 
 <!-- source-snippets:end -->
 </details>
-
 ### Artifact
 
 | 字段 | 类型 | 说明 |
@@ -695,7 +692,6 @@ class SourceFulltext:
 
 <!-- source-snippets:end -->
 </details>
-
 ### GenerationStatus
 
 | 字段 | 类型 | 说明 |
@@ -792,7 +788,6 @@ class Artifact:
 
 <!-- source-snippets:end -->
 </details>
-
 ### AskResult
 
 | 字段 | 类型 | 说明 |
@@ -858,7 +853,6 @@ Sources: [src/notebooklm/types.py:900-940](../../../project-repos/notebooklm-py/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 枚举映射
 
 ### SourceType 映射
@@ -986,7 +980,6 @@ _SOURCE_TYPE_CODE_MAP: dict[int, SourceType] = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 异常层级
 
 ```mermaid
@@ -1154,7 +1147,6 @@ class RPCError(NotebookLMError):
 
 <!-- source-snippets:end -->
 </details>
-
 ## 弃用策略
 
 库采用渐进式弃用策略，通过 `__getattr__` 和属性级 `warnings.warn` 实现向后兼容：
@@ -1337,7 +1329,6 @@ class ArtifactType(str, Enum):
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [客户端 API](client-api.md)

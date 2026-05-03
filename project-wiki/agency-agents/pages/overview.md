@@ -59,7 +59,6 @@
 
 <!-- source-snippets:end -->
 </details>
-
 README 将项目定位为 “complete AI agency”，强调每个 agent 都有专业领域、人格、交付物和生产可用工作流，并给出 Claude Code、其他工具转换安装、以及作为参考模板的三种使用方式。Sources: [README.md:12-21](../../../project-repos/agency-agents/README.md#L12-L21), [README.md:25-71](../../../project-repos/agency-agents/README.md#L25-L71)
 
 <details class="source-snippets">
@@ -136,7 +135,6 @@ See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for f
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Repo["agency-agents 仓库"] --> Agents["Markdown agent 定义"]
@@ -281,7 +279,6 @@ See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for f
 
 <!-- source-snippets:end -->
 </details>
-
 ## 这个仓库解决什么问题
 
 它把“让 LLM 扮演某个专家”的 prompt 资产标准化成可复用 agent 文件。每个 agent 文件包含 identity、mission、rules、deliverables、workflow、communication style、success metrics 等结构，使用户可以把单个专家复制到 Claude Code，也可以通过转换脚本批量生成 Cursor rules、Gemini skills、OpenClaw workspaces 等格式。Sources: [README.md:40-48](../../../project-repos/agency-agents/README.md#L40-L48), [CONTRIBUTING.md:82-152](../../../project-repos/agency-agents/CONTRIBUTING.md#L82-L152), [scripts/convert.sh:3-25](../../../project-repos/agency-agents/scripts/convert.sh#L3-L25)
@@ -411,7 +408,6 @@ Advanced techniques and approaches the agent masters
 
 <!-- source-snippets:end -->
 </details>
-
 ## 阅读路线
 
 | 目标 | 建议页面 |
@@ -462,7 +458,6 @@ This repository contains Markdown-based agent definitions and shell scripts for 
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [仓库结构与内容地图](repository-map.md)

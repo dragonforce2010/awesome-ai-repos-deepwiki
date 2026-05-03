@@ -92,7 +92,6 @@ export async function callOnce(params: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## `createRuntime` 与 `McpRuntime`
 
 `createRuntime` 既可以从 `configPath` / `rootDir` 自动加载 `ServerDefinition[]`，也可以接受调用方提供的 `servers` 数组（[src/runtime.ts:77-88]()）。底层实现 `McpRuntime` 在 `src/runtime.ts:107-125` 一次性完成三件事：
@@ -194,7 +193,6 @@ class McpRuntime implements Runtime {
 
 <!-- source-snippets:end -->
 </details>
-
 ### 连接池
 
 `McpRuntime.connect(server)` 的核心数据结构是 `clients: Map<string, Promise<ClientContext>>`（[src/runtime.ts:109]()）。注意值是 **Promise**，不是已经 resolve 的对象——这样并发的 `connect` 调用会复用同一个 in-flight 连接，避免双开 stdio 子进程或重复触发 OAuth。
@@ -267,7 +265,6 @@ Sources: [src/runtime.ts:243-279](../../../project-repos/mcporter/src/runtime.ts
 
 <!-- source-snippets:end -->
 </details>
-
 ### `listTools` 与过滤
 
 `listTools(server, opts)` 在 [src/runtime.ts:156-193]() 实现。值得注意的几个点：
@@ -368,7 +365,6 @@ export function filterTools<T extends { readonly name: string }>(
 
 <!-- source-snippets:end -->
 </details>
-
 ### `callTool` 与超时
 
 `callTool` 把超时管理委托给 SDK 客户端（[src/runtime.ts:196-228]()），同时自己加一层 `raceWithTimeout` 兜底：
@@ -489,7 +485,6 @@ export function shouldResetConnection(error: unknown): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 传输层（`createClientContext`）
 
 `runtime/transport.ts` 是把 `ServerDefinition` 转成 `ClientContext`（client + transport + 可选 oauthSession）的工厂。入口 `createClientContext`（[src/runtime/transport.ts:361-380]()）首先做两件事：
@@ -655,7 +650,6 @@ async function connectSseFallbackTransport(
 
 <!-- source-snippets:end -->
 </details>
-
 ### StreamableHTTP → SSE 回退
 
 mcporter 默认假设远端支持 [Streamable HTTP](https://modelcontextprotocol.io/) 传输；当首次连接失败时会按以下规则判断是否回退到 SSE（[src/runtime/transport.ts:46-55]()，[src/runtime/transport.ts:269-296]()）：
@@ -772,7 +766,6 @@ export function maybeEnableOAuth(definition: ServerDefinition, logger: Logger): 
 
 <!-- source-snippets:end -->
 </details>
-
 ### `connectWithAuth` 的重试循环
 
 最里层的 `connectWithAuth`（[src/runtime/oauth.ts:79-123]()）负责真正的 OAuth challenge：
@@ -886,7 +879,6 @@ async function closeReplacementTransport(
 
 <!-- source-snippets:end -->
 </details>
-
 ### stdio 子进程
 
 `createStdioClientContext`（[src/runtime/transport.ts:189-222]()）：
@@ -1000,7 +992,6 @@ export function resolveCommandArguments(args: readonly string[]): string[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## SDK Patches：StdioClientTransport.close
 
 mcporter 在 [src/sdk-patches.ts:236-336]() 直接 monkey-patch `StdioClientTransport.prototype.close`，原因是上游 SDK 在某些 npm wrapper（`npx`、`npm exec`）下不会真正杀掉子进程：
@@ -1192,7 +1183,6 @@ function patchStdioClose(): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## `ServerProxy` 与 `CallResult`
 
 `createServerProxy(runtime, name)` 是面向"对象式"用法的薄封装。它把每个属性访问转成 kebab-case 工具调用：
@@ -1491,7 +1481,6 @@ function collectCallContent(raw: unknown): CollectedCallContent {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 错误分类
 
 `describeConnectionIssue(error)` 把 SDK / fetch / stdio 的混合错误归一化（[src/error-classifier.ts:41-63]()）：
@@ -1673,7 +1662,6 @@ function maybeReportConnectionIssue(server: string, tool: string, error: unknown
 
 <!-- source-snippets:end -->
 </details>
-
 ## 关闭与清理
 
 `runtime.close(server?)`：
@@ -1752,7 +1740,6 @@ export async function closeTransportAndWait(
 
 <!-- source-snippets:end -->
 </details>
-
 ## OAuth header 物化
 
 HTTP 头里的 `${VAR}` / `$env:VAR` 在每次请求前由 `materializeHeaders` 解析（[src/runtime-header-utils.ts:4-23]()）。OAuth 流程会**移除** `Authorization` 头让 SDK 自己写入 token（`removeAuthorizationHeader`，[src/runtime/transport.ts:85-95]()），避免静态 bearer 与浏览器流程冲突；非 OAuth 路径则保留头不变。
@@ -1826,7 +1813,6 @@ function createHttpTransportOptions(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 设计取舍
 
 - **缓存的是 Promise 不是值** — 让并发的同名 `connect()` 自动合流；缺点是 reject 后必须主动 `delete`，否则下次会拿到失败 promise。代码里在 catch 中显式 `clients.delete(normalized)`（[src/runtime.ts:268-275]()）。
@@ -2159,7 +2145,6 @@ export function createCallResult<T = unknown>(raw: T): CallResult<T> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](system-architecture.md)

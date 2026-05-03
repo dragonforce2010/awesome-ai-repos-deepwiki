@@ -152,7 +152,6 @@ pip install git+https://github.com/teng-lin/notebooklm-py@main
 
 <!-- source-snippets:end -->
 </details>
-
 ### 功能矩阵
 
 | 类别 | 能力 |
@@ -188,9 +187,9 @@ Sources: [README.md](../../../project-repos/notebooklm-py/README.md)
 
 ````markdown
 # notebooklm-py
-&lt;p align="left">
-  &lt;img src="https://raw.githubusercontent.com/teng-lin/notebooklm-py/main/notebooklm-py.png" alt="notebooklm-py logo" width="128">
-&lt;/p>
+<p align="left">
+  <img src="https://raw.githubusercontent.com/teng-lin/notebooklm-py/main/notebooklm-py.png" alt="notebooklm-py logo" width="128">
+</p>
 
 **A Comprehensive NotebookLM Skill & Unofficial Python API.** Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.
 
@@ -198,11 +197,11 @@ Sources: [README.md](../../../project-repos/notebooklm-py/README.md)
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue)](https://pypi.org/project/notebooklm-py/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/teng-lin/notebooklm-py/actions/workflows/test.yml/badge.svg)](https://github.com/teng-lin/notebooklm-py/actions/workflows/test.yml)
-&lt;p>
-  &lt;a href="https://trendshift.io/repositories/19116" target="_blank">&lt;img src="https://trendshift.io/api/badge/repositories/19116" alt="teng-lin%2Fnotebooklm-py | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>&lt;/a>
-&lt;/p>
+<p>
+  <a href="https://trendshift.io/repositories/19116" target="_blank"><img src="https://trendshift.io/api/badge/repositories/19116" alt="teng-lin%2Fnotebooklm-py | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+</p>
 
-**Source & Development**: &lt;https://github.com/teng-lin/notebooklm-py&gt;
+**Source & Development**: <https://github.com/teng-lin/notebooklm-py>
 
 > **⚠️ Unofficial Library - Use at Your Own Risk**
 >
@@ -298,11 +297,11 @@ pip install git+https://github.com/teng-lin/notebooklm-py@main
 
 ## Quick Start
 
-&lt;p align="center">
-  &lt;a href="https://asciinema.org/a/767284" target="_blank">&lt;img src="https://asciinema.org/a/767284.svg" width="600" />&lt;/a>
-  &lt;br>
-  &lt;em>16-minute session compressed to 30 seconds&lt;/em>
-&lt;/p>
+<p align="center">
+  <a href="https://asciinema.org/a/767284" target="_blank"><img src="https://asciinema.org/a/767284.svg" width="600" /></a>
+  <br>
+  <em>16-minute session compressed to 30 seconds</em>
+</p>
 
 ### CLI
 
@@ -311,7 +310,6 @@ pip install git+https://github.com/teng-lin/notebooklm-py@main
 
 <!-- source-snippets:end -->
 </details>
-
 ## 仓库结构
 
 ```text
@@ -528,7 +526,6 @@ check_untyped_defs = true
 
 <!-- source-snippets:end -->
 </details>
-
 ## 技术栈
 
 | 组件 | 技术 |
@@ -676,7 +673,6 @@ check_untyped_defs = true
 
 <!-- source-snippets:end -->
 </details>
-
 ## 阅读路线
 
 - **想了解项目是什么？** → 当前页面

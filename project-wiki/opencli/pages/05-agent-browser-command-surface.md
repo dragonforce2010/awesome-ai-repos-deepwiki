@@ -29,7 +29,6 @@ Sources: [src/cli.ts:224-261](../../../project-repos/opencli/src/cli.ts#L224-L26
 
 <!-- source-snippets:end -->
 </details>
-
 ## 命令族
 
 ```mermaid
@@ -96,7 +95,6 @@ Sources: [src/cli.ts:478-486](../../../project-repos/opencli/src/cli.ts#L478-L48
 
 <!-- source-snippets:end -->
 </details>
-
 ## 目标选择契约
 
 交互命令采用 selector-first target contract：`<target>` 可以是 `state/find` 输出的数字 ref，也可以是 CSS selector。CSS 多匹配时，写操作要求显式 `--nth`，读操作可以默认取第一个并返回 `matches_n`。  
@@ -121,7 +119,6 @@ Sources: [src/cli.ts:487-510](../../../project-repos/opencli/src/cli.ts#L487-L51
 
 <!-- source-snippets:end -->
 </details>
-
 成功响应会包含可机读 envelope，例如点击会返回 `{clicked, target, matches_n, match_level}`，输入会额外返回 `autocomplete`。错误响应也结构化为 `{error: {code, message, hint, candidates&#125;&#125;`。  
 Sources: [src/cli.ts:527-538](../../../project-repos/opencli/src/cli.ts#L527-L538), [src/cli.ts:1053-1068](../../../project-repos/opencli/src/cli.ts#L1053-L1068), [src/cli.ts:1070-1099](../../../project-repos/opencli/src/cli.ts#L1070-L1099)
 
@@ -144,7 +141,6 @@ Sources: [src/cli.ts:527-538](../../../project-repos/opencli/src/cli.ts#L527-L53
 
 <!-- source-snippets:end -->
 </details>
-
 ## inspect-first 工作流
 
 opencli-browser skill 明确要求先 `state` 或 `find`，拿到 ref 后再执行 click/type/select。原因是数字 ref 带元素指纹，可以在中等 DOM 漂移时重新识别；页面跳转或 SPA 路由变化后必须重新 `state`。  
@@ -174,7 +170,7 @@ Sources: [skills/opencli-browser/SKILL.md:33-53](../skills/opencli-browser/SKILL
 ## `<target>` 契约
 
 ```text
-&lt;target&gt; ::= &lt;numeric-ref&gt; | &lt;css-selector&gt;
+<target> ::= <numeric-ref> | <css-selector>
 ```
 
 - **数字 ref**：来自 `state` 或 `find` 的 `[N]`，对轻微 DOM 漂移更稳。
@@ -232,7 +228,6 @@ Sources: [skills/opencli-browser/SKILL.md:33-53](../skills/opencli-browser/SKILL
 
 <!-- source-snippets:end -->
 </details>
-
 ## 页面读取
 
 `browser state` 输出 URL、title 和带 `[N]` 引用的交互元素快照。`browser find --css` 返回 JSON entries。`get html --as json` 能按 depth、children、text budget 输出结构化 DOM 树；长文应优先用 `extract`，它会返回 `next_start_char` 游标。  
@@ -261,7 +256,6 @@ Sources: [src/cli.ts:682-690](../../../project-repos/opencli/src/cli.ts#L682-L69
 
 <!-- source-snippets:end -->
 </details>
-
 ## 网络抓包
 
 `browser open` 会先尝试 session-level capture；如果扩展不支持，会注入 fetch/XHR interceptor 作为 fallback。`browser network` 默认输出 shape preview 和 stable key，并把缓存写到 `~/.opencli/cache/browser-network/`，后续 `--detail <key>` 从缓存取完整 body。  
@@ -294,7 +288,6 @@ Sources: [src/cli.ts:635-645](../../../project-repos/opencli/src/cli.ts#L635-L64
 
 <!-- source-snippets:end -->
 </details>
-
 ## analyze 命令
 
 `browser analyze <url>` 是面向 adapter 作者的站点侦察命令。它打开页面、抓网络、探测 cookie 和常见 initial state，并结合 registry 找最近 adapter，输出 pattern、anti-bot、nearest_adapter、recommended_next_step。  
@@ -311,7 +304,6 @@ Sources: [src/cli.ts:709-780](../../../project-repos/opencli/src/cli.ts#L709-L78
 
 <!-- source-snippets:end -->
 </details>
-
 ## init/verify
 
 `browser init <site>/<command>` 会在 `~/.opencli/clis/<site>/<command>.js` 生成 adapter 骨架。`browser verify <site>/<command>` 会执行用户 adapter、强制 JSON 输出、可写入/更新 fixture，并按 fixture 校验 rows、columns、types、patterns、notEmpty 等规则。  
@@ -332,7 +324,6 @@ Sources: [src/cli.ts:1491-1559](../../../project-repos/opencli/src/cli.ts#L1491-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 使用边界
 
 浏览器命令适合临时操作和 adapter 原型验证；一旦逻辑稳定，应沉淀成 adapter。skill 也提醒不要用 `eval` 做写操作，不要复用跨页面 ref，不要让截图替代结构化 state。  
@@ -353,7 +344,7 @@ Sources: [skills/opencli-browser/SKILL.md:42-53](../skills/opencli-browser/SKILL
 ## `<target>` 契约
 
 ```text
-&lt;target&gt; ::= &lt;numeric-ref&gt; | &lt;css-selector&gt;
+<target> ::= <numeric-ref> | <css-selector>
 ```
 
 - **数字 ref**：来自 `state` 或 `find` 的 `[N]`，对轻微 DOM 漂移更稳。

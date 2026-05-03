@@ -239,7 +239,6 @@ The integration test verifies the `subagent-driven-development` skill correctly:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 技能触发测试（skill-triggering）
 
 验证代理在收到特定提示时是否自动触发正确的技能。
@@ -369,7 +368,6 @@ fi
 
 <!-- source-snippets:end -->
 </details>
-
 ## 显式技能请求测试（explicit-skill-requests）
 
 验证用户以不同方式显式请求技能时，代理是否正确响应。
@@ -537,7 +535,6 @@ else
 
 <!-- source-snippets:end -->
 </details>
-
 ## SDD 集成测试
 
 最复杂的测试——验证 `subagent-driven-development` 技能在真实会话中的完整行为。
@@ -677,7 +674,7 @@ STATUS: PASSED
 Analyze token usage from any Claude Code session:
 
 ```bash
-python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/&lt;project-dir&gt;/&lt;session-id&gt;.jsonl
+python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/<project-dir>/<session-id>.jsonl
 ```
 
 ### Finding Session Files
@@ -833,7 +830,6 @@ OUTPUT_FILE="$TEST_PROJECT/claude-output.txt"
 
 <!-- source-snippets:end -->
 </details>
-
 ## Token 用量分析工具
 
 `analyze-token-usage.py` 从 Claude Code 会话记录中提取 Token 用量：
@@ -1056,7 +1052,7 @@ def calculate_cost(usage, input_cost_per_m=3.0, output_cost_per_m=15.0):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: analyze-token-usage.py &lt;session-file.jsonl&gt;")
+        print("Usage: analyze-token-usage.py <session-file.jsonl>")
         sys.exit(1)
 
     main_session_file = sys.argv[1]
@@ -1076,7 +1072,7 @@ def main():
     # Print breakdown
     print("Usage Breakdown:")
     print("-" * 100)
-    print(f"{'Agent':&lt;15} {'Description':&lt;35} {'Msgs':&gt;5} {'Input':&gt;10} {'Output':>10} {'Cache':>10} {'Cost':>8}")
+    print(f"{'Agent':<15} {'Description':<35} {'Msgs':>5} {'Input':>10} {'Output':>10} {'Cache':>10} {'Cost':>8}")
     print("-" * 100)
 
     # Main session
@@ -1096,7 +1092,6 @@ def main():
 
 <!-- source-snippets:end -->
 </details>
-
 ## 可视化伴侣测试
 
 ### 服务器功能测试（server.test.js）
@@ -1321,7 +1316,7 @@ function runTests() {
   // ========== Frame Encoding ==========
   console.log('\n--- Frame Encoding (server -> client) ---');
 
-  test('encodes small text frame (&lt; 126 bytes)', () =&gt; {
+  test('encodes small text frame (< 126 bytes)', () => {
     const payload = 'Hello';
     const frame = ws.encodeFrame(ws.OPCODES.TEXT, Buffer.from(payload));
     // FIN bit + TEXT opcode = 0x81, length = 5
@@ -1374,7 +1369,6 @@ function runTests() {
 
 <!-- source-snippets:end -->
 </details>
-
 ## OpenCode 插件测试
 
 验证 OpenCode 插件的加载、优先级和工具功能：
@@ -1522,7 +1516,6 @@ for test in "${tests[@]}"; do
 
 <!-- source-snippets:end -->
 </details>
-
 ## Codex 插件同步测试
 
 验证 `sync-to-codex-plugin.sh` 脚本正确同步上游内容到 Codex 插件仓库。
@@ -1661,7 +1654,6 @@ assert_file_equals() {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [测试驱动与系统化调试](tdd-and-debugging.md)

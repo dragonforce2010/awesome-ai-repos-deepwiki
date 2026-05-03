@@ -92,7 +92,6 @@ Sources: [src/notebooklm/client.py:55-100](../../../project-repos/notebooklm-py/
 
 <!-- source-snippets:end -->
 </details>
-
 ## 核心工作流
 
 ```mermaid
@@ -251,7 +250,6 @@ class NotebookLMClient:
 
 <!-- source-snippets:end -->
 </details>
-
 ## NotebooksAPI
 
 提供笔记本的 CRUD 操作：
@@ -400,7 +398,6 @@ class NotebooksAPI:
 
 <!-- source-snippets:end -->
 </details>
-
 ## SourcesAPI
 
 Source 是笔记本中的知识来源，支持多种类型：
@@ -573,7 +570,6 @@ class SourcesAPI:
 
 <!-- source-snippets:end -->
 </details>
-
 ## ChatAPI
 
 Chat 使用独立的 `QUERY_URL` 端点（非 batchexecute），支持流式响应：
@@ -722,7 +718,6 @@ class ChatAPI:
 
 <!-- source-snippets:end -->
 </details>
-
 ## ArtifactsAPI
 
 制品生成是库最复杂的子 API，支持 9 种制品类型。详见 [制品生成与下载](artifact-generation.md)。
@@ -875,7 +870,6 @@ class ResearchAPI:
 
 <!-- source-snippets:end -->
 </details>
-
 ## NotesAPI
 
 笔记是用户创建的内容（非 AI 生成），与制品（Artifact）不同：
@@ -1021,7 +1015,6 @@ class NotesAPI:
 
 <!-- source-snippets:end -->
 </details>
-
 ## SettingsAPI
 
 管理全局用户设置，当前主要支持输出语言：
@@ -1167,7 +1160,6 @@ class SettingsAPI:
 
 <!-- source-snippets:end -->
 </details>
-
 ## SharingAPI
 
 管理笔记本的分享设置：
@@ -1313,7 +1305,6 @@ class SharingAPI:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](system-architecture.md)
