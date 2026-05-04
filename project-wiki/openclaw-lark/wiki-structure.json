@@ -1,0 +1,214 @@
+{
+  "title": "openclaw-lark DeepWiki",
+  "description": "OpenClaw 官方飞书/Lark 频道插件源码导读",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/larksuite/openclaw-lark",
+    "commit": "a584cc5e387983bb6ef38dab1f97c9d9e6bba9f1"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "架构与集成",
+      "pages": ["system-architecture", "plugin-openclaw-integration", "channel-capabilities-config"],
+      "subsections": []
+    },
+    {
+      "id": "section-messaging",
+      "title": "消息链路",
+      "pages": ["inbound-seven-stage-pipeline", "outbound-reply-cards"],
+      "subsections": []
+    },
+    {
+      "id": "section-tools",
+      "title": "工具与协议",
+      "pages": ["feishu-tools-surface"],
+      "subsections": []
+    },
+    {
+      "id": "section-security",
+      "title": "安全与治理",
+      "pages": ["security-and-governance"],
+      "subsections": []
+    },
+    {
+      "id": "section-assets",
+      "title": "技能与交付物",
+      "pages": ["bundled-skills"],
+      "subsections": []
+    },
+    {
+      "id": "section-quality",
+      "title": "测试与发布",
+      "pages": ["testing-ci-and-quality"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-messaging",
+    "section-tools",
+    "section-security",
+    "section-assets",
+    "section-quality"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "定位、能力矩阵、环境要求与阅读路线",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "README.zh.md",
+        "package.json",
+        "openclaw.plugin.json",
+        "LICENSE"
+      ],
+      "relatedPages": ["system-architecture", "plugin-openclaw-integration", "feishu-tools-surface"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "分层结构、核心包边界与依赖方向",
+      "importance": "high",
+      "filePaths": [
+        "index.ts",
+        "src/channel/plugin.ts",
+        "src/core/lark-client.ts",
+        "src/messaging/inbound/handler.ts",
+        "src/tools/oapi/index.ts"
+      ],
+      "relatedPages": ["overview", "plugin-openclaw-integration", "inbound-seven-stage-pipeline"]
+    },
+    {
+      "id": "plugin-openclaw-integration",
+      "title": "OpenClaw 插件注册与运行时",
+      "file": "pages/plugin-openclaw-integration.md",
+      "description": "default export 插件对象、事件钩子与 CLI 扩展",
+      "importance": "high",
+      "filePaths": [
+        "index.ts",
+        "src/commands/index.ts",
+        "src/commands/diagnose.ts",
+        "bin/openclaw-lark.js",
+        "package.json"
+      ],
+      "relatedPages": ["system-architecture", "feishu-tools-surface", "testing-ci-and-quality"]
+    },
+    {
+      "id": "channel-capabilities-config",
+      "title": "频道契约、能力与配置",
+      "file": "pages/channel-capabilities-config.md",
+      "description": "ChannelPlugin 元数据、配对、目录、threading 与 JSON Schema",
+      "importance": "high",
+      "filePaths": [
+        "src/channel/plugin.ts",
+        "src/core/config-schema.ts",
+        "src/channel/config-adapter.ts",
+        "src/messaging/outbound/outbound.ts"
+      ],
+      "relatedPages": ["plugin-openclaw-integration", "security-and-governance", "inbound-seven-stage-pipeline"]
+    },
+    {
+      "id": "inbound-seven-stage-pipeline",
+      "title": "入站消息七阶段流水线",
+      "file": "pages/inbound-seven-stage-pipeline.md",
+      "description": "解析、富化、门禁与 dispatch 到 Agent",
+      "importance": "high",
+      "filePaths": [
+        "src/messaging/inbound/handler.ts",
+        "src/messaging/inbound/parse.ts",
+        "src/messaging/inbound/gate.ts",
+        "src/messaging/inbound/dispatch.ts",
+        "src/messaging/inbound/policy.ts"
+      ],
+      "relatedPages": ["outbound-reply-cards", "security-and-governance", "system-architecture"]
+    },
+    {
+      "id": "outbound-reply-cards",
+      "title": "出站回复、卡片与流式输出",
+      "file": "pages/outbound-reply-cards.md",
+      "description": "send/deliver、reply-dispatcher、工具调用可视化",
+      "importance": "high",
+      "filePaths": [
+        "src/messaging/outbound/send.ts",
+        "src/messaging/outbound/deliver.ts",
+        "src/card/reply-dispatcher.ts",
+        "src/card/tool-use-trace-store.ts",
+        "src/card/tool-use-config.ts"
+      ],
+      "relatedPages": ["inbound-seven-stage-pipeline", "feishu-tools-surface", "plugin-openclaw-integration"]
+    },
+    {
+      "id": "feishu-tools-surface",
+      "title": "飞书工具面：OAPI、MCP 文档与交互",
+      "file": "pages/feishu-tools-surface.md",
+      "description": "工具注册矩阵、MCP Doc、OAuth 与 AskUserQuestion",
+      "importance": "high",
+      "filePaths": [
+        "src/tools/oapi/index.ts",
+        "src/tools/mcp/doc/index.ts",
+        "src/tools/oauth.ts",
+        "src/tools/ask-user-question.ts",
+        "src/tools/mcp/shared.ts"
+      ],
+      "relatedPages": ["plugin-openclaw-integration", "bundled-skills", "outbound-reply-cards"]
+    },
+    {
+      "id": "security-and-governance",
+      "title": "安全策略与多账号隔离",
+      "file": "pages/security-and-governance.md",
+      "description": "门禁模型、租户隔离检查与 README 风险声明对齐",
+      "importance": "high",
+      "filePaths": [
+        "src/messaging/inbound/gate.ts",
+        "src/core/security-check.ts",
+        "README.zh.md",
+        "src/messaging/inbound/policy.ts"
+      ],
+      "relatedPages": ["inbound-seven-stage-pipeline", "channel-capabilities-config", "overview"]
+    },
+    {
+      "id": "bundled-skills",
+      "title": "随包技能与文档资产",
+      "file": "pages/bundled-skills.md",
+      "description": "openclaw.plugin.json 声明的 skills 目录与典型 Skill 主题",
+      "importance": "medium",
+      "filePaths": [
+        "openclaw.plugin.json",
+        "skills/feishu-bitable/SKILL.md",
+        "skills/feishu-channel-rules/SKILL.md",
+        "skills/feishu-create-doc/SKILL.md",
+        "package.json"
+      ],
+      "relatedPages": ["feishu-tools-surface", "overview", "testing-ci-and-quality"]
+    },
+    {
+      "id": "testing-ci-and-quality",
+      "title": "测试、CI 与质量门禁",
+      "file": "pages/testing-ci-and-quality.md",
+      "description": "Vitest、GitHub Actions 流水线与本地脚本",
+      "importance": "medium",
+      "filePaths": [
+        ".github/workflows/ci.yml",
+        "package.json",
+        "vitest.config.ts",
+        "tsconfig.json",
+        "eslint.config.js",
+        "tsdown.config.ts"
+      ],
+      "relatedPages": ["plugin-openclaw-integration", "overview", "bundled-skills"]
+    }
+  ]
+}

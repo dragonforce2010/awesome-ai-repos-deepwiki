@@ -1,0 +1,7331 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/openclaw-lark",
+    "remote": "https://github.com/larksuite/openclaw-lark.git",
+    "branch": "main",
+    "commit": "a584cc5e387983bb6ef38dab1f97c9d9e6bba9f1"
+  },
+  "file_count": 242,
+  "skipped_count": 3,
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 74,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": ".prettierrc.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "CLA.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": "README.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "bin/openclaw-lark.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "eslint.config.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 111,
+      "symbols": []
+    },
+    {
+      "path": "index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 214,
+      "symbols": []
+    },
+    {
+      "path": "openclaw.plugin.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 98,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 9661,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-bitable/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 248,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-bitable/references/examples.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 813,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-bitable/references/field-properties.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 763,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-bitable/references/record-values.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 911,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-calendar/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 242,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-channel-rules/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-channel-rules/references/markdown-syntax.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 138,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-create-doc/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 719,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-fetch-doc/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 93,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-im-read/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 163,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-task/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 340,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-troubleshoot/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "skills/feishu-update-doc/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 285,
+      "symbols": []
+    },
+    {
+      "path": "src/card/builder.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 982,
+      "symbols": [
+        {
+          "name": "CardElement",
+          "type": "interface",
+          "line": 32
+        },
+        {
+          "name": "FeishuCard",
+          "type": "interface",
+          "line": 37
+        },
+        {
+          "name": "CardState",
+          "type": "type",
+          "line": 51
+        },
+        {
+          "name": "ConfirmData",
+          "type": "interface",
+          "line": 53
+        },
+        {
+          "name": "splitReasoningText",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "extractThinkingContent",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "stripReasoningTags",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "cleanReasoningPrefix",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "formatReasoningDuration",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "formatToolUseDuration",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "formatElapsed",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "buildFooter",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "compactNumber",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "formatFooterRuntimeSegments",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "buildCardContent",
+          "type": "function",
+          "line": 316
+        },
+        {
+          "name": "buildThinkingCard",
+          "type": "function",
+          "line": 377
+        },
+        {
+          "name": "buildStreamingCard",
+          "type": "function",
+          "line": 390
+        },
+        {
+          "name": "buildCompleteCard",
+          "type": "function",
+          "line": 439
+        },
+        {
+          "name": "buildConfirmCard",
+          "type": "function",
+          "line": 567
+        },
+        {
+          "name": "buildStreamingThinkingCard",
+          "type": "function",
+          "line": 658
+        },
+        {
+          "name": "buildStreamingPreAnswerCard",
+          "type": "function",
+          "line": 666
+        },
+        {
+          "name": "buildStreamingToolUseActivePanel",
+          "type": "function",
+          "line": 719
+        },
+        {
+          "name": "toCardKit2",
+          "type": "function",
+          "line": 766
+        },
+        {
+          "name": "buildStreamingToolUsePendingPanel",
+          "type": "function",
+          "line": 776
+        },
+        {
+          "name": "buildToolUsePanel",
+          "type": "function",
+          "line": 808
+        },
+        {
+          "name": "buildToolUseStepElements",
+          "type": "function",
+          "line": 858
+        },
+        {
+          "name": "buildToolUsePlaceholder",
+          "type": "function",
+          "line": 871
+        },
+        {
+          "name": "buildToolUseStepTitleElement",
+          "type": "function",
+          "line": 889
+        },
+        {
+          "name": "buildToolUseStepTitleMarkdown",
+          "type": "function",
+          "line": 905
+        },
+        {
+          "name": "buildToolUseStepDetailElement",
+          "type": "function",
+          "line": 913
+        },
+        {
+          "name": "buildToolUseStepOutputElement",
+          "type": "function",
+          "line": 928
+        },
+        {
+          "name": "buildToolUseStepOutputMarkdown",
+          "type": "function",
+          "line": 942
+        },
+        {
+          "name": "formatToolUseStepStatus",
+          "type": "function",
+          "line": 957
+        },
+        {
+          "name": "formatToolUseCodeBlock",
+          "type": "function",
+          "line": 969
+        },
+        {
+          "name": "longestBacktickRun",
+          "type": "function",
+          "line": 975
+        },
+        {
+          "name": "escapeToolUseMarkdownText",
+          "type": "function",
+          "line": 980
+        }
+      ]
+    },
+    {
+      "path": "src/card/card-error.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 233,
+      "symbols": [
+        {
+          "name": "MarkdownTableMatch",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "CardKitApiError",
+          "type": "class",
+          "line": 46
+        },
+        {
+          "name": "extractSubCode",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "parseCardApiError",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "isCardTableLimitError",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "isCardRateLimitError",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "findMarkdownTablesOutsideCodeBlocks",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "isInsideCodeBlock",
+          "type": "function",
+          "line": 165
+        },
+        {
+          "name": "sanitizeTextSegmentsForCard",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "sanitizeTextForCard",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "wrapTablesBeyondLimit",
+          "type": "function",
+          "line": 221
+        }
+      ]
+    },
+    {
+      "path": "src/card/cardkit.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 277,
+      "symbols": [
+        {
+          "name": "CardKitResponse",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "logCardKitResponse",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "createCardEntity",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "response",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "streamCardContent",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "resp",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "updateCardKitCard",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "resp",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "updateCardKitCardForAuth",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "sendCardByCardId",
+          "type": "function",
+          "line": 185
+        },
+        {
+          "name": "setCardStreamingMode",
+          "type": "function",
+          "line": 253
+        },
+        {
+          "name": "resp",
+          "type": "function",
+          "line": 265
+        }
+      ]
+    },
+    {
+      "path": "src/card/flush-controller.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 140,
+      "symbols": [
+        {
+          "name": "FlushController",
+          "type": "class",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "src/card/image-resolver.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 134,
+      "symbols": [
+        {
+          "name": "ImageResolverOptions",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "ImageResolver",
+          "type": "class",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "src/card/markdown-style.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 109,
+      "symbols": [
+        {
+          "name": "optimizeMarkdownStyle",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "_optimizeMarkdownStyle",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "stripInvalidImageKeys",
+          "type": "function",
+          "line": 103
+        }
+      ]
+    },
+    {
+      "path": "src/card/reasoning-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 80,
+      "symbols": [
+        {
+          "name": "normalizeToolName",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "truncateText",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "redactInlineSecrets",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "isSensitiveName",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "shouldRedactHeaderValue",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "sanitizeParamsForLog",
+          "type": "function",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "src/card/reply-dispatcher-types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 178,
+      "symbols": [
+        {
+          "name": "CardPhase",
+          "type": "type",
+          "line": 31
+        },
+        {
+          "name": "TerminalReason",
+          "type": "type",
+          "line": 49
+        },
+        {
+          "name": "ReasoningState",
+          "type": "interface",
+          "line": 65
+        },
+        {
+          "name": "ToolUseState",
+          "type": "interface",
+          "line": 72
+        },
+        {
+          "name": "StreamingTextState",
+          "type": "interface",
+          "line": 78
+        },
+        {
+          "name": "CardKitState",
+          "type": "interface",
+          "line": 86
+        },
+        {
+          "name": "CreateFeishuReplyDispatcherParams",
+          "type": "interface",
+          "line": 121
+        },
+        {
+          "name": "FeishuReplyDispatcherResult",
+          "type": "interface",
+          "line": 146
+        },
+        {
+          "name": "FooterSessionMetrics",
+          "type": "interface",
+          "line": 158
+        },
+        {
+          "name": "StreamingCardDeps",
+          "type": "interface",
+          "line": 169
+        }
+      ]
+    },
+    {
+      "path": "src/card/reply-dispatcher.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 465,
+      "symbols": [
+        {
+          "name": "createFeishuReplyDispatcher",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "shouldSkip",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "isTerminated",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "getVisiblePayloadText",
+          "type": "function",
+          "line": 435
+        },
+        {
+          "name": "shouldRouteToolPayloadToCard",
+          "type": "function",
+          "line": 448
+        }
+      ]
+    },
+    {
+      "path": "src/card/reply-mode.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 93,
+      "symbols": [
+        {
+          "name": "ReplyModeValue",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "resolveReplyMode",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "expandAutoMode",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "shouldUseCard",
+          "type": "function",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "path": "src/card/streaming-card-controller.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1189,
+      "symbols": [
+        {
+          "name": "TerminalCardTextImageResolver",
+          "type": "interface",
+          "line": 70
+        },
+        {
+          "name": "TerminalCardContentInput",
+          "type": "interface",
+          "line": 74
+        },
+        {
+          "name": "StreamingCardController",
+          "type": "class",
+          "line": 83
+        },
+        {
+          "name": "prepareTerminalCardContent",
+          "type": "function",
+          "line": 1163
+        },
+        {
+          "name": "extractApiDetail",
+          "type": "function",
+          "line": 1185
+        }
+      ]
+    },
+    {
+      "path": "src/card/tool-use-config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 100,
+      "symbols": [
+        {
+          "name": "ToolUseMode",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "ToolUseDisplayConfig",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "resolveToolUseDisplayConfig",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "resolveEffectiveVerboseMode",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "resolveSessionVerboseMode",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "resolveCandidateSessionKeys",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "extractInlineVerboseMode",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "normalizeToolUseMode",
+          "type": "function",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "path": "src/card/tool-use-display.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 592,
+      "symbols": [
+        {
+          "name": "ToolUseStepStatus",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "ToolUseDisplayBlock",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "ToolUseDisplayStep",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "ToolUseDisplayResult",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "SanitizerKind",
+          "type": "type",
+          "line": 35
+        },
+        {
+          "name": "SummarySource",
+          "type": "type",
+          "line": 36
+        },
+        {
+          "name": "ToolDescriptor",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "ToolStepSource",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "SummarySignals",
+          "type": "interface",
+          "line": 59
+        },
+        {
+          "name": "normalizeToolUseDisplay",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "buildToolUseTitleSuffix",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "toTraceSource",
+          "type": "function",
+          "line": 199
+        },
+        {
+          "name": "formatToolStep",
+          "type": "function",
+          "line": 210
+        },
+        {
+          "name": "buildToolTitle",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "resolveToolDescriptor",
+          "type": "function",
+          "line": 244
+        },
+        {
+          "name": "extractDetailFromParams",
+          "type": "function",
+          "line": 254
+        },
+        {
+          "name": "extractDetailFromSummary",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "buildSummarySignals",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "pickSummaryDetail",
+          "type": "function",
+          "line": 302
+        },
+        {
+          "name": "buildResultBlock",
+          "type": "function",
+          "line": 310
+        },
+        {
+          "name": "buildErrorBlock",
+          "type": "function",
+          "line": 321
+        },
+        {
+          "name": "sanitizeDisplayBlockValue",
+          "type": "function",
+          "line": 325
+        },
+        {
+          "name": "buildPatternDetail",
+          "type": "function",
+          "line": 332
+        },
+        {
+          "name": "extractScalarText",
+          "type": "function",
+          "line": 341
+        },
+        {
+          "name": "sanitizeToolDetail",
+          "type": "function",
+          "line": 347
+        },
+        {
+          "name": "normalizeInlineDisplayText",
+          "type": "function",
+          "line": 381
+        },
+        {
+          "name": "sanitizePathLike",
+          "type": "function",
+          "line": 385
+        },
+        {
+          "name": "sanitizeCommandLike",
+          "type": "function",
+          "line": 400
+        },
+        {
+          "name": "resolveStepStatus",
+          "type": "function",
+          "line": 410
+        },
+        {
+          "name": "buildDisplayBlock",
+          "type": "function",
+          "line": 416
+        },
+        {
+          "name": "stringifyJson",
+          "type": "function",
+          "line": 446
+        },
+        {
+          "name": "tryParseJson",
+          "type": "function",
+          "line": 454
+        },
+        {
+          "name": "redactCommandPaths",
+          "type": "function",
+          "line": 466
+        },
+        {
+          "name": "redactCommandToken",
+          "type": "function",
+          "line": 476
+        },
+        {
+          "name": "redactPathAssignment",
+          "type": "function",
+          "line": 485
+        },
+        {
+          "name": "redactStandalonePath",
+          "type": "function",
+          "line": 495
+        },
+        {
+          "name": "sanitizeUrlForDisplay",
+          "type": "function",
+          "line": 501
+        },
+        {
+          "name": "looksLikePathToken",
+          "type": "function",
+          "line": 517
+        },
+        {
+          "name": "basenameFromPath",
+          "type": "function",
+          "line": 527
+        },
+        {
+          "name": "isSkillPathValue",
+          "type": "function",
+          "line": 533
+        },
+        {
+          "name": "sanitizeGenericText",
+          "type": "function",
+          "line": 537
+        },
+        {
+          "name": "cleanupLine",
+          "type": "function",
+          "line": 544
+        },
+        {
+          "name": "stripMarkdown",
+          "type": "function",
+          "line": 552
+        },
+        {
+          "name": "isNoiseLine",
+          "type": "function",
+          "line": 561
+        },
+        {
+          "name": "humanizeToolName",
+          "type": "function",
+          "line": 565
+        },
+        {
+          "name": "formatDurationLabel",
+          "type": "function",
+          "line": 571
+        },
+        {
+          "name": "stripQuotes",
+          "type": "function",
+          "line": 575
+        },
+        {
+          "name": "extractFirstCodeSpan",
+          "type": "function",
+          "line": 579
+        },
+        {
+          "name": "extractFirstQuotedText",
+          "type": "function",
+          "line": 584
+        },
+        {
+          "name": "extractFirstUrl",
+          "type": "function",
+          "line": 589
+        }
+      ]
+    },
+    {
+      "path": "src/card/tool-use-trace-store.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 329,
+      "symbols": [
+        {
+          "name": "ToolUseTraceStep",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "SessionTraceState",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "startToolUseTraceRun",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "clearToolUseTraceRun",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "hasToolUseTraceRun",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "recordToolUseStart",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "recordToolUseEnd",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "getToolUseTraceSteps",
+          "type": "function",
+          "line": 165
+        },
+        {
+          "name": "findPendingStepIndex",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "pruneTraceStore",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "sanitizeTraceValue",
+          "type": "function",
+          "line": 234
+        },
+        {
+          "name": "sanitizeTraceString",
+          "type": "function",
+          "line": 267
+        },
+        {
+          "name": "resolveStringLimit",
+          "type": "function",
+          "line": 278
+        },
+        {
+          "name": "isCommandLikeKey",
+          "type": "function",
+          "line": 292
+        },
+        {
+          "name": "isSensitiveKey",
+          "type": "function",
+          "line": 300
+        },
+        {
+          "name": "redactUrlParams",
+          "type": "function",
+          "line": 304
+        },
+        {
+          "name": "fingerprintTraceValue",
+          "type": "function",
+          "line": 308
+        },
+        {
+          "name": "sortTraceValue",
+          "type": "function",
+          "line": 314
+        },
+        {
+          "name": "_resetForTesting",
+          "type": "function",
+          "line": 327
+        }
+      ]
+    },
+    {
+      "path": "src/card/unavailable-guard.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 108,
+      "symbols": [
+        {
+          "name": "UnavailableGuardParams",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "UnavailableGuard",
+          "type": "class",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "path": "src/channel/abort-detect.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 133,
+      "symbols": [
+        {
+          "name": "normalizeAbortTriggerText",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "isAbortTrigger",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "isLikelyAbortText",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "extractRawTextFromEvent",
+          "type": "function",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "path": "src/channel/chat-queue.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 83,
+      "symbols": [
+        {
+          "name": "QueueStatus",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "ActiveDispatcherEntry",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "threadScopedKey",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "buildQueueKey",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "registerActiveDispatcher",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "unregisterActiveDispatcher",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "getActiveDispatcher",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "hasActiveTask",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "enqueueFeishuChatTask",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "cleanup",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "_resetChatQueueState",
+          "type": "function",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "src/channel/config-adapter.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 126,
+      "symbols": [
+        {
+          "name": "mergeFeishuAccountConfig",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "setAccountEnabled",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "applyAccountConfig",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "deleteAccount",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "collectFeishuSecurityWarnings",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "defaultGroupPolicy",
+          "type": "function",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "path": "src/channel/directory.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 237,
+      "symbols": [
+        {
+          "name": "matchesQuery",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "applyLimitSlice",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "listFeishuDirectoryPeers",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "listFeishuDirectoryGroups",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "listFeishuDirectoryPeersLive",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "listFeishuDirectoryGroupsLive",
+          "type": "function",
+          "line": 188
+        }
+      ]
+    },
+    {
+      "path": "src/channel/event-handlers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 405,
+      "symbols": [
+        {
+          "name": "isEventOwnershipValid",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "eventAppId",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "handleMessageEvent",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "handleReactionEvent",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "handleBotMembershipEvent",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "handleVcMeetingInvitedEvent",
+          "type": "function",
+          "line": 254
+        },
+        {
+          "name": "handleCommentEvent",
+          "type": "function",
+          "line": 335
+        },
+        {
+          "name": "handleCardActionEvent",
+          "type": "function",
+          "line": 390
+        }
+      ]
+    },
+    {
+      "path": "src/channel/interactive-dispatch.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 238,
+      "symbols": [
+        {
+          "name": "FeishuCardActionTriggerEvent",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "extractBasics",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "FeishuInteractiveHandlerResponse",
+          "type": "type",
+          "line": 54
+        },
+        {
+          "name": "FeishuInteractiveHandlerContext",
+          "type": "interface",
+          "line": 56
+        },
+        {
+          "name": "buildMarkdownCard",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "dispatchFeishuPluginInteractiveHandler",
+          "type": "function",
+          "line": 103
+        }
+      ]
+    },
+    {
+      "path": "src/channel/monitor.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 182,
+      "symbols": [
+        {
+          "name": "monitorSingleAccount",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "monitorFeishuProvider",
+          "type": "function",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "path": "src/channel/onboarding-config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 104,
+      "symbols": [
+        {
+          "name": "setFeishuDmPolicy",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "setFeishuAllowFrom",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "setFeishuGroupPolicy",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "setFeishuGroupAllowFrom",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "setFeishuGroups",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "parseAllowFromInput",
+          "type": "function",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "path": "src/channel/onboarding-migrate.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 87,
+      "symbols": [
+        {
+          "name": "migrateLegacyGroupAllowFrom",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "existingGroupAllowFrom",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "existingGroups",
+          "type": "function",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "src/channel/onboarding.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 365,
+      "symbols": [
+        {
+          "name": "noteFeishuCredentialHelp",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "promptFeishuAllowFrom",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "acquireCredentials",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "currentDomain",
+          "type": "function",
+          "line": 277
+        },
+        {
+          "name": "existing",
+          "type": "function",
+          "line": 327
+        }
+      ]
+    },
+    {
+      "path": "src/channel/plugin.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 339,
+      "symbols": [
+        {
+          "name": "adaptDirectoryParams",
+          "type": "function",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "src/channel/probe.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 25,
+      "symbols": [
+        {
+          "name": "probeFeishu",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "src/channel/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 56,
+      "symbols": [
+        {
+          "name": "MonitorFeishuOpts",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "FeishuDirectoryPeer",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "FeishuDirectoryGroup",
+          "type": "interface",
+          "line": 37
+        },
+        {
+          "name": "MonitorContext",
+          "type": "interface",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "path": "src/commands/auth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 215,
+      "symbols": [
+        {
+          "name": "AuthResult",
+          "type": "type",
+          "line": 72
+        },
+        {
+          "name": "formatAuthResult",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "executeFeishuAuth",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "runFeishuAuth",
+          "type": "function",
+          "line": 200
+        },
+        {
+          "name": "runFeishuAuthI18n",
+          "type": "function",
+          "line": 209
+        }
+      ]
+    },
+    {
+      "path": "src/commands/diagnose.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 945,
+      "symbols": [
+        {
+          "name": "DiagLogger",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "resolveGlobalConfig",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "CheckStatus",
+          "type": "type",
+          "line": 45
+        },
+        {
+          "name": "DiagCheckResult",
+          "type": "interface",
+          "line": 47
+        },
+        {
+          "name": "AccountDiagResult",
+          "type": "interface",
+          "line": 54
+        },
+        {
+          "name": "DiagReport",
+          "type": "interface",
+          "line": 64
+        },
+        {
+          "name": "maskSecret",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "extractRecentErrors",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "checkAppScopes",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "detectRegisteredTools",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "diagnoseAccount",
+          "type": "function",
+          "line": 170
+        },
+        {
+          "name": "runDiagnosis",
+          "type": "function",
+          "line": 271
+        },
+        {
+          "name": "formatCheck",
+          "type": "function",
+          "line": 361
+        },
+        {
+          "name": "formatDiagReportText",
+          "type": "function",
+          "line": 369
+        },
+        {
+          "name": "formatCheckCli",
+          "type": "function",
+          "line": 458
+        },
+        {
+          "name": "traceByMessageId",
+          "type": "function",
+          "line": 476
+        },
+        {
+          "name": "formatTraceOutput",
+          "type": "function",
+          "line": 506
+        },
+        {
+          "name": "TraceEvent",
+          "type": "interface",
+          "line": 536
+        },
+        {
+          "name": "EventKind",
+          "type": "type",
+          "line": 544
+        },
+        {
+          "name": "classifyEvent",
+          "type": "function",
+          "line": 564
+        },
+        {
+          "name": "parseTraceLines",
+          "type": "function",
+          "line": 623
+        },
+        {
+          "name": "analyzeTrace",
+          "type": "function",
+          "line": 639
+        },
+        {
+          "name": "flushStream",
+          "type": "function",
+          "line": 661
+        },
+        {
+          "name": "formatDiagReportCli",
+          "type": "function",
+          "line": 878
+        }
+      ]
+    },
+    {
+      "path": "src/commands/doctor.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 782,
+      "symbols": [
+        {
+          "name": "resolveGlobalConfig",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "CheckStatus",
+          "type": "type",
+          "line": 45
+        },
+        {
+          "name": "DoctorLocale",
+          "type": "type",
+          "line": 51
+        },
+        {
+          "name": "formatTimestamp",
+          "type": "function",
+          "line": 271
+        },
+        {
+          "name": "getAllToolScopes",
+          "type": "function",
+          "line": 278
+        },
+        {
+          "name": "maskSecret",
+          "type": "function",
+          "line": 295
+        },
+        {
+          "name": "checkBasicInfo",
+          "type": "function",
+          "line": 304
+        },
+        {
+          "name": "feishuEntry",
+          "type": "function",
+          "line": 315
+        },
+        {
+          "name": "checkToolsProfile",
+          "type": "function",
+          "line": 358
+        },
+        {
+          "name": "tools",
+          "type": "function",
+          "line": 361
+        },
+        {
+          "name": "checkAppPermissions",
+          "type": "function",
+          "line": 398
+        },
+        {
+          "name": "generatePermissionTable",
+          "type": "function",
+          "line": 467
+        },
+        {
+          "name": "checkUserPermissions",
+          "type": "function",
+          "line": 495
+        },
+        {
+          "name": "runFeishuDoctor",
+          "type": "function",
+          "line": 668
+        },
+        {
+          "name": "runFeishuDoctorI18n",
+          "type": "function",
+          "line": 773
+        }
+      ]
+    },
+    {
+      "path": "src/commands/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 261,
+      "symbols": [
+        {
+          "name": "runFeishuStart",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "runFeishuStartI18n",
+          "type": "function",
+          "line": 133
+        },
+        {
+          "name": "getFeishuHelp",
+          "type": "function",
+          "line": 143
+        },
+        {
+          "name": "getFeishuHelpI18n",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "registerCommands",
+          "type": "function",
+          "line": 169
+        }
+      ]
+    },
+    {
+      "path": "src/commands/locale.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 8,
+      "symbols": [
+        {
+          "name": "FeishuLocale",
+          "type": "type",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "src/core/accounts.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 250,
+      "symbols": [
+        {
+          "name": "getLarkConfig",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "getAccountMap",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "baseConfig",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "mergeAccountConfig",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "baseVal",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "toBrand",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "getLarkAccountIds",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "getDefaultLarkAccountId",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "getLarkAccount",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "createAccountScopedConfig",
+          "type": "function",
+          "line": 198
+        },
+        {
+          "name": "getEnabledLarkAccounts",
+          "type": "function",
+          "line": 211
+        },
+        {
+          "name": "getLarkCredentials",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "isConfigured",
+          "type": "function",
+          "line": 248
+        }
+      ]
+    },
+    {
+      "path": "src/core/agent-config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 175,
+      "symbols": [
+        {
+          "name": "AgentIdentity",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "AgentToolsPolicy",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "AgentEntry",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "listConfiguredAgents",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "agents",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "resolveAgentEntry",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "getAgentDisplayName",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "getAgentSkillsFilter",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "getAgentToolsPolicy",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "mergeSkillFilters",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "isToolAllowedByPolicy",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "matchesAnyPattern",
+          "type": "function",
+          "line": 165
+        }
+      ]
+    },
+    {
+      "path": "src/core/api-error.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 132,
+      "symbols": [
+        {
+          "name": "formatPermissionError",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "coerceCode",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "extractLarkApiCode",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "assertLarkOk",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "formatLarkError",
+          "type": "function",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "path": "src/core/app-owner-fallback.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 45,
+      "symbols": [
+        {
+          "name": "getAppOwnerFallback",
+          "type": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "src/core/app-scope-checker.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 255,
+      "symbols": [
+        {
+          "name": "AppInfo",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "CacheEntry",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "invalidateAppScopeCache",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "getAppGrantedScopes",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "statusCode",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "getAppInfo",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "intersectScopes",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "missingScopes",
+          "type": "function",
+          "line": 227
+        },
+        {
+          "name": "isAppScopeSatisfied",
+          "type": "function",
+          "line": 244
+        }
+      ]
+    },
+    {
+      "path": "src/core/auth-errors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 205,
+      "symbols": [
+        {
+          "name": "ScopeErrorInfo",
+          "type": "interface",
+          "line": 60
+        },
+        {
+          "name": "AuthHint",
+          "type": "interface",
+          "line": 70
+        },
+        {
+          "name": "NeedAuthorizationError",
+          "type": "class",
+          "line": 96
+        },
+        {
+          "name": "AppScopeCheckFailedError",
+          "type": "class",
+          "line": 110
+        },
+        {
+          "name": "AppScopeMissingError",
+          "type": "class",
+          "line": 126
+        },
+        {
+          "name": "UserAuthRequiredError",
+          "type": "class",
+          "line": 165
+        },
+        {
+          "name": "UserScopeInsufficientError",
+          "type": "class",
+          "line": 192
+        }
+      ]
+    },
+    {
+      "path": "src/core/chat-info-cache.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 214,
+      "symbols": [
+        {
+          "name": "LarkClientStatic",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "injectLarkClient",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "ChatInfo",
+          "type": "interface",
+          "line": 43
+        },
+        {
+          "name": "CacheEntry",
+          "type": "interface",
+          "line": 55
+        },
+        {
+          "name": "ChatInfoCache",
+          "type": "class",
+          "line": 60
+        },
+        {
+          "name": "getChatInfoCache",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "clearChatInfoCache",
+          "type": "function",
+          "line": 117
+        },
+        {
+          "name": "isThreadCapableGroup",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "getChatInfo",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "chatMode",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "getChatTypeFeishu",
+          "type": "function",
+          "line": 205
+        }
+      ]
+    },
+    {
+      "path": "src/core/comment-target.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 126,
+      "symbols": [
+        {
+          "name": "CommentFileType",
+          "type": "type",
+          "line": 21
+        },
+        {
+          "name": "CommentDeliveryMode",
+          "type": "type",
+          "line": 23
+        },
+        {
+          "name": "CommentTarget",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "buildFeishuCommentTarget",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "parseFeishuCommentTarget",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "isCommentTarget",
+          "type": "function",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "path": "src/core/config-schema.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 236,
+      "symbols": []
+    },
+    {
+      "path": "src/core/device-flow.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 291,
+      "symbols": [
+        {
+          "name": "DeviceAuthResponse",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "DeviceFlowTokenData",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "DeviceFlowResult",
+          "type": "type",
+          "line": 43
+        },
+        {
+          "name": "DeviceFlowError",
+          "type": "type",
+          "line": 47
+        },
+        {
+          "name": "resolveOAuthEndpoints",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "requestDeviceAuthorization",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "msg",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "expiresIn",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "interval",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "sleep",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "pollDeviceToken",
+          "type": "function",
+          "line": 192
+        },
+        {
+          "name": "refreshToken",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "expiresIn",
+          "type": "function",
+          "line": 242
+        },
+        {
+          "name": "desc",
+          "type": "function",
+          "line": 282
+        }
+      ]
+    },
+    {
+      "path": "src/core/domains.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 35,
+      "symbols": [
+        {
+          "name": "openPlatformDomain",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "applinkDomain",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "wwwDomain",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "mcpDomain",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "src/core/feishu-fetch.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 28,
+      "symbols": [
+        {
+          "name": "feishuFetch",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "src/core/footer-config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 52,
+      "symbols": [
+        {
+          "name": "resolveFooterConfig",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "src/core/lark-client.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 511,
+      "symbols": [
+        {
+          "name": "installGlobalUserAgent",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "LarkClientCredentials",
+          "type": "interface",
+          "line": 60
+        },
+        {
+          "name": "resolveBrand",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "secretRefsEqual",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "credentialsEqual",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "LarkClient",
+          "type": "class",
+          "line": 120
+        },
+        {
+          "name": "getResolvedConfig",
+          "type": "function",
+          "line": 494
+        }
+      ]
+    },
+    {
+      "path": "src/core/lark-logger.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 179,
+      "symbols": [
+        {
+          "name": "LarkLogger",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "consoleFallback",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "resolveRuntimeLogger",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "getTraceMeta",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "enrichMeta",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "buildTracePrefix",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "formatMessage",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "createLarkLogger",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "getLogger",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "larkLogger",
+          "type": "function",
+          "line": 177
+        }
+      ]
+    },
+    {
+      "path": "src/core/lark-ticket.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 56,
+      "symbols": [
+        {
+          "name": "LarkTicket",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "withTicket",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "getTicket",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "ticketElapsed",
+          "type": "function",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "path": "src/core/message-unavailable.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 172,
+      "symbols": [
+        {
+          "name": "TerminalMessageApiCode",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "MessageUnavailableState",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "pruneExpired",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "isTerminalMessageApiCode",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "markMessageUnavailable",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "getMessageUnavailableState",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "isMessageUnavailable",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "markMessageUnavailableFromError",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "MessageUnavailableError",
+          "type": "class",
+          "line": 99
+        },
+        {
+          "name": "isMessageUnavailableError",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "assertMessageAvailable",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "runWithMessageUnavailableGuard",
+          "type": "function",
+          "line": 143
+        }
+      ]
+    },
+    {
+      "path": "src/core/owner-policy.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 64,
+      "symbols": [
+        {
+          "name": "OwnerAccessDeniedError",
+          "type": "class",
+          "line": 25
+        },
+        {
+          "name": "assertOwnerAccessStrict",
+          "type": "function",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "src/core/permission-url.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 77,
+      "symbols": [
+        {
+          "name": "getPermissionPriority",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "extractHighestPriorityScope",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "extractPermissionGrantUrl",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "extractPermissionScopes",
+          "type": "function",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "path": "src/core/raw-request.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 118,
+      "symbols": [
+        {
+          "name": "resolveDomainUrl",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "RawLarkRequestOptions",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "isFormDataBody",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "isBinaryBody",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "buildRequestBody",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "rawLarkRequest",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "src/core/runtime-store.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 32,
+      "symbols": [
+        {
+          "name": "setLarkRuntime",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "tryGetLarkRuntime",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "getLarkRuntime",
+          "type": "function",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "path": "src/core/scope-manager.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 241,
+      "symbols": [
+        {
+          "name": "getRequiredScopes",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "getRequiredScopesForActions",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "hasRequiredScopes",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "getActionsForScope",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "checkAppScopes",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "getMissingAppScopes",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "checkUserScopes",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "getMissingUserScopes",
+          "type": "function",
+          "line": 236
+        }
+      ]
+    },
+    {
+      "path": "src/core/sdk-compat.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 30,
+      "symbols": [
+        {
+          "name": "readReactionParams",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "src/core/security-check.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 230,
+      "symbols": [
+        {
+          "name": "IsolationStatus",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "checkMultiAccountIsolation",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "accountNames",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "isMultiTenant",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "needsDmScopeFix",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "getDmScopeFixCommand",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "formatDmScopeWarning",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "formatIsolationWarning",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "generateIsolationFixCommands",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "generateSharedAgentCommands",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "collectIsolationWarnings",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "emitSecurityWarnings",
+          "type": "function",
+          "line": 225
+        }
+      ]
+    },
+    {
+      "path": "src/core/shutdown-hooks.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 68,
+      "symbols": [
+        {
+          "name": "_resetShutdownHooks",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "registerShutdownHook",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "drainShutdownHooks",
+          "type": "function",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "src/core/synthetic-target.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 40,
+      "symbols": [
+        {
+          "name": "isSyntheticTarget",
+          "type": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "src/core/targets.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 192,
+      "symbols": [
+        {
+          "name": "detectIdType",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "normalizeFeishuTarget",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "FeishuRouteTarget",
+          "type": "interface",
+          "line": 83
+        },
+        {
+          "name": "parseFeishuRouteTarget",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "encodeFeishuRouteTarget",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "formatFeishuTarget",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "resolveReceiveIdType",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "normalizeMessageId",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "normalizeMessageId",
+          "type": "function",
+          "line": 167
+        },
+        {
+          "name": "normalizeMessageId",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "looksLikeFeishuId",
+          "type": "function",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "path": "src/core/token-store.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 373,
+      "symbols": [
+        {
+          "name": "StoredUAToken",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "accountKey",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "maskToken",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "KeychainBackend",
+          "type": "interface",
+          "line": 80
+        },
+        {
+          "name": "linuxSafeFileName",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "ensureLinuxCredDir",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "getMasterKey",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "encryptData",
+          "type": "function",
+          "line": 170
+        },
+        {
+          "name": "decryptData",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "win32SafeFileName",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "ensureWin32CredDir",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "getWin32MasterKey",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "createBackend",
+          "type": "function",
+          "line": 299
+        },
+        {
+          "name": "getStoredToken",
+          "type": "function",
+          "line": 323
+        },
+        {
+          "name": "setStoredToken",
+          "type": "function",
+          "line": 338
+        },
+        {
+          "name": "removeStoredToken",
+          "type": "function",
+          "line": 348
+        },
+        {
+          "name": "tokenStatus",
+          "type": "function",
+          "line": 364
+        }
+      ]
+    },
+    {
+      "path": "src/core/tool-client.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 529,
+      "symbols": [
+        {
+          "name": "LarkRequestOptions",
+          "type": "type",
+          "line": 73
+        },
+        {
+          "name": "InvokeOptions",
+          "type": "interface",
+          "line": 90
+        },
+        {
+          "name": "InvokeByPathOptions",
+          "type": "type",
+          "line": 100
+        },
+        {
+          "name": "ToolClient",
+          "type": "class",
+          "line": 112
+        },
+        {
+          "name": "createToolClient",
+          "type": "function",
+          "line": 474
+        }
+      ]
+    },
+    {
+      "path": "src/core/tool-scopes.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 489,
+      "symbols": [
+        {
+          "name": "ToolActionKey",
+          "type": "type",
+          "line": 59
+        },
+        {
+          "name": "ToolScopeMapping",
+          "type": "type",
+          "line": 173
+        },
+        {
+          "name": "RequiredAppScope",
+          "type": "type",
+          "line": 400
+        },
+        {
+          "name": "SensitiveScope",
+          "type": "type",
+          "line": 460
+        },
+        {
+          "name": "filterSensitiveScopes",
+          "type": "function",
+          "line": 477
+        }
+      ]
+    },
+    {
+      "path": "src/core/tools-config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 148,
+      "symbols": [
+        {
+          "name": "resolveToolsConfig",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "resolveAnyEnabledToolsConfig",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "matchesAnyPattern",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "shouldRegisterTool",
+          "type": "function",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "path": "src/core/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 140,
+      "symbols": [
+        {
+          "name": "FeishuConfig",
+          "type": "type",
+          "line": 25
+        },
+        {
+          "name": "FeishuGroupConfig",
+          "type": "type",
+          "line": 28
+        },
+        {
+          "name": "FeishuAccountConfig",
+          "type": "type",
+          "line": 31
+        },
+        {
+          "name": "LarkBrand",
+          "type": "type",
+          "line": 43
+        },
+        {
+          "name": "FeishuConnectionMode",
+          "type": "type",
+          "line": 46
+        },
+        {
+          "name": "FeishuIdType",
+          "type": "type",
+          "line": 53
+        },
+        {
+          "name": "FeishuToolsConfig",
+          "type": "interface",
+          "line": 60
+        },
+        {
+          "name": "FeishuFooterConfig",
+          "type": "interface",
+          "line": 72
+        },
+        {
+          "name": "LarkAccountBase",
+          "type": "interface",
+          "line": 86
+        },
+        {
+          "name": "ConfiguredLarkAccount",
+          "type": "type",
+          "line": 97
+        },
+        {
+          "name": "UnconfiguredLarkAccount",
+          "type": "type",
+          "line": 104
+        },
+        {
+          "name": "LarkAccount",
+          "type": "type",
+          "line": 111
+        },
+        {
+          "name": "FeishuUATConfig",
+          "type": "type",
+          "line": 118
+        },
+        {
+          "name": "LarkCredentials",
+          "type": "interface",
+          "line": 121
+        },
+        {
+          "name": "FeishuProbeResult",
+          "type": "interface",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "path": "src/core/uat-client.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 238,
+      "symbols": [
+        {
+          "name": "UATCallOptions",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "UATStatus",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "doRefreshToken",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "callEndpoint",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "refreshWithLock",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "getValidAccessToken",
+          "type": "function",
+          "line": 183
+        },
+        {
+          "name": "callWithUAT",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 219
+        },
+        {
+          "name": "revokeUAT",
+          "type": "function",
+          "line": 235
+        }
+      ]
+    },
+    {
+      "path": "src/core/version.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 69,
+      "symbols": [
+        {
+          "name": "getPluginVersion",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "getPlatform",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "getUserAgent",
+          "type": "function",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/audio.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/calendar.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "CalendarBody",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "formatCalendarContent",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/content-converter-helpers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 81,
+      "symbols": [
+        {
+          "name": "extractMentionOpenId",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "openId",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "buildConvertContextFromItem",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "resolveMentions",
+          "type": "function",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/content-converter.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 44,
+      "symbols": [
+        {
+          "name": "convertMessageContent",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/file.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/folder.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/hongbao.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/image.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/interactive/card-converter.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1201,
+      "symbols": [
+        {
+          "name": "ElementConverterFn",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "Mode",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "CardConverter",
+          "type": "class",
+          "line": 74
+        },
+        {
+          "name": "tag",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "id",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "content",
+          "type": "function",
+          "line": 299
+        },
+        {
+          "name": "key",
+          "type": "function",
+          "line": 310
+        },
+        {
+          "name": "level",
+          "type": "function",
+          "line": 333
+        },
+        {
+          "name": "listType",
+          "type": "function",
+          "line": 334
+        },
+        {
+          "name": "order",
+          "type": "function",
+          "line": 335
+        },
+        {
+          "name": "language",
+          "type": "function",
+          "line": 368
+        },
+        {
+          "name": "content",
+          "type": "function",
+          "line": 389
+        },
+        {
+          "name": "options",
+          "type": "function",
+          "line": 623
+        },
+        {
+          "name": "value",
+          "type": "function",
+          "line": 659
+        },
+        {
+          "name": "value",
+          "type": "function",
+          "line": 707
+        },
+        {
+          "name": "defaultValue",
+          "type": "function",
+          "line": 723
+        },
+        {
+          "name": "userID",
+          "type": "function",
+          "line": 822
+        },
+        {
+          "name": "userID",
+          "type": "function",
+          "line": 854
+        },
+        {
+          "name": "personID",
+          "type": "function",
+          "line": 886
+        },
+        {
+          "name": "userID",
+          "type": "function",
+          "line": 899
+        },
+        {
+          "name": "userID",
+          "type": "function",
+          "line": 908
+        },
+        {
+          "name": "fileID",
+          "type": "function",
+          "line": 1078
+        },
+        {
+          "name": "fileID",
+          "type": "function",
+          "line": 1087
+        },
+        {
+          "name": "rows",
+          "type": "function",
+          "line": 1097
+        },
+        {
+          "name": "name",
+          "type": "function",
+          "line": 1105
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/interactive/card-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 44,
+      "symbols": [
+        {
+          "name": "escapeAttr",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "formatMillisecondsToISO8601",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "normalizeTimeFormat",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/interactive/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/interactive/legacy.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "convertLegacyCard",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "elements",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "extractTexts",
+          "type": "function",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/interactive/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 45,
+      "symbols": [
+        {
+          "name": "Obj",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "RawCardContent",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "ConvertCardResult",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "TextStyle",
+          "type": "interface",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/location.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/merge-forward.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 279,
+      "symbols": [
+        {
+          "name": "expand",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "buildChildrenMap",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "collectSenderIds",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "formatSubTree",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "formatTimestamp",
+          "type": "function",
+          "line": 258
+        },
+        {
+          "name": "indentLines",
+          "type": "function",
+          "line": 274
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/post.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 151,
+      "symbols": [
+        {
+          "name": "PostBody",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "unwrapLocale",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "renderElement",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "applyStyle",
+          "type": "function",
+          "line": 142
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/share.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/sticker.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/system.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/text.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/todo.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 58,
+      "symbols": [
+        {
+          "name": "extractPlainText",
+          "type": "function",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 118,
+      "symbols": [
+        {
+          "name": "ApiMessageItem",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "ConvertContext",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "ConvertResult",
+          "type": "interface",
+          "line": 87
+        },
+        {
+          "name": "ContentConverterFn",
+          "type": "type",
+          "line": 100
+        },
+        {
+          "name": "PostElement",
+          "type": "interface",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/unknown.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 18,
+      "symbols": [
+        {
+          "name": "text",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "escapeRegExp",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "safeParse",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "formatDuration",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "millisToDatetime",
+          "type": "function",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/converters/video-chat.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/video.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/converters/vote.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/inbound/comment-context.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 474,
+      "symbols": [
+        {
+          "name": "CommentEventTurn",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "extractElementText",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "extractReplyText",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "inferIsWholeComment",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "fetchDocTitle",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "fetchComment",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "buildDriveCommentSurfacePrompt",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "resolveDriveCommentEventTurn",
+          "type": "function",
+          "line": 284
+        },
+        {
+          "name": "parseFeishuDriveCommentNoticeEventPayload",
+          "type": "function",
+          "line": 410
+        },
+        {
+          "name": "event",
+          "type": "function",
+          "line": 415
+        },
+        {
+          "name": "noticeMeta",
+          "type": "function",
+          "line": 418
+        },
+        {
+          "name": "fileToken",
+          "type": "function",
+          "line": 421
+        },
+        {
+          "name": "fileType",
+          "type": "function",
+          "line": 426
+        },
+        {
+          "name": "commentId",
+          "type": "function",
+          "line": 431
+        },
+        {
+          "name": "replyId",
+          "type": "function",
+          "line": 432
+        },
+        {
+          "name": "fallbackUserId",
+          "type": "function",
+          "line": 438
+        },
+        {
+          "name": "timestamp",
+          "type": "function",
+          "line": 442
+        },
+        {
+          "name": "isMentioned",
+          "type": "function",
+          "line": 447
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/comment-handler.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 275,
+      "symbols": [
+        {
+          "name": "handleFeishuCommentEvent",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "fileType",
+          "type": "function",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/dedup.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 137,
+      "symbols": [
+        {
+          "name": "MessageDedupOpts",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "isMessageExpired",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "MessageDedup",
+          "type": "class",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/dispatch-builders.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 193,
+      "symbols": [
+        {
+          "name": "buildMentionAnnotation",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "buildMessageBody",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "buildBodyForAgent",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "buildInboundPayload",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "buildEnvelopeWithHistory",
+          "type": "function",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/dispatch-commands.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 160,
+      "symbols": [
+        {
+          "name": "dispatchPermissionNotification",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "dispatchSystemCommand",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "isLifecycleSessionCommand",
+          "type": "function",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/dispatch-context.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 201,
+      "symbols": [
+        {
+          "name": "DispatchContext",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "ensureRuntime",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "buildDispatchContext",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "resolveThreadSessionKey",
+          "type": "function",
+          "line": 172
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/dispatch.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 561,
+      "symbols": [
+        {
+          "name": "dispatchCommentMessage",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "dispatchSyntheticMessage",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "dispatchNormalMessage",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "dispatchToAgent",
+          "type": "function",
+          "line": 322
+        },
+        {
+          "name": "contentTrimmed",
+          "type": "function",
+          "line": 471
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/enrich.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 281,
+      "symbols": [
+        {
+          "name": "resolveSenderInfo",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "prefetchUserNames",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "ResolveMediaResult",
+          "type": "interface",
+          "line": 133
+        },
+        {
+          "name": "resolveMedia",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "mediaMaxBytes",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "substituteMediaPaths",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "escapeRegExp",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "resolveQuotedContent",
+          "type": "function",
+          "line": 248
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/gate-effects.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 55,
+      "symbols": [
+        {
+          "name": "sendPairingReply",
+          "type": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/gate.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 346,
+      "symbols": [
+        {
+          "name": "resolveRespondToMentionAll",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "readAllowFromStore",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "GateResult",
+          "type": "interface",
+          "line": 81
+        },
+        {
+          "name": "checkMessageGate",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "checkGroupGate",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "checkDmGate",
+          "type": "function",
+          "line": 281
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/handler-registry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "InboundHandlerParams",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "InboundHandler",
+          "type": "type",
+          "line": 25
+        },
+        {
+          "name": "injectInboundHandler",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "getInboundHandler",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/handler.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 230,
+      "symbols": [
+        {
+          "name": "handleFeishuMessage",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "configuredGroupAllowFrom",
+          "type": "function",
+          "line": 173
+        },
+        {
+          "name": "perGroupAllowFrom",
+          "type": "function",
+          "line": 178
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/media-resolver.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 116,
+      "symbols": [
+        {
+          "name": "downloadResources",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "inferPlaceholderFromType",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "buildFeishuMediaPayload",
+          "type": "function",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/mention.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 107,
+      "symbols": [
+        {
+          "name": "isMentionAll",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "mentionedBot",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "nonBotMentions",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "extractMessageBody",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "formatMentionForText",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "formatMentionAllForText",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "formatMentionForCard",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "formatMentionAllForCard",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "buildMentionedMessage",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "buildMentionedCardContent",
+          "type": "function",
+          "line": 103
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/parse-io.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 103,
+      "symbols": [
+        {
+          "name": "ApiMessageItem",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "fetchCardContent",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "createFetchSubMessages",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "createParseResolveNames",
+          "type": "function",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/parse.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 146,
+      "symbols": [
+        {
+          "name": "parseMessageEvent",
+          "type": "function",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/permission.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 65,
+      "symbols": [
+        {
+          "name": "PermissionError",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "extractPermissionError",
+          "type": "function",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/policy.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 220,
+      "symbols": [
+        {
+          "name": "FeishuAllowlistMatch",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "resolveFeishuAllowlistMatch",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "resolveFeishuGroupConfig",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "resolveFeishuGroupToolPolicy",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "isFeishuGroupAllowed",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "splitLegacyGroupAllowFrom",
+          "type": "function",
+          "line": 167
+        },
+        {
+          "name": "resolveGroupSenderPolicyContext",
+          "type": "function",
+          "line": 199
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/reaction-handler.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 293,
+      "symbols": [
+        {
+          "name": "ReactionContext",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "resolveReactionContext",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "handleFeishuReaction",
+          "type": "function",
+          "line": 187
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/synthetic-message.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 93,
+      "symbols": [
+        {
+          "name": "dispatchSyntheticTextMessage",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/user-name-cache-store.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 107,
+      "symbols": [
+        {
+          "name": "CacheEntry",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "UserNameCache",
+          "type": "class",
+          "line": 16
+        },
+        {
+          "name": "getUserNameCache",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "clearUserNameCache",
+          "type": "function",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/user-name-cache.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 168,
+      "symbols": [
+        {
+          "name": "batchResolveUserNames",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "createBatchResolveNames",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "ResolveUserNameResult",
+          "type": "interface",
+          "line": 116
+        },
+        {
+          "name": "resolveUserName",
+          "type": "function",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/vc-meeting-invited-handler.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 223,
+      "symbols": [
+        {
+          "name": "buildSyntheticEvent",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "buildSyntheticContext",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "matchesAnySenderId",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "handleFeishuVcMeetingInvited",
+          "type": "function",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/inbound/vc-sender.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 82,
+      "symbols": [
+        {
+          "name": "VcSenderFallback",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "ResolvedVcSender",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "pickId",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "resolveVcSender",
+          "type": "function",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/actions.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 402,
+      "symbols": [
+        {
+          "name": "assertLarkOk",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "parseCardParam",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "FeishuSendParams",
+          "type": "interface",
+          "line": 104
+        },
+        {
+          "name": "readFeishuSendParams",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "deliverMessage",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "deliverMedia",
+          "type": "function",
+          "line": 275
+        },
+        {
+          "name": "handleReact",
+          "type": "function",
+          "line": 326
+        },
+        {
+          "name": "handleReactions",
+          "type": "function",
+          "line": 364
+        },
+        {
+          "name": "handleDelete",
+          "type": "function",
+          "line": 390
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/chat-manage.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 164,
+      "symbols": [
+        {
+          "name": "FeishuChatMember",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "assertLarkOk",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "updateChatFeishu",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "addChatMembersFeishu",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "removeChatMembersFeishu",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "listChatMembersFeishu",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "items",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "hasMore",
+          "type": "function",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/deliver.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 561,
+      "symbols": [
+        {
+          "name": "buildPostContent",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "normalizeAtMentions",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "prepareTextForLark",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "sendImMessage",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "detectCardJson",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "SendTextLarkParams",
+          "type": "interface",
+          "line": 203
+        },
+        {
+          "name": "sendTextLark",
+          "type": "function",
+          "line": 242
+        },
+        {
+          "name": "SendCardLarkParams",
+          "type": "interface",
+          "line": 268
+        },
+        {
+          "name": "sendCardLark",
+          "type": "function",
+          "line": 326
+        },
+        {
+          "name": "SendMediaLarkParams",
+          "type": "interface",
+          "line": 360
+        },
+        {
+          "name": "sendMediaLark",
+          "type": "function",
+          "line": 400
+        },
+        {
+          "name": "SendCommentReplyLarkParams",
+          "type": "interface",
+          "line": 448
+        },
+        {
+          "name": "sendCommentReplyLark",
+          "type": "function",
+          "line": 474
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/fetch.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/outbound/forward.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "forwardMessageFeishu",
+          "type": "function",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/media-url-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 147,
+      "symbols": [
+        {
+          "name": "normalizeMediaUrlInput",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "stripQueryAndHash",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "isWindowsAbsolutePath",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "isLocalMediaPath",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "safeFileUrlToPath",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "validateLocalMediaRoots",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "resolveBaseNameFromPath",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "resolveFileNameFromMediaUrl",
+          "type": "function",
+          "line": 123
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/media.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 987,
+      "symbols": [
+        {
+          "name": "DownloadImageResult",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "DownloadMessageResourceResult",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "UploadImageResult",
+          "type": "interface",
+          "line": 63
+        },
+        {
+          "name": "UploadFileResult",
+          "type": "interface",
+          "line": 71
+        },
+        {
+          "name": "SendMediaResult",
+          "type": "interface",
+          "line": 79
+        },
+        {
+          "name": "extractBufferFromResponse",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "streamToBuffer",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "downloadMessageResourceFeishu",
+          "type": "function",
+          "line": 226
+        },
+        {
+          "name": "uploadImageLark",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "imageKey",
+          "type": "function",
+          "line": 296
+        },
+        {
+          "name": "uploadFileLark",
+          "type": "function",
+          "line": 323
+        },
+        {
+          "name": "fileKey",
+          "type": "function",
+          "line": 345
+        },
+        {
+          "name": "sendMediaMessage",
+          "type": "function",
+          "line": 367
+        },
+        {
+          "name": "sendImageLark",
+          "type": "function",
+          "line": 423
+        },
+        {
+          "name": "sendFileLark",
+          "type": "function",
+          "line": 454
+        },
+        {
+          "name": "sendVideoLark",
+          "type": "function",
+          "line": 488
+        },
+        {
+          "name": "sendAudioLark",
+          "type": "function",
+          "line": 522
+        },
+        {
+          "name": "detectFileType",
+          "type": "function",
+          "line": 573
+        },
+        {
+          "name": "parseOggOpusDuration",
+          "type": "function",
+          "line": 589
+        },
+        {
+          "name": "parseMp4Duration",
+          "type": "function",
+          "line": 632
+        },
+        {
+          "name": "findBox",
+          "type": "function",
+          "line": 674
+        },
+        {
+          "name": "isImageFileName",
+          "type": "function",
+          "line": 715
+        },
+        {
+          "name": "uploadAndSendMediaLark",
+          "type": "function",
+          "line": 740
+        },
+        {
+          "name": "fetchRemoteImageBuffer",
+          "type": "function",
+          "line": 854
+        },
+        {
+          "name": "isPrivateIP",
+          "type": "function",
+          "line": 869
+        },
+        {
+          "name": "validateRemoteUrl",
+          "type": "function",
+          "line": 891
+        },
+        {
+          "name": "fetchMediaBuffer",
+          "type": "function",
+          "line": 945
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/outbound.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 311,
+      "symbols": [
+        {
+          "name": "FeishuChannelData",
+          "type": "interface",
+          "line": 84
+        },
+        {
+          "name": "FeishuSendContext",
+          "type": "interface",
+          "line": 115
+        },
+        {
+          "name": "resolveFeishuSendContext",
+          "type": "function",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/reactions.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 439,
+      "symbols": [
+        {
+          "name": "FeishuReaction",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "addReactionFeishu",
+          "type": "function",
+          "line": 294
+        },
+        {
+          "name": "removeReactionFeishu",
+          "type": "function",
+          "line": 352
+        },
+        {
+          "name": "listReactionsFeishu",
+          "type": "function",
+          "line": 387
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/send.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 489,
+      "symbols": [
+        {
+          "name": "SendFeishuMessageParams",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "SendFeishuCardParams",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "convertMarkdownTablesForFeishu",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "sendMessageFeishu",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "sendCardFeishu",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "updateCardFeishu",
+          "type": "function",
+          "line": 296
+        },
+        {
+          "name": "buildMarkdownCard",
+          "type": "function",
+          "line": 335
+        },
+        {
+          "name": "buildI18nMarkdownCard",
+          "type": "function",
+          "line": 364
+        },
+        {
+          "name": "sendMarkdownCardFeishu",
+          "type": "function",
+          "line": 412
+        },
+        {
+          "name": "editMessageFeishu",
+          "type": "function",
+          "line": 455
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/outbound/typing.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 176,
+      "symbols": [
+        {
+          "name": "TypingIndicatorState",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "addTypingIndicator",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "removeTypingIndicator",
+          "type": "function",
+          "line": 135
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/shared/message-lookup.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 178,
+      "symbols": [
+        {
+          "name": "FeishuMessageInfo",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "getMessageFeishu",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "parseMessageItem",
+          "type": "function",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 339,
+      "symbols": [
+        {
+          "name": "FeishuMessageEvent",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "FeishuReactionCreatedEvent",
+          "type": "interface",
+          "line": 50
+        },
+        {
+          "name": "FeishuDriveCommentEvent",
+          "type": "interface",
+          "line": 90
+        },
+        {
+          "name": "FeishuBotAddedEvent",
+          "type": "interface",
+          "line": 129
+        },
+        {
+          "name": "FeishuVcMeetingInvitedEvent",
+          "type": "interface",
+          "line": 155
+        },
+        {
+          "name": "VcMeetingInvitedSyntheticEvent",
+          "type": "interface",
+          "line": 184
+        },
+        {
+          "name": "ResourceDescriptor",
+          "type": "interface",
+          "line": 204
+        },
+        {
+          "name": "MentionInfo",
+          "type": "interface",
+          "line": 221
+        },
+        {
+          "name": "RawMessage",
+          "type": "interface",
+          "line": 241
+        },
+        {
+          "name": "RawSender",
+          "type": "interface",
+          "line": 262
+        },
+        {
+          "name": "MessageContext",
+          "type": "interface",
+          "line": 273
+        },
+        {
+          "name": "FeishuMessageContext",
+          "type": "type",
+          "line": 306
+        },
+        {
+          "name": "FeishuMediaInfo",
+          "type": "interface",
+          "line": 313
+        },
+        {
+          "name": "FeishuSendResult",
+          "type": "interface",
+          "line": 328
+        }
+      ]
+    },
+    {
+      "path": "src/tools/ask-user-question.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1023,
+      "symbols": [
+        {
+          "name": "QuestionItem",
+          "type": "interface",
+          "line": 66
+        },
+        {
+          "name": "QuestionContext",
+          "type": "interface",
+          "line": 74
+        },
+        {
+          "name": "armTtlTimer",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "storePendingQuestion",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "consumePendingQuestion",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "findQuestionByChat",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "getInputFieldName",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "getSelectFieldName",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "handleAskUserAction",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "injectAnswerSyntheticMessage",
+          "type": "function",
+          "line": 375
+        },
+        {
+          "name": "readFormTextField",
+          "type": "function",
+          "line": 497
+        },
+        {
+          "name": "readFormMultiSelect",
+          "type": "function",
+          "line": 502
+        },
+        {
+          "name": "buildLabeledRow",
+          "type": "function",
+          "line": 528
+        },
+        {
+          "name": "buildQuestionFormElements",
+          "type": "function",
+          "line": 559
+        },
+        {
+          "name": "buildAskUserCard",
+          "type": "function",
+          "line": 635
+        },
+        {
+          "name": "buildAnsweredCard",
+          "type": "function",
+          "line": 705
+        },
+        {
+          "name": "buildProcessingCard",
+          "type": "function",
+          "line": 752
+        },
+        {
+          "name": "buildExpiredCard",
+          "type": "function",
+          "line": 805
+        },
+        {
+          "name": "updateCardToAnswered",
+          "type": "function",
+          "line": 856
+        },
+        {
+          "name": "updateCardToExpired",
+          "type": "function",
+          "line": 868
+        },
+        {
+          "name": "updateCardToSubmittable",
+          "type": "function",
+          "line": 880
+        },
+        {
+          "name": "registerAskUserQuestionTool",
+          "type": "function",
+          "line": 929
+        }
+      ]
+    },
+    {
+      "path": "src/tools/auto-auth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1106,
+      "symbols": [
+        {
+          "name": "JsonResult",
+          "type": "type",
+          "line": 66
+        },
+        {
+          "name": "AuthBatchEntry",
+          "type": "interface",
+          "line": 69
+        },
+        {
+          "name": "enqueueAuthRequest",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "PendingAppAuthFlow",
+          "type": "interface",
+          "line": 251
+        },
+        {
+          "name": "makeDedupKey",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "RegisteredFlow",
+          "type": "type",
+          "line": 274
+        },
+        {
+          "name": "AppAuthFlowManager",
+          "type": "class",
+          "line": 285
+        },
+        {
+          "name": "DeferredUserAuthEntry",
+          "type": "interface",
+          "line": 395
+        },
+        {
+          "name": "hasActiveAppAuthForMessage",
+          "type": "function",
+          "line": 411
+        },
+        {
+          "name": "addToDeferredUserAuth",
+          "type": "function",
+          "line": 425
+        },
+        {
+          "name": "buildAppScopeMissingCard",
+          "type": "function",
+          "line": 457
+        },
+        {
+          "name": "buildAppAuthProgressCard",
+          "type": "function",
+          "line": 544
+        },
+        {
+          "name": "sendAppScopeCard",
+          "type": "function",
+          "line": 586
+        },
+        {
+          "name": "handleCardAction",
+          "type": "function",
+          "line": 745
+        },
+        {
+          "name": "handleInvokeErrorWithAutoAuth",
+          "type": "function",
+          "line": 931
+        }
+      ]
+    },
+    {
+      "path": "src/tools/helpers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 485,
+      "symbols": [
+        {
+          "name": "ToolResult",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "ClientGetter",
+          "type": "type",
+          "line": 35
+        },
+        {
+          "name": "ToolLogger",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "ToolContext",
+          "type": "interface",
+          "line": 50
+        },
+        {
+          "name": "createClientGetter",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "getFirstAccount",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "createToolContext",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "checkToolRegistration",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "registerTool",
+          "type": "function",
+          "line": 278
+        },
+        {
+          "name": "formatToolResult",
+          "type": "function",
+          "line": 322
+        },
+        {
+          "name": "formatToolError",
+          "type": "function",
+          "line": 359
+        },
+        {
+          "name": "createToolLogger",
+          "type": "function",
+          "line": 391
+        },
+        {
+          "name": "validateRequiredParams",
+          "type": "function",
+          "line": 439
+        },
+        {
+          "name": "validateEnum",
+          "type": "function",
+          "line": 472
+        }
+      ]
+    },
+    {
+      "path": "src/tools/mcp/doc/create.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 50,
+      "symbols": [
+        {
+          "name": "CreateDocParams",
+          "type": "type",
+          "line": 23
+        },
+        {
+          "name": "validateCreateDocParams",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "registerCreateDocTool",
+          "type": "function",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "path": "src/tools/mcp/doc/fetch.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 46,
+      "symbols": [
+        {
+          "name": "FetchDocParams",
+          "type": "type",
+          "line": 32
+        },
+        {
+          "name": "registerFetchDocTool",
+          "type": "function",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "path": "src/tools/mcp/doc/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "registerFeishuMcpDocTools",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "src/tools/mcp/doc/update.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 80,
+      "symbols": [
+        {
+          "name": "UpdateDocParams",
+          "type": "type",
+          "line": 39
+        },
+        {
+          "name": "validateUpdateDocParams",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "registerUpdateDocTool",
+          "type": "function",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "path": "src/tools/mcp/shared.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 307,
+      "symbols": [
+        {
+          "name": "McpRpcSuccess",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "McpRpcError",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "McpRpcResponse",
+          "type": "type",
+          "line": 35
+        },
+        {
+          "name": "McpToolConfig",
+          "type": "interface",
+          "line": 39
+        },
+        {
+          "name": "isRecord",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "extractMcpUrlFromConfig",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "unwrapJsonRpcResult",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "setMcpEndpointOverride",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "readMcpUrlFromOpenclawJson",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "getMcpEndpoint",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "buildAuthHeader",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "callMcpTool",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "registerMcpTool",
+          "type": "function",
+          "line": 228
+        },
+        {
+          "name": "mcpContent",
+          "type": "function",
+          "line": 277
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/bitable/app-table-field.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 363,
+      "symbols": [
+        {
+          "name": "FeishuBitableAppTableFieldParams",
+          "type": "type",
+          "line": 85
+        },
+        {
+          "name": "registerFeishuBitableAppTableFieldTool",
+          "type": "function",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/bitable/app-table-record.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 677,
+      "symbols": [
+        {
+          "name": "FeishuBitableAppTableRecordParams",
+          "type": "type",
+          "line": 167
+        },
+        {
+          "name": "registerFeishuBitableAppTableRecordTool",
+          "type": "function",
+          "line": 245
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/bitable/app-table-view.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 278,
+      "symbols": [
+        {
+          "name": "FeishuBitableAppTableViewParams",
+          "type": "type",
+          "line": 76
+        },
+        {
+          "name": "registerFeishuBitableAppTableViewTool",
+          "type": "function",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/bitable/app-table.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 314,
+      "symbols": [
+        {
+          "name": "FeishuBitableAppTableParams",
+          "type": "type",
+          "line": 85
+        },
+        {
+          "name": "registerFeishuBitableAppTableTool",
+          "type": "function",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/bitable/app.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 301,
+      "symbols": [
+        {
+          "name": "FeishuBitableAppParams",
+          "type": "type",
+          "line": 70
+        },
+        {
+          "name": "registerFeishuBitableAppTool",
+          "type": "function",
+          "line": 103
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/bitable/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "src/tools/oapi/calendar/calendar.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 183,
+      "symbols": [
+        {
+          "name": "FeishuCalendarCalendarParams",
+          "type": "type",
+          "line": 58
+        },
+        {
+          "name": "registerFeishuCalendarCalendarTool",
+          "type": "function",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/calendar/event-attendee.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 238,
+      "symbols": [
+        {
+          "name": "FeishuCalendarEventAttendeeParams",
+          "type": "type",
+          "line": 86
+        },
+        {
+          "name": "registerFeishuCalendarEventAttendeeTool",
+          "type": "function",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/calendar/event.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1085,
+      "symbols": [
+        {
+          "name": "FeishuCalendarEventParams",
+          "type": "type",
+          "line": 363
+        },
+        {
+          "name": "normalizeCalendarTimeValue",
+          "type": "function",
+          "line": 449
+        },
+        {
+          "name": "normalizeEventTimeFields",
+          "type": "function",
+          "line": 468
+        },
+        {
+          "name": "normalizeEventListTimeFields",
+          "type": "function",
+          "line": 491
+        },
+        {
+          "name": "registerFeishuCalendarEventTool",
+          "type": "function",
+          "line": 502
+        },
+        {
+          "name": "resolveCalendarId",
+          "type": "function",
+          "line": 508
+        },
+        {
+          "name": "resolveCalendarIdOrFail",
+          "type": "function",
+          "line": 523
+        },
+        {
+          "name": "appLink",
+          "type": "function",
+          "line": 681
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/calendar/freebusy.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 161,
+      "symbols": [
+        {
+          "name": "FeishuCalendarFreebusyParams",
+          "type": "interface",
+          "line": 46
+        },
+        {
+          "name": "registerFeishuCalendarFreebusyTool",
+          "type": "function",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/calendar/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "src/tools/oapi/chat/chat.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 187,
+      "symbols": [
+        {
+          "name": "FeishuChatParams",
+          "type": "type",
+          "line": 68
+        },
+        {
+          "name": "registerChatSearchTool",
+          "type": "function",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/chat/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": [
+        {
+          "name": "registerFeishuChatTools",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/chat/members.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 122,
+      "symbols": [
+        {
+          "name": "ChatMembersParams",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "registerChatMembersTool",
+          "type": "function",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/common/get-user.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 150,
+      "symbols": [
+        {
+          "name": "GetUserParams",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "registerGetUserTool",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/common/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "src/tools/oapi/common/search-user.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 104,
+      "symbols": [
+        {
+          "name": "SearchUserParams",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "registerSearchUserTool",
+          "type": "function",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/drive/doc-comments.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 522,
+      "symbols": [
+        {
+          "name": "ReplyElement",
+          "type": "interface",
+          "line": 88
+        },
+        {
+          "name": "DocCommentsParams",
+          "type": "interface",
+          "line": 95
+        },
+        {
+          "name": "convertElementsToSDKFormat",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "assembleCommentsWithReplies",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "registerDocCommentsTool",
+          "type": "function",
+          "line": 210
+        },
+        {
+          "name": "node",
+          "type": "function",
+          "line": 260
+        },
+        {
+          "name": "items",
+          "type": "function",
+          "line": 307
+        },
+        {
+          "name": "replyData",
+          "type": "function",
+          "line": 361
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/drive/doc-media.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 440,
+      "symbols": [
+        {
+          "name": "extractDocumentId",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "InsertParams",
+          "type": "interface",
+          "line": 152
+        },
+        {
+          "name": "DownloadParams",
+          "type": "interface",
+          "line": 161
+        },
+        {
+          "name": "DocMediaParams",
+          "type": "type",
+          "line": 168
+        },
+        {
+          "name": "handleInsert",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "handleDownload",
+          "type": "function",
+          "line": 333
+        },
+        {
+          "name": "registerDocMediaTool",
+          "type": "function",
+          "line": 404
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/drive/file.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 746,
+      "symbols": [
+        {
+          "name": "FeishuDriveFileParams",
+          "type": "type",
+          "line": 246
+        },
+        {
+          "name": "registerFeishuDriveFileTool",
+          "type": "function",
+          "line": 299
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/drive/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 45,
+      "symbols": [
+        {
+          "name": "registerFeishuDriveTools",
+          "type": "function",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/helpers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 453,
+      "symbols": [
+        {
+          "name": "createFeishuClientFromConfig",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "json",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "parseTimeToTimestamp",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "parseTimeToTimestampMs",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "parseTimeToRFC3339",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "convertTimeRange",
+          "type": "function",
+          "line": 325
+        },
+        {
+          "name": "pad2",
+          "type": "function",
+          "line": 364
+        },
+        {
+          "name": "unixTimestampToISO8601",
+          "type": "function",
+          "line": 376
+        },
+        {
+          "name": "isInvokeError",
+          "type": "function",
+          "line": 425
+        },
+        {
+          "name": "StringEnum",
+          "type": "function",
+          "line": 451
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/im/format-messages.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 224,
+      "symbols": [
+        {
+          "name": "FormattedMessage",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "createUATFetchSubMessages",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "formatMessageItem",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "formatMessageList",
+          "type": "function",
+          "line": 170
+        },
+        {
+          "name": "nameResolver",
+          "type": "function",
+          "line": 177
+        },
+        {
+          "name": "uatBatchResolve",
+          "type": "function",
+          "line": 211
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/im/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": [
+        {
+          "name": "registerFeishuImTools",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/im/message-read.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 611,
+      "symbols": [
+        {
+          "name": "sortRuleToSortType",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "resolveP2PChatId",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "resolveTimeRange",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "formatAndReturn",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "GetMessagesParams",
+          "type": "interface",
+          "line": 131
+        },
+        {
+          "name": "registerGetMessages",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "GetThreadMessagesParams",
+          "type": "interface",
+          "line": 240
+        },
+        {
+          "name": "registerGetThreadMessages",
+          "type": "function",
+          "line": 247
+        },
+        {
+          "name": "SearchMessagesParams",
+          "type": "interface",
+          "line": 355
+        },
+        {
+          "name": "ChatContext",
+          "type": "interface",
+          "line": 372
+        },
+        {
+          "name": "buildSearchData",
+          "type": "function",
+          "line": 378
+        },
+        {
+          "name": "fetchChatContexts",
+          "type": "function",
+          "line": 393
+        },
+        {
+          "name": "resolveP2PTargetNames",
+          "type": "function",
+          "line": 440
+        },
+        {
+          "name": "enrichMessages",
+          "type": "function",
+          "line": 451
+        },
+        {
+          "name": "registerSearchMessages",
+          "type": "function",
+          "line": 482
+        },
+        {
+          "name": "logFn",
+          "type": "function",
+          "line": 519
+        },
+        {
+          "name": "uatNameResolver",
+          "type": "function",
+          "line": 587
+        },
+        {
+          "name": "registerMessageReadTools",
+          "type": "function",
+          "line": 605
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/im/message.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 390,
+      "symbols": [
+        {
+          "name": "FeishuPostContentBlock",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "FeishuPostLocaleContent",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "isRecord",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "collectPostContents",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "convertMarkdownTablesForLark",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "preprocessPostContent",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "FeishuImMessageParams",
+          "type": "type",
+          "line": 250
+        },
+        {
+          "name": "registerFeishuImUserMessageTool",
+          "type": "function",
+          "line": 272
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/im/resource.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 192,
+      "symbols": [
+        {
+          "name": "FetchResourceParams",
+          "type": "interface",
+          "line": 80
+        },
+        {
+          "name": "registerFeishuImUserFetchResourceTool",
+          "type": "function",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/im/time-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 247,
+      "symbols": [
+        {
+          "name": "formatBeijingISO",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "secondsToDateTime",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "secondsStringToDateTime",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "millisToDateTime",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "millisStringToDateTime",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "dateTimeToSeconds",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "dateTimeToSecondsString",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "dateTimeToMillis",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "TimeRange",
+          "type": "interface",
+          "line": 89
+        },
+        {
+          "name": "parseTimeRange",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "parseTimeRangeToSeconds",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "toBeijingDate",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "beijingStartOfDay",
+          "type": "function",
+          "line": 220
+        },
+        {
+          "name": "beijingEndOfDay",
+          "type": "function",
+          "line": 225
+        },
+        {
+          "name": "subtractFromNow",
+          "type": "function",
+          "line": 231
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/im/user-name-uat.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 171,
+      "symbols": [
+        {
+          "name": "CacheEntry",
+          "type": "interface",
+          "line": 28
+        },
+        {
+          "name": "getOrCreateCache",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "evict",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "getUATUserName",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "setUATUserNames",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "batchResolveUserNamesAsUser",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "BatchUserRes",
+          "type": "interface",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 95,
+      "symbols": [
+        {
+          "name": "registerOapiTools",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/sdk-types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 97,
+      "symbols": [
+        {
+          "name": "PaginatedData",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "CalendarListData",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "CalendarPrimaryData",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "FreebusyData",
+          "type": "interface",
+          "line": 34
+        },
+        {
+          "name": "DriveFileListData",
+          "type": "interface",
+          "line": 39
+        },
+        {
+          "name": "DriveFileData",
+          "type": "interface",
+          "line": 46
+        },
+        {
+          "name": "DriveTaskData",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "BitableAppListData",
+          "type": "interface",
+          "line": 56
+        },
+        {
+          "name": "FieldData",
+          "type": "interface",
+          "line": 63
+        },
+        {
+          "name": "ChatMemberListData",
+          "type": "interface",
+          "line": 68
+        },
+        {
+          "name": "SearchUserData",
+          "type": "interface",
+          "line": 76
+        },
+        {
+          "name": "TaskCreateData",
+          "type": "interface",
+          "line": 83
+        },
+        {
+          "name": "CalendarGetData",
+          "type": "interface",
+          "line": 88
+        },
+        {
+          "name": "CommentReplyListData",
+          "type": "interface",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/search/doc-search.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 294,
+      "symbols": [
+        {
+          "name": "TimeRange",
+          "type": "interface",
+          "line": 126
+        },
+        {
+          "name": "SearchFilter",
+          "type": "interface",
+          "line": 131
+        },
+        {
+          "name": "FeishuSearchDocWikiParams",
+          "type": "interface",
+          "line": 140
+        },
+        {
+          "name": "normalizeSearchResultTimeFields",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "registerFeishuSearchDocWikiTool",
+          "type": "function",
+          "line": 179
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/search/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 40,
+      "symbols": [
+        {
+          "name": "registerFeishuSearchTools",
+          "type": "function",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/sheets/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "registerFeishuSheetsTools",
+          "type": "function",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/sheets/sheet.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 958,
+      "symbols": [
+        {
+          "name": "sleep",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "parseSheetUrl",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "getTokenType",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "resolveToken",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "resolveRange",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "firstSheet",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "colLetter",
+          "type": "function",
+          "line": 207
+        },
+        {
+          "name": "flattenCellValue",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "flattenValues",
+          "type": "function",
+          "line": 232
+        },
+        {
+          "name": "truncateRows",
+          "type": "function",
+          "line": 237
+        },
+        {
+          "name": "BaseParams",
+          "type": "interface",
+          "line": 422
+        },
+        {
+          "name": "FeishuSheetParams",
+          "type": "type",
+          "line": 427
+        },
+        {
+          "name": "registerFeishuSheetTool",
+          "type": "function",
+          "line": 475
+        },
+        {
+          "name": "sheets",
+          "type": "function",
+          "line": 530
+        },
+        {
+          "name": "firstSheet",
+          "type": "function",
+          "line": 801
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/task/attachment.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 137,
+      "symbols": [
+        {
+          "name": "FeishuTaskAttachmentParams",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "resolvePathForAction",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "registerFeishuTaskAttachmentTool",
+          "type": "function",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/task/comment.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 232,
+      "symbols": [
+        {
+          "name": "FeishuTaskCommentParams",
+          "type": "type",
+          "line": 67
+        },
+        {
+          "name": "registerFeishuTaskCommentTool",
+          "type": "function",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/task/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "src/tools/oapi/task/section.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 441,
+      "symbols": [
+        {
+          "name": "FeishuTaskSectionParams",
+          "type": "type",
+          "line": 158
+        },
+        {
+          "name": "registerFeishuTaskSectionTool",
+          "type": "function",
+          "line": 205
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/task/subtask.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 257,
+      "symbols": [
+        {
+          "name": "FeishuTaskSubtaskParams",
+          "type": "type",
+          "line": 88
+        },
+        {
+          "name": "registerFeishuTaskSubtaskTool",
+          "type": "function",
+          "line": 112
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/task/task.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 805,
+      "symbols": [
+        {
+          "name": "FeishuTaskTaskParams",
+          "type": "type",
+          "line": 334
+        },
+        {
+          "name": "registerFeishuTaskTaskTool",
+          "type": "function",
+          "line": 429
+        },
+        {
+          "name": "token",
+          "type": "function",
+          "line": 777
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/task/task_agent.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 137,
+      "symbols": [
+        {
+          "name": "FeishuTaskAgentParams",
+          "type": "type",
+          "line": 35
+        },
+        {
+          "name": "resolvePathForAction",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "registerFeishuTaskAgentTool",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "token",
+          "type": "function",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/task/tasklist.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 427,
+      "symbols": [
+        {
+          "name": "FeishuTaskTasklistParams",
+          "type": "type",
+          "line": 118
+        },
+        {
+          "name": "registerFeishuTaskTasklistTool",
+          "type": "function",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/wiki/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 43,
+      "symbols": [
+        {
+          "name": "registerFeishuWikiTools",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/wiki/space-node.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 391,
+      "symbols": [
+        {
+          "name": "FeishuWikiSpaceNodeParams",
+          "type": "type",
+          "line": 151
+        },
+        {
+          "name": "registerFeishuWikiSpaceNodeTool",
+          "type": "function",
+          "line": 192
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oapi/wiki/space.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 215,
+      "symbols": [
+        {
+          "name": "FeishuWikiSpaceParams",
+          "type": "type",
+          "line": 77
+        },
+        {
+          "name": "registerFeishuWikiSpaceTool",
+          "type": "function",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oauth-batch-auth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 177,
+      "symbols": [
+        {
+          "name": "registerFeishuOAuthBatchAuthTool",
+          "type": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oauth-cards.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 398,
+      "symbols": [
+        {
+          "name": "Locale",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "i18nContent",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "i18nPlainText",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "buildAuthCard",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "formatScopeDescription",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "toInAppWebUrl",
+          "type": "function",
+          "line": 263
+        },
+        {
+          "name": "buildAuthSuccessCard",
+          "type": "function",
+          "line": 278
+        },
+        {
+          "name": "buildAuthFailedCard",
+          "type": "function",
+          "line": 322
+        },
+        {
+          "name": "buildAuthIdentityMismatchCard",
+          "type": "function",
+          "line": 364
+        }
+      ]
+    },
+    {
+      "path": "src/tools/oauth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 701,
+      "symbols": [
+        {
+          "name": "FeishuOAuthParams",
+          "type": "interface",
+          "line": 66
+        },
+        {
+          "name": "PendingFlow",
+          "type": "interface",
+          "line": 74
+        },
+        {
+          "name": "verifyTokenIdentity",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "registerFeishuOAuthTool",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "ExecuteAuthorizeParams",
+          "type": "interface",
+          "line": 238
+        },
+        {
+          "name": "executeAuthorize",
+          "type": "function",
+          "line": 258
+        }
+      ]
+    },
+    {
+      "path": "src/tools/onboarding-auth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 154,
+      "symbols": [
+        {
+          "name": "triggerOnboarding",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "startBatch",
+          "type": "function",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "path": "src/tools/tat/im/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 22,
+      "symbols": [
+        {
+          "name": "registerFeishuImTools",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "src/tools/tat/im/resource.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 186,
+      "symbols": [
+        {
+          "name": "extractBuffer",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "saveToTempFile",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "FeishuImBotImageParams",
+          "type": "interface",
+          "line": 124
+        },
+        {
+          "name": "registerFeishuImBotImageTool",
+          "type": "function",
+          "line": 130
+        }
+      ]
+    },
+    {
+      "path": "tests/accounts-merge.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 215,
+      "symbols": [
+        {
+          "name": "makeCfg",
+          "type": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "tests/ask-user-question.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 403,
+      "symbols": [
+        {
+          "name": "createMockCfg",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "seedPendingQuestion",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "createFormSubmitEvent",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "promise",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "promise",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "promise",
+          "type": "function",
+          "line": 330
+        },
+        {
+          "name": "findDeep",
+          "type": "function",
+          "line": 390
+        },
+        {
+          "name": "walk",
+          "type": "function",
+          "line": 392
+        }
+      ]
+    },
+    {
+      "path": "tests/builder-footer-runtime.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 249,
+      "symbols": [
+        {
+          "name": "footerElements",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "elements",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "zhContent",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "toolUseElements",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "panel",
+          "type": "function",
+          "line": 167
+        },
+        {
+          "name": "panel",
+          "type": "function",
+          "line": 190
+        }
+      ]
+    },
+    {
+      "path": "tests/card-review-followup.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 130,
+      "symbols": [
+        {
+          "name": "buildTable",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "buildCodeBlockWithTables",
+          "type": "function",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "path": "tests/comment-context.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "tests/comment-target.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "tests/dispatch-commands-system-command.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 141,
+      "symbols": [
+        {
+          "name": "createDispatchContext",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "tests/dispatch-tool-use-init.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 260,
+      "symbols": [
+        {
+          "name": "createDispatchContext",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "createDispatcher",
+          "type": "function",
+          "line": 171
+        }
+      ]
+    },
+    {
+      "path": "tests/folder-converter.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "tests/markdown-style.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "tests/mention-all.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 132,
+      "symbols": []
+    },
+    {
+      "path": "tests/reasoning-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 79,
+      "symbols": []
+    },
+    {
+      "path": "tests/reply-dispatcher-media.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 265,
+      "symbols": [
+        {
+          "name": "TestContext",
+          "type": "interface",
+          "line": 111
+        },
+        {
+          "name": "createDispatcher",
+          "type": "function",
+          "line": 118
+        }
+      ]
+    },
+    {
+      "path": "tests/reply-dispatcher-tool-use.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 211,
+      "symbols": []
+    },
+    {
+      "path": "tests/tool-use-config.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 128,
+      "symbols": [
+        {
+          "name": "createStorePath",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "tests/tool-use-display.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 328,
+      "symbols": [
+        {
+          "name": "traceStep",
+          "type": "function",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "tests/tool-use-trace-store.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 581,
+      "symbols": []
+    },
+    {
+      "path": "tests/vc-invited-event-dedup.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "tests/vc-meeting-invited-handler.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 297,
+      "symbols": []
+    },
+    {
+      "path": "tests/vc-synthetic-notify.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 146,
+      "symbols": []
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "tsdown.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "vitest.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 11,
+      "symbols": []
+    }
+  ]
+}
