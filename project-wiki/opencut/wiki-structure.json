@@ -1,0 +1,212 @@
+{
+  "title": "OpenCut DeepWiki",
+  "projectName": "OpenCut",
+  "description": "开源视频编辑器 OpenCut 的中文技术维基：Web、桌面与 Rust/WASM 核心分层、渲染管线、时间线与存储、部署与质量门禁。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/opencut-app/opencut",
+    "path": "/Users/bytedance/workspace/deepwiki/project-repos/opencut",
+    "branch": "main",
+    "commit": "d1f4cb615b7fe5e08628119fceec075fbb5044a7"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview", "repository-map"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "架构与平台",
+      "pages": ["system-architecture", "web-nextjs-stack", "rust-wasm-bridge", "desktop-gpui"],
+      "subsections": []
+    },
+    {
+      "id": "section-rendering-data",
+      "title": "渲染与数据",
+      "pages": ["gpu-effects-preview", "timeline-update-pipeline", "storage-migrations"],
+      "subsections": []
+    },
+    {
+      "id": "section-backend-deploy",
+      "title": "服务端与交付",
+      "pages": ["server-auth-data", "ci-docker-deploy"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-rendering-data",
+    "section-backend-deploy"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "定位、动机、仓库分工与本地开发入口。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "package.json",
+        "AGENTS.md",
+        "Cargo.toml",
+        "turbo.json"
+      ],
+      "relatedPages": ["repository-map", "system-architecture", "ci-docker-deploy"]
+    },
+    {
+      "id": "repository-map",
+      "title": "仓库地图与阅读路线",
+      "file": "pages/repository-map.md",
+      "description": "顶层目录、应用与 Rust 工作区如何对应到日常开发任务。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "apps/web/package.json",
+        "apps/desktop/Cargo.toml",
+        "rust/README.md",
+        "docs/effects-renderer.md"
+      ],
+      "relatedPages": ["overview", "web-nextjs-stack", "rust-wasm-bridge"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "Rust 为业务逻辑真源、各 app 为 UI 壳体的分层与依赖方向。",
+      "importance": "high",
+      "filePaths": [
+        "AGENTS.md",
+        "Cargo.toml",
+        "package.json",
+        "apps/web/src/services/renderer/gpu-renderer.ts",
+        "docker-compose.yml"
+      ],
+      "relatedPages": ["rust-wasm-bridge", "web-nextjs-stack", "gpu-effects-preview"]
+    },
+    {
+      "id": "web-nextjs-stack",
+      "title": "Web 应用（Next.js）",
+      "file": "pages/web-nextjs-stack.md",
+      "description": "apps/web 的技术栈、脚本、环境变量校验与根布局行为。",
+      "importance": "high",
+      "filePaths": [
+        "apps/web/package.json",
+        "apps/web/src/env/web.ts",
+        "apps/web/src/app/layout.tsx",
+        "apps/web/next.config.ts",
+        "apps/web/open-next.config.ts"
+      ],
+      "relatedPages": ["gpu-effects-preview", "server-auth-data", "ci-docker-deploy"]
+    },
+    {
+      "id": "rust-wasm-bridge",
+      "title": "Rust 工作区与 WASM 导出",
+      "file": "pages/rust-wasm-bridge.md",
+      "description": "Cargo workspace、bridge 过程宏与 opencut-wasm 的构建链路。",
+      "importance": "high",
+      "filePaths": [
+        "Cargo.toml",
+        "rust/README.md",
+        "rust/wasm/README.md",
+        "rust/crates/bridge/src/bridge.rs",
+        "package.json"
+      ],
+      "relatedPages": ["system-architecture", "gpu-effects-preview", "desktop-gpui"]
+    },
+    {
+      "id": "desktop-gpui",
+      "title": "桌面端（GPUI）",
+      "file": "pages/desktop-gpui.md",
+      "description": "apps/desktop 的定位、Rust 工具链与平台依赖安装脚本。",
+      "importance": "medium",
+      "filePaths": [
+        "apps/desktop/README.md",
+        "Cargo.toml",
+        "README.md",
+        "script/setup-rust",
+        "apps/desktop/Cargo.toml"
+      ],
+      "relatedPages": ["rust-wasm-bridge", "system-architecture", "ci-docker-deploy"]
+    },
+    {
+      "id": "gpu-effects-preview",
+      "title": "GPU 渲染、特效与预览",
+      "file": "pages/gpu-effects-preview.md",
+      "description": "TypeScript 特效定义、gpu-renderer 与 opencut-wasm 的衔接及 WGSL 侧职责。",
+      "importance": "high",
+      "filePaths": [
+        "apps/web/src/services/renderer/gpu-renderer.ts",
+        "docs/effects-renderer.md",
+        "rust/crates/gpu/src/lib.rs",
+        "rust/crates/gpu/src/context.rs",
+        "apps/web/package.json"
+      ],
+      "relatedPages": ["rust-wasm-bridge", "timeline-update-pipeline", "web-nextjs-stack"]
+    },
+    {
+      "id": "timeline-update-pipeline",
+      "title": "时间线、重定时与更新管线",
+      "file": "pages/timeline-update-pipeline.md",
+      "description": "元素更新规则、关键帧文档化入口以及与 WASM 时间类型的关系。",
+      "importance": "high",
+      "filePaths": [
+        "apps/web/src/timeline/update-pipeline.ts",
+        "docs/keyframes.md",
+        "apps/web/src/timeline/__tests__/update-pipeline.test.ts",
+        "README.md",
+        "docs/effects-renderer.md"
+      ],
+      "relatedPages": ["gpu-effects-preview", "storage-migrations", "overview"]
+    },
+    {
+      "id": "storage-migrations",
+      "title": "本地存储与版本迁移",
+      "file": "pages/storage-migrations.md",
+      "description": "IndexedDB 存储服务、迁移编排与测试覆盖方式。",
+      "importance": "medium",
+      "filePaths": [
+        "apps/web/src/services/storage/service.ts",
+        "apps/web/src/services/storage/migrations/runner.ts",
+        "apps/web/src/services/storage/use-local-storage.ts",
+        "README.md",
+        "apps/web/src/timeline/__tests__/update-pipeline.test.ts"
+      ],
+      "relatedPages": ["timeline-update-pipeline", "web-nextjs-stack", "server-auth-data"]
+    },
+    {
+      "id": "server-auth-data",
+      "title": "服务端、认证与数据层",
+      "file": "pages/server-auth-data.md",
+      "description": "Drizzle schema、环境变量中的数据库与 Redis 依赖及 Docker 编排。",
+      "importance": "medium",
+      "filePaths": [
+        "apps/web/src/db/schema.ts",
+        "apps/web/src/env/web.ts",
+        "docker-compose.yml",
+        "apps/web/package.json",
+        "turbo.json"
+      ],
+      "relatedPages": ["web-nextjs-stack", "ci-docker-deploy", "storage-migrations"]
+    },
+    {
+      "id": "ci-docker-deploy",
+      "title": "CI、Docker 与发布",
+      "file": "pages/ci-docker-deploy.md",
+      "description": "Bun CI 矩阵、WASM 构建门禁、Dockerfile 与 OpenNext Cloudflare 脚本。",
+      "importance": "medium",
+      "filePaths": [
+        ".github/workflows/bun-ci.yml",
+        "apps/web/Dockerfile",
+        "docker-compose.yml",
+        "apps/web/package.json",
+        "turbo.json"
+      ],
+      "relatedPages": ["overview", "server-auth-data", "web-nextjs-stack"]
+    }
+  ]
+}
