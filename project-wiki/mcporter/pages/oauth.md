@@ -3,15 +3,15 @@
 
 生成本页时使用的主要源文件：
 
-- [src/oauth.ts](../../../project-repos/mcporter/src/oauth.ts)
-- [src/oauth-persistence.ts](../../../project-repos/mcporter/src/oauth-persistence.ts)
-- [src/oauth-vault.ts](../../../project-repos/mcporter/src/oauth-vault.ts)
-- [src/runtime/oauth.ts](../../../project-repos/mcporter/src/runtime/oauth.ts)
-- [src/runtime-oauth-support.ts](../../../project-repos/mcporter/src/runtime-oauth-support.ts)
-- [src/runtime-header-utils.ts](../../../project-repos/mcporter/src/runtime-header-utils.ts)
-- [src/runtime/transport.ts](../../../project-repos/mcporter/src/runtime/transport.ts)
-- [src/cli/auth-command.ts](../../../project-repos/mcporter/src/cli/auth-command.ts)
-- [src/cli/config/auth.ts](../../../project-repos/mcporter/src/cli/config/auth.ts)
+- [src/oauth.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/oauth.ts)
+- [src/oauth-persistence.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/oauth-persistence.ts)
+- [src/oauth-vault.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/oauth-vault.ts)
+- [src/runtime/oauth.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/oauth.ts)
+- [src/runtime-oauth-support.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime-oauth-support.ts)
+- [src/runtime-header-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime-header-utils.ts)
+- [src/runtime/transport.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/transport.ts)
+- [src/cli/auth-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/auth-command.ts)
+- [src/cli/config/auth.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/config/auth.ts)
 
 </details>
 

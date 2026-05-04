@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [scripts/convert.sh](../../../project-repos/agency-agents/scripts/convert.sh)
-- [integrations/README.md](../../../project-repos/agency-agents/integrations/README.md)
-- [integrations/cursor/README.md](../../../project-repos/agency-agents/integrations/cursor/README.md)
-- [integrations/gemini-cli/README.md](../../../project-repos/agency-agents/integrations/gemini-cli/README.md)
-- [integrations/openclaw/README.md](../../../project-repos/agency-agents/integrations/openclaw/README.md)
+- [scripts/convert.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/convert.sh)
+- [integrations/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/README.md)
+- [integrations/cursor/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/cursor/README.md)
+- [integrations/gemini-cli/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/gemini-cli/README.md)
+- [integrations/openclaw/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/openclaw/README.md)
 
 </details>
 

@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [examples/README.md](../../../project-repos/agency-agents/examples/README.md)
-- [README.md](../../../project-repos/agency-agents/README.md)
-- [strategy/QUICKSTART.md](../../../project-repos/agency-agents/strategy/QUICKSTART.md)
-- [strategy/nexus-strategy.md](../../../project-repos/agency-agents/strategy/nexus-strategy.md)
-- [strategy/playbooks/phase-3-build.md](../../../project-repos/agency-agents/strategy/playbooks/phase-3-build.md)
+- [examples/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/examples/README.md)
+- [README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/README.md)
+- [strategy/QUICKSTART.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/QUICKSTART.md)
+- [strategy/nexus-strategy.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/nexus-strategy.md)
+- [strategy/playbooks/phase-3-build.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/playbooks/phase-3-build.md)
 
 </details>
 

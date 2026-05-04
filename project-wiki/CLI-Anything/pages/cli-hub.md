@@ -3,13 +3,13 @@
 
 生成本页时使用的主要源文件：
 
-- [cli-hub/cli_hub/cli.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/cli.py)
-- [cli-hub/cli_hub/registry.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/registry.py)
-- [cli-hub/cli_hub/installer.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/installer.py)
-- [cli-hub/cli_hub/analytics.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/analytics.py)
-- [cli-hub/setup.py](../../../project-repos/CLI-Anything/cli-hub/setup.py)
-- [registry.json](../../../project-repos/CLI-Anything/registry.json)
-- [public_registry.json](../../../project-repos/CLI-Anything/public_registry.json)
+- [cli-hub/cli_hub/cli.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/cli.py)
+- [cli-hub/cli_hub/registry.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/registry.py)
+- [cli-hub/cli_hub/installer.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/installer.py)
+- [cli-hub/cli_hub/analytics.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/analytics.py)
+- [cli-hub/setup.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/setup.py)
+- [registry.json](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/registry.json)
+- [public_registry.json](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/public_registry.json)
 
 </details>
 

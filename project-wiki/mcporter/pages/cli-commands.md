@@ -3,24 +3,24 @@
 
 生成本页时使用的主要源文件：
 
-- [src/cli.ts](../../../project-repos/mcporter/src/cli.ts)
-- [src/cli/cli-factory.ts](../../../project-repos/mcporter/src/cli/cli-factory.ts)
-- [src/cli/command-inference.ts](../../../project-repos/mcporter/src/cli/command-inference.ts)
-- [src/cli/list-command.ts](../../../project-repos/mcporter/src/cli/list-command.ts)
-- [src/cli/call-command.ts](../../../project-repos/mcporter/src/cli/call-command.ts)
-- [src/cli/auth-command.ts](../../../project-repos/mcporter/src/cli/auth-command.ts)
-- [src/cli/config-command.ts](../../../project-repos/mcporter/src/cli/config-command.ts)
-- [src/cli/daemon-command.ts](../../../project-repos/mcporter/src/cli/daemon-command.ts)
-- [src/cli/generate-cli-runner.ts](../../../project-repos/mcporter/src/cli/generate-cli-runner.ts)
-- [src/cli/inspect-cli-command.ts](../../../project-repos/mcporter/src/cli/inspect-cli-command.ts)
-- [src/cli/emit-ts-command.ts](../../../project-repos/mcporter/src/cli/emit-ts-command.ts)
-- [src/cli/help-output.ts](../../../project-repos/mcporter/src/cli/help-output.ts)
+- [src/cli.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli.ts)
+- [src/cli/cli-factory.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/cli-factory.ts)
+- [src/cli/command-inference.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/command-inference.ts)
+- [src/cli/list-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/list-command.ts)
+- [src/cli/call-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-command.ts)
+- [src/cli/auth-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/auth-command.ts)
+- [src/cli/config-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/config-command.ts)
+- [src/cli/daemon-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/daemon-command.ts)
+- [src/cli/generate-cli-runner.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate-cli-runner.ts)
+- [src/cli/inspect-cli-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/inspect-cli-command.ts)
+- [src/cli/emit-ts-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/emit-ts-command.ts)
+- [src/cli/help-output.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/help-output.ts)
 
 </details>
 
 # CLI 命令体系
 
-`mcporter` 的 CLI 不使用 `commander` 命令注册的常规模式来分发，而是手写了一个"路由 + 命令处理器"组合：[runCli](../../../project-repos/mcporter/src/cli.ts#L30-L207) 解析全局 flag 后，先把第一个 token 喂给 `inferCommandRouting` 决定真正的子命令，再调用对应的 handler。这一节把它的命令面、命令推断、help 与版本分支拆开讲清楚。
+`mcporter` 的 CLI 不使用 `commander` 命令注册的常规模式来分发，而是手写了一个"路由 + 命令处理器"组合：[runCli](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli.ts#L30-L207) 解析全局 flag 后，先把第一个 token 喂给 `inferCommandRouting` 决定真正的子命令，再调用对应的 handler。这一节把它的命令面、命令推断、help 与版本分支拆开讲清楚。
 
 ## 顶层命令面
 

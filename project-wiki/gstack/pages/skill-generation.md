@@ -3,13 +3,13 @@
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [scripts/gen-skill-docs.ts](../../../project-repos/gstack/scripts/gen-skill-docs.ts)
-- [scripts/discover-skills.ts](../../../project-repos/gstack/scripts/discover-skills.ts)
-- [scripts/resolvers/index.ts](../../../project-repos/gstack/scripts/resolvers/index.ts)
-- [scripts/host-config.ts](../../../project-repos/gstack/scripts/host-config.ts)
-- [package.json](../../../project-repos/gstack/package.json)
-- [CONTRIBUTING.md](../../../project-repos/gstack/CONTRIBUTING.md)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [scripts/gen-skill-docs.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/gen-skill-docs.ts)
+- [scripts/discover-skills.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/discover-skills.ts)
+- [scripts/resolvers/index.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/resolvers/index.ts)
+- [scripts/host-config.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/host-config.ts)
+- [package.json](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/package.json)
+- [CONTRIBUTING.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CONTRIBUTING.md)
 
 </details>
 

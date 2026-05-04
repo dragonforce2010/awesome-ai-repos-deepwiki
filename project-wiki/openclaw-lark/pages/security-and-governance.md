@@ -61,7 +61,6 @@ Sources: [src/messaging/inbound/gate.ts:11-24](../../../project-repos/openclaw-l
 
 <!-- source-snippets:end -->
 </details>
-
 ## 多账号隔离：从配置结构推断风险
 
 `checkMultiAccountIsolation` 在「启用账号数 > 1 且 appId 集合 > 1」时进入分析：
@@ -119,7 +118,6 @@ export function checkMultiAccountIsolation(cfg: ClawdbotConfig): IsolationStatus
 
 <!-- source-snippets:end -->
 </details>
-
 ## 私聊会话串混：`session.dmScope` 建议
 
 `needsDmScopeFix` 在多租户场景下检查 `session.dmScope` 是否为推荐的 `per-account-channel-peer`；`getDmScopeFixCommand` 返回 `openclaw config set ...` 修复命令字符串。
@@ -157,7 +155,6 @@ export function getDmScopeFixCommand(cfg: ClawdbotConfig): string | null {
 
 <!-- source-snippets:end -->
 </details>
-
 ## README 侧的用户责任与使用建议
 
 中文 README 明确要求用户理解风险，并建议将机器人作为 **私人对话助手**，避免拉入群聊或允许他人交互；同时声明默认安全保护与「不要主动放宽限制」的立场。
@@ -181,7 +178,6 @@ Sources: [README.zh.md:30-34](../../../project-repos/openclaw-lark/README.zh.md#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [入站消息七阶段流水线](inbound-seven-stage-pipeline.md)

@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [CONTRIBUTING.md](../../../project-repos/GitNexus/CONTRIBUTING.md)
-- [CHANGELOG.md](../../../project-repos/GitNexus/CHANGELOG.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
-- [gitnexus-shared/package.json](../../../project-repos/GitNexus/gitnexus-shared/package.json)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [CONTRIBUTING.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/CONTRIBUTING.md)
+- [CHANGELOG.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/CHANGELOG.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
+- [gitnexus-shared/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-shared/package.json)
 
 </details>
 

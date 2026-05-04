@@ -50,11 +50,11 @@ GitNexus/
 
 | 文件 | 作用 |
 |------|------|
-| [README.md](../../project-repos/GitNexus/README.md) | 用户向文档、安装与 MCP 配置 |
-| [ARCHITECTURE.md](../../project-repos/GitNexus/ARCHITECTURE.md) | 维护者向架构与阶段 DAG |
-| [gitnexus/src/core/ingestion/pipeline.ts](../../project-repos/GitNexus/gitnexus/src/core/ingestion/pipeline.ts) | 阶段注册与 `runPipelineFromRepo` |
-| [gitnexus/src/mcp/tools.ts](../../project-repos/GitNexus/gitnexus/src/mcp/tools.ts) | MCP 工具定义 |
-| [gitnexus/src/mcp/resources.ts](../../project-repos/GitNexus/gitnexus/src/mcp/resources.ts) | MCP 资源 URI 模板 |
+| [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md) | 用户向文档、安装与 MCP 配置 |
+| [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md) | 维护者向架构与阶段 DAG |
+| [gitnexus/src/core/ingestion/pipeline.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/pipeline.ts) | 阶段注册与 `runPipelineFromRepo` |
+| [gitnexus/src/mcp/tools.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/mcp/tools.ts) | MCP 工具定义 |
+| [gitnexus/src/mcp/resources.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/mcp/resources.ts) | MCP 资源 URI 模板 |
 
 ## 来源说明
 

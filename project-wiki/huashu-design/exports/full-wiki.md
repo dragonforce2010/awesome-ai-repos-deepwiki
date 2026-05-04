@@ -34,10 +34,10 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/huashu-design/README.md)
-- [README.en.md](../../../project-repos/huashu-design/README.en.md)
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [LICENSE](../../../project-repos/huashu-design/LICENSE)
+- [README.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.md)
+- [README.en.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.en.md)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [LICENSE](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/LICENSE)
 - [00-repo-inventory.md](../00-repo-inventory.md)
 
 </details>
@@ -580,11 +580,11 @@ Sources: [README.md:79-89](../../../project-repos/huashu-design/README.md#L79-L8
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [references/workflow.md](../../../project-repos/huashu-design/references/workflow.md)
-- [references/design-context.md](../../../project-repos/huashu-design/references/design-context.md)
-- [references/content-guidelines.md](../../../project-repos/huashu-design/references/content-guidelines.md)
-- [test-prompts.json](../../../project-repos/huashu-design/test-prompts.json)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [references/workflow.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/workflow.md)
+- [references/design-context.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/design-context.md)
+- [references/content-guidelines.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/content-guidelines.md)
+- [test-prompts.json](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/test-prompts.json)
 
 </details>
 
@@ -1275,11 +1275,11 @@ HTML文件头部先写你的**assumptions+reasoning comments**，像junior给man
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [references/design-context.md](../../../project-repos/huashu-design/references/design-context.md)
-- [assets/personal-asset-index.example.json](../../../project-repos/huashu-design/assets/personal-asset-index.example.json)
-- [README.md](../../../project-repos/huashu-design/README.md)
-- [LICENSE](../../../project-repos/huashu-design/LICENSE)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [references/design-context.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/design-context.md)
+- [assets/personal-asset-index.example.json](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/personal-asset-index.example.json)
+- [README.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.md)
+- [LICENSE](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/LICENSE)
 
 </details>
 
@@ -1833,11 +1833,11 @@ curl -A "Mozilla/5.0" -L "<hero-image-url>" -o assets/<brand>-brand/product-hero
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [references/design-styles.md](../../../project-repos/huashu-design/references/design-styles.md)
-- [assets/showcases/INDEX.md](../../../project-repos/huashu-design/assets/showcases/INDEX.md)
-- [references/scene-templates.md](../../../project-repos/huashu-design/references/scene-templates.md)
-- [README.md](../../../project-repos/huashu-design/README.md)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [references/design-styles.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/design-styles.md)
+- [assets/showcases/INDEX.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/showcases/INDEX.md)
+- [references/scene-templates.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/scene-templates.md)
+- [README.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.md)
 
 </details>
 
@@ -2417,15 +2417,15 @@ Sources: [SKILL.md:386-456](../../../project-repos/huashu-design/SKILL.md#L386-L
 
 生成本页时使用的主要源文件：
 
-- [assets/animations.jsx](../../../project-repos/huashu-design/assets/animations.jsx)
-- [assets/deck_stage.js](../../../project-repos/huashu-design/assets/deck_stage.js)
-- [assets/deck_index.html](../../../project-repos/huashu-design/assets/deck_index.html)
-- [assets/design_canvas.jsx](../../../project-repos/huashu-design/assets/design_canvas.jsx)
-- [assets/ios_frame.jsx](../../../project-repos/huashu-design/assets/ios_frame.jsx)
-- [assets/android_frame.jsx](../../../project-repos/huashu-design/assets/android_frame.jsx)
-- [assets/browser_window.jsx](../../../project-repos/huashu-design/assets/browser_window.jsx)
-- [assets/macos_window.jsx](../../../project-repos/huashu-design/assets/macos_window.jsx)
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
+- [assets/animations.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/animations.jsx)
+- [assets/deck_stage.js](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/deck_stage.js)
+- [assets/deck_index.html](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/deck_index.html)
+- [assets/design_canvas.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/design_canvas.jsx)
+- [assets/ios_frame.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/ios_frame.jsx)
+- [assets/android_frame.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/android_frame.jsx)
+- [assets/browser_window.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/browser_window.jsx)
+- [assets/macos_window.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/macos_window.jsx)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
 
 </details>
 
@@ -3284,12 +3284,12 @@ Sources: [SKILL.md:707-723](../../../project-repos/huashu-design/SKILL.md#L707-L
 
 生成本页时使用的主要源文件：
 
-- [references/slide-decks.md](../../../project-repos/huashu-design/references/slide-decks.md)
-- [references/editable-pptx.md](../../../project-repos/huashu-design/references/editable-pptx.md)
-- [assets/deck_index.html](../../../project-repos/huashu-design/assets/deck_index.html)
-- [assets/deck_stage.js](../../../project-repos/huashu-design/assets/deck_stage.js)
-- [scripts/html2pptx.js](../../../project-repos/huashu-design/scripts/html2pptx.js)
-- [scripts/export_deck_pptx.mjs](../../../project-repos/huashu-design/scripts/export_deck_pptx.mjs)
+- [references/slide-decks.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/slide-decks.md)
+- [references/editable-pptx.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/editable-pptx.md)
+- [assets/deck_index.html](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/deck_index.html)
+- [assets/deck_stage.js](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/deck_stage.js)
+- [scripts/html2pptx.js](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/html2pptx.js)
+- [scripts/export_deck_pptx.mjs](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/export_deck_pptx.mjs)
 
 </details>
 
@@ -3812,15 +3812,15 @@ Deck ≥5 页时，规范要求先做 2 页视觉差异最大的 showcase 定 gr
 
 生成本页时使用的主要源文件：
 
-- [assets/animations.jsx](../../../project-repos/huashu-design/assets/animations.jsx)
-- [references/animation-pitfalls.md](../../../project-repos/huashu-design/references/animation-pitfalls.md)
-- [references/animation-best-practices.md](../../../project-repos/huashu-design/references/animation-best-practices.md)
-- [references/video-export.md](../../../project-repos/huashu-design/references/video-export.md)
-- [references/audio-design-rules.md](../../../project-repos/huashu-design/references/audio-design-rules.md)
-- [references/sfx-library.md](../../../project-repos/huashu-design/references/sfx-library.md)
-- [scripts/render-video.js](../../../project-repos/huashu-design/scripts/render-video.js)
-- [scripts/convert-formats.sh](../../../project-repos/huashu-design/scripts/convert-formats.sh)
-- [scripts/add-music.sh](../../../project-repos/huashu-design/scripts/add-music.sh)
+- [assets/animations.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/animations.jsx)
+- [references/animation-pitfalls.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/animation-pitfalls.md)
+- [references/animation-best-practices.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/animation-best-practices.md)
+- [references/video-export.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/video-export.md)
+- [references/audio-design-rules.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/audio-design-rules.md)
+- [references/sfx-library.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/sfx-library.md)
+- [scripts/render-video.js](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/render-video.js)
+- [scripts/convert-formats.sh](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/convert-formats.sh)
+- [scripts/add-music.sh](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/add-music.sh)
 
 </details>
 
@@ -4821,13 +4821,13 @@ echo "✓ Done: $OUTPUT ($SIZE)"
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [references/tweaks-system.md](../../../project-repos/huashu-design/references/tweaks-system.md)
-- [references/verification.md](../../../project-repos/huashu-design/references/verification.md)
-- [scripts/verify.py](../../../project-repos/huashu-design/scripts/verify.py)
-- [assets/ios_frame.jsx](../../../project-repos/huashu-design/assets/ios_frame.jsx)
-- [assets/design_canvas.jsx](../../../project-repos/huashu-design/assets/design_canvas.jsx)
-- [test-prompts.json](../../../project-repos/huashu-design/test-prompts.json)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [references/tweaks-system.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/tweaks-system.md)
+- [references/verification.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/verification.md)
+- [scripts/verify.py](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/verify.py)
+- [assets/ios_frame.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/ios_frame.jsx)
+- [assets/design_canvas.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/design_canvas.jsx)
+- [test-prompts.json](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/test-prompts.json)
 
 </details>
 
@@ -5426,12 +5426,12 @@ def verify_html(html_path, viewports=None, slides=0, output_dir=None, show=False
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [references/workflow.md](../../../project-repos/huashu-design/references/workflow.md)
-- [references/content-guidelines.md](../../../project-repos/huashu-design/references/content-guidelines.md)
-- [references/verification.md](../../../project-repos/huashu-design/references/verification.md)
-- [test-prompts.json](../../../project-repos/huashu-design/test-prompts.json)
-- [.gitignore](../../../project-repos/huashu-design/.gitignore)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [references/workflow.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/workflow.md)
+- [references/content-guidelines.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/content-guidelines.md)
+- [references/verification.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/verification.md)
+- [test-prompts.json](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/test-prompts.json)
+- [.gitignore](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/.gitignore)
 
 </details>
 
@@ -6064,12 +6064,12 @@ Asymmetric、不同大小的cards、有的带image有的只有文字、有的跨
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/huashu-design/README.md)
-- [README.en.md](../../../project-repos/huashu-design/README.en.md)
-- [LICENSE](../../../project-repos/huashu-design/LICENSE)
-- [.gitignore](../../../project-repos/huashu-design/.gitignore)
-- [assets/personal-asset-index.example.json](../../../project-repos/huashu-design/assets/personal-asset-index.example.json)
-- [references/sfx-library.md](../../../project-repos/huashu-design/references/sfx-library.md)
+- [README.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.md)
+- [README.en.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.en.md)
+- [LICENSE](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/LICENSE)
+- [.gitignore](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/.gitignore)
+- [assets/personal-asset-index.example.json](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/personal-asset-index.example.json)
+- [references/sfx-library.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/sfx-library.md)
 - [00-repo-inventory.md](../00-repo-inventory.md)
 
 </details>

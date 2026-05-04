@@ -3,13 +3,13 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [design/src/cli.ts](../../../project-repos/gstack/design/src/cli.ts)
-- [design/src/commands.ts](../../../project-repos/gstack/design/src/commands.ts)
-- [design/src/generate.ts](../../../project-repos/gstack/design/src/generate.ts)
-- [design/src/design-to-code.ts](../../../project-repos/gstack/design/src/design-to-code.ts)
-- [make-pdf/src/cli.ts](../../../project-repos/gstack/make-pdf/src/cli.ts)
-- [make-pdf/SKILL.md](../../../project-repos/gstack/make-pdf/SKILL.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [design/src/cli.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/design/src/cli.ts)
+- [design/src/commands.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/design/src/commands.ts)
+- [design/src/generate.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/design/src/generate.ts)
+- [design/src/design-to-code.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/design/src/design-to-code.ts)
+- [make-pdf/src/cli.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/make-pdf/src/cli.ts)
+- [make-pdf/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/make-pdf/SKILL.md)
 
 </details>
 

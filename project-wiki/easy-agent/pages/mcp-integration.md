@@ -3,15 +3,15 @@
 
 生成本页时使用的主要源文件：
 
-- [src/services/mcp/config.ts](../../../project-repos/easy-agent/src/services/mcp/config.ts)
-- [src/services/mcp/bootstrap.ts](../../../project-repos/easy-agent/src/services/mcp/bootstrap.ts)
-- [src/services/mcp/client.ts](../../../project-repos/easy-agent/src/services/mcp/client.ts)
-- [src/services/mcp/fetchTools.ts](../../../project-repos/easy-agent/src/services/mcp/fetchTools.ts)
-- [src/services/mcp/registry.ts](../../../project-repos/easy-agent/src/services/mcp/registry.ts)
-- [src/services/mcp/mcpStringUtils.ts](../../../project-repos/easy-agent/src/services/mcp/mcpStringUtils.ts)
-- [src/services/mcp/normalization.ts](../../../project-repos/easy-agent/src/services/mcp/normalization.ts)
-- [src/types/mcp.ts](../../../project-repos/easy-agent/src/types/mcp.ts)
-- [src/scripts/test-mcp.ts](../../../project-repos/easy-agent/src/scripts/test-mcp.ts)
+- [src/services/mcp/config.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/config.ts)
+- [src/services/mcp/bootstrap.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/bootstrap.ts)
+- [src/services/mcp/client.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/client.ts)
+- [src/services/mcp/fetchTools.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/fetchTools.ts)
+- [src/services/mcp/registry.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/registry.ts)
+- [src/services/mcp/mcpStringUtils.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/mcpStringUtils.ts)
+- [src/services/mcp/normalization.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/normalization.ts)
+- [src/types/mcp.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/mcp.ts)
+- [src/scripts/test-mcp.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-mcp.ts)
 
 </details>
 

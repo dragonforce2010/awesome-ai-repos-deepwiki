@@ -3,12 +3,12 @@
 
 生成本页时使用的主要源文件：
 
-- [CONTRIBUTING.md](../../../project-repos/gstack/CONTRIBUTING.md)
-- [docs/ADDING_A_HOST.md](../../../project-repos/gstack/docs/ADDING_A_HOST.md)
-- [setup](../../../project-repos/gstack/setup)
-- [CLAUDE.md](../../../project-repos/gstack/CLAUDE.md)
-- [scripts/host-config.ts](../../../project-repos/gstack/scripts/host-config.ts)
-- [hosts/index.ts](../../../project-repos/gstack/hosts/index.ts)
+- [CONTRIBUTING.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CONTRIBUTING.md)
+- [docs/ADDING_A_HOST.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/docs/ADDING_A_HOST.md)
+- [setup](https://github.com/garrytan/gstack/tree/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/setup)
+- [CLAUDE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CLAUDE.md)
+- [scripts/host-config.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/host-config.ts)
+- [hosts/index.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/index.ts)
 
 </details>
 

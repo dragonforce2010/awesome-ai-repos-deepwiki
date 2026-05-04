@@ -1,12 +1,12 @@
 <details>
 <summary>相关源文件</summary>
 
-- [apps/daemon/src/server.ts](../../../project-repos/open-design/apps/daemon/src/server.ts) - daemon 路由主体。
-- [apps/daemon/src/db.ts](../../../project-repos/open-design/apps/daemon/src/db.ts) - SQLite schema 和迁移。
-- [apps/daemon/src/app-config.ts](../../../project-repos/open-design/apps/daemon/src/app-config.ts) - daemon 侧 app preferences 持久化、过滤和并发写入。
-- [packages/contracts/src/api/app-config.ts](../../../project-repos/open-design/packages/contracts/src/api/app-config.ts) - Web/daemon 共享的 app-config API 类型。
-- [apps/daemon/src/projects.ts](../../../project-repos/open-design/apps/daemon/src/projects.ts) - 项目文件读写、归档、路径校验。
-- [apps/daemon/src/media.ts](../../../project-repos/open-design/apps/daemon/src/media.ts) - 媒体生成 dispatcher 和文件安全校验。
+- [apps/daemon/src/server.ts](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) - daemon 路由主体。
+- [apps/daemon/src/db.ts](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/db.ts) - SQLite schema 和迁移。
+- [apps/daemon/src/app-config.ts](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/app-config.ts) - daemon 侧 app preferences 持久化、过滤和并发写入。
+- [packages/contracts/src/api/app-config.ts](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/packages/contracts/src/api/app-config.ts) - Web/daemon 共享的 app-config API 类型。
+- [apps/daemon/src/projects.ts](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/projects.ts) - 项目文件读写、归档、路径校验。
+- [apps/daemon/src/media.ts](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/media.ts) - 媒体生成 dispatcher 和文件安全校验。
 
 </details>
 
@@ -31,17 +31,17 @@ Daemon 是 Open Design 的本机权限边界。它既提供业务 API，也把�
 | App config | `/api/app-config` | daemon 持久化 onboarding、agent、模型、skill 和 design system 偏好。 |
 | BYOK proxy | Anthropic/OpenAI proxy | 使用用户 key 代理请求并做目标限制。 |
 
-具体入口分布在 `server.ts`：agents/skills 在 1097-1122 行，design systems 和 prompt templates 在 1208-1241 行，artifact 和文件路由在 1347-1807 行，media/app-config 在 1822-2021 行，runs 路由在 2495-2536 行，BYOK proxy 在 2568-2763 行。[apps/daemon/src/server.ts:1097-1122](../../../project-repos/open-design/apps/daemon/src/server.ts) [apps/daemon/src/server.ts:1208-1241](../../../project-repos/open-design/apps/daemon/src/server.ts) [apps/daemon/src/server.ts:1347-1807](../../../project-repos/open-design/apps/daemon/src/server.ts) [apps/daemon/src/server.ts:1822-2021](../../../project-repos/open-design/apps/daemon/src/server.ts) [apps/daemon/src/server.ts:2495-2536](../../../project-repos/open-design/apps/daemon/src/server.ts)
+具体入口分布在 `server.ts`：agents/skills 在 1097-1122 行，design systems 和 prompt templates 在 1208-1241 行，artifact 和文件路由在 1347-1807 行，media/app-config 在 1822-2021 行，runs 路由在 2495-2536 行，BYOK proxy 在 2568-2763 行。[apps/daemon/src/server.ts:1097-1122](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) [apps/daemon/src/server.ts:1208-1241](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) [apps/daemon/src/server.ts:1347-1807](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) [apps/daemon/src/server.ts:1822-2021](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) [apps/daemon/src/server.ts:2495-2536](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts)
 
 ## SQLite 只存元数据
 
-`db.ts` 明确把 SQLite 用作 metadata store，项目文件仍保存在磁盘上。[apps/daemon/src/db.ts:1-7](../../../project-repos/open-design/apps/daemon/src/db.ts) `openDb` 在 `.od/app.sqlite` 下启用 WAL 和外键，然后执行迁移。[apps/daemon/src/db.ts:16-28](../../../project-repos/open-design/apps/daemon/src/db.ts) schema 覆盖 projects、templates、conversations、messages、preview_comments、tabs、deployments 等表，并通过后续列添加保持向前兼容。[apps/daemon/src/db.ts:38-183](../../../project-repos/open-design/apps/daemon/src/db.ts)
+`db.ts` 明确把 SQLite 用作 metadata store，项目文件仍保存在磁盘上。[apps/daemon/src/db.ts:1-7](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/db.ts) `openDb` 在 `.od/app.sqlite` 下启用 WAL 和外键，然后执行迁移。[apps/daemon/src/db.ts:16-28](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/db.ts) schema 覆盖 projects、templates、conversations、messages、preview_comments、tabs、deployments 等表，并通过后续列添加保持向前兼容。[apps/daemon/src/db.ts:38-183](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/db.ts)
 
 ## App config 持久化
 
-最新主线新增了 daemon-backed app preferences：Web 通过 `GET/PUT /api/app-config` 同步 onboarding、agent、per-agent model/reasoning、skill 和 design system 选择，daemon 把它们写入 `<dataDir>/app-config.json`，从而在浏览器 storage 清空或 origin 变化后保留启动配置。[apps/daemon/src/app-config.ts:1-8](../../../project-repos/open-design/apps/daemon/src/app-config.ts) 允许字段集中在 `ALLOWED_KEYS`，读写时会过滤未知键、验证 `agentModels` 形状，并用 per-dataDir 写锁串行化 read-modify-write。[apps/daemon/src/app-config.ts:27-97](../../../project-repos/open-design/apps/daemon/src/app-config.ts) [apps/daemon/src/app-config.ts:99-153](../../../project-repos/open-design/apps/daemon/src/app-config.ts)
+最新主线新增了 daemon-backed app preferences：Web 通过 `GET/PUT /api/app-config` 同步 onboarding、agent、per-agent model/reasoning、skill 和 design system 选择，daemon 把它们写入 `<dataDir>/app-config.json`，从而在浏览器 storage 清空或 origin 变化后保留启动配置。[apps/daemon/src/app-config.ts:1-8](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/app-config.ts) 允许字段集中在 `ALLOWED_KEYS`，读写时会过滤未知键、验证 `agentModels` 形状，并用 per-dataDir 写锁串行化 read-modify-write。[apps/daemon/src/app-config.ts:27-97](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/app-config.ts) [apps/daemon/src/app-config.ts:99-153](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/app-config.ts)
 
-HTTP 层对 app-config 做同源检查：`/api/app-config` 只接受本地同源或可信 Web port 的请求，跨 origin 会被拒绝。[apps/daemon/src/server.ts:1857-1883](../../../project-repos/open-design/apps/daemon/src/server.ts) 共享 contract 定义 `AppConfigPrefs` 和更新请求形状，避免 Web/daemon 字段漂移。[packages/contracts/src/api/app-config.ts:1-18](../../../project-repos/open-design/packages/contracts/src/api/app-config.ts)
+HTTP 层对 app-config 做同源检查：`/api/app-config` 只接受本地同源或可信 Web port 的请求，跨 origin 会被拒绝。[apps/daemon/src/server.ts:1857-1883](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) 共享 contract 定义 `AppConfigPrefs` 和更新请求形状，避免 Web/daemon 字段漂移。[packages/contracts/src/api/app-config.ts:1-18](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/packages/contracts/src/api/app-config.ts)
 
 这个边界有两个含义：
 
@@ -50,17 +50,17 @@ HTTP 层对 app-config 做同源检查：`/api/app-config` 只接受本地同源
 
 ## 项目文件边界
 
-`projects.ts` 用 `projectDir`、`listProjectFiles`、`readProjectFile`、`writeProjectFile`、`resolveSafe`、`validateProjectPath` 等函数把文件操作限制在 project root 内。[apps/daemon/src/projects.ts:21-39](../../../project-repos/open-design/apps/daemon/src/projects.ts) [apps/daemon/src/projects.ts:162-223](../../../project-repos/open-design/apps/daemon/src/projects.ts) [apps/daemon/src/projects.ts:258-285](../../../project-repos/open-design/apps/daemon/src/projects.ts) 打包归档时会排除 dotfiles 和 `.artifact.json`。[apps/daemon/src/projects.ts:75-137](../../../project-repos/open-design/apps/daemon/src/projects.ts)
+`projects.ts` 用 `projectDir`、`listProjectFiles`、`readProjectFile`、`writeProjectFile`、`resolveSafe`、`validateProjectPath` 等函数把文件操作限制在 project root 内。[apps/daemon/src/projects.ts:21-39](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/projects.ts) [apps/daemon/src/projects.ts:162-223](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/projects.ts) [apps/daemon/src/projects.ts:258-285](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/projects.ts) 打包归档时会排除 dotfiles 和 `.artifact.json`。[apps/daemon/src/projects.ts:75-137](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/projects.ts)
 
 需要特别注意：源码中存在项目目录删除/文件删除实现，但本次 DeepWiki 生成没有执行任何删除命令。维护该区域时应把“用户项目文件是否可被 agent 或 API 意外删改”作为风险点单独测试。
 
 ## BYOK proxy 与 SSRF 边界
 
-Daemon 末尾实现了 Anthropic/OpenAI BYOK proxy，并有目标地址防护：阻断 localhost、link-local 和 RFC1918 私网地址。[apps/daemon/src/server.ts:2568-2763](../../../project-repos/open-design/apps/daemon/src/server.ts) 这很关键，因为 Web UI 和 agent 都可能触发网络请求；如果 proxy 允许任意 URL，会把用户本机网络暴露给远端内容或 prompt 注入。
+Daemon 末尾实现了 Anthropic/OpenAI BYOK proxy，并有目标地址防护：阻断 localhost、link-local 和 RFC1918 私网地址。[apps/daemon/src/server.ts:2568-2763](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) 这很关键，因为 Web UI 和 agent 都可能触发网络请求；如果 proxy 允许任意 URL，会把用户本机网络暴露给远端内容或 prompt 注入。
 
 ## Media 文件安全
 
-`media.ts` 也有路径和类型边界：生成结果必须落在项目 image/video/audio 路径规则内，扩展名受白名单限制，provider/stub 路径由 config 控制。[apps/daemon/src/media.ts:1-38](../../../project-repos/open-design/apps/daemon/src/media.ts) [apps/daemon/src/media.ts:93-156](../../../project-repos/open-design/apps/daemon/src/media.ts) [apps/daemon/src/media.ts:192-260](../../../project-repos/open-design/apps/daemon/src/media.ts)
+`media.ts` 也有路径和类型边界：生成结果必须落在项目 image/video/audio 路径规则内，扩展名受白名单限制，provider/stub 路径由 config 控制。[apps/daemon/src/media.ts:1-38](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/media.ts) [apps/daemon/src/media.ts:93-156](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/media.ts) [apps/daemon/src/media.ts:192-260](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/media.ts)
 
 ## 维护检查表
 

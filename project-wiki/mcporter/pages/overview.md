@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/mcporter/README.md)
-- [package.json](../../../project-repos/mcporter/package.json)
-- [src/index.ts](../../../project-repos/mcporter/src/index.ts)
-- [src/cli.ts](../../../project-repos/mcporter/src/cli.ts)
-- [CHANGELOG.md](../../../project-repos/mcporter/CHANGELOG.md)
+- [README.md](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/README.md)
+- [package.json](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/package.json)
+- [src/index.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/index.ts)
+- [src/cli.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli.ts)
+- [CHANGELOG.md](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/CHANGELOG.md)
 
 </details>
 

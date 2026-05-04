@@ -3,15 +3,15 @@
 
 生成本页时使用的主要源文件：
 
-- [src/notebooklm/client.py](../../../project-repos/notebooklm-py/src/notebooklm/client.py)
-- [src/notebooklm/_notebooks.py](../../../project-repos/notebooklm-py/src/notebooklm/_notebooks.py)
-- [src/notebooklm/_sources.py](../../../project-repos/notebooklm-py/src/notebooklm/_sources.py)
-- [src/notebooklm/_chat.py](../../../project-repos/notebooklm-py/src/notebooklm/_chat.py)
-- [src/notebooklm/_artifacts.py](../../../project-repos/notebooklm-py/src/notebooklm/_artifacts.py)
-- [src/notebooklm/_research.py](../../../project-repos/notebooklm-py/src/notebooklm/_research.py)
-- [src/notebooklm/_notes.py](../../../project-repos/notebooklm-py/src/notebooklm/_notes.py)
-- [src/notebooklm/_settings.py](../../../project-repos/notebooklm-py/src/notebooklm/_settings.py)
-- [src/notebooklm/_sharing.py](../../../project-repos/notebooklm-py/src/notebooklm/_sharing.py)
+- [src/notebooklm/client.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/client.py)
+- [src/notebooklm/_notebooks.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_notebooks.py)
+- [src/notebooklm/_sources.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_sources.py)
+- [src/notebooklm/_chat.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_chat.py)
+- [src/notebooklm/_artifacts.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_artifacts.py)
+- [src/notebooklm/_research.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_research.py)
+- [src/notebooklm/_notes.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_notes.py)
+- [src/notebooklm/_settings.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_settings.py)
+- [src/notebooklm/_sharing.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_sharing.py)
 
 </details>
 

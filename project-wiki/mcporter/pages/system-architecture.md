@@ -3,14 +3,14 @@
 
 生成本页时使用的主要源文件：
 
-- [src/cli.ts](../../../project-repos/mcporter/src/cli.ts)
-- [src/runtime.ts](../../../project-repos/mcporter/src/runtime.ts)
-- [src/config.ts](../../../project-repos/mcporter/src/config.ts)
-- [src/server-proxy.ts](../../../project-repos/mcporter/src/server-proxy.ts)
-- [src/daemon/runtime-wrapper.ts](../../../project-repos/mcporter/src/daemon/runtime-wrapper.ts)
-- [src/daemon/host.ts](../../../project-repos/mcporter/src/daemon/host.ts)
-- [src/index.ts](../../../project-repos/mcporter/src/index.ts)
-- [src/runtime/transport.ts](../../../project-repos/mcporter/src/runtime/transport.ts)
+- [src/cli.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli.ts)
+- [src/runtime.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime.ts)
+- [src/config.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config.ts)
+- [src/server-proxy.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/server-proxy.ts)
+- [src/daemon/runtime-wrapper.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/runtime-wrapper.ts)
+- [src/daemon/host.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/host.ts)
+- [src/index.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/index.ts)
+- [src/runtime/transport.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/transport.ts)
 
 </details>
 

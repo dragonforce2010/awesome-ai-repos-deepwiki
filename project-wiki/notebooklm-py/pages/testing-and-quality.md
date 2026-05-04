@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [tests/conftest.py](../../../project-repos/notebooklm-py/tests/conftest.py)
-- [pyproject.toml](../../../project-repos/notebooklm-py/pyproject.toml)
-- [.pre-commit-config.yaml](../../../project-repos/notebooklm-py/.pre-commit-config.yaml)
-- [.github/workflows/test.yml](../../../project-repos/notebooklm-py/.github/workflows/test.yml)
+- [tests/conftest.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/tests/conftest.py)
+- [pyproject.toml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/pyproject.toml)
+- [.pre-commit-config.yaml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/.pre-commit-config.yaml)
+- [.github/workflows/test.yml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/.github/workflows/test.yml)
 
 </details>
 

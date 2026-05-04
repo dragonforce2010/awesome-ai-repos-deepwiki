@@ -3,18 +3,18 @@
 
 生成本页时使用的主要源文件：
 
-- [src/session/storage.ts](../../../project-repos/easy-agent/src/session/storage.ts)
-- [src/session/history.ts](../../../project-repos/easy-agent/src/session/history.ts)
-- [src/state/todoStore.ts](../../../project-repos/easy-agent/src/state/todoStore.ts)
-- [src/state/taskStore.ts](../../../project-repos/easy-agent/src/state/taskStore.ts)
-- [src/state/taskModeStore.ts](../../../project-repos/easy-agent/src/state/taskModeStore.ts)
-- [src/types/todo.ts](../../../project-repos/easy-agent/src/types/todo.ts)
-- [src/types/task.ts](../../../project-repos/easy-agent/src/types/task.ts)
-- [src/tools/todoWriteTool.ts](../../../project-repos/easy-agent/src/tools/todoWriteTool.ts)
-- [src/tools/taskCreateTool.ts](../../../project-repos/easy-agent/src/tools/taskCreateTool.ts)
-- [src/tools/taskUpdateTool.ts](../../../project-repos/easy-agent/src/tools/taskUpdateTool.ts)
-- [src/tools/taskListTool.ts](../../../project-repos/easy-agent/src/tools/taskListTool.ts)
-- [src/ui/hooks/useAgentSession.ts](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts)
+- [src/session/storage.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/session/storage.ts)
+- [src/session/history.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/session/history.ts)
+- [src/state/todoStore.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/state/todoStore.ts)
+- [src/state/taskStore.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/state/taskStore.ts)
+- [src/state/taskModeStore.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/state/taskModeStore.ts)
+- [src/types/todo.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/todo.ts)
+- [src/types/task.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/task.ts)
+- [src/tools/todoWriteTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/todoWriteTool.ts)
+- [src/tools/taskCreateTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/taskCreateTool.ts)
+- [src/tools/taskUpdateTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/taskUpdateTool.ts)
+- [src/tools/taskListTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/taskListTool.ts)
+- [src/ui/hooks/useAgentSession.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/hooks/useAgentSession.ts)
 
 </details>
 

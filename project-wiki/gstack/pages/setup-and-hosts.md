@@ -3,12 +3,12 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [setup](../../../project-repos/gstack/setup)
-- [hosts/index.ts](../../../project-repos/gstack/hosts/index.ts)
-- [hosts/codex.ts](../../../project-repos/gstack/hosts/codex.ts)
-- [hosts/openclaw.ts](../../../project-repos/gstack/hosts/openclaw.ts)
-- [CONTRIBUTING.md](../../../project-repos/gstack/CONTRIBUTING.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [setup](https://github.com/garrytan/gstack/tree/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/setup)
+- [hosts/index.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/index.ts)
+- [hosts/codex.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/codex.ts)
+- [hosts/openclaw.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/openclaw.ts)
+- [CONTRIBUTING.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CONTRIBUTING.md)
 
 </details>
 

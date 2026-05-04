@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/agency-agents/README.md)
-- [examples/README.md](../../../project-repos/agency-agents/examples/README.md)
-- [integrations/README.md](../../../project-repos/agency-agents/integrations/README.md)
-- [SECURITY.md](../../../project-repos/agency-agents/SECURITY.md)
+- [README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/README.md)
+- [examples/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/examples/README.md)
+- [integrations/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/README.md)
+- [SECURITY.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/SECURITY.md)
 
 </details>
 

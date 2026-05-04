@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [src/notebooklm/client.py](../../../project-repos/notebooklm-py/src/notebooklm/client.py)
-- [src/notebooklm/_core.py](../../../project-repos/notebooklm-py/src/notebooklm/_core.py)
-- [src/notebooklm/__init__.py](../../../project-repos/notebooklm-py/src/notebooklm/__init__.py)
-- [pyproject.toml](../../../project-repos/notebooklm-py/pyproject.toml)
+- [src/notebooklm/client.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/client.py)
+- [src/notebooklm/_core.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_core.py)
+- [src/notebooklm/__init__.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/__init__.py)
+- [pyproject.toml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/pyproject.toml)
 
 </details>
 

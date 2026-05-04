@@ -3,16 +3,16 @@
 
 生成本页时使用的主要源文件：
 
-- [.github/workflows/ci.yml](../../../project-repos/mcporter/.github/workflows/ci.yml)
-- [package.json](../../../project-repos/mcporter/package.json)
-- [scripts/test-runner.js](../../../project-repos/mcporter/scripts/test-runner.js)
-- [tests/build-bun.test.ts](../../../project-repos/mcporter/tests/build-bun.test.ts)
-- [tests/daemon.integration.test.ts](../../../project-repos/mcporter/tests/daemon.integration.test.ts)
-- [tests/cli-call-execution.test.ts](../../../project-repos/mcporter/tests/cli-call-execution.test.ts)
-- [tests/live/deepwiki-live.test.ts](../../../project-repos/mcporter/tests/live/deepwiki-live.test.ts)
-- [src/cli/runtime-debug.ts](../../../project-repos/mcporter/src/cli/runtime-debug.ts)
-- [src/sdk-patches.ts](../../../project-repos/mcporter/src/sdk-patches.ts)
-- [src/logging.ts](../../../project-repos/mcporter/src/logging.ts)
+- [.github/workflows/ci.yml](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/.github/workflows/ci.yml)
+- [package.json](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/package.json)
+- [scripts/test-runner.js](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/scripts/test-runner.js)
+- [tests/build-bun.test.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/tests/build-bun.test.ts)
+- [tests/daemon.integration.test.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/tests/daemon.integration.test.ts)
+- [tests/cli-call-execution.test.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/tests/cli-call-execution.test.ts)
+- [tests/live/deepwiki-live.test.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/tests/live/deepwiki-live.test.ts)
+- [src/cli/runtime-debug.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/runtime-debug.ts)
+- [src/sdk-patches.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/sdk-patches.ts)
+- [src/logging.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/logging.ts)
 
 </details>
 

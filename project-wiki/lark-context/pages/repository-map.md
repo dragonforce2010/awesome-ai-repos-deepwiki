@@ -137,7 +137,6 @@ V1 TS 版发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，推荐删除本目
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md) — 产品与隐私叙事  

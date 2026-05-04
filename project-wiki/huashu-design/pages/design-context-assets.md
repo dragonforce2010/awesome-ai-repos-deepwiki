@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [references/design-context.md](../../../project-repos/huashu-design/references/design-context.md)
-- [assets/personal-asset-index.example.json](../../../project-repos/huashu-design/assets/personal-asset-index.example.json)
-- [README.md](../../../project-repos/huashu-design/README.md)
-- [LICENSE](../../../project-repos/huashu-design/LICENSE)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [references/design-context.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/design-context.md)
+- [assets/personal-asset-index.example.json](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/personal-asset-index.example.json)
+- [README.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.md)
+- [LICENSE](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/LICENSE)
 
 </details>
 

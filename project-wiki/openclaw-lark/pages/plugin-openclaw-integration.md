@@ -108,7 +108,6 @@ const plugin = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 工具调用观测与日志
 
 `before_tool_call` / `after_tool_call` 对 `feishu_` 前缀工具记录结构化日志，并通过 `recordToolUseStart` / `recordToolUseEnd` 维护工具调用追踪数据，供卡片层消费。
@@ -167,7 +166,6 @@ import { sanitizeParamsForLog } from './src/card/reasoning-utils';
 
 <!-- source-snippets:end -->
 </details>
-
 ## CLI：`feishu-diagnose` 与 `openclaw-lark` bin
 
 插件向 OpenClaw CLI 注册 `feishu-diagnose`：支持无参诊断与 `--trace <messageId>` 追踪，可选 `--analyze` 做追踪分析。
@@ -278,7 +276,6 @@ try {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 聊天命令注册
 
 `registerCommands(api)` 负责在飞书会话中暴露 `/feishu_diagnose`、`/feishu_doctor`、`/feishu_auth`、`/feishu` 等命令（详见 `src/commands/index.ts` 头部注释与 i18n 文案表）。
@@ -307,7 +304,6 @@ Sources: [index.ts:204-205](../../../project-repos/openclaw-lark/index.ts#L204-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## package.json 中的 OpenClaw 扩展声明
 
 `package.json` 的 `openclaw` 字段声明 `extensions` 指向构建产物 `./dist/index.mjs`，并描述 `channel` 元数据（`id`、`label`、`docsPath`、`aliases`、`order` 等）与 `install` 提示（`npmSpec`、`localPath`、`defaultChoice`）。这与 `feishuPlugin.meta` 中的展示字段形成 **发布侧与运行时侧** 的双重来源，排查展示不一致时需要对照两处。
@@ -363,7 +359,6 @@ const meta = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](system-architecture.md)

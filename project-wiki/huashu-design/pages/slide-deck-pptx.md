@@ -3,12 +3,12 @@
 
 生成本页时使用的主要源文件：
 
-- [references/slide-decks.md](../../../project-repos/huashu-design/references/slide-decks.md)
-- [references/editable-pptx.md](../../../project-repos/huashu-design/references/editable-pptx.md)
-- [assets/deck_index.html](../../../project-repos/huashu-design/assets/deck_index.html)
-- [assets/deck_stage.js](../../../project-repos/huashu-design/assets/deck_stage.js)
-- [scripts/html2pptx.js](../../../project-repos/huashu-design/scripts/html2pptx.js)
-- [scripts/export_deck_pptx.mjs](../../../project-repos/huashu-design/scripts/export_deck_pptx.mjs)
+- [references/slide-decks.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/slide-decks.md)
+- [references/editable-pptx.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/editable-pptx.md)
+- [assets/deck_index.html](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/deck_index.html)
+- [assets/deck_stage.js](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/deck_stage.js)
+- [scripts/html2pptx.js](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/html2pptx.js)
+- [scripts/export_deck_pptx.mjs](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/export_deck_pptx.mjs)
 
 </details>
 

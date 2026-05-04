@@ -3,15 +3,15 @@
 
 生成本页时使用的主要源文件：
 
-- [src/cli/call-arguments.ts](../../../project-repos/mcporter/src/cli/call-arguments.ts)
-- [src/cli/call-argument-values.ts](../../../project-repos/mcporter/src/cli/call-argument-values.ts)
-- [src/cli/call-argument-expression.ts](../../../project-repos/mcporter/src/cli/call-argument-expression.ts)
-- [src/cli/call-expression-parser.ts](../../../project-repos/mcporter/src/cli/call-expression-parser.ts)
-- [src/cli/identifier-helpers.ts](../../../project-repos/mcporter/src/cli/identifier-helpers.ts)
-- [src/cli/adhoc-server.ts](../../../project-repos/mcporter/src/cli/adhoc-server.ts)
-- [src/cli/ephemeral-flags.ts](../../../project-repos/mcporter/src/cli/ephemeral-flags.ts)
-- [src/cli/ephemeral-target.ts](../../../project-repos/mcporter/src/cli/ephemeral-target.ts)
-- [src/cli/http-utils.ts](../../../project-repos/mcporter/src/cli/http-utils.ts)
+- [src/cli/call-arguments.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-arguments.ts)
+- [src/cli/call-argument-values.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-argument-values.ts)
+- [src/cli/call-argument-expression.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-argument-expression.ts)
+- [src/cli/call-expression-parser.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-expression-parser.ts)
+- [src/cli/identifier-helpers.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/identifier-helpers.ts)
+- [src/cli/adhoc-server.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/adhoc-server.ts)
+- [src/cli/ephemeral-flags.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/ephemeral-flags.ts)
+- [src/cli/ephemeral-target.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/ephemeral-target.ts)
+- [src/cli/http-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/http-utils.ts)
 
 </details>
 

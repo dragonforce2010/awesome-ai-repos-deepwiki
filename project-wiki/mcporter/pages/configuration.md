@@ -3,14 +3,14 @@
 
 生成本页时使用的主要源文件：
 
-- [src/config.ts](../../../project-repos/mcporter/src/config.ts)
-- [src/config-schema.ts](../../../project-repos/mcporter/src/config-schema.ts)
-- [src/config-normalize.ts](../../../project-repos/mcporter/src/config-normalize.ts)
-- [src/config/path-discovery.ts](../../../project-repos/mcporter/src/config/path-discovery.ts)
-- [src/config/read-config.ts](../../../project-repos/mcporter/src/config/read-config.ts)
-- [src/config/imports/external.ts](../../../project-repos/mcporter/src/config/imports/external.ts)
-- [src/config/imports/paths.ts](../../../project-repos/mcporter/src/config/imports/paths.ts)
-- [src/env.ts](../../../project-repos/mcporter/src/env.ts)
+- [src/config.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config.ts)
+- [src/config-schema.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config-schema.ts)
+- [src/config-normalize.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config-normalize.ts)
+- [src/config/path-discovery.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config/path-discovery.ts)
+- [src/config/read-config.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config/read-config.ts)
+- [src/config/imports/external.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config/imports/external.ts)
+- [src/config/imports/paths.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config/imports/paths.ts)
+- [src/env.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/env.ts)
 
 </details>
 

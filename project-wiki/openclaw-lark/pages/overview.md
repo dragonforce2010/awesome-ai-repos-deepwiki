@@ -73,7 +73,6 @@ We recommend using the Lark/Feishu bot connected to OpenClaw as a private conver
 
 <!-- source-snippets:end -->
 </details>
-
 ## 运行环境与版本约束
 
 `package.json` 要求 **Node.js >= 22**，使用 **pnpm** 作为 `packageManager`，构建入口为 `tsdown`，测试为 `vitest`。
@@ -141,7 +140,6 @@ Sources: [README.zh.md:47-57](../../../project-repos/openclaw-lark/README.zh.md#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 插件清单与对外形态
 
 `openclaw.plugin.json` 声明插件 `id`、支持的 `channels`、随包 `skills` 目录，以及 `channelConfigs.feishu` 的空 schema 占位（具体校验在运行时由代码侧 JSON Schema 提供，见频道配置章节）。
@@ -195,7 +193,6 @@ Sources: [openclaw.plugin.json:1-17](../../../project-repos/openclaw-lark/opencl
 
 <!-- source-snippets:end -->
 </details>
-
 ## 对外文档与贡献入口
 
 README 指向飞书官方使用指南文档链接；贡献指引与 Issue/PR 链接在英文 README 中给出（中文 README 同步贡献段落）。
@@ -236,7 +233,6 @@ For major changes, we recommend discussing with us first via an Issue.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 阅读路线建议
 
 ```mermaid
@@ -312,7 +308,6 @@ Sources: [README.zh.md:11-28](../../../project-repos/openclaw-lark/README.zh.md#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](system-architecture.md)

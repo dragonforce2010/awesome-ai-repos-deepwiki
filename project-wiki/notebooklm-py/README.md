@@ -50,12 +50,12 @@ notebooklm-py/
 
 | 文件 | 角色 |
 |------|------|
-| [src/notebooklm/client.py](../../project-repos/notebooklm-py/src/notebooklm/client.py) | `NotebookLMClient` 门面，唯一公共入口 |
-| [src/notebooklm/_core.py](../../project-repos/notebooklm-py/src/notebooklm/_core.py) | `ClientCore` 基础设施，RPC 调用编排 |
-| [src/notebooklm/rpc/types.py](../../project-repos/notebooklm-py/src/notebooklm/rpc/types.py) | RPC 方法标识与枚举常量 |
-| [src/notebooklm/auth.py](../../project-repos/notebooklm-py/src/notebooklm/auth.py) | Cookie 认证与 Token 提取 |
-| [src/notebooklm/types.py](../../project-repos/notebooklm-py/src/notebooklm/types.py) | 用户可见数据类与枚举 |
-| [SKILL.md](../../project-repos/notebooklm-py/SKILL.md) | Agent Skill 定义 |
+| [src/notebooklm/client.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/client.py) | `NotebookLMClient` 门面，唯一公共入口 |
+| [src/notebooklm/_core.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_core.py) | `ClientCore` 基础设施，RPC 调用编排 |
+| [src/notebooklm/rpc/types.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/rpc/types.py) | RPC 方法标识与枚举常量 |
+| [src/notebooklm/auth.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/auth.py) | Cookie 认证与 Token 提取 |
+| [src/notebooklm/types.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/types.py) | 用户可见数据类与枚举 |
+| [SKILL.md](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/SKILL.md) | Agent Skill 定义 |
 
 ## 快速导航
 

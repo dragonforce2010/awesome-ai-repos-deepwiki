@@ -1,16 +1,16 @@
 <details>
 <summary>相关源文件</summary>
 
-- [README.md](../../../project-repos/open-design/README.md) - 项目定位、核心特性、架构图、quickstart、仓库结构和路线图。
-- [package.json](../../../project-repos/open-design/package.json) - 包元数据、CLI bin、脚本和引擎约束。
-- [pnpm-workspace.yaml](../../../project-repos/open-design/pnpm-workspace.yaml) - workspace 包范围。
-- [docs/architecture.md](../../../project-repos/open-design/docs/architecture.md) - 架构文档入口。
+- [README.md](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/README.md) - 项目定位、核心特性、架构图、quickstart、仓库结构和路线图。
+- [package.json](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/package.json) - 包元数据、CLI bin、脚本和引擎约束。
+- [pnpm-workspace.yaml](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/pnpm-workspace.yaml) - workspace 包范围。
+- [docs/architecture.md](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/docs/architecture.md) - 架构文档入口。
 
 </details>
 
 # 项目概览
 
-Open Design 的核心定位是“本地优先的设计 agent 工作台”：用户在一个桌面/Web 界面里创建设计项目，选择 agent、skill、design system、模板或媒体模型，然后由本地 daemon 把请求转交给 Claude Code、Codex、Gemini、Cursor、Copilot 等 CLI。仓库 README 明确把它描述为开源、本地优先、带 12 个 CLI、skills 和 design systems 的系统，而不是只服务单一模型的聊天壳。[README.md:1-3](../../../project-repos/open-design/README.md)
+Open Design 的核心定位是“本地优先的设计 agent 工作台”：用户在一个桌面/Web 界面里创建设计项目，选择 agent、skill、design system、模板或媒体模型，然后由本地 daemon 把请求转交给 Claude Code、Codex、Gemini、Cursor、Copilot 等 CLI。仓库 README 明确把它描述为开源、本地优先、带 12 个 CLI、skills 和 design systems 的系统，而不是只服务单一模型的聊天壳。[README.md:1-3](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/README.md)
 
 ## 它解决的对象
 
@@ -25,13 +25,13 @@ Open Design 的核心定位是“本地优先的设计 agent 工作台”：用�
 
 ## 仓库形态
 
-根 `package.json` 声明包名 `open-design`、`od` CLI bin 和 `tools-dev/tools-pack` 等脚本，同时约束 Node `~24.0.0`、pnpm `>=10.33.2 <11`。[package.json:1-25](../../../project-repos/open-design/package.json) [package.json:31-40](../../../project-repos/open-design/package.json) 这意味着它不是一个单包前端项目，而是一个 pnpm monorepo：Web app、daemon、desktop、packaged app、shared packages、tools、skills、design systems、docs、e2e 都在同一仓库维护。
+根 `package.json` 声明包名 `open-design`、`od` CLI bin 和 `tools-dev/tools-pack` 等脚本，同时约束 Node `~24.0.0`、pnpm `>=10.33.2 <11`。[package.json:1-25](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/package.json) [package.json:31-40](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/package.json) 这意味着它不是一个单包前端项目，而是一个 pnpm monorepo：Web app、daemon、desktop、packaged app、shared packages、tools、skills、design systems、docs、e2e 都在同一仓库维护。
 
-README 的 “At a glance” 把系统能力压缩为几个维度：支持 12 个 agent CLI、BYOK 路径、skills、design systems、媒体生成、artifact 生命周期和桌面壳。[README.md:49-66](../../../project-repos/open-design/README.md) 这些维度正好对应后续页面的拆分：运行时、daemon API、Web 工作台、skills/design systems、媒体和打包发布。
+README 的 “At a glance” 把系统能力压缩为几个维度：支持 12 个 agent CLI、BYOK 路径、skills、design systems、媒体生成、artifact 生命周期和桌面壳。[README.md:49-66](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/README.md) 这些维度正好对应后续页面的拆分：运行时、daemon API、Web 工作台、skills/design systems、媒体和打包发布。
 
 ## 创作闭环
 
-Open Design 的主循环不是“用户输入 -> 模型回答”这么简单，而是一个受约束的设计流程。README 把关键机制概括为：先问结构化问题、用 TodoWrite 暴露计划、注入 seed/checklist、最后交付 artifact。[README.md:32-40](../../../project-repos/open-design/README.md) 源码中这条闭环落在三个地方：
+Open Design 的主循环不是“用户输入 -> 模型回答”这么简单，而是一个受约束的设计流程。README 把关键机制概括为：先问结构化问题、用 TodoWrite 暴露计划、注入 seed/checklist、最后交付 artifact。[README.md:32-40](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/README.md) 源码中这条闭环落在三个地方：
 
 1. Web 创建项目时收集 metadata、skill、design system、模板和媒体选项。
 2. Daemon 组合 system prompt，把 discovery、官方设计 prompt、design system、craft、skill、metadata、deck/media 特殊契约按顺序注入。

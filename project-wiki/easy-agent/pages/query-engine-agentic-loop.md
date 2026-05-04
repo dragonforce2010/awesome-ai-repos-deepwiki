@@ -3,13 +3,13 @@
 
 生成本页时使用的主要源文件：
 
-- [src/core/queryEngine.ts](../../../project-repos/easy-agent/src/core/queryEngine.ts)
-- [src/core/agenticLoop.ts](../../../project-repos/easy-agent/src/core/agenticLoop.ts)
-- [src/tools/index.ts](../../../project-repos/easy-agent/src/tools/index.ts)
-- [src/permissions/permissions.ts](../../../project-repos/easy-agent/src/permissions/permissions.ts)
-- [src/context/planAttachments.ts](../../../project-repos/easy-agent/src/context/planAttachments.ts)
-- [src/tools/enterPlanModeTool.ts](../../../project-repos/easy-agent/src/tools/enterPlanModeTool.ts)
-- [src/tools/exitPlanModeTool.ts](../../../project-repos/easy-agent/src/tools/exitPlanModeTool.ts)
+- [src/core/queryEngine.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/core/queryEngine.ts)
+- [src/core/agenticLoop.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/core/agenticLoop.ts)
+- [src/tools/index.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/index.ts)
+- [src/permissions/permissions.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/permissions/permissions.ts)
+- [src/context/planAttachments.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/planAttachments.ts)
+- [src/tools/enterPlanModeTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/enterPlanModeTool.ts)
+- [src/tools/exitPlanModeTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/exitPlanModeTool.ts)
 
 </details>
 

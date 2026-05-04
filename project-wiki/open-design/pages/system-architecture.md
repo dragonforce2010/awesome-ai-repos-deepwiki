@@ -1,16 +1,16 @@
 <details>
 <summary>相关源文件</summary>
 
-- [docs/architecture.md](../../../project-repos/open-design/docs/architecture.md) - 官方架构文档、拓扑、组件图、API 边界和部署说明。
-- [apps/daemon/src/server.ts](../../../project-repos/open-design/apps/daemon/src/server.ts) - daemon 启动、HTTP API 和 agent run 编排。
-- [apps/web/src/App.tsx](../../../project-repos/open-design/apps/web/src/App.tsx) - Web bootstrap 和顶层状态。
-- [apps/desktop/src/main/runtime.ts](../../../project-repos/open-design/apps/desktop/src/main/runtime.ts) - Electron runtime 与 Web sidecar 连接。
+- [docs/architecture.md](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/docs/architecture.md) - 官方架构文档、拓扑、组件图、API 边界和部署说明。
+- [apps/daemon/src/server.ts](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) - daemon 启动、HTTP API 和 agent run 编排。
+- [apps/web/src/App.tsx](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/web/src/App.tsx) - Web bootstrap 和顶层状态。
+- [apps/desktop/src/main/runtime.ts](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/desktop/src/main/runtime.ts) - Electron runtime 与 Web sidecar 连接。
 
 </details>
 
 # 系统架构与拓扑
 
-Open Design 有三种运行拓扑：全本地 Web + daemon、桌面 app 内嵌 Web/daemon，以及静态/托管 Web 连接到用户本机 daemon。[docs/architecture.md:13-49](../../../project-repos/open-design/docs/architecture.md) 这三个拓扑共享同一套核心边界：Web 只负责体验和预览，daemon 负责文件系统、SQLite、agent spawn、模型代理和媒体 dispatch，agent CLI 负责真正生成或修改项目文件。
+Open Design 有三种运行拓扑：全本地 Web + daemon、桌面 app 内嵌 Web/daemon，以及静态/托管 Web 连接到用户本机 daemon。[docs/architecture.md:13-49](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/docs/architecture.md) 这三个拓扑共享同一套核心边界：Web 只负责体验和预览，daemon 负责文件系统、SQLite、agent spawn、模型代理和媒体 dispatch，agent CLI 负责真正生成或修改项目文件。
 
 ```mermaid
 flowchart LR
@@ -39,11 +39,11 @@ artifact 与上传文件"]
 | Agent CLI | 按注入的 prompt/skill/design system 修改项目文件并输出 artifact。 | 不负责持久化元数据，不绕过 daemon 写跨项目文件。 |
 | Desktop/packaged | 管理 Web 与 daemon sidecar、窗口、IPC、平台打包和协议入口。 | 不重新实现业务 API。 |
 
-架构文档中的组件图把 Web、daemon、SQLite、project files、agents、providers 和 deployment target 连在一起，强调本地 daemon 是能力汇聚点。[docs/architecture.md:53-95](../../../project-repos/open-design/docs/architecture.md)
+架构文档中的组件图把 Web、daemon、SQLite、project files、agents、providers 和 deployment target 连在一起，强调本地 daemon 是能力汇聚点。[docs/architecture.md:53-95](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/docs/architecture.md)
 
 ## Daemon 是中枢
 
-`startServer` 创建 Express app、设置 JSON 限制、打开 SQLite、预热 agent 检测，然后挂载健康检查、项目、skills、design systems、prompt templates、media、app-config、artifact、runs、proxy 等路由。[apps/daemon/src/server.ts:612-639](../../../project-repos/open-design/apps/daemon/src/server.ts) 这让 daemon 同时成为：
+`startServer` 创建 Express app、设置 JSON 限制、打开 SQLite、预热 agent 检测，然后挂载健康检查、项目、skills、design systems、prompt templates、media、app-config、artifact、runs、proxy 等路由。[apps/daemon/src/server.ts:612-639](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/daemon/src/server.ts) 这让 daemon 同时成为：
 
 - 本地持久化层：`.od/app.sqlite` 存项目元数据，项目文件留在文件系统；`app-config.json` 存 onboarding、agent、模型、skill 和 design system 偏好。
 - 能力注册层：扫描 skills/design systems/prompt templates。
@@ -52,7 +52,7 @@ artifact 与上传文件"]
 
 ## Web 是状态聚合器
 
-Web 顶层 `App` 在启动阶段探测 daemon，随后加载 agents、skills、design systems、projects、templates、prompt templates 和版本信息。[apps/web/src/App.tsx:77-138](../../../project-repos/open-design/apps/web/src/App.tsx) 这说明 Web 没有内建静态能力表；它把 daemon 当前探测到的本机能力作为事实来源。这对本地优先体验很关键：安装或移除 agent CLI 后，UI 应跟随 daemon 探测结果变化。
+Web 顶层 `App` 在启动阶段探测 daemon，随后加载 agents、skills、design systems、projects、templates、prompt templates 和版本信息。[apps/web/src/App.tsx:77-138](https://github.com/nexu-io/open-design/blob/9d700ec74fc671af845d68af472f7c5c6e0fcfc9/apps/web/src/App.tsx) 这说明 Web 没有内建静态能力表；它把 daemon 当前探测到的本机能力作为事实来源。这对本地优先体验很关键：安装或移除 agent CLI 后，UI 应跟随 daemon 探测结果变化。
 
 ## 三种部署的差别
 

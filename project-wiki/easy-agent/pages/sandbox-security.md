@@ -3,18 +3,18 @@
 
 生成本页时使用的主要源文件：
 
-- [src/sandbox/types.ts](../../../project-repos/easy-agent/src/sandbox/types.ts)
-- [src/sandbox/settings.ts](../../../project-repos/easy-agent/src/sandbox/settings.ts)
-- [src/sandbox/availability.ts](../../../project-repos/easy-agent/src/sandbox/availability.ts)
-- [src/sandbox/shouldUseSandbox.ts](../../../project-repos/easy-agent/src/sandbox/shouldUseSandbox.ts)
-- [src/sandbox/buildProfile.ts](../../../project-repos/easy-agent/src/sandbox/buildProfile.ts)
-- [src/sandbox/macosProfile.ts](../../../project-repos/easy-agent/src/sandbox/macosProfile.ts)
-- [src/sandbox/wrapWithSandbox.ts](../../../project-repos/easy-agent/src/sandbox/wrapWithSandbox.ts)
-- [src/sandbox/violations.ts](../../../project-repos/easy-agent/src/sandbox/violations.ts)
-- [src/tools/bashTool.ts](../../../project-repos/easy-agent/src/tools/bashTool.ts)
-- [src/scripts/test-sandbox.ts](../../../project-repos/easy-agent/src/scripts/test-sandbox.ts)
-- [src/scripts/smoke-sandbox.ts](../../../project-repos/easy-agent/src/scripts/smoke-sandbox.ts)
-- [src/scripts/smoke-bash-sandbox.ts](../../../project-repos/easy-agent/src/scripts/smoke-bash-sandbox.ts)
+- [src/sandbox/types.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/types.ts)
+- [src/sandbox/settings.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/settings.ts)
+- [src/sandbox/availability.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/availability.ts)
+- [src/sandbox/shouldUseSandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/shouldUseSandbox.ts)
+- [src/sandbox/buildProfile.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/buildProfile.ts)
+- [src/sandbox/macosProfile.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/macosProfile.ts)
+- [src/sandbox/wrapWithSandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/wrapWithSandbox.ts)
+- [src/sandbox/violations.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/violations.ts)
+- [src/tools/bashTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/bashTool.ts)
+- [src/scripts/test-sandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-sandbox.ts)
+- [src/scripts/smoke-sandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/smoke-sandbox.ts)
+- [src/scripts/smoke-bash-sandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/smoke-bash-sandbox.ts)
 
 </details>
 

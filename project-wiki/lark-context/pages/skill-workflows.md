@@ -234,7 +234,6 @@ lark-context show [--chat <alias>|all] [--since <duration>]
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md) — 两层记忆故事  

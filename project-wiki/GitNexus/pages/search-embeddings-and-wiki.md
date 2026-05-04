@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [RUNBOOK.md](../../../project-repos/GitNexus/RUNBOOK.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
-- [TESTING.md](../../../project-repos/GitNexus/TESTING.md)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [RUNBOOK.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/RUNBOOK.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
+- [TESTING.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/TESTING.md)
 
 </details>
 

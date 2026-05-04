@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [gitnexus/src/mcp/tools.ts](../../../project-repos/GitNexus/gitnexus/src/mcp/tools.ts)
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [gitnexus/src/mcp/resources.ts](../../../project-repos/GitNexus/gitnexus/src/mcp/resources.ts)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [gitnexus/src/mcp/tools.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/mcp/tools.ts)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [gitnexus/src/mcp/resources.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/mcp/resources.ts)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
 
 </details>
 

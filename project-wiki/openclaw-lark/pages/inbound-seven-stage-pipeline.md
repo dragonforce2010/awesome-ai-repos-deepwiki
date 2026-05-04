@@ -81,7 +81,6 @@ export async function handleFeishuMessage(params: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 多账号配置隔离（构造 account 级 cfg）
 
 `handler.ts` 在账号解析后构造 **account 级别的 `ClawdbotConfig` 视图**，用于让 SDK 的 `resolveGroupPolicy` / `resolveRequireMention` 等逻辑读取到 per-account 覆盖值（注释解释：SDK 默认从顶层 `cfg.channels.feishu` 读取，而多账号需要独立策略）。
@@ -106,7 +105,6 @@ Sources: [src/messaging/inbound/handler.ts:74-79](../../../project-repos/opencla
 
 <!-- source-snippets:end -->
 </details>
-
 ## 策略门禁：群与发送者两层模型
 
 `gate.ts` 文档化群聊访问 **Layer 1（哪些群允许）** 与 **Layer 2（群内哪些发送者允许）**，并说明与 Telegram 插件一致的两层模型；同时导出 `resolveRespondToMentionAll` 的优先级链（群配置 > 默认群配置 > 账号配置 > false）。
@@ -166,7 +164,6 @@ export function resolveRespondToMentionAll(params: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Agent 分发：命令路径与评论目标等特殊分支
 
 `dispatch.ts` 说明其职责：构造 agent envelope、拼接历史上下文，并走系统命令 vs 正常流式/静态回复路径；并拆分 `dispatch-context.ts`、`dispatch-builders.ts`、`dispatch-commands.ts` 等模块。
@@ -210,7 +207,6 @@ Sources: [src/messaging/inbound/dispatch.ts:5-15](../../../project-repos/opencla
 
 <!-- source-snippets:end -->
 </details>
-
 ## 群组工具策略入口
 
 `policy.ts` 被 `handler.ts` 与 `gate.ts` 引用，用于解析群配置、allowlist 与 sender policy 上下文；与 `plugin.ts` 中 `groups.resolveToolPolicy` 形成「工具可见性/群策略」相关闭环。
@@ -240,7 +236,6 @@ import { resolveFeishuGroupConfig, splitLegacyGroupAllowFrom } from './policy';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [出站回复、卡片与流式输出](outbound-reply-cards.md)

@@ -3,22 +3,22 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/easy-agent/README.md)
-- [README.zh-CN.md](../../../project-repos/easy-agent/README.zh-CN.md)
-- [package.json](../../../project-repos/easy-agent/package.json)
-- [tsconfig.json](../../../project-repos/easy-agent/tsconfig.json)
-- [src/scripts/test-streaming.ts](../../../project-repos/easy-agent/src/scripts/test-streaming.ts)
-- [src/scripts/test-tools.ts](../../../project-repos/easy-agent/src/scripts/test-tools.ts)
-- [src/scripts/test-tasks.ts](../../../project-repos/easy-agent/src/scripts/test-tasks.ts)
-- [src/scripts/test-mcp.ts](../../../project-repos/easy-agent/src/scripts/test-mcp.ts)
-- [src/scripts/test-skills.ts](../../../project-repos/easy-agent/src/scripts/test-skills.ts)
-- [src/scripts/test-sandbox.ts](../../../project-repos/easy-agent/src/scripts/test-sandbox.ts)
-- [step/step1.js](../../../project-repos/easy-agent/step/step1.js)
-- [step/step4.js](../../../project-repos/easy-agent/step/step4.js)
-- [step/step8.js](../../../project-repos/easy-agent/step/step8.js)
-- [step/step16.js](../../../project-repos/easy-agent/step/step16.js)
-- [step/step17.js](../../../project-repos/easy-agent/step/step17.js)
-- [step/step18.js](../../../project-repos/easy-agent/step/step18.js)
+- [README.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.md)
+- [README.zh-CN.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.zh-CN.md)
+- [package.json](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/package.json)
+- [tsconfig.json](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/tsconfig.json)
+- [src/scripts/test-streaming.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-streaming.ts)
+- [src/scripts/test-tools.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-tools.ts)
+- [src/scripts/test-tasks.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-tasks.ts)
+- [src/scripts/test-mcp.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-mcp.ts)
+- [src/scripts/test-skills.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-skills.ts)
+- [src/scripts/test-sandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-sandbox.ts)
+- [step/step1.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step1.js)
+- [step/step4.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step4.js)
+- [step/step8.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step8.js)
+- [step/step16.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step16.js)
+- [step/step17.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step17.js)
+- [step/step18.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step18.js)
 
 </details>
 

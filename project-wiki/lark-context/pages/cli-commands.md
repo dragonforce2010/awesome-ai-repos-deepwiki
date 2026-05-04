@@ -257,7 +257,6 @@ export function registerIngestDoc(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [增量拉取与话题回复](pull-and-threads.md) — `--since` / thread window  

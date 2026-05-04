@@ -94,7 +94,6 @@ const plugin = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 频道插件在架构中的位置
 
 `feishuPlugin` 实现 OpenClaw SDK 的 `ChannelPlugin`：包含 `meta`、`pairing`、`capabilities`、`agentPrompt`、`groups`、`reload`、`configSchema`、`config`、`security`、`setup`、`messaging`、`directory`、`outbound`、`threading` 等分区，是 **运行时编排** 的中枢之一。
@@ -168,7 +167,6 @@ export const feishuPlugin: ChannelPlugin<LarkAccount> = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 工具子系统的两条主线
 
 `registerOapiTools` 将「直接调用飞书 Open API」的工具成组注册（IM user、Calendar、Task、Bitable、Search、Drive、Wiki、Sheets、IM bot 等），与 MCP 文档工具区分。
@@ -278,7 +276,6 @@ export function registerOapiTools(api: OpenClawPluginApi): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 入站编排与出站适配
 
 `handler.ts` 将入站处理描述为 **七个阶段**（账号解析、事件解析、发送者富化、策略门禁、用户名预取、内容解析、Agent 分发），最终调用 `dispatch.ts`。
@@ -320,7 +317,6 @@ Sources: [src/messaging/inbound/handler.ts:5-14](../../../project-repos/openclaw
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

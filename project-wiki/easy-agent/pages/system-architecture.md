@@ -3,14 +3,14 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/easy-agent/README.md)
-- [src/entrypoint/cli.ts](../../../project-repos/easy-agent/src/entrypoint/cli.ts)
-- [src/ui/App.tsx](../../../project-repos/easy-agent/src/ui/App.tsx)
-- [src/core/queryEngine.ts](../../../project-repos/easy-agent/src/core/queryEngine.ts)
-- [src/core/agenticLoop.ts](../../../project-repos/easy-agent/src/core/agenticLoop.ts)
-- [src/tools/index.ts](../../../project-repos/easy-agent/src/tools/index.ts)
-- [src/services/api/streaming.ts](../../../project-repos/easy-agent/src/services/api/streaming.ts)
-- [src/context/systemPrompt.ts](../../../project-repos/easy-agent/src/context/systemPrompt.ts)
+- [README.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.md)
+- [src/entrypoint/cli.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/entrypoint/cli.ts)
+- [src/ui/App.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/App.tsx)
+- [src/core/queryEngine.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/core/queryEngine.ts)
+- [src/core/agenticLoop.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/core/agenticLoop.ts)
+- [src/tools/index.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/index.ts)
+- [src/services/api/streaming.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/api/streaming.ts)
+- [src/context/systemPrompt.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/systemPrompt.ts)
 
 </details>
 

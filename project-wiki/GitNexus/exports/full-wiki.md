@@ -11,11 +11,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [CONTRIBUTING.md](../../../project-repos/GitNexus/CONTRIBUTING.md)
-- [CHANGELOG.md](../../../project-repos/GitNexus/CHANGELOG.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
-- [gitnexus-shared/package.json](../../../project-repos/GitNexus/gitnexus-shared/package.json)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [CONTRIBUTING.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/CONTRIBUTING.md)
+- [CHANGELOG.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/CHANGELOG.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
+- [gitnexus-shared/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-shared/package.json)
 
 </details>
 
@@ -273,11 +273,11 @@ All notable changes to GitNexus will be documented in this file.
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
-- [gitnexus-web/package.json](../../../project-repos/GitNexus/gitnexus-web/package.json)
-- [gitnexus-shared/package.json](../../../project-repos/GitNexus/gitnexus-shared/package.json)
-- [RUNBOOK.md](../../../project-repos/GitNexus/RUNBOOK.md)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
+- [gitnexus-web/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-web/package.json)
+- [gitnexus-shared/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-shared/package.json)
+- [RUNBOOK.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/RUNBOOK.md)
 
 </details>
 
@@ -548,11 +548,11 @@ npx gitnexus list
 
 生成本页时使用的主要源文件：
 
-- [gitnexus/src/core/ingestion/pipeline.ts](../../../project-repos/GitNexus/gitnexus/src/core/ingestion/pipeline.ts)
-- [gitnexus/src/core/ingestion/pipeline-phases/index.ts](../../../project-repos/GitNexus/gitnexus/src/core/ingestion/pipeline-phases/index.ts)
-- [gitnexus/src/core/ingestion/pipeline-phases/runner.ts](../../../project-repos/GitNexus/gitnexus/src/core/ingestion/pipeline-phases/runner.ts)
-- [gitnexus/src/core/ingestion/call-processor.ts](../../../project-repos/GitNexus/gitnexus/src/core/ingestion/call-processor.ts)
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
+- [gitnexus/src/core/ingestion/pipeline.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/pipeline.ts)
+- [gitnexus/src/core/ingestion/pipeline-phases/index.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/pipeline-phases/index.ts)
+- [gitnexus/src/core/ingestion/pipeline-phases/runner.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/pipeline-phases/runner.ts)
+- [gitnexus/src/core/ingestion/call-processor.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/call-processor.ts)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
 
 </details>
 
@@ -794,11 +794,11 @@ scan → structure → [markdown, cobol] → parse → [routes, tools, orm]
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [RUNBOOK.md](../../../project-repos/GitNexus/RUNBOOK.md)
-- [GUARDRAILS.md](../../../project-repos/GitNexus/GUARDRAILS.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [RUNBOOK.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/RUNBOOK.md)
+- [GUARDRAILS.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/GUARDRAILS.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
 
 </details>
 
@@ -1039,11 +1039,11 @@ Format: **Trigger → Instruction → Reason**. Append new Signs when the same m
 
 生成本页时使用的主要源文件：
 
-- [gitnexus/src/mcp/tools.ts](../../../project-repos/GitNexus/gitnexus/src/mcp/tools.ts)
-- [gitnexus/src/mcp/resources.ts](../../../project-repos/GitNexus/gitnexus/src/mcp/resources.ts)
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
+- [gitnexus/src/mcp/tools.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/mcp/tools.ts)
+- [gitnexus/src/mcp/resources.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/mcp/resources.ts)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
 
 </details>
 
@@ -1325,11 +1325,11 @@ codex mcp add gitnexus -- npx -y gitnexus@latest mcp
 
 生成本页时使用的主要源文件：
 
-- [gitnexus-web/package.json](../../../project-repos/GitNexus/gitnexus-web/package.json)
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [TESTING.md](../../../project-repos/GitNexus/TESTING.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
+- [gitnexus-web/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-web/package.json)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [TESTING.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/TESTING.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
 
 </details>
 
@@ -1550,11 +1550,11 @@ Re-run the full relevant suite when:
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [RUNBOOK.md](../../../project-repos/GitNexus/RUNBOOK.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
-- [TESTING.md](../../../project-repos/GitNexus/TESTING.md)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [RUNBOOK.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/RUNBOOK.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
+- [TESTING.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/TESTING.md)
 
 </details>
 
@@ -1775,11 +1775,11 @@ Useful for debugging without an editor:
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [gitnexus/src/mcp/tools.ts](../../../project-repos/GitNexus/gitnexus/src/mcp/tools.ts)
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [gitnexus/src/mcp/resources.ts](../../../project-repos/GitNexus/gitnexus/src/mcp/resources.ts)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [gitnexus/src/mcp/tools.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/mcp/tools.ts)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [gitnexus/src/mcp/resources.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/mcp/resources.ts)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
 
 </details>
 
@@ -1888,11 +1888,11 @@ SERVICE: optional monorepo path prefix (case-sensitive path segments). When "rep
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md](../../../project-repos/GitNexus/gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md)
-- [gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md](../../../project-repos/GitNexus/gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md)
+- [gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
 
 </details>
 
@@ -2076,11 +2076,11 @@ description: Navigate unfamiliar code using GitNexus knowledge graph
 
 生成本页时使用的主要源文件：
 
-- [TESTING.md](../../../project-repos/GitNexus/TESTING.md)
-- [.github/workflows/ci.yml](../../../project-repos/GitNexus/.github/workflows/ci.yml)
-- [RUNBOOK.md](../../../project-repos/GitNexus/RUNBOOK.md)
-- [GUARDRAILS.md](../../../project-repos/GitNexus/GUARDRAILS.md)
-- [gitnexus-web/package.json](../../../project-repos/GitNexus/gitnexus-web/package.json)
+- [TESTING.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/TESTING.md)
+- [.github/workflows/ci.yml](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/.github/workflows/ci.yml)
+- [RUNBOOK.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/RUNBOOK.md)
+- [GUARDRAILS.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/GUARDRAILS.md)
+- [gitnexus-web/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-web/package.json)
 
 </details>
 

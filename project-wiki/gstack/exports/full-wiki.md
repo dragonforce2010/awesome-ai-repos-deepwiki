@@ -24,10 +24,10 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [CLAUDE.md](../../../project-repos/gstack/CLAUDE.md)
-- [package.json](../../../project-repos/gstack/package.json)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [CLAUDE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CLAUDE.md)
+- [package.json](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/package.json)
 - [00-repo-inventory.md](../00-repo-inventory.md)
 
 </details>
@@ -329,12 +329,12 @@ gstack/
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [docs/skills.md](../../../project-repos/gstack/docs/skills.md)
-- [office-hours/SKILL.md](../../../project-repos/gstack/office-hours/SKILL.md)
-- [plan-eng-review/SKILL.md](../../../project-repos/gstack/plan-eng-review/SKILL.md)
-- [qa/SKILL.md](../../../project-repos/gstack/qa/SKILL.md)
-- [ship/SKILL.md](../../../project-repos/gstack/ship/SKILL.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [docs/skills.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/docs/skills.md)
+- [office-hours/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/office-hours/SKILL.md)
+- [plan-eng-review/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/plan-eng-review/SKILL.md)
+- [qa/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/qa/SKILL.md)
+- [ship/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ship/SKILL.md)
 
 </details>
 
@@ -758,12 +758,12 @@ triggers:
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [setup](../../../project-repos/gstack/setup)
-- [hosts/index.ts](../../../project-repos/gstack/hosts/index.ts)
-- [hosts/codex.ts](../../../project-repos/gstack/hosts/codex.ts)
-- [hosts/openclaw.ts](../../../project-repos/gstack/hosts/openclaw.ts)
-- [CONTRIBUTING.md](../../../project-repos/gstack/CONTRIBUTING.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [setup](https://github.com/garrytan/gstack/tree/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/setup)
+- [hosts/index.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/index.ts)
+- [hosts/codex.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/codex.ts)
+- [hosts/openclaw.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/openclaw.ts)
+- [CONTRIBUTING.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CONTRIBUTING.md)
 
 </details>
 
@@ -1720,13 +1720,13 @@ Data is stored in [Supabase](https://supabase.com) (open source Firebase alterna
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [scripts/gen-skill-docs.ts](../../../project-repos/gstack/scripts/gen-skill-docs.ts)
-- [scripts/discover-skills.ts](../../../project-repos/gstack/scripts/discover-skills.ts)
-- [scripts/resolvers/index.ts](../../../project-repos/gstack/scripts/resolvers/index.ts)
-- [scripts/host-config.ts](../../../project-repos/gstack/scripts/host-config.ts)
-- [package.json](../../../project-repos/gstack/package.json)
-- [CONTRIBUTING.md](../../../project-repos/gstack/CONTRIBUTING.md)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [scripts/gen-skill-docs.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/gen-skill-docs.ts)
+- [scripts/discover-skills.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/discover-skills.ts)
+- [scripts/resolvers/index.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/resolvers/index.ts)
+- [scripts/host-config.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/host-config.ts)
+- [package.json](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/package.json)
+- [CONTRIBUTING.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CONTRIBUTING.md)
 
 </details>
 
@@ -2547,12 +2547,12 @@ No gstack infrastructure (no browse, no telemetry, no preamble).
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [browse/src/cli.ts](../../../project-repos/gstack/browse/src/cli.ts)
-- [browse/src/server.ts](../../../project-repos/gstack/browse/src/server.ts)
-- [browse/src/commands.ts](../../../project-repos/gstack/browse/src/commands.ts)
-- [browse/src/browser-manager.ts](../../../project-repos/gstack/browse/src/browser-manager.ts)
-- [browse/src/config.ts](../../../project-repos/gstack/browse/src/config.ts)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [browse/src/cli.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/cli.ts)
+- [browse/src/server.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/server.ts)
+- [browse/src/commands.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/commands.ts)
+- [browse/src/browser-manager.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/browser-manager.ts)
+- [browse/src/config.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/config.ts)
 
 </details>
 
@@ -3499,13 +3499,13 @@ export class BrowserManager {
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [browse/src/server.ts](../../../project-repos/gstack/browse/src/server.ts)
-- [browse/src/content-security.ts](../../../project-repos/gstack/browse/src/content-security.ts)
-- [browse/src/security.ts](../../../project-repos/gstack/browse/src/security.ts)
-- [browse/src/cdp-allowlist.ts](../../../project-repos/gstack/browse/src/cdp-allowlist.ts)
-- [browse/src/token-registry.ts](../../../project-repos/gstack/browse/src/token-registry.ts)
-- [browse/src/commands.ts](../../../project-repos/gstack/browse/src/commands.ts)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [browse/src/server.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/server.ts)
+- [browse/src/content-security.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/content-security.ts)
+- [browse/src/security.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/security.ts)
+- [browse/src/cdp-allowlist.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/cdp-allowlist.ts)
+- [browse/src/token-registry.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/token-registry.ts)
+- [browse/src/commands.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/commands.ts)
 
 </details>
 
@@ -4371,13 +4371,13 @@ export const CDP_ALLOWLIST: ReadonlyArray<CdpAllowEntry> = Object.freeze([
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [design/src/cli.ts](../../../project-repos/gstack/design/src/cli.ts)
-- [design/src/commands.ts](../../../project-repos/gstack/design/src/commands.ts)
-- [design/src/generate.ts](../../../project-repos/gstack/design/src/generate.ts)
-- [design/src/design-to-code.ts](../../../project-repos/gstack/design/src/design-to-code.ts)
-- [make-pdf/src/cli.ts](../../../project-repos/gstack/make-pdf/src/cli.ts)
-- [make-pdf/SKILL.md](../../../project-repos/gstack/make-pdf/SKILL.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [design/src/cli.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/design/src/cli.ts)
+- [design/src/commands.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/design/src/commands.ts)
+- [design/src/generate.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/design/src/generate.ts)
+- [design/src/design-to-code.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/design/src/design-to-code.ts)
+- [make-pdf/src/cli.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/make-pdf/src/cli.ts)
+- [make-pdf/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/make-pdf/SKILL.md)
 
 </details>
 
@@ -5159,11 +5159,11 @@ allowed-tools:
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [USING_GBRAIN_WITH_GSTACK.md](../../../project-repos/gstack/USING_GBRAIN_WITH_GSTACK.md)
-- [docs/gbrain-sync.md](../../../project-repos/gstack/docs/gbrain-sync.md)
-- [bin/gstack-brain-init](../../../project-repos/gstack/bin/gstack-brain-init)
-- [setup-gbrain/SKILL.md](../../../project-repos/gstack/setup-gbrain/SKILL.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [USING_GBRAIN_WITH_GSTACK.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/USING_GBRAIN_WITH_GSTACK.md)
+- [docs/gbrain-sync.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/docs/gbrain-sync.md)
+- [bin/gstack-brain-init](https://github.com/garrytan/gstack/tree/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/bin/gstack-brain-init)
+- [setup-gbrain/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/setup-gbrain/SKILL.md)
 
 </details>
 
@@ -5719,11 +5719,11 @@ chmod +x "$HOOK"
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [docs/OPENCLAW.md](../../../project-repos/gstack/docs/OPENCLAW.md)
-- [hosts/openclaw.ts](../../../project-repos/gstack/hosts/openclaw.ts)
-- [scripts/host-adapters/openclaw-adapter.ts](../../../project-repos/gstack/scripts/host-adapters/openclaw-adapter.ts)
-- [openclaw/skills/gstack-openclaw-office-hours/SKILL.md](../../../project-repos/gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [docs/OPENCLAW.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/docs/OPENCLAW.md)
+- [hosts/openclaw.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/openclaw.ts)
+- [scripts/host-adapters/openclaw-adapter.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/host-adapters/openclaw-adapter.ts)
+- [openclaw/skills/gstack-openclaw-office-hours/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/openclaw/skills/gstack-openclaw-office-hours/SKILL.md)
 
 </details>
 
@@ -6228,13 +6228,13 @@ OpenClaw 文档列出 non-goals：不做 dispatch daemon、不做 Clawvisor rela
 
 生成本页时使用的主要源文件：
 
-- [package.json](../../../project-repos/gstack/package.json)
-- [CONTRIBUTING.md](../../../project-repos/gstack/CONTRIBUTING.md)
-- [test/skill-validation.test.ts](../../../project-repos/gstack/test/skill-validation.test.ts)
-- [.github/workflows/skill-docs.yml](../../../project-repos/gstack/.github/workflows/skill-docs.yml)
-- [.github/workflows/evals.yml](../../../project-repos/gstack/.github/workflows/evals.yml)
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [browse/src/cdp-allowlist.ts](../../../project-repos/gstack/browse/src/cdp-allowlist.ts)
+- [package.json](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/package.json)
+- [CONTRIBUTING.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CONTRIBUTING.md)
+- [test/skill-validation.test.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/test/skill-validation.test.ts)
+- [.github/workflows/skill-docs.yml](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/.github/workflows/skill-docs.yml)
+- [.github/workflows/evals.yml](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/.github/workflows/evals.yml)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [browse/src/cdp-allowlist.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/cdp-allowlist.ts)
 
 </details>
 
@@ -7425,12 +7425,12 @@ Zero generator, setup, or tooling code changes needed.
 
 生成本页时使用的主要源文件：
 
-- [CONTRIBUTING.md](../../../project-repos/gstack/CONTRIBUTING.md)
-- [docs/ADDING_A_HOST.md](../../../project-repos/gstack/docs/ADDING_A_HOST.md)
-- [setup](../../../project-repos/gstack/setup)
-- [CLAUDE.md](../../../project-repos/gstack/CLAUDE.md)
-- [scripts/host-config.ts](../../../project-repos/gstack/scripts/host-config.ts)
-- [hosts/index.ts](../../../project-repos/gstack/hosts/index.ts)
+- [CONTRIBUTING.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CONTRIBUTING.md)
+- [docs/ADDING_A_HOST.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/docs/ADDING_A_HOST.md)
+- [setup](https://github.com/garrytan/gstack/tree/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/setup)
+- [CLAUDE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CLAUDE.md)
+- [scripts/host-config.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/host-config.ts)
+- [hosts/index.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/index.ts)
 
 </details>
 

@@ -22,11 +22,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/stitch-design-cli/README.md)
-- [package.json](../../../project-repos/stitch-design-cli/package.json)
-- [docs/CONTRACT_V1.md](../../../project-repos/stitch-design-cli/docs/CONTRACT_V1.md)
-- [LICENSE](../../../project-repos/stitch-design-cli/LICENSE)
-- [SKILL.md](../../../project-repos/stitch-design-cli/SKILL.md)
+- [README.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/README.md)
+- [package.json](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/package.json)
+- [docs/CONTRACT_V1.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/docs/CONTRACT_V1.md)
+- [LICENSE](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/LICENSE)
+- [SKILL.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/SKILL.md)
 
 </details>
 
@@ -136,7 +136,6 @@ This package fills that gap without leaving the official platform surface.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 分发形态与约束
 
 - **npm 包名**：`stitch-design-cli`；**可执行名**：`stitch`（见 `package.json` 的 `bin` 字段）。
@@ -183,7 +182,6 @@ Sources: [package.json:15-19](../../../project-repos/stitch-design-cli/package.j
 
 <!-- source-snippets:end -->
 </details>
-
 ## 推荐阅读顺序
 
 1. [系统架构与模块边界](system-architecture.md) — 理解 `src/` 分层。
@@ -202,13 +200,13 @@ Sources: [package.json:15-19](../../../project-repos/stitch-design-cli/package.j
 
 生成本页时使用的主要源文件：
 
-- [src/cli.ts](../../../project-repos/stitch-design-cli/src/cli.ts)
-- [src/config.ts](../../../project-repos/stitch-design-cli/src/config.ts)
-- [src/stitch-client.ts](../../../project-repos/stitch-design-cli/src/stitch-client.ts)
-- [src/output.ts](../../../project-repos/stitch-design-cli/src/output.ts)
-- [src/normalize.ts](../../../project-repos/stitch-design-cli/src/normalize.ts)
-- [src/auth.ts](../../../project-repos/stitch-design-cli/src/auth.ts)
-- [src/transport-noise.ts](../../../project-repos/stitch-design-cli/src/transport-noise.ts)
+- [src/cli.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/cli.ts)
+- [src/config.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/config.ts)
+- [src/stitch-client.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/stitch-client.ts)
+- [src/output.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/output.ts)
+- [src/normalize.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/normalize.ts)
+- [src/auth.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/auth.ts)
+- [src/transport-noise.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/transport-noise.ts)
 
 </details>
 
@@ -314,7 +312,6 @@ export function createSdkContext(config: StitchCliConfig): { client: StitchToolC
 
 <!-- source-snippets:end -->
 </details>
-
 ## 核心执行路径：`runWithSdk`
 
 多数需鉴权的子命令通过 `requireAuthConfig` 与 `runWithSdk` 包装：成功时 `--json` 走 `printJson(ok(data))`；失败走 `emitFailure`；`finally` 中关闭 `StitchToolClient`。
@@ -360,7 +357,6 @@ async function runWithSdk<T>(
 
 <!-- source-snippets:end -->
 </details>
-
 ## 传输噪声抑制
 
 `withSuppressedTransportNoise` 在任务执行期间临时替换 `console.error`，过滤以 `Stitch Transport Error:` 开头的行，避免污染代理解析 stdout/stderr 的假设。
@@ -391,7 +387,6 @@ export async function withSuppressedTransportNoise<T>(task: () => Promise<T>): P
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -404,9 +399,9 @@ export async function withSuppressedTransportNoise<T>(task: () => Promise<T>): P
 
 生成本页时使用的主要源文件：
 
-- [src/cli.ts](../../../project-repos/stitch-design-cli/src/cli.ts)
-- [README.md](../../../project-repos/stitch-design-cli/README.md)
-- [docs/CONTRACT_V1.md](../../../project-repos/stitch-design-cli/docs/CONTRACT_V1.md)
+- [src/cli.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/cli.ts)
+- [README.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/README.md)
+- [docs/CONTRACT_V1.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/docs/CONTRACT_V1.md)
 
 </details>
 
@@ -588,7 +583,6 @@ Derived helpers built on top of official Stitch coverage:
 
 <!-- source-snippets:end -->
 </details>
-
 ## `screen get` 的多屏隔离策略
 
 当请求多个 `screen-id` 时，循环内可为每个屏幕创建独立 `createSdkContext`，以避免 SDK 并发或连接复用带来的交叉影响；单屏则复用外层上下文。
@@ -624,7 +618,6 @@ Sources: [src/cli.ts:464-480](../../../project-repos/stitch-design-cli/src/cli.t
 
 <!-- source-snippets:end -->
 </details>
-
 ## 枚举校验
 
 `device-type`、`model-id`、`creative-range`、`aspect` 在 `generate` / `edit` / `variants` 前由白名单校验，非法值抛出带 `VALIDATION_ERROR` 的错误码（经 `output.makeError` 归一化）。
@@ -689,7 +682,6 @@ function validateVariantAspects(aspects: string[]): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 典型 Agent 流水线（来自 README）
 
 `doctor` → `project list` → `screen list` → `screen get --include-image` → `edit` / `variants`，与仓库根 `SKILL.md` 推荐一致。
@@ -724,7 +716,6 @@ stitch screen variants --project-id <project-id> --screen-id <screen-id> --promp
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Start["开始"]
@@ -748,10 +739,10 @@ flowchart TD
 
 生成本页时使用的主要源文件：
 
-- [src/config.ts](../../../project-repos/stitch-design-cli/src/config.ts)
-- [src/auth.ts](../../../project-repos/stitch-design-cli/src/auth.ts)
-- [src/cli.ts](../../../project-repos/stitch-design-cli/src/cli.ts)
-- [README.md](../../../project-repos/stitch-design-cli/README.md)
+- [src/config.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/config.ts)
+- [src/auth.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/auth.ts)
+- [src/cli.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/cli.ts)
+- [README.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/README.md)
 
 </details>
 
@@ -806,7 +797,6 @@ export async function resolveConfig(): Promise<ResolvedConfig> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 认证模式推断
 
 - 仅 API Key：`inferAuthMode` 返回 `apiKey`。
@@ -832,7 +822,6 @@ export function inferAuthMode(config: StitchCliConfig): AuthMode {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 默认端点与超时
 
 未配置时 `baseUrl` 默认为 `https://stitch.googleapis.com/mcp`，超时默认 `300000` ms，与官方 SDK 文档常见默认值对齐。
@@ -868,7 +857,6 @@ function cleanTimeoutMs(value: unknown): number {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 保存后校验
 
 `saveAndValidateConfig` 在写入磁盘后立即调用 `validateAuth`：通过 `sdk.projects()` 试拉项目列表，成功则返回 `sample.projectCount`；失败则携带归一化错误信息，便于区分「网络错误」与「凭据被拒」。
@@ -921,7 +909,6 @@ export async function validateAuth(config: StitchCliConfig | ResolvedConfig): Pr
 
 <!-- source-snippets:end -->
 </details>
-
 ## `auth set` 的 OAuth 约束
 
 若传入 access token 或 project id 之一但未成对提供，CLI 在 `auth set` 阶段直接报 `VALIDATION_ERROR`，避免写出半套 OAuth 配置。
@@ -955,7 +942,6 @@ Sources: [src/cli.ts:184-198](../../../project-repos/stitch-design-cli/src/cli.t
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Env["环境变量 STITCH 前缀"]
@@ -979,9 +965,9 @@ flowchart TD
 
 生成本页时使用的主要源文件：
 
-- [src/stitch-client.ts](../../../project-repos/stitch-design-cli/src/stitch-client.ts)
-- [package.json](../../../project-repos/stitch-design-cli/package.json)
-- [src/cli.ts](../../../project-repos/stitch-design-cli/src/cli.ts)
+- [src/stitch-client.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/stitch-client.ts)
+- [package.json](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/package.json)
+- [src/cli.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/cli.ts)
 
 </details>
 
@@ -1023,7 +1009,6 @@ export function createSdkContext(config: StitchCliConfig): { client: StitchToolC
 
 <!-- source-snippets:end -->
 </details>
-
 ## 鉴权存在性判断
 
 `hasAuth` 仅在「非空 API Key」或「Access Token 与 Project Id 同时非空」时返回真；与 `inferAuthMode` 逻辑一致，供 `doctor`、`runWithSdk` 快速短路。
@@ -1045,7 +1030,6 @@ export function hasAuth(config: StitchCliConfig): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 依赖版本
 
 `package.json` 将 `@google/stitch-sdk` 固定为 `^0.0.3`（发布时范围），CLI 行为随 SDK 工具名与返回结构演进需要同步回归测试。
@@ -1067,7 +1051,6 @@ Sources: [package.json:49-51](../../../project-repos/stitch-design-cli/package.j
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Cfg["StitchCliConfig"]
@@ -1090,9 +1073,9 @@ flowchart TD
 
 生成本页时使用的主要源文件：
 
-- [docs/CONTRACT_V1.md](../../../project-repos/stitch-design-cli/docs/CONTRACT_V1.md)
-- [src/output.ts](../../../project-repos/stitch-design-cli/src/output.ts)
-- [src/cli.ts](../../../project-repos/stitch-design-cli/src/cli.ts)
+- [docs/CONTRACT_V1.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/docs/CONTRACT_V1.md)
+- [src/output.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/output.ts)
+- [src/cli.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/cli.ts)
 
 </details>
 
@@ -1142,7 +1125,6 @@ Failure:
 
 <!-- source-snippets:end -->
 </details>
-
 ## 退出码映射
 
 `exitCodeFor` 将 `AUTH_MISSING`、`VALIDATION_ERROR`、`AUTH_FAILED` 映射为退出码 **2**（需要用户动作或输入非法）；其余错误码为 **1**；成功为 **0**。与 CONTRACT 中「用户动作或无效输入为 2」一致。
@@ -1174,7 +1156,6 @@ export function exitCodeFor(code: string): number {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 错误归一化与凭据启发式
 
 `makeError` 优先识别 `StitchError`；否则尝试 `StitchError.fromUnknown`；再回退到消息中的超时检测等。若消息匹配「invalid authentication credentials」或「expected oauth 2 access token」类文案，则升级为 `AUTH_FAILED` 并附带解释性 `detail`，对应 README 中「tool list 可用但 project list 失败」场景。
@@ -1231,7 +1212,6 @@ export function makeError(error: unknown, { code, message }: { code?: string; me
 
 <!-- source-snippets:end -->
 </details>
-
 ## 可重试性
 
 `isRetryable` 对 `StitchError` 尊重 `recoverable`；对非 SDK 错误则依据错误码集合 `RATE_LIMITED`、`NETWORK_ERROR`。
@@ -1266,7 +1246,6 @@ export function isRetryable(error: unknown): boolean {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Err["原始异常"]
@@ -1293,9 +1272,9 @@ flowchart TD
 
 生成本页时使用的主要源文件：
 
-- [src/normalize.ts](../../../project-repos/stitch-design-cli/src/normalize.ts)
-- [src/cli.ts](../../../project-repos/stitch-design-cli/src/cli.ts)
-- [docs/CONTRACT_V1.md](../../../project-repos/stitch-design-cli/docs/CONTRACT_V1.md)
+- [src/normalize.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/normalize.ts)
+- [src/cli.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/cli.ts)
+- [docs/CONTRACT_V1.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/docs/CONTRACT_V1.md)
 
 </details>
 
@@ -1338,7 +1317,6 @@ export function toScreenId(data: any): string | null {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 从输出组件抽取屏幕
 
 `extractScreensFromOutput` 遍历 `raw.outputComponents`，收集每个组件 `design.screens` 数组成员，并注入调用方已知的 `projectId`。
@@ -1368,7 +1346,6 @@ export function extractScreensFromOutput(raw: any, projectId: string): any[] {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 制品 URL 的两种来源
 
 `artifactUrlsFromData` 在变更类命令里直接从屏幕数据对象的 `htmlCode.downloadUrl` 与 `screenshot.downloadUrl` 读取；而 `screen get` 路径则通过 SDK 的 `getHtml()` / `getImage()` 异步拉取（见 `cli.ts` 中 `screen get` 动作块）。
@@ -1407,7 +1384,6 @@ export function artifactUrlsFromData(
 
 <!-- source-snippets:end -->
 </details>
-
 ## `createScreenMutationResult` 与 follow-up
 
 对 `generate` / `edit` / `variants` 三类操作统一封装：包含 `kind`、`count`、`messages`、`items`（带 `resultIndex`，`variants` 还带 `variantIndex` 与 `sourceScreenId`），并在有返回屏幕 id 时生成 `followUp.getCommand`，预填 `--include-html --include-image --json`，解决「列表尚未刷新但 id 已可用」的竞态。
@@ -1571,7 +1547,6 @@ export function createScreenMutationResult(
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   Raw["callTool 原始 JSON"]
@@ -1594,13 +1569,13 @@ flowchart TD
 
 生成本页时使用的主要源文件：
 
-- [.github/workflows/ci.yml](../../../project-repos/stitch-design-cli/.github/workflows/ci.yml)
-- [.github/workflows/publish.yml](../../../project-repos/stitch-design-cli/.github/workflows/publish.yml)
-- [package.json](../../../project-repos/stitch-design-cli/package.json)
-- [scripts/public-surface-check.mjs](../../../project-repos/stitch-design-cli/scripts/public-surface-check.mjs)
-- [test/config.test.ts](../../../project-repos/stitch-design-cli/test/config.test.ts)
-- [test/normalize.test.ts](../../../project-repos/stitch-design-cli/test/normalize.test.ts)
-- [test/output.test.ts](../../../project-repos/stitch-design-cli/test/output.test.ts)
+- [.github/workflows/ci.yml](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/.github/workflows/ci.yml)
+- [.github/workflows/publish.yml](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/.github/workflows/publish.yml)
+- [package.json](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/package.json)
+- [scripts/public-surface-check.mjs](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/scripts/public-surface-check.mjs)
+- [test/config.test.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/test/config.test.ts)
+- [test/normalize.test.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/test/normalize.test.ts)
+- [test/output.test.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/test/output.test.ts)
 
 </details>
 
@@ -1682,7 +1657,6 @@ Sources: [github/workflows/ci.yml:16-49](../../../project-repos/stitch-design-cl
 
 <!-- source-snippets:end -->
 </details>
-
 ## 发布工作流
 
 `publish.yml` 在推送 `v*` 标签或手动 `workflow_dispatch` 时运行：Node 24、`npm publish --access public`，且具备 `id-token: write` 以支持 **npm trusted publishing**（与 `stitch-trusted-publishing-notes.md` 描述一致）。
@@ -1734,7 +1708,6 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
-
 ## `prepublishOnly` 门槛
 
 发布前自动执行 `lint`、`lint:public-surface` 与 `test`，与 CI 主路径对齐，减少「本地未跑脚本但 tag 已推送」的失误。
@@ -1755,7 +1728,6 @@ Sources: [package.json:51-52](../../../project-repos/stitch-design-cli/package.j
 
 <!-- source-snippets:end -->
 </details>
-
 ## public-surface-check 脚本职责（摘要）
 
 脚本对仓库进行 **敏感模式扫描**、阻止将测试目录打入 npm 包、并检查 `npm pack` 结果树中是否出现可疑路径或密钥样例；具体规则见 `public-surface-check.mjs` 顶部常量数组。
@@ -1804,7 +1776,6 @@ const secretPattern =
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   subgraph CiJob["CI job test"]
@@ -1833,10 +1804,10 @@ flowchart TD
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/stitch-design-cli/SKILL.md)
-- [README.md](../../../project-repos/stitch-design-cli/README.md)
-- [docs/CONTRACT_V1.md](../../../project-repos/stitch-design-cli/docs/CONTRACT_V1.md)
-- [stitch-trusted-publishing-notes.md](../../../project-repos/stitch-design-cli/stitch-trusted-publishing-notes.md)
+- [SKILL.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/SKILL.md)
+- [README.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/README.md)
+- [docs/CONTRACT_V1.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/docs/CONTRACT_V1.md)
+- [stitch-trusted-publishing-notes.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/stitch-trusted-publishing-notes.md)
 
 </details>
 
@@ -1895,7 +1866,6 @@ For the common design-iteration flow, the default sequence is:
 
 <!-- source-snippets:end -->
 </details>
-
 ## v1 能力边界
 
 明确写出：不包含 design-system 操作与截图上传种子流程；`project get` 绑定官方 `get_project`；`screen edit` 与 `variants` 支持多 `--screen-id`。
@@ -1922,7 +1892,6 @@ Sources: [SKILL.md:79-86](../../../project-repos/stitch-design-cli/SKILL.md#L79-
 
 <!-- source-snippets:end -->
 </details>
-
 ## 与契约文档的关系
 
 Skill 将稳定 JSON 行为指向 `docs/CONTRACT_V1.md`，与 README「Contract」章节一致，形成「人类 README + 机器 CONTRACT + Agent SKILL」三层文档。
@@ -1952,7 +1921,6 @@ Stable machine-readable behavior is documented in [docs/CONTRACT_V1.md](./docs/C
 
 <!-- source-snippets:end -->
 </details>
-
 ## npm Trusted Publishing 备注
 
 `stitch-trusted-publishing-notes.md` 记录与 GitHub Actions OIDC 对接 npm Trusted Publisher 的期望字段（仓库 owner/name、工作流文件名、包名等），属于运维侧非代码契约。
@@ -2008,7 +1976,6 @@ After bootstrap:
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   subgraph Docs["文档栈"]

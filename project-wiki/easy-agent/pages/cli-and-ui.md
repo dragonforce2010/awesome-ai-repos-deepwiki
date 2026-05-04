@@ -3,14 +3,14 @@
 
 生成本页时使用的主要源文件：
 
-- [src/entrypoint/cli.ts](../../../project-repos/easy-agent/src/entrypoint/cli.ts)
-- [src/ui/App.tsx](../../../project-repos/easy-agent/src/ui/App.tsx)
-- [src/ui/hooks/useAgentSession.ts](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts)
-- [src/ui/hooks/usePromptInput.ts](../../../project-repos/easy-agent/src/ui/hooks/usePromptInput.ts)
-- [src/ui/components/ConversationView.tsx](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx)
-- [src/ui/components/StatusBar.tsx](../../../project-repos/easy-agent/src/ui/components/StatusBar.tsx)
-- [src/ui/components/TaskList.tsx](../../../project-repos/easy-agent/src/ui/components/TaskList.tsx)
-- [src/ui/components/TodoList.tsx](../../../project-repos/easy-agent/src/ui/components/TodoList.tsx)
+- [src/entrypoint/cli.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/entrypoint/cli.ts)
+- [src/ui/App.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/App.tsx)
+- [src/ui/hooks/useAgentSession.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/hooks/useAgentSession.ts)
+- [src/ui/hooks/usePromptInput.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/hooks/usePromptInput.ts)
+- [src/ui/components/ConversationView.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/components/ConversationView.tsx)
+- [src/ui/components/StatusBar.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/components/StatusBar.tsx)
+- [src/ui/components/TaskList.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/components/TaskList.tsx)
+- [src/ui/components/TodoList.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/components/TodoList.tsx)
 
 </details>
 
@@ -1031,7 +1031,7 @@ Sources: [src/ui/hooks/useAgentSession.ts:474-536](../../../project-repos/easy-a
 
 #### `src/ui/hooks/useAgentSession.ts:474-536`
 
-```text
+```typescript
   const submit = useCallback(async (text: string): Promise<SubmitResult> => {
     if (!text.trim()) {
       return { handled: false };

@@ -40,14 +40,14 @@ gstack/
 
 | 文件 | 作用 |
 |---|---|
-| [README.md](../../project-repos/gstack/README.md) | 用户定位、安装、技能目录、GBrain 和排障入口 |
-| [ARCHITECTURE.md](../../project-repos/gstack/ARCHITECTURE.md) | Browse daemon、安全模型、模板生成、测试架构设计原因 |
-| [CLAUDE.md](../../project-repos/gstack/CLAUDE.md) | gstack 自身开发命令、项目结构和开发约束 |
-| [setup](../../project-repos/gstack/setup) | 安装、构建、Playwright 校验、技能链接、多宿主 runtime root |
-| [scripts/gen-skill-docs.ts](../../project-repos/gstack/scripts/gen-skill-docs.ts) | `.tmpl` 到 `SKILL.md` 的核心生成器 |
-| [browse/src/server.ts](../../project-repos/gstack/browse/src/server.ts) | 长期运行的 localhost Browser daemon |
-| [browse/src/commands.ts](../../project-repos/gstack/browse/src/commands.ts) | Browse 命令 registry 和 untrusted content 分类 |
-| [hosts/index.ts](../../project-repos/gstack/hosts/index.ts) | 多宿主配置注册表 |
+| [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md) | 用户定位、安装、技能目录、GBrain 和排障入口 |
+| [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md) | Browse daemon、安全模型、模板生成、测试架构设计原因 |
+| [CLAUDE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CLAUDE.md) | gstack 自身开发命令、项目结构和开发约束 |
+| [setup](https://github.com/garrytan/gstack/tree/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/setup) | 安装、构建、Playwright 校验、技能链接、多宿主 runtime root |
+| [scripts/gen-skill-docs.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/gen-skill-docs.ts) | `.tmpl` 到 `SKILL.md` 的核心生成器 |
+| [browse/src/server.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/server.ts) | 长期运行的 localhost Browser daemon |
+| [browse/src/commands.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/commands.ts) | Browse 命令 registry 和 untrusted content 分类 |
+| [hosts/index.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/index.ts) | 多宿主配置注册表 |
 
 ## 快速导航
 

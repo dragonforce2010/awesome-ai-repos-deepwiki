@@ -43,7 +43,6 @@ import { isLikelyAbortText } from '../../channel/abort-detect';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 发送与交付分层
 
 ```mermaid
@@ -94,7 +93,6 @@ export {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 工具调用追踪：与插件钩子联动
 
 插件在 `before_tool_call` / `after_tool_call` 中调用 `recordToolUseStart` / `recordToolUseEnd`（见 `src/card/tool-use-trace-store.ts`），为卡片层提供一次 run 的工具时间线数据。
@@ -135,7 +133,6 @@ Sources: [index.ts:130-151](../../../project-repos/openclaw-lark/index.ts#L130-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## `channelData.feishu`：卡片版本与扩展载荷
 
 `outbound.ts` 详细说明 `ReplyPayload.channelData.feishu` 可携带卡片数据，并指出飞书服务端通过是否出现 `schema: "2.0"` 区分卡片版本（v1 Message Card vs v2 CardKit）。这与 README 中「交互式卡片 / 流式回复」的产品描述在机制层对齐。
@@ -173,7 +170,6 @@ Sources: [src/messaging/outbound/outbound.ts:30-38](../../../project-repos/openc
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [入站消息七阶段流水线](inbound-seven-stage-pipeline.md)

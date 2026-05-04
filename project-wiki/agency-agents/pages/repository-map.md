@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/agency-agents/README.md)
-- [integrations/README.md](../../../project-repos/agency-agents/integrations/README.md)
-- [scripts/install.sh](../../../project-repos/agency-agents/scripts/install.sh)
-- [scripts/convert.sh](../../../project-repos/agency-agents/scripts/convert.sh)
-- [scripts/lint-agents.sh](../../../project-repos/agency-agents/scripts/lint-agents.sh)
+- [README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/README.md)
+- [integrations/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/README.md)
+- [scripts/install.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/install.sh)
+- [scripts/convert.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/convert.sh)
+- [scripts/lint-agents.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/lint-agents.sh)
 
 </details>
 

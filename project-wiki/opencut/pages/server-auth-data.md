@@ -150,7 +150,6 @@ export const accounts = pgTable("accounts", {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Web 应用（Next.js）](web-nextjs-stack.md)

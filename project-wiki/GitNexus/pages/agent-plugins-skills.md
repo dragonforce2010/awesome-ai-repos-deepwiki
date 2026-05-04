@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/GitNexus/README.md)
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md](../../../project-repos/GitNexus/gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md)
-- [gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md](../../../project-repos/GitNexus/gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
+- [README.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/README.md)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-claude-plugin/skills/gitnexus-guide/SKILL.md)
+- [gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-cursor-integration/skills/gitnexus-exploring/SKILL.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
 
 </details>
 

@@ -83,7 +83,6 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   subgraph CI["GitHub Actions ci.yml"]
@@ -130,7 +129,6 @@ Sources: [package.json:31-40](../../../project-repos/openclaw-lark/package.json#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 测试目录与类型
 
 `tests/` 下包含针对 dispatch、mention、tool-use trace、VC 事件、markdown 样式、账户合并等场景的单元测试文件（文件名即意图索引，例如 `dispatch-tool-use-init.test.ts`）。
@@ -164,7 +162,6 @@ const {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [OpenClaw 插件注册与运行时](plugin-openclaw-integration.md)

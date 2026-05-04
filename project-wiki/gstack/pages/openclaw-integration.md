@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [docs/OPENCLAW.md](../../../project-repos/gstack/docs/OPENCLAW.md)
-- [hosts/openclaw.ts](../../../project-repos/gstack/hosts/openclaw.ts)
-- [scripts/host-adapters/openclaw-adapter.ts](../../../project-repos/gstack/scripts/host-adapters/openclaw-adapter.ts)
-- [openclaw/skills/gstack-openclaw-office-hours/SKILL.md](../../../project-repos/gstack/openclaw/skills/gstack-openclaw-office-hours/SKILL.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [docs/OPENCLAW.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/docs/OPENCLAW.md)
+- [hosts/openclaw.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/hosts/openclaw.ts)
+- [scripts/host-adapters/openclaw-adapter.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/scripts/host-adapters/openclaw-adapter.ts)
+- [openclaw/skills/gstack-openclaw-office-hours/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/openclaw/skills/gstack-openclaw-office-hours/SKILL.md)
 
 </details>
 

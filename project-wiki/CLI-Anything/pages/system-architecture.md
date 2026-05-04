@@ -3,12 +3,12 @@
 
 生成本页时使用的主要源文件：
 
-- [cli-anything-plugin/HARNESS.md](../../../project-repos/CLI-Anything/cli-anything-plugin/HARNESS.md)
-- [cli-hub/cli_hub/cli.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/cli.py)
-- [cli-hub/cli_hub/registry.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/registry.py)
-- [cli-hub/cli_hub/installer.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/installer.py)
-- [cli-anything-plugin/repl_skin.py](../../../project-repos/CLI-Anything/cli-anything-plugin/repl_skin.py)
-- [registry.json](../../../project-repos/CLI-Anything/registry.json)
+- [cli-anything-plugin/HARNESS.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/HARNESS.md)
+- [cli-hub/cli_hub/cli.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/cli.py)
+- [cli-hub/cli_hub/registry.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/registry.py)
+- [cli-hub/cli_hub/installer.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/installer.py)
+- [cli-anything-plugin/repl_skin.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/repl_skin.py)
+- [registry.json](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/registry.json)
 
 </details>
 

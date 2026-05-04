@@ -3,14 +3,14 @@
 
 生成本页时使用的主要源文件：
 
-- [src/tools/Tool.ts](../../../project-repos/easy-agent/src/tools/Tool.ts)
-- [src/tools/index.ts](../../../project-repos/easy-agent/src/tools/index.ts)
-- [src/tools/fileReadTool.ts](../../../project-repos/easy-agent/src/tools/fileReadTool.ts)
-- [src/tools/fileWriteTool.ts](../../../project-repos/easy-agent/src/tools/fileWriteTool.ts)
-- [src/tools/fileEditTool.ts](../../../project-repos/easy-agent/src/tools/fileEditTool.ts)
-- [src/tools/bashTool.ts](../../../project-repos/easy-agent/src/tools/bashTool.ts)
-- [src/tools/pathUtils.ts](../../../project-repos/easy-agent/src/tools/pathUtils.ts)
-- [src/permissions/permissions.ts](../../../project-repos/easy-agent/src/permissions/permissions.ts)
+- [src/tools/Tool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/Tool.ts)
+- [src/tools/index.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/index.ts)
+- [src/tools/fileReadTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/fileReadTool.ts)
+- [src/tools/fileWriteTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/fileWriteTool.ts)
+- [src/tools/fileEditTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/fileEditTool.ts)
+- [src/tools/bashTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/bashTool.ts)
+- [src/tools/pathUtils.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/pathUtils.ts)
+- [src/permissions/permissions.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/permissions/permissions.ts)
 
 </details>
 

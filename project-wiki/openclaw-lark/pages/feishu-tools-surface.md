@@ -94,7 +94,6 @@ export function registerOapiTools(api: OpenClawPluginApi): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   subgraph OAPI["registerOapiTools"]
@@ -122,7 +121,6 @@ Sources: [index.ts:115-116](../../../project-repos/openclaw-lark/index.ts#L115-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## MCP 文档工具：与 OAPI 的边界
 
 `registerFeishuMcpDocTools` 明确：**仅保留 create/fetch/update**；`search/list` 已由 OAPI 版本替代，因此不再注册 MCP 侧对应工具。
@@ -183,7 +181,6 @@ export function registerFeishuMcpDocTools(api: OpenClawPluginApi): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## OAuth 与交互式用户提问
 
 `index.ts` 同时注册 `registerFeishuOAuthTool`（UAT device flow）与 `registerFeishuOAuthBatchAuthTool`（批量授权应用 scope），以及 `registerAskUserQuestionTool`（基于卡片的用户提问）。
@@ -210,7 +207,6 @@ Sources: [index.ts:121-128](../../../project-repos/openclaw-lark/index.ts#L121-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## MCP 共享工具：endpoint 与配置解析
 
 `registerFeishuMcpDocTools` 从 `../shared` 引入 `extractMcpUrlFromConfig` 与 `setMcpEndpointOverride`，用于从 OpenClaw 配置提取 MCP URL 并在进程内缓存 override，供后续 MCP 工具调用链复用。
@@ -280,7 +276,6 @@ export interface McpToolConfig<T = unknown> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [OpenClaw 插件注册与运行时](plugin-openclaw-integration.md)

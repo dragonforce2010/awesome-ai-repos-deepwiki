@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [references/design-styles.md](../../../project-repos/huashu-design/references/design-styles.md)
-- [assets/showcases/INDEX.md](../../../project-repos/huashu-design/assets/showcases/INDEX.md)
-- [references/scene-templates.md](../../../project-repos/huashu-design/references/scene-templates.md)
-- [README.md](../../../project-repos/huashu-design/README.md)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [references/design-styles.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/design-styles.md)
+- [assets/showcases/INDEX.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/showcases/INDEX.md)
+- [references/scene-templates.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/scene-templates.md)
+- [README.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.md)
 
 </details>
 

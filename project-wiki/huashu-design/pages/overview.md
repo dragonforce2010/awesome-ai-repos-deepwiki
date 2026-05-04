@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/huashu-design/README.md)
-- [README.en.md](../../../project-repos/huashu-design/README.en.md)
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [LICENSE](../../../project-repos/huashu-design/LICENSE)
+- [README.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.md)
+- [README.en.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.en.md)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [LICENSE](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/LICENSE)
 - [00-repo-inventory.md](../00-repo-inventory.md)
 
 </details>

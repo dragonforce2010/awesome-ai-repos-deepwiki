@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [gitnexus/src/core/ingestion/pipeline.ts](../../../project-repos/GitNexus/gitnexus/src/core/ingestion/pipeline.ts)
-- [gitnexus/src/core/ingestion/pipeline-phases/index.ts](../../../project-repos/GitNexus/gitnexus/src/core/ingestion/pipeline-phases/index.ts)
-- [gitnexus/src/core/ingestion/pipeline-phases/runner.ts](../../../project-repos/GitNexus/gitnexus/src/core/ingestion/pipeline-phases/runner.ts)
-- [gitnexus/src/core/ingestion/call-processor.ts](../../../project-repos/GitNexus/gitnexus/src/core/ingestion/call-processor.ts)
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
+- [gitnexus/src/core/ingestion/pipeline.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/pipeline.ts)
+- [gitnexus/src/core/ingestion/pipeline-phases/index.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/pipeline-phases/index.ts)
+- [gitnexus/src/core/ingestion/pipeline-phases/runner.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/pipeline-phases/runner.ts)
+- [gitnexus/src/core/ingestion/call-processor.ts](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/src/core/ingestion/call-processor.ts)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
 
 </details>
 

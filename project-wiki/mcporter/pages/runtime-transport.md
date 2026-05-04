@@ -3,18 +3,18 @@
 
 生成本页时使用的主要源文件：
 
-- [src/runtime.ts](../../../project-repos/mcporter/src/runtime.ts)
-- [src/runtime/transport.ts](../../../project-repos/mcporter/src/runtime/transport.ts)
-- [src/runtime/oauth.ts](../../../project-repos/mcporter/src/runtime/oauth.ts)
-- [src/runtime/utils.ts](../../../project-repos/mcporter/src/runtime/utils.ts)
-- [src/runtime/errors.ts](../../../project-repos/mcporter/src/runtime/errors.ts)
-- [src/server-proxy.ts](../../../project-repos/mcporter/src/server-proxy.ts)
-- [src/result-utils.ts](../../../project-repos/mcporter/src/result-utils.ts)
-- [src/tool-filters.ts](../../../project-repos/mcporter/src/tool-filters.ts)
-- [src/error-classifier.ts](../../../project-repos/mcporter/src/error-classifier.ts)
-- [src/sdk-patches.ts](../../../project-repos/mcporter/src/sdk-patches.ts)
-- [src/runtime-process-utils.ts](../../../project-repos/mcporter/src/runtime-process-utils.ts)
-- [src/runtime-header-utils.ts](../../../project-repos/mcporter/src/runtime-header-utils.ts)
+- [src/runtime.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime.ts)
+- [src/runtime/transport.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/transport.ts)
+- [src/runtime/oauth.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/oauth.ts)
+- [src/runtime/utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/utils.ts)
+- [src/runtime/errors.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/errors.ts)
+- [src/server-proxy.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/server-proxy.ts)
+- [src/result-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/result-utils.ts)
+- [src/tool-filters.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/tool-filters.ts)
+- [src/error-classifier.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/error-classifier.ts)
+- [src/sdk-patches.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/sdk-patches.ts)
+- [src/runtime-process-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime-process-utils.ts)
+- [src/runtime-header-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime-header-utils.ts)
 
 </details>
 

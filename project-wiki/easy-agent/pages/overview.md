@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/easy-agent/README.md)
-- [README.zh-CN.md](../../../project-repos/easy-agent/README.zh-CN.md)
-- [package.json](../../../project-repos/easy-agent/package.json)
-- [tsconfig.json](../../../project-repos/easy-agent/tsconfig.json)
+- [README.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.md)
+- [README.zh-CN.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.zh-CN.md)
+- [package.json](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/package.json)
+- [tsconfig.json](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/tsconfig.json)
 
 </details>
 

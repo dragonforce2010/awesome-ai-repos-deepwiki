@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [scripts/lint-agents.sh](../../../project-repos/agency-agents/scripts/lint-agents.sh)
-- [.github/workflows/lint-agents.yml](../../../project-repos/agency-agents/.github/workflows/lint-agents.yml)
-- [CONTRIBUTING.md](../../../project-repos/agency-agents/CONTRIBUTING.md)
-- [SECURITY.md](../../../project-repos/agency-agents/SECURITY.md)
-- [testing/testing-reality-checker.md](../../../project-repos/agency-agents/testing/testing-reality-checker.md)
+- [scripts/lint-agents.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/lint-agents.sh)
+- [.github/workflows/lint-agents.yml](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/.github/workflows/lint-agents.yml)
+- [CONTRIBUTING.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/CONTRIBUTING.md)
+- [SECURITY.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/SECURITY.md)
+- [testing/testing-reality-checker.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/testing/testing-reality-checker.md)
 
 </details>
 

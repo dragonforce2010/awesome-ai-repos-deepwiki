@@ -3,13 +3,13 @@
 
 生成本页时使用的主要源文件：
 
-- [src/notebooklm/notebooklm_cli.py](../../../project-repos/notebooklm-py/src/notebooklm/notebooklm_cli.py)
-- [src/notebooklm/cli/__init__.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/__init__.py)
-- [src/notebooklm/cli/grouped.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/grouped.py)
-- [src/notebooklm/cli/session.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/session.py)
-- [src/notebooklm/cli/helpers.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/helpers.py)
-- [src/notebooklm/cli/error_handler.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/error_handler.py)
-- [src/notebooklm/cli/profile.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/profile.py)
+- [src/notebooklm/notebooklm_cli.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/notebooklm_cli.py)
+- [src/notebooklm/cli/__init__.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/__init__.py)
+- [src/notebooklm/cli/grouped.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/grouped.py)
+- [src/notebooklm/cli/session.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/session.py)
+- [src/notebooklm/cli/helpers.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/helpers.py)
+- [src/notebooklm/cli/error_handler.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/error_handler.py)
+- [src/notebooklm/cli/profile.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/profile.py)
 
 </details>
 

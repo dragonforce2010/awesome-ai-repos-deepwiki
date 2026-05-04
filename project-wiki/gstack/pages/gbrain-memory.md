@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [USING_GBRAIN_WITH_GSTACK.md](../../../project-repos/gstack/USING_GBRAIN_WITH_GSTACK.md)
-- [docs/gbrain-sync.md](../../../project-repos/gstack/docs/gbrain-sync.md)
-- [bin/gstack-brain-init](../../../project-repos/gstack/bin/gstack-brain-init)
-- [setup-gbrain/SKILL.md](../../../project-repos/gstack/setup-gbrain/SKILL.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [USING_GBRAIN_WITH_GSTACK.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/USING_GBRAIN_WITH_GSTACK.md)
+- [docs/gbrain-sync.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/docs/gbrain-sync.md)
+- [bin/gstack-brain-init](https://github.com/garrytan/gstack/tree/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/bin/gstack-brain-init)
+- [setup-gbrain/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/setup-gbrain/SKILL.md)
 
 </details>
 

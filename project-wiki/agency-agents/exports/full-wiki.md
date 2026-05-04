@@ -23,10 +23,10 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/agency-agents/README.md)
-- [examples/README.md](../../../project-repos/agency-agents/examples/README.md)
-- [integrations/README.md](../../../project-repos/agency-agents/integrations/README.md)
-- [SECURITY.md](../../../project-repos/agency-agents/SECURITY.md)
+- [README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/README.md)
+- [examples/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/examples/README.md)
+- [integrations/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/README.md)
+- [SECURITY.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/SECURITY.md)
 
 </details>
 
@@ -492,11 +492,11 @@ This repository contains Markdown-based agent definitions and shell scripts for 
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/agency-agents/README.md)
-- [integrations/README.md](../../../project-repos/agency-agents/integrations/README.md)
-- [scripts/install.sh](../../../project-repos/agency-agents/scripts/install.sh)
-- [scripts/convert.sh](../../../project-repos/agency-agents/scripts/convert.sh)
-- [scripts/lint-agents.sh](../../../project-repos/agency-agents/scripts/lint-agents.sh)
+- [README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/README.md)
+- [integrations/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/README.md)
+- [scripts/install.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/install.sh)
+- [scripts/convert.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/convert.sh)
+- [scripts/lint-agents.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/lint-agents.sh)
 
 </details>
 
@@ -780,11 +780,11 @@ inventory 显示 `.md` 占绝大多数，且没有检测到传统 build manifest
 
 生成本页时使用的主要源文件：
 
-- [CONTRIBUTING.md](../../../project-repos/agency-agents/CONTRIBUTING.md)
-- [engineering/engineering-frontend-developer.md](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md)
-- [testing/testing-reality-checker.md](../../../project-repos/agency-agents/testing/testing-reality-checker.md)
-- [specialized/agents-orchestrator.md](../../../project-repos/agency-agents/specialized/agents-orchestrator.md)
-- [scripts/lint-agents.sh](../../../project-repos/agency-agents/scripts/lint-agents.sh)
+- [CONTRIBUTING.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/CONTRIBUTING.md)
+- [engineering/engineering-frontend-developer.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/engineering/engineering-frontend-developer.md)
+- [testing/testing-reality-checker.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/testing/testing-reality-checker.md)
+- [specialized/agents-orchestrator.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/specialized/agents-orchestrator.md)
+- [scripts/lint-agents.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/lint-agents.sh)
 
 </details>
 
@@ -1416,11 +1416,11 @@ We love ambitious ideas — a [Discussion](https://github.com/msitarzewski/agenc
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/agency-agents/README.md)
-- [CONTRIBUTING.md](../../../project-repos/agency-agents/CONTRIBUTING.md)
-- [engineering/engineering-frontend-developer.md](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md)
-- [testing/testing-reality-checker.md](../../../project-repos/agency-agents/testing/testing-reality-checker.md)
-- [specialized/agents-orchestrator.md](../../../project-repos/agency-agents/specialized/agents-orchestrator.md)
+- [README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/README.md)
+- [CONTRIBUTING.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/CONTRIBUTING.md)
+- [engineering/engineering-frontend-developer.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/engineering/engineering-frontend-developer.md)
+- [testing/testing-reality-checker.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/testing/testing-reality-checker.md)
+- [specialized/agents-orchestrator.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/specialized/agents-orchestrator.md)
 
 </details>
 
@@ -2229,11 +2229,11 @@ NEXUS 文档把 division 进一步映射成 pipeline 角色：Engineering 负责
 
 生成本页时使用的主要源文件：
 
-- [strategy/QUICKSTART.md](../../../project-repos/agency-agents/strategy/QUICKSTART.md)
-- [strategy/nexus-strategy.md](../../../project-repos/agency-agents/strategy/nexus-strategy.md)
-- [strategy/playbooks/phase-3-build.md](../../../project-repos/agency-agents/strategy/playbooks/phase-3-build.md)
-- [specialized/agents-orchestrator.md](../../../project-repos/agency-agents/specialized/agents-orchestrator.md)
-- [examples/README.md](../../../project-repos/agency-agents/examples/README.md)
+- [strategy/QUICKSTART.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/QUICKSTART.md)
+- [strategy/nexus-strategy.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/nexus-strategy.md)
+- [strategy/playbooks/phase-3-build.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/playbooks/phase-3-build.md)
+- [specialized/agents-orchestrator.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/specialized/agents-orchestrator.md)
+- [examples/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/examples/README.md)
 
 </details>
 
@@ -2718,11 +2718,11 @@ FOR EACH task IN sprint_backlog (ordered by RICE score):
 
 生成本页时使用的主要源文件：
 
-- [examples/README.md](../../../project-repos/agency-agents/examples/README.md)
-- [README.md](../../../project-repos/agency-agents/README.md)
-- [strategy/QUICKSTART.md](../../../project-repos/agency-agents/strategy/QUICKSTART.md)
-- [strategy/nexus-strategy.md](../../../project-repos/agency-agents/strategy/nexus-strategy.md)
-- [strategy/playbooks/phase-3-build.md](../../../project-repos/agency-agents/strategy/playbooks/phase-3-build.md)
+- [examples/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/examples/README.md)
+- [README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/README.md)
+- [strategy/QUICKSTART.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/QUICKSTART.md)
+- [strategy/nexus-strategy.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/nexus-strategy.md)
+- [strategy/playbooks/phase-3-build.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/strategy/playbooks/phase-3-build.md)
 
 </details>
 
@@ -3074,11 +3074,11 @@ If you run an interesting multi-agent exercise, consider adding it here. Good ex
 
 生成本页时使用的主要源文件：
 
-- [scripts/convert.sh](../../../project-repos/agency-agents/scripts/convert.sh)
-- [integrations/README.md](../../../project-repos/agency-agents/integrations/README.md)
-- [integrations/cursor/README.md](../../../project-repos/agency-agents/integrations/cursor/README.md)
-- [integrations/gemini-cli/README.md](../../../project-repos/agency-agents/integrations/gemini-cli/README.md)
-- [integrations/openclaw/README.md](../../../project-repos/agency-agents/integrations/openclaw/README.md)
+- [scripts/convert.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/convert.sh)
+- [integrations/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/README.md)
+- [integrations/cursor/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/cursor/README.md)
+- [integrations/gemini-cli/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/gemini-cli/README.md)
+- [integrations/openclaw/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/openclaw/README.md)
 
 </details>
 
@@ -3710,12 +3710,12 @@ HEREDOC
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/agency-agents/README.md)
-- [integrations/README.md](../../../project-repos/agency-agents/integrations/README.md)
-- [scripts/install.sh](../../../project-repos/agency-agents/scripts/install.sh)
-- [integrations/cursor/README.md](../../../project-repos/agency-agents/integrations/cursor/README.md)
-- [integrations/gemini-cli/README.md](../../../project-repos/agency-agents/integrations/gemini-cli/README.md)
-- [integrations/openclaw/README.md](../../../project-repos/agency-agents/integrations/openclaw/README.md)
+- [README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/README.md)
+- [integrations/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/README.md)
+- [scripts/install.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/install.sh)
+- [integrations/cursor/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/cursor/README.md)
+- [integrations/gemini-cli/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/gemini-cli/README.md)
+- [integrations/openclaw/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/integrations/openclaw/README.md)
 
 </details>
 
@@ -4426,10 +4426,10 @@ See [qwen/README.md](qwen/README.md) for details.
 
 生成本页时使用的主要源文件：
 
-- [scripts/i18n/README.md](../../../project-repos/agency-agents/scripts/i18n/README.md)
-- [scripts/i18n/agent-names-zh.json](../../../project-repos/agency-agents/scripts/i18n/agent-names-zh.json)
-- [scripts/i18n/localize-agents-zh.ps1](../../../project-repos/agency-agents/scripts/i18n/localize-agents-zh.ps1)
-- [scripts/install.sh](../../../project-repos/agency-agents/scripts/install.sh)
+- [scripts/i18n/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/i18n/README.md)
+- [scripts/i18n/agent-names-zh.json](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/i18n/agent-names-zh.json)
+- [scripts/i18n/localize-agents-zh.ps1](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/i18n/localize-agents-zh.ps1)
+- [scripts/install.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/install.sh)
 
 </details>
 
@@ -4616,11 +4616,11 @@ powershell -File scripts/i18n/localize-agents-zh.ps1 -TargetDirs @("C:\custom\pa
 
 生成本页时使用的主要源文件：
 
-- [scripts/lint-agents.sh](../../../project-repos/agency-agents/scripts/lint-agents.sh)
-- [.github/workflows/lint-agents.yml](../../../project-repos/agency-agents/.github/workflows/lint-agents.yml)
-- [CONTRIBUTING.md](../../../project-repos/agency-agents/CONTRIBUTING.md)
-- [SECURITY.md](../../../project-repos/agency-agents/SECURITY.md)
-- [testing/testing-reality-checker.md](../../../project-repos/agency-agents/testing/testing-reality-checker.md)
+- [scripts/lint-agents.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/lint-agents.sh)
+- [.github/workflows/lint-agents.yml](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/.github/workflows/lint-agents.yml)
+- [CONTRIBUTING.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/CONTRIBUTING.md)
+- [SECURITY.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/SECURITY.md)
+- [testing/testing-reality-checker.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/testing/testing-reality-checker.md)
 
 </details>
 

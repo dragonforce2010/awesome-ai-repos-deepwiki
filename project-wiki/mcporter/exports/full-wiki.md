@@ -46,11 +46,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/mcporter/README.md)
-- [package.json](../../../project-repos/mcporter/package.json)
-- [src/index.ts](../../../project-repos/mcporter/src/index.ts)
-- [src/cli.ts](../../../project-repos/mcporter/src/cli.ts)
-- [CHANGELOG.md](../../../project-repos/mcporter/CHANGELOG.md)
+- [README.md](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/README.md)
+- [package.json](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/package.json)
+- [src/index.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/index.ts)
+- [src/cli.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli.ts)
+- [CHANGELOG.md](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/CHANGELOG.md)
 
 </details>
 
@@ -1108,14 +1108,14 @@ Sources: [package.json:3](../../../project-repos/mcporter/package.json:3), [READ
 
 生成本页时使用的主要源文件：
 
-- [src/cli.ts](../../../project-repos/mcporter/src/cli.ts)
-- [src/runtime.ts](../../../project-repos/mcporter/src/runtime.ts)
-- [src/config.ts](../../../project-repos/mcporter/src/config.ts)
-- [src/server-proxy.ts](../../../project-repos/mcporter/src/server-proxy.ts)
-- [src/daemon/runtime-wrapper.ts](../../../project-repos/mcporter/src/daemon/runtime-wrapper.ts)
-- [src/daemon/host.ts](../../../project-repos/mcporter/src/daemon/host.ts)
-- [src/index.ts](../../../project-repos/mcporter/src/index.ts)
-- [src/runtime/transport.ts](../../../project-repos/mcporter/src/runtime/transport.ts)
+- [src/cli.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli.ts)
+- [src/runtime.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime.ts)
+- [src/config.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config.ts)
+- [src/server-proxy.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/server-proxy.ts)
+- [src/daemon/runtime-wrapper.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/runtime-wrapper.ts)
+- [src/daemon/host.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/host.ts)
+- [src/index.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/index.ts)
+- [src/runtime/transport.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/transport.ts)
 
 </details>
 
@@ -2724,14 +2724,14 @@ export async function loadServerDefinitions(options: LoadConfigOptions = {}): Pr
 
 生成本页时使用的主要源文件：
 
-- [src/config.ts](../../../project-repos/mcporter/src/config.ts)
-- [src/config-schema.ts](../../../project-repos/mcporter/src/config-schema.ts)
-- [src/config-normalize.ts](../../../project-repos/mcporter/src/config-normalize.ts)
-- [src/config/path-discovery.ts](../../../project-repos/mcporter/src/config/path-discovery.ts)
-- [src/config/read-config.ts](../../../project-repos/mcporter/src/config/read-config.ts)
-- [src/config/imports/external.ts](../../../project-repos/mcporter/src/config/imports/external.ts)
-- [src/config/imports/paths.ts](../../../project-repos/mcporter/src/config/imports/paths.ts)
-- [src/env.ts](../../../project-repos/mcporter/src/env.ts)
+- [src/config.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config.ts)
+- [src/config-schema.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config-schema.ts)
+- [src/config-normalize.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config-normalize.ts)
+- [src/config/path-discovery.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config/path-discovery.ts)
+- [src/config/read-config.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config/read-config.ts)
+- [src/config/imports/external.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config/imports/external.ts)
+- [src/config/imports/paths.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/config/imports/paths.ts)
+- [src/env.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/env.ts)
 
 </details>
 
@@ -4326,18 +4326,18 @@ export function normalizeServerEntry(
 
 生成本页时使用的主要源文件：
 
-- [src/runtime.ts](../../../project-repos/mcporter/src/runtime.ts)
-- [src/runtime/transport.ts](../../../project-repos/mcporter/src/runtime/transport.ts)
-- [src/runtime/oauth.ts](../../../project-repos/mcporter/src/runtime/oauth.ts)
-- [src/runtime/utils.ts](../../../project-repos/mcporter/src/runtime/utils.ts)
-- [src/runtime/errors.ts](../../../project-repos/mcporter/src/runtime/errors.ts)
-- [src/server-proxy.ts](../../../project-repos/mcporter/src/server-proxy.ts)
-- [src/result-utils.ts](../../../project-repos/mcporter/src/result-utils.ts)
-- [src/tool-filters.ts](../../../project-repos/mcporter/src/tool-filters.ts)
-- [src/error-classifier.ts](../../../project-repos/mcporter/src/error-classifier.ts)
-- [src/sdk-patches.ts](../../../project-repos/mcporter/src/sdk-patches.ts)
-- [src/runtime-process-utils.ts](../../../project-repos/mcporter/src/runtime-process-utils.ts)
-- [src/runtime-header-utils.ts](../../../project-repos/mcporter/src/runtime-header-utils.ts)
+- [src/runtime.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime.ts)
+- [src/runtime/transport.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/transport.ts)
+- [src/runtime/oauth.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/oauth.ts)
+- [src/runtime/utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/utils.ts)
+- [src/runtime/errors.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/errors.ts)
+- [src/server-proxy.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/server-proxy.ts)
+- [src/result-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/result-utils.ts)
+- [src/tool-filters.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/tool-filters.ts)
+- [src/error-classifier.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/error-classifier.ts)
+- [src/sdk-patches.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/sdk-patches.ts)
+- [src/runtime-process-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime-process-utils.ts)
+- [src/runtime-header-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime-header-utils.ts)
 
 </details>
 
@@ -6486,24 +6486,24 @@ export function createCallResult<T = unknown>(raw: T): CallResult<T> {
 
 生成本页时使用的主要源文件：
 
-- [src/cli.ts](../../../project-repos/mcporter/src/cli.ts)
-- [src/cli/cli-factory.ts](../../../project-repos/mcporter/src/cli/cli-factory.ts)
-- [src/cli/command-inference.ts](../../../project-repos/mcporter/src/cli/command-inference.ts)
-- [src/cli/list-command.ts](../../../project-repos/mcporter/src/cli/list-command.ts)
-- [src/cli/call-command.ts](../../../project-repos/mcporter/src/cli/call-command.ts)
-- [src/cli/auth-command.ts](../../../project-repos/mcporter/src/cli/auth-command.ts)
-- [src/cli/config-command.ts](../../../project-repos/mcporter/src/cli/config-command.ts)
-- [src/cli/daemon-command.ts](../../../project-repos/mcporter/src/cli/daemon-command.ts)
-- [src/cli/generate-cli-runner.ts](../../../project-repos/mcporter/src/cli/generate-cli-runner.ts)
-- [src/cli/inspect-cli-command.ts](../../../project-repos/mcporter/src/cli/inspect-cli-command.ts)
-- [src/cli/emit-ts-command.ts](../../../project-repos/mcporter/src/cli/emit-ts-command.ts)
-- [src/cli/help-output.ts](../../../project-repos/mcporter/src/cli/help-output.ts)
+- [src/cli.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli.ts)
+- [src/cli/cli-factory.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/cli-factory.ts)
+- [src/cli/command-inference.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/command-inference.ts)
+- [src/cli/list-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/list-command.ts)
+- [src/cli/call-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-command.ts)
+- [src/cli/auth-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/auth-command.ts)
+- [src/cli/config-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/config-command.ts)
+- [src/cli/daemon-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/daemon-command.ts)
+- [src/cli/generate-cli-runner.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate-cli-runner.ts)
+- [src/cli/inspect-cli-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/inspect-cli-command.ts)
+- [src/cli/emit-ts-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/emit-ts-command.ts)
+- [src/cli/help-output.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/help-output.ts)
 
 </details>
 
 # CLI 命令体系
 
-`mcporter` 的 CLI 不使用 `commander` 命令注册的常规模式来分发，而是手写了一个"路由 + 命令处理器"组合：[runCli](../../../project-repos/mcporter/src/cli.ts#L30-L207) 解析全局 flag 后，先把第一个 token 喂给 `inferCommandRouting` 决定真正的子命令，再调用对应的 handler。这一节把它的命令面、命令推断、help 与版本分支拆开讲清楚。
+`mcporter` 的 CLI 不使用 `commander` 命令注册的常规模式来分发，而是手写了一个"路由 + 命令处理器"组合：[runCli](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli.ts#L30-L207) 解析全局 flag 后，先把第一个 token 喂给 `inferCommandRouting` 决定真正的子命令，再调用对应的 handler。这一节把它的命令面、命令推断、help 与版本分支拆开讲清楚。
 
 ## 顶层命令面
 
@@ -8210,15 +8210,15 @@ function maybeReportConnectionIssue(server: string, tool: string, error: unknown
 
 生成本页时使用的主要源文件：
 
-- [src/cli/call-arguments.ts](../../../project-repos/mcporter/src/cli/call-arguments.ts)
-- [src/cli/call-argument-values.ts](../../../project-repos/mcporter/src/cli/call-argument-values.ts)
-- [src/cli/call-argument-expression.ts](../../../project-repos/mcporter/src/cli/call-argument-expression.ts)
-- [src/cli/call-expression-parser.ts](../../../project-repos/mcporter/src/cli/call-expression-parser.ts)
-- [src/cli/identifier-helpers.ts](../../../project-repos/mcporter/src/cli/identifier-helpers.ts)
-- [src/cli/adhoc-server.ts](../../../project-repos/mcporter/src/cli/adhoc-server.ts)
-- [src/cli/ephemeral-flags.ts](../../../project-repos/mcporter/src/cli/ephemeral-flags.ts)
-- [src/cli/ephemeral-target.ts](../../../project-repos/mcporter/src/cli/ephemeral-target.ts)
-- [src/cli/http-utils.ts](../../../project-repos/mcporter/src/cli/http-utils.ts)
+- [src/cli/call-arguments.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-arguments.ts)
+- [src/cli/call-argument-values.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-argument-values.ts)
+- [src/cli/call-argument-expression.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-argument-expression.ts)
+- [src/cli/call-expression-parser.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/call-expression-parser.ts)
+- [src/cli/identifier-helpers.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/identifier-helpers.ts)
+- [src/cli/adhoc-server.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/adhoc-server.ts)
+- [src/cli/ephemeral-flags.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/ephemeral-flags.ts)
+- [src/cli/ephemeral-target.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/ephemeral-target.ts)
+- [src/cli/http-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/http-utils.ts)
 
 </details>
 
@@ -10205,19 +10205,19 @@ async function prepareCallRequest(runtime: Runtime, args: string[]): Promise<Pre
 
 生成本页时使用的主要源文件：
 
-- [src/generate-cli.ts](../../../project-repos/mcporter/src/generate-cli.ts)
-- [src/cli/generate-cli-runner.ts](../../../project-repos/mcporter/src/cli/generate-cli-runner.ts)
-- [src/cli/generate/template.ts](../../../project-repos/mcporter/src/cli/generate/template.ts)
-- [src/cli/generate/template-data.ts](../../../project-repos/mcporter/src/cli/generate/template-data.ts)
-- [src/cli/generate/template-help.ts](../../../project-repos/mcporter/src/cli/generate/template-help.ts)
-- [src/cli/generate/tools.ts](../../../project-repos/mcporter/src/cli/generate/tools.ts)
-- [src/cli/generate/definition.ts](../../../project-repos/mcporter/src/cli/generate/definition.ts)
-- [src/cli/generate/artifacts.ts](../../../project-repos/mcporter/src/cli/generate/artifacts.ts)
-- [src/cli/generate/runtime.ts](../../../project-repos/mcporter/src/cli/generate/runtime.ts)
-- [src/cli/emit-ts-command.ts](../../../project-repos/mcporter/src/cli/emit-ts-command.ts)
-- [src/cli/emit-ts-templates.ts](../../../project-repos/mcporter/src/cli/emit-ts-templates.ts)
-- [src/cli-metadata.ts](../../../project-repos/mcporter/src/cli-metadata.ts)
-- [src/cli/inspect-cli-command.ts](../../../project-repos/mcporter/src/cli/inspect-cli-command.ts)
+- [src/generate-cli.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/generate-cli.ts)
+- [src/cli/generate-cli-runner.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate-cli-runner.ts)
+- [src/cli/generate/template.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/template.ts)
+- [src/cli/generate/template-data.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/template-data.ts)
+- [src/cli/generate/template-help.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/template-help.ts)
+- [src/cli/generate/tools.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/tools.ts)
+- [src/cli/generate/definition.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/definition.ts)
+- [src/cli/generate/artifacts.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/artifacts.ts)
+- [src/cli/generate/runtime.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/runtime.ts)
+- [src/cli/emit-ts-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/emit-ts-command.ts)
+- [src/cli/emit-ts-templates.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/emit-ts-templates.ts)
+- [src/cli-metadata.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli-metadata.ts)
+- [src/cli/inspect-cli-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/inspect-cli-command.ts)
 
 </details>
 
@@ -12074,17 +12074,17 @@ export async function handleGenerateCli(args: string[], globalFlags: FlagMap): P
 
 生成本页时使用的主要源文件：
 
-- [src/daemon/host.ts](../../../project-repos/mcporter/src/daemon/host.ts)
-- [src/daemon/client.ts](../../../project-repos/mcporter/src/daemon/client.ts)
-- [src/daemon/runtime-wrapper.ts](../../../project-repos/mcporter/src/daemon/runtime-wrapper.ts)
-- [src/daemon/protocol.ts](../../../project-repos/mcporter/src/daemon/protocol.ts)
-- [src/daemon/launch.ts](../../../project-repos/mcporter/src/daemon/launch.ts)
-- [src/daemon/paths.ts](../../../project-repos/mcporter/src/daemon/paths.ts)
-- [src/daemon/config-layers.ts](../../../project-repos/mcporter/src/daemon/config-layers.ts)
-- [src/daemon/log-context.ts](../../../project-repos/mcporter/src/daemon/log-context.ts)
-- [src/daemon/request-utils.ts](../../../project-repos/mcporter/src/daemon/request-utils.ts)
-- [src/lifecycle.ts](../../../project-repos/mcporter/src/lifecycle.ts)
-- [src/cli/daemon-command.ts](../../../project-repos/mcporter/src/cli/daemon-command.ts)
+- [src/daemon/host.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/host.ts)
+- [src/daemon/client.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/client.ts)
+- [src/daemon/runtime-wrapper.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/runtime-wrapper.ts)
+- [src/daemon/protocol.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/protocol.ts)
+- [src/daemon/launch.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/launch.ts)
+- [src/daemon/paths.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/paths.ts)
+- [src/daemon/config-layers.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/config-layers.ts)
+- [src/daemon/log-context.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/log-context.ts)
+- [src/daemon/request-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/request-utils.ts)
+- [src/lifecycle.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/lifecycle.ts)
+- [src/cli/daemon-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/daemon-command.ts)
 
 </details>
 
@@ -13625,15 +13625,15 @@ export function resolveDaemonPaths(configPath: string): DaemonPaths {
 
 生成本页时使用的主要源文件：
 
-- [src/oauth.ts](../../../project-repos/mcporter/src/oauth.ts)
-- [src/oauth-persistence.ts](../../../project-repos/mcporter/src/oauth-persistence.ts)
-- [src/oauth-vault.ts](../../../project-repos/mcporter/src/oauth-vault.ts)
-- [src/runtime/oauth.ts](../../../project-repos/mcporter/src/runtime/oauth.ts)
-- [src/runtime-oauth-support.ts](../../../project-repos/mcporter/src/runtime-oauth-support.ts)
-- [src/runtime-header-utils.ts](../../../project-repos/mcporter/src/runtime-header-utils.ts)
-- [src/runtime/transport.ts](../../../project-repos/mcporter/src/runtime/transport.ts)
-- [src/cli/auth-command.ts](../../../project-repos/mcporter/src/cli/auth-command.ts)
-- [src/cli/config/auth.ts](../../../project-repos/mcporter/src/cli/config/auth.ts)
+- [src/oauth.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/oauth.ts)
+- [src/oauth-persistence.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/oauth-persistence.ts)
+- [src/oauth-vault.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/oauth-vault.ts)
+- [src/runtime/oauth.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/oauth.ts)
+- [src/runtime-oauth-support.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime-oauth-support.ts)
+- [src/runtime-header-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime-header-utils.ts)
+- [src/runtime/transport.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/runtime/transport.ts)
+- [src/cli/auth-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/auth-command.ts)
+- [src/cli/config/auth.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/config/auth.ts)
 
 </details>
 
@@ -15199,16 +15199,16 @@ async function applyCachedOAuthHeaderIfAvailable(
 
 生成本页时使用的主要源文件：
 
-- [.github/workflows/ci.yml](../../../project-repos/mcporter/.github/workflows/ci.yml)
-- [package.json](../../../project-repos/mcporter/package.json)
-- [scripts/test-runner.js](../../../project-repos/mcporter/scripts/test-runner.js)
-- [tests/build-bun.test.ts](../../../project-repos/mcporter/tests/build-bun.test.ts)
-- [tests/daemon.integration.test.ts](../../../project-repos/mcporter/tests/daemon.integration.test.ts)
-- [tests/cli-call-execution.test.ts](../../../project-repos/mcporter/tests/cli-call-execution.test.ts)
-- [tests/live/deepwiki-live.test.ts](../../../project-repos/mcporter/tests/live/deepwiki-live.test.ts)
-- [src/cli/runtime-debug.ts](../../../project-repos/mcporter/src/cli/runtime-debug.ts)
-- [src/sdk-patches.ts](../../../project-repos/mcporter/src/sdk-patches.ts)
-- [src/logging.ts](../../../project-repos/mcporter/src/logging.ts)
+- [.github/workflows/ci.yml](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/.github/workflows/ci.yml)
+- [package.json](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/package.json)
+- [scripts/test-runner.js](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/scripts/test-runner.js)
+- [tests/build-bun.test.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/tests/build-bun.test.ts)
+- [tests/daemon.integration.test.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/tests/daemon.integration.test.ts)
+- [tests/cli-call-execution.test.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/tests/cli-call-execution.test.ts)
+- [tests/live/deepwiki-live.test.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/tests/live/deepwiki-live.test.ts)
+- [src/cli/runtime-debug.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/runtime-debug.ts)
+- [src/sdk-patches.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/sdk-patches.ts)
+- [src/logging.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/logging.ts)
 
 </details>
 

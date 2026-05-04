@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [cli-anything-plugin/HARNESS.md](../../../project-repos/CLI-Anything/cli-anything-plugin/HARNESS.md)
-- [cli-anything-plugin/repl_skin.py](../../../project-repos/CLI-Anything/cli-anything-plugin/repl_skin.py)
-- [blender/agent-harness/setup.py](../../../project-repos/CLI-Anything/blender/agent-harness/setup.py)
-- [gimp/agent-harness/GIMP.md](../../../project-repos/CLI-Anything/gimp/agent-harness/GIMP.md)
+- [cli-anything-plugin/HARNESS.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/HARNESS.md)
+- [cli-anything-plugin/repl_skin.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/repl_skin.py)
+- [blender/agent-harness/setup.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/blender/agent-harness/setup.py)
+- [gimp/agent-harness/GIMP.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/gimp/agent-harness/GIMP.md)
 
 </details>
 

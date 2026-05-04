@@ -79,7 +79,6 @@ We recommend using the Lark/Feishu bot connected to OpenClaw as a private conver
 
 <!-- source-snippets:end -->
 </details>
-
 ## 运行环境与版本约束
 
 `package.json` 要求 **Node.js >= 22**，使用 **pnpm** 作为 `packageManager`，构建入口为 `tsdown`，测试为 `vitest`。
@@ -147,7 +146,6 @@ Sources: [README.zh.md:47-57](../../../project-repos/openclaw-lark/README.zh.md#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 插件清单与对外形态
 
 `openclaw.plugin.json` 声明插件 `id`、支持的 `channels`、随包 `skills` 目录，以及 `channelConfigs.feishu` 的空 schema 占位（具体校验在运行时由代码侧 JSON Schema 提供，见频道配置章节）。
@@ -201,7 +199,6 @@ Sources: [openclaw.plugin.json:1-17](../../../project-repos/openclaw-lark/opencl
 
 <!-- source-snippets:end -->
 </details>
-
 ## 对外文档与贡献入口
 
 README 指向飞书官方使用指南文档链接；贡献指引与 Issue/PR 链接在英文 README 中给出（中文 README 同步贡献段落）。
@@ -242,7 +239,6 @@ For major changes, we recommend discussing with us first via an Issue.
 
 <!-- source-snippets:end -->
 </details>
-
 ## 阅读路线建议
 
 ```mermaid
@@ -318,7 +314,6 @@ Sources: [README.zh.md:11-28](../../../project-repos/openclaw-lark/README.zh.md#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](system-architecture.md)
@@ -423,7 +418,6 @@ const plugin = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 频道插件在架构中的位置
 
 `feishuPlugin` 实现 OpenClaw SDK 的 `ChannelPlugin`：包含 `meta`、`pairing`、`capabilities`、`agentPrompt`、`groups`、`reload`、`configSchema`、`config`、`security`、`setup`、`messaging`、`directory`、`outbound`、`threading` 等分区，是 **运行时编排** 的中枢之一。
@@ -497,7 +491,6 @@ export const feishuPlugin: ChannelPlugin<LarkAccount> = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 工具子系统的两条主线
 
 `registerOapiTools` 将「直接调用飞书 Open API」的工具成组注册（IM user、Calendar、Task、Bitable、Search、Drive、Wiki、Sheets、IM bot 等），与 MCP 文档工具区分。
@@ -607,7 +600,6 @@ export function registerOapiTools(api: OpenClawPluginApi): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 入站编排与出站适配
 
 `handler.ts` 将入站处理描述为 **七个阶段**（账号解析、事件解析、发送者富化、策略门禁、用户名预取、内容解析、Agent 分发），最终调用 `dispatch.ts`。
@@ -649,7 +641,6 @@ Sources: [src/messaging/inbound/handler.ts:5-14](../../../project-repos/openclaw
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)
@@ -768,7 +759,6 @@ const plugin = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 工具调用观测与日志
 
 `before_tool_call` / `after_tool_call` 对 `feishu_` 前缀工具记录结构化日志，并通过 `recordToolUseStart` / `recordToolUseEnd` 维护工具调用追踪数据，供卡片层消费。
@@ -827,7 +817,6 @@ import { sanitizeParamsForLog } from './src/card/reasoning-utils';
 
 <!-- source-snippets:end -->
 </details>
-
 ## CLI：`feishu-diagnose` 与 `openclaw-lark` bin
 
 插件向 OpenClaw CLI 注册 `feishu-diagnose`：支持无参诊断与 `--trace <messageId>` 追踪，可选 `--analyze` 做追踪分析。
@@ -938,7 +927,6 @@ try {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 聊天命令注册
 
 `registerCommands(api)` 负责在飞书会话中暴露 `/feishu_diagnose`、`/feishu_doctor`、`/feishu_auth`、`/feishu` 等命令（详见 `src/commands/index.ts` 头部注释与 i18n 文案表）。
@@ -967,7 +955,6 @@ Sources: [index.ts:204-205](../../../project-repos/openclaw-lark/index.ts#L204-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## package.json 中的 OpenClaw 扩展声明
 
 `package.json` 的 `openclaw` 字段声明 `extensions` 指向构建产物 `./dist/index.mjs`，并描述 `channel` 元数据（`id`、`label`、`docsPath`、`aliases`、`order` 等）与 `install` 提示（`npmSpec`、`localPath`、`defaultChoice`）。这与 `feishuPlugin.meta` 中的展示字段形成 **发布侧与运行时侧** 的双重来源，排查展示不一致时需要对照两处。
@@ -1023,7 +1010,6 @@ const meta = {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [系统架构](system-architecture.md)
@@ -1099,7 +1085,6 @@ Sources: [src/channel/plugin.ts:118-138](../../../project-repos/openclaw-lark/sr
 
 <!-- source-snippets:end -->
 </details>
-
 ## 群组工具策略与配置热更新
 
 `groups.resolveToolPolicy` 绑定到 `resolveFeishuGroupToolPolicy`（见入站策略相关模块）。
@@ -1129,7 +1114,6 @@ Sources: [src/channel/plugin.ts:145-153](../../../project-repos/openclaw-lark/sr
 
 <!-- source-snippets:end -->
 </details>
-
 ## JSON Schema：从 Zod 生成
 
 `config-schema.ts` 以 Zod 描述飞书配置（含 `dmPolicy`、`groupPolicy`、`connectionMode`、`replyMode` 等枚举/联合类型），为运行时校验与默认值提供单一来源；`plugin.ts` 将 `FEISHU_CONFIG_JSON_SCHEMA` 挂到 `configSchema.schema`。
@@ -1189,7 +1173,6 @@ const ChunkModeEnum = z.enum(['newline', 'paragraph', 'none']);
 
 <!-- source-snippets:end -->
 </details>
-
 ## 账号配置合并与隔离警告
 
 `config-adapter.ts` 集中处理「默认账号字段」与 `accounts` 命名账号的 patch 合并，并在流程中调用 `collectIsolationWarnings`，与多租户/多账号安全章节形成闭环。
@@ -1228,7 +1211,6 @@ import { collectIsolationWarnings } from '../core/security-check';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 出站适配器与 `channelData.feishu`
 
 `outbound.ts` 定义 `ChannelOutboundAdapter`，并文档化 `ReplyPayload.channelData.feishu` 可承载的飞书原生内容（卡片 v1/v2 等）。这是 **Agent 输出如何映射回飞书消息形态** 的关键契约文件。
@@ -1271,7 +1253,6 @@ Sources: [src/messaging/outbound/outbound.ts:3-12](../../../project-repos/opencl
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [OpenClaw 插件注册与运行时](plugin-openclaw-integration.md)
@@ -1363,7 +1344,6 @@ export async function handleFeishuMessage(params: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 多账号配置隔离（构造 account 级 cfg）
 
 `handler.ts` 在账号解析后构造 **account 级别的 `ClawdbotConfig` 视图**，用于让 SDK 的 `resolveGroupPolicy` / `resolveRequireMention` 等逻辑读取到 per-account 覆盖值（注释解释：SDK 默认从顶层 `cfg.channels.feishu` 读取，而多账号需要独立策略）。
@@ -1388,7 +1368,6 @@ Sources: [src/messaging/inbound/handler.ts:74-79](../../../project-repos/opencla
 
 <!-- source-snippets:end -->
 </details>
-
 ## 策略门禁：群与发送者两层模型
 
 `gate.ts` 文档化群聊访问 **Layer 1（哪些群允许）** 与 **Layer 2（群内哪些发送者允许）**，并说明与 Telegram 插件一致的两层模型；同时导出 `resolveRespondToMentionAll` 的优先级链（群配置 > 默认群配置 > 账号配置 > false）。
@@ -1448,7 +1427,6 @@ export function resolveRespondToMentionAll(params: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## Agent 分发：命令路径与评论目标等特殊分支
 
 `dispatch.ts` 说明其职责：构造 agent envelope、拼接历史上下文，并走系统命令 vs 正常流式/静态回复路径；并拆分 `dispatch-context.ts`、`dispatch-builders.ts`、`dispatch-commands.ts` 等模块。
@@ -1492,7 +1470,6 @@ Sources: [src/messaging/inbound/dispatch.ts:5-15](../../../project-repos/opencla
 
 <!-- source-snippets:end -->
 </details>
-
 ## 群组工具策略入口
 
 `policy.ts` 被 `handler.ts` 与 `gate.ts` 引用，用于解析群配置、allowlist 与 sender policy 上下文；与 `plugin.ts` 中 `groups.resolveToolPolicy` 形成「工具可见性/群策略」相关闭环。
@@ -1522,7 +1499,6 @@ import { resolveFeishuGroupConfig, splitLegacyGroupAllowFrom } from './policy';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [出站回复、卡片与流式输出](outbound-reply-cards.md)
@@ -1576,7 +1552,6 @@ import { isLikelyAbortText } from '../../channel/abort-detect';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 发送与交付分层
 
 ```mermaid
@@ -1627,7 +1602,6 @@ export {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 工具调用追踪：与插件钩子联动
 
 插件在 `before_tool_call` / `after_tool_call` 中调用 `recordToolUseStart` / `recordToolUseEnd`（见 `src/card/tool-use-trace-store.ts`），为卡片层提供一次 run 的工具时间线数据。
@@ -1668,7 +1642,6 @@ Sources: [index.ts:130-151](../../../project-repos/openclaw-lark/index.ts#L130-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## `channelData.feishu`：卡片版本与扩展载荷
 
 `outbound.ts` 详细说明 `ReplyPayload.channelData.feishu` 可携带卡片数据，并指出飞书服务端通过是否出现 `schema: "2.0"` 区分卡片版本（v1 Message Card vs v2 CardKit）。这与 README 中「交互式卡片 / 流式回复」的产品描述在机制层对齐。
@@ -1706,7 +1679,6 @@ Sources: [src/messaging/outbound/outbound.ts:30-38](../../../project-repos/openc
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [入站消息七阶段流水线](inbound-seven-stage-pipeline.md)
@@ -1811,7 +1783,6 @@ export function registerOapiTools(api: OpenClawPluginApi): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   subgraph OAPI["registerOapiTools"]
@@ -1839,7 +1810,6 @@ Sources: [index.ts:115-116](../../../project-repos/openclaw-lark/index.ts#L115-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## MCP 文档工具：与 OAPI 的边界
 
 `registerFeishuMcpDocTools` 明确：**仅保留 create/fetch/update**；`search/list` 已由 OAPI 版本替代，因此不再注册 MCP 侧对应工具。
@@ -1900,7 +1870,6 @@ export function registerFeishuMcpDocTools(api: OpenClawPluginApi): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## OAuth 与交互式用户提问
 
 `index.ts` 同时注册 `registerFeishuOAuthTool`（UAT device flow）与 `registerFeishuOAuthBatchAuthTool`（批量授权应用 scope），以及 `registerAskUserQuestionTool`（基于卡片的用户提问）。
@@ -1927,7 +1896,6 @@ Sources: [index.ts:121-128](../../../project-repos/openclaw-lark/index.ts#L121-L
 
 <!-- source-snippets:end -->
 </details>
-
 ## MCP 共享工具：endpoint 与配置解析
 
 `registerFeishuMcpDocTools` 从 `../shared` 引入 `extractMcpUrlFromConfig` 与 `setMcpEndpointOverride`，用于从 OpenClaw 配置提取 MCP URL 并在进程内缓存 override，供后续 MCP 工具调用链复用。
@@ -1997,7 +1965,6 @@ export interface McpToolConfig<T = unknown> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [OpenClaw 插件注册与运行时](plugin-openclaw-integration.md)
@@ -2069,7 +2036,6 @@ Sources: [src/messaging/inbound/gate.ts:11-24](../../../project-repos/openclaw-l
 
 <!-- source-snippets:end -->
 </details>
-
 ## 多账号隔离：从配置结构推断风险
 
 `checkMultiAccountIsolation` 在「启用账号数 > 1 且 appId 集合 > 1」时进入分析：
@@ -2127,7 +2093,6 @@ export function checkMultiAccountIsolation(cfg: ClawdbotConfig): IsolationStatus
 
 <!-- source-snippets:end -->
 </details>
-
 ## 私聊会话串混：`session.dmScope` 建议
 
 `needsDmScopeFix` 在多租户场景下检查 `session.dmScope` 是否为推荐的 `per-account-channel-peer`；`getDmScopeFixCommand` 返回 `openclaw config set ...` 修复命令字符串。
@@ -2165,7 +2130,6 @@ export function getDmScopeFixCommand(cfg: ClawdbotConfig): string | null {
 
 <!-- source-snippets:end -->
 </details>
-
 ## README 侧的用户责任与使用建议
 
 中文 README 明确要求用户理解风险，并建议将机器人作为 **私人对话助手**，避免拉入群聊或允许他人交互；同时声明默认安全保护与「不要主动放宽限制」的立场。
@@ -2189,7 +2153,6 @@ Sources: [README.zh.md:30-34](../../../project-repos/openclaw-lark/README.zh.md#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [入站消息七阶段流水线](inbound-seven-stage-pipeline.md)
@@ -2255,7 +2218,6 @@ Sources: [openclaw.plugin.json:1-17](../../../project-repos/openclaw-lark/opencl
 
 <!-- source-snippets:end -->
 </details>
-
 ## 技能包主题分布（按目录名）
 
 ```mermaid
@@ -2297,7 +2259,6 @@ Sources: [package.json:18-22](../../../project-repos/openclaw-lark/package.json#
 
 <!-- source-snippets:end -->
 </details>
-
 ## `feishu-bitable`：典型 Skill 结构
 
 `feishu-bitable/SKILL.md` 采用「执行前必读 → 意图索引表 → 核心约束 → 场景示例 → 常见错误码」结构，并引用同目录 `references/*.md` 作为深度附录（字段 property、记录值结构、完整示例）。
@@ -2348,7 +2309,6 @@ Sources: [skills/feishu-bitable/SKILL.md:14-45](../../../project-repos/openclaw-
 
 <!-- source-snippets:end -->
 </details>
-
 ## `feishu-channel-rules`：会话级始终激活规则
 
 该 skill 在 frontmatter 中声明 `alwaysActive: true`，用于约束模型在飞书会话中的输出风格（短句、少仪式感、注意飞书 Markdown 差异等）。
@@ -2385,7 +2345,6 @@ alwaysActive: true
 
 <!-- source-snippets:end -->
 </details>
-
 ## 本 DeepWiki 的中文技能副本
 
 为便于审阅，本输出目录同步提供 `project-wiki/openclaw-lark/skills/**/SKILL.md` 的中文副本（与源仓库技能一一对应；其中 `feishu-channel-rules` 将英文说明译为中文，其余以源文件中文内容为主）。
@@ -2483,7 +2442,6 @@ jobs:
 
 <!-- source-snippets:end -->
 </details>
-
 ```mermaid
 flowchart TD
   subgraph CI["GitHub Actions ci.yml"]
@@ -2530,7 +2488,6 @@ Sources: [package.json:31-40](../../../project-repos/openclaw-lark/package.json#
 
 <!-- source-snippets:end -->
 </details>
-
 ## 测试目录与类型
 
 `tests/` 下包含针对 dispatch、mention、tool-use trace、VC 事件、markdown 样式、账户合并等场景的单元测试文件（文件名即意图索引，例如 `dispatch-tool-use-init.test.ts`）。
@@ -2564,7 +2521,6 @@ const {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [OpenClaw 插件注册与运行时](plugin-openclaw-integration.md)

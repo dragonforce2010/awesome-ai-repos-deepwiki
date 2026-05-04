@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/GitNexus/ARCHITECTURE.md)
-- [gitnexus/package.json](../../../project-repos/GitNexus/gitnexus/package.json)
-- [gitnexus-web/package.json](../../../project-repos/GitNexus/gitnexus-web/package.json)
-- [gitnexus-shared/package.json](../../../project-repos/GitNexus/gitnexus-shared/package.json)
-- [RUNBOOK.md](../../../project-repos/GitNexus/RUNBOOK.md)
+- [ARCHITECTURE.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/ARCHITECTURE.md)
+- [gitnexus/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus/package.json)
+- [gitnexus-web/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-web/package.json)
+- [gitnexus-shared/package.json](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/gitnexus-shared/package.json)
+- [RUNBOOK.md](https://github.com/abhigyanpatwari/GitNexus/blob/7f8b01d5068495af2f4b07f1f91bc4c1e7b82fe0/RUNBOOK.md)
 
 </details>
 

@@ -42,12 +42,12 @@ stitch-design-cli/
 
 | 文件 | 作用 |
 |------|------|
-| [src/cli.ts](../../project-repos/stitch-design-cli/src/cli.ts) | Commander 入口与子命令实现 |
-| [src/config.ts](../../project-repos/stitch-design-cli/src/config.ts) | 配置读写与 env 合并 |
-| [src/stitch-client.ts](../../project-repos/stitch-design-cli/src/stitch-client.ts) | SDK 客户端工厂 |
-| [src/normalize.ts](../../project-repos/stitch-design-cli/src/normalize.ts) | 响应归一化与 follow-up 命令 |
-| [src/output.ts](../../project-repos/stitch-design-cli/src/output.ts) | JSON 信封与错误归一化 |
-| [docs/CONTRACT_V1.md](../../project-repos/stitch-design-cli/docs/CONTRACT_V1.md) | 机器可读行为契约 |
+| [src/cli.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/cli.ts) | Commander 入口与子命令实现 |
+| [src/config.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/config.ts) | 配置读写与 env 合并 |
+| [src/stitch-client.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/stitch-client.ts) | SDK 客户端工厂 |
+| [src/normalize.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/normalize.ts) | 响应归一化与 follow-up 命令 |
+| [src/output.ts](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/src/output.ts) | JSON 信封与错误归一化 |
+| [docs/CONTRACT_V1.md](https://github.com/danielgwilson/stitch-design-cli/blob/71e62a260313d7e3030f2d6a17067c455c7f4873/docs/CONTRACT_V1.md) | 机器可读行为契约 |
 
 ## 可继续追问的主题
 

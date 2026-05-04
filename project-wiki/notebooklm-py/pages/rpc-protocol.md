@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [src/notebooklm/rpc/__init__.py](../../../project-repos/notebooklm-py/src/notebooklm/rpc/__init__.py)
-- [src/notebooklm/rpc/encoder.py](../../../project-repos/notebooklm-py/src/notebooklm/rpc/encoder.py)
-- [src/notebooklm/rpc/decoder.py](../../../project-repos/notebooklm-py/src/notebooklm/rpc/decoder.py)
-- [src/notebooklm/rpc/types.py](../../../project-repos/notebooklm-py/src/notebooklm/rpc/types.py)
+- [src/notebooklm/rpc/__init__.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/rpc/__init__.py)
+- [src/notebooklm/rpc/encoder.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/rpc/encoder.py)
+- [src/notebooklm/rpc/decoder.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/rpc/decoder.py)
+- [src/notebooklm/rpc/types.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/rpc/types.py)
 
 </details>
 

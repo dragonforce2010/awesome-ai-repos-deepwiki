@@ -27,10 +27,10 @@ Language: zh-CN
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/easy-agent/README.md)
-- [README.zh-CN.md](../../../project-repos/easy-agent/README.zh-CN.md)
-- [package.json](../../../project-repos/easy-agent/package.json)
-- [tsconfig.json](../../../project-repos/easy-agent/tsconfig.json)
+- [README.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.md)
+- [README.zh-CN.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.zh-CN.md)
+- [package.json](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/package.json)
+- [tsconfig.json](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/tsconfig.json)
 
 </details>
 
@@ -597,14 +597,14 @@ The [`easy-agent/step/`](./step/) directory contains tutorial-friendly milestone
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/easy-agent/README.md)
-- [src/entrypoint/cli.ts](../../../project-repos/easy-agent/src/entrypoint/cli.ts)
-- [src/ui/App.tsx](../../../project-repos/easy-agent/src/ui/App.tsx)
-- [src/core/queryEngine.ts](../../../project-repos/easy-agent/src/core/queryEngine.ts)
-- [src/core/agenticLoop.ts](../../../project-repos/easy-agent/src/core/agenticLoop.ts)
-- [src/tools/index.ts](../../../project-repos/easy-agent/src/tools/index.ts)
-- [src/services/api/streaming.ts](../../../project-repos/easy-agent/src/services/api/streaming.ts)
-- [src/context/systemPrompt.ts](../../../project-repos/easy-agent/src/context/systemPrompt.ts)
+- [README.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.md)
+- [src/entrypoint/cli.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/entrypoint/cli.ts)
+- [src/ui/App.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/App.tsx)
+- [src/core/queryEngine.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/core/queryEngine.ts)
+- [src/core/agenticLoop.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/core/agenticLoop.ts)
+- [src/tools/index.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/index.ts)
+- [src/services/api/streaming.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/api/streaming.ts)
+- [src/context/systemPrompt.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/systemPrompt.ts)
 
 </details>
 
@@ -2421,14 +2421,14 @@ export function getToolsApiParams(mode?: PermissionMode): Anthropic.Tool[] {
 
 生成本页时使用的主要源文件：
 
-- [src/entrypoint/cli.ts](../../../project-repos/easy-agent/src/entrypoint/cli.ts)
-- [src/ui/App.tsx](../../../project-repos/easy-agent/src/ui/App.tsx)
-- [src/ui/hooks/useAgentSession.ts](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts)
-- [src/ui/hooks/usePromptInput.ts](../../../project-repos/easy-agent/src/ui/hooks/usePromptInput.ts)
-- [src/ui/components/ConversationView.tsx](../../../project-repos/easy-agent/src/ui/components/ConversationView.tsx)
-- [src/ui/components/StatusBar.tsx](../../../project-repos/easy-agent/src/ui/components/StatusBar.tsx)
-- [src/ui/components/TaskList.tsx](../../../project-repos/easy-agent/src/ui/components/TaskList.tsx)
-- [src/ui/components/TodoList.tsx](../../../project-repos/easy-agent/src/ui/components/TodoList.tsx)
+- [src/entrypoint/cli.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/entrypoint/cli.ts)
+- [src/ui/App.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/App.tsx)
+- [src/ui/hooks/useAgentSession.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/hooks/useAgentSession.ts)
+- [src/ui/hooks/usePromptInput.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/hooks/usePromptInput.ts)
+- [src/ui/components/ConversationView.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/components/ConversationView.tsx)
+- [src/ui/components/StatusBar.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/components/StatusBar.tsx)
+- [src/ui/components/TaskList.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/components/TaskList.tsx)
+- [src/ui/components/TodoList.tsx](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/components/TodoList.tsx)
 
 </details>
 
@@ -4107,13 +4107,13 @@ export function StatusBar({
 
 生成本页时使用的主要源文件：
 
-- [src/core/queryEngine.ts](../../../project-repos/easy-agent/src/core/queryEngine.ts)
-- [src/core/agenticLoop.ts](../../../project-repos/easy-agent/src/core/agenticLoop.ts)
-- [src/tools/index.ts](../../../project-repos/easy-agent/src/tools/index.ts)
-- [src/permissions/permissions.ts](../../../project-repos/easy-agent/src/permissions/permissions.ts)
-- [src/context/planAttachments.ts](../../../project-repos/easy-agent/src/context/planAttachments.ts)
-- [src/tools/enterPlanModeTool.ts](../../../project-repos/easy-agent/src/tools/enterPlanModeTool.ts)
-- [src/tools/exitPlanModeTool.ts](../../../project-repos/easy-agent/src/tools/exitPlanModeTool.ts)
+- [src/core/queryEngine.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/core/queryEngine.ts)
+- [src/core/agenticLoop.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/core/agenticLoop.ts)
+- [src/tools/index.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/index.ts)
+- [src/permissions/permissions.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/permissions/permissions.ts)
+- [src/context/planAttachments.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/planAttachments.ts)
+- [src/tools/enterPlanModeTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/enterPlanModeTool.ts)
+- [src/tools/exitPlanModeTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/exitPlanModeTool.ts)
 
 </details>
 
@@ -6007,12 +6007,12 @@ Sources: [src/core/queryEngine.ts:440-629](../../../project-repos/easy-agent/src
 
 生成本页时使用的主要源文件：
 
-- [src/services/api/client.ts](../../../project-repos/easy-agent/src/services/api/client.ts)
-- [src/services/api/streaming.ts](../../../project-repos/easy-agent/src/services/api/streaming.ts)
-- [src/types/message.ts](../../../project-repos/easy-agent/src/types/message.ts)
-- [src/utils/loadEnv.ts](../../../project-repos/easy-agent/src/utils/loadEnv.ts)
-- [src/utils/streamDebug.ts](../../../project-repos/easy-agent/src/utils/streamDebug.ts)
-- [src/scripts/test-streaming.ts](../../../project-repos/easy-agent/src/scripts/test-streaming.ts)
+- [src/services/api/client.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/api/client.ts)
+- [src/services/api/streaming.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/api/streaming.ts)
+- [src/types/message.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/message.ts)
+- [src/utils/loadEnv.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/utils/loadEnv.ts)
+- [src/utils/streamDebug.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/utils/streamDebug.ts)
+- [src/scripts/test-streaming.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-streaming.ts)
 
 </details>
 
@@ -7022,14 +7022,14 @@ async function main(): Promise<void> {
 
 生成本页时使用的主要源文件：
 
-- [src/tools/Tool.ts](../../../project-repos/easy-agent/src/tools/Tool.ts)
-- [src/tools/index.ts](../../../project-repos/easy-agent/src/tools/index.ts)
-- [src/tools/fileReadTool.ts](../../../project-repos/easy-agent/src/tools/fileReadTool.ts)
-- [src/tools/fileWriteTool.ts](../../../project-repos/easy-agent/src/tools/fileWriteTool.ts)
-- [src/tools/fileEditTool.ts](../../../project-repos/easy-agent/src/tools/fileEditTool.ts)
-- [src/tools/bashTool.ts](../../../project-repos/easy-agent/src/tools/bashTool.ts)
-- [src/tools/pathUtils.ts](../../../project-repos/easy-agent/src/tools/pathUtils.ts)
-- [src/permissions/permissions.ts](../../../project-repos/easy-agent/src/permissions/permissions.ts)
+- [src/tools/Tool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/Tool.ts)
+- [src/tools/index.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/index.ts)
+- [src/tools/fileReadTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/fileReadTool.ts)
+- [src/tools/fileWriteTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/fileWriteTool.ts)
+- [src/tools/fileEditTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/fileEditTool.ts)
+- [src/tools/bashTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/bashTool.ts)
+- [src/tools/pathUtils.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/pathUtils.ts)
+- [src/permissions/permissions.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/permissions/permissions.ts)
 
 </details>
 
@@ -8630,15 +8630,15 @@ export async function checkPermission(params: PermissionCheckParams): Promise<Pe
 
 生成本页时使用的主要源文件：
 
-- [src/services/mcp/config.ts](../../../project-repos/easy-agent/src/services/mcp/config.ts)
-- [src/services/mcp/bootstrap.ts](../../../project-repos/easy-agent/src/services/mcp/bootstrap.ts)
-- [src/services/mcp/client.ts](../../../project-repos/easy-agent/src/services/mcp/client.ts)
-- [src/services/mcp/fetchTools.ts](../../../project-repos/easy-agent/src/services/mcp/fetchTools.ts)
-- [src/services/mcp/registry.ts](../../../project-repos/easy-agent/src/services/mcp/registry.ts)
-- [src/services/mcp/mcpStringUtils.ts](../../../project-repos/easy-agent/src/services/mcp/mcpStringUtils.ts)
-- [src/services/mcp/normalization.ts](../../../project-repos/easy-agent/src/services/mcp/normalization.ts)
-- [src/types/mcp.ts](../../../project-repos/easy-agent/src/types/mcp.ts)
-- [src/scripts/test-mcp.ts](../../../project-repos/easy-agent/src/scripts/test-mcp.ts)
+- [src/services/mcp/config.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/config.ts)
+- [src/services/mcp/bootstrap.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/bootstrap.ts)
+- [src/services/mcp/client.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/client.ts)
+- [src/services/mcp/fetchTools.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/fetchTools.ts)
+- [src/services/mcp/registry.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/registry.ts)
+- [src/services/mcp/mcpStringUtils.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/mcpStringUtils.ts)
+- [src/services/mcp/normalization.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/mcp/normalization.ts)
+- [src/types/mcp.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/mcp.ts)
+- [src/scripts/test-mcp.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-mcp.ts)
 
 </details>
 
@@ -10209,15 +10209,15 @@ async function testNonBlockingBootstrap(): Promise<void> {
 
 生成本页时使用的主要源文件：
 
-- [src/services/skills/bootstrap.ts](../../../project-repos/easy-agent/src/services/skills/bootstrap.ts)
-- [src/services/skills/loadSkillsDir.ts](../../../project-repos/easy-agent/src/services/skills/loadSkillsDir.ts)
-- [src/services/skills/parseFrontmatter.ts](../../../project-repos/easy-agent/src/services/skills/parseFrontmatter.ts)
-- [src/services/skills/registry.ts](../../../project-repos/easy-agent/src/services/skills/registry.ts)
-- [src/services/skills/budget.ts](../../../project-repos/easy-agent/src/services/skills/budget.ts)
-- [src/services/skills/conditional.ts](../../../project-repos/easy-agent/src/services/skills/conditional.ts)
-- [src/tools/skillTool.ts](../../../project-repos/easy-agent/src/tools/skillTool.ts)
-- [src/types/types.ts](../../../project-repos/easy-agent/src/types/types.ts)
-- [src/scripts/test-skills.ts](../../../project-repos/easy-agent/src/scripts/test-skills.ts)
+- [src/services/skills/bootstrap.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/bootstrap.ts)
+- [src/services/skills/loadSkillsDir.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/loadSkillsDir.ts)
+- [src/services/skills/parseFrontmatter.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/parseFrontmatter.ts)
+- [src/services/skills/registry.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/registry.ts)
+- [src/services/skills/budget.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/budget.ts)
+- [src/services/skills/conditional.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/conditional.ts)
+- [src/tools/skillTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/skillTool.ts)
+- [src/types/types.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/types.ts)
+- [src/scripts/test-skills.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-skills.ts)
 
 </details>
 
@@ -11613,14 +11613,14 @@ async function main(): Promise<void> {
 
 生成本页时使用的主要源文件：
 
-- [src/context/systemPrompt.ts](../../../project-repos/easy-agent/src/context/systemPrompt.ts)
-- [src/context/claudeMd.ts](../../../project-repos/easy-agent/src/context/claudeMd.ts)
-- [src/context/memory/memdir.ts](../../../project-repos/easy-agent/src/context/memory/memdir.ts)
-- [src/context/memory/memoryTypes.ts](../../../project-repos/easy-agent/src/context/memory/memoryTypes.ts)
-- [src/context/autoCompact.ts](../../../project-repos/easy-agent/src/context/autoCompact.ts)
-- [src/context/compaction.ts](../../../project-repos/easy-agent/src/context/compaction.ts)
-- [src/context/planAttachments.ts](../../../project-repos/easy-agent/src/context/planAttachments.ts)
-- [src/utils/tokens.ts](../../../project-repos/easy-agent/src/utils/tokens.ts)
+- [src/context/systemPrompt.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/systemPrompt.ts)
+- [src/context/claudeMd.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/claudeMd.ts)
+- [src/context/memory/memdir.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/memory/memdir.ts)
+- [src/context/memory/memoryTypes.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/memory/memoryTypes.ts)
+- [src/context/autoCompact.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/autoCompact.ts)
+- [src/context/compaction.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/compaction.ts)
+- [src/context/planAttachments.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/planAttachments.ts)
+- [src/utils/tokens.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/utils/tokens.ts)
 
 </details>
 
@@ -13287,18 +13287,18 @@ export function getPlanModeExitAttachment(
 
 生成本页时使用的主要源文件：
 
-- [src/session/storage.ts](../../../project-repos/easy-agent/src/session/storage.ts)
-- [src/session/history.ts](../../../project-repos/easy-agent/src/session/history.ts)
-- [src/state/todoStore.ts](../../../project-repos/easy-agent/src/state/todoStore.ts)
-- [src/state/taskStore.ts](../../../project-repos/easy-agent/src/state/taskStore.ts)
-- [src/state/taskModeStore.ts](../../../project-repos/easy-agent/src/state/taskModeStore.ts)
-- [src/types/todo.ts](../../../project-repos/easy-agent/src/types/todo.ts)
-- [src/types/task.ts](../../../project-repos/easy-agent/src/types/task.ts)
-- [src/tools/todoWriteTool.ts](../../../project-repos/easy-agent/src/tools/todoWriteTool.ts)
-- [src/tools/taskCreateTool.ts](../../../project-repos/easy-agent/src/tools/taskCreateTool.ts)
-- [src/tools/taskUpdateTool.ts](../../../project-repos/easy-agent/src/tools/taskUpdateTool.ts)
-- [src/tools/taskListTool.ts](../../../project-repos/easy-agent/src/tools/taskListTool.ts)
-- [src/ui/hooks/useAgentSession.ts](../../../project-repos/easy-agent/src/ui/hooks/useAgentSession.ts)
+- [src/session/storage.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/session/storage.ts)
+- [src/session/history.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/session/history.ts)
+- [src/state/todoStore.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/state/todoStore.ts)
+- [src/state/taskStore.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/state/taskStore.ts)
+- [src/state/taskModeStore.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/state/taskModeStore.ts)
+- [src/types/todo.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/todo.ts)
+- [src/types/task.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/task.ts)
+- [src/tools/todoWriteTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/todoWriteTool.ts)
+- [src/tools/taskCreateTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/taskCreateTool.ts)
+- [src/tools/taskUpdateTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/taskUpdateTool.ts)
+- [src/tools/taskListTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/taskListTool.ts)
+- [src/ui/hooks/useAgentSession.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/ui/hooks/useAgentSession.ts)
 
 </details>
 
@@ -15424,18 +15424,18 @@ Sources: [src/ui/hooks/useAgentSession.ts:224-288](../../../project-repos/easy-a
 
 生成本页时使用的主要源文件：
 
-- [src/sandbox/types.ts](../../../project-repos/easy-agent/src/sandbox/types.ts)
-- [src/sandbox/settings.ts](../../../project-repos/easy-agent/src/sandbox/settings.ts)
-- [src/sandbox/availability.ts](../../../project-repos/easy-agent/src/sandbox/availability.ts)
-- [src/sandbox/shouldUseSandbox.ts](../../../project-repos/easy-agent/src/sandbox/shouldUseSandbox.ts)
-- [src/sandbox/buildProfile.ts](../../../project-repos/easy-agent/src/sandbox/buildProfile.ts)
-- [src/sandbox/macosProfile.ts](../../../project-repos/easy-agent/src/sandbox/macosProfile.ts)
-- [src/sandbox/wrapWithSandbox.ts](../../../project-repos/easy-agent/src/sandbox/wrapWithSandbox.ts)
-- [src/sandbox/violations.ts](../../../project-repos/easy-agent/src/sandbox/violations.ts)
-- [src/tools/bashTool.ts](../../../project-repos/easy-agent/src/tools/bashTool.ts)
-- [src/scripts/test-sandbox.ts](../../../project-repos/easy-agent/src/scripts/test-sandbox.ts)
-- [src/scripts/smoke-sandbox.ts](../../../project-repos/easy-agent/src/scripts/smoke-sandbox.ts)
-- [src/scripts/smoke-bash-sandbox.ts](../../../project-repos/easy-agent/src/scripts/smoke-bash-sandbox.ts)
+- [src/sandbox/types.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/types.ts)
+- [src/sandbox/settings.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/settings.ts)
+- [src/sandbox/availability.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/availability.ts)
+- [src/sandbox/shouldUseSandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/shouldUseSandbox.ts)
+- [src/sandbox/buildProfile.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/buildProfile.ts)
+- [src/sandbox/macosProfile.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/macosProfile.ts)
+- [src/sandbox/wrapWithSandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/wrapWithSandbox.ts)
+- [src/sandbox/violations.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/sandbox/violations.ts)
+- [src/tools/bashTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/bashTool.ts)
+- [src/scripts/test-sandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-sandbox.ts)
+- [src/scripts/smoke-sandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/smoke-sandbox.ts)
+- [src/scripts/smoke-bash-sandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/smoke-bash-sandbox.ts)
 
 </details>
 
@@ -17315,22 +17315,22 @@ async function main(): Promise<void> {
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/easy-agent/README.md)
-- [README.zh-CN.md](../../../project-repos/easy-agent/README.zh-CN.md)
-- [package.json](../../../project-repos/easy-agent/package.json)
-- [tsconfig.json](../../../project-repos/easy-agent/tsconfig.json)
-- [src/scripts/test-streaming.ts](../../../project-repos/easy-agent/src/scripts/test-streaming.ts)
-- [src/scripts/test-tools.ts](../../../project-repos/easy-agent/src/scripts/test-tools.ts)
-- [src/scripts/test-tasks.ts](../../../project-repos/easy-agent/src/scripts/test-tasks.ts)
-- [src/scripts/test-mcp.ts](../../../project-repos/easy-agent/src/scripts/test-mcp.ts)
-- [src/scripts/test-skills.ts](../../../project-repos/easy-agent/src/scripts/test-skills.ts)
-- [src/scripts/test-sandbox.ts](../../../project-repos/easy-agent/src/scripts/test-sandbox.ts)
-- [step/step1.js](../../../project-repos/easy-agent/step/step1.js)
-- [step/step4.js](../../../project-repos/easy-agent/step/step4.js)
-- [step/step8.js](../../../project-repos/easy-agent/step/step8.js)
-- [step/step16.js](../../../project-repos/easy-agent/step/step16.js)
-- [step/step17.js](../../../project-repos/easy-agent/step/step17.js)
-- [step/step18.js](../../../project-repos/easy-agent/step/step18.js)
+- [README.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.md)
+- [README.zh-CN.md](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/README.zh-CN.md)
+- [package.json](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/package.json)
+- [tsconfig.json](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/tsconfig.json)
+- [src/scripts/test-streaming.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-streaming.ts)
+- [src/scripts/test-tools.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-tools.ts)
+- [src/scripts/test-tasks.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-tasks.ts)
+- [src/scripts/test-mcp.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-mcp.ts)
+- [src/scripts/test-skills.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-skills.ts)
+- [src/scripts/test-sandbox.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-sandbox.ts)
+- [step/step1.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step1.js)
+- [step/step4.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step4.js)
+- [step/step8.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step8.js)
+- [step/step16.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step16.js)
+- [step/step17.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step17.js)
+- [step/step18.js](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/step/step18.js)
 
 </details>
 

@@ -3,9 +3,9 @@
 
 生成本页时使用的主要源文件：
 
-- [src/notebooklm/types.py](../../../project-repos/notebooklm-py/src/notebooklm/types.py)
-- [src/notebooklm/rpc/types.py](../../../project-repos/notebooklm-py/src/notebooklm/rpc/types.py)
-- [src/notebooklm/exceptions.py](../../../project-repos/notebooklm-py/src/notebooklm/exceptions.py)
+- [src/notebooklm/types.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/types.py)
+- [src/notebooklm/rpc/types.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/rpc/types.py)
+- [src/notebooklm/exceptions.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/exceptions.py)
 
 </details>
 

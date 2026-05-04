@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [CONTRIBUTING.md](../../../project-repos/agency-agents/CONTRIBUTING.md)
-- [engineering/engineering-frontend-developer.md](../../../project-repos/agency-agents/engineering/engineering-frontend-developer.md)
-- [testing/testing-reality-checker.md](../../../project-repos/agency-agents/testing/testing-reality-checker.md)
-- [specialized/agents-orchestrator.md](../../../project-repos/agency-agents/specialized/agents-orchestrator.md)
-- [scripts/lint-agents.sh](../../../project-repos/agency-agents/scripts/lint-agents.sh)
+- [CONTRIBUTING.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/CONTRIBUTING.md)
+- [engineering/engineering-frontend-developer.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/engineering/engineering-frontend-developer.md)
+- [testing/testing-reality-checker.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/testing/testing-reality-checker.md)
+- [specialized/agents-orchestrator.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/specialized/agents-orchestrator.md)
+- [scripts/lint-agents.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/lint-agents.sh)
 
 </details>
 

@@ -93,6 +93,304 @@ graph TD
 
 Sources: [README.md:1-110](../../../project-repos/lark-context/README.md#L1-L110), [package.json:1-36](../../../project-repos/lark-context/package.json#L1-L36), [src/cli.ts:1-49](../../../project-repos/lark-context/src/cli.ts#L1-L49), [skills/lark-context/SKILL.md:1-75](../../../project-repos/lark-context/skills/lark-context/SKILL.md#L1-L75)
 
+<details class="source-snippets">
+<summary>引用源码</summary>
+
+<!-- source-snippets:start -->
+
+#### `README.md:1-110`
+
+````markdown
+# lark-context
+
+把飞书（Lark）群聊和文档**持续沉淀**到本地，按 markdown 暴露给 Claude 使用。Claude 再按需把原始数据提炼成一套**两层记忆文件**，让后续任何对话都能默认带上这些上下文。
+
+- **持续拉取**：指定飞书群的增量消息（经 OAuth 用户身份通过官方 `lark-cli` 读取）
+- **手动喂文档**：粘贴飞书文档 URL，工具拉下来入库
+- **提炼**：由 **Claude 自己**（通过 skill workflow）完成，工具不调任何外部 LLM API（工作数据不出网）
+- **记忆结构**：`entities/`（稳定层：人 / 项目 / 术语 / 决策）+ `journal/`（流水层：按 ISO 周追加要点）
+- **分发**：TS CLI 走 bnpm，skill 走 `npx skills`
+
+## 架构一眼
+
+```
+飞书 ── lark-cli (OAuth) ──▶ @tiktok-fe/lark-context (TS CLI)
+                                   │
+                                   ├─ SQLite: ~/.lark-context/raw.db
+                                   └─ 暴露子命令给 Claude shell 调用
+                                           │
+                                           ▼
+                                  /lark-context <自然语言>
+                                 （skill 在 ~/.agents/skills/lark-context/）
+                                           │
+                                           ▼
+                                  Claude 读原始数据 → 写记忆文件
+                                           │
+                                           ▼
+                                  ~/.claude/lark-memory/
+                                      ├─ MEMORY.md (索引)
+                                      ├─ entities/（稳定层）
+                                      └─ journal/ （流水层）
+                                           ↓
+                                  ~/.claude/CLAUDE.md 里用 @ 引用
+                                           ↓
+                                  所有 Claude 对话默认拿到这份记忆
+```
+
+## 安装
+
+### 1. 装飞书官方 CLI（若未装）
+
+```bash
+bnpm i -g @larksuite/cli
+lark-cli auth login            # 浏览器 OAuth 授权
+```
+
+### 2. 装本项目的 TS CLI + skill
+
+```bash
+bnpm i -g @tiktok-fe/lark-context     # 安装 lark-context 二进制
+npx skills add <you>/lark-context -g -y   # 安装 /lark-context skill
+```
+
+替换 `<you>` 为实际的 GitHub 用户名 / 组织。
+
+### 3. 初始化
+
+```bash
+lark-context init                 # 创建 ~/.lark-context/ + ~/.claude/lark-memory/
+```
+
+### 4.（可选）让记忆索引默认加载
+
+```bash
+echo '@~/.claude/lark-memory/MEMORY.md' >> ~/.claude/CLAUDE.md
+```
+
+这样每个 Claude Code 会话启动时就自动加载 `MEMORY.md` 作为背景知识。
+
+## 使用
+
+全流程通过 Claude Code 对话触发，用自然语言就行：
+
+```
+You: /lark-context 看看我在哪些飞书群
+→ lark-context list-groups
+
+You: /lark-context 把「项目 Alpha 大群」加到关注
+→ lark-context groups add oc_xxxxx --alias project_alpha --name "项目 Alpha 大群"
+
+You: /lark-context 拉一下最近 3 天的消息
+→ lark-context pull --since 3d
+
+You: (粘贴飞书文档 URL) /lark-context 收下这个文档
+→ lark-context ingest-doc <url>
+
+You: /lark-context 沉淀一下
+→ skill 走 references/digest.md workflow：读 show 输出 → 更新 ~/.claude/lark-memory/
+
+You: /lark-context 我有啥 TODO
+→ skill 走 references/todo.md workflow：从 show 原文 + journal 抽候选
+
+You: 项目 Alpha 最近啥情况？
+→ Claude 直接用已加载的记忆回答；必要时再 `lark-context show --chat project_alpha --since 1w`
+```
+
+## CLI 命令一览
+
+| 命令 | 作用 |
+|---|---|
+| `lark-context init` | 初始化配置、目录、SQLite 库；检查 lark-cli 是否可用 |
+| `lark-context list-groups [--json]` | 列你所在的全部飞书群（chat_id + 名称 + 描述） |
+| `lark-context groups add <chat_id> [--alias X] [--name "Y"]` | 把群加到关注白名单 |
+| `lark-context groups list` / `groups rm <alias>` | 查看 / 移除白名单 |
+| `lark-context pull [--chat <alias>\|all] [--since 3d] [--thread-window 7d] [--no-threads]` | 拉消息（增量）+ 刷新话题回复；不给 `--chat` 就拉所有 enabled 的群 |
+| `lark-context ingest-doc <url-或-token>` | 拉单份飞书文档入库（支持 `/docx/` / `/wiki/` / `/docs/` 等） |
+| `lark-context show [--chat <alias>\|all] [--since 24h]` | 输出 markdown：聊天记录 + 新入库文档 |
+| `lark-context show-doc <token-或-url>` | 输出某份已入库文档的完整 markdown |
+
+**`--since` 格式**：`24h` / `3d` / `1w` / `90m`。仅作为**首次拉取**的时间下限；后续 `pull` 会从"上次见过的最新消息"继续，忽略 `--since`。skill workflow 默认首次拉新群用 `90d`（见 `skills/lark-context/references/pull.md`）。
+
+````
+
+#### `package.json:1-36`
+
+```json
+{
+  "name": "@tiktok-fe/lark-context",
+  "version": "0.1.0",
+  "description": "Feishu context bridge for Claude Code — pull Lark chats + docs into local memory",
+  "type": "module",
+  "bin": {
+    "lark-context": "./dist/cli.js"
+  },
+  "files": ["dist/*.js"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build && pnpm test"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "commander": "^12.0.0",
+    "execa": "^9.0.0",
+    "yaml": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.5.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["better-sqlite3"]
+  }
+}
+```
+
+#### `src/cli.ts:1-49`
+
+```typescript
+#!/usr/bin/env node
+import { Command } from "commander";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+import { registerGroups } from "./commands/groups.js";
+
+// Silently exit on EPIPE (pipes to head/less etc.), matching Python's Click behavior.
+for (const stream of [process.stdout, process.stderr]) {
+  stream.on("error", (err: NodeJS.ErrnoException) => {
+    if (err.code === "EPIPE") process.exit(0);
+    throw err;
+  });
+}
+
+import { registerIngestDoc } from "./commands/ingestDoc.js";
+import { registerInit } from "./commands/init.js";
+import { registerListGroups } from "./commands/listGroups.js";
+import { registerPull } from "./commands/pull.js";
+import { registerShow, registerShowDoc } from "./commands/show.js";
+
+// 从 package.json 动态读版本，避免手动维护两份的漂移
+function readPkgVersion(): string {
+  try {
+    const here = dirname(fileURLToPath(import.meta.url));
+    const pkg = JSON.parse(
+      readFileSync(join(here, "..", "package.json"), "utf8"),
+    );
+    return typeof pkg.version === "string" ? pkg.version : "0.0.0";
+  } catch {
+    return "0.0.0";
+  }
+}
+
+const program = new Command();
+program
+  .name("lark-context")
+  .description("Feishu context bridge for Claude Code")
+  .version(readPkgVersion());
+
+registerInit(program);
+registerListGroups(program);
+registerGroups(program);
+registerPull(program);
+registerIngestDoc(program);
+registerShow(program);
+registerShowDoc(program);
+
+program.parseAsync(process.argv);
+```
+
+#### `skills/lark-context/SKILL.md:1-75`
+
+````markdown
+---
+name: lark-context
+version: 0.1.0
+description: "飞书（Lark）上下文桥：把群聊和文档沉淀到本地记忆库给 Claude 长期使用。当用户说【沉淀/整理/记忆】某群、【拉/同步】消息、【收下/入库】文档、【最近聊了啥】、【我有什么 TODO】、查看/关注/取消关注飞书群时触发。"
+metadata:
+  requires:
+    bins: ["lark-context", "lark-cli"]
+  cliHelp: "lark-context --help"
+---
+
+# lark-context
+
+把飞书群聊和文档**持续沉淀**到本地，由 Claude 按需提炼成长期记忆。**用户通过 `/lark-context <自然语言>` 调用**，本 skill 负责把意图路由到对应 workflow。
+
+## 前置依赖
+
+用户必须已安装两个 CLI：
+- `lark-context` ≥ 0.1.0（本项目 CLI，`bnpm i -g @tiktok-fe/lark-context`）
+- `lark-cli`（飞书官方 CLI，`bnpm i -g @larksuite/cli` + `lark-cli auth login`）
+
+**版本自检**：在执行任何意图 workflow 前，第一步跑：
+
+```bash
+lark-context --version
+```
+
+若不达 `0.1.0` 起，提示用户：`bnpm i -g @tiktok-fe/lark-context@latest`，然后中止本次调用。
+
+若 `lark-cli` 未安装或未登录，`lark-context init` / 其他命令会直接报错；**透传**错误 stderr 给用户，**不要**尝试替用户登录（需要浏览器交互）。
+
+## 意图路由
+
+根据用户自然语言里的关键词选一条路径。**只路由一次**，不要在 references 之间来回跳。
+
+| 触发关键词 | 意图 | 处理方式 |
+|---|---|---|
+| 沉淀 / 整理 / 记忆 / digest | **digest** | 读 [`references/digest.md`](references/digest.md) 执行 workflow |
+| TODO / 待办 / 有啥事 / 该做啥 | **todo** | 读 [`references/todo.md`](references/todo.md) |
+| 拉 / 同步 / pull / 更新 | **pull** | 读 [`references/pull.md`](references/pull.md) |
+| 收下 / 入库 / 文档 URL（含 `/docx/` / `/wiki/` / `/docs/` / `/base/` / `/file/`） | **ingest-doc** | 读 [`references/ingest-doc.md`](references/ingest-doc.md) |
+| 看看 / 最近聊了 / show | **show** | 读 [`references/show.md`](references/show.md) |
+| 哪些群 / 列群 / 所有群 / 当前关注 | **list-groups / groups list** | 直接跑对应 CLI 命令，无需 reference |
+| 关注 / 加群 / 取消关注 / alias | **groups add/rm** | 直接跑 CLI，无需 reference |
+
+**意图不明**（用户说了一句模糊的话，比如"嗯嗯"或只贴一段描述）：不要猜。**反问**"你是想沉淀 / 拉消息 / 看 TODO / 看最近消息 / 管理群 中哪一项？"——用户澄清后再路由。
+
+**多意图同时出现**（比如"拉一下最近消息然后沉淀"）：**分两步**——先执行第一个（pull），完成后再执行第二个（digest）。不要试图合并。
+
+## 命令速查
+
+这张表供 Claude 在需要直接调 CLI 时查用（不命中意图路由表的情况）：
+
+```bash
+lark-context init                                   # 首次初始化（自动检查 lark-cli 可用性）
+lark-context list-groups                            # 列用户所在的全部飞书群
+lark-context groups add <chat_id> --alias X --name "Y"
+lark-context groups list
+lark-context groups rm <alias>
+lark-context pull [--chat <alias>|all] [--since 3d]
+lark-context ingest-doc <url-or-token>
+lark-context show [--chat <alias>|all] [--since 24h]
+lark-context show-doc <token-or-url>
+```
+
+**`--since` 格式**：`24h` / `3d` / `1w` / `90m`。仅作为**首次拉取**的时间下限；后续 `pull` 会从 DB 的 `last_cursor` 续拉，忽略 `--since`。
+
+**首次拉取新群**：默认 `--since 90d`（而非 CLI 的 "无默认"）。这是 skill workflow 的约定，不是 CLI 本身的行为。
+
+## 错误处理
+
+- **CLI 非零退出**：透传 stderr 给用户，**不编造解释**。若命中已知场景（lark-cli 未装 / 未 auth / chat 被踢出群），补一句操作建议；否则就是透传
+- **`references/` 文件缺失**：说明 skill 装坏了。提示用户：`npx skills update lark-context` 或重新 `npx skills add <repo> -g -y`
+- **网络错 / lark-cli 超时**：不自动重试（拉消息幂等但失败通常要手动判断），交给用户处理
+
+## 存储布局
+````
+
+<!-- source-snippets:end -->
+</details>
+
 ## 相关页面
 
 - [仓库地图与阅读路线](repository-map.md) — `src/`、`skills/`、`legacy/` 怎么分工  
@@ -241,7 +539,6 @@ V1 TS 版发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，推荐删除本目
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md) — 产品与隐私叙事  
@@ -463,7 +760,6 @@ registerShowDoc(program);
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [SQLite 数据模型](sqlite-data-model.md) — schema 与迁移  
@@ -770,7 +1066,6 @@ export async function runRm(opts: RmOpts): Promise<void> {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [增量拉取与话题回复](pull-and-threads.md) — 如何写入 messages  
@@ -1095,7 +1390,6 @@ export function registerPull(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [SQLite 数据模型](sqlite-data-model.md) — 表结构与索引  
@@ -1364,7 +1658,6 @@ export function registerIngestDoc(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [增量拉取与话题回复](pull-and-threads.md) — `--since` / thread window  
@@ -1653,7 +1946,6 @@ export function renderChatWindow(args: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [SQLite 数据模型](sqlite-data-model.md) — `docs` / `messages` 字段  
@@ -1899,7 +2191,6 @@ lark-context show [--chat <alias>|all] [--since <duration>]
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md) — 两层记忆故事  
@@ -1957,6 +2248,234 @@ README 在动机层面强调：**digest 阶段不调用外部 LLM API**，由 Cl
 README 将以下能力明确标为 V1 之外或限制：无自动 cron、首次拉取 200 页封顶、仅处理白名单群、部分老版文档类型、私聊/@消息/多维表格等留给 V2。阅读源码时应把这些当作**刻意的范围控制**，而不是遗漏实现。
 
 Sources: [src/config.ts:6-133](../../../project-repos/lark-context/src/config.ts#L6-L133), [README.md:120-185](../../../project-repos/lark-context/README.md#L120-L185), [src/commands/init.ts:27-44](../../../project-repos/lark-context/src/commands/init.ts#L27-L44)
+
+<details class="source-snippets">
+<summary>引用源码</summary>
+
+<!-- source-snippets:start -->
+
+#### `src/config.ts:6-133`
+
+```typescript
+export const ENV_CONFIG = "LARK_CONTEXT_CONFIG";
+export const ENV_MEMORY = "LARK_CONTEXT_MEMORY_DIR";
+export const ENV_RAW = "LARK_CONTEXT_RAW_DIR";
+
+/**
+ * Resolve the user's home directory, preferring $HOME so tests can redirect
+ * it. Matches Python's `Path.home()` semantics (which reads $HOME first).
+ */
+function homedir(): string {
+  return process.env.HOME ?? osHomedir();
+}
+
+export interface GroupConfig {
+  alias: string;
+  chatId: string;
+  name: string;
+  enabled: boolean;
+}
+
+export interface Config {
+  memoryDir: string;
+  rawDir: string;
+  groups: GroupConfig[];
+  configPath: string | null;
+}
+
+export interface LoadConfigOptions {
+  configPathOverride?: string;
+  memoryDirOverride?: string;
+  rawDirOverride?: string;
+}
+
+function expandHome(p: string): string {
+  if (p === "~") return homedir();
+  if (p.startsWith("~/") || p.startsWith(`~${sep}`)) {
+    return join(homedir(), p.slice(2));
+  }
+  return p;
+}
+
+function defaultConfigPath(): string {
+  const env = process.env[ENV_CONFIG];
+  if (env) return expandHome(env);
+  return join(homedir(), ".lark-context", "config.yaml");
+}
+
+function resolvePath(
+  flag: string | undefined,
+  envVar: string,
+  yamlValue: string | undefined,
+  fallback: string,
+): string {
+  if (flag !== undefined) return expandHome(flag);
+  const env = process.env[envVar];
+  if (env) return expandHome(env);
+  if (yamlValue) return expandHome(yamlValue);
+  return expandHome(fallback);
+}
+
+function parseGroups(raw: unknown): GroupConfig[] {
+  if (raw === null || raw === undefined) return [];
+  if (!Array.isArray(raw)) throw new Error("'groups' must be a list");
+  const seen = new Set<string>();
+  const out: GroupConfig[] = [];
+  for (const entry of raw) {
+    if (
+      !entry ||
+      typeof entry !== "object" ||
+      !("alias" in entry) ||
+      !("chat_id" in entry)
+    ) {
+      throw new Error(`bad group entry: ${JSON.stringify(entry)}`);
+    }
+    const e = entry as Record<string, unknown>;
+    const alias = String(e.alias);
+    if (seen.has(alias)) {
+      throw new Error(`duplicate alias "${alias}" in groups`);
+    }
+    seen.add(alias);
+    out.push({
+      alias,
+      chatId: String(e.chat_id),
+      name: typeof e.name === "string" ? e.name : "",
+      enabled: e.enabled === undefined ? true : Boolean(e.enabled),
+    });
+  }
+  return out;
+}
+
+export function loadConfig(opts: LoadConfigOptions = {}): Config {
+  const configPath = opts.configPathOverride
+    ? expandHome(opts.configPathOverride)
+    : defaultConfigPath();
+  let yamlData: Record<string, unknown> = {};
+  if (existsSync(configPath)) {
+    const parsed = YAML.parse(readFileSync(configPath, "utf8"));
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      yamlData = parsed as Record<string, unknown>;
+    }
+  }
+  const pathsRaw = yamlData.paths;
+  const pathsSection: Record<string, unknown> =
+    pathsRaw && typeof pathsRaw === "object" && !Array.isArray(pathsRaw)
+      ? (pathsRaw as Record<string, unknown>)
+      : {};
+  const memoryDir = resolvePath(
+    opts.memoryDirOverride,
+    ENV_MEMORY,
+    typeof pathsSection.memory_dir === "string"
+      ? pathsSection.memory_dir
+      : undefined,
+    "~/.claude/lark-memory",
+  );
+  const rawDir = resolvePath(
+    opts.rawDirOverride,
+    ENV_RAW,
+    typeof pathsSection.raw_dir === "string"
+      ? pathsSection.raw_dir
+      : undefined,
+    "~/.lark-context",
+... snippet truncated ...
+```
+
+#### `README.md:120-185`
+
+````markdown
+## 存储位置
+
+| 东西 | 默认路径 | 覆盖方式 |
+|---|---|---|
+| 配置文件 | `~/.lark-context/config.yaml` | `LARK_CONTEXT_CONFIG` 环境变量 |
+| 原始数据（SQLite） | `~/.lark-context/raw.db` | `LARK_CONTEXT_RAW_DIR` |
+| 记忆文件（给 Claude 读） | `~/.claude/lark-memory/` | `LARK_CONTEXT_MEMORY_DIR` |
+
+覆盖优先级（高 → 低）：CLI flag → 环境变量 → config.yaml → 默认值。
+
+## 配置文件示例
+
+```yaml
+paths:
+  memory_dir: ~/.claude/lark-memory
+  raw_dir: ~/.lark-context
+
+groups:
+  - alias: project_alpha
+    chat_id: oc_xxxxxxxx
+    name: 项目 Alpha 大群
+    enabled: true
+  - alias: infra_weekly
+    chat_id: oc_yyyyyyyy
+    name: 基础设施周会
+    enabled: true
+```
+
+## 记忆文件结构
+
+沉淀后的文件（由 Claude 在 `/lark-context 沉淀…` 里维护）：
+
+```
+~/.claude/lark-memory/
+├── MEMORY.md            # 始终加载的索引
+├── entities/            # 稳定层，Claude 做增量 merge（保留手工写的段）
+│   ├── people/<slug>.md
+│   ├── projects/<slug>.md
+│   ├── terms.md
+│   └── decisions/<slug>.md
+└── journal/             # 按 ISO 周的流水
+    └── 2026-W16.md
+```
+
+每个实体文件带统一 frontmatter：
+
+```yaml
+---
+name: 项目 Alpha
+type: project | person | decision | terms
+updated_at: 2026-04-19
+source_hints:
+  - chat:project_alpha
+  - doc:docxxxxxxxxxxxxxx
+---
+```
+
+## 已知限制 / V1 边界
+
+- **不自动调度**：全手动，你在 Claude 对话里触发。cron / hook 在 V2
+- **首次 pull 上限 200 页**（约 10k 条消息）：避免一下子拉爆。到上限会在 stderr 提示，再跑 `pull` 可续
+- **只读指定群聊**：私聊、@你的消息、多维表格、日历留给 V2
+- **文档仅支持新版 `/docx/` 等**：老版 `/docs/` 若被 lark-cli 拒绝（`Unsupported document type: Legacy document`），透传错误
+- **不拉回复线程**：只拉主消息流
+- **工具不调任何 LLM API**：提炼全部由 Claude Code 完成
+
+````
+
+#### `src/commands/init.ts:27-44`
+
+```typescript
+export async function runInit(opts: InitOpts = {}): Promise<void> {
+  if (opts.checkLarkCli !== false) {
+    const check = opts._pathCheck ?? defaultPathCheck;
+    if (!(await check())) {
+      throw new Error(
+        "`lark-cli` binary not found on PATH. Install: `bnpm i -g @larksuite/cli` (or `npm i -g @larksuite/cli`), then `lark-cli auth login`.",
+      );
+    }
+  }
+  const cfg = loadConfig({
+    configPathOverride: opts.configPathOverride,
+    memoryDirOverride: opts.memoryDirOverride,
+    rawDirOverride: opts.rawDirOverride,
+  });
+  mkdirSync(cfg.memoryDir, { recursive: true });
+  mkdirSync(cfg.rawDir, { recursive: true });
+  if (cfg.configPath && !existsSync(cfg.configPath)) {
+    const fresh: Config = {
+```
+
+<!-- source-snippets:end -->
+</details>
 
 ## 相关页面
 
@@ -2117,7 +2636,6 @@ V1 TS 版发布（`@tiktok-fe/lark-context` ≥ 0.1.0）后，推荐删除本目
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [CLI 命令参考](cli-commands.md) — 开发时如何本地 `pnpm link`  

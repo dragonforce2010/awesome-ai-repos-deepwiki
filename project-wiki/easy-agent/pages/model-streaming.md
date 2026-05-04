@@ -3,12 +3,12 @@
 
 生成本页时使用的主要源文件：
 
-- [src/services/api/client.ts](../../../project-repos/easy-agent/src/services/api/client.ts)
-- [src/services/api/streaming.ts](../../../project-repos/easy-agent/src/services/api/streaming.ts)
-- [src/types/message.ts](../../../project-repos/easy-agent/src/types/message.ts)
-- [src/utils/loadEnv.ts](../../../project-repos/easy-agent/src/utils/loadEnv.ts)
-- [src/utils/streamDebug.ts](../../../project-repos/easy-agent/src/utils/streamDebug.ts)
-- [src/scripts/test-streaming.ts](../../../project-repos/easy-agent/src/scripts/test-streaming.ts)
+- [src/services/api/client.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/api/client.ts)
+- [src/services/api/streaming.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/api/streaming.ts)
+- [src/types/message.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/message.ts)
+- [src/utils/loadEnv.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/utils/loadEnv.ts)
+- [src/utils/streamDebug.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/utils/streamDebug.ts)
+- [src/scripts/test-streaming.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-streaming.ts)
 
 </details>
 

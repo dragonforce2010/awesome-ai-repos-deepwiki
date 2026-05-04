@@ -55,7 +55,6 @@ Sources: [openclaw.plugin.json:1-17](../../../project-repos/openclaw-lark/opencl
 
 <!-- source-snippets:end -->
 </details>
-
 ## 技能包主题分布（按目录名）
 
 ```mermaid
@@ -97,7 +96,6 @@ Sources: [package.json:18-22](../../../project-repos/openclaw-lark/package.json#
 
 <!-- source-snippets:end -->
 </details>
-
 ## `feishu-bitable`：典型 Skill 结构
 
 `feishu-bitable/SKILL.md` 采用「执行前必读 → 意图索引表 → 核心约束 → 场景示例 → 常见错误码」结构，并引用同目录 `references/*.md` 作为深度附录（字段 property、记录值结构、完整示例）。
@@ -148,7 +146,6 @@ Sources: [skills/feishu-bitable/SKILL.md:14-45](../../../project-repos/openclaw-
 
 <!-- source-snippets:end -->
 </details>
-
 ## `feishu-channel-rules`：会话级始终激活规则
 
 该 skill 在 frontmatter 中声明 `alwaysActive: true`，用于约束模型在飞书会话中的输出风格（短句、少仪式感、注意飞书 Markdown 差异等）。
@@ -185,7 +182,6 @@ alwaysActive: true
 
 <!-- source-snippets:end -->
 </details>
-
 ## 本 DeepWiki 的中文技能副本
 
 为便于审阅，本输出目录同步提供 `project-wiki/openclaw-lark/skills/**/SKILL.md` 的中文副本（与源仓库技能一一对应；其中 `feishu-channel-rules` 将英文说明译为中文，其余以源文件中文内容为主）。

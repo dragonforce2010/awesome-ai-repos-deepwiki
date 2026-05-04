@@ -3,15 +3,15 @@
 
 生成本页时使用的主要源文件：
 
-- [assets/animations.jsx](../../../project-repos/huashu-design/assets/animations.jsx)
-- [references/animation-pitfalls.md](../../../project-repos/huashu-design/references/animation-pitfalls.md)
-- [references/animation-best-practices.md](../../../project-repos/huashu-design/references/animation-best-practices.md)
-- [references/video-export.md](../../../project-repos/huashu-design/references/video-export.md)
-- [references/audio-design-rules.md](../../../project-repos/huashu-design/references/audio-design-rules.md)
-- [references/sfx-library.md](../../../project-repos/huashu-design/references/sfx-library.md)
-- [scripts/render-video.js](../../../project-repos/huashu-design/scripts/render-video.js)
-- [scripts/convert-formats.sh](../../../project-repos/huashu-design/scripts/convert-formats.sh)
-- [scripts/add-music.sh](../../../project-repos/huashu-design/scripts/add-music.sh)
+- [assets/animations.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/animations.jsx)
+- [references/animation-pitfalls.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/animation-pitfalls.md)
+- [references/animation-best-practices.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/animation-best-practices.md)
+- [references/video-export.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/video-export.md)
+- [references/audio-design-rules.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/audio-design-rules.md)
+- [references/sfx-library.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/sfx-library.md)
+- [scripts/render-video.js](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/render-video.js)
+- [scripts/convert-formats.sh](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/convert-formats.sh)
+- [scripts/add-music.sh](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/scripts/add-music.sh)
 
 </details>
 

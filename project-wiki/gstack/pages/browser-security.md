@@ -3,13 +3,13 @@
 
 生成本页时使用的主要源文件：
 
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [browse/src/server.ts](../../../project-repos/gstack/browse/src/server.ts)
-- [browse/src/content-security.ts](../../../project-repos/gstack/browse/src/content-security.ts)
-- [browse/src/security.ts](../../../project-repos/gstack/browse/src/security.ts)
-- [browse/src/cdp-allowlist.ts](../../../project-repos/gstack/browse/src/cdp-allowlist.ts)
-- [browse/src/token-registry.ts](../../../project-repos/gstack/browse/src/token-registry.ts)
-- [browse/src/commands.ts](../../../project-repos/gstack/browse/src/commands.ts)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [browse/src/server.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/server.ts)
+- [browse/src/content-security.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/content-security.ts)
+- [browse/src/security.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/security.ts)
+- [browse/src/cdp-allowlist.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/cdp-allowlist.ts)
+- [browse/src/token-registry.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/token-registry.ts)
+- [browse/src/commands.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/commands.ts)
 
 </details>
 

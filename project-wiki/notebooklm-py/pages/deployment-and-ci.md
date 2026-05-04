@@ -3,12 +3,12 @@
 
 生成本页时使用的主要源文件：
 
-- [.github/workflows/test.yml](../../../project-repos/notebooklm-py/.github/workflows/test.yml)
-- [.github/workflows/publish.yml](../../../project-repos/notebooklm-py/.github/workflows/publish.yml)
-- [.github/workflows/rpc-health.yml](../../../project-repos/notebooklm-py/.github/workflows/rpc-health.yml)
-- [.github/workflows/verify-artifacts.yml](../../../project-repos/notebooklm-py/.github/workflows/verify-artifacts.yml)
-- [pyproject.toml](../../../project-repos/notebooklm-py/pyproject.toml)
-- [scripts/check_rpc_health.py](../../../project-repos/notebooklm-py/scripts/check_rpc_health.py)
+- [.github/workflows/test.yml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/.github/workflows/test.yml)
+- [.github/workflows/publish.yml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/.github/workflows/publish.yml)
+- [.github/workflows/rpc-health.yml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/.github/workflows/rpc-health.yml)
+- [.github/workflows/verify-artifacts.yml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/.github/workflows/verify-artifacts.yml)
+- [pyproject.toml](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/pyproject.toml)
+- [scripts/check_rpc_health.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/scripts/check_rpc_health.py)
 
 </details>
 

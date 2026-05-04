@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [CLAUDE.md](../../../project-repos/gstack/CLAUDE.md)
-- [package.json](../../../project-repos/gstack/package.json)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [CLAUDE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CLAUDE.md)
+- [package.json](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/package.json)
 - [00-repo-inventory.md](../00-repo-inventory.md)
 
 </details>

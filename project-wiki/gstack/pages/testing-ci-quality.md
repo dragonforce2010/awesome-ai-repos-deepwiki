@@ -3,13 +3,13 @@
 
 生成本页时使用的主要源文件：
 
-- [package.json](../../../project-repos/gstack/package.json)
-- [CONTRIBUTING.md](../../../project-repos/gstack/CONTRIBUTING.md)
-- [test/skill-validation.test.ts](../../../project-repos/gstack/test/skill-validation.test.ts)
-- [.github/workflows/skill-docs.yml](../../../project-repos/gstack/.github/workflows/skill-docs.yml)
-- [.github/workflows/evals.yml](../../../project-repos/gstack/.github/workflows/evals.yml)
-- [ARCHITECTURE.md](../../../project-repos/gstack/ARCHITECTURE.md)
-- [browse/src/cdp-allowlist.ts](../../../project-repos/gstack/browse/src/cdp-allowlist.ts)
+- [package.json](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/package.json)
+- [CONTRIBUTING.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/CONTRIBUTING.md)
+- [test/skill-validation.test.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/test/skill-validation.test.ts)
+- [.github/workflows/skill-docs.yml](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/.github/workflows/skill-docs.yml)
+- [.github/workflows/evals.yml](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/.github/workflows/evals.yml)
+- [ARCHITECTURE.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ARCHITECTURE.md)
+- [browse/src/cdp-allowlist.ts](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/browse/src/cdp-allowlist.ts)
 
 </details>
 

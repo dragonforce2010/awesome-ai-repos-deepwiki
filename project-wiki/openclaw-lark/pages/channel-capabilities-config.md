@@ -65,7 +65,6 @@ Sources: [src/channel/plugin.ts:118-138](../../../project-repos/openclaw-lark/sr
 
 <!-- source-snippets:end -->
 </details>
-
 ## 群组工具策略与配置热更新
 
 `groups.resolveToolPolicy` 绑定到 `resolveFeishuGroupToolPolicy`（见入站策略相关模块）。
@@ -95,7 +94,6 @@ Sources: [src/channel/plugin.ts:145-153](../../../project-repos/openclaw-lark/sr
 
 <!-- source-snippets:end -->
 </details>
-
 ## JSON Schema：从 Zod 生成
 
 `config-schema.ts` 以 Zod 描述飞书配置（含 `dmPolicy`、`groupPolicy`、`connectionMode`、`replyMode` 等枚举/联合类型），为运行时校验与默认值提供单一来源；`plugin.ts` 将 `FEISHU_CONFIG_JSON_SCHEMA` 挂到 `configSchema.schema`。
@@ -155,7 +153,6 @@ const ChunkModeEnum = z.enum(['newline', 'paragraph', 'none']);
 
 <!-- source-snippets:end -->
 </details>
-
 ## 账号配置合并与隔离警告
 
 `config-adapter.ts` 集中处理「默认账号字段」与 `accounts` 命名账号的 patch 合并，并在流程中调用 `collectIsolationWarnings`，与多租户/多账号安全章节形成闭环。
@@ -194,7 +191,6 @@ import { collectIsolationWarnings } from '../core/security-check';
 
 <!-- source-snippets:end -->
 </details>
-
 ## 出站适配器与 `channelData.feishu`
 
 `outbound.ts` 定义 `ChannelOutboundAdapter`，并文档化 `ReplyPayload.channelData.feishu` 可承载的飞书原生内容（卡片 v1/v2 等）。这是 **Agent 输出如何映射回飞书消息形态** 的关键契约文件。
@@ -237,7 +233,6 @@ Sources: [src/messaging/outbound/outbound.ts:3-12](../../../project-repos/opencl
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [OpenClaw 插件注册与运行时](plugin-openclaw-integration.md)

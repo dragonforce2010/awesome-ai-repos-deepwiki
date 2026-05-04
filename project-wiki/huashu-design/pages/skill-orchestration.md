@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
-- [references/workflow.md](../../../project-repos/huashu-design/references/workflow.md)
-- [references/design-context.md](../../../project-repos/huashu-design/references/design-context.md)
-- [references/content-guidelines.md](../../../project-repos/huashu-design/references/content-guidelines.md)
-- [test-prompts.json](../../../project-repos/huashu-design/test-prompts.json)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
+- [references/workflow.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/workflow.md)
+- [references/design-context.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/design-context.md)
+- [references/content-guidelines.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/content-guidelines.md)
+- [test-prompts.json](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/test-prompts.json)
 
 </details>
 

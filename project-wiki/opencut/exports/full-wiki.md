@@ -1805,7 +1805,6 @@ export async function runStorageMigrations({
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [时间线、重定时与更新管线](timeline-update-pipeline.md)
@@ -1968,7 +1967,6 @@ export const accounts = pgTable("accounts", {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [Web 应用（Next.js）](web-nextjs-stack.md)
@@ -2157,7 +2155,6 @@ RUN bun run build
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [项目概览](overview.md)

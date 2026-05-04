@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [scripts/i18n/README.md](../../../project-repos/agency-agents/scripts/i18n/README.md)
-- [scripts/i18n/agent-names-zh.json](../../../project-repos/agency-agents/scripts/i18n/agent-names-zh.json)
-- [scripts/i18n/localize-agents-zh.ps1](../../../project-repos/agency-agents/scripts/i18n/localize-agents-zh.ps1)
-- [scripts/install.sh](../../../project-repos/agency-agents/scripts/install.sh)
+- [scripts/i18n/README.md](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/i18n/README.md)
+- [scripts/i18n/agent-names-zh.json](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/i18n/agent-names-zh.json)
+- [scripts/i18n/localize-agents-zh.ps1](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/i18n/localize-agents-zh.ps1)
+- [scripts/install.sh](https://github.com/msitarzewski/agency-agents/blob/783f6a72bfd7f3135700ac273c619d92821b419a/scripts/install.sh)
 
 </details>
 

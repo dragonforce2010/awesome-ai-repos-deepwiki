@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/CLI-Anything/README.md)
-- [README_CN.md](../../../project-repos/CLI-Anything/README_CN.md)
-- [CONTRIBUTING.md](../../../project-repos/CLI-Anything/CONTRIBUTING.md)
-- [registry.json](../../../project-repos/CLI-Anything/registry.json)
-- [LICENSE](../../../project-repos/CLI-Anything/LICENSE)
+- [README.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/README.md)
+- [README_CN.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/README_CN.md)
+- [CONTRIBUTING.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/CONTRIBUTING.md)
+- [registry.json](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/registry.json)
+- [LICENSE](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/LICENSE)
 
 </details>
 
@@ -791,7 +791,7 @@ flowchart TD
 | 第 4 步 | SKILL.md 规范 | 学习如何为 Agent 编写能力索引 |
 | 第 5 步 | CLI-Hub 使用指南 | 掌握封装的发布与安装流程 |
 | 第 6 步 | 测试框架 | 了解如何为新封装编写测试 |
-| 第 7 步 | [CONTRIBUTING.md](../../../project-repos/CLI-Anything/CONTRIBUTING.md) | 提交 PR 的完整规范 |
+| 第 7 步 | [CONTRIBUTING.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/CONTRIBUTING.md) | 提交 PR 的完整规范 |
 
 Sources: [CONTRIBUTING.md](../../../project-repos/CLI-Anything/CONTRIBUTING.md)  [README.md:260-300](../../../project-repos/CLI-Anything/README.md#L260-L300)
 

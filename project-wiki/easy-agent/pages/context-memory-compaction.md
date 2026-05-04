@@ -3,14 +3,14 @@
 
 生成本页时使用的主要源文件：
 
-- [src/context/systemPrompt.ts](../../../project-repos/easy-agent/src/context/systemPrompt.ts)
-- [src/context/claudeMd.ts](../../../project-repos/easy-agent/src/context/claudeMd.ts)
-- [src/context/memory/memdir.ts](../../../project-repos/easy-agent/src/context/memory/memdir.ts)
-- [src/context/memory/memoryTypes.ts](../../../project-repos/easy-agent/src/context/memory/memoryTypes.ts)
-- [src/context/autoCompact.ts](../../../project-repos/easy-agent/src/context/autoCompact.ts)
-- [src/context/compaction.ts](../../../project-repos/easy-agent/src/context/compaction.ts)
-- [src/context/planAttachments.ts](../../../project-repos/easy-agent/src/context/planAttachments.ts)
-- [src/utils/tokens.ts](../../../project-repos/easy-agent/src/utils/tokens.ts)
+- [src/context/systemPrompt.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/systemPrompt.ts)
+- [src/context/claudeMd.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/claudeMd.ts)
+- [src/context/memory/memdir.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/memory/memdir.ts)
+- [src/context/memory/memoryTypes.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/memory/memoryTypes.ts)
+- [src/context/autoCompact.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/autoCompact.ts)
+- [src/context/compaction.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/compaction.ts)
+- [src/context/planAttachments.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/context/planAttachments.ts)
+- [src/utils/tokens.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/utils/tokens.ts)
 
 </details>
 

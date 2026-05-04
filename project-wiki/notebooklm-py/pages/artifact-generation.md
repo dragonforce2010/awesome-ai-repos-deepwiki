@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [src/notebooklm/_artifacts.py](../../../project-repos/notebooklm-py/src/notebooklm/_artifacts.py)
-- [src/notebooklm/cli/generate.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/generate.py)
-- [src/notebooklm/cli/download.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/download.py)
-- [src/notebooklm/cli/download_helpers.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/download_helpers.py)
+- [src/notebooklm/_artifacts.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_artifacts.py)
+- [src/notebooklm/cli/generate.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/generate.py)
+- [src/notebooklm/cli/download.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/download.py)
+- [src/notebooklm/cli/download_helpers.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/download_helpers.py)
 
 </details>
 

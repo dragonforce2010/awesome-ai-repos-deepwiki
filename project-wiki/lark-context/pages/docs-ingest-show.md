@@ -277,7 +277,6 @@ export function renderChatWindow(args: {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [SQLite 数据模型](sqlite-data-model.md) — `docs` / `messages` 字段  

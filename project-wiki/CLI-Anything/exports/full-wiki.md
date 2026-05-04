@@ -30,11 +30,11 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/CLI-Anything/README.md)
-- [README_CN.md](../../../project-repos/CLI-Anything/README_CN.md)
-- [CONTRIBUTING.md](../../../project-repos/CLI-Anything/CONTRIBUTING.md)
-- [registry.json](../../../project-repos/CLI-Anything/registry.json)
-- [LICENSE](../../../project-repos/CLI-Anything/LICENSE)
+- [README.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/README.md)
+- [README_CN.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/README_CN.md)
+- [CONTRIBUTING.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/CONTRIBUTING.md)
+- [registry.json](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/registry.json)
+- [LICENSE](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/LICENSE)
 
 </details>
 
@@ -818,7 +818,7 @@ flowchart TD
 | 第 4 步 | SKILL.md 规范 | 学习如何为 Agent 编写能力索引 |
 | 第 5 步 | CLI-Hub 使用指南 | 掌握封装的发布与安装流程 |
 | 第 6 步 | 测试框架 | 了解如何为新封装编写测试 |
-| 第 7 步 | [CONTRIBUTING.md](../../../project-repos/CLI-Anything/CONTRIBUTING.md) | 提交 PR 的完整规范 |
+| 第 7 步 | [CONTRIBUTING.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/CONTRIBUTING.md) | 提交 PR 的完整规范 |
 
 Sources: [CONTRIBUTING.md](../../../project-repos/CLI-Anything/CONTRIBUTING.md)  [README.md:260-300](../../../project-repos/CLI-Anything/README.md#L260-L300)
 
@@ -1014,12 +1014,12 @@ Once the extension is loaded, the following commands are available:
 
 生成本页时使用的主要源文件：
 
-- [cli-anything-plugin/HARNESS.md](../../../project-repos/CLI-Anything/cli-anything-plugin/HARNESS.md)
-- [cli-hub/cli_hub/cli.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/cli.py)
-- [cli-hub/cli_hub/registry.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/registry.py)
-- [cli-hub/cli_hub/installer.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/installer.py)
-- [cli-anything-plugin/repl_skin.py](../../../project-repos/CLI-Anything/cli-anything-plugin/repl_skin.py)
-- [registry.json](../../../project-repos/CLI-Anything/registry.json)
+- [cli-anything-plugin/HARNESS.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/HARNESS.md)
+- [cli-hub/cli_hub/cli.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/cli.py)
+- [cli-hub/cli_hub/registry.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/registry.py)
+- [cli-hub/cli_hub/installer.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/installer.py)
+- [cli-anything-plugin/repl_skin.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/repl_skin.py)
+- [registry.json](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/registry.json)
 
 </details>
 
@@ -4614,10 +4614,10 @@ Sources: [HARNESS.md — Directory Structure](../../../project-repos/CLI-Anythin
 
 生成本页时使用的主要源文件：
 
-- [cli-anything-plugin/HARNESS.md](../../../project-repos/CLI-Anything/cli-anything-plugin/HARNESS.md)
-- [cli-anything-plugin/repl_skin.py](../../../project-repos/CLI-Anything/cli-anything-plugin/repl_skin.py)
-- [blender/agent-harness/setup.py](../../../project-repos/CLI-Anything/blender/agent-harness/setup.py)
-- [gimp/agent-harness/GIMP.md](../../../project-repos/CLI-Anything/gimp/agent-harness/GIMP.md)
+- [cli-anything-plugin/HARNESS.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/HARNESS.md)
+- [cli-anything-plugin/repl_skin.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/repl_skin.py)
+- [blender/agent-harness/setup.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/blender/agent-harness/setup.py)
+- [gimp/agent-harness/GIMP.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/gimp/agent-harness/GIMP.md)
 
 </details>
 
@@ -5332,13 +5332,13 @@ Sources: [HARNESS.md:296-305](../../../project-repos/CLI-Anything/HARNESS.md#L29
 
 生成本页时使用的主要源文件：
 
-- [cli-hub/cli_hub/cli.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/cli.py)
-- [cli-hub/cli_hub/registry.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/registry.py)
-- [cli-hub/cli_hub/installer.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/installer.py)
-- [cli-hub/cli_hub/analytics.py](../../../project-repos/CLI-Anything/cli-hub/cli_hub/analytics.py)
-- [cli-hub/setup.py](../../../project-repos/CLI-Anything/cli-hub/setup.py)
-- [registry.json](../../../project-repos/CLI-Anything/registry.json)
-- [public_registry.json](../../../project-repos/CLI-Anything/public_registry.json)
+- [cli-hub/cli_hub/cli.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/cli.py)
+- [cli-hub/cli_hub/registry.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/registry.py)
+- [cli-hub/cli_hub/installer.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/installer.py)
+- [cli-hub/cli_hub/analytics.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/cli_hub/analytics.py)
+- [cli-hub/setup.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub/setup.py)
+- [registry.json](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/registry.json)
+- [public_registry.json](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/public_registry.json)
 
 </details>
 
@@ -5817,15 +5817,15 @@ CLI-Hub 的所有持久化数据均存放在用户主目录的 `.cli-hub/` 下�
 
 生成本页时使用的主要源文件：
 
-- [cli-anything-plugin/skill_generator.py](../../../project-repos/CLI-Anything/cli-anything-plugin/skill_generator.py)
-- [cli-anything-plugin/templates/SKILL.md.template](../../../project-repos/CLI-Anything/cli-anything-plugin/templates/SKILL.md.template)
-- [skills/cli-anything-blender/SKILL.md](../../../project-repos/CLI-Anything/skills/cli-anything-blender/SKILL.md)
-- [skills/README.md](../../../project-repos/CLI-Anything/skills/README.md)
-- [cli-hub-meta-skill/SKILL.md](../../../project-repos/CLI-Anything/cli-hub-meta-skill/SKILL.md)
-- [.github/workflows/check-root-skills.yml](../../../project-repos/CLI-Anything/.github/workflows/check-root-skills.yml)
-- [.github/scripts/validate_root_skills.py](../../../project-repos/CLI-Anything/.github/scripts/validate_root_skills.py)
-- [.github/scripts/sync_root_skills.py](../../../project-repos/CLI-Anything/.github/scripts/sync_root_skills.py)
-- [.github/scripts/generate_meta_skill.py](../../../project-repos/CLI-Anything/.github/scripts/generate_meta_skill.py)
+- [cli-anything-plugin/skill_generator.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/skill_generator.py)
+- [cli-anything-plugin/templates/SKILL.md.template](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/templates/SKILL.md.template)
+- [skills/cli-anything-blender/SKILL.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/skills/cli-anything-blender/SKILL.md)
+- [skills/README.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/skills/README.md)
+- [cli-hub-meta-skill/SKILL.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub-meta-skill/SKILL.md)
+- [.github/workflows/check-root-skills.yml](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/.github/workflows/check-root-skills.yml)
+- [.github/scripts/validate_root_skills.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/.github/scripts/validate_root_skills.py)
+- [.github/scripts/sync_root_skills.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/.github/scripts/sync_root_skills.py)
+- [.github/scripts/generate_meta_skill.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/.github/scripts/generate_meta_skill.py)
 
 </details>
 

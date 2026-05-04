@@ -3,15 +3,15 @@
 
 生成本页时使用的主要源文件：
 
-- [src/services/skills/bootstrap.ts](../../../project-repos/easy-agent/src/services/skills/bootstrap.ts)
-- [src/services/skills/loadSkillsDir.ts](../../../project-repos/easy-agent/src/services/skills/loadSkillsDir.ts)
-- [src/services/skills/parseFrontmatter.ts](../../../project-repos/easy-agent/src/services/skills/parseFrontmatter.ts)
-- [src/services/skills/registry.ts](../../../project-repos/easy-agent/src/services/skills/registry.ts)
-- [src/services/skills/budget.ts](../../../project-repos/easy-agent/src/services/skills/budget.ts)
-- [src/services/skills/conditional.ts](../../../project-repos/easy-agent/src/services/skills/conditional.ts)
-- [src/tools/skillTool.ts](../../../project-repos/easy-agent/src/tools/skillTool.ts)
-- [src/types/types.ts](../../../project-repos/easy-agent/src/types/types.ts)
-- [src/scripts/test-skills.ts](../../../project-repos/easy-agent/src/scripts/test-skills.ts)
+- [src/services/skills/bootstrap.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/bootstrap.ts)
+- [src/services/skills/loadSkillsDir.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/loadSkillsDir.ts)
+- [src/services/skills/parseFrontmatter.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/parseFrontmatter.ts)
+- [src/services/skills/registry.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/registry.ts)
+- [src/services/skills/budget.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/budget.ts)
+- [src/services/skills/conditional.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/services/skills/conditional.ts)
+- [src/tools/skillTool.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/tools/skillTool.ts)
+- [src/types/types.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/types/types.ts)
+- [src/scripts/test-skills.ts](https://github.com/ConardLi/easy-agent/blob/c24463e07dd136d41f6ab28edb33a3eaf0b209c1/src/scripts/test-skills.ts)
 
 </details>
 

@@ -313,7 +313,6 @@ export function registerPull(program: Command): void {
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [SQLite 数据模型](sqlite-data-model.md) — 表结构与索引  

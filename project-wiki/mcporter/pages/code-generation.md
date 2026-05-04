@@ -3,19 +3,19 @@
 
 生成本页时使用的主要源文件：
 
-- [src/generate-cli.ts](../../../project-repos/mcporter/src/generate-cli.ts)
-- [src/cli/generate-cli-runner.ts](../../../project-repos/mcporter/src/cli/generate-cli-runner.ts)
-- [src/cli/generate/template.ts](../../../project-repos/mcporter/src/cli/generate/template.ts)
-- [src/cli/generate/template-data.ts](../../../project-repos/mcporter/src/cli/generate/template-data.ts)
-- [src/cli/generate/template-help.ts](../../../project-repos/mcporter/src/cli/generate/template-help.ts)
-- [src/cli/generate/tools.ts](../../../project-repos/mcporter/src/cli/generate/tools.ts)
-- [src/cli/generate/definition.ts](../../../project-repos/mcporter/src/cli/generate/definition.ts)
-- [src/cli/generate/artifacts.ts](../../../project-repos/mcporter/src/cli/generate/artifacts.ts)
-- [src/cli/generate/runtime.ts](../../../project-repos/mcporter/src/cli/generate/runtime.ts)
-- [src/cli/emit-ts-command.ts](../../../project-repos/mcporter/src/cli/emit-ts-command.ts)
-- [src/cli/emit-ts-templates.ts](../../../project-repos/mcporter/src/cli/emit-ts-templates.ts)
-- [src/cli-metadata.ts](../../../project-repos/mcporter/src/cli-metadata.ts)
-- [src/cli/inspect-cli-command.ts](../../../project-repos/mcporter/src/cli/inspect-cli-command.ts)
+- [src/generate-cli.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/generate-cli.ts)
+- [src/cli/generate-cli-runner.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate-cli-runner.ts)
+- [src/cli/generate/template.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/template.ts)
+- [src/cli/generate/template-data.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/template-data.ts)
+- [src/cli/generate/template-help.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/template-help.ts)
+- [src/cli/generate/tools.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/tools.ts)
+- [src/cli/generate/definition.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/definition.ts)
+- [src/cli/generate/artifacts.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/artifacts.ts)
+- [src/cli/generate/runtime.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/generate/runtime.ts)
+- [src/cli/emit-ts-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/emit-ts-command.ts)
+- [src/cli/emit-ts-templates.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/emit-ts-templates.ts)
+- [src/cli-metadata.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli-metadata.ts)
+- [src/cli/inspect-cli-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/inspect-cli-command.ts)
 
 </details>
 

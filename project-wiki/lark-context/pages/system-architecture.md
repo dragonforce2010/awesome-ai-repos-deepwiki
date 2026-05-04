@@ -210,7 +210,6 @@ registerShowDoc(program);
 
 <!-- source-snippets:end -->
 </details>
-
 ## 相关页面
 
 - [SQLite 数据模型](sqlite-data-model.md) — schema 与迁移  

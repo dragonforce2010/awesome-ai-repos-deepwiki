@@ -3,17 +3,17 @@
 
 生成本页时使用的主要源文件：
 
-- [src/daemon/host.ts](../../../project-repos/mcporter/src/daemon/host.ts)
-- [src/daemon/client.ts](../../../project-repos/mcporter/src/daemon/client.ts)
-- [src/daemon/runtime-wrapper.ts](../../../project-repos/mcporter/src/daemon/runtime-wrapper.ts)
-- [src/daemon/protocol.ts](../../../project-repos/mcporter/src/daemon/protocol.ts)
-- [src/daemon/launch.ts](../../../project-repos/mcporter/src/daemon/launch.ts)
-- [src/daemon/paths.ts](../../../project-repos/mcporter/src/daemon/paths.ts)
-- [src/daemon/config-layers.ts](../../../project-repos/mcporter/src/daemon/config-layers.ts)
-- [src/daemon/log-context.ts](../../../project-repos/mcporter/src/daemon/log-context.ts)
-- [src/daemon/request-utils.ts](../../../project-repos/mcporter/src/daemon/request-utils.ts)
-- [src/lifecycle.ts](../../../project-repos/mcporter/src/lifecycle.ts)
-- [src/cli/daemon-command.ts](../../../project-repos/mcporter/src/cli/daemon-command.ts)
+- [src/daemon/host.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/host.ts)
+- [src/daemon/client.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/client.ts)
+- [src/daemon/runtime-wrapper.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/runtime-wrapper.ts)
+- [src/daemon/protocol.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/protocol.ts)
+- [src/daemon/launch.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/launch.ts)
+- [src/daemon/paths.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/paths.ts)
+- [src/daemon/config-layers.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/config-layers.ts)
+- [src/daemon/log-context.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/log-context.ts)
+- [src/daemon/request-utils.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/daemon/request-utils.ts)
+- [src/lifecycle.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/lifecycle.ts)
+- [src/cli/daemon-command.ts](https://github.com/steipete/mcporter/blob/324fb7a00edc6fa4eacf1deeb4ac33a2a7341c09/src/cli/daemon-command.ts)
 
 </details>
 

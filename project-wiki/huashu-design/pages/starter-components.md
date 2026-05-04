@@ -3,15 +3,15 @@
 
 生成本页时使用的主要源文件：
 
-- [assets/animations.jsx](../../../project-repos/huashu-design/assets/animations.jsx)
-- [assets/deck_stage.js](../../../project-repos/huashu-design/assets/deck_stage.js)
-- [assets/deck_index.html](../../../project-repos/huashu-design/assets/deck_index.html)
-- [assets/design_canvas.jsx](../../../project-repos/huashu-design/assets/design_canvas.jsx)
-- [assets/ios_frame.jsx](../../../project-repos/huashu-design/assets/ios_frame.jsx)
-- [assets/android_frame.jsx](../../../project-repos/huashu-design/assets/android_frame.jsx)
-- [assets/browser_window.jsx](../../../project-repos/huashu-design/assets/browser_window.jsx)
-- [assets/macos_window.jsx](../../../project-repos/huashu-design/assets/macos_window.jsx)
-- [SKILL.md](../../../project-repos/huashu-design/SKILL.md)
+- [assets/animations.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/animations.jsx)
+- [assets/deck_stage.js](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/deck_stage.js)
+- [assets/deck_index.html](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/deck_index.html)
+- [assets/design_canvas.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/design_canvas.jsx)
+- [assets/ios_frame.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/ios_frame.jsx)
+- [assets/android_frame.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/android_frame.jsx)
+- [assets/browser_window.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/browser_window.jsx)
+- [assets/macos_window.jsx](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/macos_window.jsx)
+- [SKILL.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/SKILL.md)
 
 </details>
 

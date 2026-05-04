@@ -3,15 +3,15 @@
 
 生成本页时使用的主要源文件：
 
-- [cli-anything-plugin/skill_generator.py](../../../project-repos/CLI-Anything/cli-anything-plugin/skill_generator.py)
-- [cli-anything-plugin/templates/SKILL.md.template](../../../project-repos/CLI-Anything/cli-anything-plugin/templates/SKILL.md.template)
-- [skills/cli-anything-blender/SKILL.md](../../../project-repos/CLI-Anything/skills/cli-anything-blender/SKILL.md)
-- [skills/README.md](../../../project-repos/CLI-Anything/skills/README.md)
-- [cli-hub-meta-skill/SKILL.md](../../../project-repos/CLI-Anything/cli-hub-meta-skill/SKILL.md)
-- [.github/workflows/check-root-skills.yml](../../../project-repos/CLI-Anything/.github/workflows/check-root-skills.yml)
-- [.github/scripts/validate_root_skills.py](../../../project-repos/CLI-Anything/.github/scripts/validate_root_skills.py)
-- [.github/scripts/sync_root_skills.py](../../../project-repos/CLI-Anything/.github/scripts/sync_root_skills.py)
-- [.github/scripts/generate_meta_skill.py](../../../project-repos/CLI-Anything/.github/scripts/generate_meta_skill.py)
+- [cli-anything-plugin/skill_generator.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/skill_generator.py)
+- [cli-anything-plugin/templates/SKILL.md.template](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-anything-plugin/templates/SKILL.md.template)
+- [skills/cli-anything-blender/SKILL.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/skills/cli-anything-blender/SKILL.md)
+- [skills/README.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/skills/README.md)
+- [cli-hub-meta-skill/SKILL.md](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/cli-hub-meta-skill/SKILL.md)
+- [.github/workflows/check-root-skills.yml](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/.github/workflows/check-root-skills.yml)
+- [.github/scripts/validate_root_skills.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/.github/scripts/validate_root_skills.py)
+- [.github/scripts/sync_root_skills.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/.github/scripts/sync_root_skills.py)
+- [.github/scripts/generate_meta_skill.py](https://github.com/HKUDS/CLI-Anything/blob/26bd973431dea8d41851ed7d1c5a765e1230d9b3/.github/scripts/generate_meta_skill.py)
 
 </details>
 

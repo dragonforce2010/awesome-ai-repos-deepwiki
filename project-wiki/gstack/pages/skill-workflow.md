@@ -3,12 +3,12 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/gstack/README.md)
-- [docs/skills.md](../../../project-repos/gstack/docs/skills.md)
-- [office-hours/SKILL.md](../../../project-repos/gstack/office-hours/SKILL.md)
-- [plan-eng-review/SKILL.md](../../../project-repos/gstack/plan-eng-review/SKILL.md)
-- [qa/SKILL.md](../../../project-repos/gstack/qa/SKILL.md)
-- [ship/SKILL.md](../../../project-repos/gstack/ship/SKILL.md)
+- [README.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/README.md)
+- [docs/skills.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/docs/skills.md)
+- [office-hours/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/office-hours/SKILL.md)
+- [plan-eng-review/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/plan-eng-review/SKILL.md)
+- [qa/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/qa/SKILL.md)
+- [ship/SKILL.md](https://github.com/garrytan/gstack/blob/454423aeb3d3dafa88d5b57bfbe0ead05569d21e/ship/SKILL.md)
 
 </details>
 

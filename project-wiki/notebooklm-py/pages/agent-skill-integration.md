@@ -3,11 +3,11 @@
 
 生成本页时使用的主要源文件：
 
-- [SKILL.md](../../../project-repos/notebooklm-py/SKILL.md)
-- [AGENTS.md](../../../project-repos/notebooklm-py/AGENTS.md)
-- [src/notebooklm/cli/agent.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/agent.py)
-- [src/notebooklm/cli/agent_templates.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/agent_templates.py)
-- [src/notebooklm/cli/skill.py](../../../project-repos/notebooklm-py/src/notebooklm/cli/skill.py)
+- [SKILL.md](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/SKILL.md)
+- [AGENTS.md](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/AGENTS.md)
+- [src/notebooklm/cli/agent.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/agent.py)
+- [src/notebooklm/cli/agent_templates.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/agent_templates.py)
+- [src/notebooklm/cli/skill.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/cli/skill.py)
 
 </details>
 

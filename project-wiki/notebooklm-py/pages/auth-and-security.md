@@ -3,10 +3,10 @@
 
 生成本页时使用的主要源文件：
 
-- [src/notebooklm/auth.py](../../../project-repos/notebooklm-py/src/notebooklm/auth.py)
-- [src/notebooklm/paths.py](../../../project-repos/notebooklm-py/src/notebooklm/paths.py)
-- [src/notebooklm/_url_utils.py](../../../project-repos/notebooklm-py/src/notebooklm/_url_utils.py)
-- [src/notebooklm/migration.py](../../../project-repos/notebooklm-py/src/notebooklm/migration.py)
+- [src/notebooklm/auth.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/auth.py)
+- [src/notebooklm/paths.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/paths.py)
+- [src/notebooklm/_url_utils.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/_url_utils.py)
+- [src/notebooklm/migration.py](https://github.com/teng-lin/notebooklm-py/blob/d6cef809dee4f03794e89bd089dd426b34a67345/src/notebooklm/migration.py)
 
 </details>
 

@@ -3,12 +3,12 @@
 
 生成本页时使用的主要源文件：
 
-- [README.md](../../../project-repos/huashu-design/README.md)
-- [README.en.md](../../../project-repos/huashu-design/README.en.md)
-- [LICENSE](../../../project-repos/huashu-design/LICENSE)
-- [.gitignore](../../../project-repos/huashu-design/.gitignore)
-- [assets/personal-asset-index.example.json](../../../project-repos/huashu-design/assets/personal-asset-index.example.json)
-- [references/sfx-library.md](../../../project-repos/huashu-design/references/sfx-library.md)
+- [README.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.md)
+- [README.en.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/README.en.md)
+- [LICENSE](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/LICENSE)
+- [.gitignore](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/.gitignore)
+- [assets/personal-asset-index.example.json](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/assets/personal-asset-index.example.json)
+- [references/sfx-library.md](https://github.com/alchaincyf/huashu-design/blob/23f60d9b4304f20851469987c6e2c92242b94a45/references/sfx-library.md)
 - [00-repo-inventory.md](../00-repo-inventory.md)
 
 </details>
