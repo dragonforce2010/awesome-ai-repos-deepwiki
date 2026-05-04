@@ -8,6 +8,24 @@ const wikisDir = path.resolve(__dirname, '..');
 const sidebar: Record<string, any[]> = {};
 const nav: any[] = [];
 
+/** Resolve markdown path for sidebar links (`path`, `file`, or `pages/{slug|id}.md`). */
+function resolveWikiPagePath(page: any): string | undefined {
+  if (typeof page?.path === 'string' && page.path.length > 0) {
+    return page.path;
+  }
+  if (typeof page?.file === 'string' && page.file.length > 0) {
+    return page.file;
+  }
+  const stem =
+    page?.slug === 'README' && typeof page?.id === 'string'
+      ? page.id
+      : page?.slug || page?.id;
+  if (typeof stem === 'string' && stem.length > 0) {
+    return `pages/${stem}.md`;
+  }
+  return undefined;
+}
+
 try {
   const folders = fs.readdirSync(wikisDir, { withFileTypes: true });
 
@@ -25,15 +43,16 @@ try {
           nav.push({ text: projectName, link: `/${wikiId}/pages/overview`, activeMatch: `^/${wikiId}/` });
           
           // Build sidebar for this wiki
-          const wikiSidebar = [];
+          const wikiSidebar: any[] = [];
           
           if (data.sections && Array.isArray(data.sections)) {
             for (const section of data.sections) {
               const items = section.pages.map((pageId: string) => {
                 const page = data.pages?.find((p: any) => p.id === pageId);
-                if (page && page.path) {
-                  // Remove .md extension for link
-                  const link = `/${wikiId}/${page.path.replace(/\.md$/, '')}`;
+                const pagePath = page ? resolveWikiPagePath(page) : undefined;
+                if (page && typeof pagePath === 'string' && pagePath.length > 0) {
+                  // Remove .md extension for link (wikis use either `path` or `file`)
+                  const link = `/${wikiId}/${pagePath.replace(/\.md$/, '')}`;
                   return { text: page.title || page.id, link };
                 }
                 return null;
@@ -41,6 +60,24 @@ try {
               
               wikiSidebar.push({
                 text: section.title,
+                collapsed: false,
+                items
+              });
+            }
+          } else if (data.pages && Array.isArray(data.pages)) {
+            const items = data.pages
+              .map((page: any) => {
+                const pagePath = resolveWikiPagePath(page);
+                if (!pagePath) {
+                  return null;
+                }
+                const link = `/${wikiId}/${pagePath.replace(/\.md$/, '')}`;
+                return { text: page.title || page.id, link };
+              })
+              .filter(Boolean);
+            if (items.length > 0) {
+              wikiSidebar.push({
+                text: '目录',
                 collapsed: false,
                 items
               });
@@ -97,7 +134,7 @@ export default withMermaid(defineConfig({
       provider: 'local'
     }
   },
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: true,  // Sources links point outside project-wiki tree; ignore all dead links
   mermaid: {
     // Mermaid plugin configuration
   }
