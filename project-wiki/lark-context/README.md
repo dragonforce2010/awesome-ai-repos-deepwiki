@@ -59,11 +59,19 @@ lark-context/
 
 ## 内部延伸阅读（飞书 Wiki）
 
-字节内网有一份 **lark-context / 飞书沉淀** 相关说明 Wiki，可与本 DeepWiki **交叉对照**（流程约定、使用姿势、内网发布说明等以该文档为准）。DeepWiki 生成环境**无法打开需登录的 larkoffice 页面**，未将正文嵌入此站点。
+字节内网有一份 **lark-context** 产品向说明 Wiki（演示场景、首次上手对话、FAQ）。**在已通过 `lark-cli auth login` 的机器上，应优先用 CLI 拉正文**，而不是依赖无外网凭据的 HTTP 抓取：
 
-- [lark-context 相关飞书 Wiki](https://bytedance.larkoffice.com/wiki/Lk61wCa7YiW6w6kk0klcTKRKn6g)（token：`Lk61wCa7YiW6w6kk0klcTKRKn6g`）
+```bash
+lark-cli docs +fetch \
+  --doc "https://bytedance.larkoffice.com/wiki/Lk61wCa7YiW6w6kk0klcTKRKn6g" \
+  --format json
+```
 
-若你希望把 Wiki 里的**硬性规范**写进本仓库叙事（例如内网包名、审批要求、推荐 `pull` 窗口），把对应章节**粘贴到对话**或导出为 Markdown，我可以再改 `pages/*.md` 做「源码 + 内规」双源对齐。
+返回体里的 `data.markdown` / `data.title` 即文档内容（可能与导出到公网 DeepWiki 的版本存在时差）。**CI / 未登录环境**仍无法代替用户 OAuth，因此公开站点只链 URL，不把内网正文整页拷入仓库。
+
+- **Wiki 链接**：[把飞书消息变成 AI 的本地长期记忆…](https://bytedance.larkoffice.com/wiki/Lk61wCa7YiW6w6kk0klcTKRKn6g)（token：`Lk61wCa7YiW6w6kk0klcTKRKn6g`）
+
+**与开源 README 常见的安装差异（以 Wiki 当前叙述为准）**：内网可通过 `npm i -g @tiktok-fe/lark-context --registry http://bnpm.byted.org` 安装 CLI；若用 pnpm 全局装依赖，需按 Wiki 提示处理 `better-sqlite3` 的 `approve-builds`；skill 可用 `npx skills add git@code.byted.org:tiktok/lark-context.git -g -y` 从源码仓安装。
 
 ## 来源快照
 

@@ -62,7 +62,7 @@ graph TD
 
 它比“直接让模型联网读飞书”更**离线**：`show` / `show-doc` 阶段甚至不再触发 `lark-cli`，只读本地库。代价是**数据新鲜度取决于用户何时 `pull`**，以及 V1 明确不做定时调度（README 将其标为手动/cron 留给后续）。
 
-**内网文档对照**：字节侧另有一份飞书 Wiki 汇总使用方式与约定，链接见仓库 Wiki 首页 [README.md 内「内部延伸阅读」](../README.md) 或直接打开 [lark-context 飞书 Wiki](https://bytedance.larkoffice.com/wiki/Lk61wCa7YiW6w6kk0klcTKRKn6g)。本页仍以开源仓库与本地 skill 为准；若二者冲突，以你们团队在飞书 Wiki 中**明确为当前有效**的规范优先。
+**内网文档对照**：字节侧飞书 Wiki（链接见 [README.md 内「内部延伸阅读」](../README.md)）可用已登录的 **`lark-cli docs +fetch --doc <url>`** 拉取 markdown，便于与源码叙事对齐；本页仍以仓库与 skill 为技术真源，产品话术与演示以 Wiki 为准。若安装方式、registry 或流程与开源 README 不一致，**以 Wiki 中明确为当前有效的段落优先**。
 
 ## 阅读路线
 
