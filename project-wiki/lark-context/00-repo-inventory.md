@@ -2,7 +2,7 @@
 
 ## Source
 
-- Path: `/Users/bytedance/workspace/deepwiki/project-repos/lark-context`
+- Path: `/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/lark-context`
 - Remote: `git@code.byted.org:tiktok/lark-context.git`
 - Branch: `master`
 - Commit: `8099f2131ca597a21e77346ce2e272a5e0bf0554`

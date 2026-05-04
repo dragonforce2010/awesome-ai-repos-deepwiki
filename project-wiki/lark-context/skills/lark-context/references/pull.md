@@ -1,4 +1,4 @@
-# Pull Workflow
+# Pull 工作流
 
 用户触发：
 - `/lark-context 拉最近 N 天` / `/lark-context 同步一下`
@@ -15,7 +15,7 @@
 |---|---|
 | **首次拉某个 alias**（db 里没 `last_cursor`） | `--since 90d` |
 | **已拉过的 alias**（增量） | 忽略 `--since`，自动从 `last_cursor` 续拉 |
-| 用户说了具体窗口（“拉最近 3 天”） | 按用户说的 |
+| 用户说了具体窗口（"拉最近 3 天"） | 按用户说的 |
 
 **90d 的由来**：首次拉的默认值是 skill 约定，不是 CLI 默认值。CLI 本身对首次无默认——所以 skill 必须显式传 `--since 90d`。
 

@@ -1,135 +1,188 @@
 {
   "title": "lark-context DeepWiki",
-  "description": "飞书群聊和文档到 Claude 本地长期记忆的 TypeScript CLI 与 skill 工作流解析。",
+  "projectName": "lark-context",
+  "description": "飞书上下文桥：本地 SQLite 沉淀群聊与文档、CLI + Claude skill 双入口的中文技术维基。",
   "mode": "comprehensive",
   "language": "zh-CN",
   "source": {
-    "repository": "git@code.byted.org:tiktok/lark-context.git",
-    "clonePath": "/Users/bytedance/workspace/deepwiki/project-repos/lark-context",
+    "repo": "git@code.byted.org:tiktok/lark-context.git",
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/lark-context",
     "branch": "master",
     "commit": "8099f2131ca597a21e77346ce2e272a5e0bf0554"
   },
-  "outputRoot": "/Users/bytedance/workspace/deepwiki/lark-context",
   "sections": [
     {
       "id": "section-overview",
-      "title": "概览",
-      "pages": ["overview"],
+      "title": "概览与地图",
+      "pages": ["overview", "repository-map"],
       "subsections": []
     },
     {
       "id": "section-architecture",
-      "title": "系统架构",
-      "pages": ["system-architecture", "cli-command-surface", "lark-cli-integration"],
+      "title": "架构与数据",
+      "pages": ["system-architecture", "sqlite-data-model", "pull-and-threads"],
       "subsections": []
     },
     {
-      "id": "section-data-flows",
-      "title": "数据管理与流程",
-      "pages": ["configuration-and-storage", "pull-thread-pipeline", "document-ingestion-and-show"],
+      "id": "section-capabilities",
+      "title": "能力与接口",
+      "pages": ["cli-commands", "docs-ingest-show", "skill-workflows"],
       "subsections": []
     },
     {
-      "id": "section-agent-workflows",
-      "title": "Agent 工作流",
-      "pages": ["skill-memory-workflows"],
-      "subsections": []
-    },
-    {
-      "id": "section-quality-ops",
-      "title": "质量、发布与边界",
-      "pages": ["testing-release-and-boundaries"],
+      "id": "section-engineering",
+      "title": "工程交付",
+      "pages": ["config-and-privacy", "testing-and-legacy"],
       "subsections": []
     }
   ],
   "rootSections": [
     "section-overview",
     "section-architecture",
-    "section-data-flows",
-    "section-agent-workflows",
-    "section-quality-ops"
+    "section-capabilities",
+    "section-engineering"
   ],
   "pages": [
     {
       "id": "overview",
       "title": "项目概览",
       "file": "pages/overview.md",
-      "description": "项目定位、使用路径、仓库地图和阅读路线。",
+      "description": "痛点、两层记忆模型、与 Claude Code 的协作闭环。",
       "importance": "high",
-      "filePaths": ["README.md", "GETTING_STARTED.md", "package.json", "spec.md", "skills/lark-context/SKILL.md"],
-      "relatedPages": ["system-architecture", "cli-command-surface", "skill-memory-workflows"]
+      "filePaths": [
+        "README.md",
+        "package.json",
+        "src/cli.ts",
+        "skills/lark-context/SKILL.md",
+        "tsup.config.ts"
+      ],
+      "relatedPages": ["repository-map", "system-architecture", "skill-workflows"]
+    },
+    {
+      "id": "repository-map",
+      "title": "仓库地图与阅读路线",
+      "file": "pages/repository-map.md",
+      "description": "目录分工、TypeScript 主路径与 legacy Python、文档与 skill 资产位置。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "src/cli.ts",
+        "legacy/python/README.md",
+        "docs/superpowers/specs/2026-04-19-lark-context-design.md"
+      ],
+      "relatedPages": ["overview", "cli-commands", "testing-and-legacy"]
     },
     {
       "id": "system-architecture",
       "title": "系统架构",
       "file": "pages/system-architecture.md",
-      "description": "从用户、Claude skill、TS CLI、lark-cli、SQLite 到记忆文件的端到端结构。",
+      "description": "lark-cli 边界、CLI 编排层、SQLite 与记忆文件的职责切分。",
       "importance": "high",
-      "filePaths": ["README.md", "src/cli.ts", "src/config.ts", "src/db.ts", "src/lark.ts", "skills/lark-context/SKILL.md"],
-      "relatedPages": ["overview", "configuration-and-storage", "pull-thread-pipeline"]
+      "filePaths": [
+        "src/cli.ts",
+        "src/lark.ts",
+        "src/config.ts",
+        "src/commands/init.ts",
+        "README.md"
+      ],
+      "relatedPages": ["sqlite-data-model", "skill-workflows", "config-and-privacy"]
     },
     {
-      "id": "cli-command-surface",
-      "title": "CLI 命令面",
-      "file": "pages/cli-command-surface.md",
-      "description": "Commander 注册、命令职责、参数和错误出口。",
+      "id": "sqlite-data-model",
+      "title": "SQLite 数据模型",
+      "file": "pages/sqlite-data-model.md",
+      "description": "chats / messages / docs / kv 表、线程字段迁移与索引策略。",
       "importance": "high",
-      "filePaths": ["src/cli.ts", "src/commands/init.ts", "src/commands/groups.ts", "src/commands/listGroups.ts", "src/commands/pull.ts", "src/commands/ingestDoc.ts", "src/commands/show.ts", "README.md"],
-      "relatedPages": ["system-architecture", "lark-cli-integration", "document-ingestion-and-show"]
+      "filePaths": [
+        "src/db.ts",
+        "src/commands/show.ts",
+        "src/commands/groups.ts"
+      ],
+      "relatedPages": ["pull-and-threads", "docs-ingest-show", "system-architecture"]
     },
     {
-      "id": "lark-cli-integration",
-      "title": "lark-cli 集成",
-      "file": "pages/lark-cli-integration.md",
-      "description": "官方 lark-cli 的调用封装、JSON/NDJSON 协议、缺失二进制和 API 错误处理。",
+      "id": "pull-and-threads",
+      "title": "增量拉取与话题回复",
+      "file": "pages/pull-and-threads.md",
+      "description": "分页上限、cursor 续拉、thread_replies 内嵌与二阶段 threads API。",
+      "importance": "high",
+      "filePaths": [
+        "src/commands/pull.ts",
+        "src/lark.ts",
+        "test/cmd-pull.test.ts"
+      ],
+      "relatedPages": ["sqlite-data-model", "cli-commands", "docs-ingest-show"]
+    },
+    {
+      "id": "cli-commands",
+      "title": "CLI 命令参考",
+      "file": "pages/cli-commands.md",
+      "description": "各子命令行为、错误输出约定、与 Fly 书白名单管理流程。",
+      "importance": "high",
+      "filePaths": [
+        "src/commands/init.ts",
+        "src/commands/listGroups.ts",
+        "src/commands/groups.ts",
+        "src/commands/pull.ts",
+        "src/commands/show.ts",
+        "src/commands/ingestDoc.ts"
+      ],
+      "relatedPages": ["pull-and-threads", "docs-ingest-show", "config-and-privacy"]
+    },
+    {
+      "id": "docs-ingest-show",
+      "title": "文档入库与展示",
+      "file": "pages/docs-ingest-show.md",
+      "description": "ingest-doc 解析 URL、`docs +fetch`、show/show-doc 渲染窗口。",
       "importance": "medium",
-      "filePaths": ["src/lark.ts", "src/commands/listGroups.ts", "src/commands/pull.ts", "src/commands/ingestDoc.ts", "src/commands/init.ts", "test/lark.test.ts"],
-      "relatedPages": ["cli-command-surface", "pull-thread-pipeline", "document-ingestion-and-show"]
+      "filePaths": [
+        "src/commands/ingestDoc.ts",
+        "src/commands/show.ts",
+        "src/render.ts"
+      ],
+      "relatedPages": ["sqlite-data-model", "cli-commands", "skill-workflows"]
     },
     {
-      "id": "configuration-and-storage",
-      "title": "配置与 SQLite 存储",
-      "file": "pages/configuration-and-storage.md",
-      "description": "路径解析、配置优先级、群白名单、SQLite schema、迁移和 KV 状态。",
+      "id": "skill-workflows",
+      "title": "Claude Skill 与工作流",
+      "file": "pages/skill-workflows.md",
+      "description": "意图路由、references 工作流、为何提炼阶段不调用外部 LLM API。",
       "importance": "high",
-      "filePaths": ["src/config.ts", "src/db.ts", "src/commands/init.ts", "src/commands/groups.ts", "README.md", "test/config.test.ts", "test/db.test.ts"],
-      "relatedPages": ["system-architecture", "pull-thread-pipeline", "skill-memory-workflows"]
+      "filePaths": [
+        "skills/lark-context/SKILL.md",
+        "skills/lark-context/references/digest.md",
+        "skills/lark-context/references/pull.md",
+        "skills/lark-context/references/show.md"
+      ],
+      "relatedPages": ["overview", "cli-commands", "config-and-privacy"]
     },
     {
-      "id": "pull-thread-pipeline",
-      "title": "消息拉取与话题回复流水线",
-      "file": "pages/pull-thread-pipeline.md",
-      "description": "增量 pull、分页、last_cursor、thread reply 两阶段刷新、幂等与失败隔离。",
-      "importance": "high",
-      "filePaths": ["src/commands/pull.ts", "src/db.ts", "src/durations.ts", "README.md", "skills/lark-context/references/pull.md", "test/cmd-pull.test.ts"],
-      "relatedPages": ["configuration-and-storage", "lark-cli-integration", "document-ingestion-and-show"]
-    },
-    {
-      "id": "document-ingestion-and-show",
-      "title": "文档入库与 Markdown 输出",
-      "file": "pages/document-ingestion-and-show.md",
-      "description": "飞书文档 token 解析、docs +fetch、docs 表 upsert、show/show-doc 渲染和话题缩进展示。",
-      "importance": "high",
-      "filePaths": ["src/commands/ingestDoc.ts", "src/commands/show.ts", "src/render.ts", "src/durations.ts", "README.md", "skills/lark-context/references/ingest-doc.md", "skills/lark-context/references/show.md", "test/cmd-ingest-doc.test.ts", "test/cmd-show.test.ts"],
-      "relatedPages": ["pull-thread-pipeline", "skill-memory-workflows", "cli-command-surface"]
-    },
-    {
-      "id": "skill-memory-workflows",
-      "title": "Skill 与记忆工作流",
-      "file": "pages/skill-memory-workflows.md",
-      "description": "lark-context skill 的自然语言路由、digest、TODO、pull、show、ingest-doc 工作流和记忆文件约束。",
-      "importance": "high",
-      "filePaths": ["skills/lark-context/SKILL.md", "skills/lark-context/references/digest.md", "skills/lark-context/references/todo.md", "skills/lark-context/references/pull.md", "skills/lark-context/references/show.md", "skills/lark-context/references/ingest-doc.md", "README.md", "GETTING_STARTED.md"],
-      "relatedPages": ["overview", "document-ingestion-and-show", "configuration-and-storage"]
-    },
-    {
-      "id": "testing-release-and-boundaries",
-      "title": "测试、发布与边界",
-      "file": "pages/testing-release-and-boundaries.md",
-      "description": "Vitest 覆盖面、构建发布脚本、Node 运行条件、legacy Python 对照和 V1/V2 边界。",
+      "id": "config-and-privacy",
+      "title": "配置、路径与隐私边界",
+      "file": "pages/config-and-privacy.md",
+      "description": "YAML 与环境变量优先级、默认目录、V1 能力边界与安全心智。",
       "importance": "medium",
-      "filePaths": ["package.json", "tsup.config.ts", "tsconfig.json", "vitest.config.ts", "README.md", "legacy/python/README.md", "legacy/python/pyproject.toml", "test/cmd-pull.test.ts", "test/db.test.ts"],
-      "relatedPages": ["overview", "pull-thread-pipeline", "skill-memory-workflows"]
+      "filePaths": [
+        "src/config.ts",
+        "README.md",
+        "src/commands/init.ts"
+      ],
+      "relatedPages": ["system-architecture", "cli-commands", "testing-and-legacy"]
+    },
+    {
+      "id": "testing-and-legacy",
+      "title": "测试、构建与 Python 遗留",
+      "file": "pages/testing-and-legacy.md",
+      "description": "tsup 构建、Vitest 夹具、legacy/python 对照关系。",
+      "importance": "medium",
+      "filePaths": [
+        "package.json",
+        "tsup.config.ts",
+        "test/cmd-pull.test.ts",
+        "legacy/python/pyproject.toml",
+        "legacy/python/README.md"
+      ],
+      "relatedPages": ["cli-commands", "repository-map", "pull-and-threads"]
     }
   ]
 }

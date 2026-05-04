@@ -1,6 +1,6 @@
 {
   "source": {
-    "path": "/Users/bytedance/workspace/deepwiki/project-repos/lark-context",
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/lark-context",
     "remote": "git@code.byted.org:tiktok/lark-context.git",
     "branch": "master",
     "commit": "8099f2131ca597a21e77346ce2e272a5e0bf0554"
