@@ -1,0 +1,165 @@
+{
+  "title": "Everything Claude Code DeepWiki",
+  "description": "Anthropic 黑客马拉松获胜者出品：81 个技能、16 个代理、40+ 命令、跨平台钩子系统，覆盖 TypeScript/Go/Python/Perl/Kotlin/Swift 等多语言开发场景",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/marshall0524/everythingclaudecode",
+    "commit": "da4db99c94cf272d3341910bc8c8a26d2e6e6960"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-agents",
+      "title": "代理体系",
+      "pages": ["agents"],
+      "subsections": []
+    },
+    {
+      "id": "section-skills",
+      "title": "技能系统",
+      "pages": ["skills"],
+      "subsections": []
+    },
+    {
+      "id": "section-commands",
+      "title": "命令系统",
+      "pages": ["commands"],
+      "subsections": []
+    },
+    {
+      "id": "section-hooks",
+      "title": "钩子与自动化",
+      "pages": ["hooks"],
+      "subsections": []
+    },
+    {
+      "id": "section-rules",
+      "title": "规则系统",
+      "pages": ["rules"],
+      "subsections": []
+    },
+    {
+      "id": "section-platforms",
+      "title": "多语言平台支持",
+      "pages": ["platforms"],
+      "subsections": []
+    },
+    {
+      "id": "section-mcp",
+      "title": "MCP 与扩展集成",
+      "pages": ["mcp"],
+      "subsections": []
+    },
+    {
+      "id": "section-scripts",
+      "title": "核心脚本",
+      "pages": ["scripts"],
+      "subsections": []
+    },
+    {
+      "id": "section-workflows",
+      "title": "典型工作流",
+      "pages": ["workflows"],
+      "subsections": []
+    }
+  ],
+  "rootSections": ["section-overview", "section-agents", "section-skills", "section-commands", "section-hooks", "section-rules", "section-platforms", "section-mcp", "section-scripts", "section-workflows"],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "ECC 的诞生背景、核心能力全景、与同类方案的差异、阅读路线",
+      "importance": "high",
+      "filePaths": ["README.md", "README.zh-CN.md", "AGENTS.md", "CLAUDE.md", "package.json", "the-shortform-guide.md"],
+      "relatedPages": ["agents", "skills", "hooks", "commands"]
+    },
+    {
+      "id": "agents",
+      "title": "代理体系",
+      "file": "pages/agents.md",
+      "description": "16 个专业代理的职责划分、触发时机、并行编排方式",
+      "importance": "high",
+      "filePaths": ["AGENTS.md", "agents/planner.md", "agents/code-reviewer.md", "agents/tdd-guide.md", "agents/security-reviewer.md", "agents/e2e-runner.md", "agents/chief-of-staff.md", "agents/loop-operator.md"],
+      "relatedPages": ["overview", "workflows", "skills"]
+    },
+    {
+      "id": "skills",
+      "title": "技能系统",
+      "file": "pages/skills.md",
+      "description": "81 个技能的分类索引、核心技能详解、skill-create 命令的工作机制",
+      "importance": "high",
+      "filePaths": ["skills/configure-ecc/SKILL.md", "skills/continuous-learning-v2/SKILL.md", "skills/agentic-engineering/SKILL.md", "skills/tdd-workflow/SKILL.md", "skills/security-review/SKILL.md"],
+      "relatedPages": ["overview", "agents", "workflows"]
+    },
+    {
+      "id": "commands",
+      "title": "命令系统",
+      "file": "pages/commands.md",
+      "description": "40+ 斜杠命令的分类、核心命令用法、多命令编排",
+      "importance": "high",
+      "filePaths": ["commands/tdd.md", "commands/e2e.md", "commands/plan.md", "commands/skill-create.md", "commands/learn.md"],
+      "relatedPages": ["overview", "agents", "hooks"]
+    },
+    {
+      "id": "hooks",
+      "title": "钩子与自动化",
+      "file": "pages/hooks.md",
+      "description": "钩子系统架构、6 大触发类型、hooks.json 结构、核心钩子脚本",
+      "importance": "high",
+      "filePaths": ["hooks/hooks.json", "hooks/README.md", "scripts/hooks/session-end.js", "scripts/hooks/session-start.js"],
+      "relatedPages": ["overview", "commands", "scripts"]
+    },
+    {
+      "id": "rules",
+      "title": "规则系统",
+      "file": "pages/rules.md",
+      "description": "通用规则 + 语言专属规则的组织方式、immutability 等核心原则",
+      "importance": "medium",
+      "filePaths": ["rules/README.md", "rules/common/coding-style.md", "rules/typescript/coding-style.md", "rules/python/coding-style.md", "rules/golang/coding-style.md"],
+      "relatedPages": ["overview", "platforms", "workflows"]
+    },
+    {
+      "id": "platforms",
+      "title": "多语言平台支持",
+      "file": "pages/platforms.md",
+      "description": "TypeScript / Go / Python / Perl / Kotlin / Swift / PHP 各语言专属规则和技能",
+      "importance": "medium",
+      "filePaths": ["rules/typescript/coding-style.md", "rules/golang/coding-style.md", "rules/python/coding-style.md", "rules/swift/coding-style.md", "rules/kotlin/coding-style.md"],
+      "relatedPages": ["overview", "rules"]
+    },
+    {
+      "id": "mcp",
+      "title": "MCP 与扩展集成",
+      "file": "pages/mcp.md",
+      "description": "MCP 服务器配置、ECC 插件架构、.claude-plugin 机制",
+      "importance": "medium",
+      "filePaths": ["mcp-configs/mcp-servers.json", ".claude-plugin/plugin.json", ".claude-plugin/marketplace.json", ".opencode/plugins/ecc-hooks.ts"],
+      "relatedPages": ["overview", "hooks"]
+    },
+    {
+      "id": "scripts",
+      "title": "核心脚本",
+      "file": "pages/scripts.md",
+      "description": "claw.js 会话管理、package-manager 检测、session-manager、codemaps 生成",
+      "importance": "medium",
+      "filePaths": ["scripts/claw.js", "scripts/lib/package-manager.js", "scripts/lib/session-manager.js", "scripts/codemaps/generate.ts"],
+      "relatedPages": ["overview", "hooks", "commands"]
+    },
+    {
+      "id": "workflows",
+      "title": "典型工作流",
+      "file": "pages/workflows.md",
+      "description": "TDD 流程、代码审查流程、持续学习循环、e2e 测试编排",
+      "importance": "high",
+      "filePaths": ["commands/tdd.md", "commands/e2e.md", "commands/eval.md", "skills/continuous-learning-v2/SKILL.md", "skills/verification-loop/SKILL.md"],
+      "relatedPages": ["agents", "commands", "hooks"]
+    }
+  ]
+}

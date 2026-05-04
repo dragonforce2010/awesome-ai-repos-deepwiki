@@ -1,0 +1,7660 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/everythingclaudecode",
+    "remote": "https://github.com/marshall0524/everythingclaudecode.git",
+    "branch": "main",
+    "commit": "da4db99c94cf272d3341910bc8c8a26d2e6e6960"
+  },
+  "file_count": 800,
+  "skipped_count": 38,
+  "files": [
+    {
+      "path": ".agents/skills/api-design/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 523,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/api-design/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/article-writing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 85,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/article-writing/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/backend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 598,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/backend-patterns/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 530,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/coding-standards/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/content-engine/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/content-engine/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/e2e-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 326,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/e2e-testing/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/eval-harness/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 236,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/eval-harness/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/frontend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 642,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/frontend-patterns/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/frontend-slides/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 184,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/frontend-slides/STYLE_PRESETS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 330,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/frontend-slides/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/investor-materials/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 96,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/investor-materials/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/investor-outreach/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/investor-outreach/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/market-research/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/market-research/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/security-review/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 495,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/security-review/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/strategic-compact/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 103,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/strategic-compact/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/tdd-workflow/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 410,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/tdd-workflow/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/verification-loop/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 126,
+      "symbols": []
+    },
+    {
+      "path": ".agents/skills/verification-loop/agents/openai.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".claude-plugin/PLUGIN_SCHEMA_NOTES.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 220,
+      "symbols": []
+    },
+    {
+      "path": ".claude-plugin/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": ".claude/homunculus/instincts/inherited/everything-claude-code-instincts.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 162,
+      "symbols": []
+    },
+    {
+      "path": ".claude/package-manager.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 4,
+      "symbols": []
+    },
+    {
+      "path": ".claude/skills/everything-claude-code/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 97,
+      "symbols": []
+    },
+    {
+      "path": ".codex/AGENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": ".codex/agents/docs-researcher.toml",
+      "language": "toml",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": ".codex/agents/explorer.toml",
+      "language": "toml",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": ".codex/agents/reviewer.toml",
+      "language": "toml",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": ".codex/config.toml",
+      "language": "toml",
+      "kind": "source",
+      "lines": 97,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 109,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/adapter.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 81,
+      "symbols": [
+        {
+          "name": "readStdin",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "getPluginRoot",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "transformToClaude",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "runExistingHook",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "hookEnabled",
+          "type": "function",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "path": ".cursor/hooks/after-file-edit.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/after-mcp-execution.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/after-shell-execution.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/after-tab-file-edit.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/before-mcp-execution.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/before-read-file.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/before-shell-execution.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/before-submit-prompt.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/before-tab-file-read.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/pre-compact.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/session-end.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/session-start.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/stop.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/subagent-start.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/hooks/subagent-stop.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-agents.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-development-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-git-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-performance.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/common-testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/golang-coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/golang-hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 16,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/golang-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/golang-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/golang-testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/php-coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/php-hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/php-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/php-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/php-testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/python-coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/python-hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/python-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/python-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/python-testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/swift-coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/swift-hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/swift-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/swift-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/swift-testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/typescript-coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/typescript-hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/typescript-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/typescript-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/rules/typescript-testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 16,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/article-writing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 85,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/content-engine/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/frontend-slides/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 184,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/frontend-slides/STYLE_PRESETS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 330,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/investor-materials/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 96,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/investor-outreach/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": ".cursor/skills/market-research/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2,
+      "symbols": []
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": ".github/release.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 221,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/maintenance.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/monthly-metrics.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 185,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/reusable-release.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/reusable-test.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 130,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/reusable-validate.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": ".markdownlint.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/MIGRATION.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 368,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 204,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/build-fix.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/checkpoint.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/code-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 68,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/e2e.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 105,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/eval.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/evolve.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/go-build.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 87,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/go-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/go-test.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 131,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/harness-audit.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 58,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/instinct-export.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 93,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/instinct-import.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/instinct-status.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/learn.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/loop-start.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/loop-status.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/model-route.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/orchestrate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/projects.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/promote.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/quality-gate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/refactor-clean.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 102,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 89,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/setup-pm.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/skill-create.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 117,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/tdd.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/test-coverage.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 80,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/update-codemaps.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/update-docs.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/commands/verify.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 79,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/instructions/INSTRUCTIONS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 337,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/opencode.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 319,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/package-lock.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/plugins/ecc-hooks.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 455,
+      "symbols": [
+        {
+          "name": "ECCHooksPlugin",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "HookProfile",
+          "type": "type",
+          "line": 24
+        },
+        {
+          "name": "log",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "normalizeProfile",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "profileAllowed",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "hookEnabled",
+          "type": "function",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "path": ".opencode/plugins/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/tools/check-coverage.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 170,
+      "symbols": [
+        {
+          "name": "CoverageSummary",
+          "type": "interface",
+          "line": 103
+        },
+        {
+          "name": "CoverageResult",
+          "type": "interface",
+          "line": 117
+        },
+        {
+          "name": "parseCoverageData",
+          "type": "function",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "path": ".opencode/tools/format-code.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 68,
+      "symbols": [
+        {
+          "name": "Formatter",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "detectFormatter",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "buildFormatterCommand",
+          "type": "function",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "path": ".opencode/tools/git-summary.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "run",
+          "type": "function",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": ".opencode/tools/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": ".opencode/tools/lint-check.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 85,
+      "symbols": [
+        {
+          "name": "Linter",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "detectLinter",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "buildLintCommand",
+          "type": "function",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "path": ".opencode/tools/run-tests.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 139,
+      "symbols": [
+        {
+          "name": "detectPackageManager",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "detectTestFramework",
+          "type": "function",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "path": ".opencode/tools/security-audit.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 277,
+      "symbols": [
+        {
+          "name": "AuditCheck",
+          "type": "interface",
+          "line": 109
+        },
+        {
+          "name": "AuditResults",
+          "type": "interface",
+          "line": 118
+        },
+        {
+          "name": "scanForSecrets",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "scanDirectory",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "scanFile",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "scanCodeSecurity",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "generateRecommendations",
+          "type": "function",
+          "line": 246
+        }
+      ]
+    },
+    {
+      "path": ".opencode/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 147,
+      "symbols": []
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 128,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 449,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1293,
+      "symbols": []
+    },
+    {
+      "path": "README.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 552,
+      "symbols": []
+    },
+    {
+      "path": "SPONSORING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "SPONSORS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "TROUBLESHOOTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 422,
+      "symbols": []
+    },
+    {
+      "path": "agents/architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 211,
+      "symbols": []
+    },
+    {
+      "path": "agents/build-error-resolver.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 114,
+      "symbols": []
+    },
+    {
+      "path": "agents/chief-of-staff.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 151,
+      "symbols": []
+    },
+    {
+      "path": "agents/code-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 237,
+      "symbols": []
+    },
+    {
+      "path": "agents/database-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 91,
+      "symbols": []
+    },
+    {
+      "path": "agents/doc-updater.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 107,
+      "symbols": []
+    },
+    {
+      "path": "agents/e2e-runner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 107,
+      "symbols": []
+    },
+    {
+      "path": "agents/go-build-resolver.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 94,
+      "symbols": []
+    },
+    {
+      "path": "agents/go-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": "agents/harness-optimizer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "agents/kotlin-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 159,
+      "symbols": []
+    },
+    {
+      "path": "agents/loop-operator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "agents/planner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 212,
+      "symbols": []
+    },
+    {
+      "path": "agents/python-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 98,
+      "symbols": []
+    },
+    {
+      "path": "agents/refactor-cleaner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 85,
+      "symbols": []
+    },
+    {
+      "path": "agents/security-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 108,
+      "symbols": []
+    },
+    {
+      "path": "agents/tdd-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 91,
+      "symbols": []
+    },
+    {
+      "path": "commands/build-fix.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "commands/checkpoint.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 74,
+      "symbols": []
+    },
+    {
+      "path": "commands/claw.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "commands/code-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "commands/e2e.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 365,
+      "symbols": []
+    },
+    {
+      "path": "commands/eval.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 120,
+      "symbols": []
+    },
+    {
+      "path": "commands/evolve.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 178,
+      "symbols": []
+    },
+    {
+      "path": "commands/go-build.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 183,
+      "symbols": []
+    },
+    {
+      "path": "commands/go-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 148,
+      "symbols": []
+    },
+    {
+      "path": "commands/go-test.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 268,
+      "symbols": []
+    },
+    {
+      "path": "commands/gradle-build.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "commands/harness-audit.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 58,
+      "symbols": []
+    },
+    {
+      "path": "commands/instinct-export.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": "commands/instinct-import.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 114,
+      "symbols": []
+    },
+    {
+      "path": "commands/instinct-status.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "commands/learn-eval.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 116,
+      "symbols": []
+    },
+    {
+      "path": "commands/learn.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "commands/loop-start.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "commands/loop-status.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "commands/model-route.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "commands/multi-backend.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 158,
+      "symbols": []
+    },
+    {
+      "path": "commands/multi-execute.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 315,
+      "symbols": []
+    },
+    {
+      "path": "commands/multi-frontend.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 158,
+      "symbols": []
+    },
+    {
+      "path": "commands/multi-plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 268,
+      "symbols": []
+    },
+    {
+      "path": "commands/multi-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 183,
+      "symbols": []
+    },
+    {
+      "path": "commands/orchestrate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 172,
+      "symbols": []
+    },
+    {
+      "path": "commands/plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 115,
+      "symbols": []
+    },
+    {
+      "path": "commands/pm2.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 272,
+      "symbols": []
+    },
+    {
+      "path": "commands/projects.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "commands/promote.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "commands/python-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 297,
+      "symbols": []
+    },
+    {
+      "path": "commands/quality-gate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "commands/refactor-clean.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 80,
+      "symbols": []
+    },
+    {
+      "path": "commands/resume-session.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 155,
+      "symbols": []
+    },
+    {
+      "path": "commands/save-session.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 275,
+      "symbols": []
+    },
+    {
+      "path": "commands/sessions.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 305,
+      "symbols": []
+    },
+    {
+      "path": "commands/setup-pm.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 80,
+      "symbols": []
+    },
+    {
+      "path": "commands/skill-create.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 174,
+      "symbols": []
+    },
+    {
+      "path": "commands/tdd.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 328,
+      "symbols": []
+    },
+    {
+      "path": "commands/test-coverage.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 69,
+      "symbols": []
+    },
+    {
+      "path": "commands/update-codemaps.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 72,
+      "symbols": []
+    },
+    {
+      "path": "commands/update-docs.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 84,
+      "symbols": []
+    },
+    {
+      "path": "commands/verify.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "commitlint.config.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "contexts/dev.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "contexts/research.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "contexts/review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "docs/ARCHITECTURE-IMPROVEMENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 146,
+      "symbols": []
+    },
+    {
+      "path": "docs/COMMAND-AGENT-MAP.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "docs/business/metrics-and-sponsorship.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 74,
+      "symbols": []
+    },
+    {
+      "path": "docs/business/social-launch-copy.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "docs/continuous-learning-v2-spec.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 430,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 793,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 211,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/build-error-resolver.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 534,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/code-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 104,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/database-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 654,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/doc-updater.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 452,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/e2e-runner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 636,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/go-build-resolver.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 368,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/go-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 269,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/planner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/python-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 469,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/refactor-cleaner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 306,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/security-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 545,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/agents/tdd-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 280,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/build-fix.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/checkpoint.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 78,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/code-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/e2e.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 370,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/eval.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 120,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/evolve.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 193,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/go-build.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 183,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/go-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 148,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/go-test.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 268,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/instinct-export.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 91,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/instinct-import.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 142,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/instinct-status.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 86,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/learn.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/multi-backend.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 158,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/multi-execute.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 315,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/multi-frontend.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 158,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/multi-plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 268,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/multi-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 183,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/orchestrate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 172,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/pm2.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 272,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/python-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 297,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/refactor-clean.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/sessions.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 305,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/setup-pm.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 80,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/skill-create.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 174,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/tdd.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 326,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/test-coverage.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/update-codemaps.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/update-docs.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/commands/verify.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/contexts/dev.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/contexts/research.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/contexts/review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/examples/CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/examples/user-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 103,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/plugins/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 87,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/agents.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/git-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/performance.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/rules/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 105,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/backend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 587,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/clickhouse-io/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 429,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 527,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/configure-ecc/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 298,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/continuous-learning-v2/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 284,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/continuous-learning-v2/agents/observer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 137,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/continuous-learning/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 110,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/cpp-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 322,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/django-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 733,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/django-security/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 592,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/django-tdd/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 728,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/django-verification/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 460,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/eval-harness/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 227,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/frontend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 631,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/golang-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 673,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/golang-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 959,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/iterative-retrieval/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 202,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/java-coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 138,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/jpa-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 141,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/nutrient-document-processing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 164,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/postgres-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 146,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/project-guidelines-example/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 345,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/python-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 749,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/python-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 815,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/security-review/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 494,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/security-review/cloud-infrastructure-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 361,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/security-scan/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 164,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/springboot-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 304,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/springboot-security/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/springboot-tdd/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 157,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/springboot-verification/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/strategic-compact/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/tdd-workflow/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 409,
+      "symbols": []
+    },
+    {
+      "path": "docs/ja-JP/skills/verification-loop/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 120,
+      "symbols": []
+    },
+    {
+      "path": "docs/releases/1.8.0/linkedin-post.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "docs/releases/1.8.0/reference-attribution.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 16,
+      "symbols": []
+    },
+    {
+      "path": "docs/releases/1.8.0/release-notes.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "docs/releases/1.8.0/x-quote-eval-skills.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "docs/releases/1.8.0/x-quote-plankton-deslop.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "docs/releases/1.8.0/x-thread.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "docs/token-optimization.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 136,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/AGENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 141,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/CHANGELOG.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/CODE_OF_CONDUCT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 84,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 429,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1275,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/SPONSORING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/SPONSORS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 232,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/build-error-resolver.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/chief-of-staff.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 155,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/code-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 238,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/database-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 94,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/doc-updater.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 110,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/e2e-runner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 110,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/go-build-resolver.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 95,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/go-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/harness-optimizer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/loop-operator.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/planner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 215,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/python-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/refactor-cleaner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 92,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/security-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 112,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/agents/tdd-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 96,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/build-fix.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 64,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/checkpoint.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 78,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/claw.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/code-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/e2e.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 370,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/eval.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 122,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/evolve.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 194,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/go-build.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 187,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/go-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 161,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/go-test.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 274,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/harness-audit.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/instinct-export.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/instinct-import.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 117,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/instinct-status.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/learn-eval.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 92,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/learn.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/loop-start.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/loop-status.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/model-route.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/multi-backend.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 162,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/multi-execute.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 321,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/multi-frontend.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 162,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/multi-plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 278,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/multi-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 189,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/orchestrate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 183,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 115,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/pm2.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 283,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/projects.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/promote.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/python-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 320,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/quality-gate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/refactor-clean.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/sessions.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 312,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/setup-pm.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/skill-create.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 177,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/tdd.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 330,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/test-coverage.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 69,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/update-codemaps.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 73,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/update-docs.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 86,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/commands/verify.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/contexts/dev.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/contexts/research.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/contexts/review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/examples/CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/examples/django-api-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 308,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/examples/go-microservice-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 267,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/examples/rust-api-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 285,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/examples/saas-nextjs-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 166,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/examples/user-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 111,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/hooks/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 220,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/plugins/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 89,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 102,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/agents.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/development-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/git-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/performance.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/common/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/golang/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/golang/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/golang/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/golang/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/golang/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/python/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/python/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/python/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/python/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/python/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/swift/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/swift/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/swift/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/swift/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/swift/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/typescript/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/typescript/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/typescript/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/typescript/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/rules/typescript/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/agent-harness-construction/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 77,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/agentic-engineering/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/ai-first-engineering/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/api-design/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 523,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/article-writing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 92,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/autonomous-loops/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 621,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/backend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 598,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/clickhouse-io/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 445,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 537,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/configure-ecc/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 343,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/content-engine/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 97,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/content-hash-cache-pattern/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 161,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/continuous-agent-loop/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/continuous-learning-v2/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 371,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/continuous-learning-v2/agents/observer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 214,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/continuous-learning/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 120,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/cost-aware-llm-pipeline/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 183,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/cpp-coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 723,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/cpp-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 324,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/database-migrations/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 335,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/deployment-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 432,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/django-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 734,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/django-security/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 593,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/django-tdd/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 729,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/django-verification/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 475,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/docker-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 365,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/e2e-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 329,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/enterprise-agent-ops/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/eval-harness/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 304,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/foundation-models-on-device/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 244,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/frontend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 642,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/frontend-slides/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 195,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/frontend-slides/STYLE_PRESETS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 333,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/golang-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 674,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/golang-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 722,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/investor-materials/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 104,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/investor-outreach/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/iterative-retrieval/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 215,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/java-coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 147,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/jpa-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 155,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/liquid-glass-design/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 280,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/market-research/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 85,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/nanoclaw-repl/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/nutrient-document-processing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 165,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/plankton-code-quality/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 243,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/postgres-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 154,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/project-guidelines-example/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 354,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/python-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 750,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/python-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 816,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/ralphinho-rfc-pipeline/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 69,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/regex-vs-llm-structured-text/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 220,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/search-first/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 175,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/security-review/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 527,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/security-review/cloud-infrastructure-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 361,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/security-scan/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 172,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/skill-stocktake/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 176,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/springboot-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 313,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/springboot-security/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 272,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/springboot-tdd/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 160,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/springboot-verification/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 235,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/strategic-compact/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/swift-actor-persistence/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 143,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/swift-concurrency-6-2/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 217,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/swift-protocol-di-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 190,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/swiftui-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 259,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/tdd-workflow/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 440,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/verification-loop/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 136,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/visa-doc-translate/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 91,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/skills/visa-doc-translate/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/the-longform-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 358,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/the-openclaw-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 471,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/the-security-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 593,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-CN/the-shortform-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 432,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 191,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 480,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/TERMINOLOGY.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 104,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/architect.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 211,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/build-error-resolver.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 300,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/code-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 104,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/database-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 378,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/doc-updater.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 310,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/e2e-runner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 303,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/go-build-resolver.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 368,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/go-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 267,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/planner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/refactor-cleaner.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 273,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/security-reviewer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 378,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/agents/tdd-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 280,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/build-fix.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/checkpoint.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 74,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/code-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/e2e.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 115,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/eval.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 120,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/go-build.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/go-review.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 87,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/go-test.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 132,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/learn.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/orchestrate.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 140,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/plan.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/refactor-clean.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/setup-pm.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 80,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/tdd.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/test-coverage.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/update-codemaps.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/update-docs.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/commands/verify.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/rules/agents.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/rules/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/rules/git-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/rules/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/rules/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/rules/performance.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/rules/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/rules/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/backend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 587,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/clickhouse-io/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 429,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 520,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/continuous-learning-v2/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 257,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/continuous-learning/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 110,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/eval-harness/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 227,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/frontend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 631,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/golang-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 673,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/golang-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 710,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/iterative-retrieval/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 202,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/postgres-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 146,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/project-guidelines-example/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 345,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/security-review/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 494,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/security-review/cloud-infrastructure-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 361,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/strategic-compact/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/tdd-workflow/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 409,
+      "symbols": []
+    },
+    {
+      "path": "docs/zh-TW/skills/verification-loop/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 120,
+      "symbols": []
+    },
+    {
+      "path": "eslint.config.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "examples/CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "examples/django-api-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 308,
+      "symbols": []
+    },
+    {
+      "path": "examples/go-microservice-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 267,
+      "symbols": []
+    },
+    {
+      "path": "examples/rust-api-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 285,
+      "symbols": []
+    },
+    {
+      "path": "examples/saas-nextjs-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 166,
+      "symbols": []
+    },
+    {
+      "path": "examples/statusline.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "examples/user-CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 109,
+      "symbols": []
+    },
+    {
+      "path": "hooks/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 219,
+      "symbols": []
+    },
+    {
+      "path": "hooks/hooks.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 242,
+      "symbols": []
+    },
+    {
+      "path": "install.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 246,
+      "symbols": []
+    },
+    {
+      "path": "mcp-configs/mcp-servers.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 104,
+      "symbols": []
+    },
+    {
+      "path": "package-lock.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 3073,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "plugins/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 85,
+      "symbols": []
+    },
+    {
+      "path": "rules/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/agents.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/development-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/git-workflow.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/performance.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "rules/common/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "rules/golang/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "rules/golang/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "rules/golang/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "rules/golang/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "rules/golang/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "rules/kotlin/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 86,
+      "symbols": []
+    },
+    {
+      "path": "rules/kotlin/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 146,
+      "symbols": []
+    },
+    {
+      "path": "rules/kotlin/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 82,
+      "symbols": []
+    },
+    {
+      "path": "rules/kotlin/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 128,
+      "symbols": []
+    },
+    {
+      "path": "rules/perl/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "rules/perl/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "rules/perl/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": "rules/perl/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 69,
+      "symbols": []
+    },
+    {
+      "path": "rules/perl/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "rules/php/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "rules/php/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "rules/php/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "rules/php/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "rules/php/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "rules/python/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "rules/python/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "rules/python/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "rules/python/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "rules/python/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "rules/swift/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "rules/swift/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "rules/swift/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": "rules/swift/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "rules/swift/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "rules/typescript/coding-style.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 199,
+      "symbols": []
+    },
+    {
+      "path": "rules/typescript/hooks.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "rules/typescript/patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "rules/typescript/security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "rules/typescript/testing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "schemas/hooks.schema.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 197,
+      "symbols": []
+    },
+    {
+      "path": "schemas/package-manager.schema.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "schemas/plugin.schema.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 58,
+      "symbols": []
+    },
+    {
+      "path": "scripts/ci/catalog.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 83,
+      "symbols": [
+        {
+          "name": "listAgents",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "listCommands",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "listSkills",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "run",
+          "type": "function",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "scripts/ci/validate-agents.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 81,
+      "symbols": [
+        {
+          "name": "extractFrontmatter",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "validateAgents",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "scripts/ci/validate-commands.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 135,
+      "symbols": [
+        {
+          "name": "validateCommands",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "scripts/ci/validate-hooks.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 239,
+      "symbols": [
+        {
+          "name": "isNonEmptyString",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "isNonEmptyStringArray",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "validateHookEntry",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "validateHooks",
+          "type": "function",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "path": "scripts/ci/validate-no-personal-paths.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "collectFiles",
+          "type": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "scripts/ci/validate-rules.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 81,
+      "symbols": [
+        {
+          "name": "collectRuleFiles",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "validateRules",
+          "type": "function",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "scripts/ci/validate-skills.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "validateSkills",
+          "type": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "scripts/claw.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 468,
+      "symbols": [
+        {
+          "name": "isValidSessionName",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "getClawDir",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "getSessionPath",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "listSessions",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "loadHistory",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "appendTurn",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "normalizeSkillList",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "loadECCContext",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "buildPrompt",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "askClaude",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "parseTurns",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "estimateTokenCount",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "getSessionMetrics",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "searchSessions",
+          "type": "function",
+          "line": 143
+        },
+        {
+          "name": "compactSession",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "exportSession",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "branchSession",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "skillExists",
+          "type": "function",
+          "line": 229
+        },
+        {
+          "name": "handleClear",
+          "type": "function",
+          "line": 234
+        },
+        {
+          "name": "handleHistory",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "handleSessions",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "handleHelp",
+          "type": "function",
+          "line": 262
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 278
+        },
+        {
+          "name": "prompt",
+          "type": "function",
+          "line": 307
+        }
+      ]
+    },
+    {
+      "path": "scripts/codemaps/generate.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 330,
+      "symbols": [
+        {
+          "name": "walkDir",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "rel",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "AreaInfo",
+          "type": "interface",
+          "line": 100
+        },
+        {
+          "name": "classifyFiles",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "lineCount",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "buildTree",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "generateAreaDoc",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "generateIndex",
+          "type": "function",
+          "line": 244
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 292
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/auto-tmux-dev.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/check-console-log.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/check-hook-enabled.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/cost-tracker.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 78,
+      "symbols": [
+        {
+          "name": "toNumber",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "estimateCost",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "cost",
+          "type": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/doc-file-warning.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "isAllowedDocPath",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/evaluate-session.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 100,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/insaits-security-monitor.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 269,
+      "symbols": [
+        {
+          "name": "extract_content",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "write_audit",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "get_anomaly_attr",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "format_feedback",
+          "type": "function",
+          "line": 160
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 187
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/insaits-security-wrapper.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 88,
+      "symbols": [
+        {
+          "name": "isEnabled",
+          "type": "function",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/post-bash-build-complete.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/post-bash-pr-created.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/post-edit-console-warn.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/post-edit-format.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 109,
+      "symbols": [
+        {
+          "name": "run",
+          "type": "function",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/post-edit-typecheck.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 96,
+      "symbols": [
+        {
+          "name": "output",
+          "type": "function",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/pre-bash-dev-server-block.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 187,
+      "symbols": [
+        {
+          "name": "readToken",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "shouldSkipOptionValue",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "isOptionToken",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "normalizeCommandWord",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "getLeadingCommandWord",
+          "type": "function",
+          "line": 103
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/pre-bash-git-push-reminder.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/pre-bash-tmux-reminder.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/pre-compact.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 48,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/pre-write-doc-warn.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/quality-gate.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 168,
+      "symbols": [
+        {
+          "name": "exec",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "log",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "maybeRunQualityGate",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "run",
+          "type": "function",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/run-with-flags-shell.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 32,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/run-with-flags.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 120,
+      "symbols": [
+        {
+          "name": "readStdinRaw",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "getPluginRoot",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/session-end-marker.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "scripts/hooks/session-end.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 258,
+      "symbols": [
+        {
+          "name": "extractSessionSummary",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "runMain",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "buildSummarySection",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "buildSummaryBlock",
+          "type": "function",
+          "line": 252
+        },
+        {
+          "name": "escapeRegExp",
+          "type": "function",
+          "line": 256
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/session-start.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 97,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "scripts/hooks/suggest-compact.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 80,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "sessionId",
+          "type": "function",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/hook-flags.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 74,
+      "symbols": [
+        {
+          "name": "normalizeId",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "getHookProfile",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "getDisabledHookIds",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "parseProfiles",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "isHookEnabled",
+          "type": "function",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/package-manager.d.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 119,
+      "symbols": [
+        {
+          "name": "PackageManagerName",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "PackageManagerConfig",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "DetectionSource",
+          "type": "type",
+          "line": 29
+        },
+        {
+          "name": "PackageManagerResult",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "GetPackageManagerOptions",
+          "type": "interface",
+          "line": 50
+        },
+        {
+          "name": "getPackageManager",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "setPreferredPackageManager",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "setProjectPackageManager",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "getAvailablePackageManagers",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "detectFromLockFile",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "detectFromPackageJson",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "getRunCommand",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "getExecCommand",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "getSelectionPrompt",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "getCommandPattern",
+          "type": "function",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/package-manager.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 431,
+      "symbols": [
+        {
+          "name": "getConfigPath",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "loadConfig",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "saveConfig",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "detectFromLockFile",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "detectFromPackageJson",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "getAvailablePackageManagers",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "getPackageManager",
+          "type": "function",
+          "line": 163
+        },
+        {
+          "name": "setPreferredPackageManager",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "setProjectPackageManager",
+          "type": "function",
+          "line": 262
+        },
+        {
+          "name": "getRunCommand",
+          "type": "function",
+          "line": 293
+        },
+        {
+          "name": "getExecCommand",
+          "type": "function",
+          "line": 327
+        },
+        {
+          "name": "getSelectionPrompt",
+          "type": "function",
+          "line": 349
+        },
+        {
+          "name": "escapeRegex",
+          "type": "function",
+          "line": 362
+        },
+        {
+          "name": "getCommandPattern",
+          "type": "function",
+          "line": 370
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/project-detect.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 428,
+      "symbols": [
+        {
+          "name": "fileExists",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "hasFileWithExtension",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "getPackageJsonDeps",
+          "type": "function",
+          "line": 163
+        },
+        {
+          "name": "getPythonDeps",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "getGoDeps",
+          "type": "function",
+          "line": 232
+        },
+        {
+          "name": "getRustDeps",
+          "type": "function",
+          "line": 259
+        },
+        {
+          "name": "getComposerDeps",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "getElixirDeps",
+          "type": "function",
+          "line": 304
+        },
+        {
+          "name": "detectProjectType",
+          "type": "function",
+          "line": 325
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/resolve-formatter.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 185,
+      "symbols": [
+        {
+          "name": "findProjectRoot",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "detectFormatter",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "getRunnerFromPackageManager",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "resolveFormatterBin",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "clearCaches",
+          "type": "function",
+          "line": 174
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/session-aliases.d.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 136,
+      "symbols": [
+        {
+          "name": "AliasEntry",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "AliasStore",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "ResolvedAlias",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "AliasListItem",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "AliasResult",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "SetAliasResult",
+          "type": "interface",
+          "line": 48
+        },
+        {
+          "name": "DeleteAliasResult",
+          "type": "interface",
+          "line": 55
+        },
+        {
+          "name": "RenameAliasResult",
+          "type": "interface",
+          "line": 60
+        },
+        {
+          "name": "CleanupResult",
+          "type": "interface",
+          "line": 66
+        },
+        {
+          "name": "ListAliasesOptions",
+          "type": "interface",
+          "line": 73
+        },
+        {
+          "name": "getAliasesPath",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "loadAliases",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "saveAliases",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "resolveAlias",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "setAlias",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "listAliases",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "deleteAlias",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "renameAlias",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "resolveSessionAlias",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "updateAliasTitle",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "getAliasesForSession",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "cleanupAliases",
+          "type": "function",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/session-aliases.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 481,
+      "symbols": [
+        {
+          "name": "getAliasesPath",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "getDefaultAliases",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "loadAliases",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "saveAliases",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "resolveAlias",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "setAlias",
+          "type": "function",
+          "line": 188
+        },
+        {
+          "name": "listAliases",
+          "type": "function",
+          "line": 244
+        },
+        {
+          "name": "deleteAlias",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "renameAlias",
+          "type": "function",
+          "line": 308
+        },
+        {
+          "name": "resolveSessionAlias",
+          "type": "function",
+          "line": 365
+        },
+        {
+          "name": "updateAliasTitle",
+          "type": "function",
+          "line": 382
+        },
+        {
+          "name": "getAliasesForSession",
+          "type": "function",
+          "line": 412
+        },
+        {
+          "name": "cleanupAliases",
+          "type": "function",
+          "line": 434
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/session-manager.d.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 131,
+      "symbols": [
+        {
+          "name": "SessionFilenameMeta",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "SessionMetadata",
+          "type": "interface",
+          "line": 19
+        },
+        {
+          "name": "SessionStats",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "Session",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "SessionListResult",
+          "type": "interface",
+          "line": 61
+        },
+        {
+          "name": "GetAllSessionsOptions",
+          "type": "interface",
+          "line": 69
+        },
+        {
+          "name": "parseSessionFilename",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "getSessionPath",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "getSessionContent",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "parseSessionMetadata",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "getSessionStats",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "getSessionTitle",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "getSessionSize",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "getAllSessions",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "getSessionById",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "writeSessionContent",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "appendSessionContent",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "deleteSession",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "sessionExists",
+          "type": "function",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/session-manager.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 444,
+      "symbols": [
+        {
+          "name": "parseSessionFilename",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "getSessionPath",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "getSessionContent",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "parseSessionMetadata",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "getSessionStats",
+          "type": "function",
+          "line": 160
+        },
+        {
+          "name": "getAllSessions",
+          "type": "function",
+          "line": 194
+        },
+        {
+          "name": "getSessionById",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "getSessionTitle",
+          "type": "function",
+          "line": 341
+        },
+        {
+          "name": "getSessionSize",
+          "type": "function",
+          "line": 353
+        },
+        {
+          "name": "writeSessionContent",
+          "type": "function",
+          "line": 373
+        },
+        {
+          "name": "appendSessionContent",
+          "type": "function",
+          "line": 389
+        },
+        {
+          "name": "deleteSession",
+          "type": "function",
+          "line": 404
+        },
+        {
+          "name": "sessionExists",
+          "type": "function",
+          "line": 422
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/shell-split.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 86,
+      "symbols": [
+        {
+          "name": "splitShellSegments",
+          "type": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/utils.d.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 183,
+      "symbols": [
+        {
+          "name": "getHomeDir",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "getClaudeDir",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "getSessionsDir",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "getLearnedSkillsDir",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "getTempDir",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "ensureDir",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "getDateString",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "getTimeString",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "getDateTimeString",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "getSessionIdShort",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "getGitRepoName",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "getProjectName",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "FileMatch",
+          "type": "interface",
+          "line": 64
+        },
+        {
+          "name": "FindFilesOptions",
+          "type": "interface",
+          "line": 71
+        },
+        {
+          "name": "findFiles",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "readFile",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "writeFile",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "appendFile",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "ReplaceInFileOptions",
+          "type": "interface",
+          "line": 96
+        },
+        {
+          "name": "replaceInFile",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "countInFile",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "GrepMatch",
+          "type": "interface",
+          "line": 116
+        },
+        {
+          "name": "grepFile",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "ReadStdinJsonOptions",
+          "type": "interface",
+          "line": 128
+        },
+        {
+          "name": "readStdinJson",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "log",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "output",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "commandExists",
+          "type": "function",
+          "line": 161
+        },
+        {
+          "name": "CommandResult",
+          "type": "interface",
+          "line": 163
+        },
+        {
+          "name": "runCommand",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "isGitRepo",
+          "type": "function",
+          "line": 177
+        },
+        {
+          "name": "getGitModifiedFiles",
+          "type": "function",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "path": "scripts/lib/utils.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 543,
+      "symbols": [
+        {
+          "name": "getHomeDir",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "getClaudeDir",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "getSessionsDir",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "getLearnedSkillsDir",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "getTempDir",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "ensureDir",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "getDateString",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "getTimeString",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "getGitRepoName",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "getProjectName",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "getSessionIdShort",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "getDateTimeString",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "findFiles",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "searchDir",
+          "type": "function",
+          "line": 161
+        },
+        {
+          "name": "ageInDays",
+          "type": "function",
+          "line": 177
+        },
+        {
+          "name": "readStdinJson",
+          "type": "function",
+          "line": 208
+        },
+        {
+          "name": "log",
+          "type": "function",
+          "line": 265
+        },
+        {
+          "name": "output",
+          "type": "function",
+          "line": 272
+        },
+        {
+          "name": "readFile",
+          "type": "function",
+          "line": 283
+        },
+        {
+          "name": "writeFile",
+          "type": "function",
+          "line": 294
+        },
+        {
+          "name": "appendFile",
+          "type": "function",
+          "line": 302
+        },
+        {
+          "name": "commandExists",
+          "type": "function",
+          "line": 311
+        },
+        {
+          "name": "runCommand",
+          "type": "function",
+          "line": 341
+        },
+        {
+          "name": "isGitRepo",
+          "type": "function",
+          "line": 371
+        },
+        {
+          "name": "getGitModifiedFiles",
+          "type": "function",
+          "line": 381
+        },
+        {
+          "name": "replaceInFile",
+          "type": "function",
+          "line": 419
+        },
+        {
+          "name": "countInFile",
+          "type": "function",
+          "line": 446
+        },
+        {
+          "name": "grepFile",
+          "type": "function",
+          "line": 470
+        }
+      ]
+    },
+    {
+      "path": "scripts/release.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "scripts/setup-package-manager.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 204,
+      "symbols": [
+        {
+          "name": "showHelp",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "detectAndShow",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "listAvailable",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "setGlobal",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "setProject",
+          "type": "function",
+          "line": 138
+        }
+      ]
+    },
+    {
+      "path": "scripts/skill-create-output.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 244,
+      "symbols": [
+        {
+          "name": "box",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "stripAnsi",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "progressBar",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "sleep",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "animateProgress",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "SkillCreateOutput",
+          "type": "class",
+          "line": 81
+        },
+        {
+          "name": "demo",
+          "type": "function",
+          "line": 177
+        }
+      ]
+    },
+    {
+      "path": "skills/agent-harness-construction/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 73,
+      "symbols": []
+    },
+    {
+      "path": "skills/agentic-engineering/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "skills/ai-first-engineering/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "skills/android-clean-architecture/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 339,
+      "symbols": []
+    },
+    {
+      "path": "skills/api-design/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 523,
+      "symbols": []
+    },
+    {
+      "path": "skills/article-writing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 85,
+      "symbols": []
+    },
+    {
+      "path": "skills/autonomous-loops/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 612,
+      "symbols": []
+    },
+    {
+      "path": "skills/backend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 598,
+      "symbols": []
+    },
+    {
+      "path": "skills/blueprint/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 105,
+      "symbols": []
+    },
+    {
+      "path": "skills/carrier-relationship-management/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 212,
+      "symbols": []
+    },
+    {
+      "path": "skills/clickhouse-io/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 439,
+      "symbols": []
+    },
+    {
+      "path": "skills/coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 530,
+      "symbols": []
+    },
+    {
+      "path": "skills/compose-multiplatform-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 299,
+      "symbols": []
+    },
+    {
+      "path": "skills/configure-ecc/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 326,
+      "symbols": []
+    },
+    {
+      "path": "skills/content-engine/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "skills/content-hash-cache-pattern/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 161,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-agent-loop/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning-v2/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 365,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning-v2/agents/observer-loop.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 144,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning-v2/agents/observer.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 198,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning-v2/agents/start-observer.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 194,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning-v2/config.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning-v2/hooks/observe.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 246,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning-v2/scripts/detect-project.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 218,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning-v2/scripts/instinct-cli.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 1148,
+      "symbols": [
+        {
+          "name": "_ensure_global_dirs",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "_validate_file_path",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "_validate_instinct_id",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "detect_project",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "_update_registry",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "load_registry",
+          "type": "function",
+          "line": 210
+        },
+        {
+          "name": "parse_instinct_file",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "_load_instincts_from_dir",
+          "type": "function",
+          "line": 264
+        },
+        {
+          "name": "load_all_instincts",
+          "type": "function",
+          "line": 290
+        },
+        {
+          "name": "load_project_only_instincts",
+          "type": "function",
+          "line": 325
+        },
+        {
+          "name": "cmd_status",
+          "type": "function",
+          "line": 341
+        },
+        {
+          "name": "_print_instincts_by_domain",
+          "type": "function",
+          "line": 392
+        },
+        {
+          "name": "cmd_import",
+          "type": "function",
+          "line": 427
+        },
+        {
+          "name": "cmd_export",
+          "type": "function",
+          "line": 577
+        },
+        {
+          "name": "cmd_evolve",
+          "type": "function",
+          "line": 646
+        },
+        {
+          "name": "_find_cross_project_instincts",
+          "type": "function",
+          "line": 762
+        },
+        {
+          "name": "_show_promotion_candidates",
+          "type": "function",
+          "line": 785
+        },
+        {
+          "name": "cmd_promote",
+          "type": "function",
+          "line": 821
+        },
+        {
+          "name": "_promote_specific",
+          "type": "function",
+          "line": 833
+        },
+        {
+          "name": "_promote_auto",
+          "type": "function",
+          "line": 884
+        },
+        {
+          "name": "cmd_projects",
+          "type": "function",
+          "line": 962
+        },
+        {
+          "name": "_generate_evolved",
+          "type": "function",
+          "line": 1012
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 1090
+        }
+      ]
+    },
+    {
+      "path": "skills/continuous-learning-v2/scripts/test_parse_instinct.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 984,
+      "symbols": [
+        {
+          "name": "project_tree",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "patch_globals",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "_make_project",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "test_multiple_instincts_preserve_content",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "test_single_instinct_preserves_content",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "test_empty_content_no_error",
+          "type": "function",
+          "line": 208
+        },
+        {
+          "name": "test_parse_no_id_skipped",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "test_parse_confidence_is_float",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "test_parse_trigger_strips_quotes",
+          "type": "function",
+          "line": 252
+        },
+        {
+          "name": "test_parse_empty_string",
+          "type": "function",
+          "line": 267
+        },
+        {
+          "name": "test_parse_garbage_input",
+          "type": "function",
+          "line": 272
+        },
+        {
+          "name": "test_validate_normal_path",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "test_validate_rejects_etc",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "test_validate_rejects_var_log",
+          "type": "function",
+          "line": 293
+        },
+        {
+          "name": "test_validate_rejects_usr",
+          "type": "function",
+          "line": 298
+        },
+        {
+          "name": "test_validate_rejects_proc",
+          "type": "function",
+          "line": 303
+        },
+        {
+          "name": "test_validate_must_exist_fails",
+          "type": "function",
+          "line": 308
+        },
+        {
+          "name": "test_validate_home_expansion",
+          "type": "function",
+          "line": 313
+        },
+        {
+          "name": "test_validate_relative_path",
+          "type": "function",
+          "line": 319
+        },
+        {
+          "name": "test_detect_project_global_fallback",
+          "type": "function",
+          "line": 332
+        },
+        {
+          "name": "mock_run",
+          "type": "function",
+          "line": 337
+        },
+        {
+          "name": "test_detect_project_from_env",
+          "type": "function",
+          "line": 347
+        },
+        {
+          "name": "mock_run",
+          "type": "function",
+          "line": 354
+        },
+        {
+          "name": "test_detect_project_git_timeout",
+          "type": "function",
+          "line": 368
+        },
+        {
+          "name": "mock_run",
+          "type": "function",
+          "line": 373
+        },
+        {
+          "name": "test_detect_project_creates_directories",
+          "type": "function",
+          "line": 382
+        },
+        {
+          "name": "mock_run",
+          "type": "function",
+          "line": 388
+        },
+        {
+          "name": "test_load_from_empty_dir",
+          "type": "function",
+          "line": 407
+        },
+        {
+          "name": "test_load_from_nonexistent_dir",
+          "type": "function",
+          "line": 412
+        },
+        {
+          "name": "test_load_annotates_metadata",
+          "type": "function",
+          "line": 417
+        },
+        {
+          "name": "test_load_defaults_scope_from_label",
+          "type": "function",
+          "line": 429
+        },
+        {
+          "name": "test_load_preserves_explicit_scope",
+          "type": "function",
+          "line": 446
+        },
+        {
+          "name": "test_load_handles_corrupt_file",
+          "type": "function",
+          "line": 457
+        },
+        {
+          "name": "test_load_supports_yml_extension",
+          "type": "function",
+          "line": 469
+        },
+        {
+          "name": "test_load_supports_md_extension",
+          "type": "function",
+          "line": 478
+        },
+        {
+          "name": "test_load_instincts_from_dir_uses_utf8_encoding",
+          "type": "function",
+          "line": 487
+        },
+        {
+          "name": "fake_read_text",
+          "type": "function",
+          "line": 492
+        },
+        {
+          "name": "test_load_all_project_and_global",
+          "type": "function",
+          "line": 506
+        },
+        {
+          "name": "test_load_all_project_overrides_global",
+          "type": "function",
+          "line": 522
+        },
+        {
+          "name": "test_load_all_global_only",
+          "type": "function",
+          "line": 543
+        },
+        {
+          "name": "test_load_project_only_excludes_global",
+          "type": "function",
+          "line": 564
+        },
+        {
+          "name": "test_load_project_only_global_fallback_loads_global",
+          "type": "function",
+          "line": 578
+        },
+        {
+          "name": "test_load_all_empty",
+          "type": "function",
+          "line": 599
+        },
+        {
+          "name": "test_cmd_status_no_instincts",
+          "type": "function",
+          "line": 612
+        },
+        {
+          "name": "test_cmd_status_with_instincts",
+          "type": "function",
+          "line": 625
+        },
+        {
+          "name": "test_cmd_status_returns_int",
+          "type": "function",
+          "line": 645
+        },
+        {
+          "name": "test_cmd_projects_empty_registry",
+          "type": "function",
+          "line": 660
+        },
+        {
+          "name": "test_cmd_projects_with_registry",
+          "type": "function",
+          "line": 669
+        },
+        {
+          "name": "test_promote_specific_not_found",
+          "type": "function",
+          "line": 702
+        },
+        {
+          "name": "test_promote_specific_rejects_invalid_id",
+          "type": "function",
+          "line": 713
+        },
+        {
+          "name": "test_promote_specific_already_global",
+          "type": "function",
+          "line": 724
+        },
+        {
+          "name": "test_promote_specific_success",
+          "type": "function",
+          "line": 740
+        },
+        {
+          "name": "test_promote_auto_no_candidates",
+          "type": "function",
+          "line": 764
+        },
+        {
+          "name": "test_promote_auto_dry_run",
+          "type": "function",
+          "line": 778
+        },
+        {
+          "name": "test_promote_auto_writes_file",
+          "type": "function",
+          "line": 819
+        },
+        {
+          "name": "test_promote_auto_skips_invalid_id",
+          "type": "function",
+          "line": 857
+        },
+        {
+          "name": "test_find_cross_project_empty_registry",
+          "type": "function",
+          "line": 895
+        },
+        {
+          "name": "test_find_cross_project_single_project",
+          "type": "function",
+          "line": 902
+        },
+        {
+          "name": "test_find_cross_project_shared_instinct",
+          "type": "function",
+          "line": 915
+        },
+        {
+          "name": "test_load_registry_missing_file",
+          "type": "function",
+          "line": 939
+        },
+        {
+          "name": "test_load_registry_corrupt_json",
+          "type": "function",
+          "line": 944
+        },
+        {
+          "name": "test_load_registry_valid",
+          "type": "function",
+          "line": 951
+        },
+        {
+          "name": "test_load_registry_uses_utf8_encoding",
+          "type": "function",
+          "line": 959
+        },
+        {
+          "name": "fake_open",
+          "type": "function",
+          "line": 962
+        },
+        {
+          "name": "test_validate_instinct_id",
+          "type": "function",
+          "line": 971
+        },
+        {
+          "name": "test_update_registry_atomic_replaces_file",
+          "type": "function",
+          "line": 978
+        }
+      ]
+    },
+    {
+      "path": "skills/continuous-learning/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning/config.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "skills/continuous-learning/evaluate-session.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 69,
+      "symbols": []
+    },
+    {
+      "path": "skills/cost-aware-llm-pipeline/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 183,
+      "symbols": []
+    },
+    {
+      "path": "skills/cpp-coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 723,
+      "symbols": []
+    },
+    {
+      "path": "skills/cpp-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 324,
+      "symbols": []
+    },
+    {
+      "path": "skills/customs-trade-compliance/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 263,
+      "symbols": []
+    },
+    {
+      "path": "skills/database-migrations/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 335,
+      "symbols": []
+    },
+    {
+      "path": "skills/deployment-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 427,
+      "symbols": []
+    },
+    {
+      "path": "skills/django-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 734,
+      "symbols": []
+    },
+    {
+      "path": "skills/django-security/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 593,
+      "symbols": []
+    },
+    {
+      "path": "skills/django-tdd/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 729,
+      "symbols": []
+    },
+    {
+      "path": "skills/django-verification/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 469,
+      "symbols": []
+    },
+    {
+      "path": "skills/docker-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 364,
+      "symbols": []
+    },
+    {
+      "path": "skills/e2e-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 326,
+      "symbols": []
+    },
+    {
+      "path": "skills/energy-procurement/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 228,
+      "symbols": []
+    },
+    {
+      "path": "skills/enterprise-agent-ops/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "skills/eval-harness/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 270,
+      "symbols": []
+    },
+    {
+      "path": "skills/foundation-models-on-device/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 243,
+      "symbols": []
+    },
+    {
+      "path": "skills/frontend-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 642,
+      "symbols": []
+    },
+    {
+      "path": "skills/frontend-slides/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 184,
+      "symbols": []
+    },
+    {
+      "path": "skills/frontend-slides/STYLE_PRESETS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 330,
+      "symbols": []
+    },
+    {
+      "path": "skills/golang-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 674,
+      "symbols": []
+    },
+    {
+      "path": "skills/golang-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 720,
+      "symbols": []
+    },
+    {
+      "path": "skills/inventory-demand-planning/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 247,
+      "symbols": []
+    },
+    {
+      "path": "skills/investor-materials/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 96,
+      "symbols": []
+    },
+    {
+      "path": "skills/investor-outreach/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 76,
+      "symbols": []
+    },
+    {
+      "path": "skills/iterative-retrieval/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 211,
+      "symbols": []
+    },
+    {
+      "path": "skills/java-coding-standards/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 147,
+      "symbols": []
+    },
+    {
+      "path": "skills/jpa-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 151,
+      "symbols": []
+    },
+    {
+      "path": "skills/kotlin-coroutines-flows/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 284,
+      "symbols": []
+    },
+    {
+      "path": "skills/liquid-glass-design/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 279,
+      "symbols": []
+    },
+    {
+      "path": "skills/logistics-exception-management/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 222,
+      "symbols": []
+    },
+    {
+      "path": "skills/market-research/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": "skills/nanoclaw-repl/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "skills/nutrient-document-processing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 165,
+      "symbols": []
+    },
+    {
+      "path": "skills/perl-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 504,
+      "symbols": []
+    },
+    {
+      "path": "skills/perl-security/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 503,
+      "symbols": []
+    },
+    {
+      "path": "skills/perl-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 475,
+      "symbols": []
+    },
+    {
+      "path": "skills/plankton-code-quality/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 239,
+      "symbols": []
+    },
+    {
+      "path": "skills/postgres-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 147,
+      "symbols": []
+    },
+    {
+      "path": "skills/production-scheduling/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 238,
+      "symbols": []
+    },
+    {
+      "path": "skills/project-guidelines-example/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 349,
+      "symbols": []
+    },
+    {
+      "path": "skills/python-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 750,
+      "symbols": []
+    },
+    {
+      "path": "skills/python-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 816,
+      "symbols": []
+    },
+    {
+      "path": "skills/quality-nonconformance/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 260,
+      "symbols": []
+    },
+    {
+      "path": "skills/ralphinho-rfc-pipeline/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": "skills/regex-vs-llm-structured-text/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 220,
+      "symbols": []
+    },
+    {
+      "path": "skills/returns-reverse-logistics/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 240,
+      "symbols": []
+    },
+    {
+      "path": "skills/search-first/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 161,
+      "symbols": []
+    },
+    {
+      "path": "skills/security-review/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 495,
+      "symbols": []
+    },
+    {
+      "path": "skills/security-review/cloud-infrastructure-security.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 361,
+      "symbols": []
+    },
+    {
+      "path": "skills/security-scan/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 165,
+      "symbols": []
+    },
+    {
+      "path": "skills/skill-stocktake/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 193,
+      "symbols": []
+    },
+    {
+      "path": "skills/skill-stocktake/scripts/quick-diff.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 87,
+      "symbols": []
+    },
+    {
+      "path": "skills/skill-stocktake/scripts/save-results.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "skills/skill-stocktake/scripts/scan.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 170,
+      "symbols": []
+    },
+    {
+      "path": "skills/springboot-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 314,
+      "symbols": []
+    },
+    {
+      "path": "skills/springboot-security/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 272,
+      "symbols": []
+    },
+    {
+      "path": "skills/springboot-tdd/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 158,
+      "symbols": []
+    },
+    {
+      "path": "skills/springboot-verification/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 231,
+      "symbols": []
+    },
+    {
+      "path": "skills/strategic-compact/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 103,
+      "symbols": []
+    },
+    {
+      "path": "skills/strategic-compact/suggest-compact.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "skills/swift-actor-persistence/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 143,
+      "symbols": []
+    },
+    {
+      "path": "skills/swift-concurrency-6-2/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 216,
+      "symbols": []
+    },
+    {
+      "path": "skills/swift-protocol-di-testing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 190,
+      "symbols": []
+    },
+    {
+      "path": "skills/swiftui-patterns/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 259,
+      "symbols": []
+    },
+    {
+      "path": "skills/tdd-workflow/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 410,
+      "symbols": []
+    },
+    {
+      "path": "skills/verification-loop/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 126,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 377,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/api-reference.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 550,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/capture-reference.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 407,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/capture.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 101,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/editor.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 443,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/generative.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 331,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/rtstream-reference.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 564,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/rtstream.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/search.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 230,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/streaming.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 406,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/reference/use-cases.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 118,
+      "symbols": []
+    },
+    {
+      "path": "skills/videodb/scripts/ws_listener.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 282,
+      "symbols": [
+        {
+          "name": "default_output_dir",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "ensure_private_dir",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "parse_args",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "log",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "append_event",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "write_pid",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "cleanup_pid",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "is_fatal_error",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "handle_signal",
+          "type": "function",
+          "line": 237
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 273
+        }
+      ]
+    },
+    {
+      "path": "skills/visa-doc-translate/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 86,
+      "symbols": []
+    },
+    {
+      "path": "skills/visa-doc-translate/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 117,
+      "symbols": []
+    }
+  ]
+}
