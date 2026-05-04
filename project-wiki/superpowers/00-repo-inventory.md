@@ -2,7 +2,7 @@
 
 ## Source
 
-- Path: `/Users/bytedance/workspace/deepwiki/project-repos/superpowers`
+- Path: `/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/superpowers`
 - Remote: `https://github.com/obra/superpowers`
 - Branch: `main`
 - Commit: `e7a2d16476bf042e9add4699c9d018a90f86e4a6`

@@ -1,94 +1,86 @@
 # Superpowers DeepWiki
 
-> **面向编码代理的完整软件开发方法论——基于 14 个可组合技能的结构化工作流框架**
+> **Superpowers 是一个 AI 编码智能体的完整开发方法论，通过 14 个可组合的技能（TDD、系统化调试、子任务分派等）让 AI 智能体在动手写代码之前先探索需求、设计方案、制定计划——从根本上解决 AI 编程工具"直接跳进代码"导致的返工和质量问题。**
 
 ## 目录导航
 
-| 分区 | 页面 | 重要性 | 内容简介 |
-|------|------|--------|----------|
-| 概览 | [项目概览](pages/overview.md) | high | 定位、核心能力、设计哲学与阅读路线 |
-| 系统架构 | [系统架构](pages/system-architecture.md) | high | 插件系统、技能发现与加载、Hook 机制、会话引导流程 |
-| 系统架构 | [多平台集成](pages/multi-platform-integration.md) | high | Claude Code、Cursor、Codex、OpenCode、Copilot CLI、Gemini CLI 的适配方式 |
-| 核心工作流 | [核心工作流](pages/core-workflow.md) | high | 从头脑风暴到分支完成的完整开发流程 |
-| 核心工作流 | [子代理驱动开发](pages/subagent-driven-development.md) | high | SDD 流程详解：子代理调度、两阶段审查、模型选择策略 |
-| 技能体系 | [技能体系](pages/skills-system.md) | high | 14 个技能的分类、设计哲学、SKILL.md 规范、CSO 优化策略 |
-| 技能体系 | [测试驱动与系统化调试](pages/tdd-and-debugging.md) | high | TDD 铁律与 RED-GREEN-REFACTOR 循环、四阶段系统化调试法、验证先行原则 |
-| 可视化组件 | [可视化头脑风暴伴侣](pages/visual-companion.md) | medium | WebSocket 服务器架构、交互协议、内容模板系统 |
-| 质量与扩展 | [测试与质量保障](pages/testing-and-quality.md) | medium | 集成测试框架、技能触发测试、Token 分析工具 |
-| 质量与扩展 | [扩展与贡献](pages/extension-and-contribution.md) | medium | 编写新技能、版本管理、贡献规范与 PR 要求 |
+| 分区 | 页面 | 内容简介 |
+|------|------|----------|
+| **概览** | [项目概览](pages/overview.md) | 定位、核心能力、与同类方案的差异 |
+| **概览** | [设计哲学](pages/philosophy.md) | TDD、系统化、证据优先的工程价值观 |
+| **架构** | [系统架构](pages/system-architecture.md) | 三层架构、插件层、Hook 机制 |
+| **架构** | [插件系统](pages/plugin-system.md) | 多平台插件的注册机制 |
+| **架构** | [Hook 机制](pages/hook-system.md) | SessionStart 上下文注入详解 |
+| **工作流** | [Brainstorming](pages/brainstorming.md) | Socratic 设计探索与分阶段确认 |
+| **工作流** | [Git Worktrees](pages/git-worktrees.md) | 隔离工作区的创建与安全验证 |
+| **工作流** | [Writing Plans](pages/writing-plans.md) | 原子化任务卡片的编写规范 |
+| **执行** | [Subagent-Driven Dev](pages/subagent-driven-development.md) | 子任务分派 + 两阶段评审 |
+| **执行** | [TDD](pages/test-driven-development.md) | RED-GREEN-REFACTOR 铁律详解 |
+| **执行** | [验证与调试](pages/verification.md) | 四阶段根因分析与修复验证 |
+| **质量** | [代码评审](pages/code-review.md) | 评审发起与接收的双人机协作 |
+| **质量** | [结束分支](pages/finishing-branch.md) | 测试验证与整合选项 |
+| **技能** | [技能框架](pages/skills-system.md) | SKILL.md 结构与 TDD 驱动开发 |
+| **技能** | [技能目录](pages/skills-catalog.md) | 14 个技能的分类索引 |
+| **平台** | [多平台支持](pages/multi-platform.md) | 6 大平台的安装与配置 |
 
-## 仓库快照
+## 仓库全景
 
 ```text
 superpowers/
-├── .claude-plugin/        # Claude Code 插件清单
-├── .codex-plugin/         # Codex 插件清单
-├── .cursor-plugin/        # Cursor 插件清单
-├── .opencode/             # OpenCode 插件与安装指南
-├── agents/                # 代理定义（code-reviewer）
-├── commands/              # 已弃用的命令（迁移至技能）
-├── docs/                  # 设计文档、规格、计划
-├── hooks/                 # SessionStart 钩子（引导注入）
-├── scripts/               # 版本管理与 Codex 同步脚本
-├── skills/                # 14 个技能目录
-├── tests/                 # 集成测试与技能触发测试
-├── CLAUDE.md              # Claude Code 贡献者指南
-├── GEMINI.md              # Gemini CLI 引导文件
-└── package.json           # v5.0.7
+├── skills/                          # 14 个技能子目录
+│   ├── brainstorming/               # 设计前 Socratic 探索
+│   ├── test-driven-development/     # RED-GREEN-REFACTOR
+│   ├── systematic-debugging/        # 四阶段根因分析
+│   ├── writing-plans/               # 原子化任务卡片
+│   ├── subagent-driven-development/ # 子任务分派 + 两阶段评审
+│   ├── requesting-code-review/      # 评审发起
+│   ├── receiving-code-review/       # 评审接收
+│   ├── finishing-a-development-branch/  # 分支收尾
+│   ├── using-git-worktrees/        # Git Worktree 隔离
+│   ├── verification-before-completion/  # 修复验证
+│   ├── executing-plans/            # 批量执行（备选）
+│   ├── dispatching-parallel-agents/ # 并行分派
+│   ├── writing-skills/             # 技能编写规范
+│   └── using-superpowers/         # 技能加载规范
+├── hooks/                           # SessionStart Hook 脚本
+├── .claude-plugin/                  # Claude Code 插件
+├── .codex-plugin/                   # Copilot CLI / Codex 插件
+├── .cursor-plugin/                  # Cursor 插件
+├── gemini-extension.json             # Gemini CLI 扩展
+└── .opencode/plugins/              # OpenCode 插件
 ```
 
 ## 核心入口
 
-| 文件 | 职责 |
+| 文件 | 作用 |
 |------|------|
-| `hooks/session-start` | 会话启动钩子，注入 using-superpowers 引导上下文 |
-| `skills/using-superpowers/SKILL.md` | 技能系统入口，定义触发规则和优先级 |
-| `.opencode/plugins/superpowers.js` | OpenCode ES 模块插件，config + messages.transform |
-| `.codex-plugin/plugin.json` | Codex 插件清单，含完整 interface 定义 |
-| `skills/brainstorming/SKILL.md` | 核心工作流入口，需求探索与设计 |
-| `skills/subagent-driven-development/SKILL.md` | SDD 流程，子代理调度与两阶段审查 |
+| `hooks/session-start` | 会话启动时注入技能上下文的 Bash 脚本 |
+| `hooks/hooks.json` | 平台无关的 Hook 配置 |
+| `skills/using-superpowers/SKILL.md` | 强制技能触发检查的入口技能 |
+| `skills/subagent-driven-development/SKILL.md` | 主流执行模式的核心流程 |
+| `skills/writing-skills/SKILL.md` | TDD 驱动的技能编写方法论 |
 
-## 快速导航
+## 你想了解什么？
 
-- **想了解项目是什么？** → 阅读 [项目概览](pages/overview.md)
-- **想理解技能如何被发现和加载？** → 阅读 [系统架构](pages/system-architecture.md)
-- **想了解完整开发流程？** → 阅读 [核心工作流](pages/core-workflow.md)
-- **想了解子代理驱动开发？** → 阅读 [子代理驱动开发](pages/subagent-driven-development.md)
-- **想了解 TDD 和调试方法论？** → 阅读 [测试驱动与系统化调试](pages/tdd-and-debugging.md)
-- **想在特定平台上安装使用？** → 阅读 [多平台集成](pages/multi-platform-integration.md)
-- **想了解可视化伴侣？** → 阅读 [可视化头脑风暴伴侣](pages/visual-companion.md)
-- **想编写自定义技能？** → 阅读 [扩展与贡献](pages/extension-and-contribution.md)
+- **Superpowers 是什么，解决了什么问题？** → [项目概览](pages/overview.md)
+- **它背后的工程哲学是什么？** → [设计哲学](pages/philosophy.md)
+- **系统是怎么组织的？** → [系统架构](pages/system-architecture.md)
+- **如何实现多平台支持的？** → [插件系统](pages/plugin-system.md) + [Hook 机制](pages/hook-system.md)
+- **智能体怎么被强制要求先设计再写代码？** → [Brainstorming](pages/brainstorming.md)
+- **Subagent-Driven Development 具体怎么运作？** → [Subagent-Driven Dev](pages/subagent-driven-development.md)
+- **TDD 铁律具体怎么执行？** → [TDD](pages/test-driven-development.md)
+- **如何调试而不是修症状？** → [验证与调试](pages/verification.md)
+- **14 个技能全览** → [技能目录](pages/skills-catalog.md)
+- **如何在各平台安装？** → [多平台支持](pages/multi-platform.md)
 
-## 技能翻译
+## 源码信息
 
-所有 14 个技能的 SKILL.md 已翻译为中文，位于 `skills/` 目录：
+- **仓库**：[obra/superpowers](https://github.com/obra/superpowers)
+- **当前版本**：5.0.7
+- **提交 hash**：`e7a2d16476bf042e9add4699c9d018a90f86e4a6`
+- **依赖**：零外部依赖（纯 JSON + Markdown + Bash）
+- **平台支持**：Claude Code、GitHub Copilot CLI、OpenAI Codex、Cursor、 Gemini CLI、OpenCode
 
-| 技能 | 翻译文件 |
-|------|----------|
-| using-superpowers | [skills/using-superpowers/SKILL.md](skills/using-superpowers/SKILL.md) |
-| brainstorming | [skills/brainstorming/SKILL.md](skills/brainstorming/SKILL.md) |
-| writing-plans | [skills/writing-plans/SKILL.md](skills/writing-plans/SKILL.md) |
-| subagent-driven-development | [skills/subagent-driven-development/SKILL.md](skills/subagent-driven-development/SKILL.md) |
-| test-driven-development | [skills/test-driven-development/SKILL.md](skills/test-driven-development/SKILL.md) |
-| systematic-debugging | [skills/systematic-debugging/SKILL.md](skills/systematic-debugging/SKILL.md) |
-| verification-before-completion | [skills/verification-before-completion/SKILL.md](skills/verification-before-completion/SKILL.md) |
-| requesting-code-review | [skills/requesting-code-review/SKILL.md](skills/requesting-code-review/SKILL.md) |
-| receiving-code-review | [skills/receiving-code-review/SKILL.md](skills/receiving-code-review/SKILL.md) |
-| dispatching-parallel-agents | [skills/dispatching-parallel-agents/SKILL.md](skills/dispatching-parallel-agents/SKILL.md) |
-| executing-plans | [skills/executing-plans/SKILL.md](skills/executing-plans/SKILL.md) |
-| finishing-a-development-branch | [skills/finishing-a-development-branch/SKILL.md](skills/finishing-a-development-branch/SKILL.md) |
-| using-git-worktrees | [skills/using-git-worktrees/SKILL.md](skills/using-git-worktrees/SKILL.md) |
-| writing-skills | [skills/writing-skills/SKILL.md](skills/writing-skills/SKILL.md) |
+---
 
-## 可继续追问的主题
-
-- `技能触发精度`：CSO 描述字段的 A/B 测试结果，如何优化技能发现率
-- `SDD 成本模型`：子代理数量与 Token 消耗的关系，模型选择对成本的影响
-- `跨平台行为差异`：同一技能在不同编码代理上的行为差异及适配策略
-- `可视化伴侣协议`：WebSocket 消息格式的扩展可能性，多用户协作场景
-
-## 来源信息
-
-- 仓库：https://github.com/obra/superpowers
-- 提交：e7a2d16476bf042e9add4699c9d018a90f86e4a6
-- 生成时间：2025 年
+*本 DeepWiki 由 [DeepWiki-it](https://github.com/obra/deepwiki-it) 自动生成，基于 `e7a2d164` 提交。*

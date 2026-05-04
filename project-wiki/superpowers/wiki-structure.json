@@ -1,148 +1,201 @@
 {
   "title": "Superpowers DeepWiki",
-  "description": "面向编码代理的完整软件开发方法论——基于可组合技能的结构化工作流框架",
+  "description": "AI 编码智能体的完整开发方法论——14 个技能组成的端到端工程流程",
   "mode": "comprehensive",
   "language": "zh-CN",
   "source": {
-    "repo": "https://github.com/obra/superpowers",
+    "repo": "https://github.com/superpowers/superpowers",
     "commit": "e7a2d16476bf042e9add4699c9d018a90f86e4a6"
   },
   "sections": [
     {
       "id": "section-overview",
       "title": "概览",
-      "pages": ["overview"],
+      "pages": ["overview", "philosophy"],
       "subsections": []
     },
     {
       "id": "section-architecture",
       "title": "系统架构",
-      "pages": ["system-architecture", "multi-platform-integration"],
+      "pages": ["system-architecture", "plugin-system", "hook-system"],
       "subsections": []
     },
     {
-      "id": "section-core-workflow",
+      "id": "section-workflow",
       "title": "核心工作流",
-      "pages": ["core-workflow", "subagent-driven-development"],
+      "pages": ["brainstorming", "git-worktrees", "writing-plans"],
       "subsections": []
     },
     {
-      "id": "section-skills",
-      "title": "技能体系",
-      "pages": ["skills-system", "tdd-and-debugging"],
-      "subsections": []
-    },
-    {
-      "id": "section-visual",
-      "title": "可视化组件",
-      "pages": ["visual-companion"],
+      "id": "section-execution",
+      "title": "执行与测试",
+      "pages": ["subagent-driven-development", "test-driven-development", "verification"],
       "subsections": []
     },
     {
       "id": "section-quality",
-      "title": "质量与扩展",
-      "pages": ["testing-and-quality", "extension-and-contribution"],
+      "title": "质量与协作",
+      "pages": ["code-review", "finishing-branch"],
+      "subsections": []
+    },
+    {
+      "id": "section-skills",
+      "title": "技能系统",
+      "pages": ["skills-system", "skills-catalog"],
+      "subsections": []
+    },
+    {
+      "id": "section-platform",
+      "title": "多平台支持",
+      "pages": ["multi-platform"],
       "subsections": []
     }
   ],
-  "rootSections": [
-    "section-overview",
-    "section-architecture",
-    "section-core-workflow",
-    "section-skills",
-    "section-visual",
-    "section-quality"
-  ],
+  "rootSections": ["section-overview", "section-architecture"],
   "pages": [
     {
       "id": "overview",
       "title": "项目概览",
       "file": "pages/overview.md",
-      "description": "定位、核心能力、设计哲学与阅读路线",
+      "description": "Superpowers 的定位、核心能力、与同类方案的差异",
       "importance": "high",
-      "filePaths": ["README.md", "package.json", "CLAUDE.md", "LICENSE"],
-      "relatedPages": ["system-architecture", "core-workflow", "skills-system"]
+      "filePaths": ["README.md", "AGENTS.md", "package.json"],
+      "relatedPages": ["system-architecture", "philosophy"]
+    },
+    {
+      "id": "philosophy",
+      "title": "设计哲学",
+      "file": "pages/philosophy.md",
+      "description": "TDD、系统化、证据优先——Superpowers 的核心工程价值观",
+      "importance": "high",
+      "filePaths": ["skills/test-driven-development/SKILL.md", "skills/systematic-debugging/SKILL.md", "skills/writing-skills/SKILL.md"],
+      "relatedPages": ["overview", "system-architecture"]
     },
     {
       "id": "system-architecture",
       "title": "系统架构",
       "file": "pages/system-architecture.md",
-      "description": "插件系统、技能发现与加载、Hook 机制、会话引导流程",
+      "description": "整体架构分层、插件模型、目录结构与多平台支持",
       "importance": "high",
-      "filePaths": ["hooks/session-start", "hooks/hooks.json", "hooks/hooks-cursor.json", ".claude-plugin/plugin.json", ".codex-plugin/plugin.json", ".cursor-plugin/plugin.json", ".opencode/plugins/superpowers.js", "skills/using-superpowers/SKILL.md"],
-      "relatedPages": ["overview", "multi-platform-integration", "skills-system"]
+      "filePaths": [".claude-plugin/plugin.json", "hooks/hooks.json", "hooks/session-start", "package.json"],
+      "relatedPages": ["plugin-system", "hook-system", "overview"]
     },
     {
-      "id": "multi-platform-integration",
-      "title": "多平台集成",
-      "file": "pages/multi-platform-integration.md",
-      "description": "Claude Code、Cursor、Codex CLI/App、OpenCode、Copilot CLI、Gemini CLI 的适配方式",
+      "id": "plugin-system",
+      "title": "插件系统",
+      "file": "pages/plugin-system.md",
+      "description": "多平台插件机制：Claude Code / Copilot / Codex / Cursor / Gemini / OpenCode",
       "importance": "high",
-      "filePaths": [".claude-plugin/plugin.json", ".claude-plugin/marketplace.json", ".codex-plugin/plugin.json", ".cursor-plugin/plugin.json", ".opencode/plugins/superpowers.js", ".opencode/INSTALL.md", "gemini-extension.json", "GEMINI.md", "hooks/run-hook.cmd", "docs/README.codex.md", "docs/README.opencode.md"],
-      "relatedPages": ["system-architecture", "overview"]
+      "filePaths": [".claude-plugin/plugin.json", ".codex-plugin/plugin.json", ".cursor-plugin/plugin.json", "gemini-extension.json", ".opencode/plugins/superpowers.js"],
+      "relatedPages": ["system-architecture", "hook-system", "multi-platform"]
     },
     {
-      "id": "core-workflow",
-      "title": "核心工作流",
-      "file": "pages/core-workflow.md",
-      "description": "从头脑风暴到分支完成的完整开发流程：brainstorming → planning → implementation → review → completion",
+      "id": "hook-system",
+      "title": "Hook 机制",
+      "file": "pages/hook-system.md",
+      "description": "SessionStart hook 如何注入技能上下文、平台适配与上下文注入协议",
       "importance": "high",
-      "filePaths": ["skills/brainstorming/SKILL.md", "skills/writing-plans/SKILL.md", "skills/executing-plans/SKILL.md", "skills/using-git-worktrees/SKILL.md", "skills/requesting-code-review/SKILL.md", "skills/receiving-code-review/SKILL.md", "skills/finishing-a-development-branch/SKILL.md", "skills/verification-before-completion/SKILL.md"],
-      "relatedPages": ["subagent-driven-development", "skills-system", "overview"]
+      "filePaths": ["hooks/hooks.json", "hooks/session-start", "skills/using-superpowers/SKILL.md"],
+      "relatedPages": ["system-architecture", "plugin-system", "using-superpowers"]
+    },
+    {
+      "id": "brainstorming",
+      "title": "Brainstorming 工作流",
+      "file": "pages/brainstorming.md",
+      "description": "设计前的 Socratic 式需求探索与分阶段设计确认流程",
+      "importance": "high",
+      "filePaths": ["skills/brainstorming/SKILL.md", "skills/visual-companion.md"],
+      "relatedPages": ["writing-plans", "git-worktrees", "subagent-driven-development"]
+    },
+    {
+      "id": "git-worktrees",
+      "title": "Git Worktrees 隔离工作区",
+      "file": "pages/git-worktrees.md",
+      "description": "使用 Git Worktree 创建隔离开发环境、自动检测项目与安全验证",
+      "importance": "medium",
+      "filePaths": ["skills/using-git-worktrees/SKILL.md"],
+      "relatedPages": ["subagent-driven-development", "finishing-branch"]
+    },
+    {
+      "id": "writing-plans",
+      "title": "Writing Plans 计划编写",
+      "file": "pages/writing-plans.md",
+      "description": "将设计文档拆解为原子化任务卡片、TDD 约束与完整步骤",
+      "importance": "high",
+      "filePaths": ["skills/writing-plans/SKILL.md"],
+      "relatedPages": ["subagent-driven-development", "brainstorming", "test-driven-development"]
     },
     {
       "id": "subagent-driven-development",
-      "title": "子代理驱动开发",
+      "title": "Subagent-Driven 开发",
       "file": "pages/subagent-driven-development.md",
-      "description": "SDD 流程详解：子代理调度、两阶段审查、模型选择策略、状态处理",
+      "description": "子任务分派 + 两阶段评审（规范合规 → 代码质量），实现高速迭代",
       "importance": "high",
-      "filePaths": ["skills/subagent-driven-development/SKILL.md", "skills/subagent-driven-development/implementer-prompt.md", "skills/subagent-driven-development/spec-reviewer-prompt.md", "skills/subagent-driven-development/code-quality-reviewer-prompt.md", "skills/dispatching-parallel-agents/SKILL.md"],
-      "relatedPages": ["core-workflow", "skills-system", "tdd-and-debugging"]
+      "filePaths": ["skills/subagent-driven-development/SKILL.md", "skills/subagent-driven-development/implementer-prompt.md", "skills/subagent-driven-development/spec-reviewer-prompt.md", "skills/subagent-driven-development/code-quality-reviewer-prompt.md"],
+      "relatedPages": ["writing-plans", "test-driven-development", "code-review"]
+    },
+    {
+      "id": "test-driven-development",
+      "title": "Test-Driven Development",
+      "file": "pages/test-driven-development.md",
+      "description": "RED-GREEN-REFACTOR 铁律、测试先行的工程纪律与常见Rationalization",
+      "importance": "high",
+      "filePaths": ["skills/test-driven-development/SKILL.md", "skills/test-driven-development/testing-anti-patterns.md"],
+      "relatedPages": ["verification", "subagent-driven-development", "systematic-debugging"]
+    },
+    {
+      "id": "verification",
+      "title": "验证与调试",
+      "file": "pages/verification.md",
+      "description": "Systematic Debugging 四阶段根因分析与 Verification-Before-Completion",
+      "importance": "medium",
+      "filePaths": ["skills/systematic-debugging/SKILL.md", "skills/systematic-debugging/root-cause-tracing.md", "skills/verification-before-completion/SKILL.md"],
+      "relatedPages": ["test-driven-development", "code-review"]
+    },
+    {
+      "id": "code-review",
+      "title": "代码评审",
+      "file": "pages/code-review.md",
+      "description": "Requesting-Code-Review 与 Receiving-Code-Review 的双人机协作评审流程",
+      "importance": "medium",
+      "filePaths": ["skills/requesting-code-review/SKILL.md", "skills/receiving-code-review/SKILL.md"],
+      "relatedPages": ["subagent-driven-development", "finishing-branch"]
+    },
+    {
+      "id": "finishing-branch",
+      "title": "结束开发分支",
+      "file": "pages/finishing-branch.md",
+      "description": "测试验证 → 选项呈现 → 执行 → Worktree 清理的完整收尾流程",
+      "importance": "medium",
+      "filePaths": ["skills/finishing-a-development-branch/SKILL.md"],
+      "relatedPages": ["git-worktrees", "subagent-driven-development"]
     },
     {
       "id": "skills-system",
-      "title": "技能体系",
+      "title": "技能框架",
       "file": "pages/skills-system.md",
-      "description": "14 个技能的分类、设计哲学、SKILL.md 规范、CSO 优化策略",
+      "description": "SKILL.md 结构、YAML frontmatter、描述写作规范与 TDD 驱动的技能开发方法",
       "importance": "high",
-      "filePaths": ["skills/using-superpowers/SKILL.md", "skills/writing-skills/SKILL.md", "skills/brainstorming/SKILL.md", "skills/writing-plans/SKILL.md", "skills/test-driven-development/SKILL.md", "skills/systematic-debugging/SKILL.md", "skills/requesting-code-review/SKILL.md", "skills/receiving-code-review/SKILL.md", "skills/dispatching-parallel-agents/SKILL.md", "skills/executing-plans/SKILL.md", "skills/finishing-a-development-branch/SKILL.md", "skills/using-git-worktrees/SKILL.md", "skills/verification-before-completion/SKILL.md"],
-      "relatedPages": ["overview", "core-workflow", "tdd-and-debugging", "extension-and-contribution"]
+      "filePaths": ["skills/writing-skills/SKILL.md", "skills/writing-skills/anthropic-best-practices.md", "skills/writing-skills/testing-skills-with-subagents.md"],
+      "relatedPages": ["skills-catalog", "philosophy"]
     },
     {
-      "id": "tdd-and-debugging",
-      "title": "测试驱动与系统化调试",
-      "file": "pages/tdd-and-debugging.md",
-      "description": "TDD 铁律与 RED-GREEN-REFACTOR 循环、四阶段系统化调试法、验证先行原则",
+      "id": "skills-catalog",
+      "title": "技能目录",
+      "file": "pages/skills-catalog.md",
+      "description": "14 个技能的分类索引、能力映射与快速查找表",
       "importance": "high",
-      "filePaths": ["skills/test-driven-development/SKILL.md", "skills/test-driven-development/testing-anti-patterns.md", "skills/systematic-debugging/SKILL.md", "skills/systematic-debugging/root-cause-tracing.md", "skills/systematic-debugging/defense-in-depth.md", "skills/systematic-debugging/condition-based-waiting.md", "skills/verification-before-completion/SKILL.md"],
-      "relatedPages": ["skills-system", "core-workflow", "testing-and-quality"]
+      "filePaths": ["skills/brainstorming/SKILL.md", "skills/test-driven-development/SKILL.md", "skills/systematic-debugging/SKILL.md", "skills/writing-plans/SKILL.md", "skills/subagent-driven-development/SKILL.md", "skills/using-git-worktrees/SKILL.md", "skills/finishing-a-development-branch/SKILL.md", "skills/requesting-code-review/SKILL.md", "skills/receiving-code-review/SKILL.md", "skills/verification-before-completion/SKILL.md", "skills/executing-plans/SKILL.md", "skills/dispatching-parallel-agents/SKILL.md", "skills/writing-skills/SKILL.md", "skills/using-superpowers/SKILL.md"],
+      "relatedPages": ["skills-system", "subagent-driven-development"]
     },
     {
-      "id": "visual-companion",
-      "title": "可视化头脑风暴伴侣",
-      "file": "pages/visual-companion.md",
-      "description": "WebSocket 服务器架构、交互协议、内容模板系统、跨平台启动方式",
+      "id": "multi-platform",
+      "title": "多平台支持",
+      "file": "pages/multi-platform.md",
+      "description": "Claude Code、Copilot CLI、Codex、Cursor、 Gemini CLI、OpenCode 各平台的插件安装与集成",
       "importance": "medium",
-      "filePaths": ["skills/brainstorming/SKILL.md", "skills/brainstorming/visual-companion.md", "skills/brainstorming/scripts/server.cjs", "skills/brainstorming/scripts/helper.js", "skills/brainstorming/scripts/frame-template.html", "skills/brainstorming/scripts/start-server.sh", "skills/brainstorming/scripts/stop-server.sh", "skills/brainstorming/spec-document-reviewer-prompt.md"],
-      "relatedPages": ["core-workflow", "system-architecture"]
-    },
-    {
-      "id": "testing-and-quality",
-      "title": "测试与质量保障",
-      "file": "pages/testing-and-quality.md",
-      "description": "集成测试框架、技能触发测试、显式技能请求测试、Token 分析工具",
-      "importance": "medium",
-      "filePaths": ["docs/testing.md", "tests/claude-code/run-skill-tests.sh", "tests/claude-code/test-helpers.sh", "tests/claude-code/test-subagent-driven-development.sh", "tests/claude-code/test-subagent-driven-development-integration.sh", "tests/claude-code/analyze-token-usage.py", "tests/brainstorm-server/server.test.js", "tests/brainstorm-server/ws-protocol.test.js", "tests/skill-triggering/run-test.sh", "tests/explicit-skill-requests/run-test.sh", "tests/opencode/run-tests.sh"],
-      "relatedPages": ["tdd-and-debugging", "extension-and-contribution"]
-    },
-    {
-      "id": "extension-and-contribution",
-      "title": "扩展与贡献",
-      "file": "pages/extension-and-contribution.md",
-      "description": "编写新技能、版本管理、Codex 同步脚本、贡献规范与 PR 要求",
-      "importance": "medium",
-      "filePaths": ["skills/writing-skills/SKILL.md", "skills/writing-skills/anthropic-best-practices.md", "skills/writing-skills/testing-skills-with-subagents.md", "skills/writing-skills/examples/CLAUDE_MD_TESTING.md", "scripts/bump-version.sh", "scripts/sync-to-codex-plugin.sh", ".version-bump.json", "CLAUDE.md", ".github/PULL_REQUEST_TEMPLATE.md"],
-      "relatedPages": ["skills-system", "testing-and-quality", "overview"]
+      "filePaths": ["README.md", "docs/README.codex.md", "docs/README.opencode.md", ".claude-plugin/plugin.json", ".cursor-plugin/plugin.json", ".codex-plugin/plugin.json"],
+      "relatedPages": ["plugin-system", "hook-system"]
     }
   ]
 }
