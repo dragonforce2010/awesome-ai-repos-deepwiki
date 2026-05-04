@@ -57,6 +57,14 @@ lark-context/
 - **digest 为什么不调 API？** → [Claude Skill 与工作流](pages/skill-workflows.md) 与 [references/digest.md](skills/lark-context/references/digest.md)。  
 - **README「不拉回复线程」与代码不一致？** → 以 `messages.thread_id` / `pullThreads` 为准，见 [增量拉取与话题回复](pages/pull-and-threads.md)。  
 
+## 内部延伸阅读（飞书 Wiki）
+
+字节内网有一份 **lark-context / 飞书沉淀** 相关说明 Wiki，可与本 DeepWiki **交叉对照**（流程约定、使用姿势、内网发布说明等以该文档为准）。DeepWiki 生成环境**无法打开需登录的 larkoffice 页面**，未将正文嵌入此站点。
+
+- [lark-context 相关飞书 Wiki](https://bytedance.larkoffice.com/wiki/Lk61wCa7YiW6w6kk0klcTKRKn6g)（token：`Lk61wCa7YiW6w6kk0klcTKRKn6g`）
+
+若你希望把 Wiki 里的**硬性规范**写进本仓库叙事（例如内网包名、审批要求、推荐 `pull` 窗口），把对应章节**粘贴到对话**或导出为 Markdown，我可以再改 `pages/*.md` 做「源码 + 内规」双源对齐。
+
 ## 来源快照
 
 - **远端**：`git@code.byted.org:tiktok/lark-context.git`  
