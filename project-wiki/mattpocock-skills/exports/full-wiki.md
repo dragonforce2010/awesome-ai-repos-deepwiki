@@ -1,4 +1,4 @@
-# mattpocock/skills — full wiki 导出
+# mattpocock-skills DeepWiki — full wiki 导出
 
 **仓库**：https://github.com/mattpocock/skills
 **提交**：b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8

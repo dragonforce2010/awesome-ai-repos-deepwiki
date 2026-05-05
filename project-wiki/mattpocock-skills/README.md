@@ -1,4 +1,6 @@
-# mattpocock/skills DeepWiki
+# mattpocock-skills DeepWiki
+
+**站点路径**：`https://deepwiki-dragonforce.netlify.app/mattpocock-skills/pages/overview`（本目录在 `project-wiki` 下的名为 `mattpocock-skills`，与上游 Git 仓库短名 `skills` 区分，避免多项目并列时歧义。）
 
 > **这是 Matt Pocock 维护的一套「面向真实工程的 Agent Skills」：通过对齐会话、共享领域语言、triage 状态机与竖切 issue，补上代理开发里最常见的四类失效模式——而不是再包装一套剥夺控制权的巨无霸流程。**
 
@@ -67,7 +69,7 @@ mattpocock/skills/
 
 ## Skills 中文副本
 
-源仓库的全部 `SKILL.md`（含 deprecated / personal）在 DeepWiki 输出目录中以中文副本形式保存在 [`skills/`](skills/) — 结构与源技能包一致，文件名保持英文标识符便于检索。
+源仓库的全部 `SKILL.md`（含 deprecated / personal）在 DeepWiki 输出目录中以中文副本形式保存在 [`skills/`](skills/)（相对本 wiki 根 `project-wiki/mattpocock-skills/skills/`）— 结构与源技能包一致，文件名保持英文标识符便于检索。
 
 ## 可继续追问的主题
 

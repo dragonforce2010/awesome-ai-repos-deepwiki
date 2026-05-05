@@ -1,6 +1,7 @@
 {
-  "title": "mattpocock/skills DeepWiki",
-  "description": "面向 Claude Code 等代理的 skills 集合：工程工作流、对齐与领域语言、Issue 状态机与本地工具链。",
+  "title": "Matt Pocock Skills DeepWiki",
+  "projectName": "mattpocock-skills",
+  "description": "面向 Claude Code 等代理的 skills 集合（mattpocock/skills）：工程工作流、对齐与领域语言、Issue 状态机与本地工具链。",
   "mode": "comprehensive",
   "language": "zh-CN",
   "source": {
