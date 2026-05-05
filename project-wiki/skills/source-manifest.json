@@ -1,0 +1,404 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/skills",
+    "remote": "https://github.com/mattpocock/skills.git",
+    "branch": "main",
+    "commit": "b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8"
+  },
+  "file_count": 56,
+  "skipped_count": 1,
+  "files": [
+    {
+      "path": ".claude-plugin/plugin.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": ".out-of-scope/mainstream-issue-trackers-only.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": ".out-of-scope/question-limits.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": ".out-of-scope/setup-skill-verify-mode.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "CONTEXT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 172,
+      "symbols": []
+    },
+    {
+      "path": "docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "scripts/link-skills.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "scripts/list-skills.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "skills/deprecated/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "skills/deprecated/design-an-interface/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 94,
+      "symbols": []
+    },
+    {
+      "path": "skills/deprecated/qa/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 130,
+      "symbols": []
+    },
+    {
+      "path": "skills/deprecated/request-refactor-plan/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 68,
+      "symbols": []
+    },
+    {
+      "path": "skills/deprecated/ubiquitous-language/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 93,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/diagnose/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 117,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/diagnose/scripts/hitl-loop.template.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/grill-with-docs/ADR-FORMAT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/grill-with-docs/CONTEXT-FORMAT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 77,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/improve-codebase-architecture/DEEPENING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/improve-codebase-architecture/INTERFACE-DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/improve-codebase-architecture/LANGUAGE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 121,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/setup-matt-pocock-skills/domain.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/tdd/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 109,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/tdd/deep-modules.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/tdd/interface-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/tdd/mocking.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/tdd/refactoring.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/tdd/tests.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/to-issues/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/to-prd/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 74,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/triage/AGENT-BRIEF.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 168,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/triage/OUT-OF-SCOPE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 101,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/triage/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 103,
+      "symbols": []
+    },
+    {
+      "path": "skills/engineering/zoom-out/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "skills/misc/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 95,
+      "symbols": []
+    },
+    {
+      "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 118,
+      "symbols": []
+    },
+    {
+      "path": "skills/misc/scaffold-exercises/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "skills/misc/setup-pre-commit/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 91,
+      "symbols": []
+    },
+    {
+      "path": "skills/personal/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "skills/personal/edit-article/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "skills/personal/obsidian-vault/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "skills/productivity/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "skills/productivity/caveman/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "skills/productivity/grill-me/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "skills/productivity/write-a-skill/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 117,
+      "symbols": []
+    }
+  ]
+}

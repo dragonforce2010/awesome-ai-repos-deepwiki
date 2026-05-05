@@ -1,0 +1,103 @@
+{
+  "title": "Matt Pocock Skills DeepWiki",
+  "projectName": "skills",
+  "description": "面向真实工程实践的 Claude Code 技能集：可组合、轻量、围绕对齐与反馈环设计",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/mattpocock/skills",
+    "commit": "b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-distribution",
+      "title": "分发与仓库约定",
+      "pages": ["installation-and-manifest", "per-repo-setup"],
+      "subsections": []
+    },
+    {
+      "id": "section-workflows",
+      "title": "工作流",
+      "pages": ["grilling-and-domain-language", "planning-issues-triage", "quality-architecture-feedback"],
+      "subsections": []
+    },
+    {
+      "id": "section-ecosystem",
+      "title": "扩展目录与脚本",
+      "pages": ["extended-catalog-and-scripts"],
+      "subsections": []
+    }
+  ],
+  "rootSections": ["section-overview", "section-distribution", "section-workflows", "section-ecosystem"],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "动机、失败模式对照、技能分层与阅读路线",
+      "importance": "high",
+      "filePaths": ["README.md", "CLAUDE.md"],
+      "relatedPages": ["installation-and-manifest", "grilling-and-domain-language"]
+    },
+    {
+      "id": "installation-and-manifest",
+      "title": "安装与 Claude 插件清单",
+      "file": "pages/installation-and-manifest.md",
+      "description": "`npx skills` 安装路径与 `.claude-plugin/plugin.json` 如何裁剪上架技能",
+      "importance": "high",
+      "filePaths": ["README.md", ".claude-plugin/plugin.json"],
+      "relatedPages": ["overview", "per-repo-setup"]
+    },
+    {
+      "id": "per-repo-setup",
+      "title": "每仓库配置与硬软依赖",
+      "file": "pages/per-repo-setup.md",
+      "description": "`/setup-matt-pocock-skills`、`docs/agents/` 与 ADR 0001 的依赖分层",
+      "importance": "high",
+      "filePaths": ["skills/engineering/setup-matt-pocock-skills/SKILL.md", "docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md"],
+      "relatedPages": ["installation-and-manifest", "planning-issues-triage"]
+    },
+    {
+      "id": "grilling-and-domain-language",
+      "title": "对齐会话与共享语言",
+      "file": "pages/grilling-and-domain-language.md",
+      "description": "`grill-me`、`grill-with-docs` 与 `CONTEXT.md` 术语模型",
+      "importance": "high",
+      "filePaths": ["skills/productivity/grill-me/SKILL.md", "skills/engineering/grill-with-docs/SKILL.md", "CONTEXT.md"],
+      "relatedPages": ["overview", "quality-architecture-feedback"]
+    },
+    {
+      "id": "planning-issues-triage",
+      "title": "规划、Issue 切片与分流",
+      "file": "pages/planning-issues-triage.md",
+      "description": "`to-prd`、`to-issues` 与 `triage` 状态机如何串在同一 issue tracker 上",
+      "importance": "high",
+      "filePaths": ["skills/engineering/to-prd/SKILL.md", "skills/engineering/to-issues/SKILL.md", "skills/engineering/triage/SKILL.md"],
+      "relatedPages": ["per-repo-setup", "quality-architecture-feedback"]
+    },
+    {
+      "id": "quality-architecture-feedback",
+      "title": "质量回路、诊断与架构加深",
+      "file": "pages/quality-architecture-feedback.md",
+      "description": "`tdd` 垂直切片、`diagnose` 反馈环、`improve-codebase-architecture` 与 `zoom-out`",
+      "importance": "high",
+      "filePaths": ["skills/engineering/tdd/SKILL.md", "skills/engineering/diagnose/SKILL.md", "skills/engineering/improve-codebase-architecture/SKILL.md", "skills/engineering/zoom-out/SKILL.md"],
+      "relatedPages": ["grilling-and-domain-language", "planning-issues-triage"]
+    },
+    {
+      "id": "extended-catalog-and-scripts",
+      "title": "扩展目录、脚本与个人技能",
+      "file": "pages/extended-catalog-and-scripts.md",
+      "description": "`productivity`/`misc`/`personal`/`deprecated`、本地 symlink 脚本与 `.out-of-scope`",
+      "importance": "medium",
+      "filePaths": ["skills/productivity/caveman/SKILL.md", "skills/productivity/write-a-skill/SKILL.md", "scripts/link-skills.sh", "skills/engineering/triage/OUT-OF-SCOPE.md"],
+      "relatedPages": ["installation-and-manifest", "overview"]
+    }
+  ]
+}
