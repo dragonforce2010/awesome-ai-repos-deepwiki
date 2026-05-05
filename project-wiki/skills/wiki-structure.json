@@ -1,7 +1,6 @@
 {
-  "title": "Matt Pocock Skills DeepWiki",
-  "projectName": "skills",
-  "description": "面向真实工程实践的 Claude Code 技能集：可组合、轻量、围绕对齐与反馈环设计",
+  "title": "mattpocock/skills DeepWiki",
+  "description": "面向 Claude Code 等代理的 skills 集合：工程工作流、对齐与领域语言、Issue 状态机与本地工具链。",
   "mode": "comprehensive",
   "language": "zh-CN",
   "source": {
@@ -12,92 +11,124 @@
     {
       "id": "section-overview",
       "title": "概览",
-      "pages": ["overview"],
+      "pages": ["overview", "failure-modes-and-values"],
       "subsections": []
     },
     {
-      "id": "section-distribution",
-      "title": "分发与仓库约定",
-      "pages": ["installation-and-manifest", "per-repo-setup"],
+      "id": "section-packaging",
+      "title": "发布与仓库治理",
+      "pages": ["publishing-surface", "scripts-local-dev"],
       "subsections": []
     },
     {
-      "id": "section-workflows",
-      "title": "工作流",
-      "pages": ["grilling-and-domain-language", "planning-issues-triage", "quality-architecture-feedback"],
-      "subsections": []
-    },
-    {
-      "id": "section-ecosystem",
-      "title": "扩展目录与脚本",
-      "pages": ["extended-catalog-and-scripts"],
+      "id": "section-runtime-contract",
+      "title": "运行契约与技能体系",
+      "pages": [
+        "setup-and-domain-contract",
+        "engineering-skills-matrix",
+        "productivity-and-tooling-skills",
+        "bucket-policies-and-out-of-scope"
+      ],
       "subsections": []
     }
   ],
-  "rootSections": ["section-overview", "section-distribution", "section-workflows", "section-ecosystem"],
+  "rootSections": ["section-overview", "section-packaging", "section-runtime-contract"],
   "pages": [
     {
       "id": "overview",
       "title": "项目概览",
       "file": "pages/overview.md",
-      "description": "动机、失败模式对照、技能分层与阅读路线",
+      "description": "定位、安装入口、阅读路线与仓库物理结构",
       "importance": "high",
-      "filePaths": ["README.md", "CLAUDE.md"],
-      "relatedPages": ["installation-and-manifest", "grilling-and-domain-language"]
+      "filePaths": [
+        "README.md",
+        "CLAUDE.md",
+        "CONTEXT.md",
+        ".claude-plugin/plugin.json"
+      ],
+      "relatedPages": ["failure-modes-and-values", "publishing-surface", "setup-and-domain-contract"]
     },
     {
-      "id": "installation-and-manifest",
-      "title": "安装与 Claude 插件清单",
-      "file": "pages/installation-and-manifest.md",
-      "description": "`npx skills` 安装路径与 `.claude-plugin/plugin.json` 如何裁剪上架技能",
+      "id": "failure-modes-and-values",
+      "title": "失败模式与工程价值观",
+      "file": "pages/failure-modes-and-values.md",
+      "description": "README 中四条失败模式、对应技能与软件工程引用的内在逻辑",
       "importance": "high",
-      "filePaths": ["README.md", ".claude-plugin/plugin.json"],
-      "relatedPages": ["overview", "per-repo-setup"]
+      "filePaths": ["README.md", "CONTEXT.md", "docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md"],
+      "relatedPages": ["overview", "engineering-skills-matrix", "productivity-and-tooling-skills"]
     },
     {
-      "id": "per-repo-setup",
-      "title": "每仓库配置与硬软依赖",
-      "file": "pages/per-repo-setup.md",
-      "description": "`/setup-matt-pocock-skills`、`docs/agents/` 与 ADR 0001 的依赖分层",
+      "id": "publishing-surface",
+      "title": "发布面与插件清单",
+      "file": "pages/publishing-surface.md",
+      "description": "`.claude-plugin/plugin.json`、README 目录与 `npx skills` 安装路径如何对齐",
       "importance": "high",
-      "filePaths": ["skills/engineering/setup-matt-pocock-skills/SKILL.md", "docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md"],
-      "relatedPages": ["installation-and-manifest", "planning-issues-triage"]
+      "filePaths": [".claude-plugin/plugin.json", "README.md", "CLAUDE.md"],
+      "relatedPages": ["overview", "setup-and-domain-contract", "scripts-local-dev"]
     },
     {
-      "id": "grilling-and-domain-language",
-      "title": "对齐会话与共享语言",
-      "file": "pages/grilling-and-domain-language.md",
-      "description": "`grill-me`、`grill-with-docs` 与 `CONTEXT.md` 术语模型",
+      "id": "setup-and-domain-contract",
+      "title": "每仓配置与领域契约",
+      "file": "pages/setup-and-domain-contract.md",
+      "description": "`/setup-matt-pocock-skills`、硬依赖与软依赖、`docs/agents/` 与 ADR 0001",
       "importance": "high",
-      "filePaths": ["skills/productivity/grill-me/SKILL.md", "skills/engineering/grill-with-docs/SKILL.md", "CONTEXT.md"],
-      "relatedPages": ["overview", "quality-architecture-feedback"]
+      "filePaths": [
+        "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+        "docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md",
+        "CONTEXT.md"
+      ],
+      "relatedPages": ["engineering-skills-matrix", "publishing-surface", "failure-modes-and-values"]
     },
     {
-      "id": "planning-issues-triage",
-      "title": "规划、Issue 切片与分流",
-      "file": "pages/planning-issues-triage.md",
-      "description": "`to-prd`、`to-issues` 与 `triage` 状态机如何串在同一 issue tracker 上",
+      "id": "engineering-skills-matrix",
+      "title": "Engineering 技能矩阵",
+      "file": "pages/engineering-skills-matrix.md",
+      "description": "Issue 切片、triage 状态机、诊断与 TDD 等日常工程技能如何串起来",
       "importance": "high",
-      "filePaths": ["skills/engineering/to-prd/SKILL.md", "skills/engineering/to-issues/SKILL.md", "skills/engineering/triage/SKILL.md"],
-      "relatedPages": ["per-repo-setup", "quality-architecture-feedback"]
+      "filePaths": [
+        "skills/engineering/README.md",
+        "skills/engineering/to-issues/SKILL.md",
+        "skills/engineering/triage/SKILL.md",
+        "skills/engineering/to-prd/SKILL.md"
+      ],
+      "relatedPages": ["setup-and-domain-contract", "productivity-and-tooling-skills", "failure-modes-and-values"]
     },
     {
-      "id": "quality-architecture-feedback",
-      "title": "质量回路、诊断与架构加深",
-      "file": "pages/quality-architecture-feedback.md",
-      "description": "`tdd` 垂直切片、`diagnose` 反馈环、`improve-codebase-architecture` 与 `zoom-out`",
-      "importance": "high",
-      "filePaths": ["skills/engineering/tdd/SKILL.md", "skills/engineering/diagnose/SKILL.md", "skills/engineering/improve-codebase-architecture/SKILL.md", "skills/engineering/zoom-out/SKILL.md"],
-      "relatedPages": ["grilling-and-domain-language", "planning-issues-triage"]
-    },
-    {
-      "id": "extended-catalog-and-scripts",
-      "title": "扩展目录、脚本与个人技能",
-      "file": "pages/extended-catalog-and-scripts.md",
-      "description": "`productivity`/`misc`/`personal`/`deprecated`、本地 symlink 脚本与 `.out-of-scope`",
+      "id": "productivity-and-tooling-skills",
+      "title": "Productivity 与 Misc 技能",
+      "file": "pages/productivity-and-tooling-skills.md",
+      "description": "对齐型 `/grill-*`、token 压缩 `caveman`、护栏与脚手架类技能",
       "importance": "medium",
-      "filePaths": ["skills/productivity/caveman/SKILL.md", "skills/productivity/write-a-skill/SKILL.md", "scripts/link-skills.sh", "skills/engineering/triage/OUT-OF-SCOPE.md"],
-      "relatedPages": ["installation-and-manifest", "overview"]
+      "filePaths": [
+        "skills/productivity/README.md",
+        "skills/misc/README.md",
+        "skills/productivity/grill-me/SKILL.md",
+        "skills/productivity/write-a-skill/SKILL.md"
+      ],
+      "relatedPages": ["engineering-skills-matrix", "failure-modes-and-values", "bucket-policies-and-out-of-scope"]
+    },
+    {
+      "id": "scripts-local-dev",
+      "title": "本地开发脚本",
+      "file": "pages/scripts-local-dev.md",
+      "description": "`link-skills.sh` 的回路检测与 `list-skills.sh` 的枚举策略",
+      "importance": "medium",
+      "filePaths": ["scripts/link-skills.sh", "scripts/list-skills.sh"],
+      "relatedPages": ["publishing-surface", "overview"]
+    },
+    {
+      "id": "bucket-policies-and-out-of-scope",
+      "title": "目录桶策略与治理边界",
+      "file": "pages/bucket-policies-and-out-of-scope.md",
+      "description": "`engineering` / `productivity` / `misc` / `personal` / `deprecated` 的收录规则与 `.out-of-scope` 知识库",
+      "importance": "medium",
+      "filePaths": [
+        "CLAUDE.md",
+        "skills/deprecated/README.md",
+        "skills/personal/README.md",
+        "skills/engineering/triage/OUT-OF-SCOPE.md"
+      ],
+      "relatedPages": ["publishing-surface", "engineering-skills-matrix"]
     }
   ]
 }

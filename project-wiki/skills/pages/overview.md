@@ -5,66 +5,32 @@
 
 - [README.md](../../../project-repos/skills/README.md)
 - [CLAUDE.md](../../../project-repos/skills/CLAUDE.md)
+- [CONTEXT.md](../../../project-repos/skills/CONTEXT.md)
+- [.claude-plugin/plugin.json](../../../project-repos/skills/.claude-plugin/plugin.json)
 
 </details>
 
 # 项目概览
 
-Coding Agent 最常见的翻车并不是模型笨，而是**对齐失败、术语漂移、缺少反馈环**，以及在超速产出代码的同时把系统设计当成可有可无的装饰。Matt Pocock 把这四类痛点写成四条叙事主线：用 grilling（拷问式访谈）消灭含糊需求；用 `CONTEXT.md`+ADR 把共享语言落到纸上；用测试 / 浏览器 / 类型构造稳定的 RED/GREEN 信号；再用专门的架构问诊技能对抗「泥球增速过快」。整套方案的措辞很明确：**这些是写给还在掌控交付的工程负责人的**，不是另一条包办全流程的对话脚本。
+这份仓库并不是传统意义上的「库」或「服务」，而是一套可直接安装的 **Agent Skills**：把几十年的工程习惯压缩成一组可组合的提示词与工作流，让它们能在 Claude Code、Codex 等环境里反复执行，而不是把流程外包给某个大一统方法论。
 
-仓库把所有 Skill 丢进 `skills/` 下的几个 bucket：`engineering/` 绑定代码，`productivity/` 面向协作，`misc/` 低频，`personal/` 作者自用，`deprecated/` 弃用。`CLAUDE.md` 规定了上架边界：**凡是放进 engineering/productivity/misc 的技能都必须出现在顶层 README，并被 `.claude-plugin/plugin.json` 索引（personal 与 deprecated 除外）**。这解释了读者第一眼看到的是小而锋利的 curated list，而不是目录里的几十个子文件夹全集。
+作者明确把定位放在 **真实工程**（real engineering）：技能要小、要能改、要可拼装；同时也要对抗代理产品的典型失效模式——对齐失败、话术膨胀、缺反馈闭环、以及在速度加持下更快的「泥球式增长」。读者的最佳入口仍是仓库根 `README.md` 里围绕这四类问题展开的故事线，而不是泛泛的 Stars 文案。
+
+仓库物理结构非常轻：`.claude-plugin/plugin.json` 声明对 Claude Code Marketplace 友好的技能路径；真实的技能定义几乎全部落在 `skills/**/SKILL.md`；作者在自家仓库根的 `CONTEXT.md` 建模了 Issue tracker、triage role 等领域词表，ADR `docs/adr/0001-*.md` 则记录了「为何有的技能必须点名 `/setup`，有的则不必」这一类设计分叉。
 
 ```mermaid
 graph TD
-  subgraph ProblemLayer["四类痛点"]
-    P1["对齐鸿沟<br/>agent / human"]
-    P2["术语噪声<br/>缺 glossary"]
-    P3["无反馈环<br/>代码不可测"]
-    P4["熵增速过快<br/>缺结构设计"]
-  end
-  subgraph SkillFamilies["技能簇"]
-    G["Grilling<br/>grill-me / grill-with-docs"]
-    S["Setup<br/>docs/agents 契约"]
-    Q["Quality loops<br/>tdd / diagnose"]
-    A["Architecture<br/>improve / zoom-out"]
-    O["Operations<br/>triage / to-*"]
-  end
-  P1 --> G
-  P2 --> G
-  P3 --> Q
-  P4 --> A
-  P1 --> O
+  UA["使用者 / 代理"] --> NPX["npx skills@latest add mattpocock/skills"]
+  NPX --> PLG["`.claude-plugin/plugin.json`<br/>枚举对外技能路径"]
+  PLG --> SK["skills/*/*/SKILL.md"]
+  SK --> SETUP["setup-matt-pocock-skills<br/>生成 docs/agents/*"]
+  SETUP --> IT["Issue tracker + label 映射 + CONTEXT/ADR"]
+  IT --> ENG["engineering 技能<br/>（to-issues / triage / tdd …）"]
 ```
 
-上图不是运行时拓扑，而是**心智地图**：左边四类痛点触发右边的若干 Skill 簇；同一问题往往需要 grilling（对齐）、setup（把 tracker label 映射写下来）、再通过质量或分流 Skill 收尾。
+**安装路径为什么是 `npx skills`？** README 的快速开始把它写成两步：先用官方安装器把仓库挂进目标工具链，再在代理里运行 `/setup-matt-pocock-skills`，把 Issue 存放位置、triage label 字面量、`CONTEXT`/ADR 布局写进 **`docs/agents/`**（以及 `CLAUDE.md`/`AGENTS.md` 的技能索引块）；否则像 `to-issues`、`triage` 这类会直接写远端标签的技能会输出错误的标签字符串，而不是「模糊一点还能用」。这条边界在 ADR `0001` 里被称为 **hard dependency** vs **soft dependency**，也是理解整个技能矩阵的骨架。
 
-## 能力快照（面向 Maintainer）
-
-| 能力簇 | 代表 Slash Skill | 价值一句话 |
-|--------|------------------|-----------|
-| 对齐 | `grill-me`, `grill-with-docs` | 在进入编码之前穷尽决策树，并让术语落到文档 |
-| 运行契约 | `setup-matt-pocock-skills` | 为每台仓库生成 issue tracker、triage label、`CONTEXT`/ADR 消费约定 |
-| 交付拆分 | `to-prd`, `to-issues` | PRD 进 backlog；再把方案切成 tracer-bullet Issue |
-| 分流运营 | `triage` | 五阶段 label state machine + agent brief |
-| 反馈回路 | `tdd`, `diagnose` | 垂直 RED/GREEN；强约束的诊断闭环 |
-| 结构性 refactor | `improve-codebase-architecture`, `zoom-out` | 用语义一致的加深术语解剖 shallow module |
-
-## 技术栈与规模事实
-
-- **载体**：Markdown Skill（YAML frontmatter + 正文指令）；插件边界由一个 `.claude-plugin/plugin.json` 枚举对外 Skills。
-- **规模**：盘点脚本登记 **57** 份追踪文件（顶层目录：`skills/`、`scripts/`、`docs/`、`.claude-plugin/`、`.out-of-scope/`）。
-- **CI / 测试**：仓库不提供自动化测试或流水线——知识体系主要靠 Markdown 与实践可复制脚本 (`scripts/*.sh`)。
-
-## 阅读路线
-
-| 读者目标 | 推荐阅读顺序 |
-|----------|----------------|
-| 只想弄明白这套方法与 BMAD / Spec-Kit 的差别 | 本页 → [对齐会话与共享语言](grilling-and-domain-language.md) |
-| 准备在自有仓库启用 Skills | [安装与 Claude 插件清单](installation-and-manifest.md) → [每仓库配置与硬软依赖](per-repo-setup.md) |
-| 想把 backlog / PRD / Triage 串起来 | [规划、Issue 切片与分流](planning-issues-triage.md) |
-| 想把工程质量拉回正轨 | [质量回路、诊断与架构加深](quality-architecture-feedback.md) |
-
-Sources: [README.md:11-138](../../../project-repos/skills/README.md#L11-L138), [CLAUDE.md:1-13](../../../project-repos/skills/CLAUDE.md#L1-L13)
+Sources: [README.md:11-138](../../../project-repos/skills/README.md#L11-L138), [CLAUDE.md:1-14](../../../project-repos/skills/CLAUDE.md#L1-L14), [claude-plugin/plugin.json:1-17](../../../project-repos/skills/.claude-plugin/plugin.json#L1-L17)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -197,7 +163,7 @@ This is built in to every layer of these skills:
 ... snippet truncated ...
 ````
 
-#### `CLAUDE.md:1-13`
+#### `CLAUDE.md:1-14`
 
 ```markdown
 Skills are organized into bucket folders under `skills/`:
@@ -215,10 +181,53 @@ Each skill entry in the top-level `README.md` must link the skill name to its `S
 Each bucket folder has a `README.md` that lists every skill in the bucket with a one-line description, with the skill name linked to its `SKILL.md`.
 ```
 
+#### `claude-plugin/plugin.json:1-17`
+
+```json
+{
+  "name": "mattpocock-skills",
+  "skills": [
+    "./skills/engineering/diagnose",
+    "./skills/engineering/grill-with-docs",
+    "./skills/engineering/triage",
+    "./skills/engineering/improve-codebase-architecture",
+    "./skills/engineering/setup-matt-pocock-skills",
+    "./skills/engineering/tdd",
+    "./skills/engineering/to-issues",
+    "./skills/engineering/to-prd",
+    "./skills/engineering/zoom-out",
+    "./skills/productivity/caveman",
+    "./skills/productivity/grill-me",
+    "./skills/productivity/write-a-skill"
+  ]
+}
+```
+
 <!-- source-snippets:end -->
 </details>
 
+## 能力全景（用工程语言概括）
+
+- **对齐（Grilling）**：用 `/grill-me` 与 `/grill-with-docs` 把需求树走完整，避免「你以为代理懂」。
+- **共享语言（Ubiquitous language）**：`grill-with-docs` 在探索代码的同时维护 `CONTEXT.md` 与 ADR，让后续输出更短、更一致。
+- **反馈闭环（TDD / diagnose）**：`tdd` 强化红-绿-重构；`diagnose` 把复杂缺陷收敛成可验证假设。
+- **控制设计熵（Architecture）**：`to-prd`、`zoom-out`、`improve-codebase-architecture` 把设计意识嵌进日常节奏，而不是事后补救。
+- **Issue 作为执行接口（Tracker ops）**：`to-issues` 用竖切（tracer bullet）拆单；`triage` 用有限状态机管理代理可接手的边界。
+
+## 技术栈与边界
+
+- **语言与形态**：以 Markdown 技能为主，辅以少量 Bash 脚本（`scripts/`）；无应用代码、无 CI、无测试目录——仓库质量靠作者自身的使用反馈与社区 PR 维护。
+- **面向的工具链**：Claude Code 插件清单是明确的一等公民；其他代理可通过复制 `SKILL.md` 或安装器间接消费。
+
+## 阅读路线
+
+- **想 5 分钟判断「适不适合我」** → 读根 `README` 里四个失败模式章节，然后对照 [失败模式与工程价值观](failure-modes-and-values.md)。
+- **要把它装进自己的仓库** → [发布面与插件清单](publishing-surface.md) + [每仓配置与领域契约](setup-and-domain-contract.md)。
+- **要知道日常开发时具体会跑哪些提示词** → [Engineering 技能矩阵](engineering-skills-matrix.md) 与 [Productivity 与 Misc 技能](productivity-and-tooling-skills.md)。
+- **要在本机做符号链接开发** → [本地开发脚本](scripts-local-dev.md)。
+
 ## 相关页面
 
-- [安装与 Claude 插件清单](installation-and-manifest.md) — 如何把 curated Skills 写入 Claude Code  
-- [对齐会话与共享语言](grilling-and-domain-language.md) — README 宣称的首要武器  
+- [失败模式与工程价值观](failure-modes-and-values.md) — README 故事线的拆解释义
+- [发布面与插件清单](publishing-surface.md) — `.claude-plugin` 与对外目录如何对齐
+- [每仓配置与领域契约](setup-and-domain-contract.md) — `/setup` 产物与硬 / 软依赖

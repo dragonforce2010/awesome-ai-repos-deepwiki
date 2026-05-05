@@ -1,37 +1,37 @@
 ---
 name: scaffold-exercises
-description: 创建通过 lint 的习题目录结构，含小节、题目、解答与讲解材料。在用户希望搭建习题骨架、创建习题 stub，或新建课程小节时使用。
+description: 创建含小节、题目、解答与讲解目录结构的练习集，并确保通过 lint。当用户需要脚手架练习、生成练习占位或搭建新课程小节时使用。
 ---
 
-# 搭建习题
+# 脚手架：练习目录
 
-创建能通过 `pnpm ai-hero-cli internal lint` 的习题目录结构，然后 `git commit` 提交。
+创建能通过 `pnpm ai-hero-cli internal lint` 的练习目录结构，随后用 `git commit` 提交。
 
 ## 目录命名
 
-- **小节**：`exercises/` 下的 `XX-section-name/`（如 `01-retrieval-skill-building`）
-- **习题**：小节内的 `XX.YY-exercise-name/`（如 `01.03-retrieval-with-bm25`）
-- 小节编号 = `XX`，习题编号 = `XX.YY`
-- 名称用 dash-case（小写、连字符）
+- **小节**：位于 `exercises/` 下，格式 `XX-section-name/`（例如 `01-retrieval-skill-building`）
+- **练习**：位于小节内，格式 `XX.YY-exercise-name/`（例如 `01.03-retrieval-with-bm25`）
+- 小节编号 = `XX`，练习编号 = `XX.YY`
+- 名称使用 dash-case（小写、连字符）
 
-## 习题变体
+## 练习变体
 
-每个习题至少需要下列子文件夹之一：
+每个练习至少包含以下子目录之一：
 
-- `problem/` —— 学生工作区，含 TODO
-- `solution/` —— 参考实现
-- `explainer/` —— 概念材料，无 TODO
+- `problem/` — 学员工作区，含 TODO
+- `solution/` — 参考实现
+- `explainer/` — 概念材料，无 TODO
 
-搭 stub 时，除非计划另有所指，默认 `explainer/`。
+占位时，除非计划另有规定，默认使用 `explainer/`。
 
 ## 必需文件
 
-每个子文件夹（`problem/`、`solution/`、`explainer/`）需要 `readme.md`，且：
+每个子目录（`problem/`、`solution/`、`explainer/`）均需 `readme.md`，且必须：
 
-- **非空**（须为真实内容，单行标题也可）
-- 无坏链
+- **非空**（须有实质内容，单行标题亦可）
+- 无损坏链接
 
-搭 stub 时，用标题与描述写最小 readme：
+占位时，创建最简 readme：标题 + 说明。
 
 ```md
 # Exercise Title
@@ -39,36 +39,36 @@ description: 创建通过 lint 的习题目录结构，含小节、题目、解�
 Description here
 ```
 
-若子文件夹含代码，还需要 `>1` 行的 `main.ts`。仅 stub 时，仅 readme 的习题也可以。
+若子目录含代码，还需 `main.ts`（多于一行）。占位阶段仅 readme 亦可。
 
 ## 工作流
 
-1. **解析计划** —— 提取小节名、习题名与变体类型
-2. **创建目录** —— 对每个路径 `mkdir -p`
-3. **创建 stub readme** —— 每个变体文件夹一个带标题的 `readme.md`
-4. **运行 lint** —— `pnpm ai-hero-cli internal lint` 校验
-5. **修复错误** —— 迭代直到通过
+1. **解析计划** — 提取小节名、练习名、变体类型
+2. **创建目录** — 对每个路径执行 `mkdir -p`
+3. **创建占位 readme** — 每个变体目录各一份含标题的 `readme.md`
+4. **运行 lint** — `pnpm ai-hero-cli internal lint` 校验
+5. **修复错误** — 迭代直至通过
 
 ## Lint 规则摘要
 
 linter（`pnpm ai-hero-cli internal lint`）检查：
 
-- 每个习题有子文件夹（`problem/`、`solution/`、`explainer/`）
-- `problem/`、`explainer/` 或 `explainer.1/` 至少存在其一
-- 主子文件夹存在**非空** `readme.md`
+- 每个练习包含子目录（`problem/`、`solution/`、`explainer/`）
+- `problem/`、`explainer/`、`explainer.1/` 至少其一存在
+- 主用子目录中存在且非空的 `readme.md`
 - 无 `.gitkeep`
 - 无 `speaker-notes.md`
-- readme 无坏链
+- readme 中无损坏链接
 - readme 中无 `pnpm run exercise` 命令
-- 除非仅 readme，否则每子文件夹需要 `main.ts`
+- 除非仅为 readme，否则每个子目录需 `main.ts`
 
-## 移动/重命名习题
+## 移动/重命名练习
 
-重新编号或移动时：
+重新编号或移动练习时：
 
-1. 用 `git mv`（不用 `mv`）重命名目录——保留 git 历史
+1. 使用 `git mv`（勿用 `mv`）重命名目录 — 保留 git 历史
 2. 更新数字前缀以保持顺序
-3. 移动后重跑 lint
+3. 移动后重新运行 lint
 
 示例：
 
@@ -76,9 +76,9 @@ linter（`pnpm ai-hero-cli internal lint`）检查：
 git mv exercises/01-retrieval/01.03-embeddings exercises/01-retrieval/01.04-embeddings
 ```
 
-## 示例：由计划搭 stub
+## 示例：按计划占位
 
-给定计划如：
+计划示例：
 
 ```
 Section 05: Memory Skill Building
@@ -95,7 +95,7 @@ mkdir -p exercises/05-memory-skill-building/05.02-short-term-memory/{explainer,p
 mkdir -p exercises/05-memory-skill-building/05.03-long-term-memory/explainer
 ```
 
-再创建 readme stub：
+再创建 readme 占位：
 
 ```
 exercises/05-memory-skill-building/05.01-introduction-to-memory/explainer/readme.md -> "# Introduction to Memory"

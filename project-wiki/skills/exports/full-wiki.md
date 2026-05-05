@@ -1,11 +1,11 @@
-# Matt Pocock Skills — DeepWiki 合并导出
+# mattpocock/skills — full wiki 导出
 
-**源码**：https://github.com/mattpocock/skills @ b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8
+**仓库**：https://github.com/mattpocock/skills
+**提交**：b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8
+**生成日期**：2026-05-05
 
 ---
 
-
----
 
 <details>
 <summary>相关源文件</summary>
@@ -14,66 +14,32 @@
 
 - [README.md](../../../project-repos/skills/README.md)
 - [CLAUDE.md](../../../project-repos/skills/CLAUDE.md)
+- [CONTEXT.md](../../../project-repos/skills/CONTEXT.md)
+- [.claude-plugin/plugin.json](../../../project-repos/skills/.claude-plugin/plugin.json)
 
 </details>
 
 # 项目概览
 
-Coding Agent 最常见的翻车并不是模型笨，而是**对齐失败、术语漂移、缺少反馈环**，以及在超速产出代码的同时把系统设计当成可有可无的装饰。Matt Pocock 把这四类痛点写成四条叙事主线：用 grilling（拷问式访谈）消灭含糊需求；用 `CONTEXT.md`+ADR 把共享语言落到纸上；用测试 / 浏览器 / 类型构造稳定的 RED/GREEN 信号；再用专门的架构问诊技能对抗「泥球增速过快」。整套方案的措辞很明确：**这些是写给还在掌控交付的工程负责人的**，不是另一条包办全流程的对话脚本。
+这份仓库并不是传统意义上的「库」或「服务」，而是一套可直接安装的 **Agent Skills**：把几十年的工程习惯压缩成一组可组合的提示词与工作流，让它们能在 Claude Code、Codex 等环境里反复执行，而不是把流程外包给某个大一统方法论。
 
-仓库把所有 Skill 丢进 `skills/` 下的几个 bucket：`engineering/` 绑定代码，`productivity/` 面向协作，`misc/` 低频，`personal/` 作者自用，`deprecated/` 弃用。`CLAUDE.md` 规定了上架边界：**凡是放进 engineering/productivity/misc 的技能都必须出现在顶层 README，并被 `.claude-plugin/plugin.json` 索引（personal 与 deprecated 除外）**。这解释了读者第一眼看到的是小而锋利的 curated list，而不是目录里的几十个子文件夹全集。
+作者明确把定位放在 **真实工程**（real engineering）：技能要小、要能改、要可拼装；同时也要对抗代理产品的典型失效模式——对齐失败、话术膨胀、缺反馈闭环、以及在速度加持下更快的「泥球式增长」。读者的最佳入口仍是仓库根 `README.md` 里围绕这四类问题展开的故事线，而不是泛泛的 Stars 文案。
+
+仓库物理结构非常轻：`.claude-plugin/plugin.json` 声明对 Claude Code Marketplace 友好的技能路径；真实的技能定义几乎全部落在 `skills/**/SKILL.md`；作者在自家仓库根的 `CONTEXT.md` 建模了 Issue tracker、triage role 等领域词表，ADR `docs/adr/0001-*.md` 则记录了「为何有的技能必须点名 `/setup`，有的则不必」这一类设计分叉。
 
 ```mermaid
 graph TD
-  subgraph ProblemLayer["四类痛点"]
-    P1["对齐鸿沟<br/>agent / human"]
-    P2["术语噪声<br/>缺 glossary"]
-    P3["无反馈环<br/>代码不可测"]
-    P4["熵增速过快<br/>缺结构设计"]
-  end
-  subgraph SkillFamilies["技能簇"]
-    G["Grilling<br/>grill-me / grill-with-docs"]
-    S["Setup<br/>docs/agents 契约"]
-    Q["Quality loops<br/>tdd / diagnose"]
-    A["Architecture<br/>improve / zoom-out"]
-    O["Operations<br/>triage / to-*"]
-  end
-  P1 --> G
-  P2 --> G
-  P3 --> Q
-  P4 --> A
-  P1 --> O
+  UA["使用者 / 代理"] --> NPX["npx skills@latest add mattpocock/skills"]
+  NPX --> PLG["`.claude-plugin/plugin.json`<br/>枚举对外技能路径"]
+  PLG --> SK["skills/*/*/SKILL.md"]
+  SK --> SETUP["setup-matt-pocock-skills<br/>生成 docs/agents/*"]
+  SETUP --> IT["Issue tracker + label 映射 + CONTEXT/ADR"]
+  IT --> ENG["engineering 技能<br/>（to-issues / triage / tdd …）"]
 ```
 
-上图不是运行时拓扑，而是**心智地图**：左边四类痛点触发右边的若干 Skill 簇；同一问题往往需要 grilling（对齐）、setup（把 tracker label 映射写下来）、再通过质量或分流 Skill 收尾。
+**安装路径为什么是 `npx skills`？** README 的快速开始把它写成两步：先用官方安装器把仓库挂进目标工具链，再在代理里运行 `/setup-matt-pocock-skills`，把 Issue 存放位置、triage label 字面量、`CONTEXT`/ADR 布局写进 **`docs/agents/`**（以及 `CLAUDE.md`/`AGENTS.md` 的技能索引块）；否则像 `to-issues`、`triage` 这类会直接写远端标签的技能会输出错误的标签字符串，而不是「模糊一点还能用」。这条边界在 ADR `0001` 里被称为 **hard dependency** vs **soft dependency**，也是理解整个技能矩阵的骨架。
 
-## 能力快照（面向 Maintainer）
-
-| 能力簇 | 代表 Slash Skill | 价值一句话 |
-|--------|------------------|-----------|
-| 对齐 | `grill-me`, `grill-with-docs` | 在进入编码之前穷尽决策树，并让术语落到文档 |
-| 运行契约 | `setup-matt-pocock-skills` | 为每台仓库生成 issue tracker、triage label、`CONTEXT`/ADR 消费约定 |
-| 交付拆分 | `to-prd`, `to-issues` | PRD 进 backlog；再把方案切成 tracer-bullet Issue |
-| 分流运营 | `triage` | 五阶段 label state machine + agent brief |
-| 反馈回路 | `tdd`, `diagnose` | 垂直 RED/GREEN；强约束的诊断闭环 |
-| 结构性 refactor | `improve-codebase-architecture`, `zoom-out` | 用语义一致的加深术语解剖 shallow module |
-
-## 技术栈与规模事实
-
-- **载体**：Markdown Skill（YAML frontmatter + 正文指令）；插件边界由一个 `.claude-plugin/plugin.json` 枚举对外 Skills。
-- **规模**：盘点脚本登记 **57** 份追踪文件（顶层目录：`skills/`、`scripts/`、`docs/`、`.claude-plugin/`、`.out-of-scope/`）。
-- **CI / 测试**：仓库不提供自动化测试或流水线——知识体系主要靠 Markdown 与实践可复制脚本 (`scripts/*.sh`)。
-
-## 阅读路线
-
-| 读者目标 | 推荐阅读顺序 |
-|----------|----------------|
-| 只想弄明白这套方法与 BMAD / Spec-Kit 的差别 | 本页 → [对齐会话与共享语言](grilling-and-domain-language.md) |
-| 准备在自有仓库启用 Skills | [安装与 Claude 插件清单](installation-and-manifest.md) → [每仓库配置与硬软依赖](per-repo-setup.md) |
-| 想把 backlog / PRD / Triage 串起来 | [规划、Issue 切片与分流](planning-issues-triage.md) |
-| 想把工程质量拉回正轨 | [质量回路、诊断与架构加深](quality-architecture-feedback.md) |
-
-Sources: [README.md:11-138](../../../project-repos/skills/README.md#L11-L138), [CLAUDE.md:1-13](../../../project-repos/skills/CLAUDE.md#L1-L13)
+Sources: [README.md:11-138](../../../project-repos/skills/README.md#L11-L138), [CLAUDE.md:1-14](../../../project-repos/skills/CLAUDE.md#L1-L14), [claude-plugin/plugin.json:1-17](../../../project-repos/skills/.claude-plugin/plugin.json#L1-L17)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -206,7 +172,7 @@ This is built in to every layer of these skills:
 ... snippet truncated ...
 ````
 
-#### `CLAUDE.md:1-13`
+#### `CLAUDE.md:1-14`
 
 ```markdown
 Skills are organized into bucket folders under `skills/`:
@@ -223,77 +189,6 @@ Each skill entry in the top-level `README.md` must link the skill name to its `S
 
 Each bucket folder has a `README.md` that lists every skill in the bucket with a one-line description, with the skill name linked to its `SKILL.md`.
 ```
-
-<!-- source-snippets:end -->
-</details>
-
-## 相关页面
-
-- [安装与 Claude 插件清单](installation-and-manifest.md) — 如何把 curated Skills 写入 Claude Code  
-- [对齐会话与共享语言](grilling-and-domain-language.md) — README 宣称的首要武器  
-
----
-
-<details>
-<summary>相关源文件</summary>
-
-生成本页时使用的主要源文件：
-
-- [README.md](../../../project-repos/skills/README.md)
-- [.claude-plugin/plugin.json](../../../project-repos/skills/.claude-plugin/plugin.json)
-- [CLAUDE.md](../../../project-repos/skills/CLAUDE.md)
-
-</details>
-
-# 安装与 Claude 插件清单
-
-README 期望的安装心智模型只有两步：`npx skills@latest add mattpocock/skills` 选对 agent，然后务必勾选 `/setup-matt-pocock-skills`。插件清单 (`plugin.json`) 则进一步钉死「哪些 Skill 会在 Claude Code UI 里露出」——它是 curated surface area，而不是整个 `skills/` 目录的镜像。
-
-```mermaid
-flowchart TD
-  User["维护者运行<br/>npx skills add"] --> Installer["skills 安装器"]
-  Installer --> Plugin[".claude-plugin/plugin.json"]
-  Plugin --> CC["Claude Code<br/>加载 skill 路径"]
-  CC --> Slash["可见 Slash Skills<br/>engineering + productivity 子集"]
-```
-
-Claude Code 通过插件声明 skills 数组；数组里的每一项指向 `./skills/...` 目录而非单个 Markdown。于是 manifest 成为事实上的「上架列表」，任何位于 `misc/`、`personal/`、`deprecated/` 的技能都不会出现在数组里——这与 `CLAUDE.md` 的约束一致。
-
-## `plugin.json` 的上架集合
-
-当前 manifest（提交 `b843cb5`）枚举 **11** 条路径：engineering 下 9 个（`diagnose`、`grill-with-docs`、`triage`、`improve-codebase-architecture`、`setup-matt-pocock-skills`、`tdd`、`to-issues`、`to-prd`、`zoom-out`），productivity 下 3 个（`caveman`、`grill-me`、`write-a-skill`）。这与 README 「Reference」段落公开的 curated list 对齐。
-
-## Insight：上架列表 ≠ 仓库全集
-
-**Insight**：README 仍会为 `misc/` skills（例如 git guardrails、pre-commit）撰写条目，但它们刻意缺席 `plugin.json`。这意味着「文档层面的可达」与「工具默认加载」被刻意拆开：`misc` 技能更像是可随时复制的 playbook，而不是 Matt 日常的 Claude Code 默认托盘。
-
-Sources: [README.md:23-38](../../../project-repos/skills/README.md#L23-L38), [claude-plugin/plugin.json:1-17](../../../project-repos/skills/.claude-plugin/plugin.json#L1-L17), [CLAUDE.md:1-13](../../../project-repos/skills/CLAUDE.md#L1-L13)
-
-<details class="source-snippets">
-<summary>引用源码</summary>
-
-<!-- source-snippets:start -->
-
-#### `README.md:23-38`
-
-````markdown
-## Quickstart (30-second setup)
-
-1. Run the skills.sh installer:
-
-```bash
-npx skills@latest add mattpocock/skills
-```
-
-2. Pick the skills you want, and which coding agents you want to install them on. **Make sure you select `/setup-matt-pocock-skills`**.
-
-3. Run `/setup-matt-pocock-skills` in your agent. It will:
-   - Ask you which issue tracker you want to use (GitHub, Linear, or local files)
-   - Ask you what labels you apply to ticks when you triage them (`/triage` uses labels)
-   - Ask you where you want to save any docs we create
-
-4. Bam - you're ready to go.
-````
 
 #### `claude-plugin/plugin.json:1-17`
 
@@ -317,13 +212,299 @@ npx skills@latest add mattpocock/skills
 }
 ```
 
-#### `CLAUDE.md:1-13`
+<!-- source-snippets:end -->
+</details>
+
+## 能力全景（用工程语言概括）
+
+- **对齐（Grilling）**：用 `/grill-me` 与 `/grill-with-docs` 把需求树走完整，避免「你以为代理懂」。
+- **共享语言（Ubiquitous language）**：`grill-with-docs` 在探索代码的同时维护 `CONTEXT.md` 与 ADR，让后续输出更短、更一致。
+- **反馈闭环（TDD / diagnose）**：`tdd` 强化红-绿-重构；`diagnose` 把复杂缺陷收敛成可验证假设。
+- **控制设计熵（Architecture）**：`to-prd`、`zoom-out`、`improve-codebase-architecture` 把设计意识嵌进日常节奏，而不是事后补救。
+- **Issue 作为执行接口（Tracker ops）**：`to-issues` 用竖切（tracer bullet）拆单；`triage` 用有限状态机管理代理可接手的边界。
+
+## 技术栈与边界
+
+- **语言与形态**：以 Markdown 技能为主，辅以少量 Bash 脚本（`scripts/`）；无应用代码、无 CI、无测试目录——仓库质量靠作者自身的使用反馈与社区 PR 维护。
+- **面向的工具链**：Claude Code 插件清单是明确的一等公民；其他代理可通过复制 `SKILL.md` 或安装器间接消费。
+
+## 阅读路线
+
+- **想 5 分钟判断「适不适合我」** → 读根 `README` 里四个失败模式章节，然后对照 [失败模式与工程价值观](failure-modes-and-values.md)。
+- **要把它装进自己的仓库** → [发布面与插件清单](publishing-surface.md) + [每仓配置与领域契约](setup-and-domain-contract.md)。
+- **要知道日常开发时具体会跑哪些提示词** → [Engineering 技能矩阵](engineering-skills-matrix.md) 与 [Productivity 与 Misc 技能](productivity-and-tooling-skills.md)。
+- **要在本机做符号链接开发** → [本地开发脚本](scripts-local-dev.md)。
+
+## 相关页面
+
+- [失败模式与工程价值观](failure-modes-and-values.md) — README 故事线的拆解释义
+- [发布面与插件清单](publishing-surface.md) — `.claude-plugin` 与对外目录如何对齐
+- [每仓配置与领域契约](setup-and-domain-contract.md) — `/setup` 产物与硬 / 软依赖
+
+---
+
+<details>
+<summary>相关源文件</summary>
+
+生成本页时使用的主要源文件：
+
+- [README.md](../../../project-repos/skills/README.md)
+- [CONTEXT.md](../../../project-repos/skills/CONTEXT.md)
+- [docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md](../../../project-repos/skills/docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md)
+
+</details>
+
+# 失败模式与工程价值观
+
+README 用四个「代理失效模式」组织技能目录，而不是按字母表堆放命令；这决定了读者应把本仓库当作 **行为矫正器** 来理解：每个 skill 都对应一种可观察的失败，以及一条可重复的纠偏路径。
+
+**Insight**：作者把 `CONTEXT.md` 放在仓库根，并不是装饰，而是 `grill-with-docs`、若干 engineering 技能在运行时真正会检索的「领域压缩层」——它用 **Issue tracker / Issue / Triage role** 三条定义消掉「backlog」一词的多义性，让代理在跨会话表达时减少指代漂移。
+
+```mermaid
+flowchart TD
+  FM1["#1 代理没做对事<br/>（对齐失败）"] --> G1["/grill-me"]
+  FM1 --> G2["/grill-with-docs + CONTEXT/ADR"]
+  FM2["#2 太啰嗦<br/>（语言不共享）"] --> G2
+  FM3["#3 代码跑不通<br/>（缺反馈）"] --> TDD["/tdd"]
+  FM3 --> DG["/diagnose"]
+  FM4["#4 泥球架构<br/>（设计熵）"] --> PRD["/to-prd"]
+  FM4 --> ZO["/zoom-out"]
+  FM4 --> ARCH["/improve-codebase-architecture"]
+```
+
+第一条失败模式直接引用 *The Pragmatic Programmer*：没人一开始就知道自己要什么，因此需要 **grilling session** 把决策树走全。第二条借 DDD 的「通用语言」概念，指出代理被丢进代码库时会用 20 个词描述 1 个概念；解法是把语言沉淀成 `CONTEXT.md`，并在 `grill-with-docs` 里同步 ADR。第三条回到极限编程：小步、快反馈；`tdd` 与 `diagnose` 分别覆盖「写对」与「查错」。第四条引用 Kent Beck 与 John Ousterhout：代理加速编码也加速熵增，因此把 **设计** 写进技能（`to-prd` 先问清触及模块、`zoom-out` 强制拉远视角、`improve-codebase-architecture` 周期性去杠杆）。
+
+ADR `0001` 把「是否要在技能里硬编码 `/setup` 提示」变成显式策略：`to-issues`、`to-prd`、`triage` 被归为 **hard dependency**——缺配置时输出会 **错**；`diagnose`、`tdd` 等则只在措辞上引用领域文档，缺了也能跑，只是更糊。这个分叉避免把 setup 提示宗教化地复制到每个文件里，也解释了为何 README 把 setup 技能放在工程技能列表的枢纽位置。
+
+Sources: [README.md:40-138](../../../project-repos/skills/README.md#L40-L138), [CONTEXT.md:1-27](../../../project-repos/skills/CONTEXT.md#L1-L27), [docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md:1-11](../../../project-repos/skills/docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md#L1-L11)
+
+<details class="source-snippets">
+<summary>引用源码</summary>
+
+<!-- source-snippets:start -->
+
+#### `README.md:40-138`
 
 ```markdown
-Skills are organized into bucket folders under `skills/`:
+## Why These Skills Exist
 
-- `engineering/` — daily code work
-- `productivity/` — daily non-code workflow tools
+I built these skills as a way to fix common failure modes I see with Claude Code, Codex, and other coding agents.
+
+### #1: The Agent Didn't Do What I Want
+
+> "No-one knows exactly what they want"
+>
+> David Thomas & Andrew Hunt, [The Pragmatic Programmer](https://www.amazon.co.uk/Pragmatic-Programmer-Anniversary-Journey-Mastery/dp/B0833F1T3V)
+
+**The Problem**. The most common failure mode in software development is misalignment. You think the dev knows what you want. Then you see what they've built - and you realize it didn't understand you at all.
+
+This is just the same in the AI age. There is a communication gap between you and the agent. The fix for this is a **grilling session** - getting the agent to ask you detailed questions about what you're building.
+
+**The Fix** is to use:
+
+- [`/grill-me`](./skills/productivity/grill-me/SKILL.md) - for non-code uses
+- [`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md) - same as [`/grill-me`](./skills/productivity/grill-me/SKILL.md), but adds more goodies (see below)
+
+These are my most popular skills. They help you align with the agent before you get started, and think deeply about the change you're making. Use them _every_ time you want to make a change.
+
+### #2: The Agent Is Way Too Verbose
+
+> With a ubiquitous language, conversations among developers and expressions of the code are all derived from the same domain model.
+>
+> Eric Evans, [Domain-Driven-Design](https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215)
+
+**The Problem**: At the start of a project, devs and the people they're building the software for (the domain experts) are usually speaking different languages.
+
+I felt the same tension with my agents. Agents are usually dropped into a project and asked to figure out the jargon as they go. So they use 20 words where 1 will do.
+
+**The Fix** for this is a shared language. It's a document that helps agents decode the jargon used in the project.
+
+<details>
+<summary>
+Example
+</summary>
+
+Here's an example [`CONTEXT.md`](https://github.com/mattpocock/course-video-manager/blob/076a5a7a182db0fe1e62971dd7a68bcadf010f1c/CONTEXT.md), from my `course-video-manager` repo. Which one is easier to read?
+
+- **BEFORE**: "There's a problem when a lesson inside a section of a course is made 'real' (i.e. given a spot in the file system)"
+- **AFTER**: "There's a problem with the materialization cascade"
+
+This concision pays off session after session.
+
+</details>
+
+This is built into [`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md). It's a grilling session, but that helps you build a shared language with the AI, and document hard-to-explain decisions in ADR's.
+
+It's hard to explain how powerful this is. It might be the single coolest technique in this repo. Try it, and see.
+
+> [!TIP]
+> A shared language has many other benefits than reducing verbosity:
+>
+> - **Variables, functions and files are named consistently**, using the shared language
+> - As a result, the **codebase is easier to navigate** for the agent
+> - The agent also **spends fewer tokens on thinking**, because it has access to a more concise language
+
+### #3: The Code Doesn't Work
+
+> "Always take small, deliberate steps. The rate of feedback is your speed limit. Never take on a task that’s too big."
+>
+> David Thomas & Andrew Hunt, [The Pragmatic Programmer](https://www.amazon.co.uk/Pragmatic-Programmer-Anniversary-Journey-Mastery/dp/B0833F1T3V)
+
+**The Problem**: Let's say that you and the agent are aligned on what to build. What happens when the agent _still_ produces crap?
+
+It's time to look at your feedback loops. Without feedback on how the code it produces actually runs, the agent will be flying blind.
+
+**The Fix**: You need the usual tranche of feedback loops: static types, browser access, and automated tests.
+
+For automated tests, a red-green-refactor loop is critical. This is where the agent writes a failing test first, then fixes the test. This helps give the agent a consistent level of feedback that results in far better code.
+
+I've built a **[`/tdd`](./skills/engineering/tdd/SKILL.md) skill** you can slot into any project. It encourages red-green-refactor and gives the agent plenty of guidance on what makes good and bad tests.
+
+For debugging, I've also built a **[`/diagnose`](./skills/engineering/diagnose/SKILL.md)** skill that wraps best debugging practices into a simple loop.
+
+### #4: We Built A Ball Of Mud
+
+> "Invest in the design of the system _every day_."
+>
+> Kent Beck, [Extreme Programming Explained](https://www.amazon.co.uk/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
+
+> "The best modules are deep. They allow a lot of functionality to be accessed through a simple interface."
+>
+> John Ousterhout, [A Philosophy Of Software Design](https://www.amazon.co.uk/Philosophy-Software-Design-2nd/dp/173210221X)
+
+**The Problem**: Most apps built with agents are complex and hard to change. Because agents can radically speed up coding, they also accelerate software entropy. Codebases get more complex at an unprecedented rate.
+
+**The Fix** for this is a radical new approach to AI-powered development: caring about the design of the code.
+
+This is built in to every layer of these skills:
+
+- [`/to-prd`](./skills/engineering/to-prd/SKILL.md) quizzes you about which modules you're touching before creating a PRD
+- [`/zoom-out`](./skills/engineering/zoom-out/SKILL.md) tells the agent to explain code in the context of the whole system
+
+And crucially, [`/improve-codebase-architecture`](./skills/engineering/improve-codebase-architecture/SKILL.md) helps you rescue a codebase that has become a ball of mud. I recommend running it on your codebase once every few days.
+
+### Summary
+
+```
+
+#### `CONTEXT.md:1-27`
+
+```markdown
+# Matt Pocock Skills
+
+A collection of agent skills (slash commands and behaviors) loaded by Claude Code. Skills are organized into buckets and consumed by per-repo configuration emitted by `/setup-matt-pocock-skills`.
+
+## Language
+
+**Issue tracker**:
+The tool that hosts a repo's issues — GitHub Issues, Linear, a local `.scratch/` markdown convention, or similar. Skills like `to-issues`, `to-prd`, `triage`, and `qa` read from and write to it.
+_Avoid_: backlog manager, backlog backend, issue host
+
+**Issue**:
+A single tracked unit of work inside an **Issue tracker** — a bug, task, PRD, or slice produced by `to-issues`.
+_Avoid_: ticket (use only when quoting external systems that call them tickets)
+
+**Triage role**:
+A canonical state-machine label applied to an **Issue** during triage (e.g. `needs-triage`, `ready-for-afk`). Each role maps to a real label string in the **Issue tracker** via `docs/agents/triage-labels.md`.
+
+## Relationships
+
+- An **Issue tracker** holds many **Issues**
+- An **Issue** carries one **Triage role** at a time
+
+## Flagged ambiguities
+
+- "backlog" was previously used to mean both the *tool* hosting issues and the *body of work* inside it — resolved: the tool is the **Issue tracker**; "backlog" is no longer used as a domain term.
+- "backlog backend" / "backlog manager" — resolved: collapsed into **Issue tracker**.
+```
+
+#### `docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md:1-11`
+
+```markdown
+# Explicit `/setup-matt-pocock-skills` pointer only for hard dependencies
+
+Engineering skills depend on per-repo config (issue tracker, triage label vocabulary, domain doc layout) seeded by `/setup-matt-pocock-skills`. Some skills cannot meaningfully function without that config — they have to publish to a specific issue tracker or apply a specific label string. Others only use it to sharpen output (vocabulary, ADR awareness) and degrade gracefully without it.
+
+We split these into **hard-dependency** and **soft-dependency** skills:
+
+- **Hard dependency** (`to-issues`, `to-prd`, `triage`) — include an explicit one-liner: _"… should have been provided to you — run `/setup-matt-pocock-skills` if not."_ Without the mapping, output is wrong, not just fuzzy.
+- **Soft dependency** (`diagnose`, `tdd`, `improve-codebase-architecture`, `zoom-out`) — reference "the project's domain glossary" and "ADRs in the area you're touching" in vague prose only. If the docs aren't there, the skill still works; output is just less sharp.
+
+The split keeps soft-dependency skills token-light and avoids cargo-culting the setup pointer into places where it isn't load-bearing.
+```
+
+<!-- source-snippets:end -->
+</details>
+
+## 相关页面
+
+- [项目概览](overview.md) — 宏观结构与安装路径
+- [Engineering 技能矩阵](engineering-skills-matrix.md) — 这些价值观如何落到具体 SKILL
+- [Productivity 与 Misc 技能](productivity-and-tooling-skills.md) — 非代码向与工具向补充
+
+---
+
+<details>
+<summary>相关源文件</summary>
+
+生成本页时使用的主要源文件：
+
+- [.claude-plugin/plugin.json](../../../project-repos/skills/.claude-plugin/plugin.json)
+- [README.md](../../../project-repos/skills/README.md)
+- [CLAUDE.md](../../../project-repos/skills/CLAUDE.md)
+
+</details>
+
+# 发布面与插件清单
+
+对外「哪些技能可见」由两层共同决定：根 `README.md` 的人类导航，以及 `.claude-plugin/plugin.json` 的机器可读枚举。作者把两者绑定成治理规则，避免插件市场与文档漂移。
+
+`CLAUDE.md` 规定：`engineering/`、`productivity/`、`misc/` 下的每个技能必须同时出现在 **顶层 README** 与 **plugin.json**；`personal/` 与 `deprecated/` 则 **不得** 出现在这两处。结果是：你在 Marketplace 里安装到的，就是作者愿意承诺维护、且故事线完整的那一组；个人脚本与历史实验被物理隔离在别的桶里。
+
+```mermaid
+flowchart TD
+  RD["根 README.md<br/>按 Reference 列表维护链接"] --> CHK["治理检查<br/>（贡献者需要同步两处）"]
+  PLG[".claude-plugin/plugin.json<br/>skills 路径列表"] --> CHK
+  CHK --> PUB["对 Claude Code 可见<br/>的技能子集"]
+  HID["personal/ / deprecated/"] -.->|"明确禁止"| PUB
+```
+
+**Insight**：`plugin.json` 只列出 12 条相对路径，全部落在 `skills/engineering` 与 `skills/productivity`；`misc/` 虽然在 README 有引用，但 **未进入** 当前插件清单——这意味着「作者日常推荐」与「插件默认打包」可以刻意不同；读者若需要 `misc` 技能，需要自行复制或扩展本地插件配置。
+
+根 README 还承载「新闻通讯」跳转与仓库横幅图等非代码资产；就与技能治理无关的安装体验而言，关键在于 `npx skills@latest add mattpocock/skills` 这一入口把远程仓库转成各工具链可用的技能骨架，随后由 `/setup-matt-pocock-skills` 写入消费侧配置详情。
+
+Sources: [claude-plugin/plugin.json:1-17](../../../project-repos/skills/.claude-plugin/plugin.json#L1-L17), [CLAUDE.md:5-13](../../../project-repos/skills/CLAUDE.md#L5-L13), [README.md:143-173](../../../project-repos/skills/README.md#L143-L173)
+
+<details class="source-snippets">
+<summary>引用源码</summary>
+
+<!-- source-snippets:start -->
+
+#### `claude-plugin/plugin.json:1-17`
+
+```json
+{
+  "name": "mattpocock-skills",
+  "skills": [
+    "./skills/engineering/diagnose",
+    "./skills/engineering/grill-with-docs",
+    "./skills/engineering/triage",
+    "./skills/engineering/improve-codebase-architecture",
+    "./skills/engineering/setup-matt-pocock-skills",
+    "./skills/engineering/tdd",
+    "./skills/engineering/to-issues",
+    "./skills/engineering/to-prd",
+    "./skills/engineering/zoom-out",
+    "./skills/productivity/caveman",
+    "./skills/productivity/grill-me",
+    "./skills/productivity/write-a-skill"
+  ]
+}
+```
+
+#### `CLAUDE.md:5-13`
+
+```markdown
 - `misc/` — kept around but rarely used
 - `personal/` — tied to my own setup, not promoted
 - `deprecated/` — no longer used
@@ -335,13 +516,145 @@ Each skill entry in the top-level `README.md` must link the skill name to its `S
 Each bucket folder has a `README.md` that lists every skill in the bucket with a one-line description, with the skill name linked to its `SKILL.md`.
 ```
 
+#### `README.md:143-173`
+
+```markdown
+### Engineering
+
+Skills I use daily for code work.
+
+- **[diagnose](./skills/engineering/diagnose/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
+- **[grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md)** — Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates `CONTEXT.md` and ADRs inline.
+- **[triage](./skills/engineering/triage/SKILL.md)** — Triage issues through a state machine of triage roles.
+- **[improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md)** — Find deepening opportunities in a codebase, informed by the domain language in `CONTEXT.md` and the decisions in `docs/adr/`.
+- **[setup-matt-pocock-skills](./skills/engineering/setup-matt-pocock-skills/SKILL.md)** — Scaffold the per-repo config (issue tracker, triage label vocabulary, domain doc layout) that the other engineering skills consume. Run once per repo before using `to-issues`, `to-prd`, `triage`, `diagnose`, `tdd`, `improve-codebase-architecture`, or `zoom-out`.
+- **[tdd](./skills/engineering/tdd/SKILL.md)** — Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
+- **[to-issues](./skills/engineering/to-issues/SKILL.md)** — Break any plan, spec, or PRD into independently-grabbable GitHub issues using vertical slices.
+- **[to-prd](./skills/engineering/to-prd/SKILL.md)** — Turn the current conversation context into a PRD and submit it as a GitHub issue. No interview — just synthesizes what you've already discussed.
+- **[zoom-out](./skills/engineering/zoom-out/SKILL.md)** — Tell the agent to zoom out and give broader context or a higher-level perspective on an unfamiliar section of code.
+
+### Productivity
+
+General workflow tools, not code-specific.
+
+- **[caveman](./skills/productivity/caveman/SKILL.md)** — Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler while keeping full technical accuracy.
+- **[grill-me](./skills/productivity/grill-me/SKILL.md)** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved.
+- **[write-a-skill](./skills/productivity/write-a-skill/SKILL.md)** — Create new skills with proper structure, progressive disclosure, and bundled resources.
+
+### Misc
+
+Tools I keep around but rarely use.
+
+- **[git-guardrails-claude-code](./skills/misc/git-guardrails-claude-code/SKILL.md)** — Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, etc.) before they execute.
+- **[migrate-to-shoehorn](./skills/misc/migrate-to-shoehorn/SKILL.md)** — Migrate test files from `as` type assertions to @total-typescript/shoehorn.
+- **[scaffold-exercises](./skills/misc/scaffold-exercises/SKILL.md)** — Create exercise directory structures with sections, problems, solutions, and explainers.
+- **[setup-pre-commit](./skills/misc/setup-pre-commit/SKILL.md)** — Set up Husky pre-commit hooks with lint-staged, Prettier, type checking, and tests.
+```
+
 <!-- source-snippets:end -->
 </details>
 
 ## 相关页面
 
-- [项目概览](overview.md) — 为何要 curated composable skills  
-- [每仓库配置与硬软依赖](per-repo-setup.md) — 安装后仍需写入 `docs/agents/`  
+- [项目概览](overview.md) — Quickstart 与总体定位
+- [每仓配置与领域契约](setup-and-domain-contract.md) — Marketplace 装上之后还要做什么
+- [本地开发脚本](scripts-local-dev.md) — 开发者如何把全量 `skills/` symlink 到本机 Claude 目录
+
+---
+
+<details>
+<summary>相关源文件</summary>
+
+生成本页时使用的主要源文件：
+
+- [scripts/link-skills.sh](../../../project-repos/skills/scripts/link-skills.sh)
+- [scripts/list-skills.sh](../../../project-repos/skills/scripts/list-skills.sh)
+
+</details>
+
+# 本地开发脚本
+
+仓库只提供两条与「开发体验」直接相关的 Bash 工具：`list-skills.sh` 递归列出所有 `SKILL.md` 的相对路径；`link-skills.sh` 则把这些技能目录 **符号链接** 到 `~/.claude/skills/<skillName>`，方便在本机 CLI 侧快速迭代。
+
+`link-skills.sh` 的关键安全阀是 **检测 `~/.claude/skills` 是否是指回当前仓库的 symlink**：如果是，则继续链接会在仓库自己的 `skills/` 树里制造污染，因此脚本直接 `exit 1` 并要求用户删除该 symlink 后重跑。这是一个典型的「局部不变量」——它保护的是工作副本与全局技能目录之间的边界。
+
+```mermaid
+flowchart TD
+  LS["list-skills.sh"] --> OUT["排序后的<br/>相对 SKILL.md 路径"]
+  LK["link-skills.sh"] --> CHK["readlink -f ~/.claude/skills"]
+  CHK -->|"指向本仓库"| ERR["报错并退出<br/>避免污染工作副本"]
+  CHK -->|"安全"| LN["ln -sfn<br/>每个技能目录"]
+```
+
+Sources: [scripts/link-skills.sh:1-38](../../../project-repos/skills/scripts/link-skills.sh#L1-L38), [scripts/list-skills.sh:1-8](../../../project-repos/skills/scripts/list-skills.sh#L1-L8)
+
+<details class="source-snippets">
+<summary>引用源码</summary>
+
+<!-- source-snippets:start -->
+
+#### `scripts/link-skills.sh:1-38`
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Links all skills in the repository to ~/.claude/skills, so that
+# they can be used by the local Claude CLI.
+
+REPO="$(cd "$(dirname "$0")/.." && pwd)"
+DEST="$HOME/.claude/skills"
+
+# If ~/.claude/skills is a symlink that resolves into this repo, we'd end up
+# writing the per-skill symlinks back into the repo's own skills/ tree. Detect
+# and bail out instead of polluting the working copy.
+if [ -L "$DEST" ]; then
+  resolved="$(readlink -f "$DEST")"
+  case "$resolved" in
+    "$REPO"|"$REPO"/*)
+      echo "error: $DEST is a symlink into this repo ($resolved)." >&2
+      echo "Remove it (rm \"$DEST\") and re-run; the script will recreate it as a real dir." >&2
+      exit 1
+      ;;
+  esac
+fi
+
+mkdir -p "$DEST"
+
+find "$REPO/skills" -name SKILL.md -not -path '*/node_modules/*' -print0 |
+while IFS= read -r -d '' skill_md; do
+  src="$(dirname "$skill_md")"
+  name="$(basename "$src")"
+  target="$DEST/$name"
+
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    rm -rf "$target"
+  fi
+
+  ln -sfn "$src" "$target"
+  echo "linked $name -> $src"
+done
+```
+
+#### `scripts/list-skills.sh:1-8`
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO="$(cd "$(dirname "$0")/.." && pwd)"
+
+cd "$REPO"
+find . -name SKILL.md -not -path '*/node_modules/*' | sed 's|^\./||' | sort
+```
+
+<!-- source-snippets:end -->
+</details>
+
+## 相关页面
+
+- [发布面与插件清单](publishing-surface.md) — 与 Marketplace 安装的差异
+- [项目概览](overview.md)
 
 ---
 
@@ -352,47 +665,47 @@ Each bucket folder has a `README.md` that lists every skill in the bucket with a
 
 - [skills/engineering/setup-matt-pocock-skills/SKILL.md](../../../project-repos/skills/skills/engineering/setup-matt-pocock-skills/SKILL.md)
 - [docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md](../../../project-repos/skills/docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md)
+- [CONTEXT.md](../../../project-repos/skills/CONTEXT.md)
 
 </details>
 
-# 每仓库配置与硬软依赖
+# 每仓配置与领域契约
 
-`/setup-matt-pocock-skills` 是唯一真正「写文件」的 onboarding Skill：它读取远端信息（`git remote`）、既有 `AGENTS.md`/`CLAUDE.md`，然后在 `docs/agents/` 生成 issue tracker、triage label、domain layout 三份说明，并把摘要块嵌回单一入口 Markdown。ADR 0001 随后解释：**并非所有 engineering skill 都需要在同一句提示里绑架用户去 setup**——只有会把错误 label 写进真实 backlog 的技能才算硬依赖。
+`/setup-matt-pocock-skills` 是唯一显式面向「把你的仓库改造成技能可消费形状」的入口。它不做确定性脚本，而是用 **探索 → 分项确认 → 草稿 → 写入** 的提示工程，把三类信息落到 `docs/agents/`：Issue tracker 工作流、triage label 映射、以及 `CONTEXT`/ADR 的布局规则。
+
+技能正文强调：默认假设 GitHub（`gh`），但也支持 GitLab（`glab`）、本地 `.scratch/` markdown、或用户一段自由文本描述的其他系统。它与 ADR `0001` 形成闭环——当输出 **依赖具体 label 字符串或远程 API** 时，缺配置就是 **硬错误**；当只是「读读词汇表更爽」时，就不反复骚扰用户去 setup。
 
 ```mermaid
-flowchart TD
-  subgraph SetupSkill["setup-matt-pocock-skills"]
-    E["Explore repo"]
-    Q["三道选择题<br/>逐个询问"]
-    W["写入 docs/agents/*.md"]
-    B["更新 AGENTS.md 或 CLAUDE.md<br/>## Agent skills"]
-  end
-  subgraph Consumers["消费者"]
-    Hard["Hard deps<br/>to-issues / to-prd / triage"]
-    Soft["Soft deps<br/>tdd / diagnose / improve / zoom-out"]
-  end
-  SetupSkill --> Hard
-  SetupSkill --> Soft
+sequenceDiagram
+  participant U as Maintainer
+  participant A as Agent
+  participant FS as docs/agents/*
+  U->>A: 调用 /setup-matt-pocock-skills
+  A->>A: 读 remote、AGENTS/CLAUDE、CONTEXT、adr、.scratch
+  A-->>U: 分段解释 + 默认建议
+  U-->>A: 逐项确认 Issue 系统 / labels / 上下文布局
+  A->>FS: 写入 issue-tracker.md / triage-labels.md / domain.md
+  A->>FS: 更新 CLAUDE.md 或 AGENTS.md 的 `## Agent skills` 块
 ```
 
-**硬依赖**三类：`to-issues`、`to-prd`、`triage`——它们直接把 canonical label 字符串映射到外部系统；缺映射会产生错误输出而不是含糊。**软依赖**四类：`diagnose`、`tdd`、`improve-codebase-architecture`、`zoom-out`——它们只在 prose 里提及 glossary / ADR，缺失时 Skill 仍可运行，只是少了锐利度。
+**治理细节**：如果已存在 `CLAUDE.md` 就编辑它；否则编辑 `AGENTS.md`；两者都不存在则由用户选择新建哪个，**禁止**在已有其一的情况下再创建另一个——这避免双源配置。`disable-model-invocation: true` frontmatter 把这技能限制为「显式由人触发」，降低被模型误启用的概率。
 
-## Setup 流程中的关键约束
-
-- Skill 明确写成「prompt-driven」，即必须先 explore + 与用户确认，而不是幻想某个脚本一键写完。
-- 写入 `## Agent skills` 时遵循：`CLAUDE.md` 优先于 `AGENTS.md`；二者不可并存新建。
-- Issue tracker 选项覆盖 GitHub / GitLab / 本地 `.scratch/` markdown / 其它（自由文本 workflow）。
-
-Sources: [skills/engineering/setup-matt-pocock-skills/SKILL.md:7-115](../../../project-repos/skills/skills/engineering/setup-matt-pocock-skills/SKILL.md#L7-L115), [docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md:1-11](../../../project-repos/skills/docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md#L1-L11)
+Sources: [skills/engineering/setup-matt-pocock-skills/SKILL.md:1-120](../../../project-repos/skills/skills/engineering/setup-matt-pocock-skills/SKILL.md#L1-L120), [docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md:1-11](../../../project-repos/skills/docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md#L1-L11), [CONTEXT.md:1-22](../../../project-repos/skills/CONTEXT.md#L1-L22)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
 
 <!-- source-snippets:start -->
 
-#### `skills/engineering/setup-matt-pocock-skills/SKILL.md:7-115`
+#### `skills/engineering/setup-matt-pocock-skills/SKILL.md:1-120`
 
 ````markdown
+---
+name: setup-matt-pocock-skills
+description: Sets up an `## Agent skills` block in AGENTS.md/CLAUDE.md and `docs/agents/` so the engineering skills know this repo's issue tracker (GitHub or local markdown), triage label vocabulary, and domain doc layout. Run before first use of `to-issues`, `to-prd`, `triage`, `diagnose`, `tdd`, `improve-codebase-architecture`, or `zoom-out` — or if those skills appear to be missing context about the issue tracker, triage labels, or domain docs.
+disable-model-invocation: true
+---
+
 # Setup Matt Pocock's Skills
 
 Scaffold the per-repo configuration that the engineering skills assume:
@@ -502,6 +815,11 @@ Then write the three docs files using the seed templates in this skill folder as
 - [issue-tracker-local.md](./issue-tracker-local.md) — local-markdown issue tracker
 - [triage-labels.md](./triage-labels.md) — label mapping
 - [domain.md](./domain.md) — domain doc consumer rules + layout
+
+For "other" issue trackers, write `docs/agents/issue-tracker.md` from scratch using the user's description.
+
+### 5. Done
+
 ````
 
 #### `docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md:1-11`
@@ -519,146 +837,13 @@ We split these into **hard-dependency** and **soft-dependency** skills:
 The split keeps soft-dependency skills token-light and avoids cargo-culting the setup pointer into places where it isn't load-bearing.
 ```
 
-<!-- source-snippets:end -->
-</details>
-
-## 相关页面
-
-- [安装与 Claude 插件清单](installation-and-manifest.md) — manifest 与 README 的分工  
-- [规划、Issue 切片与分流](planning-issues-triage.md) — 硬依赖技能怎样消费 triage 映射  
-
----
-
-<details>
-<summary>相关源文件</summary>
-
-生成本页时使用的主要源文件：
-
-- [skills/productivity/grill-me/SKILL.md](../../../project-repos/skills/skills/productivity/grill-me/SKILL.md)
-- [skills/engineering/grill-with-docs/SKILL.md](../../../project-repos/skills/skills/engineering/grill-with-docs/SKILL.md)
-- [CONTEXT.md](../../../project-repos/skills/CONTEXT.md)
-
-</details>
-
-# 对齐会话与共享语言
-
-README 把 `/grill-me` 与 `/grill-with-docs` 描述为解决 misalignment 的主力：**前者是纯问答；后者在同一流程里把术语刻进 `CONTEXT.md`，必要时写入 ADR**。这与 Eric Evans 的 ubiquitous language 引用相呼应——Matt 关心的不是引用名人，而是让 Agent 停止用泛化的散文堆砌推断。
-
-```mermaid
-sequenceDiagram
-  participant U as 维护者
-  participant G as grill-me 或 grill-with-docs
-  participant C as CONTEXT.md
-  participant A as docs/adr
-  U->>G: 描述方案 / 特性
-  loop 每次仅一个问题
-    G->>U: 追问 + 推荐答案
-    U->>G: 反馈
-  end
-  G->>C: 即时写入术语
-  G->>A: 仅在满足三条件时提议 ADR
-```
-
-`grill-with-docs` 正文强调：**术语冲突必须当场点名**；遇到含糊词汇要把 canonical term 提出来；还要用具体场景压力测试边界。这与仓库根目录 `CONTEXT.md`（演示性质的 glossary）形成对照：`CONTEXT.md` 示例定义 Issue tracker / Issue / Triage role，并明确要避免的旧词（如 backlog 语义漂移）。
-
-## ADR 触发门槛（防泛滥）
-
-只有在「难以回滚」「缺乏上下文会惊讶」「确实有备选方案权衡」三者皆满足时才创建 ADR；否则保持口头结论或在 `CONTEXT.md` 记录即可——这是对 AI 文档膨胀的手术刀式约束。
-
-Sources: [skills/productivity/grill-me/SKILL.md:6-11](../../../project-repos/skills/skills/productivity/grill-me/SKILL.md#L6-L11), [skills/engineering/grill-with-docs/SKILL.md:18-86](../../../project-repos/skills/skills/engineering/grill-with-docs/SKILL.md#L18-L86), [CONTEXT.md:5-26](../../../project-repos/skills/CONTEXT.md#L5-L26)
-
-<details class="source-snippets">
-<summary>引用源码</summary>
-
-<!-- source-snippets:start -->
-
-#### `skills/productivity/grill-me/SKILL.md:6-11`
+#### `CONTEXT.md:1-22`
 
 ```markdown
-Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
+# Matt Pocock Skills
 
-Ask the questions one at a time.
+A collection of agent skills (slash commands and behaviors) loaded by Claude Code. Skills are organized into buckets and consumed by per-repo configuration emitted by `/setup-matt-pocock-skills`.
 
-If a question can be answered by exploring the codebase, explore the codebase instead.
-```
-
-#### `skills/engineering/grill-with-docs/SKILL.md:18-86`
-
-````markdown
-## Domain awareness
-
-During codebase exploration, also look for existing documentation:
-
-### File structure
-
-Most repos have a single context:
-
-```
-/
-├── CONTEXT.md
-├── docs/
-│   └── adr/
-│       ├── 0001-event-sourced-orders.md
-│       └── 0002-postgres-for-write-model.md
-└── src/
-```
-
-If a `CONTEXT-MAP.md` exists at the root, the repo has multiple contexts. The map points to where each one lives:
-
-```
-/
-├── CONTEXT-MAP.md
-├── docs/
-│   └── adr/                          ← system-wide decisions
-├── src/
-│   ├── ordering/
-│   │   ├── CONTEXT.md
-│   │   └── docs/adr/                 ← context-specific decisions
-│   └── billing/
-│       ├── CONTEXT.md
-│       └── docs/adr/
-```
-
-Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `docs/adr/` exists, create it when the first ADR is needed.
-
-## During the session
-
-### Challenge against the glossary
-
-When the user uses a term that conflicts with the existing language in `CONTEXT.md`, call it out immediately. "Your glossary defines 'cancellation' as X, but you seem to mean Y — which is it?"
-
-### Sharpen fuzzy language
-
-When the user uses vague or overloaded terms, propose a precise canonical term. "You're saying 'account' — do you mean the Customer or the User? Those are different things."
-
-### Discuss concrete scenarios
-
-When domain relationships are being discussed, stress-test them with specific scenarios. Invent scenarios that probe edge cases and force the user to be precise about the boundaries between concepts.
-
-### Cross-reference with code
-
-When the user states how something works, check whether the code agrees. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible — which is right?"
-
-### Update CONTEXT.md inline
-
-When a term is resolved, update `CONTEXT.md` right there. Don't batch these up — capture them as they happen. Use the format in [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md).
-
-Don't couple `CONTEXT.md` to implementation details. Only include terms that are meaningful to domain experts.
-
-### Offer ADRs sparingly
-
-Only offer to create an ADR when all three are true:
-
-1. **Hard to reverse** — the cost of changing your mind later is meaningful
-2. **Surprising without context** — a future reader will wonder "why did they do it this way?"
-3. **The result of a real trade-off** — there were genuine alternatives and you picked one for specific reasons
-
-If any of the three is missing, skip the ADR. Use the format in [ADR-FORMAT.md](./ADR-FORMAT.md).
-````
-
-#### `CONTEXT.md:5-26`
-
-```markdown
 ## Language
 
 **Issue tracker**:
@@ -677,10 +862,6 @@ A canonical state-machine label applied to an **Issue** during triage (e.g. `nee
 - An **Issue tracker** holds many **Issues**
 - An **Issue** carries one **Triage role** at a time
 
-## Flagged ambiguities
-
-- "backlog" was previously used to mean both the *tool* hosting issues and the *body of work* inside it — resolved: the tool is the **Issue tracker**; "backlog" is no longer used as a domain term.
-- "backlog backend" / "backlog manager" — resolved: collapsed into **Issue tracker**.
 ```
 
 <!-- source-snippets:end -->
@@ -688,8 +869,9 @@ A canonical state-machine label applied to an **Issue** during triage (e.g. `nee
 
 ## 相关页面
 
-- [项目概览](overview.md) — README 如何把这列为第一痛点  
-- [质量回路、诊断与架构加深](quality-architecture-feedback.md) — glossary 如何反哺测试与架构 Skill  
+- [Engineering 技能矩阵](engineering-skills-matrix.md) — setup 之后最常连用的技能
+- [发布面与插件清单](publishing-surface.md) — 插件层与文档层如何对齐
+- [失败模式与工程价值观](failure-modes-and-values.md) — hard/soft 依赖的产品故事
 
 ---
 
@@ -698,74 +880,67 @@ A canonical state-machine label applied to an **Issue** during triage (e.g. `nee
 
 生成本页时使用的主要源文件：
 
-- [skills/engineering/to-prd/SKILL.md](../../../project-repos/skills/skills/engineering/to-prd/SKILL.md)
+- [skills/engineering/README.md](../../../project-repos/skills/skills/engineering/README.md)
 - [skills/engineering/to-issues/SKILL.md](../../../project-repos/skills/skills/engineering/to-issues/SKILL.md)
 - [skills/engineering/triage/SKILL.md](../../../project-repos/skills/skills/engineering/triage/SKILL.md)
+- [skills/engineering/to-prd/SKILL.md](../../../project-repos/skills/skills/engineering/to-prd/SKILL.md)
 
 </details>
 
-# 规划、Issue 切片与分流
+# Engineering 技能矩阵
 
-三条 Skill 共用同一个外部「Issue tracker」，但角色不同：`to-prd` 把会话上下文沉淀成 PRD Issue；`to-issues` 把任意规格拆成 tracer-bullet Issue；`triage` 则维持 category + state 双标签状态机，并在需要时调用 `/grill-with-docs`。**三者都被 ADR 0001 归为硬依赖**——若缺少 label 映射字符串，Agent 可能把标签写到错误字段。
+`skills/engineering/README.md` 用一句话概括了 9 个日常技能各自的「可交付物」：从诊断循环、到 grilling+文档、Issue 状态机、架构深化、setup、TDD、拆单、生成 PRD issue、以及 zoom-out 阅读法。阅读技巧是 **按数据面（Issue tracker）与控制面（triage 状态机）先分层**，再看质量技能（`tdd`、`diagnose`、`improve-codebase-architecture`）如何挂载在这张网上。
+
+`to-issues` 把任何计划拆成 **tracer bullet** 竖切：每个 issue 必须窄、但要穿过所有集成层，可演示或可验证；同时在模板里要求写清 parent、验收标准、依赖关系，并在发布时统一打上 `needs-triage` 以进入 triage 技能定义的工作流。它还硬编码了 **HITL vs AFK** 分类，用来表达「哪些切片必须等人拍板」。
+
+`triage` 把维护者语言译成 **两个 category 角色（bug/enhancement）+ 五个 state 角色**，并规定 triage 期间所有外发内容都要带固定免责声明，避免把机器生成意见伪装成人类结论。它还要求读 `.out-of-scope/*.md`，在 `wontfix` 场景把机构记忆写回知识库，从而让重复请求被快速对齐到历史决定。
 
 ```mermaid
-stateDiagram-v2
-  direction TB
-  [*] --> NeedsTriage
-  NeedsTriage --> NeedsInfo
-  NeedsTriage --> ReadyForAgent
-  NeedsTriage --> ReadyForHuman
-  NeedsTriage --> Wontfix
-  NeedsInfo --> NeedsTriage : reporter 回复
+flowchart TD
+  PLAN["对话中的计划 / PRD"] --> PRD["to-prd<br/>（生成 issue 文稿）"]
+  PLAN --> SLICE["to-issues<br/>（竖切 + 依赖图）"]
+  PRD --> TRI["triage<br/>（state + category）"]
+  SLICE --> TRI
+  TRI --> AGENT["ready-for-agent<br/>-> agent brief"]
+  TRI --> HUMAN["ready-for-human"]
+  TRI --> OOS["wontfix enhancement<br/>-> .out-of-scope 记录"]
 ```
 
-上图简化自 `triage` Skill：`bug`/`enhancement` 描述类别，`needs-*`/`ready-*` 描述流程阶段；每条 Issue 必须恰好携带一个类别角色与一个状态角色——冲突时必须先停下询问 maintainer。
-
-## `to-prd`：零访谈合成
-
-与 grilling 相反，`to-prd` **禁止再访谈用户**：它假定上下文已在会话里展开，Agent 只需探索代码、对齐 glossary，然后一次性产出 PRD 模板并附带 `needs-triage` label，让条目进入正常 triage。
-
-## `to-issues`：垂直切片 vs 水平切片
-
-Skill 明确反对「按层拆 ticket」（horizontal）。每个 Issue 必须是 tracer bullet：贯通 schema/API/UI/tests 的窄切片，可演示或可验证；切片标记 `HITL`（需要人类介入）或 `AFK`（Agent 可独立完成）。
-
-## Triage 的执行纪律
-
-- 所有 triage 评论需带声明：`> *This was generated by AI during triage.*`
-- 处理 bug 时要先尝试 repro，再决定是否进入 grilling。
-- `wontfix` enhancement 需要写入 `.out-of-scope/` 并链接——避免 silent rejection。
-
-Sources: [skills/engineering/to-prd/SKILL.md:6-21](../../../project-repos/skills/skills/engineering/to-prd/SKILL.md#L6-L21), [skills/engineering/to-issues/SKILL.md:8-54](../../../project-repos/skills/skills/engineering/to-issues/SKILL.md#L8-L54), [skills/engineering/triage/SKILL.md:8-77](../../../project-repos/skills/skills/engineering/triage/SKILL.md#L8-L77)
+Sources: [skills/engineering/README.md:1-13](../../../project-repos/skills/skills/engineering/README.md#L1-L13), [skills/engineering/to-issues/SKILL.md:1-79](../../../project-repos/skills/skills/engineering/to-issues/SKILL.md#L1-L79), [skills/engineering/triage/SKILL.md:1-78](../../../project-repos/skills/skills/engineering/triage/SKILL.md#L1-L78)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
 
 <!-- source-snippets:start -->
 
-#### `skills/engineering/to-prd/SKILL.md:6-21`
+#### `skills/engineering/README.md:1-13`
 
 ```markdown
-This skill takes the current conversation context and codebase understanding and produces a PRD. Do NOT interview the user — just synthesize what you already know.
+# Engineering
 
-The issue tracker and triage label vocabulary should have been provided to you — run `/setup-matt-pocock-skills` if not.
+Skills I use daily for code work.
 
-## Process
-
-1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the PRD, and respect any ADRs in the area you're touching.
-
-2. Sketch out the major modules you will need to build or modify to complete the implementation. Actively look for opportunities to extract deep modules that can be tested in isolation.
-
-A deep module (as opposed to a shallow module) is one which encapsulates a lot of functionality in a simple, testable interface which rarely changes.
-
-Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
-
-3. Write the PRD using the template below, then publish it to the project issue tracker. Apply the `needs-triage` triage label so it enters the normal triage flow.
-
+- **[diagnose](./diagnose/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
+- **[grill-with-docs](./grill-with-docs/SKILL.md)** — Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates `CONTEXT.md` and ADRs inline.
+- **[triage](./triage/SKILL.md)** — Triage issues through a state machine of triage roles.
+- **[improve-codebase-architecture](./improve-codebase-architecture/SKILL.md)** — Find deepening opportunities in a codebase, informed by the domain language in `CONTEXT.md` and the decisions in `docs/adr/`.
+- **[setup-matt-pocock-skills](./setup-matt-pocock-skills/SKILL.md)** — Scaffold the per-repo config (issue tracker, triage label vocabulary, domain doc layout) that the other engineering skills consume.
+- **[tdd](./tdd/SKILL.md)** — Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
+- **[to-issues](./to-issues/SKILL.md)** — Break any plan, spec, or PRD into independently-grabbable GitHub issues using vertical slices.
+- **[to-prd](./to-prd/SKILL.md)** — Turn the current conversation context into a PRD and submit it as a GitHub issue.
+- **[zoom-out](./zoom-out/SKILL.md)** — Tell the agent to zoom out and give broader context or a higher-level perspective on an unfamiliar section of code.
 ```
 
-#### `skills/engineering/to-issues/SKILL.md:8-54`
+#### `skills/engineering/to-issues/SKILL.md:1-79`
 
 ```markdown
+---
+name: to-issues
+description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices. Use when user wants to convert a plan into issues, create implementation tickets, or break down work into issues.
+---
+
+# To Issues
+
 Break a plan into independently-grabbable issues using vertical slices (tracer bullets).
 
 The issue tracker and triage label vocabulary should have been provided to you — run `/setup-matt-pocock-skills` if not.
@@ -813,11 +988,43 @@ Iterate until the user approves the breakdown.
 ### 5. Publish the issues to the issue tracker
 
 For each approved slice, publish a new issue to the issue tracker. Use the issue body template below. Apply the `needs-triage` triage label so each issue enters the normal triage flow.
+
+Publish issues in dependency order (blockers first) so you can reference real issue identifiers in the "Blocked by" field.
+
+<issue-template>
+## Parent
+
+A reference to the parent issue on the issue tracker (if the source was an existing issue, otherwise omit this section).
+
+## What to build
+
+A concise description of this vertical slice. Describe the end-to-end behavior, not layer-by-layer implementation.
+
+## Acceptance criteria
+
+- [ ] Criterion 1
+- [ ] Criterion 2
+- [ ] Criterion 3
+
+## Blocked by
+
+- A reference to the blocking ticket (if any)
+
+Or "None - can start immediately" if no blockers.
+
+</issue-template>
 ```
 
-#### `skills/engineering/triage/SKILL.md:8-77`
+#### `skills/engineering/triage/SKILL.md:1-78`
 
 ````markdown
+---
+name: triage
+description: Triage issues through a state machine driven by triage roles. Use when user wants to create an issue, triage issues, review incoming bugs or feature requests, prepare issues for an AFK agent, or manage issue workflow.
+---
+
+# Triage
+
 Move issues on the project issue tracker through a small state machine of triage roles.
 
 Every comment or issue posted to the issue tracker during triage **must** start with this disclaimer:
@@ -888,6 +1095,7 @@ Show counts and a one-line summary per issue. Let the maintainer pick.
    - `wontfix` (bug) — polite explanation, then close.
    - `wontfix` (enhancement) — write to `.out-of-scope/`, link to it from a comment, then close ([OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)).
    - `needs-triage` — apply the role. Optional comment if there's partial progress.
+
 ````
 
 <!-- source-snippets:end -->
@@ -895,8 +1103,9 @@ Show counts and a one-line summary per issue. Let the maintainer pick.
 
 ## 相关页面
 
-- [每仓库配置与硬软依赖](per-repo-setup.md) — label 映射从何而来  
-- [质量回路、诊断与架构加深](quality-architecture-feedback.md) — agent brief 之后的实现纪律  
+- [每仓配置与领域契约](setup-and-domain-contract.md) — Issue 与 label 映射从何而来
+- [Productivity 与 Misc 技能](productivity-and-tooling-skills.md) — `/grill-*` 如何支援 triage
+- [失败模式与工程价值观](failure-modes-and-values.md) — 这些技能的叙事起点
 
 ---
 
@@ -905,359 +1114,66 @@ Show counts and a one-line summary per issue. Let the maintainer pick.
 
 生成本页时使用的主要源文件：
 
-- [skills/engineering/tdd/SKILL.md](../../../project-repos/skills/skills/engineering/tdd/SKILL.md)
-- [skills/engineering/diagnose/SKILL.md](../../../project-repos/skills/skills/engineering/diagnose/SKILL.md)
-- [skills/engineering/improve-codebase-architecture/SKILL.md](../../../project-repos/skills/skills/engineering/improve-codebase-architecture/SKILL.md)
-- [skills/engineering/zoom-out/SKILL.md](../../../project-repos/skills/skills/engineering/zoom-out/SKILL.md)
-
-</details>
-
-# 质量回路、诊断与架构加深
-
-README 把第三类痛点概括为「代码仍旧不行」——根因通常是反馈回路薄弱。`tdd` Skill 用「vertical tracer bullets」对抗一次性堆测试；`diagnose` 把 **构造可自动化 pass/fail signal** 当成 Phase 1 的全部意义；`improve-codebase-architecture` 则借用 John Ousterhout 式「deep module」语言，要求 Agent 统一使用 Module / Interface / Seam 等术语以免漂移。
-
-```mermaid
-flowchart TD
-  TDD["tdd<br/>RED-GREEN 垂直切片"] --> FB["稳定信号"]
-  DIAG["diagnose<br/>反馈环 → 假设 → 探测"] --> FB
-  IMP["improve-codebase-architecture<br/>加深候选"] --> NAV["AI-navigable codebase"]
-  ZOOM["zoom-out<br/>拉高视角"] --> NAV
-  FB --> NAV
-```
-
-## `tdd`：禁止 horizontal slicing
-
-Skill 把「先写完全部测试再写实现」标记为反模式：批量想象的测试无法捕获真实行为，还会在 refactor 时误报。正确节奏是「一条测试 → 刚好让测试通过的实现 → 重复」，最后在 GREEN 全局时才 refactor。
-
-## `diagnose`：信号优先于直觉
-
-Phase 1 列出十种构造 loop 的手段（单测、curl、CLI、Playwright、回放 trace、临时 harness、fuzz、`git bisect` run、差分、最后才是 HITL 脚本模板）。若 loop 不存在，Skill 要求明确停下来索要更多外部线索，而不是「继续猜」。
-
-## `improve-codebase-architecture`：统一术语的 refactor 评审
-
-Skill 开头声明 glossary：`Module`、`Interface`（不仅是类型签名，还包含不变式）、`Depth`、`Seam`、`Adapter` 等；流程要求先读 domain glossary 与相关 ADR，再用 Explore subagent 记下摩擦点，并对 shallow module 运行 deletion test。
-
-## `zoom-out`
-
-文件极短：触发词是让 Agent **跳出局部 diff**，给出系统级上下文——适合 onboarding 陌生目录。
-
-Sources: [skills/engineering/tdd/SKILL.md:8-88](../../../project-repos/skills/skills/engineering/tdd/SKILL.md#L8-L88), [skills/engineering/diagnose/SKILL.md:8-51](../../../project-repos/skills/skills/engineering/diagnose/SKILL.md#L8-L51), [skills/engineering/improve-codebase-architecture/SKILL.md:6-45](../../../project-repos/skills/skills/engineering/improve-codebase-architecture/SKILL.md#L6-L45), [skills/engineering/zoom-out/SKILL.md:1-7](../../../project-repos/skills/skills/engineering/zoom-out/SKILL.md#L1-L7)
-
-<details class="source-snippets">
-<summary>引用源码</summary>
-
-<!-- source-snippets:start -->
-
-#### `skills/engineering/tdd/SKILL.md:8-88`
-
-````markdown
-## Philosophy
-
-**Core principle**: Tests should verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't.
-
-**Good tests** are integration-style: they exercise real code paths through public APIs. They describe _what_ the system does, not _how_ it does it. A good test reads like a specification - "user can checkout with valid cart" tells you exactly what capability exists. These tests survive refactors because they don't care about internal structure.
-
-**Bad tests** are coupled to implementation. They mock internal collaborators, test private methods, or verify through external means (like querying a database directly instead of using the interface). The warning sign: your test breaks when you refactor, but behavior hasn't changed. If you rename an internal function and tests fail, those tests were testing implementation, not behavior.
-
-See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
-
-## Anti-Pattern: Horizontal Slices
-
-**DO NOT write all tests first, then all implementation.** This is "horizontal slicing" - treating RED as "write all tests" and GREEN as "write all code."
-
-This produces **crap tests**:
-
-- Tests written in bulk test _imagined_ behavior, not _actual_ behavior
-- You end up testing the _shape_ of things (data structures, function signatures) rather than user-facing behavior
-- Tests become insensitive to real changes - they pass when behavior breaks, fail when behavior is fine
-- You outrun your headlights, committing to test structure before understanding the implementation
-
-**Correct approach**: Vertical slices via tracer bullets. One test → one implementation → repeat. Each test responds to what you learned from the previous cycle. Because you just wrote the code, you know exactly what behavior matters and how to verify it.
-
-```
-WRONG (horizontal):
-  RED:   test1, test2, test3, test4, test5
-  GREEN: impl1, impl2, impl3, impl4, impl5
-
-RIGHT (vertical):
-  RED→GREEN: test1→impl1
-  RED→GREEN: test2→impl2
-  RED→GREEN: test3→impl3
-  ...
-```
-
-## Workflow
-
-### 1. Planning
-
-When exploring the codebase, use the project's domain glossary so that test names and interface vocabulary match the project's language, and respect ADRs in the area you're touching.
-
-Before writing any code:
-
-- [ ] Confirm with user what interface changes are needed
-- [ ] Confirm with user which behaviors to test (prioritize)
-- [ ] Identify opportunities for [deep modules](deep-modules.md) (small interface, deep implementation)
-- [ ] Design interfaces for [testability](interface-design.md)
-- [ ] List the behaviors to test (not implementation steps)
-- [ ] Get user approval on the plan
-
-Ask: "What should the public interface look like? Which behaviors are most important to test?"
-
-**You can't test everything.** Confirm with the user exactly which behaviors matter most. Focus testing effort on critical paths and complex logic, not every possible edge case.
-
-### 2. Tracer Bullet
-
-Write ONE test that confirms ONE thing about the system:
-
-```
-RED:   Write test for first behavior → test fails
-GREEN: Write minimal code to pass → test passes
-```
-
-This is your tracer bullet - proves the path works end-to-end.
-
-### 3. Incremental Loop
-
-For each remaining behavior:
-
-```
-RED:   Write next test → fails
-GREEN: Minimal code to pass → passes
-```
-
-Rules:
-
-- One test at a time
-- Only enough code to pass current test
-- Don't anticipate future tests
-- Keep tests focused on observable behavior
-
-````
-
-#### `skills/engineering/diagnose/SKILL.md:8-51`
-
-```markdown
-A discipline for hard bugs. Skip phases only when explicitly justified.
-
-When exploring the codebase, use the project's domain glossary to get a clear mental model of the relevant modules, and check ADRs in the area you're touching.
-
-## Phase 1 — Build a feedback loop
-
-**This is the skill.** Everything else is mechanical. If you have a fast, deterministic, agent-runnable pass/fail signal for the bug, you will find the cause — bisection, hypothesis-testing, and instrumentation all just consume that signal. If you don't have one, no amount of staring at code will save you.
-
-Spend disproportionate effort here. **Be aggressive. Be creative. Refuse to give up.**
-
-### Ways to construct one — try them in roughly this order
-
-1. **Failing test** at whatever seam reaches the bug — unit, integration, e2e.
-2. **Curl / HTTP script** against a running dev server.
-3. **CLI invocation** with a fixture input, diffing stdout against a known-good snapshot.
-4. **Headless browser script** (Playwright / Puppeteer) — drives the UI, asserts on DOM/console/network.
-5. **Replay a captured trace.** Save a real network request / payload / event log to disk; replay it through the code path in isolation.
-6. **Throwaway harness.** Spin up a minimal subset of the system (one service, mocked deps) that exercises the bug code path with a single function call.
-7. **Property / fuzz loop.** If the bug is "sometimes wrong output", run 1000 random inputs and look for the failure mode.
-8. **Bisection harness.** If the bug appeared between two known states (commit, dataset, version), automate "boot at state X, check, repeat" so you can `git bisect run` it.
-9. **Differential loop.** Run the same input through old-version vs new-version (or two configs) and diff outputs.
-10. **HITL bash script.** Last resort. If a human must click, drive _them_ with `scripts/hitl-loop.template.sh` so the loop is still structured. Captured output feeds back to you.
-
-Build the right feedback loop, and the bug is 90% fixed.
-
-### Iterate on the loop itself
-
-Treat the loop as a product. Once you have _a_ loop, ask:
-
-- Can I make it faster? (Cache setup, skip unrelated init, narrow the test scope.)
-- Can I make the signal sharper? (Assert on the specific symptom, not "didn't crash".)
-- Can I make it more deterministic? (Pin time, seed RNG, isolate filesystem, freeze network.)
-
-A 30-second flaky loop is barely better than no loop. A 2-second deterministic loop is a debugging superpower.
-
-### Non-deterministic bugs
-
-The goal is not a clean repro but a **higher reproduction rate**. Loop the trigger 100×, parallelise, add stress, narrow timing windows, inject sleeps. A 50%-flake bug is debuggable; 1% is not — keep raising the rate until it's debuggable.
-
-### When you genuinely cannot build a loop
-
-Stop and say so explicitly. List what you tried. Ask the user for: (a) access to whatever environment reproduces it, (b) a captured artifact (HAR file, log dump, core dump, screen recording with timestamps), or (c) permission to add temporary production instrumentation. Do **not** proceed to hypothesise without a loop.
-
-Do not proceed to Phase 2 until you have a loop you believe in.
-```
-
-#### `skills/engineering/improve-codebase-architecture/SKILL.md:6-45`
-
-```markdown
-# Improve Codebase Architecture
-
-Surface architectural friction and propose **deepening opportunities** — refactors that turn shallow modules into deep ones. The aim is testability and AI-navigability.
-
-## Glossary
-
-Use these terms exactly in every suggestion. Consistent language is the point — don't drift into "component," "service," "API," or "boundary." Full definitions in [LANGUAGE.md](LANGUAGE.md).
-
-- **Module** — anything with an interface and an implementation (function, class, package, slice).
-- **Interface** — everything a caller must know to use the module: types, invariants, error modes, ordering, config. Not just the type signature.
-- **Implementation** — the code inside.
-- **Depth** — leverage at the interface: a lot of behaviour behind a small interface. **Deep** = high leverage. **Shallow** = interface nearly as complex as the implementation.
-- **Seam** — where an interface lives; a place behaviour can be altered without editing in place. (Use this, not "boundary.")
-- **Adapter** — a concrete thing satisfying an interface at a seam.
-- **Leverage** — what callers get from depth.
-- **Locality** — what maintainers get from depth: change, bugs, knowledge concentrated in one place.
-
-Key principles (see [LANGUAGE.md](LANGUAGE.md) for the full list):
-
-- **Deletion test**: imagine deleting the module. If complexity vanishes, it was a pass-through. If complexity reappears across N callers, it was earning its keep.
-- **The interface is the test surface.**
-- **One adapter = hypothetical seam. Two adapters = real seam.**
-
-This skill is _informed_ by the project's domain model. The domain language gives names to good seams; ADRs record decisions the skill should not re-litigate.
-
-## Process
-
-### 1. Explore
-
-Read the project's domain glossary and any ADRs in the area you're touching first.
-
-Then use the Agent tool with `subagent_type=Explore` to walk the codebase. Don't follow rigid heuristics — explore organically and note where you experience friction:
-
-- Where does understanding one concept require bouncing between many small modules?
-- Where are modules **shallow** — interface nearly as complex as the implementation?
-- Where have pure functions been extracted just for testability, but the real bugs hide in how they're called (no **locality**)?
-- Where do tightly-coupled modules leak across their seams?
-- Which parts of the codebase are untested, or hard to test through their current interface?
-
-Apply the **deletion test** to anything you suspect is shallow: would deleting it concentrate complexity, or just move it? A "yes, concentrates" is the signal you want.
-```
-
-#### `skills/engineering/zoom-out/SKILL.md:1-7`
-
-```markdown
----
-name: zoom-out
-description: Tell the agent to zoom out and give broader context or a higher-level perspective. Use when you're unfamiliar with a section of code or need to understand how it fits into the bigger picture.
-disable-model-invocation: true
----
-
-I don't know this area of code well. Go up a layer of abstraction. Give me a map of all the relevant modules and callers, using the project's domain glossary vocabulary.
-```
-
-<!-- source-snippets:end -->
-</details>
-
-## 相关页面
-
-- [对齐会话与共享语言](grilling-and-domain-language.md) — glossary 的来源  
-- [规划、Issue 切片与分流](planning-issues-triage.md) — PRD / Issue 之后的执行入口  
-
----
-
-<details>
-<summary>相关源文件</summary>
-
-生成本页时使用的主要源文件：
-
-- [skills/productivity/caveman/SKILL.md](../../../project-repos/skills/skills/productivity/caveman/SKILL.md)
+- [skills/productivity/README.md](../../../project-repos/skills/skills/productivity/README.md)
+- [skills/misc/README.md](../../../project-repos/skills/skills/misc/README.md)
+- [skills/productivity/grill-me/SKILL.md](../../../project-repos/skills/skills/productivity/grill-me/SKILL.md)
 - [skills/productivity/write-a-skill/SKILL.md](../../../project-repos/skills/skills/productivity/write-a-skill/SKILL.md)
-- [scripts/link-skills.sh](../../../project-repos/skills/scripts/link-skills.sh)
-- [skills/engineering/triage/OUT-OF-SCOPE.md](../../../project-repos/skills/skills/engineering/triage/OUT-OF-SCOPE.md)
 
 </details>
 
-# 扩展目录、脚本与个人技能
+# Productivity 与 Misc 技能
 
-并非每个 Skill 都享有插件级别的曝光：`misc/`（git guardrails、migrate-to-shoehorn、scaffold-exercises、setup-pre-commit）仍可在 README 中获得一句话索引，但不会被 `.claude-plugin/plugin.json` 自动装载；`personal/`（edit-article、obsidian-vault）标注为作者自用；`deprecated/` 目录保留历史 Skill，README 亦不再推介。
+`productivity/` 三个技能覆盖了 **极端对齐**（`grill-me`）、**极端压缩通讯**（`caveman`），以及 **扩展这套体系自身**（`write-a-skill`）。它们不直接触碰 Issue tracker，但往往在进入 `to-issues` 或 `triage` 之前先运行，用作「语义预算管理」：`grill-me` 买确定性，`caveman` 买的是 token，`write-a-skill` 买的是可复制的团队规范。
 
-```mermaid
-flowchart LR
-  subgraph Promoted["上架推广"]
-    ENG["engineering/*"]
-    PROD["productivity/*"]
-  end
-  subgraph Secondary["文档可达"]
-    MISC["misc/*"]
-  end
-  subgraph NonPromoted["非推广"]
-    PER["personal/*"]
-    DEP["deprecated/*"]
-  end
-  Promoted --> Plugin["plugin.json"]
-```
+`misc/` README 列出了四条「常备但少用」的技能：Git 操作的 Claude Code hooks 护栏、迁移到 `@total-typescript/shoehorn`、练习题脚手架、以及 Husky + lint-staged 的前置提交链。把它们与 engineering 区分开，是在告诉读者：**这些是可替换的工具脚本**，不参与作者主叙事里的「对齐 / 闭环 / 熵控制」三件事。
 
-## 生产力补充：`caveman` 与 `write-a-skill`
-
-`caveman` 定位 ultra-compressed communication mode（自称可砍下约 75% token filler）；`write-a-skill` 则给出新建 Skill 的脚手架流程（超过 500 行就拆 reference、需要确定性步骤就放 scripts）。
-
-## 本地脚本：`link-skills.sh`
-
-脚本遍历仓库内全部 `SKILL.md`，以 skill 文件夹 basename 为名创建指向 `~/.claude/skills` 的 symlink，便于在未走 `npx skills` 管线时本地调试。实现里特意防范「`~/.claude/skills` 已是指向本仓库的 symlink」——否则会把自己链接回工作树造成污染。
-
-## `.out-of-scope/` 与 triage 的闭环
-
-`triage` Skill 引用 `OUT-OF-SCOPE.md`：当 enhancement 被判 `wontfix` 时需要写入 `.out-of-scope/*.md` 记录决策，以防 backlog 反复撞同一 reject reason。
-
-Sources: [skills/productivity/caveman/SKILL.md:1-49](../../../project-repos/skills/skills/productivity/caveman/SKILL.md#L1-L49), [skills/productivity/write-a-skill/SKILL.md:8-35](../../../project-repos/skills/skills/productivity/write-a-skill/SKILL.md#L8-L35), [scripts/link-skills.sh:7-38](../../../project-repos/skills/scripts/link-skills.sh#L7-L38), [skills/engineering/triage/SKILL.md:18-19](../../../project-repos/skills/skills/engineering/triage/SKILL.md#L18-L19)
+Sources: [skills/productivity/README.md:1-7](../../../project-repos/skills/skills/productivity/README.md#L1-L7), [skills/misc/README.md:1-8](../../../project-repos/skills/skills/misc/README.md#L1-L8), [skills/productivity/grill-me/SKILL.md:6-11](../../../project-repos/skills/skills/productivity/grill-me/SKILL.md#L6-L11), [skills/productivity/write-a-skill/SKILL.md:6-34](../../../project-repos/skills/skills/productivity/write-a-skill/SKILL.md#L6-L34)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
 
 <!-- source-snippets:start -->
 
-#### `skills/productivity/caveman/SKILL.md:1-49`
+#### `skills/productivity/README.md:1-7`
+
+```markdown
+# Productivity
+
+General workflow tools, not code-specific.
+
+- **[caveman](./caveman/SKILL.md)** — Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler while keeping full technical accuracy.
+- **[grill-me](./grill-me/SKILL.md)** — Get relentlessly interviewed about a plan or design until every branch of the decision tree is resolved.
+- **[write-a-skill](./write-a-skill/SKILL.md)** — Create new skills with proper structure, progressive disclosure, and bundled resources.
+```
+
+#### `skills/misc/README.md:1-8`
+
+```markdown
+# Misc
+
+Tools I keep around but rarely use.
+
+- **[git-guardrails-claude-code](./git-guardrails-claude-code/SKILL.md)** — Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, etc.) before they execute.
+- **[migrate-to-shoehorn](./migrate-to-shoehorn/SKILL.md)** — Migrate test files from `as` type assertions to @total-typescript/shoehorn.
+- **[scaffold-exercises](./scaffold-exercises/SKILL.md)** — Create exercise directory structures with sections, problems, solutions, and explainers.
+- **[setup-pre-commit](./setup-pre-commit/SKILL.md)** — Set up Husky pre-commit hooks with lint-staged, Prettier, type checking, and tests.
+```
+
+#### `skills/productivity/grill-me/SKILL.md:6-11`
+
+```markdown
+Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
+
+Ask the questions one at a time.
+
+If a question can be answered by exploring the codebase, explore the codebase instead.
+```
+
+#### `skills/productivity/write-a-skill/SKILL.md:6-34`
 
 ````markdown
----
-name: caveman
-description: >
-  Ultra-compressed communication mode. Cuts token usage ~75% by dropping
-  filler, articles, and pleasantries while keeping full technical accuracy.
-  Use when user says "caveman mode", "talk like caveman", "use caveman",
-  "less tokens", "be brief", or invokes /caveman.
----
+# Writing Skills
 
-Respond terse like smart caveman. All technical substance stay. Only fluff die.
-
-## Persistence
-
-ACTIVE EVERY RESPONSE once triggered. No revert after many turns. No filler drift. Still active if unsure. Off only when user says "stop caveman" or "normal mode".
-
-## Rules
-
-Drop: articles (a/an/the), filler (just/really/basically/actually/simply), pleasantries (sure/certainly/of course/happy to), hedging. Fragments OK. Short synonyms (big not extensive, fix not "implement a solution for"). Abbreviate common terms (DB/auth/config/req/res/fn/impl). Strip conjunctions. Use arrows for causality (X -> Y). One word when one word enough.
-
-Technical terms stay exact. Code blocks unchanged. Errors quoted exact.
-
-Pattern: `[thing] [action] [reason]. [next step].`
-
-Not: "Sure! I'd be happy to help you with that. The issue you're experiencing is likely caused by..."
-Yes: "Bug in auth middleware. Token expiry check use `<` not `<=`. Fix:"
-
-### Examples
-
-**"Why React component re-render?"**
-
-> Inline obj prop -> new ref -> re-render. `useMemo`.
-
-**"Explain database connection pooling."**
-
-> Pool = reuse DB conn. Skip handshake -> fast under load.
-
-## Auto-Clarity Exception
-
-Drop caveman temporarily for: security warnings, irreversible action confirmations, multi-step sequences where fragment order risks misread, user asks to clarify or repeats question. Resume caveman after clear part done.
-
-Example -- destructive op:
-
-> **Warning:** This will permanently delete all rows in the `users` table and cannot be undone.
->
-> ```sql
-> DROP TABLE users;
-> ```
->
-> Caveman resume. Verify backup exist first.
-````
-
-#### `skills/productivity/write-a-skill/SKILL.md:8-35`
-
-````markdown
 ## Process
 
 1. **Gather requirements** - ask user about:
@@ -1285,57 +1201,131 @@ skill-name/
 ├── EXAMPLES.md        # Usage examples (if needed)
 └── scripts/           # Utility scripts (if needed)
     └── helper.js
-```
 ````
 
-#### `scripts/link-skills.sh:7-38`
+<!-- source-snippets:end -->
+</details>
 
-```bash
-REPO="$(cd "$(dirname "$0")/.." && pwd)"
-DEST="$HOME/.claude/skills"
+## Insight：为何 `write-a-skill` 属于 productivity
 
-# If ~/.claude/skills is a symlink that resolves into this repo, we'd end up
-# writing the per-skill symlinks back into the repo's own skills/ tree. Detect
-# and bail out instead of polluting the working copy.
-if [ -L "$DEST" ]; then
-  resolved="$(readlink -f "$DEST")"
-  case "$resolved" in
-    "$REPO"|"$REPO"/*)
-      echo "error: $DEST is a symlink into this repo ($resolved)." >&2
-      echo "Remove it (rm \"$DEST\") and re-run; the script will recreate it as a real dir." >&2
-      exit 1
-      ;;
-  esac
-fi
+它把「技能工程」本身产品化：结构、渐进披露、引用资源的最佳实践与 engineering 里写代码不是同一类问题，却决定了团队能否把治理规则编码成可分发资产。
 
-mkdir -p "$DEST"
+## 相关页面
 
-find "$REPO/skills" -name SKILL.md -not -path '*/node_modules/*' -print0 |
-while IFS= read -r -d '' skill_md; do
-  src="$(dirname "$skill_md")"
-  name="$(basename "$src")"
-  target="$DEST/$name"
+- [Engineering 技能矩阵](engineering-skills-matrix.md) — 与 `/grill-with-docs` 交叉引用
+- [失败模式与工程价值观](failure-modes-and-values.md) — `caveman` 直接回应「代理太啰嗦」
+- [目录桶策略与治理边界](bucket-policies-and-out-of-scope.md) — `misc` 为何不在 plugin.json
 
-  if [ -e "$target" ] && [ ! -L "$target" ]; then
-    rm -rf "$target"
-  fi
+---
 
-  ln -sfn "$src" "$target"
-  echo "linked $name -> $src"
-done
+<details>
+<summary>相关源文件</summary>
+
+生成本页时使用的主要源文件：
+
+- [CLAUDE.md](../../../project-repos/skills/CLAUDE.md)
+- [skills/deprecated/README.md](../../../project-repos/skills/skills/deprecated/README.md)
+- [skills/personal/README.md](../../../project-repos/skills/skills/personal/README.md)
+- [skills/engineering/triage/OUT-OF-SCOPE.md](../../../project-repos/skills/skills/engineering/triage/OUT-OF-SCOPE.md)
+
+</details>
+
+# 目录桶策略与治理边界
+
+`CLAUDE.md` 把目录桶定义成五条语义边界：`engineering`（日常编码）、`productivity`（非编码工作流）、`misc`（少用工具）、`personal`（与作者个人绑定，不晋升）、`deprecated`（停止使用）。唯一能进入「对外承诺面」（README + `.claude-plugin`）的只有前三类；这既保护用户预期，也给作者留了私人实验的沙盒。
+
+`triage` 技能携带的 `OUT-OF-SCOPE.md` 进一步解释 **consumer 仓库** 根目录 `.out-of-scope/` 知识库的形态：「一概念一文件」，把拒绝理由写成轻量设计短文，从而在关闭 Issue 后不丢失上下文，并在新问题到来时先去重。**这不是本仓库的实现代码**，却是 engineering 技能对「开源维护」场景的强约束。
+
+```mermaid
+graph TD
+  ENG["skills/engineering"]
+  PRD["skills/productivity"]
+  MSC["skills/misc"]
+  PER["skills/personal"]
+  DEP["skills/deprecated"]
+  ENG --> DOC["顶层 README<br/>与 plugin.json"]
+  PRD --> DOC
+  MSC --> DOC
+  PER -.->|"禁止"| DOC
+  DEP -.->|"禁止"| DOC
 ```
 
-#### `skills/engineering/triage/SKILL.md:18-19`
+Sources: [CLAUDE.md:1-13](../../../project-repos/skills/CLAUDE.md#L1-L13), [skills/personal/README.md:1-6](../../../project-repos/skills/skills/personal/README.md#L1-L6), [skills/deprecated/README.md:1-8](../../../project-repos/skills/skills/deprecated/README.md#L1-L8), [skills/engineering/triage/OUT-OF-SCOPE.md:1-18](../../../project-repos/skills/skills/engineering/triage/OUT-OF-SCOPE.md#L1-L18)
+
+<details class="source-snippets">
+<summary>引用源码</summary>
+
+<!-- source-snippets:start -->
+
+#### `CLAUDE.md:1-13`
 
 ```markdown
-- [AGENT-BRIEF.md](AGENT-BRIEF.md) — how to write durable agent briefs
-- [OUT-OF-SCOPE.md](OUT-OF-SCOPE.md) — how the `.out-of-scope/` knowledge base works
+Skills are organized into bucket folders under `skills/`:
+
+- `engineering/` — daily code work
+- `productivity/` — daily non-code workflow tools
+- `misc/` — kept around but rarely used
+- `personal/` — tied to my own setup, not promoted
+- `deprecated/` — no longer used
+
+Every skill in `engineering/`, `productivity/`, or `misc/` must have a reference in the top-level `README.md` and an entry in `.claude-plugin/plugin.json`. Skills in `personal/` and `deprecated/` must not appear in either.
+
+Each skill entry in the top-level `README.md` must link the skill name to its `SKILL.md`.
+
+Each bucket folder has a `README.md` that lists every skill in the bucket with a one-line description, with the skill name linked to its `SKILL.md`.
 ```
+
+#### `skills/personal/README.md:1-6`
+
+```markdown
+# Personal
+
+Skills tied to my own setup, not promoted in the plugin.
+
+- **[edit-article](./edit-article/SKILL.md)** — Edit and improve articles by restructuring sections, improving clarity, and tightening prose.
+- **[obsidian-vault](./obsidian-vault/SKILL.md)** — Search, create, and manage notes in an Obsidian vault with wikilinks and index notes.
+```
+
+#### `skills/deprecated/README.md:1-8`
+
+```markdown
+# Deprecated
+
+Skills I no longer use.
+
+- **[design-an-interface](./design-an-interface/SKILL.md)** — Generate multiple radically different interface designs for a module using parallel sub-agents.
+- **[qa](./qa/SKILL.md)** — Interactive QA session where user reports bugs conversationally and the agent files GitHub issues.
+- **[request-refactor-plan](./request-refactor-plan/SKILL.md)** — Create a detailed refactor plan with tiny commits via user interview, then file it as a GitHub issue.
+- **[ubiquitous-language](./ubiquitous-language/SKILL.md)** — Extract a DDD-style ubiquitous language glossary from the current conversation.
+```
+
+#### `skills/engineering/triage/OUT-OF-SCOPE.md:1-18`
+
+````markdown
+# Out-of-Scope Knowledge Base
+
+The `.out-of-scope/` directory in a repo stores persistent records of rejected feature requests. It serves two purposes:
+
+1. **Institutional memory** — why a feature was rejected, so the reasoning isn't lost when the issue is closed
+2. **Deduplication** — when a new issue comes in that matches a prior rejection, the skill can surface the previous decision instead of re-litigating it
+
+## Directory structure
+
+```
+.out-of-scope/
+├── dark-mode.md
+├── plugin-system.md
+└── graphql-api.md
+```
+
+One file per **concept**, not per issue. Multiple issues requesting the same thing are grouped under one file.
+
+````
 
 <!-- source-snippets:end -->
 </details>
 
 ## 相关页面
 
-- [安装与 Claude 插件清单](installation-and-manifest.md) — curated vs 目录全集  
-- [项目概览](overview.md) — bucket 分层的设计动机  
+- [发布面与插件清单](publishing-surface.md) — misc 是否在插件清单内的差异
+- [Engineering 技能矩阵](engineering-skills-matrix.md) — triage 与 `.out-of-scope/` 的互动

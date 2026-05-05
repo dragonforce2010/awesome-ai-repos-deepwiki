@@ -5,47 +5,47 @@
 
 - [skills/engineering/setup-matt-pocock-skills/SKILL.md](../../../project-repos/skills/skills/engineering/setup-matt-pocock-skills/SKILL.md)
 - [docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md](../../../project-repos/skills/docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md)
+- [CONTEXT.md](../../../project-repos/skills/CONTEXT.md)
 
 </details>
 
-# 每仓库配置与硬软依赖
+# 每仓配置与领域契约
 
-`/setup-matt-pocock-skills` 是唯一真正「写文件」的 onboarding Skill：它读取远端信息（`git remote`）、既有 `AGENTS.md`/`CLAUDE.md`，然后在 `docs/agents/` 生成 issue tracker、triage label、domain layout 三份说明，并把摘要块嵌回单一入口 Markdown。ADR 0001 随后解释：**并非所有 engineering skill 都需要在同一句提示里绑架用户去 setup**——只有会把错误 label 写进真实 backlog 的技能才算硬依赖。
+`/setup-matt-pocock-skills` 是唯一显式面向「把你的仓库改造成技能可消费形状」的入口。它不做确定性脚本，而是用 **探索 → 分项确认 → 草稿 → 写入** 的提示工程，把三类信息落到 `docs/agents/`：Issue tracker 工作流、triage label 映射、以及 `CONTEXT`/ADR 的布局规则。
+
+技能正文强调：默认假设 GitHub（`gh`），但也支持 GitLab（`glab`）、本地 `.scratch/` markdown、或用户一段自由文本描述的其他系统。它与 ADR `0001` 形成闭环——当输出 **依赖具体 label 字符串或远程 API** 时，缺配置就是 **硬错误**；当只是「读读词汇表更爽」时，就不反复骚扰用户去 setup。
 
 ```mermaid
-flowchart TD
-  subgraph SetupSkill["setup-matt-pocock-skills"]
-    E["Explore repo"]
-    Q["三道选择题<br/>逐个询问"]
-    W["写入 docs/agents/*.md"]
-    B["更新 AGENTS.md 或 CLAUDE.md<br/>## Agent skills"]
-  end
-  subgraph Consumers["消费者"]
-    Hard["Hard deps<br/>to-issues / to-prd / triage"]
-    Soft["Soft deps<br/>tdd / diagnose / improve / zoom-out"]
-  end
-  SetupSkill --> Hard
-  SetupSkill --> Soft
+sequenceDiagram
+  participant U as Maintainer
+  participant A as Agent
+  participant FS as docs/agents/*
+  U->>A: 调用 /setup-matt-pocock-skills
+  A->>A: 读 remote、AGENTS/CLAUDE、CONTEXT、adr、.scratch
+  A-->>U: 分段解释 + 默认建议
+  U-->>A: 逐项确认 Issue 系统 / labels / 上下文布局
+  A->>FS: 写入 issue-tracker.md / triage-labels.md / domain.md
+  A->>FS: 更新 CLAUDE.md 或 AGENTS.md 的 `## Agent skills` 块
 ```
 
-**硬依赖**三类：`to-issues`、`to-prd`、`triage`——它们直接把 canonical label 字符串映射到外部系统；缺映射会产生错误输出而不是含糊。**软依赖**四类：`diagnose`、`tdd`、`improve-codebase-architecture`、`zoom-out`——它们只在 prose 里提及 glossary / ADR，缺失时 Skill 仍可运行，只是少了锐利度。
+**治理细节**：如果已存在 `CLAUDE.md` 就编辑它；否则编辑 `AGENTS.md`；两者都不存在则由用户选择新建哪个，**禁止**在已有其一的情况下再创建另一个——这避免双源配置。`disable-model-invocation: true` frontmatter 把这技能限制为「显式由人触发」，降低被模型误启用的概率。
 
-## Setup 流程中的关键约束
-
-- Skill 明确写成「prompt-driven」，即必须先 explore + 与用户确认，而不是幻想某个脚本一键写完。
-- 写入 `## Agent skills` 时遵循：`CLAUDE.md` 优先于 `AGENTS.md`；二者不可并存新建。
-- Issue tracker 选项覆盖 GitHub / GitLab / 本地 `.scratch/` markdown / 其它（自由文本 workflow）。
-
-Sources: [skills/engineering/setup-matt-pocock-skills/SKILL.md:7-115](../../../project-repos/skills/skills/engineering/setup-matt-pocock-skills/SKILL.md#L7-L115), [docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md:1-11](../../../project-repos/skills/docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md#L1-L11)
+Sources: [skills/engineering/setup-matt-pocock-skills/SKILL.md:1-120](../../../project-repos/skills/skills/engineering/setup-matt-pocock-skills/SKILL.md#L1-L120), [docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md:1-11](../../../project-repos/skills/docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md#L1-L11), [CONTEXT.md:1-22](../../../project-repos/skills/CONTEXT.md#L1-L22)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
 
 <!-- source-snippets:start -->
 
-#### `skills/engineering/setup-matt-pocock-skills/SKILL.md:7-115`
+#### `skills/engineering/setup-matt-pocock-skills/SKILL.md:1-120`
 
 ````markdown
+---
+name: setup-matt-pocock-skills
+description: Sets up an `## Agent skills` block in AGENTS.md/CLAUDE.md and `docs/agents/` so the engineering skills know this repo's issue tracker (GitHub or local markdown), triage label vocabulary, and domain doc layout. Run before first use of `to-issues`, `to-prd`, `triage`, `diagnose`, `tdd`, `improve-codebase-architecture`, or `zoom-out` — or if those skills appear to be missing context about the issue tracker, triage labels, or domain docs.
+disable-model-invocation: true
+---
+
 # Setup Matt Pocock's Skills
 
 Scaffold the per-repo configuration that the engineering skills assume:
@@ -155,6 +155,11 @@ Then write the three docs files using the seed templates in this skill folder as
 - [issue-tracker-local.md](./issue-tracker-local.md) — local-markdown issue tracker
 - [triage-labels.md](./triage-labels.md) — label mapping
 - [domain.md](./domain.md) — domain doc consumer rules + layout
+
+For "other" issue trackers, write `docs/agents/issue-tracker.md` from scratch using the user's description.
+
+### 5. Done
+
 ````
 
 #### `docs/adr/0001-explicit-setup-pointer-only-for-hard-dependencies.md:1-11`
@@ -172,10 +177,38 @@ We split these into **hard-dependency** and **soft-dependency** skills:
 The split keeps soft-dependency skills token-light and avoids cargo-culting the setup pointer into places where it isn't load-bearing.
 ```
 
+#### `CONTEXT.md:1-22`
+
+```markdown
+# Matt Pocock Skills
+
+A collection of agent skills (slash commands and behaviors) loaded by Claude Code. Skills are organized into buckets and consumed by per-repo configuration emitted by `/setup-matt-pocock-skills`.
+
+## Language
+
+**Issue tracker**:
+The tool that hosts a repo's issues — GitHub Issues, Linear, a local `.scratch/` markdown convention, or similar. Skills like `to-issues`, `to-prd`, `triage`, and `qa` read from and write to it.
+_Avoid_: backlog manager, backlog backend, issue host
+
+**Issue**:
+A single tracked unit of work inside an **Issue tracker** — a bug, task, PRD, or slice produced by `to-issues`.
+_Avoid_: ticket (use only when quoting external systems that call them tickets)
+
+**Triage role**:
+A canonical state-machine label applied to an **Issue** during triage (e.g. `needs-triage`, `ready-for-afk`). Each role maps to a real label string in the **Issue tracker** via `docs/agents/triage-labels.md`.
+
+## Relationships
+
+- An **Issue tracker** holds many **Issues**
+- An **Issue** carries one **Triage role** at a time
+
+```
+
 <!-- source-snippets:end -->
 </details>
 
 ## 相关页面
 
-- [安装与 Claude 插件清单](installation-and-manifest.md) — manifest 与 README 的分工  
-- [规划、Issue 切片与分流](planning-issues-triage.md) — 硬依赖技能怎样消费 triage 映射  
+- [Engineering 技能矩阵](engineering-skills-matrix.md) — setup 之后最常连用的技能
+- [发布面与插件清单](publishing-surface.md) — 插件层与文档层如何对齐
+- [失败模式与工程价值观](failure-modes-and-values.md) — hard/soft 依赖的产品故事
