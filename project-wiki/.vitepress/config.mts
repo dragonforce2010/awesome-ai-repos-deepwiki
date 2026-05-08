@@ -39,8 +39,19 @@ try {
           const data = JSON.parse(fs.readFileSync(structurePath, 'utf8'));
           const projectName = data.projectName || wikiId;
           
-          // Add to nav
-          nav.push({ text: projectName, link: `/${wikiId}/pages/overview`, activeMatch: `^/${wikiId}/` });
+          // Resolve first page link for nav (fallback to pages/overview)
+          let firstPageLink = `/${wikiId}/pages/overview`;
+          if (data.sections?.[0]?.pages?.[0]) {
+            const firstPageId = data.sections[0].pages[0];
+            const firstPage = typeof firstPageId === 'string'
+              ? data.pages?.find((p: any) => p.id === firstPageId)
+              : firstPageId;
+            const firstPath = firstPage ? resolveWikiPagePath(firstPage) : undefined;
+            if (firstPath) {
+              firstPageLink = `/${wikiId}/${firstPath.replace(/\.md$/, '')}`;
+            }
+          }
+          nav.push({ text: projectName, link: firstPageLink, activeMatch: `^/${wikiId}/` });
           
           // Build sidebar for this wiki
           const wikiSidebar: any[] = [];

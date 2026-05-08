@@ -6,124 +6,102 @@
   "language": "zh-CN",
   "sections": [
     {
+      "title": "概览",
+      "pages": ["overview"]
+    },
+    {
+      "title": "系统架构",
+      "pages": ["system-architecture"]
+    },
+    {
+      "title": "编排引擎",
+      "pages": ["orchestration-state-machine"]
+    },
+    {
+      "title": "配置系统",
+      "pages": ["workflow-and-config"]
+    },
+    {
+      "title": "工作区管理",
+      "pages": ["workspace-management"]
+    },
+    {
+      "title": "Agent 集成",
+      "pages": ["codex-integration", "linear-integration"]
+    },
+    {
+      "title": "扩展能力",
+      "pages": ["ssh-remote-workers"]
+    },
+    {
+      "title": "可观测性",
+      "pages": ["observability"]
+    },
+    {
+      "title": "质量保障",
+      "pages": ["testing-and-quality"]
+    }
+  ],
+  "pages": [
+    {
       "id": "overview",
       "title": "项目概览",
-      "description": "Symphony 的诞生背景、核心问题、设计思路与整体定位",
-      "pages": [
-        {
-          "id": "overview",
-          "title": "项目概览",
-          "file": "pages/01-overview.md"
-        }
-      ]
+      "file": "pages/01-overview.md",
+      "summary": "Symphony 的诞生背景、核心问题、设计思路与整体定位"
     },
     {
       "id": "system-architecture",
-      "title": "系统架构",
-      "description": "OTP 监督树、核心进程拓扑与数据流全景",
-      "pages": [
-        {
-          "id": "system-architecture",
-          "title": "系统架构与进程模型",
-          "file": "pages/02-system-architecture.md"
-        }
-      ]
+      "title": "系统架构与进程模型",
+      "file": "pages/02-system-architecture.md",
+      "summary": "OTP 监督树、核心进程拓扑与数据流全景"
     },
     {
-      "id": "orchestration",
-      "title": "编排状态机",
-      "description": "Issue 生命周期状态机、轮询调度、调和、重试与退避策略",
-      "pages": [
-        {
-          "id": "orchestration-state-machine",
-          "title": "编排状态机与调度引擎",
-          "file": "pages/03-orchestration-state-machine.md"
-        }
-      ]
+      "id": "orchestration-state-machine",
+      "title": "编排状态机与调度引擎",
+      "file": "pages/03-orchestration-state-machine.md",
+      "summary": "Issue 生命周期状态机、轮询调度、调和、重试与退避策略"
     },
     {
-      "id": "workflow-config",
-      "title": "工作流与配置",
-      "description": "WORKFLOW.md 合约、配置解析管线、动态热重载",
-      "pages": [
-        {
-          "id": "workflow-and-config",
-          "title": "工作流定义与配置系统",
-          "file": "pages/04-workflow-and-config.md"
-        }
-      ]
+      "id": "workflow-and-config",
+      "title": "工作流定义与配置系统",
+      "file": "pages/04-workflow-and-config.md",
+      "summary": "WORKFLOW.md 合约、配置解析管线、动态热重载"
     },
     {
-      "id": "workspace",
-      "title": "工作区管理",
-      "description": "Per-issue 隔离工作区、路径安全、生命周期钩子",
-      "pages": [
-        {
-          "id": "workspace-management",
-          "title": "工作区隔离与生命周期",
-          "file": "pages/05-workspace-management.md"
-        }
-      ]
+      "id": "workspace-management",
+      "title": "工作区隔离与生命周期",
+      "file": "pages/05-workspace-management.md",
+      "summary": "Per-issue 隔离工作区、路径安全、生命周期钩子"
     },
     {
       "id": "codex-integration",
-      "title": "Codex 集成",
-      "description": "App-server JSON-RPC 协议、会话管理、多轮续跑、动态工具",
-      "pages": [
-        {
-          "id": "codex-integration",
-          "title": "Codex Agent 集成协议",
-          "file": "pages/06-codex-integration.md"
-        }
-      ]
+      "title": "Codex Agent 集成协议",
+      "file": "pages/06-codex-integration.md",
+      "summary": "App-server JSON-RPC 协议、会话管理、多轮续跑、动态工具"
     },
     {
       "id": "linear-integration",
-      "title": "Linear 集成",
-      "description": "GraphQL 轮询、Issue 规范化、分页、Blocker 检测、Assignee 路由",
-      "pages": [
-        {
-          "id": "linear-integration",
-          "title": "Linear 任务跟踪集成",
-          "file": "pages/07-linear-integration.md"
-        }
-      ]
+      "title": "Linear 任务跟踪集成",
+      "file": "pages/07-linear-integration.md",
+      "summary": "GraphQL 轮询、Issue 规范化、分页、Blocker 检测"
     },
     {
-      "id": "ssh-extension",
-      "title": "SSH 远程执行",
-      "description": "多主机 Worker 池、负载均衡、远程工作区与端口管理",
-      "pages": [
-        {
-          "id": "ssh-remote-workers",
-          "title": "SSH Worker 扩展架构",
-          "file": "pages/08-ssh-remote-workers.md"
-        }
-      ]
+      "id": "ssh-remote-workers",
+      "title": "SSH Worker 扩展架构",
+      "file": "pages/08-ssh-remote-workers.md",
+      "summary": "多主机 Worker 池、负载均衡、远程工作区与端口管理"
     },
     {
       "id": "observability",
-      "title": "可观测性与仪表盘",
-      "description": "Phoenix LiveView 状态面板、PubSub 事件流、日志系统",
-      "pages": [
-        {
-          "id": "observability",
-          "title": "可观测性与实时仪表盘",
-          "file": "pages/09-observability.md"
-        }
-      ]
+      "title": "可观测性与实时仪表盘",
+      "file": "pages/09-observability.md",
+      "summary": "Phoenix LiveView 状态面板、PubSub 事件流、日志系统"
     },
     {
-      "id": "testing-quality",
-      "title": "测试与质量保障",
-      "description": "测试策略、快照测试、E2E Docker、CI 管线、代码质量门禁",
-      "pages": [
-        {
-          "id": "testing-and-quality",
-          "title": "测试体系与质量门禁",
-          "file": "pages/10-testing-and-quality.md"
-        }
-      ]
+      "id": "testing-and-quality",
+      "title": "测试体系与质量门禁",
+      "file": "pages/10-testing-and-quality.md",
+      "summary": "测试策略、快照测试、E2E Docker、CI 管线、代码质量门禁"
     }
   ]
 }
