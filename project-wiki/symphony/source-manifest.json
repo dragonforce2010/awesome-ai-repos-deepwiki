@@ -1,0 +1,344 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/symphony",
+    "remote": "https://github.com/openai/symphony.git",
+    "branch": "main",
+    "commit": "58cf97da06d556c019ccea20c67f4f77da124bf3"
+  },
+  "file_count": 28,
+  "skipped_count": 74,
+  "files": [
+    {
+      "path": ".codex/skills/commit/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": ".codex/skills/debug/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 118,
+      "symbols": []
+    },
+    {
+      "path": ".codex/skills/land/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 225,
+      "symbols": []
+    },
+    {
+      "path": ".codex/skills/land/land_watch.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 621,
+      "symbols": [
+        {
+          "name": "PrInfo",
+          "type": "class",
+          "line": 23
+        },
+        {
+          "name": "RateLimitError",
+          "type": "class",
+          "line": 31
+        },
+        {
+          "name": "is_rate_limit_error",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "parse_time",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "sanitize_terminal_output",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "check_timestamp",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "dedupe_check_runs",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "summarize_checks",
+          "type": "function",
+          "line": 201
+        },
+        {
+          "name": "latest_review_request_at",
+          "type": "function",
+          "line": 221
+        },
+        {
+          "name": "filter_codex_comments",
+          "type": "function",
+          "line": 237
+        },
+        {
+          "name": "is_codex_bot_user",
+          "type": "function",
+          "line": 268
+        },
+        {
+          "name": "is_bot_user",
+          "type": "function",
+          "line": 273
+        },
+        {
+          "name": "is_codex_reply_body",
+          "type": "function",
+          "line": 282
+        },
+        {
+          "name": "is_codex_review_body",
+          "type": "function",
+          "line": 286
+        },
+        {
+          "name": "latest_codex_issue_reply_time",
+          "type": "function",
+          "line": 290
+        },
+        {
+          "name": "filter_human_issue_comments",
+          "type": "function",
+          "line": 306
+        },
+        {
+          "name": "filter_codex_review_issue_comments",
+          "type": "function",
+          "line": 330
+        },
+        {
+          "name": "thread_root_id",
+          "type": "function",
+          "line": 350
+        },
+        {
+          "name": "comment_time",
+          "type": "function",
+          "line": 354
+        },
+        {
+          "name": "latest_codex_reply_by_thread",
+          "type": "function",
+          "line": 361
+        },
+        {
+          "name": "filter_human_review_comments",
+          "type": "function",
+          "line": 379
+        },
+        {
+          "name": "is_blocking_review",
+          "type": "function",
+          "line": 401
+        },
+        {
+          "name": "review_timestamp",
+          "type": "function",
+          "line": 432
+        },
+        {
+          "name": "dedupe_reviews",
+          "type": "function",
+          "line": 439
+        },
+        {
+          "name": "filter_blocking_reviews",
+          "type": "function",
+          "line": 458
+        },
+        {
+          "name": "is_merge_conflicting",
+          "type": "function",
+          "line": 469
+        },
+        {
+          "name": "raise_on_human_feedback",
+          "type": "function",
+          "line": 488
+        }
+      ]
+    },
+    {
+      "path": ".codex/skills/linear/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 388,
+      "symbols": []
+    },
+    {
+      "path": ".codex/skills/pull/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": ".codex/skills/push/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 117,
+      "symbols": []
+    },
+    {
+      "path": ".codex/worktree_init.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 16,
+      "symbols": []
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/make-all.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/pr-description-lint.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "SPEC.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 2169,
+      "symbols": []
+    },
+    {
+      "path": "elixir/AGENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 64,
+      "symbols": []
+    },
+    {
+      "path": "elixir/Makefile",
+      "language": "makefile",
+      "kind": "automation",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "elixir/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 221,
+      "symbols": []
+    },
+    {
+      "path": "elixir/WORKFLOW.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 326,
+      "symbols": []
+    },
+    {
+      "path": "elixir/docs/logging.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "elixir/docs/token_accounting.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 304,
+      "symbols": []
+    },
+    {
+      "path": "elixir/mise.toml",
+      "language": "toml",
+      "kind": "source",
+      "lines": 3,
+      "symbols": []
+    },
+    {
+      "path": "elixir/test/fixtures/status_dashboard_snapshots/backoff_queue.evidence.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "elixir/test/fixtures/status_dashboard_snapshots/credits_unlimited.evidence.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "elixir/test/fixtures/status_dashboard_snapshots/idle.evidence.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "elixir/test/fixtures/status_dashboard_snapshots/idle_with_dashboard_url.evidence.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "elixir/test/fixtures/status_dashboard_snapshots/super_busy.evidence.md",
+      "language": "markdown",
+      "kind": "test",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "elixir/test/support/live_e2e_docker/Dockerfile",
+      "language": "dockerfile",
+      "kind": "test",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "elixir/test/support/live_e2e_docker/docker-compose.yml",
+      "language": "yaml",
+      "kind": "test",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "elixir/test/support/live_e2e_docker/live_worker_entrypoint.sh",
+      "language": "shell",
+      "kind": "test",
+      "lines": 13,
+      "symbols": []
+    }
+  ]
+}
