@@ -16,11 +16,24 @@ export default {
           
           if (fs.existsSync(structurePath)) {
             const data = JSON.parse(fs.readFileSync(structurePath, 'utf8'))
+            // Resolve first page path for card link
+            let firstPageLink = `/${wikiId}/pages/overview`
+            if (data.sections?.[0]?.pages?.[0] && data.pages) {
+              const firstId = data.sections[0].pages[0]
+              const firstPage = typeof firstId === 'string'
+                ? data.pages.find((p: any) => p.id === firstId)
+                : firstId
+              const fp = firstPage?.path || firstPage?.file
+              if (fp) {
+                firstPageLink = `/${wikiId}/${fp.replace(/\.md$/, '')}`
+              }
+            }
             wikis.push({
               id: wikiId,
               projectName: data.projectName || wikiId,
               description: data.description || '',
-              pagesCount: data.pages ? data.pages.length : 0
+              pagesCount: data.pages ? data.pages.length : 0,
+              firstPageLink
             })
           }
         }

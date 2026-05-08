@@ -3,6 +3,7 @@
   "repoUrl": "https://github.com/openai/symphony",
   "commit": "58cf97da06d556c019ccea20c67f4f77da124bf3",
   "generatedAt": "2026-05-08",
+  "description": "OpenAI 自主编码 Agent 编排引擎——将 Linear issue 自动分配给 Codex agent，管理隔离工作区、多轮执行与重试，实现全程无人值守的批量代码实现",
   "language": "zh-CN",
   "sections": [
     {

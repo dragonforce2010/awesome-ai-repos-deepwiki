@@ -26,7 +26,7 @@ import { data as wikis } from './wikis.data.ts'
 </script>
 
 <div class="wiki-grid">
-  <a v-for="wiki in wikis" :key="wiki.id" :href="`/${wiki.id}/pages/overview`" class="wiki-card">
+  <a v-for="wiki in wikis" :key="wiki.id" :href="wiki.firstPageLink || `/${wiki.id}/pages/overview`" class="wiki-card">
     <h3>{{ wiki.projectName }}</h3>
     <p>{{ wiki.description || 'No description available' }}</p>
     <div class="meta">
