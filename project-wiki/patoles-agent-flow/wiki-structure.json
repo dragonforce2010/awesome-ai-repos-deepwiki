@@ -1,0 +1,184 @@
+{
+  "title": "agent-flow DeepWiki",
+  "description": "patoles/agent-flow 中文技术百科：Claude Code 与 Codex 编排过程实时可视化",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "projectName": "patoles-agent-flow",
+  "source": {
+    "repo": "https://github.com/patoles/agent-flow",
+    "commit": "59ccf4e3c5134a3cc56580ca0babd71f201ac47c"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "架构与数据流",
+      "pages": [
+        "system-architecture",
+        "event-relay-and-sse",
+        "claude-hooks-and-transcripts",
+        "codex-rollout"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-product",
+      "title": "产品与界面",
+      "pages": ["visualization-ui", "vscode-extension", "standalone-npx-app"],
+      "subsections": []
+    },
+    {
+      "id": "section-quality",
+      "title": "质量、遥测与开发",
+      "pages": ["telemetry-security", "development-quality"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-product",
+    "section-quality"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "痛点、双运行时定位、能力与阅读路线",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "package.json",
+        "extension/src/session-runtime.ts",
+        "scripts/relay.ts"
+      ],
+      "relatedPages": [
+        "system-architecture",
+        "event-relay-and-sse",
+        "visualization-ui"
+      ]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与仓库布局",
+      "file": "pages/system-architecture.md",
+      "description": "pnpm monorepo、扩展与 Web、共享 extension 核心",
+      "importance": "high",
+      "filePaths": [
+        "pnpm-workspace.yaml",
+        "package.json",
+        "web/package.json",
+        "extension/package.json",
+        "app/src/server.ts"
+      ],
+      "relatedPages": ["overview", "event-relay-and-sse", "vscode-extension"]
+    },
+    {
+      "id": "event-relay-and-sse",
+      "title": "中继层与 SSE 流",
+      "file": "pages/event-relay-and-sse.md",
+      "description": "createRelay、事件缓冲、会话生命周期、Codex 并行",
+      "importance": "high",
+      "filePaths": [
+        "scripts/relay.ts",
+        "app/src/server.ts",
+        "extension/src/protocol.ts"
+      ],
+      "relatedPages": [
+        "claude-hooks-and-transcripts",
+        "codex-rollout",
+        "standalone-npx-app"
+      ]
+    },
+    {
+      "id": "claude-hooks-and-transcripts",
+      "title": "Claude Code：Hooks 与 JSONL 转录",
+      "file": "pages/claude-hooks-and-transcripts.md",
+      "description": "HookServer、全局 settings 注入、TranscriptParser",
+      "importance": "high",
+      "filePaths": [
+        "extension/src/hook-server.ts",
+        "extension/src/hooks-config.ts",
+        "extension/src/transcript-parser.ts"
+      ],
+      "relatedPages": ["event-relay-and-sse", "vscode-extension", "visualization-ui"]
+    },
+    {
+      "id": "codex-rollout",
+      "title": "Codex：Rollout JSONL 解析",
+      "file": "pages/codex-rollout.md",
+      "description": "rollout 文件结构、去重策略、与 Claude 对齐的事件模型",
+      "importance": "medium",
+      "filePaths": [
+        "extension/src/codex-rollout-parser.ts",
+        "extension/src/codex-session-watcher.ts",
+        "extension/test/codex-rollout-parser.test.ts"
+      ],
+      "relatedPages": ["event-relay-and-sse", "overview"]
+    },
+    {
+      "id": "visualization-ui",
+      "title": "可视化前端与仿真状态机",
+      "file": "pages/visualization-ui.md",
+      "description": "processEvent、Canvas、VS Code Bridge",
+      "importance": "high",
+      "filePaths": [
+        "web/hooks/simulation/process-event.ts",
+        "web/lib/vscode-bridge.ts",
+        "web/components/agent-visualizer/canvas.tsx"
+      ],
+      "relatedPages": ["event-relay-and-sse", "vscode-extension"]
+    },
+    {
+      "id": "vscode-extension",
+      "title": "VS Code / Cursor 扩展",
+      "file": "pages/vscode-extension.md",
+      "description": "activate、双运行时启动、Webview 消息协议",
+      "importance": "high",
+      "filePaths": [
+        "extension/src/extension.ts",
+        "extension/src/webview-provider.ts",
+        "extension/src/session-runtime.ts"
+      ],
+      "relatedPages": ["claude-hooks-and-transcripts", "visualization-ui"]
+    },
+    {
+      "id": "standalone-npx-app",
+      "title": "独立应用与 npx 分发",
+      "file": "pages/standalone-npx-app.md",
+      "description": "agent-flow-app、静态资源、端口与启动流程",
+      "importance": "medium",
+      "filePaths": [
+        "app/src/app.ts",
+        "app/src/server.ts",
+        "app/package.json"
+      ],
+      "relatedPages": ["event-relay-and-sse", "telemetry-security"]
+    },
+      
+    {
+      "id": "telemetry-security",
+      "title": "遥测、隐私与安全边界",
+      "file": "pages/telemetry-security.md",
+      "description": "可选上报、禁用方式、README 隐私条款对照实现",
+      "importance": "medium",
+      "filePaths": ["scripts/telemetry.ts", "README.md", "app/src/server.ts"],
+      "relatedPages": ["standalone-npx-app", "overview"]
+    },
+    {
+      "id": "development-quality",
+      "title": "开发、构建与测试",
+      "file": "pages/development-quality.md",
+      "description": "pnpm 脚本矩阵、扩展与 Web 构建、现有测试清单",
+      "importance": "low",
+      "filePaths": ["package.json", "CONTRIBUTING.md", "web/package.json"],
+      "relatedPages": ["system-architecture", "vscode-extension"]
+    }
+  ]
+}

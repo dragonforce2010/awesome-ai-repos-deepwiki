@@ -1,0 +1,3528 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/agent-flow",
+    "remote": "https://github.com/patoles/agent-flow.git",
+    "branch": "main",
+    "commit": "59ccf4e3c5134a3cc56580ca0babd71f201ac47c"
+  },
+  "file_count": 135,
+  "skipped_count": 16,
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 16,
+      "symbols": []
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": ".vscode/launch.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": ".vscode/settings.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 3,
+      "symbols": []
+    },
+    {
+      "path": ".vscode/tasks.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "CLA.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 128,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 167,
+      "symbols": []
+    },
+    {
+      "path": "TRADEMARK.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "app/build.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "app/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "app/src/app.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "app/src/args.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 34,
+      "symbols": [
+        {
+          "name": "parseArgs",
+          "type": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "app/src/server.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 85,
+      "symbols": [
+        {
+          "name": "ServerOptions",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "startServer",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "cleanup",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "openURL",
+          "type": "function",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "path": "app/src/static.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 69,
+      "symbols": [
+        {
+          "name": "serveStatic",
+          "type": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "extension/CHANGELOG.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 89,
+      "symbols": []
+    },
+    {
+      "path": "extension/esbuild.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 32,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "extension/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 103,
+      "symbols": []
+    },
+    {
+      "path": "extension/scripts/simulate-events.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 61,
+      "symbols": [
+        {
+          "name": "writeNext",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "elapsed",
+          "type": "function",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "extension/scripts/uninstall.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 103,
+      "symbols": [
+        {
+          "name": "removeHooksFromFile",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "collectWorkspaces",
+          "type": "function",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "path": "extension/src/claude-runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 148,
+      "symbols": [
+        {
+          "name": "filterOrchestratorCompletion",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "startClaudeRuntime",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "connectionStatus",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "dispose",
+          "type": "function",
+          "line": 135
+        }
+      ]
+    },
+    {
+      "path": "extension/src/codex-rollout-parser.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 634,
+      "symbols": [
+        {
+          "name": "CodexContextBreakdown",
+          "type": "interface",
+          "line": 50
+        },
+        {
+          "name": "PendingCodexToolCall",
+          "type": "interface",
+          "line": 58
+        },
+        {
+          "name": "CodexRolloutState",
+          "type": "interface",
+          "line": 65
+        },
+        {
+          "name": "createCodexRolloutState",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "CodexParserDelegate",
+          "type": "interface",
+          "line": 111
+        },
+        {
+          "name": "RolloutRecord",
+          "type": "interface",
+          "line": 122
+        },
+        {
+          "name": "MessageContent",
+          "type": "interface",
+          "line": 127
+        },
+        {
+          "name": "MessagePayload",
+          "type": "interface",
+          "line": 132
+        },
+        {
+          "name": "FunctionCallPayload",
+          "type": "interface",
+          "line": 137
+        },
+        {
+          "name": "FunctionCallOutputPayload",
+          "type": "interface",
+          "line": 143
+        },
+        {
+          "name": "CustomToolCallPayload",
+          "type": "interface",
+          "line": 148
+        },
+        {
+          "name": "CustomToolCallOutputPayload",
+          "type": "interface",
+          "line": 154
+        },
+        {
+          "name": "WebSearchCallPayload",
+          "type": "interface",
+          "line": 159
+        },
+        {
+          "name": "SessionMetaPayload",
+          "type": "interface",
+          "line": 164
+        },
+        {
+          "name": "TurnContextPayload",
+          "type": "interface",
+          "line": 171
+        },
+        {
+          "name": "CompactedPayload",
+          "type": "interface",
+          "line": 177
+        },
+        {
+          "name": "isRecord",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "flattenContent",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "extractCodexUserText",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "parseArgsJson",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "extractOutputString",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "extractPatchFilePath",
+          "type": "function",
+          "line": 255
+        },
+        {
+          "name": "CodexRolloutParser",
+          "type": "class",
+          "line": 262
+        }
+      ]
+    },
+    {
+      "path": "extension/src/codex-runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 40,
+      "symbols": [
+        {
+          "name": "startCodexRuntime",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "connectionStatus",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "dispose",
+          "type": "function",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "path": "extension/src/codex-session-watcher.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 360,
+      "symbols": [
+        {
+          "name": "WatchedCodexSession",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "codexHome",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "sessionsRoot",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "recentSessionDirs",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "readSessionCwd",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "CodexSessionWatcher",
+          "type": "class",
+          "line": 120
+        },
+        {
+          "name": "ageS",
+          "type": "function",
+          "line": 216
+        }
+      ]
+    },
+    {
+      "path": "extension/src/constants.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 211,
+      "symbols": [
+        {
+          "name": "generateSubagentFallbackName",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "resolveSubagentChildName",
+          "type": "function",
+          "line": 196
+        }
+      ]
+    },
+    {
+      "path": "extension/src/discovery.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 249,
+      "symbols": [
+        {
+          "name": "resolveNodePath",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "getHookCommand",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "normalizePath",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "hashWorkspace",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "writeDiscoveryFile",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "removeDiscoveryFile",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "addWorkspaceToManifest",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "readManifest",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "ensureHookScript",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "ensureDir",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "getHookScriptContent",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "normPath",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "isAlive",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 234
+        },
+        {
+          "name": "done",
+          "type": "function",
+          "line": 246
+        }
+      ]
+    },
+    {
+      "path": "extension/src/event-source.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 86,
+      "symbols": [
+        {
+          "name": "JsonlEventSource",
+          "type": "class",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "extension/src/extension.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 278,
+      "symbols": [
+        {
+          "name": "ConfiguredRuntimeMode",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "readConfiguredMode",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "StartRuntimesResult",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "startRuntimes",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "activate",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "promptHookSetupIfNeededForClaude",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "collectActiveSessions",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "replaySessions",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "combinedConnectionStatus",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "wirePanel",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "connectToJsonl",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "disconnectEventSource",
+          "type": "function",
+          "line": 247
+        },
+        {
+          "name": "handleOpenFile",
+          "type": "function",
+          "line": 256
+        },
+        {
+          "name": "deactivate",
+          "type": "function",
+          "line": 274
+        }
+      ]
+    },
+    {
+      "path": "extension/src/fs-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "readFileChunk",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "readNewFileLines",
+          "type": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "extension/src/hook-server.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 347,
+      "symbols": [
+        {
+          "name": "HookPayload",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "HookServer",
+          "type": "class",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "extension/src/hooks-config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 187,
+      "symbols": [
+        {
+          "name": "readGlobalSettings",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "isAgentFlowHook",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "hooksAlreadyConfigured",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "hasAgentFlowHooks",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "configureClaudeHooks",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "existingHooks",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "migrateHttpHooks",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "isDisable1MContext",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "promptHookSetupIfNeeded",
+          "type": "function",
+          "line": 184
+        }
+      ]
+    },
+    {
+      "path": "extension/src/logger.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 37,
+      "symbols": [
+        {
+          "name": "setLogLevel",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "shouldLog",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "createLogger",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "extension/src/permission-detection.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 84,
+      "symbols": [
+        {
+          "name": "PermissionState",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "PermissionDetectionDelegate",
+          "type": "interface",
+          "line": 17
+        },
+        {
+          "name": "handlePermissionDetection",
+          "type": "function",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "path": "extension/src/protocol.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 215,
+      "symbols": [
+        {
+          "name": "AgentEventType",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "AgentEvent",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "SessionInfo",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "ExtensionToWebviewMessage",
+          "type": "type",
+          "line": 41
+        },
+        {
+          "name": "VisualizerConfig",
+          "type": "interface",
+          "line": 52
+        },
+        {
+          "name": "WebviewToExtensionMessage",
+          "type": "type",
+          "line": 61
+        },
+        {
+          "name": "TranscriptEntry",
+          "type": "interface",
+          "line": 70
+        },
+        {
+          "name": "ToolUseBlock",
+          "type": "interface",
+          "line": 81
+        },
+        {
+          "name": "ToolResultBlock",
+          "type": "interface",
+          "line": 88
+        },
+        {
+          "name": "ThinkingBlock",
+          "type": "interface",
+          "line": 94
+        },
+        {
+          "name": "TextBlock",
+          "type": "interface",
+          "line": 99
+        },
+        {
+          "name": "TranscriptContentBlock",
+          "type": "type",
+          "line": 104
+        },
+        {
+          "name": "AgentEventEmitter",
+          "type": "interface",
+          "line": 114
+        },
+        {
+          "name": "emitSubagentSpawn",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "PendingToolCall",
+          "type": "interface",
+          "line": 147
+        },
+        {
+          "name": "SubagentState",
+          "type": "interface",
+          "line": 156
+        },
+        {
+          "name": "WatchedSession",
+          "type": "interface",
+          "line": 168
+        },
+        {
+          "name": "ClaudeHookDef",
+          "type": "interface",
+          "line": 205
+        },
+        {
+          "name": "ClaudeHookEntry",
+          "type": "interface",
+          "line": 212
+        }
+      ]
+    },
+    {
+      "path": "extension/src/session-runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 116,
+      "symbols": [
+        {
+          "name": "AgentRuntimeMode",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "SessionLifecycleEvent",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "AgentSessionWatcher",
+          "type": "interface",
+          "line": 28
+        },
+        {
+          "name": "AgentRuntime",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "WatchPanelWiringOptions",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "wireWatcherToPanel",
+          "type": "function",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "extension/src/session-watcher.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 587,
+      "symbols": [
+        {
+          "name": "SessionWatcher",
+          "type": "class",
+          "line": 42
+        },
+        {
+          "name": "ageSeconds",
+          "type": "function",
+          "line": 326
+        }
+      ]
+    },
+    {
+      "path": "extension/src/subagent-watcher.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 188,
+      "symbols": [
+        {
+          "name": "SubagentWatcherDelegate",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "resolveNameFromMeta",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "scanSubagentsDir",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "startWatchingSubagentFile",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "readSubagentNewLines",
+          "type": "function",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "path": "extension/src/token-estimator.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "estimateTokensFromContent",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "estimateTokensFromText",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "estimateTokenCost",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "extension/src/tool-summarizer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 228,
+      "symbols": [
+        {
+          "name": "tailPath",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "summarizeInput",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "summarizeResult",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "extractInputData",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "extractFilePath",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "buildDiscovery",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "detectError",
+          "type": "function",
+          "line": 220
+        }
+      ]
+    },
+    {
+      "path": "extension/src/transcript-parser.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 615,
+      "symbols": [
+        {
+          "name": "TranscriptParserDelegate",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "isRecord",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "safeText",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "safeThinking",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "redactedThinkingSignature",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "thinkingHashKey",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "TranscriptParser",
+          "type": "class",
+          "line": 76
+        },
+        {
+          "name": "emitRole",
+          "type": "function",
+          "line": 184
+        }
+      ]
+    },
+    {
+      "path": "extension/src/typed-event-emitter.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 43,
+      "symbols": [
+        {
+          "name": "TypedDisposable",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "TypedEventEmitter",
+          "type": "class",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "extension/src/webview-provider.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 281,
+      "symbols": [
+        {
+          "name": "getNonce",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "VisualizerPanel",
+          "type": "class",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "extension/test/codex-rollout-parser.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 276,
+      "symbols": [
+        {
+          "name": "runFixture",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "extension/test/fs-utils.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 104,
+      "symbols": []
+    },
+    {
+      "path": "extension/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "extension/tsconfig.test.json",
+      "language": "json",
+      "kind": "test",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2107,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 3,
+      "symbols": []
+    },
+    {
+      "path": "scripts/build-relay.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "scripts/dev-relay.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 60,
+      "symbols": [
+        {
+          "name": "main",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "cleanup",
+          "type": "function",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "scripts/relay.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 541,
+      "symbols": [
+        {
+          "name": "resolveAgentFlowVersion",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "log",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "sendSSE",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "broadcast",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "broadcastEvent",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "m",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "broadcastSessionLifecycle",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "elapsed",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "emitContextUpdate",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "emitEvent",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "resetInactivityTimer",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "watchSession",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "readNewLines",
+          "type": "function",
+          "line": 251
+        },
+        {
+          "name": "scanForActiveSessions",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "ageSeconds",
+          "type": "function",
+          "line": 311
+        },
+        {
+          "name": "normalizePath",
+          "type": "function",
+          "line": 322
+        },
+        {
+          "name": "hashWorkspace",
+          "type": "function",
+          "line": 328
+        },
+        {
+          "name": "writeDiscoveryFile",
+          "type": "function",
+          "line": 334
+        },
+        {
+          "name": "removeDiscoveryFile",
+          "type": "function",
+          "line": 341
+        },
+        {
+          "name": "Relay",
+          "type": "interface",
+          "line": 349
+        },
+        {
+          "name": "RelayRuntimeMode",
+          "type": "type",
+          "line": 356
+        },
+        {
+          "name": "RelayOptions",
+          "type": "interface",
+          "line": 358
+        },
+        {
+          "name": "resolveRuntimeMode",
+          "type": "function",
+          "line": 368
+        },
+        {
+          "name": "createRelay",
+          "type": "function",
+          "line": 374
+        },
+        {
+          "name": "resolved",
+          "type": "function",
+          "line": 408
+        },
+        {
+          "name": "baseEvent",
+          "type": "function",
+          "line": 444
+        }
+      ]
+    },
+    {
+      "path": "scripts/setup.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 243,
+      "symbols": [
+        {
+          "name": "resolveNodePath",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "getHookScriptContent",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "normPath",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "isAlive",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "done",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "ensureHookScript",
+          "type": "function",
+          "line": 133
+        },
+        {
+          "name": "isAgentFlowHook",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "configureHooks",
+          "type": "function",
+          "line": 161
+        },
+        {
+          "name": "isAlreadySetup",
+          "type": "function",
+          "line": 198
+        },
+        {
+          "name": "ensureSetup",
+          "type": "function",
+          "line": 220
+        }
+      ]
+    },
+    {
+      "path": "scripts/telemetry.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 143,
+      "symbols": [
+        {
+          "name": "setup",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "makeClient",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "baseEvent",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "scripts/telemetry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 207,
+      "symbols": [
+        {
+          "name": "TelemetryEvent",
+          "type": "interface",
+          "line": 37
+        },
+        {
+          "name": "TelemetryClientOptions",
+          "type": "interface",
+          "line": 55
+        },
+        {
+          "name": "TelemetryClient",
+          "type": "interface",
+          "line": 68
+        },
+        {
+          "name": "isTelemetryEnabled",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "createTelemetryClient",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "getEnv",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "enabled",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "serialize",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "append",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "fireSync",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "scheduleNext",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "startSync",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "stopSync",
+          "type": "function",
+          "line": 172
+        }
+      ]
+    },
+    {
+      "path": "scripts/telemetry/install-id.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": [
+        {
+          "name": "getOrCreateInstallId",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "scripts/telemetry/sanitize.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "scripts/telemetry/sanitize.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": [
+        {
+          "name": "sanitizeString",
+          "type": "function",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "path": "scripts/telemetry/sync.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 102,
+      "symbols": [
+        {
+          "name": "setup",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "makeEvent",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "fakeFetch",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "fakeFetch",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "fakeFetch",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "fakeFetch",
+          "type": "function",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "path": "scripts/telemetry/sync.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 86,
+      "symbols": [
+        {
+          "name": "SyncOptions",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "SyncResult",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "syncOnce",
+          "type": "function",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "scripts/vscode-shim.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 28,
+      "symbols": [
+        {
+          "name": "EventEmitter",
+          "type": "class",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "web/app-entry.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "web/app/layout.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "web/app/page.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "web/components.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "web/components/agent-visualizer/agent-detail-card.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 91,
+      "symbols": [
+        {
+          "name": "AgentDetailCardProps",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "AgentDetailCard",
+          "type": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/background-layer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 147,
+      "symbols": [
+        {
+          "name": "createDepthParticles",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "updateDepthParticles",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "drawBackground",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "angle",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "drawHexGrid",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "offsetY",
+          "type": "function",
+          "line": 118
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/bloom-renderer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 79,
+      "symbols": [
+        {
+          "name": "BloomRenderer",
+          "type": "class",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 352,
+      "symbols": [
+        {
+          "name": "CanvasProps",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "AgentCanvas",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "makeDrawProps",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "loop",
+          "type": "function",
+          "line": 336
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/bubble-utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": [
+        {
+          "name": "bubbleAlpha",
+          "type": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/detect-state-changes.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 99,
+      "symbols": [
+        {
+          "name": "StateTransition",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "detectStateChanges",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-agents.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 392,
+      "symbols": [
+        {
+          "name": "getClaudeSparkPath",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "getOpenAILogoPath",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "drawClaudeSpark",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "scale",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "drawOpenAILogo",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "scale",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "drawAgentBrand",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "drawContextComposition",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "segWidth",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "drawContextRing",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "sweep",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "drawDepthShadow",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "drawAgentGlow",
+          "type": "function",
+          "line": 188
+        },
+        {
+          "name": "drawScanline",
+          "type": "function",
+          "line": 207
+        },
+        {
+          "name": "drawStateRing",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "drawCenterIcon",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "drawOrbitingParticles",
+          "type": "function",
+          "line": 268
+        },
+        {
+          "name": "drawWaitingRipples",
+          "type": "function",
+          "line": 282
+        },
+        {
+          "name": "ripplePhase",
+          "type": "function",
+          "line": 285
+        },
+        {
+          "name": "rippleAlpha",
+          "type": "function",
+          "line": 287
+        },
+        {
+          "name": "drawAgentLabel",
+          "type": "function",
+          "line": 309
+        },
+        {
+          "name": "drawStatsOverlay",
+          "type": "function",
+          "line": 319
+        },
+        {
+          "name": "drawAgents",
+          "type": "function",
+          "line": 335
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-bubbles.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 139,
+      "symbols": [
+        {
+          "name": "drawMessageBubblesWorld",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "wrapText",
+          "type": "function",
+          "line": 106
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-cost.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 262,
+      "symbols": [
+        {
+          "name": "agentCost",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "toolTypeColor",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "groupToolsByAgent",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "drawCostLabels",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "segW",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "drawCostSummaryPanel",
+          "type": "function",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-discoveries.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 79,
+      "symbols": [
+        {
+          "name": "drawDiscoveryConnections",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "drawDiscoveries",
+          "type": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-edges.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 143,
+      "symbols": [
+        {
+          "name": "bezierPoint",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "resolveEdgeTarget",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "computeControlPoints",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "bezierNormalAt",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "drawTaperedBezier",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "halfW",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "halfW",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "getActiveEdgeIds",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "drawEdges",
+          "type": "function",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-effects.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 124,
+      "symbols": [
+        {
+          "name": "VisualEffect",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "drawEffects",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "alpha",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "flashAlpha",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "a",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "alpha",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "flashAlpha",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "alpha",
+          "type": "function",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-misc.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 77,
+      "symbols": [
+        {
+          "name": "truncateText",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "mid",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "drawTetherLine",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "endX",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "endY",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "midX",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "drawHexagon",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "angle",
+          "type": "function",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-particles.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 99,
+      "symbols": [
+        {
+          "name": "buildEdgeMap",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "drawParticles",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "phase",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "offset",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "alpha",
+          "type": "function",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/draw-tool-calls.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 105,
+      "symbols": [
+        {
+          "name": "drawToolCalls",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "cardH",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "a",
+          "type": "function",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/hit-detection.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 128,
+      "symbols": [
+        {
+          "name": "findAgentAt",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "findToolCallAt",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "labelLen",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "cardH",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "findBubbleAgentAt",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "findDiscoveryAt",
+          "type": "function",
+          "line": 113
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "web/components/agent-visualizer/canvas/render-cache.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 70,
+      "symbols": [
+        {
+          "name": "getGlowSprite",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "getAgentGlowSprite",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "measureTextCached",
+          "type": "function",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/chat-panel.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 73,
+      "symbols": [
+        {
+          "name": "ChatPanelProps",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "AgentChatPanel",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/control-bar.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 319,
+      "symbols": [
+        {
+          "name": "ControlBarProps",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "formatTime",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "getEventColor",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "useScrubberEvents",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "ControlBar",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "LiveControlBar",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "ReviewControlBar",
+          "type": "function",
+          "line": 170
+        },
+        {
+          "name": "handleMove",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "handleUp",
+          "type": "function",
+          "line": 190
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/discovery-detail-popup.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 68,
+      "symbols": [
+        {
+          "name": "DiscoveryDetailPopupProps",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "DiscoveryDetailPopup",
+          "type": "function",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/file-attention-panel.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 116,
+      "symbols": [
+        {
+          "name": "FileAttentionPanelProps",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "FileAttentionPanel",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/glass-card.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 43,
+      "symbols": [
+        {
+          "name": "GlassCardProps",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "GlassCard",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/glass-context-menu.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "ContextMenuProps",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "GlassContextMenu",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 415,
+      "symbols": [
+        {
+          "name": "AgentVisualizer",
+          "type": "function",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/message-feed-panel.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 389,
+      "symbols": [
+        {
+          "name": "MessageFeedPanelProps",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "MessageFeedPanel",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "TabButton",
+          "type": "function",
+          "line": 305
+        },
+        {
+          "name": "MessageRow",
+          "type": "function",
+          "line": 335
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/session-tabs.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 82,
+      "symbols": [
+        {
+          "name": "SessionTabsProps",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "SessionTabs",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/session-transcript-panel.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 176,
+      "symbols": [
+        {
+          "name": "TranscriptPanelProps",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "SessionTranscriptPanel",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/shared-ui.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 152,
+      "symbols": [
+        {
+          "name": "CloseButtonProps",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "CloseButton",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "PanelHeaderProps",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "PanelHeader",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "DetailPopupProps",
+          "type": "interface",
+          "line": 64
+        },
+        {
+          "name": "DetailPopup",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "SlidingPanelProps",
+          "type": "interface",
+          "line": 94
+        },
+        {
+          "name": "SlidingPanel",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "ProgressBarProps",
+          "type": "interface",
+          "line": 133
+        },
+        {
+          "name": "ProgressBar",
+          "type": "function",
+          "line": 139
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/timeline-panel.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 222,
+      "symbols": [
+        {
+          "name": "TimelinePanelProps",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "drawTimeline",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "blockStart",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "blockEnd",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "TimelinePanel",
+          "type": "function",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/tool-content-renderer.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 280,
+      "symbols": [
+        {
+          "name": "OpenFileCallback",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "ToolContentRendererProps",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "ToolContentRenderer",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "FilePath",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "EditContent",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "TodoItem",
+          "type": "interface",
+          "line": 100
+        },
+        {
+          "name": "isTodoArray",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "TodoContent",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "BashContent",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "WriteContent",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "ReadContent",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "GrepContent",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "GlobContent",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "WebSearchContent",
+          "type": "function",
+          "line": 221
+        },
+        {
+          "name": "WebFetchContent",
+          "type": "function",
+          "line": 232
+        },
+        {
+          "name": "AskUserContent",
+          "type": "function",
+          "line": 252
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/tool-detail-popup.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 76,
+      "symbols": [
+        {
+          "name": "ToolDetailPopupProps",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "ToolDetailPopup",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/top-bar.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 165,
+      "symbols": [
+        {
+          "name": "MutedIcon",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "UnmutedIcon",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "ToggleButton",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "ConnectionIndicator",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "TopBarProps",
+          "type": "interface",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "path": "web/components/agent-visualizer/transcript-message.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 152,
+      "symbols": [
+        {
+          "name": "HighlightText",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "TranscriptMessage",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/simulation/animate.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 187,
+      "symbols": [
+        {
+          "name": "AnimateOptions",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "animateAgents",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "animateEdges",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "animateToolCalls",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "cleanupFaded",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "animateDiscoveries",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "animateParticles",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "computeNextFrame",
+          "type": "function",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/simulation/handle-agent-events.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 196,
+      "symbols": [
+        {
+          "name": "handleAgentSpawn",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "handleAgentComplete",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "handlePermissionRequested",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "handleAgentIdle",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "handleModelDetected",
+          "type": "function",
+          "line": 182
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/simulation/handle-message-events.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 83,
+      "symbols": [
+        {
+          "name": "handleMessage",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "handleContextUpdate",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "breakdown",
+          "type": "function",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/simulation/handle-subagent-events.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 41,
+      "symbols": [
+        {
+          "name": "handleSubagentDispatch",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "handleSubagentReturn",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/simulation/handle-tool-events.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 172,
+      "symbols": [
+        {
+          "name": "extractFilePath",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "handleToolCallStart",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "inputData",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "handleToolCallEnd",
+          "type": "function",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/simulation/process-event.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 98,
+      "symbols": [
+        {
+          "name": "ProcessEventContext",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "MutableEventState",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "pushTimelineBlock",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "mapsEqual",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "processEvent",
+          "type": "function",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/simulation/snap-visual-state.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 62,
+      "symbols": [
+        {
+          "name": "snapVisualState",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "toVisible",
+          "type": "function",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/simulation/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 126,
+      "symbols": [
+        {
+          "name": "SimulationState",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "createEmptyState",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "nextMsgId",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "ConversationMessage",
+          "type": "interface",
+          "line": 55
+        },
+        {
+          "name": "appendConversation",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "edgeId",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "asString",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "asNumber",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "asBoolean",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "ForceNode",
+          "type": "interface",
+          "line": 105
+        },
+        {
+          "name": "ForceLink",
+          "type": "interface",
+          "line": 109
+        },
+        {
+          "name": "UseAgentSimulationOptions",
+          "type": "interface",
+          "line": 113
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-agent-simulation.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 427,
+      "symbols": [
+        {
+          "name": "useAgentSimulation",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "overlaps",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "sweep",
+          "type": "function",
+          "line": 143
+        },
+        {
+          "name": "loop",
+          "type": "function",
+          "line": 287
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-audio-effects.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 64,
+      "symbols": [
+        {
+          "name": "useAudioEffects",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-auto-scroll.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "useAutoScroll",
+          "type": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-canvas-camera.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 234,
+      "symbols": [
+        {
+          "name": "Transform",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "CameraOptions",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "useCanvasCamera",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "r",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "age",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "centerX",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "centerY",
+          "type": "function",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-canvas-interaction.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 253,
+      "symbols": [
+        {
+          "name": "InteractionCallbacks",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "InteractionOptions",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "useCanvasInteraction",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "handler",
+          "type": "function",
+          "line": 200
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-click-outside.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 26,
+      "symbols": [
+        {
+          "name": "useClickOutside",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "handleClick",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-keyboard-shortcuts.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 81,
+      "symbols": [
+        {
+          "name": "useKeyboardShortcuts",
+          "type": "function",
+          "line": 3
+        },
+        {
+          "name": "handleKeyDown",
+          "type": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-selection-state.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 170,
+      "symbols": [
+        {
+          "name": "ToolDataSnapshot",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "DiscoveryDataSnapshot",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "ContextMenuState",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "ScreenPos",
+          "type": "interface",
+          "line": 28
+        },
+        {
+          "name": "useSelectionState",
+          "type": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-virtual-list.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 162,
+      "symbols": [
+        {
+          "name": "UseVirtualListOptions",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "useVirtualList",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "liveScrollTop",
+          "type": "function",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "web/hooks/use-vscode-bridge.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 319,
+      "symbols": [
+        {
+          "name": "BridgeHookResult",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "useVSCodeBridge",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "web/lib/agent-types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 273,
+      "symbols": [
+        {
+          "name": "AgentState",
+          "type": "type",
+          "line": 4
+        },
+        {
+          "name": "ContextBreakdown",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "Agent",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "MessageBubble",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "ToolCallNode",
+          "type": "interface",
+          "line": 58
+        },
+        {
+          "name": "Discovery",
+          "type": "interface",
+          "line": 76
+        },
+        {
+          "name": "FileAttention",
+          "type": "interface",
+          "line": 91
+        },
+        {
+          "name": "TimelineEntry",
+          "type": "interface",
+          "line": 101
+        },
+        {
+          "name": "TimelineBlock",
+          "type": "interface",
+          "line": 110
+        },
+        {
+          "name": "TimelineEvent",
+          "type": "interface",
+          "line": 119
+        },
+        {
+          "name": "Edge",
+          "type": "interface",
+          "line": 128
+        },
+        {
+          "name": "Particle",
+          "type": "interface",
+          "line": 136
+        },
+        {
+          "name": "SimulationEvent",
+          "type": "interface",
+          "line": 147
+        },
+        {
+          "name": "DepthParticle",
+          "type": "interface",
+          "line": 165
+        },
+        {
+          "name": "emptyContextBreakdown",
+          "type": "function",
+          "line": 271
+        }
+      ]
+    },
+    {
+      "path": "web/lib/audio-engine.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 146,
+      "symbols": [
+        {
+          "name": "AudioEngine",
+          "type": "class",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "web/lib/bridge-types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 24,
+      "symbols": [
+        {
+          "name": "AgentEvent",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "SessionInfo",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "ConnectionStatus",
+          "type": "type",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "web/lib/canvas-constants.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 402,
+      "symbols": [
+        {
+          "name": "getDiscoveryCardDimensions",
+          "type": "function",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "path": "web/lib/clamp-popup-position.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": [
+        {
+          "name": "clampPopupPosition",
+          "type": "function",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "path": "web/lib/colors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 265,
+      "symbols": [
+        {
+          "name": "getStateColor",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "getDiscoveryTypeColor",
+          "type": "function",
+          "line": 242
+        },
+        {
+          "name": "withAlpha",
+          "type": "function",
+          "line": 252
+        },
+        {
+          "name": "contextSegments",
+          "type": "function",
+          "line": 257
+        }
+      ]
+    },
+    {
+      "path": "web/lib/mock-scenario.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 221,
+      "symbols": [
+        {
+          "name": "getStressLevel",
+          "type": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "web/lib/stress-test-scenario.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 193,
+      "symbols": [
+        {
+          "name": "StressConfig",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "pick",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "generateStressScenario",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "emit",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "StressLevel",
+          "type": "type",
+          "line": 193
+        }
+      ]
+    },
+    {
+      "path": "web/lib/utils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": [
+        {
+          "name": "alphaHex",
+          "type": "function",
+          "line": 2
+        },
+        {
+          "name": "formatTokens",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "truncatePath",
+          "type": "function",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "web/lib/vscode-bridge.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 182,
+      "symbols": [
+        {
+          "name": "InitCallback",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "EventCallback",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "StatusCallback",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "ConfigCallback",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "SessionCallback",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "VSCodeBridge",
+          "type": "class",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "web/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "web/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "web/vite.config.app.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "web/vite.config.shared.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 53,
+      "symbols": [
+        {
+          "name": "BuildTarget",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "createBuildConfig",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "web/vite.config.webview.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "web/webview-entry.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    }
+  ]
+}
