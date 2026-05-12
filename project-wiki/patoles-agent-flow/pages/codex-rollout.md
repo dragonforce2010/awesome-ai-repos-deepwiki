@@ -38,7 +38,7 @@ flowchart TD
 
 **测试锚点**：`extension/test/codex-rollout-parser.test.ts` + `fixtures/codex-rollout-sample.jsonl` 给后续改动提供回归网——这在「事件顺序敏感」的 parser 里尤其值钱。
 
-Sources: [extension/src/codex-rollout-parser.ts:1-32](../../../project-repos/pages/extension/src/codex-rollout-parser.ts#L1-L32), [extension/src/codex-rollout-parser.ts:88-100](../../../project-repos/pages/extension/src/codex-rollout-parser.ts#L88-L100)
+Sources: [extension/src/codex-rollout-parser.ts:1-32](../../../project-repos/patoles-agent-flow/extension/src/codex-rollout-parser.ts#L1-L32), [extension/src/codex-rollout-parser.ts:88-100](../../../project-repos/patoles-agent-flow/extension/src/codex-rollout-parser.ts#L88-L100)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -47,11 +47,58 @@ Sources: [extension/src/codex-rollout-parser.ts:1-32](../../../project-repos/pag
 
 #### `extension/src/codex-rollout-parser.ts:1-32`
 
-> 未找到引用文件：`extension/src/codex-rollout-parser.ts`
+```typescript
+/**
+ * Parser for Codex rollout JSONL files at ~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl
+ *
+ * Codex writes five top-level record types. This parser handles all of them:
+ *
+ *   session_meta  — first line; carries cwd, cli_version, session id, base
+ *                   instructions (system prompt)
+ *   turn_context  — per turn; carries the authoritative model id for that turn
+ *                   plus approval/sandbox policy. May change mid-session.
+ *   response_item — OpenAI Responses API-shaped turn data: messages, function
+ *                   calls, function call outputs, custom tool calls, reasoning
+ *   event_msg     — Codex lifecycle events: task_started/complete, token_count,
+ *                   agent_reasoning (plaintext thinking), exec_command_end, etc.
+ *   compacted     — auto-compaction marker with replacement_history
+ *
+ * Dedup strategy:
+ *   Messages     — emitted from response_item.message only. event_msg's
+ *                   agent_message / user_message are mirrors of the response_item
+ *                   content (sometimes imperfect for user messages) and are
+ *                   skipped. System-injected user content (IDE context,
+ *                   subagent notifications) is filtered.
+ *   Reasoning    — emitted from event_msg.agent_reasoning only. response_item's
+ *                   reasoning payload carries encrypted_content + summary[] and
+ *                   isn't useful for display.
+ *   Tool results — emitted from function_call_output / custom_tool_call_output
+ *                   only. event_msg.exec_command_end / patch_apply_end are
+ *                   parallel signals and are skipped.
+ *
+ * Subagents: Codex does not currently expose subagent spawning in rollouts.
+ * The parser emits a single orchestrator; if Codex adds spawn_agent / wait_agent
+ * in future, add mapping here.
+ */
+```
 
 #### `extension/src/codex-rollout-parser.ts:88-100`
 
-> 未找到引用文件：`extension/src/codex-rollout-parser.ts`
+```typescript
+export function createCodexRolloutState(): CodexRolloutState {
+  return {
+    model: null,
+    cwd: null,
+    label: null,
+    pendingToolCalls: new Map(),
+    seenMessageHashes: new Set(),
+    contextBreakdown: {
+      systemPrompt: SYSTEM_PROMPT_BASE_TOKENS,
+      userMessages: 0,
+      toolResults: 0,
+      reasoning: 0,
+      subagentResults: 0,
+```
 
 <!-- source-snippets:end -->
 </details>

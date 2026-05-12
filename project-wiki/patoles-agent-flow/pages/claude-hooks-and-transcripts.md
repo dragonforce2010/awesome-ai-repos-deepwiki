@@ -37,7 +37,7 @@ flowchart LR
 
 **洞察**：Port 冲突时 HookServer 选择 `HOOK_SERVER_NOT_STARTED` 而不是随机换端口——否则「没有任何人往新端口 POST」，靠 JSONL 仍能跑通全链路；这是防御性设计而非炫技。
 
-Sources: [extension/src/hook-server.ts:16-100](../../../project-repos/pages/extension/src/hook-server.ts#L16-L100), [extension/src/hooks-config.ts:75-91](../../../project-repos/pages/extension/src/hooks-config.ts#L75-L91), [extension/src/transcript-parser.ts:1-37](../../../project-repos/pages/extension/src/transcript-parser.ts#L1-L37)
+Sources: [extension/src/hook-server.ts:16-100](../../../project-repos/patoles-agent-flow/extension/src/hook-server.ts#L16-L100), [extension/src/hooks-config.ts:75-91](../../../project-repos/patoles-agent-flow/extension/src/hooks-config.ts#L75-L91), [extension/src/transcript-parser.ts:1-37](../../../project-repos/patoles-agent-flow/extension/src/transcript-parser.ts#L1-L37)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -46,15 +46,157 @@ Sources: [extension/src/hook-server.ts:16-100](../../../project-repos/pages/exte
 
 #### `extension/src/hook-server.ts:16-100`
 
-> 未找到引用文件：`extension/src/hook-server.ts`
+```typescript
+/**
+ * Lightweight HTTP server that receives Claude Code hook events.
+ *
+ * Claude Code hooks POST JSON payloads for events like PreToolUse, PostToolUse,
+ * SubagentStart, SubagentStop, SessionStart, Stop, etc.
+ *
+ * We transform these into AgentEvent format and emit them.
+ */
+
+/** Port 0 = let OS assign a random available port */
+
+interface HookPayload {
+  session_id: string
+  transcript_path?: string
+  cwd?: string
+  hook_event_name: string
+  // PreToolUse / PostToolUse
+  tool_name?: string
+  tool_input?: Record<string, unknown>
+  tool_use_id?: string
+  tool_response?: string | { content: string } | Array<{ text?: string }>
+  // SubagentStart / SubagentStop
+  agent_id?: string
+  agent_type?: string
+  agent_transcript_path?: string
+  // Notification
+  notification_type?: string
+  message?: string
+  title?: string
+  // Generic
+  [key: string]: unknown
+}
+
+export class HookServer implements vscode.Disposable {
+  private server: http.Server | null = null
+  private port: number
+  /** Per-session state — cleaned up on SessionEnd/Stop to prevent unbounded growth */
+  private sessionState = new Map<string, {
+    startTime: number
+    agentNames: Map<string, string> // agent_id → friendly name
+  }>()
+
+  private readonly _onEvent = new vscode.EventEmitter<AgentEvent>()
+
+  readonly onEvent = this._onEvent.event
+
+  constructor(port?: number) {
+    this.port = port ?? 0
+  }
+
+  async start(): Promise<number> {
+    return new Promise((resolve, reject) => {
+      this.server = http.createServer((req, res) => {
+        if (req.method === 'POST') {
+          let body = ''
+          let oversized = false
+          req.on('data', (chunk: Buffer) => {
+            if (oversized) return
+            body += chunk.toString()
+            if (body.length > HOOK_MAX_BODY_SIZE) {
+              oversized = true
+              body = ''
+              log.warn('Request body exceeded size limit, discarding')
+            }
+          })
+          req.on('end', () => {
+            if (!oversized) {
+              try {
+                const parsed: unknown = JSON.parse(body)
+                if (!parsed || typeof parsed !== 'object' || !('session_id' in parsed) || !('hook_event_name' in parsed)
+                    || typeof (parsed as HookPayload).session_id !== 'string'
+                    || typeof (parsed as HookPayload).hook_event_name !== 'string') {
+                  log.warn('Invalid hook payload: missing session_id or hook_event_name')
+                } else {
+                  this.handleHook(parsed as HookPayload)
+                }
+              } catch (e) {
+                log.error('Failed to parse payload:', e)
+              }
+            }
+            // Always return 200 with empty body — we're observing, not blocking.
+            // Empty body = "success, no output" per Claude Code docs.
+            // Returning JSON (even '{}') triggers schema parsing which can cause issues.
+            res.writeHead(200)
+            res.end()
+```
 
 #### `extension/src/hooks-config.ts:75-91`
 
-> 未找到引用文件：`extension/src/hooks-config.ts`
+```typescript
+export async function configureClaudeHooks(): Promise<void> {
+  ensureHookScript()
+
+  const hookCommand = getHookCommand()
+  const hookEntry = { hooks: [{ type: 'command', command: hookCommand, timeout: HOOK_TIMEOUT_S }] }
+
+  const hooksConfig = {
+    SessionStart: [hookEntry],
+    PreToolUse: [hookEntry],
+    PostToolUse: [hookEntry],
+    PostToolUseFailure: [hookEntry],
+    SubagentStart: [hookEntry],
+    SubagentStop: [hookEntry],
+    Notification: [hookEntry],
+    Stop: [hookEntry],
+    SessionEnd: [hookEntry],
+  }
+```
 
 #### `extension/src/transcript-parser.ts:1-37`
 
-> 未找到引用文件：`extension/src/transcript-parser.ts`
+```typescript
+/**
+ * Transcript parsing logic extracted from SessionWatcher.
+ *
+ * Parses JSONL transcript lines and emits AgentEvents via a delegate,
+ * keeping the parsing logic decoupled from file-watching concerns.
+ */
+
+import {
+  AgentEvent, PendingToolCall, WatchedSession,
+  TranscriptEntry, ToolUseBlock, ToolResultBlock,
+  emitSubagentSpawn,
+} from './protocol'
+import { readFileChunk } from './fs-utils'
+import {
+  PREVIEW_MAX, ARGS_MAX, RESULT_MAX, MESSAGE_MAX,
+  SESSION_LABEL_MAX, SESSION_LABEL_TRUNCATED,
+  CHILD_NAME_MAX,
+  HASH_PREFIX_MAX,
+  ORCHESTRATOR_NAME,
+  FAILED_RESULT_MAX,
+  SYSTEM_CONTENT_PREFIXES,
+  generateSubagentFallbackName,
+  resolveSubagentChildName,
+} from './constants'
+import { summarizeInput, summarizeResult, extractInputData, detectError, buildDiscovery } from './tool-summarizer'
+import { estimateTokensFromContent, estimateTokensFromText } from './token-estimator'
+import { createLogger } from './logger'
+
+const log = createLogger('TranscriptParser')
+
+export interface TranscriptParserDelegate {
+  emit(event: AgentEvent, sessionId?: string): void
+  elapsed(sessionId?: string): number
+  getSession(sessionId: string): WatchedSession | undefined
+  fireSessionLifecycle(event: { type: 'started' | 'ended' | 'updated'; sessionId: string; label: string }): void
+  emitContextUpdate(agentName: string, session: WatchedSession, sessionId?: string): void
+}
+```
 
 <!-- source-snippets:end -->
 </details>

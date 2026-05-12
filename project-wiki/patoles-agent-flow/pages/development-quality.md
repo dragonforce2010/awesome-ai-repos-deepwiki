@@ -42,7 +42,7 @@ flowchart LR
   T1 --> B1
 ```
 
-Sources: [package.json:1-16](../../../project-repos/pages/package.json#L1-L16)
+Sources: [package.json:1-16](../../../project-repos/patoles-agent-flow/package.json#L1-L16)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -51,7 +51,24 @@ Sources: [package.json:1-16](../../../project-repos/pages/package.json#L1-L16)
 
 #### `package.json:1-16`
 
-> 未找到引用文件：`package.json`
+```json
+{
+  "private": true,
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "dev": "NEXT_PUBLIC_DEMO=0 NEXT_PUBLIC_RELAY_PORT=3001 concurrently -n relay,web -c blue,green \"pnpm run dev:relay\" \"pnpm run dev:web\"",
+    "dev:relay": "node scripts/build-relay.js && node scripts/.dev-relay.js",
+    "dev:demo": "NEXT_PUBLIC_DEMO=1 pnpm run dev:web",
+    "dev:web": "pnpm --filter agent-flow-web run dev",
+    "dev:extension": "pnpm --filter agent-flow run watch",
+    "build:extension": "pnpm --filter agent-flow run build",
+    "build:web": "pnpm --filter agent-flow-web run build",
+    "build:webview": "pnpm --filter agent-flow-web run build:webview",
+    "build:all": "pnpm run build:webview && pnpm run build:extension",
+    "build:app": "node app/build.js",
+    "test": "node --import tsx --test \"scripts/**/*.test.ts\" \"app/src/**/*.test.ts\""
+  },
+```
 
 <!-- source-snippets:end -->
 </details>

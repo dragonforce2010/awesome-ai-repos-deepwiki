@@ -82,7 +82,7 @@ flowchart TD
 - 关心 **Codex 侧**：→ [Codex：Rollout JSONL 解析](codex-rollout.md)
 - 深入 **UI 状态机**：→ [可视化前端与仿真状态机](visualization-ui.md)
 
-Sources: [README.md:1-17](../../../project-repos/exports/README.md#L1-L17), [extension/src/session-runtime.ts:1-48](../../../project-repos/exports/extension/src/session-runtime.ts#L1-L48), [extension/src/extension.ts:28-44](../../../project-repos/exports/extension/src/extension.ts#L28-L44)
+Sources: [README.md:1-17](../../../project-repos/patoles-agent-flow/README.md#L1-L17), [extension/src/session-runtime.ts:1-48](../../../project-repos/patoles-agent-flow/extension/src/session-runtime.ts#L1-L48), [extension/src/extension.ts:28-44](../../../project-repos/patoles-agent-flow/extension/src/extension.ts#L28-L44)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -91,15 +91,100 @@ Sources: [README.md:1-17](../../../project-repos/exports/README.md#L1-L17), [ext
 
 #### `README.md:1-17`
 
-> 未找到引用文件：`README.md`
+```markdown
+# Agent Flow
+
+Real-time visualization of Claude Code and Codex agent orchestration. Watch your agents think, branch, and coordinate as they work. [Demo video here](https://www.youtube.com/watch?v=Ud6eDrFN-TA). 
+
+![Agent Flow visualization](https://res.cloudinary.com/dxlvclh9c/image/upload/v1773924941/screenshot_e7yox3.png)
+
+## Why Agent Flow?
+
+I built Agent Flow while developing [CraftMyGame](https://craftmygame.com), a game creation platform driven by AI agents. Debugging agent behavior was painful, so we made it visual. Now we're sharing it.
+
+Claude Code is powerful, but its execution is a black box — you see the final result, not the journey. Agent Flow makes the invisible visible:
+
+- **Understand agent behavior** — See how Claude breaks down problems, which tools it reaches for, and how subagents coordinate
+- **Debug tool call chains** — When something goes wrong, trace the exact sequence of decisions and tool calls that led there
+- **See where time is spent** — Identify slow tool calls, unnecessary branching, or redundant work at a glance
+- **Learn by watching** — Build intuition for how to write better prompts by observing how Claude interprets and executes them
+
+```
 
 #### `extension/src/session-runtime.ts:1-48`
 
-> 未找到引用文件：`extension/src/session-runtime.ts`
+```typescript
+/**
+ * Runtime abstraction for agent session watchers.
+ *
+ * Each supported agent tool (Claude Code, Codex, ...) implements
+ * AgentSessionWatcher and is started via a runtime factory in extension.ts.
+ * The interface deliberately matches what the visualizer needs to render
+ * live activity: an event stream, session lifecycle, and replay on panel
+ * open. Runtime-specific concerns (hook servers, SQLite lookups, etc.)
+ * live inside each runtime's startXxxRuntime() factory, not here.
+ */
+
+import * as vscode from 'vscode'
+import type { AgentEvent, SessionInfo } from './protocol'
+import { VisualizerPanel } from './webview-provider'
+import { SESSION_ID_DISPLAY, STATUS_MESSAGE_DURATION_MS } from './constants'
+import type { TypedDisposable, TypedEvent } from './typed-event-emitter'
+
+export type AgentRuntimeMode = 'claude' | 'codex'
+
+export interface SessionLifecycleEvent {
+  type: 'started' | 'ended' | 'updated'
+  sessionId: string
+  label: string
+}
+
+/** Interface every runtime's watcher implements. Uses portable typed-event
+ *  types (not vscode.Event) so watchers can run in the relay/CLI too. */
+export interface AgentSessionWatcher extends TypedDisposable {
+  readonly onEvent: TypedEvent<AgentEvent>
+  readonly onSessionDetected: TypedEvent<string>
+  readonly onSessionLifecycle: TypedEvent<SessionLifecycleEvent>
+  start(): void
+  isActive(): boolean
+  isSessionActive(sessionId: string): boolean
+  getActiveSessions(): SessionInfo[]
+  replaySessionStart(sessionIds?: string[]): void
+}
+
+/** A running runtime: its watcher, a status line describing its connection,
+ *  and a disposer for runtime-specific resources beyond the watcher itself
+ *  (e.g. the Claude hook server and discovery file). */
+export interface AgentRuntime {
+  readonly mode: AgentRuntimeMode
+  readonly watcher: AgentSessionWatcher
+  /** Human-readable connection status for the webview. May change over time. */
+  connectionStatus(): string
+  dispose(): void
+}
+```
 
 #### `extension/src/extension.ts:28-44`
 
-> 未找到引用文件：`extension/src/extension.ts`
+```typescript
+async function startRuntimes(
+  mode: ConfiguredRuntimeMode,
+  context: vscode.ExtensionContext,
+): Promise<StartRuntimesResult> {
+  const runtimes: AgentRuntime[] = []
+  const failures: AgentRuntimeMode[] = []
+  if (mode === 'claude' || mode === 'auto') {
+    log.info('Starting Claude runtime...')
+    try { runtimes.push(await startClaudeRuntime(context)) }
+    catch (err) { log.error('Claude runtime failed to start:', err); failures.push('claude') }
+  }
+  if (mode === 'codex' || mode === 'auto') {
+    log.info('Starting Codex runtime...')
+    try { runtimes.push(startCodexRuntime(context)) }
+    catch (err) { log.error('Codex runtime failed to start:', err); failures.push('codex') }
+  }
+  return { runtimes, failures }
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -155,7 +240,7 @@ flowchart TD
 
 **独立应用的服务模型**：`startServer` 创建单一 `http.Server`：`GET /events` 走 `relay.handleSSE`，其余 `GET` 交给 `serveStatic`（`app/src/server.ts`）。这与 VS Code 里「扩展进程持有 HTTP server、webview 只聊消息」形成对照，但 SSE payload 形状保持一致（`protocol.ts` 里的 union）。
 
-Sources: [pnpm-workspace.yaml:1-15](../../../project-repos/exports/pnpm-workspace.yaml#L1-L15), [package.json:1-16](../../../project-repos/exports/package.json#L1-L16), [app/src/server.ts:31-46](../../../project-repos/exports/app/src/server.ts#L31-L46)
+Sources: [pnpm-workspace.yaml:1-15](../../../project-repos/patoles-agent-flow/pnpm-workspace.yaml#L1-L15), [package.json:1-16](../../../project-repos/patoles-agent-flow/package.json#L1-L16), [app/src/server.ts:31-46](../../../project-repos/patoles-agent-flow/app/src/server.ts#L31-L46)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -164,15 +249,53 @@ Sources: [pnpm-workspace.yaml:1-15](../../../project-repos/exports/pnpm-workspac
 
 #### `pnpm-workspace.yaml:1-15`
 
-> 未找到引用文件：`pnpm-workspace.yaml`
+```yaml
+packages:
+  - extension
+  - web
+```
 
 #### `package.json:1-16`
 
-> 未找到引用文件：`package.json`
+```json
+{
+  "private": true,
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "dev": "NEXT_PUBLIC_DEMO=0 NEXT_PUBLIC_RELAY_PORT=3001 concurrently -n relay,web -c blue,green \"pnpm run dev:relay\" \"pnpm run dev:web\"",
+    "dev:relay": "node scripts/build-relay.js && node scripts/.dev-relay.js",
+    "dev:demo": "NEXT_PUBLIC_DEMO=1 pnpm run dev:web",
+    "dev:web": "pnpm --filter agent-flow-web run dev",
+    "dev:extension": "pnpm --filter agent-flow run watch",
+    "build:extension": "pnpm --filter agent-flow run build",
+    "build:web": "pnpm --filter agent-flow-web run build",
+    "build:webview": "pnpm --filter agent-flow-web run build:webview",
+    "build:all": "pnpm run build:webview && pnpm run build:extension",
+    "build:app": "node app/build.js",
+    "test": "node --import tsx --test \"scripts/**/*.test.ts\" \"app/src/**/*.test.ts\""
+  },
+```
 
 #### `app/src/server.ts:31-46`
 
-> 未找到引用文件：`app/src/server.ts`
+```typescript
+  const relay = await createRelay({ workspace, verbose: options.verbose, telemetry })
+
+  const server = http.createServer((req, res) => {
+    // SSE endpoint
+    if (req.url === '/events') {
+      return relay.handleSSE(req, res)
+    }
+
+    // Static files (UI)
+    if (req.method === 'GET') {
+      return serveStatic(req, res)
+    }
+
+    res.writeHead(404)
+    res.end('Not found')
+  })
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -222,7 +345,7 @@ sequenceDiagram
 
 **Telemetry 挂钩**：relay 进程启动时 `telemetry.emit(session_start)`，`dispose` 时带上 `event_count`、`models`、`runtimes` 发 `session_end`（`relay.ts` dispose 分支）。这与 README 中「仅聚合遥测」的说明相互印证。
 
-Sources: [scripts/relay.ts:60-101](../../../project-repos/exports/scripts/relay.ts#L60-L101), [scripts/relay.ts:466-510](../../../project-repos/exports/scripts/relay.ts#L466-L510), [scripts/relay.ts:420-434](../../../project-repos/exports/scripts/relay.ts#L420-L434), [app/src/server.ts:31-36](../../../project-repos/exports/app/src/server.ts#L31-L36)
+Sources: [scripts/relay.ts:60-101](../../../project-repos/patoles-agent-flow/scripts/relay.ts#L60-L101), [scripts/relay.ts:466-510](../../../project-repos/patoles-agent-flow/scripts/relay.ts#L466-L510), [scripts/relay.ts:420-434](../../../project-repos/patoles-agent-flow/scripts/relay.ts#L420-L434), [app/src/server.ts:31-36](../../../project-repos/patoles-agent-flow/app/src/server.ts#L31-L36)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -231,19 +354,131 @@ Sources: [scripts/relay.ts:60-101](../../../project-repos/exports/scripts/relay.
 
 #### `scripts/relay.ts:60-101`
 
-> 未找到引用文件：`scripts/relay.ts`
+```typescript
+// ─── SSE client management ──────────────────────────────────────────────────
+
+const sseClients = new Set<http.ServerResponse>()
+
+function sendSSE(res: http.ServerResponse, data: unknown) {
+  try { res.write(`data: ${JSON.stringify(data)}\n\n`) } catch {
+    sseClients.delete(res)
+  }
+}
+
+function broadcast(data: string) {
+  for (const res of sseClients) {
+    try { res.write(`data: ${data}\n\n`) } catch {
+      sseClients.delete(res)
+    }
+  }
+}
+
+// ─── Event buffering ────────────────────────────────────────────────────────
+
+const eventBuffer = new Map<string, AgentEvent[]>()
+
+function broadcastEvent(event: AgentEvent) {
+  sessionEventCount++
+  if (event.type === 'model_detected') {
+    const m = (event.payload as { model?: unknown } | undefined)?.model
+    if (typeof m === 'string' && m.length > 0) observedModels.add(m)
+  }
+  const sid = event.sessionId?.slice(0, SESSION_ID_DISPLAY) || '?'
+  log(`[event] ${event.type} (session ${sid})`)
+
+  if (event.sessionId) {
+    let buf = eventBuffer.get(event.sessionId) || []
+    buf.push(event)
+    if (buf.length > MAX_EVENT_BUFFER) {
+      buf = buf.slice(buf.length - MAX_EVENT_BUFFER)
+    }
+    eventBuffer.set(event.sessionId, buf)
+  }
+
+  broadcast(JSON.stringify({ type: 'agent-event', event }))
+}
+```
 
 #### `scripts/relay.ts:466-510`
 
-> 未找到引用文件：`scripts/relay.ts`
+```typescript
+  return {
+    handleSSE(req: http.IncomingMessage, res: http.ServerResponse) {
+      res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+      })
+
+      sseClients.add(res)
+      log(`[sse] Client connected (${sseClients.size} total)`)
+
+      req.on('close', () => {
+        sseClients.delete(res)
+        log(`[sse] Client disconnected (${sseClients.size} total)`)
+      })
+
+      // Send current session list (Claude + Codex)
+      const sessionList: SessionInfo[] = []
+      for (const session of sessions.values()) {
+        if (!session.sessionDetected) continue
+        sessionList.push({
+          id: session.sessionId, label: session.label,
+          status: session.sessionCompleted ? 'completed' : 'active',
+          startTime: session.sessionStartTime, lastActivityTime: session.lastActivityTime,
+        })
+      }
+      if (codexWatcher) sessionList.push(...codexWatcher.getActiveSessions())
+      if (sessionList.length > 0) {
+        sendSSE(res, { type: 'session-list', sessions: sessionList })
+      }
+
+      // Replay buffered events for the most recent active session
+      const sorted = [...sessionList].sort((a, b) => {
+        const aActive = a.status === 'active' ? 1 : 0
+        const bActive = b.status === 'active' ? 1 : 0
+        if (aActive !== bActive) return bActive - aActive
+        return b.lastActivityTime - a.lastActivityTime
+      })
+      if (sorted.length > 0) {
+        const buffered = eventBuffer.get(sorted[0].id)
+        if (buffered) {
+          sendSSE(res, { type: 'agent-event-batch', events: buffered })
+        }
+      }
+    },
+```
 
 #### `scripts/relay.ts:420-434`
 
-> 未找到引用文件：`scripts/relay.ts`
+```typescript
+  // ─── Codex runtime ────────────────────────────────────────────────────────
+  // Watch Codex rollouts in parallel. No-op if ~/.codex/sessions doesn't
+  // exist or no sessions match the current workspace.
+  // We don't subscribe to onSessionDetected — it fires together with the
+  // lifecycle 'started' event in CodexSessionWatcher.attachSession, so
+  // wiring both would double-broadcast session-started to SSE clients.
+  let codexWatcher: CodexSessionWatcher | null = null
+  if (wantCodex) {
+    codexWatcher = new CodexSessionWatcher(workspace)
+    codexWatcher.onEvent((event) => broadcastEvent(event))
+    codexWatcher.onSessionLifecycle((lifecycle) => {
+      broadcastSessionLifecycle(lifecycle.type, lifecycle.sessionId, lifecycle.label)
+    })
+    codexWatcher.start()
+  }
+```
 
 #### `app/src/server.ts:31-36`
 
-> 未找到引用文件：`app/src/server.ts`
+```typescript
+  const relay = await createRelay({ workspace, verbose: options.verbose, telemetry })
+
+  const server = http.createServer((req, res) => {
+    // SSE endpoint
+    if (req.url === '/events') {
+      return relay.handleSSE(req, res)
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -295,7 +530,7 @@ flowchart LR
 
 **洞察**：Port 冲突时 HookServer 选择 `HOOK_SERVER_NOT_STARTED` 而不是随机换端口——否则「没有任何人往新端口 POST」，靠 JSONL 仍能跑通全链路；这是防御性设计而非炫技。
 
-Sources: [extension/src/hook-server.ts:16-100](../../../project-repos/exports/extension/src/hook-server.ts#L16-L100), [extension/src/hooks-config.ts:75-91](../../../project-repos/exports/extension/src/hooks-config.ts#L75-L91), [extension/src/transcript-parser.ts:1-37](../../../project-repos/exports/extension/src/transcript-parser.ts#L1-L37)
+Sources: [extension/src/hook-server.ts:16-100](../../../project-repos/patoles-agent-flow/extension/src/hook-server.ts#L16-L100), [extension/src/hooks-config.ts:75-91](../../../project-repos/patoles-agent-flow/extension/src/hooks-config.ts#L75-L91), [extension/src/transcript-parser.ts:1-37](../../../project-repos/patoles-agent-flow/extension/src/transcript-parser.ts#L1-L37)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -304,15 +539,157 @@ Sources: [extension/src/hook-server.ts:16-100](../../../project-repos/exports/ex
 
 #### `extension/src/hook-server.ts:16-100`
 
-> 未找到引用文件：`extension/src/hook-server.ts`
+```typescript
+/**
+ * Lightweight HTTP server that receives Claude Code hook events.
+ *
+ * Claude Code hooks POST JSON payloads for events like PreToolUse, PostToolUse,
+ * SubagentStart, SubagentStop, SessionStart, Stop, etc.
+ *
+ * We transform these into AgentEvent format and emit them.
+ */
+
+/** Port 0 = let OS assign a random available port */
+
+interface HookPayload {
+  session_id: string
+  transcript_path?: string
+  cwd?: string
+  hook_event_name: string
+  // PreToolUse / PostToolUse
+  tool_name?: string
+  tool_input?: Record<string, unknown>
+  tool_use_id?: string
+  tool_response?: string | { content: string } | Array<{ text?: string }>
+  // SubagentStart / SubagentStop
+  agent_id?: string
+  agent_type?: string
+  agent_transcript_path?: string
+  // Notification
+  notification_type?: string
+  message?: string
+  title?: string
+  // Generic
+  [key: string]: unknown
+}
+
+export class HookServer implements vscode.Disposable {
+  private server: http.Server | null = null
+  private port: number
+  /** Per-session state — cleaned up on SessionEnd/Stop to prevent unbounded growth */
+  private sessionState = new Map<string, {
+    startTime: number
+    agentNames: Map<string, string> // agent_id → friendly name
+  }>()
+
+  private readonly _onEvent = new vscode.EventEmitter<AgentEvent>()
+
+  readonly onEvent = this._onEvent.event
+
+  constructor(port?: number) {
+    this.port = port ?? 0
+  }
+
+  async start(): Promise<number> {
+    return new Promise((resolve, reject) => {
+      this.server = http.createServer((req, res) => {
+        if (req.method === 'POST') {
+          let body = ''
+          let oversized = false
+          req.on('data', (chunk: Buffer) => {
+            if (oversized) return
+            body += chunk.toString()
+            if (body.length > HOOK_MAX_BODY_SIZE) {
+              oversized = true
+              body = ''
+              log.warn('Request body exceeded size limit, discarding')
+            }
+          })
+          req.on('end', () => {
+            if (!oversized) {
+              try {
+                const parsed: unknown = JSON.parse(body)
+                if (!parsed || typeof parsed !== 'object' || !('session_id' in parsed) || !('hook_event_name' in parsed)
+                    || typeof (parsed as HookPayload).session_id !== 'string'
+                    || typeof (parsed as HookPayload).hook_event_name !== 'string') {
+                  log.warn('Invalid hook payload: missing session_id or hook_event_name')
+                } else {
+                  this.handleHook(parsed as HookPayload)
+                }
+              } catch (e) {
+                log.error('Failed to parse payload:', e)
+              }
+            }
+            // Always return 200 with empty body — we're observing, not blocking.
+            // Empty body = "success, no output" per Claude Code docs.
+            // Returning JSON (even '{}') triggers schema parsing which can cause issues.
+            res.writeHead(200)
+            res.end()
+```
 
 #### `extension/src/hooks-config.ts:75-91`
 
-> 未找到引用文件：`extension/src/hooks-config.ts`
+```typescript
+export async function configureClaudeHooks(): Promise<void> {
+  ensureHookScript()
+
+  const hookCommand = getHookCommand()
+  const hookEntry = { hooks: [{ type: 'command', command: hookCommand, timeout: HOOK_TIMEOUT_S }] }
+
+  const hooksConfig = {
+    SessionStart: [hookEntry],
+    PreToolUse: [hookEntry],
+    PostToolUse: [hookEntry],
+    PostToolUseFailure: [hookEntry],
+    SubagentStart: [hookEntry],
+    SubagentStop: [hookEntry],
+    Notification: [hookEntry],
+    Stop: [hookEntry],
+    SessionEnd: [hookEntry],
+  }
+```
 
 #### `extension/src/transcript-parser.ts:1-37`
 
-> 未找到引用文件：`extension/src/transcript-parser.ts`
+```typescript
+/**
+ * Transcript parsing logic extracted from SessionWatcher.
+ *
+ * Parses JSONL transcript lines and emits AgentEvents via a delegate,
+ * keeping the parsing logic decoupled from file-watching concerns.
+ */
+
+import {
+  AgentEvent, PendingToolCall, WatchedSession,
+  TranscriptEntry, ToolUseBlock, ToolResultBlock,
+  emitSubagentSpawn,
+} from './protocol'
+import { readFileChunk } from './fs-utils'
+import {
+  PREVIEW_MAX, ARGS_MAX, RESULT_MAX, MESSAGE_MAX,
+  SESSION_LABEL_MAX, SESSION_LABEL_TRUNCATED,
+  CHILD_NAME_MAX,
+  HASH_PREFIX_MAX,
+  ORCHESTRATOR_NAME,
+  FAILED_RESULT_MAX,
+  SYSTEM_CONTENT_PREFIXES,
+  generateSubagentFallbackName,
+  resolveSubagentChildName,
+} from './constants'
+import { summarizeInput, summarizeResult, extractInputData, detectError, buildDiscovery } from './tool-summarizer'
+import { estimateTokensFromContent, estimateTokensFromText } from './token-estimator'
+import { createLogger } from './logger'
+
+const log = createLogger('TranscriptParser')
+
+export interface TranscriptParserDelegate {
+  emit(event: AgentEvent, sessionId?: string): void
+  elapsed(sessionId?: string): number
+  getSession(sessionId: string): WatchedSession | undefined
+  fireSessionLifecycle(event: { type: 'started' | 'ended' | 'updated'; sessionId: string; label: string }): void
+  emitContextUpdate(agentName: string, session: WatchedSession, sessionId?: string): void
+}
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -365,7 +742,7 @@ flowchart TD
 
 **测试锚点**：`extension/test/codex-rollout-parser.test.ts` + `fixtures/codex-rollout-sample.jsonl` 给后续改动提供回归网——这在「事件顺序敏感」的 parser 里尤其值钱。
 
-Sources: [extension/src/codex-rollout-parser.ts:1-32](../../../project-repos/exports/extension/src/codex-rollout-parser.ts#L1-L32), [extension/src/codex-rollout-parser.ts:88-100](../../../project-repos/exports/extension/src/codex-rollout-parser.ts#L88-L100)
+Sources: [extension/src/codex-rollout-parser.ts:1-32](../../../project-repos/patoles-agent-flow/extension/src/codex-rollout-parser.ts#L1-L32), [extension/src/codex-rollout-parser.ts:88-100](../../../project-repos/patoles-agent-flow/extension/src/codex-rollout-parser.ts#L88-L100)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -374,11 +751,58 @@ Sources: [extension/src/codex-rollout-parser.ts:1-32](../../../project-repos/exp
 
 #### `extension/src/codex-rollout-parser.ts:1-32`
 
-> 未找到引用文件：`extension/src/codex-rollout-parser.ts`
+```typescript
+/**
+ * Parser for Codex rollout JSONL files at ~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl
+ *
+ * Codex writes five top-level record types. This parser handles all of them:
+ *
+ *   session_meta  — first line; carries cwd, cli_version, session id, base
+ *                   instructions (system prompt)
+ *   turn_context  — per turn; carries the authoritative model id for that turn
+ *                   plus approval/sandbox policy. May change mid-session.
+ *   response_item — OpenAI Responses API-shaped turn data: messages, function
+ *                   calls, function call outputs, custom tool calls, reasoning
+ *   event_msg     — Codex lifecycle events: task_started/complete, token_count,
+ *                   agent_reasoning (plaintext thinking), exec_command_end, etc.
+ *   compacted     — auto-compaction marker with replacement_history
+ *
+ * Dedup strategy:
+ *   Messages     — emitted from response_item.message only. event_msg's
+ *                   agent_message / user_message are mirrors of the response_item
+ *                   content (sometimes imperfect for user messages) and are
+ *                   skipped. System-injected user content (IDE context,
+ *                   subagent notifications) is filtered.
+ *   Reasoning    — emitted from event_msg.agent_reasoning only. response_item's
+ *                   reasoning payload carries encrypted_content + summary[] and
+ *                   isn't useful for display.
+ *   Tool results — emitted from function_call_output / custom_tool_call_output
+ *                   only. event_msg.exec_command_end / patch_apply_end are
+ *                   parallel signals and are skipped.
+ *
+ * Subagents: Codex does not currently expose subagent spawning in rollouts.
+ * The parser emits a single orchestrator; if Codex adds spawn_agent / wait_agent
+ * in future, add mapping here.
+ */
+```
 
 #### `extension/src/codex-rollout-parser.ts:88-100`
 
-> 未找到引用文件：`extension/src/codex-rollout-parser.ts`
+```typescript
+export function createCodexRolloutState(): CodexRolloutState {
+  return {
+    model: null,
+    cwd: null,
+    label: null,
+    pendingToolCalls: new Map(),
+    seenMessageHashes: new Set(),
+    contextBreakdown: {
+      systemPrompt: SYSTEM_PROMPT_BASE_TOKENS,
+      userMessages: 0,
+      toolResults: 0,
+      reasoning: 0,
+      subagentResults: 0,
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -435,7 +859,7 @@ flowchart TD
 
 **Canvas**：`canvas.tsx` 与各 `draw-*.ts` 把状态投影到 2D：代理气泡、工具卡片、边、粒子特效、成本可视化等分层绘制，和 `use-canvas-camera` 的视口变换解耦。
 
-Sources: [web/hooks/simulation/process-event.ts:61-98](../../../project-repos/exports/web/hooks/simulation/process-event.ts#L61-L98), [web/lib/vscode-bridge.ts:35-59](../../../project-repos/exports/web/lib/vscode-bridge.ts#L35-L59)
+Sources: [web/hooks/simulation/process-event.ts:61-98](../../../project-repos/patoles-agent-flow/web/hooks/simulation/process-event.ts#L61-L98), [web/lib/vscode-bridge.ts:35-59](../../../project-repos/patoles-agent-flow/web/lib/vscode-bridge.ts#L35-L59)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -444,11 +868,76 @@ Sources: [web/hooks/simulation/process-event.ts:61-98](../../../project-repos/ex
 
 #### `web/hooks/simulation/process-event.ts:61-98`
 
-> 未找到引用文件：`web/hooks/simulation/process-event.ts`
+```typescript
+export function processEvent(event: SimulationEvent, prev: SimulationState, ctx: ProcessEventContext): SimulationState {
+      const state: MutableEventState = {
+        agents: new Map(prev.agents),
+        toolCalls: new Map(prev.toolCalls),
+        particles: [...prev.particles],
+        edges: [...prev.edges],
+        discoveries: [...prev.discoveries],
+        fileAttention: new Map(prev.fileAttention),
+        timelineEntries: new Map(prev.timelineEntries),
+        conversations: new Map(prev.conversations),
+      }
+
+      switch (event.type) {
+        case 'agent_spawn':       handleAgentSpawn(event.payload, prev.currentTime, state, ctx); break
+        case 'agent_complete':    handleAgentComplete(event.payload, prev.currentTime, state, ctx); break
+        case 'agent_idle':        handleAgentIdle(event.payload, state); break
+        case 'model_detected':    handleModelDetected(event.payload, state, ctx); break
+        case 'tool_call_start':   handleToolCallStart(event.payload, prev.currentTime, state, ctx); break
+        case 'tool_call_end':     handleToolCallEnd(event.payload, prev.currentTime, state, ctx); break
+        case 'message':           handleMessage(event.payload, prev.currentTime, state); break
+        case 'context_update':    handleContextUpdate(event.payload, state); break
+        case 'subagent_dispatch': handleSubagentDispatch(event.payload, prev.currentTime, state); break
+        case 'subagent_return':   handleSubagentReturn(event.payload, prev.currentTime, state); break
+        case 'permission_requested': handlePermissionRequested(event.payload, prev.currentTime, state, ctx); break
+      }
+
+      // Stabilize references for unchanged collections to prevent
+      // downstream React useMemo/re-render cascades (O(n log n) sorts etc.)
+      return {
+        ...prev,
+        agents: state.agents, toolCalls: state.toolCalls,
+        particles: state.particles, edges: state.edges,
+        discoveries: state.discoveries,
+        fileAttention: mapsEqual(prev.fileAttention, state.fileAttention) ? prev.fileAttention : state.fileAttention,
+        timelineEntries: mapsEqual(prev.timelineEntries, state.timelineEntries) ? prev.timelineEntries : state.timelineEntries,
+        conversations: mapsEqual(prev.conversations, state.conversations) ? prev.conversations : state.conversations,
+      }
+}
+```
 
 #### `web/lib/vscode-bridge.ts:35-59`
 
-> 未找到引用文件：`web/lib/vscode-bridge.ts`
+```typescript
+  private handleMessage = (e: MessageEvent) => {
+    const data = e.data
+    if (!data || typeof data.type !== 'string') { return }
+
+    switch (data.type) {
+      case '__vscode-bridge-init':
+        this._isVSCode = true
+        this.postToExtension({ type: 'ready' })
+        for (const cb of this.initListeners) cb()
+        this.initListeners = [] // one-shot: no need to keep listeners after init
+        break
+
+      case 'agent-event':
+        for (const cb of this.eventListeners) {
+          cb(data.event)
+        }
+        break
+
+      case 'agent-event-batch':
+        for (const event of data.events) {
+          for (const cb of this.eventListeners) {
+            cb(event)
+          }
+        }
+        break
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -495,7 +984,7 @@ flowchart TD
 
 **与 Web 共享代码**：扩展构建把 webview 资产打进 VSIX；开发时 `pnpm run dev:extension` watch extension，而 UI 仍由 `web` 包产出。协议字段增减必须同时改 `protocol.ts` 与 `vscode-bridge.ts` 的分支，否则会出现「扩展发了新 type，React 侧静默丢弃」类的漂移。
 
-Sources: [extension/src/extension.ts:18-44](../../../project-repos/exports/extension/src/extension.ts#L18-L44), [extension/src/extension.ts:47-64](../../../project-repos/exports/extension/src/extension.ts#L47-L64), [extension/src/session-runtime.ts:67-116](../../../project-repos/exports/extension/src/session-runtime.ts#L67-L116)
+Sources: [extension/src/extension.ts:18-44](../../../project-repos/patoles-agent-flow/extension/src/extension.ts#L18-L44), [extension/src/extension.ts:47-64](../../../project-repos/patoles-agent-flow/extension/src/extension.ts#L47-L64), [extension/src/session-runtime.ts:67-116](../../../project-repos/patoles-agent-flow/extension/src/session-runtime.ts#L67-L116)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -504,15 +993,113 @@ Sources: [extension/src/extension.ts:18-44](../../../project-repos/exports/exten
 
 #### `extension/src/extension.ts:18-44`
 
-> 未找到引用文件：`extension/src/extension.ts`
+```typescript
+function readConfiguredMode(): ConfiguredRuntimeMode {
+  const raw = vscode.workspace.getConfiguration('agentVisualizer').get<string>('runtime', 'auto')
+  return raw === 'claude' || raw === 'codex' ? raw : 'auto'
+}
+
+interface StartRuntimesResult {
+  runtimes: AgentRuntime[]
+  failures: AgentRuntimeMode[]
+}
+
+async function startRuntimes(
+  mode: ConfiguredRuntimeMode,
+  context: vscode.ExtensionContext,
+): Promise<StartRuntimesResult> {
+  const runtimes: AgentRuntime[] = []
+  const failures: AgentRuntimeMode[] = []
+  if (mode === 'claude' || mode === 'auto') {
+    log.info('Starting Claude runtime...')
+    try { runtimes.push(await startClaudeRuntime(context)) }
+    catch (err) { log.error('Claude runtime failed to start:', err); failures.push('claude') }
+  }
+  if (mode === 'codex' || mode === 'auto') {
+    log.info('Starting Codex runtime...')
+    try { runtimes.push(startCodexRuntime(context)) }
+    catch (err) { log.error('Codex runtime failed to start:', err); failures.push('codex') }
+  }
+  return { runtimes, failures }
+```
 
 #### `extension/src/extension.ts:47-64`
 
-> 未找到引用文件：`extension/src/extension.ts`
+```typescript
+export async function activate(context: vscode.ExtensionContext) {
+  log.info('Extension activated')
+
+  const mode = readConfiguredMode()
+  log.info(`Runtime mode: ${mode}`)
+  const { runtimes: started, failures } = await startRuntimes(mode, context)
+  runtimes = started
+  log.info(`Active runtimes: ${runtimes.map(r => r.mode).join(', ') || 'none'}`)
+
+  // Surface startup failures to the user — the log-only path leaves them
+  // staring at a "disconnected" visualizer with no explanation.
+  if (runtimes.length === 0 && failures.length > 0) {
+    vscode.window.showWarningMessage(
+      `Agent Visualizer: ${failures.join(' and ')} runtime${failures.length > 1 ? 's' : ''} failed to start. See the Output panel for details.`,
+    )
+  } else if (failures.length > 0) {
+    log.info(`Partial startup — ${failures.join(', ')} failed but ${runtimes.map(r => r.mode).join(', ')} active`)
+  }
+```
 
 #### `extension/src/session-runtime.ts:67-116`
 
-> 未找到引用文件：`extension/src/session-runtime.ts`
+```typescript
+export function wireWatcherToPanel(
+  watcher: AgentSessionWatcher,
+  options: WatchPanelWiringOptions,
+): TypedDisposable {
+  const subs: TypedDisposable[] = []
+
+  subs.push(watcher.onEvent((event) => {
+    const panel = VisualizerPanel.getCurrent()
+    if (!panel || !panel.isReady) return
+    const transformed = options.transformEvent ? options.transformEvent(event) : event
+    if (transformed) panel.sendEvent(transformed)
+  }))
+
+  subs.push(watcher.onSessionDetected((sessionId) => {
+    const panel = VisualizerPanel.getCurrent()
+    if (panel) {
+      const sessionCount = watcher.getActiveSessions().length
+      panel.setConnectionStatus('watching', sessionCount > 1
+        ? `${sessionCount} ${options.sessionLabelPrefix} sessions`
+        : `${options.sessionLabelPrefix} ${sessionId.slice(0, SESSION_ID_DISPLAY)}`)
+    }
+    vscode.window.setStatusBarMessage(
+      `Agent Visualizer: watching ${options.sessionLabelPrefix} session ${sessionId.slice(0, SESSION_ID_DISPLAY)}`,
+      STATUS_MESSAGE_DURATION_MS,
+    )
+  }))
+
+  subs.push(watcher.onSessionLifecycle((lifecycle) => {
+    const panel = VisualizerPanel.getCurrent()
+    if (!panel) return
+    if (lifecycle.type === 'started') {
+      panel.postMessage({
+        type: 'session-started',
+        session: {
+          id: lifecycle.sessionId,
+          label: lifecycle.label,
+          status: 'active',
+          startTime: Date.now(),
+          lastActivityTime: Date.now(),
+        },
+      })
+    } else if (lifecycle.type === 'updated') {
+      panel.postMessage({ type: 'session-updated', sessionId: lifecycle.sessionId, label: lifecycle.label })
+    } else {
+      panel.postMessage({ type: 'session-ended', sessionId: lifecycle.sessionId })
+    }
+  }))
+
+  return { dispose: () => { for (const s of subs) s.dispose() } }
+}
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -554,7 +1141,7 @@ flowchart LR
 
 **版本号**：`app/package.json` 当前 **0.8.1**；与 README 中遥测 schema 说明交叉引用。
 
-Sources: [app/src/app.ts:12-29](../../../project-repos/exports/app/src/app.ts#L12-L29), [app/src/server.ts:21-75](../../../project-repos/exports/app/src/server.ts#L21-L75), [app/package.json:1-26](../../../project-repos/exports/app/package.json#L1-L26)
+Sources: [app/src/app.ts:12-29](../../../project-repos/patoles-agent-flow/app/src/app.ts#L12-L29), [app/src/server.ts:21-75](../../../project-repos/patoles-agent-flow/app/src/server.ts#L21-L75), [app/package.json:1-26](../../../project-repos/patoles-agent-flow/app/package.json#L1-L26)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -563,15 +1150,117 @@ Sources: [app/src/app.ts:12-29](../../../project-repos/exports/app/src/app.ts#L1
 
 #### `app/src/app.ts:12-29`
 
-> 未找到引用文件：`app/src/app.ts`
+```typescript
+import { parseArgs } from './args'
+import { ensureSetup } from '../../scripts/setup'
+import { startServer } from './server'
+
+const args = parseArgs(process.argv.slice(2))
+
+console.log('Agent Flow\n')
+
+// Ensure hooks are configured
+ensureSetup()
+
+// Start the server
+startServer({
+  port: args.port,
+  openBrowser: args.open,
+  workspace: process.cwd(),
+  verbose: args.verbose,
+})
+```
 
 #### `app/src/server.ts:21-75`
 
-> 未找到引用文件：`app/src/server.ts`
+```typescript
+export async function startServer(options: ServerOptions) {
+  const { port, openBrowser, workspace } = options
+
+  const configDir = path.join(os.homedir(), '.agent-flow')
+  const telemetry = createTelemetryClient({
+    logDir: path.join(configDir, 'telemetry'),
+    installIdPath: path.join(configDir, 'installation-id'),
+  })
+  await telemetry.init()
+
+  const relay = await createRelay({ workspace, verbose: options.verbose, telemetry })
+
+  const server = http.createServer((req, res) => {
+    // SSE endpoint
+    if (req.url === '/events') {
+      return relay.handleSSE(req, res)
+    }
+
+    // Static files (UI)
+    if (req.method === 'GET') {
+      return serveStatic(req, res)
+    }
+
+    res.writeHead(404)
+    res.end('Not found')
+  })
+
+  server.listen(port, '127.0.0.1', () => {
+    const url = `http://127.0.0.1:${port}`
+    console.log(`Server running at ${url}`)
+    console.log('Waiting for agent events...\n')
+
+    if (openBrowser) {
+      openURL(url)
+    }
+  })
+
+  // Cleanup on exit. Idempotent — repeat signals (Ctrl+C spam, SIGTERM+SIGHUP,
+  // etc.) would otherwise emit duplicate session_end events and race the
+  // telemetry sync loop against itself.
+  let shuttingDown = false
+  function cleanup() {
+    if (shuttingDown) return
+    shuttingDown = true
+    server.close()
+    relay.dispose()
+    void telemetry.dispose().finally(() => process.exit(0))
+  }
+  process.on('SIGINT', cleanup)
+  process.on('SIGTERM', cleanup)
+  // SIGHUP fires when the controlling terminal closes (SSH session drops, tmux
+  // pane killed). Without a handler, Node's default behavior is to terminate
+  // without running cleanup — so session_end never flushes.
+  process.on('SIGHUP', cleanup)
+}
+```
 
 #### `app/package.json:1-26`
 
-> 未找到引用文件：`app/package.json`
+```json
+{
+  "name": "agent-flow-app",
+  "version": "0.8.1",
+  "description": "Real-time visualization of AI agent orchestration — standalone web app",
+  "bin": {
+    "agent-flow": "dist/app.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patoles/agent-flow"
+  },
+  "keywords": [
+    "agent",
+    "visualization",
+    "ai",
+    "llm",
+    "agent-flow"
+  ]
+}
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -619,7 +1308,7 @@ flowchart TD
 
 **安全心智**：Hook Server 与 relay 都运行在用户本机，不把原始 POST body 转发到 telemetry；这与「只观察不阻断」的产品定位一致。
 
-Sources: [scripts/telemetry.ts:1-77](../../../project-repos/exports/scripts/telemetry.ts#L1-L77), [README.md:144-157](../../../project-repos/exports/README.md#L144-L157), [app/src/server.ts:24-30](../../../project-repos/exports/app/src/server.ts#L24-L30)
+Sources: [scripts/telemetry.ts:1-77](../../../project-repos/patoles-agent-flow/scripts/telemetry.ts#L1-L77), [README.md:144-157](../../../project-repos/patoles-agent-flow/README.md#L144-L157), [app/src/server.ts:24-30](../../../project-repos/patoles-agent-flow/app/src/server.ts#L24-L30)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -628,15 +1317,116 @@ Sources: [scripts/telemetry.ts:1-77](../../../project-repos/exports/scripts/tele
 
 #### `scripts/telemetry.ts:1-77`
 
-> 未找到引用文件：`scripts/telemetry.ts`
+```typescript
+import * as fs from 'fs'
+import * as path from 'path'
+import { getOrCreateInstallId } from './telemetry/install-id'
+import { sanitizeString } from './telemetry/sanitize'
+import { syncOnce } from './telemetry/sync'
+
+/**
+ * Hardcoded telemetry endpoint + publishable key.
+ *
+ * These ship inside every published binary. No env var override, no runtime
+ * fallback. All enabled installs send events to Agent Flow's Supabase project.
+ * Forks that republish under a different name must edit these constants and
+ * rebuild.
+ *
+ * Safe to commit: publishable keys are designed to be public. Postgres RLS
+ * denies the anon role everything; the only write path is the telemetry-ingest
+ * edge function, which runs under the secret key and validates every event.
+ */
+export const TELEMETRY_ENDPOINT = 'https://dxwtgqdkyunfhbywqmrz.supabase.co'
+export const TELEMETRY_PUBLISHABLE_KEY = 'sb_publishable_AgJ_DIUH9zm8E0yHC9KsRw_WsIv4qc8'
+
+/**
+ * Progressive sync schedule. After init(), fire syncs at these offsets:
+ *   - 2s (captures session_start that the relay emits right after init)
+ *   - +2min
+ *   - +3min
+ *   - then every 5min
+ *
+ * Short sessions get flushed quickly; long sessions settle into steady cadence.
+ */
+const FIRST_SYNC_DELAY_MS = 2 * 1000
+const SYNC_SCHEDULE_MS = [2 * 60 * 1000, 3 * 60 * 1000]
+const SYNC_REPEAT_MS = 5 * 60 * 1000
+
+const FALSY_VALUES = new Set(['false', '0', 'disabled', ''])
+
+export interface TelemetryEvent {
+  event_type: 'session_start' | 'session_end' | 'error'
+  session_id: string
+  agent_flow_version: string
+  os: string
+  arch: string
+  source?: string
+  duration_s?: number
+  event_count?: number
+  error_class?: string
+  /** Comma-separated distinct model IDs observed during the session
+   *  (e.g., `"claude-opus-4-7,gpt-5"`). session_end only. */
+  models?: string
+  /** Which runtimes were being watched: `"claude"`, `"codex"`, or `"claude,codex"`.
+   *  session_end only. */
+  runtimes?: string
+}
+
+export interface TelemetryClientOptions {
+  /** Directory for events.jsonl and .cursor. Usually `~/.agent-flow/telemetry`. */
+  logDir: string
+  /** Path to the stable install UUID. Usually `~/.agent-flow/installation-id`. */
+  installIdPath: string
+  /** Override for tests. Defaults to `process.env`. */
+  env?: NodeJS.ProcessEnv
+  /** Override the endpoint for tests. Defaults to the hardcoded constant. */
+  endpoint?: string
+  /** Override the key for tests. Defaults to the hardcoded constant. */
+  apiKey?: string
+}
+
+export interface TelemetryClient {
+  /** Resolve install ID and start the sync timer when telemetry is enabled. */
+  init(): Promise<void>
+  /** Append an event to the JSONL log. No-op when disabled. */
+  emit(event: TelemetryEvent): void
+  /** Current enabled state. Re-evaluated from env on every call. */
+  isEnabled(): boolean
+  /** Stop the sync timer and do a final flush. */
+  dispose(): Promise<void>
+}
+```
 
 #### `README.md:144-157`
 
-> 未找到引用文件：`README.md`
+```markdown
+## Privacy & Telemetry
+
+Agent Flow ships **opt-out** anonymous usage telemetry, enabled by default only
+in the published `npx agent-flow-app` binary. `pnpm run dev` and the VS Code
+extension emit nothing. Only aggregate events are sent — session count,
+duration, event count, OS/arch, Agent Flow version, distinct model IDs
+observed, which runtimes were watched, and error class names. Prompts, file
+paths, tool calls, user info, and environment variables are never sent.
+
+- **Turn off:** `export AGENT_FLOW_TELEMETRY=false` or `export DO_NOT_TRACK=1`
+  (disabled installs write zero state to disk — no `~/.agent-flow/` directory)
+- **Inspect the payload:** `cat ~/.agent-flow/telemetry/events.jsonl`
+- **Full schema + exact fields:** see the v0.8.1 entry in
+  [extension/CHANGELOG.md](extension/CHANGELOG.md) or the `serialize()` function
+```
 
 #### `app/src/server.ts:24-30`
 
-> 未找到引用文件：`app/src/server.ts`
+```typescript
+  const configDir = path.join(os.homedir(), '.agent-flow')
+  const telemetry = createTelemetryClient({
+    logDir: path.join(configDir, 'telemetry'),
+    installIdPath: path.join(configDir, 'installation-id'),
+  })
+  await telemetry.init()
+
+```
 
 <!-- source-snippets:end -->
 </details>
@@ -692,7 +1482,7 @@ flowchart LR
   T1 --> B1
 ```
 
-Sources: [package.json:1-16](../../../project-repos/exports/package.json#L1-L16)
+Sources: [package.json:1-16](../../../project-repos/patoles-agent-flow/package.json#L1-L16)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -701,7 +1491,24 @@ Sources: [package.json:1-16](../../../project-repos/exports/package.json#L1-L16)
 
 #### `package.json:1-16`
 
-> 未找到引用文件：`package.json`
+```json
+{
+  "private": true,
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "dev": "NEXT_PUBLIC_DEMO=0 NEXT_PUBLIC_RELAY_PORT=3001 concurrently -n relay,web -c blue,green \"pnpm run dev:relay\" \"pnpm run dev:web\"",
+    "dev:relay": "node scripts/build-relay.js && node scripts/.dev-relay.js",
+    "dev:demo": "NEXT_PUBLIC_DEMO=1 pnpm run dev:web",
+    "dev:web": "pnpm --filter agent-flow-web run dev",
+    "dev:extension": "pnpm --filter agent-flow run watch",
+    "build:extension": "pnpm --filter agent-flow run build",
+    "build:web": "pnpm --filter agent-flow-web run build",
+    "build:webview": "pnpm --filter agent-flow-web run build:webview",
+    "build:all": "pnpm run build:webview && pnpm run build:extension",
+    "build:app": "node app/build.js",
+    "test": "node --import tsx --test \"scripts/**/*.test.ts\" \"app/src/**/*.test.ts\""
+  },
+```
 
 <!-- source-snippets:end -->
 </details>

@@ -61,7 +61,7 @@ flowchart TD
 - 关心 **Codex 侧**：→ [Codex：Rollout JSONL 解析](codex-rollout.md)
 - 深入 **UI 状态机**：→ [可视化前端与仿真状态机](visualization-ui.md)
 
-Sources: [README.md:1-17](../../../project-repos/pages/README.md#L1-L17), [extension/src/session-runtime.ts:1-48](../../../project-repos/pages/extension/src/session-runtime.ts#L1-L48), [extension/src/extension.ts:28-44](../../../project-repos/pages/extension/src/extension.ts#L28-L44)
+Sources: [README.md:1-17](../../../project-repos/patoles-agent-flow/README.md#L1-L17), [extension/src/session-runtime.ts:1-48](../../../project-repos/patoles-agent-flow/extension/src/session-runtime.ts#L1-L48), [extension/src/extension.ts:28-44](../../../project-repos/patoles-agent-flow/extension/src/extension.ts#L28-L44)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -70,15 +70,100 @@ Sources: [README.md:1-17](../../../project-repos/pages/README.md#L1-L17), [exten
 
 #### `README.md:1-17`
 
-> 未找到引用文件：`README.md`
+```markdown
+# Agent Flow
+
+Real-time visualization of Claude Code and Codex agent orchestration. Watch your agents think, branch, and coordinate as they work. [Demo video here](https://www.youtube.com/watch?v=Ud6eDrFN-TA). 
+
+![Agent Flow visualization](https://res.cloudinary.com/dxlvclh9c/image/upload/v1773924941/screenshot_e7yox3.png)
+
+## Why Agent Flow?
+
+I built Agent Flow while developing [CraftMyGame](https://craftmygame.com), a game creation platform driven by AI agents. Debugging agent behavior was painful, so we made it visual. Now we're sharing it.
+
+Claude Code is powerful, but its execution is a black box — you see the final result, not the journey. Agent Flow makes the invisible visible:
+
+- **Understand agent behavior** — See how Claude breaks down problems, which tools it reaches for, and how subagents coordinate
+- **Debug tool call chains** — When something goes wrong, trace the exact sequence of decisions and tool calls that led there
+- **See where time is spent** — Identify slow tool calls, unnecessary branching, or redundant work at a glance
+- **Learn by watching** — Build intuition for how to write better prompts by observing how Claude interprets and executes them
+
+```
 
 #### `extension/src/session-runtime.ts:1-48`
 
-> 未找到引用文件：`extension/src/session-runtime.ts`
+```typescript
+/**
+ * Runtime abstraction for agent session watchers.
+ *
+ * Each supported agent tool (Claude Code, Codex, ...) implements
+ * AgentSessionWatcher and is started via a runtime factory in extension.ts.
+ * The interface deliberately matches what the visualizer needs to render
+ * live activity: an event stream, session lifecycle, and replay on panel
+ * open. Runtime-specific concerns (hook servers, SQLite lookups, etc.)
+ * live inside each runtime's startXxxRuntime() factory, not here.
+ */
+
+import * as vscode from 'vscode'
+import type { AgentEvent, SessionInfo } from './protocol'
+import { VisualizerPanel } from './webview-provider'
+import { SESSION_ID_DISPLAY, STATUS_MESSAGE_DURATION_MS } from './constants'
+import type { TypedDisposable, TypedEvent } from './typed-event-emitter'
+
+export type AgentRuntimeMode = 'claude' | 'codex'
+
+export interface SessionLifecycleEvent {
+  type: 'started' | 'ended' | 'updated'
+  sessionId: string
+  label: string
+}
+
+/** Interface every runtime's watcher implements. Uses portable typed-event
+ *  types (not vscode.Event) so watchers can run in the relay/CLI too. */
+export interface AgentSessionWatcher extends TypedDisposable {
+  readonly onEvent: TypedEvent<AgentEvent>
+  readonly onSessionDetected: TypedEvent<string>
+  readonly onSessionLifecycle: TypedEvent<SessionLifecycleEvent>
+  start(): void
+  isActive(): boolean
+  isSessionActive(sessionId: string): boolean
+  getActiveSessions(): SessionInfo[]
+  replaySessionStart(sessionIds?: string[]): void
+}
+
+/** A running runtime: its watcher, a status line describing its connection,
+ *  and a disposer for runtime-specific resources beyond the watcher itself
+ *  (e.g. the Claude hook server and discovery file). */
+export interface AgentRuntime {
+  readonly mode: AgentRuntimeMode
+  readonly watcher: AgentSessionWatcher
+  /** Human-readable connection status for the webview. May change over time. */
+  connectionStatus(): string
+  dispose(): void
+}
+```
 
 #### `extension/src/extension.ts:28-44`
 
-> 未找到引用文件：`extension/src/extension.ts`
+```typescript
+async function startRuntimes(
+  mode: ConfiguredRuntimeMode,
+  context: vscode.ExtensionContext,
+): Promise<StartRuntimesResult> {
+  const runtimes: AgentRuntime[] = []
+  const failures: AgentRuntimeMode[] = []
+  if (mode === 'claude' || mode === 'auto') {
+    log.info('Starting Claude runtime...')
+    try { runtimes.push(await startClaudeRuntime(context)) }
+    catch (err) { log.error('Claude runtime failed to start:', err); failures.push('claude') }
+  }
+  if (mode === 'codex' || mode === 'auto') {
+    log.info('Starting Codex runtime...')
+    try { runtimes.push(startCodexRuntime(context)) }
+    catch (err) { log.error('Codex runtime failed to start:', err); failures.push('codex') }
+  }
+  return { runtimes, failures }
+```
 
 <!-- source-snippets:end -->
 </details>

@@ -28,7 +28,7 @@ flowchart LR
 
 **版本号**：`app/package.json` 当前 **0.8.1**；与 README 中遥测 schema 说明交叉引用。
 
-Sources: [app/src/app.ts:12-29](../../../project-repos/pages/app/src/app.ts#L12-L29), [app/src/server.ts:21-75](../../../project-repos/pages/app/src/server.ts#L21-L75), [app/package.json:1-26](../../../project-repos/pages/app/package.json#L1-L26)
+Sources: [app/src/app.ts:12-29](../../../project-repos/patoles-agent-flow/app/src/app.ts#L12-L29), [app/src/server.ts:21-75](../../../project-repos/patoles-agent-flow/app/src/server.ts#L21-L75), [app/package.json:1-26](../../../project-repos/patoles-agent-flow/app/package.json#L1-L26)
 
 <details class="source-snippets">
 <summary>引用源码</summary>
@@ -37,15 +37,117 @@ Sources: [app/src/app.ts:12-29](../../../project-repos/pages/app/src/app.ts#L12-
 
 #### `app/src/app.ts:12-29`
 
-> 未找到引用文件：`app/src/app.ts`
+```typescript
+import { parseArgs } from './args'
+import { ensureSetup } from '../../scripts/setup'
+import { startServer } from './server'
+
+const args = parseArgs(process.argv.slice(2))
+
+console.log('Agent Flow\n')
+
+// Ensure hooks are configured
+ensureSetup()
+
+// Start the server
+startServer({
+  port: args.port,
+  openBrowser: args.open,
+  workspace: process.cwd(),
+  verbose: args.verbose,
+})
+```
 
 #### `app/src/server.ts:21-75`
 
-> 未找到引用文件：`app/src/server.ts`
+```typescript
+export async function startServer(options: ServerOptions) {
+  const { port, openBrowser, workspace } = options
+
+  const configDir = path.join(os.homedir(), '.agent-flow')
+  const telemetry = createTelemetryClient({
+    logDir: path.join(configDir, 'telemetry'),
+    installIdPath: path.join(configDir, 'installation-id'),
+  })
+  await telemetry.init()
+
+  const relay = await createRelay({ workspace, verbose: options.verbose, telemetry })
+
+  const server = http.createServer((req, res) => {
+    // SSE endpoint
+    if (req.url === '/events') {
+      return relay.handleSSE(req, res)
+    }
+
+    // Static files (UI)
+    if (req.method === 'GET') {
+      return serveStatic(req, res)
+    }
+
+    res.writeHead(404)
+    res.end('Not found')
+  })
+
+  server.listen(port, '127.0.0.1', () => {
+    const url = `http://127.0.0.1:${port}`
+    console.log(`Server running at ${url}`)
+    console.log('Waiting for agent events...\n')
+
+    if (openBrowser) {
+      openURL(url)
+    }
+  })
+
+  // Cleanup on exit. Idempotent — repeat signals (Ctrl+C spam, SIGTERM+SIGHUP,
+  // etc.) would otherwise emit duplicate session_end events and race the
+  // telemetry sync loop against itself.
+  let shuttingDown = false
+  function cleanup() {
+    if (shuttingDown) return
+    shuttingDown = true
+    server.close()
+    relay.dispose()
+    void telemetry.dispose().finally(() => process.exit(0))
+  }
+  process.on('SIGINT', cleanup)
+  process.on('SIGTERM', cleanup)
+  // SIGHUP fires when the controlling terminal closes (SSH session drops, tmux
+  // pane killed). Without a handler, Node's default behavior is to terminate
+  // without running cleanup — so session_end never flushes.
+  process.on('SIGHUP', cleanup)
+}
+```
 
 #### `app/package.json:1-26`
 
-> 未找到引用文件：`app/package.json`
+```json
+{
+  "name": "agent-flow-app",
+  "version": "0.8.1",
+  "description": "Real-time visualization of AI agent orchestration — standalone web app",
+  "bin": {
+    "agent-flow": "dist/app.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patoles/agent-flow"
+  },
+  "keywords": [
+    "agent",
+    "visualization",
+    "ai",
+    "llm",
+    "agent-flow"
+  ]
+}
+```
 
 <!-- source-snippets:end -->
 </details>
