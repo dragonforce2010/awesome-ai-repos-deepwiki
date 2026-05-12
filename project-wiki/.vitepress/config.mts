@@ -116,8 +116,8 @@ const base =
 
 export default withMermaid(defineConfig({
   base,
-  title: "DeepWiki",
-  description: "Unified Documentation Workspace",
+  title: "Awesome AI Repos · DeepWiki",
+  description: "High-signal Chinese technical wikis for curated open-source AI projects",
   // Exclude heavy export files and skill files that contain raw code snippets
   // which break the Vue template compiler
   srcExclude: [
@@ -148,7 +148,7 @@ export default withMermaid(defineConfig({
     ],
     sidebar,
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/dragonforce2010/deepwiki' }
+      { icon: 'github', link: 'https://github.com/dragonforce2010/awesome-ai-repos-deepwiki' }
     ],
     search: {
       provider: 'local'

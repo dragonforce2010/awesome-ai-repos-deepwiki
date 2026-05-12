@@ -1,5 +1,5 @@
 # Builds VitePress under project-wiki/ and publishes to GitHub Pages (project site).
-# Live URL: https://dragonforce2010.github.io/deepwiki/
+# Live URL: https://dragonforce2010.github.io/awesome-ai-repos-deepwiki/
 
 name: Deploy to GitHub Pages
 
@@ -31,7 +31,7 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Build site
         env:
-          VITEPRESS_BASE: /deepwiki/
+          VITEPRESS_BASE: /awesome-ai-repos-deepwiki/
         run: pnpm run build
       - uses: actions/upload-pages-artifact@v3
         with:

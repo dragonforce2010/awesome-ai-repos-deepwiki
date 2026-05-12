@@ -2,21 +2,21 @@
 layout: home
 
 hero:
-  name: "DeepWiki"
-  text: "Unified Workspace"
-  tagline: "Explore all your AI agent and project wikis in one beautiful place."
+  name: "Awesome AI Repos"
+  text: "DeepWiki"
+  tagline: "高信噪中文技术维基 — 精选开源 AI / Agent 项目，源码可溯源，面向全球华语开发者与爱好者。"
   actions:
     - theme: brand
-      text: Browse Projects
-      link: /open-design/pages/overview
+      text: 浏览全部项目
+      link: /patoles-agent-flow/pages/overview
 
 features:
-  - title: 10+ Projects
-    details: Automatically indexed from wiki-structure.json files across your workspace.
-  - title: Local First
-    details: Lightning fast rendering, built natively for local multi-repo documentation.
-  - title: Mermaid Powered
-    details: Rich architecture and flow diagrams rendered seamlessly on the client side.
+  - title: 策展与深度
+    details: 不止 README，聚焦架构决策、主流程与扩展点；每份 wiki 尽量可追溯至具体源文件与提交。
+  - title: 一体化索引
+    details: 通过各子目录 wiki-structure.json 自动生成导航与侧栏，统一检索入口。
+  - title: 图文并茂
+    details: 广泛使用 Mermaid 表达架构与状态，中文讲解与图示并列，便于自学与内部分享。
 ---
 
 ## Available Projects
