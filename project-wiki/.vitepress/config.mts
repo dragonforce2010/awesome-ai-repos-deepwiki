@@ -106,7 +106,16 @@ try {
   console.error("Error generating sidebar:", e);
 }
 
+const rawBase = process.env.VITEPRESS_BASE ?? "";
+const base =
+  rawBase.length > 0
+    ? rawBase.endsWith("/")
+      ? rawBase
+      : `${rawBase}/`
+    : "/";
+
 export default withMermaid(defineConfig({
+  base,
   title: "DeepWiki",
   description: "Unified Documentation Workspace",
   // Exclude heavy export files and skill files that contain raw code snippets
@@ -139,7 +148,7 @@ export default withMermaid(defineConfig({
     ],
     sidebar,
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/nexu-io/open-design' }
+      { icon: 'github', link: 'https://github.com/dragonforce2010/deepwiki' }
     ],
     search: {
       provider: 'local'
