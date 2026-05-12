@@ -21,12 +21,24 @@ features:
 
 ## Available Projects
 
-<script setup>
+<script setup lang="ts">
+import { withBase } from 'vitepress'
 import { data as wikis } from './wikis.data.ts'
+const resolveWikiCardHref = (firstPageLink: string | undefined, wikiId: string): string => {
+  const raw: string =
+    firstPageLink && firstPageLink.length > 0 ? firstPageLink : `/${wikiId}/pages/overview`
+  const withHtml: string = raw.endsWith('.html') ? raw : `${raw}.html`
+  return withBase(withHtml)
+}
 </script>
 
 <div class="wiki-grid">
-  <a v-for="wiki in wikis" :key="wiki.id" :href="wiki.firstPageLink || `/${wiki.id}/pages/overview`" class="wiki-card">
+  <a
+    v-for="wiki in wikis"
+    :key="wiki.id"
+    :href="resolveWikiCardHref(wiki.firstPageLink, wiki.id)"
+    class="wiki-card"
+  >
     <h3>{{ wiki.projectName }}</h3>
     <p>{{ wiki.description || 'No description available' }}</p>
     <div class="meta">
