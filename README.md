@@ -43,14 +43,20 @@ This repository hosts a **static documentation hub** for curated open-source AI-
 
 **前置**：Node 20+、[pnpm](https://pnpm.io/) 10.x（与 `package.json` 中 `packageManager` 一致）。
 
+本地开发默认使用站点根路径 **`/`**（与线上一致的子路径由 `VITEPRESS_BASE` 控制）。`pnpm dev` 已在脚本里**清空 `VITEPRESS_BASE`**，避免你 shell 里仍导出旧的 `/deepwiki/` 导致静态资源与路由全部跑偏。
+
 ```bash
 pnpm install
-pnpm run dev
+pnpm dev
 ```
 
-默认开发服务器以 **`base: /`** 运行，便于本地预览。
+若你需要在本地**模拟 GitHub Pages 子路径**（与线上完全一致），使用：
 
-与 **GitHub Pages** 一致的子路径（仓库名为 `awesome-ai-repos-deepwiki` 时）：
+```bash
+pnpm dev:public-base
+```
+
+与 **GitHub Pages** 一致的仅构建/预览（仓库名为 `awesome-ai-repos-deepwiki` 时）：
 
 ```bash
 VITEPRESS_BASE=/awesome-ai-repos-deepwiki/ pnpm run build

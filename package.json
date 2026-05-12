@@ -1,18 +1,27 @@
 {
-  "name": "deepwiki",
+  "name": "awesome-ai-repos-deepwiki",
   "version": "1.0.0",
-  "description": "",
+  "description": "High-signal Chinese DeepWiki hub for curated AI open-source projects (VitePress + GitHub Pages).",
   "main": "index.js",
+  "homepage": "https://dragonforce2010.github.io/awesome-ai-repos-deepwiki/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dragonforce2010/awesome-ai-repos-deepwiki.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dragonforce2010/awesome-ai-repos-deepwiki/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vitepress dev project-wiki --port 4000",
+    "dev": "VITEPRESS_BASE= vitepress dev project-wiki --port 4000",
+    "dev:public-base": "VITEPRESS_BASE=/awesome-ai-repos-deepwiki/ vitepress dev project-wiki --port 4000",
     "build": "vitepress build project-wiki",
     "serve": "vitepress serve project-wiki",
     "fix:source-links": "node scripts/fix-project-repos-links.mjs"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@10.30.0",
   "devDependencies": {
     "@braintree/sanitize-url": "^7.1.2",

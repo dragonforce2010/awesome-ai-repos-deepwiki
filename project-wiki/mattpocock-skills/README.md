@@ -1,6 +1,6 @@
 # mattpocock-skills DeepWiki
 
-**站点路径**：`https://deepwiki-dragonforce.netlify.app/mattpocock-skills/pages/overview`（本目录在 `project-wiki` 下的名为 `mattpocock-skills`，与上游 Git 仓库短名 `skills` 区分，避免多项目并列时歧义。）
+**站点路径**：`https://dragonforce2010.github.io/awesome-ai-repos-deepwiki/mattpocock-skills/pages/overview`（本目录在 `project-wiki` 下的名为 `mattpocock-skills`，与上游 Git 仓库短名 `skills` 区分，避免多项目并列时歧义。）
 
 > **这是 Matt Pocock 维护的一套「面向真实工程的 Agent Skills」：通过对齐会话、共享领域语言、triage 状态机与竖切 issue，补上代理开发里最常见的四类失效模式——而不是再包装一套剥夺控制权的巨无霸流程。**
 
