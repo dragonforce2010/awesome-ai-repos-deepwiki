@@ -1,0 +1,5732 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/cloakbrowser",
+    "remote": "https://github.com/CloakHQ/cloakbrowser.git",
+    "branch": "main",
+    "commit": "6f4f92e7c762507056ed053078fb7e4854448c4b"
+  },
+  "file_count": 101,
+  "skipped_count": 15,
+  "files": [
+    {
+      "path": ".github/FUNDING.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/attest-release.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/publish.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 134,
+      "symbols": []
+    },
+    {
+      "path": "BINARY-LICENSE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 114,
+      "symbols": []
+    },
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 344,
+      "symbols": []
+    },
+    {
+      "path": "Dockerfile",
+      "language": "dockerfile",
+      "kind": "automation",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1199,
+      "symbols": []
+    },
+    {
+      "path": "bin/docker-entrypoint.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "cloakbrowser/__init__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "__getattr__",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/__main__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 111,
+      "symbols": [
+        {
+          "name": "_setup_logging",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "cmd_install",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "cmd_info",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "cmd_update",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "cmd_clear_cache",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/_version.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "cloakbrowser/browser.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 1079,
+      "symbols": [
+        {
+          "name": "_resolve_timezone",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "_ProxySettingsRequired",
+          "type": "class",
+          "line": 43
+        },
+        {
+          "name": "ProxySettings",
+          "type": "class",
+          "line": 47
+        },
+        {
+          "name": "launch",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "_close_with_cleanup",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "launch_persistent_context",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "_close_with_cleanup",
+          "type": "function",
+          "line": 346
+        },
+        {
+          "name": "launch_context",
+          "type": "function",
+          "line": 490
+        },
+        {
+          "name": "_close_context_with_cleanup",
+          "type": "function",
+          "line": 571
+        },
+        {
+          "name": "_resolve_backend",
+          "type": "function",
+          "line": 718
+        },
+        {
+          "name": "_import_sync_playwright",
+          "type": "function",
+          "line": 726
+        },
+        {
+          "name": "_import_async_playwright",
+          "type": "function",
+          "line": 740
+        },
+        {
+          "name": "_ensure_proxy_scheme",
+          "type": "function",
+          "line": 759
+        },
+        {
+          "name": "_assemble_socks_url",
+          "type": "function",
+          "line": 764
+        },
+        {
+          "name": "_reconstruct_socks_url",
+          "type": "function",
+          "line": 795
+        },
+        {
+          "name": "_normalize_socks_string_url",
+          "type": "function",
+          "line": 812
+        },
+        {
+          "name": "_extract_proxy_url",
+          "type": "function",
+          "line": 862
+        },
+        {
+          "name": "maybe_resolve_geoip",
+          "type": "function",
+          "line": 880
+        },
+        {
+          "name": "_resolve_webrtc_args",
+          "type": "function",
+          "line": 913
+        },
+        {
+          "name": "build_args",
+          "type": "function",
+          "line": 954
+        },
+        {
+          "name": "_parse_proxy_url",
+          "type": "function",
+          "line": 1006
+        },
+        {
+          "name": "_is_socks_proxy",
+          "type": "function",
+          "line": 1041
+        },
+        {
+          "name": "_resolve_proxy_config",
+          "type": "function",
+          "line": 1049
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/config.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 238,
+      "symbols": [
+        {
+          "name": "get_default_stealth_args",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "get_chromium_version",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "get_platform_tag",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "get_cache_dir",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "get_binary_dir",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "get_binary_path",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "check_platform_available",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "get_effective_version",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "_version_tuple",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "_version_newer",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "get_archive_ext",
+          "type": "function",
+          "line": 207
+        },
+        {
+          "name": "get_archive_name",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "get_download_url",
+          "type": "function",
+          "line": 218
+        },
+        {
+          "name": "get_fallback_download_url",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "get_local_binary_override",
+          "type": "function",
+          "line": 233
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/download.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 578,
+      "symbols": [
+        {
+          "name": "_show_welcome",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "ensure_binary",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "_download_and_extract",
+          "type": "function",
+          "line": 133
+        },
+        {
+          "name": "_verify_download_checksum",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "_fetch_checksums",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "_parse_checksums",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "_verify_checksum",
+          "type": "function",
+          "line": 228
+        },
+        {
+          "name": "_download_file",
+          "type": "function",
+          "line": 246
+        },
+        {
+          "name": "_extract_archive",
+          "type": "function",
+          "line": 277
+        },
+        {
+          "name": "_extract_tar",
+          "type": "function",
+          "line": 313
+        },
+        {
+          "name": "_extract_zip",
+          "type": "function",
+          "line": 333
+        },
+        {
+          "name": "_flatten_single_subdir",
+          "type": "function",
+          "line": 345
+        },
+        {
+          "name": "_is_executable",
+          "type": "function",
+          "line": 366
+        },
+        {
+          "name": "_make_executable",
+          "type": "function",
+          "line": 371
+        },
+        {
+          "name": "_remove_quarantine",
+          "type": "function",
+          "line": 379
+        },
+        {
+          "name": "clear_cache",
+          "type": "function",
+          "line": 392
+        },
+        {
+          "name": "binary_info",
+          "type": "function",
+          "line": 403
+        },
+        {
+          "name": "check_for_update",
+          "type": "function",
+          "line": 422
+        },
+        {
+          "name": "_should_check_for_update",
+          "type": "function",
+          "line": 446
+        },
+        {
+          "name": "_get_latest_chromium_version",
+          "type": "function",
+          "line": 466
+        },
+        {
+          "name": "_write_version_marker",
+          "type": "function",
+          "line": 490
+        },
+        {
+          "name": "_check_wrapper_update",
+          "type": "function",
+          "line": 504
+        },
+        {
+          "name": "_check_and_download_update",
+          "type": "function",
+          "line": 532
+        },
+        {
+          "name": "_maybe_trigger_update_check",
+          "type": "function",
+          "line": 567
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/geoip.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 315,
+      "symbols": [
+        {
+          "name": "resolve_proxy_geo",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "resolve_proxy_geo_with_ip",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "_resolve_proxy_ip",
+          "type": "function",
+          "line": 117
+        },
+        {
+          "name": "_is_private_ip",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "_get_geoip_timeout_seconds",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "_deadline_from_timeout",
+          "type": "function",
+          "line": 183
+        },
+        {
+          "name": "_remaining_seconds",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "_deadline_expired",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "resolve_proxy_exit_ip",
+          "type": "function",
+          "line": 199
+        },
+        {
+          "name": "_resolve_exit_ip",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "_get_geoip_dir",
+          "type": "function",
+          "line": 244
+        },
+        {
+          "name": "_ensure_geoip_db",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "_download_geoip_db",
+          "type": "function",
+          "line": 266
+        },
+        {
+          "name": "_maybe_trigger_update",
+          "type": "function",
+          "line": 300
+        },
+        {
+          "name": "_bg",
+          "type": "function",
+          "line": 309
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/human/__init__.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 2279,
+      "symbols": [
+        {
+          "name": "_SyncIsolatedWorld",
+          "type": "class",
+          "line": 47
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "_ensure_cdp",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "_create_world",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "evaluate",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "invalidate",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "get_cdp_session",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "_AsyncIsolatedWorld",
+          "type": "class",
+          "line": 117
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "invalidate",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "_CursorState",
+          "type": "class",
+          "line": 189
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 192
+        },
+        {
+          "name": "_is_input_element",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "_is_selector_focused",
+          "type": "function",
+          "line": 271
+        },
+        {
+          "name": "_patch_locator_class_sync",
+          "type": "function",
+          "line": 336
+        },
+        {
+          "name": "_get_selector",
+          "type": "function",
+          "line": 361
+        },
+        {
+          "name": "_is_humanized",
+          "type": "function",
+          "line": 364
+        },
+        {
+          "name": "_get_cfg",
+          "type": "function",
+          "line": 367
+        },
+        {
+          "name": "_forward_kwargs",
+          "type": "function",
+          "line": 374
+        },
+        {
+          "name": "_humanized_fill",
+          "type": "function",
+          "line": 382
+        },
+        {
+          "name": "_humanized_click",
+          "type": "function",
+          "line": 388
+        },
+        {
+          "name": "_humanized_type",
+          "type": "function",
+          "line": 394
+        },
+        {
+          "name": "_humanized_dblclick",
+          "type": "function",
+          "line": 400
+        },
+        {
+          "name": "_humanized_hover",
+          "type": "function",
+          "line": 406
+        },
+        {
+          "name": "_humanized_scroll_into_view_if_needed",
+          "type": "function",
+          "line": 412
+        },
+        {
+          "name": "_humanized_check",
+          "type": "function",
+          "line": 440
+        },
+        {
+          "name": "_humanized_uncheck",
+          "type": "function",
+          "line": 452
+        },
+        {
+          "name": "_humanized_set_checked",
+          "type": "function",
+          "line": 464
+        },
+        {
+          "name": "_humanized_select_option",
+          "type": "function",
+          "line": 472
+        },
+        {
+          "name": "_humanized_press",
+          "type": "function",
+          "line": 481
+        },
+        {
+          "name": "_humanized_press_sequentially",
+          "type": "function",
+          "line": 491
+        },
+        {
+          "name": "_humanized_tap",
+          "type": "function",
+          "line": 501
+        },
+        {
+          "name": "_humanized_drag_to",
+          "type": "function",
+          "line": 507
+        },
+        {
+          "name": "_humanized_clear",
+          "type": "function",
+          "line": 530
+        },
+        {
+          "name": "_patch_locator_class_async",
+          "type": "function",
+          "line": 567
+        },
+        {
+          "name": "_get_selector",
+          "type": "function",
+          "line": 592
+        },
+        {
+          "name": "_is_humanized",
+          "type": "function",
+          "line": 595
+        },
+        {
+          "name": "_get_cfg",
+          "type": "function",
+          "line": 598
+        },
+        {
+          "name": "_forward_kwargs",
+          "type": "function",
+          "line": 601
+        },
+        {
+          "name": "patch_page",
+          "type": "function",
+          "line": 802
+        },
+        {
+          "name": "_ensure_cursor_init",
+          "type": "function",
+          "line": 854
+        },
+        {
+          "name": "_human_goto",
+          "type": "function",
+          "line": 861
+        },
+        {
+          "name": "_human_click",
+          "type": "function",
+          "line": 868
+        },
+        {
+          "name": "_human_dblclick",
+          "type": "function",
+          "line": 886
+        },
+        {
+          "name": "_human_hover",
+          "type": "function",
+          "line": 906
+        },
+        {
+          "name": "_human_type",
+          "type": "function",
+          "line": 922
+        },
+        {
+          "name": "_human_fill",
+          "type": "function",
+          "line": 931
+        },
+        {
+          "name": "_human_check",
+          "type": "function",
+          "line": 942
+        },
+        {
+          "name": "_human_uncheck",
+          "type": "function",
+          "line": 950
+        },
+        {
+          "name": "_human_select_option",
+          "type": "function",
+          "line": 958
+        },
+        {
+          "name": "_human_press",
+          "type": "function",
+          "line": 963
+        },
+        {
+          "name": "_human_mouse_move",
+          "type": "function",
+          "line": 969
+        },
+        {
+          "name": "_human_mouse_click",
+          "type": "function",
+          "line": 975
+        },
+        {
+          "name": "_human_keyboard_type",
+          "type": "function",
+          "line": 982
+        },
+        {
+          "name": "_is_input_element_handle_sync",
+          "type": "function",
+          "line": 1021
+        },
+        {
+          "name": "_patch_single_element_handle_sync",
+          "type": "function",
+          "line": 1035
+        },
+        {
+          "name": "_patched_qs",
+          "type": "function",
+          "line": 1065
+        },
+        {
+          "name": "_patched_qsa",
+          "type": "function",
+          "line": 1073
+        },
+        {
+          "name": "_patched_wfs",
+          "type": "function",
+          "line": 1081
+        },
+        {
+          "name": "_move_to_element",
+          "type": "function",
+          "line": 1097
+        },
+        {
+          "name": "_human_el_click",
+          "type": "function",
+          "line": 1133
+        },
+        {
+          "name": "_human_el_dblclick",
+          "type": "function",
+          "line": 1141
+        },
+        {
+          "name": "_human_el_hover",
+          "type": "function",
+          "line": 1151
+        },
+        {
+          "name": "_human_el_type",
+          "type": "function",
+          "line": 1159
+        },
+        {
+          "name": "_human_el_fill",
+          "type": "function",
+          "line": 1169
+        },
+        {
+          "name": "_human_el_scroll_into_view_if_needed",
+          "type": "function",
+          "line": 1187
+        },
+        {
+          "name": "_human_el_press",
+          "type": "function",
+          "line": 1210
+        },
+        {
+          "name": "_human_el_select_option",
+          "type": "function",
+          "line": 1217
+        },
+        {
+          "name": "_human_el_check",
+          "type": "function",
+          "line": 1226
+        },
+        {
+          "name": "_human_el_uncheck",
+          "type": "function",
+          "line": 1238
+        },
+        {
+          "name": "_human_el_set_checked",
+          "type": "function",
+          "line": 1250
+        },
+        {
+          "name": "_human_el_tap",
+          "type": "function",
+          "line": 1264
+        },
+        {
+          "name": "_human_el_focus",
+          "type": "function",
+          "line": 1274
+        },
+        {
+          "name": "_patch_page_element_handles_sync",
+          "type": "function",
+          "line": 1295
+        },
+        {
+          "name": "_patched_qs",
+          "type": "function",
+          "line": 1305
+        },
+        {
+          "name": "_patched_qsa",
+          "type": "function",
+          "line": 1313
+        },
+        {
+          "name": "_patched_wfs",
+          "type": "function",
+          "line": 1321
+        },
+        {
+          "name": "_patch_frames_sync",
+          "type": "function",
+          "line": 1334
+        },
+        {
+          "name": "_frame_aware_goto",
+          "type": "function",
+          "line": 1346
+        },
+        {
+          "name": "_patch_single_frame_sync",
+          "type": "function",
+          "line": 1363
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/human/config.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 257,
+      "symbols": [
+        {
+          "name": "HumanConfigOverrides",
+          "type": "class",
+          "line": 23
+        },
+        {
+          "name": "HumanConfig",
+          "type": "class",
+          "line": 72
+        },
+        {
+          "name": "_careful_config",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "resolve_config",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "merge_config",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "rand",
+          "type": "function",
+          "line": 227
+        },
+        {
+          "name": "rand_int",
+          "type": "function",
+          "line": 232
+        },
+        {
+          "name": "rand_range",
+          "type": "function",
+          "line": 237
+        },
+        {
+          "name": "rand_int_range",
+          "type": "function",
+          "line": 242
+        },
+        {
+          "name": "sleep_ms",
+          "type": "function",
+          "line": 247
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/human/keyboard.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 189,
+      "symbols": [
+        {
+          "name": "RawKeyboard",
+          "type": "class",
+          "line": 16
+        },
+        {
+          "name": "down",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "up",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "type",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "insert_text",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "_get_nearby_key",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "human_type",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "_type_normal_char",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "_type_shifted_char",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "_type_shift_symbol",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "_inter_char_delay",
+          "type": "function",
+          "line": 184
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/human/keyboard_async.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 150,
+      "symbols": [
+        {
+          "name": "AsyncRawKeyboard",
+          "type": "class",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/human/mouse.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 132,
+      "symbols": [
+        {
+          "name": "RawMouse",
+          "type": "class",
+          "line": 12
+        },
+        {
+          "name": "move",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "down",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "up",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "wheel",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "Point",
+          "type": "class",
+          "line": 19
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "_ease_in_out",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "_bezier",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "_random_control_points",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "human_move",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "click_target",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "human_click",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "human_idle",
+          "type": "function",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/human/mouse_async.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 87,
+      "symbols": [
+        {
+          "name": "AsyncRawMouse",
+          "type": "class",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/human/scroll.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 163,
+      "symbols": [
+        {
+          "name": "_is_in_viewport",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "_get_element_box",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "_smooth_wheel",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "human_scroll_into_view",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "scroll_to_element",
+          "type": "function",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "path": "cloakbrowser/human/scroll_async.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 159,
+      "symbols": []
+    },
+    {
+      "path": "examples/basic.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "examples/fingerprint_scan_test.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 229,
+      "symbols": [
+        {
+          "name": "test_fingerprint_scan",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "test_creepjs",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "path": "examples/integrations/agent_browser.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/aws_lambda/Dockerfile",
+      "language": "dockerfile",
+      "kind": "automation",
+      "lines": 79,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/aws_lambda/INSTRUCTIONS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 194,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/aws_lambda/lambda-entrypoint.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/aws_lambda/lambda_handler.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 355,
+      "symbols": [
+        {
+          "name": "_validate_url",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "_diag_snapshot",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "handler",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "_build_launch_kwargs",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "_classify_error",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "_raise_with_history",
+          "type": "function",
+          "line": 306
+        }
+      ]
+    },
+    {
+      "path": "examples/integrations/browser_use_example.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/crawl4ai_example.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/crawlee_example.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 72,
+      "symbols": [
+        {
+          "name": "CloakBrowserPlugin",
+          "type": "class",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "examples/integrations/langchain_loader.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/scrapling_example.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/selenium_example.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "examples/integrations/undetected_chromedriver.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "examples/persistent_context.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "examples/recaptcha_score.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "examples/stealth_test.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 323,
+      "symbols": [
+        {
+          "name": "test_bot_sannysoft",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "test_bot_incolumitas",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "test_browserscan",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "test_deviceandbrowserinfo",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "test_fingerprintjs",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "test_recaptcha",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 221
+        }
+      ]
+    },
+    {
+      "path": "js/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 287,
+      "symbols": []
+    },
+    {
+      "path": "js/examples/basic-playwright.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "js/examples/basic-puppeteer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "js/examples/persistent-context.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "js/examples/stagehand.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "js/examples/stealth-test.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 280,
+      "symbols": [
+        {
+          "name": "TestResult",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "testSannysoft",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "testIncolumitas",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "testBrowserScan",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "testDeviceAndBrowserInfo",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "testFingerprintJS",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "testRecaptcha",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "status",
+          "type": "function",
+          "line": 239
+        }
+      ]
+    },
+    {
+      "path": "js/package-lock.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 2989,
+      "symbols": []
+    },
+    {
+      "path": "js/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 97,
+      "symbols": []
+    },
+    {
+      "path": "js/src/args.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 59,
+      "symbols": [
+        {
+          "name": "buildArgs",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "js/src/cli.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 97,
+      "symbols": [
+        {
+          "name": "cmdInstall",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "cmdInfo",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "cmdUpdate",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "cmdClearCache",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "path": "js/src/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 226,
+      "symbols": [
+        {
+          "name": "getChromiumVersion",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "getPlatformTag",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "getCacheDir",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "getBinaryDir",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "getBinaryPath",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "checkPlatformAvailable",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "getArchiveExt",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "getArchiveName",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "getDownloadUrl",
+          "type": "function",
+          "line": 138
+        },
+        {
+          "name": "getFallbackDownloadUrl",
+          "type": "function",
+          "line": 143
+        },
+        {
+          "name": "getEffectiveVersion",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "parseVersion",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "versionNewer",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "getLocalBinaryOverride",
+          "type": "function",
+          "line": 188
+        },
+        {
+          "name": "getDefaultStealthArgs",
+          "type": "function",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "path": "js/src/download.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 612,
+      "symbols": [
+        {
+          "name": "ensureBinary",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "clearCache",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "binaryInfo",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "checkForUpdate",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "showWelcome",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "downloadAndExtract",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "verifyDownloadChecksum",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "fetchChecksums",
+          "type": "function",
+          "line": 232
+        },
+        {
+          "name": "parseChecksums",
+          "type": "function",
+          "line": 258
+        },
+        {
+          "name": "verifyChecksum",
+          "type": "function",
+          "line": 271
+        },
+        {
+          "name": "downloadFile",
+          "type": "function",
+          "line": 290
+        },
+        {
+          "name": "extractArchive",
+          "type": "function",
+          "line": 366
+        },
+        {
+          "name": "extractTar",
+          "type": "function",
+          "line": 404
+        },
+        {
+          "name": "extractZip",
+          "type": "function",
+          "line": 421
+        },
+        {
+          "name": "flattenSingleSubdir",
+          "type": "function",
+          "line": 442
+        },
+        {
+          "name": "removeQuarantine",
+          "type": "function",
+          "line": 462
+        },
+        {
+          "name": "isExecutable",
+          "type": "function",
+          "line": 470
+        },
+        {
+          "name": "shouldCheckForUpdate",
+          "type": "function",
+          "line": 483
+        },
+        {
+          "name": "getLatestChromiumVersion",
+          "type": "function",
+          "line": 500
+        },
+        {
+          "name": "releases",
+          "type": "function",
+          "line": 506
+        },
+        {
+          "name": "writeVersionMarker",
+          "type": "function",
+          "line": 528
+        },
+        {
+          "name": "resetWrapperUpdateChecked",
+          "type": "function",
+          "line": 540
+        },
+        {
+          "name": "checkWrapperUpdate",
+          "type": "function",
+          "line": 545
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 555
+        },
+        {
+          "name": "checkAndDownloadUpdate",
+          "type": "function",
+          "line": 567
+        },
+        {
+          "name": "maybeTriggerUpdateCheck",
+          "type": "function",
+          "line": 603
+        }
+      ]
+    },
+    {
+      "path": "js/src/geoip.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 424,
+      "symbols": [
+        {
+          "name": "GeoResult",
+          "type": "interface",
+          "line": 45
+        },
+        {
+          "name": "resolveProxyGeo",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "getGeoipTimeoutMs",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "deadlineFromTimeout",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "remainingMs",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "deadlineExpired",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "resolveProxyIp",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "isPrivateIp",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "resolveExitIp",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "getGeoipDir",
+          "type": "function",
+          "line": 276
+        },
+        {
+          "name": "ensureGeoipDb",
+          "type": "function",
+          "line": 280
+        },
+        {
+          "name": "downloadGeoipDb",
+          "type": "function",
+          "line": 297
+        },
+        {
+          "name": "maybeTriggerUpdate",
+          "type": "function",
+          "line": 333
+        },
+        {
+          "name": "extractProxyUrl",
+          "type": "function",
+          "line": 349
+        },
+        {
+          "name": "maybeResolveGeoip",
+          "type": "function",
+          "line": 364
+        },
+        {
+          "name": "resolveWebrtcArgs",
+          "type": "function",
+          "line": 392
+        }
+      ]
+    },
+    {
+      "path": "js/src/human-puppeteer/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 999,
+      "symbols": [
+        {
+          "name": "StealthEval",
+          "type": "class",
+          "line": 67
+        },
+        {
+          "name": "frameId",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "ctxId",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "CursorState",
+          "type": "class",
+          "line": 146
+        },
+        {
+          "name": "isInputElement",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "isSelectorFocused",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "isInputElementHandle",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "remoteObject",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "tag",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "patchPage",
+          "type": "function",
+          "line": 256
+        },
+        {
+          "name": "ensureCdp",
+          "type": "function",
+          "line": 287
+        },
+        {
+          "name": "ensureCursorInit",
+          "type": "function",
+          "line": 312
+        },
+        {
+          "name": "humanGoto",
+          "type": "function",
+          "line": 322
+        },
+        {
+          "name": "humanClickFn",
+          "type": "function",
+          "line": 334
+        },
+        {
+          "name": "humanHoverFn",
+          "type": "function",
+          "line": 367
+        },
+        {
+          "name": "humanTypeFn",
+          "type": "function",
+          "line": 383
+        },
+        {
+          "name": "humanSelectFn",
+          "type": "function",
+          "line": 395
+        },
+        {
+          "name": "humanFocusFn",
+          "type": "function",
+          "line": 402
+        },
+        {
+          "name": "humanTapFn",
+          "type": "function",
+          "line": 409
+        },
+        {
+          "name": "patchElementHandle",
+          "type": "function",
+          "line": 543
+        },
+        {
+          "name": "patchSingleElementHandle",
+          "type": "function",
+          "line": 581
+        },
+        {
+          "name": "origElPress",
+          "type": "function",
+          "line": 597
+        },
+        {
+          "name": "origElTap",
+          "type": "function",
+          "line": 598
+        },
+        {
+          "name": "origElFocus",
+          "type": "function",
+          "line": 599
+        },
+        {
+          "name": "origElDragAndDrop",
+          "type": "function",
+          "line": 600
+        },
+        {
+          "name": "origElSelect",
+          "type": "function",
+          "line": 601
+        },
+        {
+          "name": "origElDrop",
+          "type": "function",
+          "line": 602
+        },
+        {
+          "name": "origElScrollIntoView",
+          "type": "function",
+          "line": 605
+        },
+        {
+          "name": "moveToElement",
+          "type": "function",
+          "line": 640
+        },
+        {
+          "name": "patchFrames",
+          "type": "function",
+          "line": 839
+        },
+        {
+          "name": "patchSingleFrame",
+          "type": "function",
+          "line": 853
+        },
+        {
+          "name": "patchBrowser",
+          "type": "function",
+          "line": 947
+        },
+        {
+          "name": "origCreateContext",
+          "type": "function",
+          "line": 969
+        }
+      ]
+    },
+    {
+      "path": "js/src/human-puppeteer/keyboard.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 187,
+      "symbols": [
+        {
+          "name": "isAscii",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "getNearbyKey",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "isUpperCase",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "humanType",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "typeNormalChar",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "typeShiftedChar",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "typeShiftSymbol",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "interCharDelay",
+          "type": "function",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "path": "js/src/human-puppeteer/scroll.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 203,
+      "symbols": [
+        {
+          "name": "ElementBounds",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "isInViewport",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "smoothWheel",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "getElementBox",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "humanScrollIntoView",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "avgDelta",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "scrollToElement",
+          "type": "function",
+          "line": 189
+        }
+      ]
+    },
+    {
+      "path": "js/src/human/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 253,
+      "symbols": [
+        {
+          "name": "HumanConfig",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "HumanPreset",
+          "type": "type",
+          "line": 71
+        },
+        {
+          "name": "HumanActionOptions",
+          "type": "type",
+          "line": 73
+        },
+        {
+          "name": "resolveConfig",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "mergeConfig",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "rand",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "randInt",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "randRange",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "randIntRange",
+          "type": "function",
+          "line": 246
+        },
+        {
+          "name": "sleep",
+          "type": "function",
+          "line": 251
+        }
+      ]
+    },
+    {
+      "path": "js/src/human/elementhandle.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 487,
+      "symbols": [
+        {
+          "name": "isInputElementHandle",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "impl",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "guid",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "CursorState",
+          "type": "interface",
+          "line": 69
+        },
+        {
+          "name": "patchSingleElementHandle",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "origElSetChecked",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "origElScrollIntoViewIfNeeded",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "moveToElement",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "ensureCursorInit",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "ensureCursorInit",
+          "type": "function",
+          "line": 369
+        },
+        {
+          "name": "patchPageElementHandles",
+          "type": "function",
+          "line": 391
+        },
+        {
+          "name": "patchFrameElementHandles",
+          "type": "function",
+          "line": 442
+        }
+      ]
+    },
+    {
+      "path": "js/src/human/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 816,
+      "symbols": [
+        {
+          "name": "StealthEval",
+          "type": "class",
+          "line": 53
+        },
+        {
+          "name": "CursorState",
+          "type": "class",
+          "line": 144
+        },
+        {
+          "name": "isInputElement",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "isSelectorFocused",
+          "type": "function",
+          "line": 196
+        },
+        {
+          "name": "patchPage",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "ensureCdp",
+          "type": "function",
+          "line": 265
+        },
+        {
+          "name": "ensureCursorInit",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "humanGoto",
+          "type": "function",
+          "line": 298
+        },
+        {
+          "name": "humanClickFn",
+          "type": "function",
+          "line": 310
+        },
+        {
+          "name": "humanDblclickFn",
+          "type": "function",
+          "line": 328
+        },
+        {
+          "name": "humanHoverFn",
+          "type": "function",
+          "line": 349
+        },
+        {
+          "name": "humanTypeFn",
+          "type": "function",
+          "line": 365
+        },
+        {
+          "name": "humanFillFn",
+          "type": "function",
+          "line": 375
+        },
+        {
+          "name": "humanClearFn",
+          "type": "function",
+          "line": 389
+        },
+        {
+          "name": "humanCheckFn",
+          "type": "function",
+          "line": 400
+        },
+        {
+          "name": "humanUncheckFn",
+          "type": "function",
+          "line": 412
+        },
+        {
+          "name": "humanSelectOptionFn",
+          "type": "function",
+          "line": 424
+        },
+        {
+          "name": "humanPressFn",
+          "type": "function",
+          "line": 431
+        },
+        {
+          "name": "humanPressSequentiallyFn",
+          "type": "function",
+          "line": 440
+        },
+        {
+          "name": "humanTapFn",
+          "type": "function",
+          "line": 451
+        },
+        {
+          "name": "patchFrames",
+          "type": "function",
+          "line": 535
+        },
+        {
+          "name": "firstFrameLocator",
+          "type": "function",
+          "line": 551
+        },
+        {
+          "name": "isFrameInputElement",
+          "type": "function",
+          "line": 556
+        },
+        {
+          "name": "isFrameSelectorFocused",
+          "type": "function",
+          "line": 564
+        },
+        {
+          "name": "patchSingleFrame",
+          "type": "function",
+          "line": 569
+        },
+        {
+          "name": "origFramePressSequentially",
+          "type": "function",
+          "line": 592
+        },
+        {
+          "name": "origFrameTap",
+          "type": "function",
+          "line": 593
+        },
+        {
+          "name": "moveToFrameSelector",
+          "type": "function",
+          "line": 596
+        },
+        {
+          "name": "frameClick",
+          "type": "function",
+          "line": 617
+        },
+        {
+          "name": "getFrameCdp",
+          "type": "function",
+          "line": 623
+        },
+        {
+          "name": "frameHover",
+          "type": "function",
+          "line": 625
+        },
+        {
+          "name": "patchContext",
+          "type": "function",
+          "line": 763
+        },
+        {
+          "name": "patchBrowser",
+          "type": "function",
+          "line": 789
+        }
+      ]
+    },
+    {
+      "path": "js/src/human/keyboard.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 214,
+      "symbols": [
+        {
+          "name": "isAscii",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "getNearbyKey",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "isUpperCase",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "humanType",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "typeNormalChar",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "typeShiftedChar",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "typeShiftSymbol",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "interCharDelay",
+          "type": "function",
+          "line": 207
+        }
+      ]
+    },
+    {
+      "path": "js/src/human/mouse.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 213,
+      "symbols": [
+        {
+          "name": "RawMouse",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "RawKeyboard",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "easeInOut",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "Point",
+          "type": "interface",
+          "line": 39
+        },
+        {
+          "name": "bezier",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "randomControlPoints",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "humanMove",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "clickTarget",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "humanClick",
+          "type": "function",
+          "line": 153
+        },
+        {
+          "name": "humanIdle",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "humanIdle",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "humanIdle",
+          "type": "function",
+          "line": 188
+        },
+        {
+          "name": "dx",
+          "type": "function",
+          "line": 206
+        },
+        {
+          "name": "dy",
+          "type": "function",
+          "line": 207
+        }
+      ]
+    },
+    {
+      "path": "js/src/human/scroll.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 180,
+      "symbols": [
+        {
+          "name": "ElementBounds",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "isInViewport",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "smoothWheel",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "humanScrollIntoView",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "avgDelta",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "scrollToElement",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "getElementBox",
+          "type": "function",
+          "line": 168
+        }
+      ]
+    },
+    {
+      "path": "js/src/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "js/src/playwright.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 235,
+      "symbols": [
+        {
+          "name": "resolveTimezone",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "filterStealthCtxOptions",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "launch",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "launchContext",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "launchPersistentContext",
+          "type": "function",
+          "line": 184
+        }
+      ]
+    },
+    {
+      "path": "js/src/proxy.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 215,
+      "symbols": [
+        {
+          "name": "ParsedProxy",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "ensureProxyScheme",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "ProxyDict",
+          "type": "type",
+          "line": 27
+        },
+        {
+          "name": "ProxyConfig",
+          "type": "interface",
+          "line": 30
+        },
+        {
+          "name": "isSocksProxy",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "assembleSocksUrl",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "lenientDecodeURIComponent",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "reconstructSocksUrl",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "normalizeSocksStringUrl",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "resolveProxyConfig",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "parseProxyUrl",
+          "type": "function",
+          "line": 187
+        }
+      ]
+    },
+    {
+      "path": "js/src/puppeteer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 104,
+      "symbols": [
+        {
+          "name": "launch",
+          "type": "function",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "js/src/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 72,
+      "symbols": [
+        {
+          "name": "LaunchOptions",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "LaunchContextOptions",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "LaunchPersistentContextOptions",
+          "type": "interface",
+          "line": 60
+        },
+        {
+          "name": "BinaryInfo",
+          "type": "interface",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "path": "js/tests/config.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 223,
+      "symbols": []
+    },
+    {
+      "path": "js/tests/geoip.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "js/tests/humanize.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 1448,
+      "symbols": [
+        {
+          "name": "makeFakeRaw",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "buildMockPage",
+          "type": "function",
+          "line": 605
+        },
+        {
+          "name": "makeLocator",
+          "type": "function",
+          "line": 625
+        },
+        {
+          "name": "makeRawKeyboardMock",
+          "type": "function",
+          "line": 684
+        },
+        {
+          "name": "buildMockElementHandle",
+          "type": "function",
+          "line": 760
+        },
+        {
+          "name": "buildMockFrame",
+          "type": "function",
+          "line": 1099
+        },
+        {
+          "name": "getBox",
+          "type": "function",
+          "line": 1384
+        }
+      ]
+    },
+    {
+      "path": "js/tests/launch.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 319,
+      "symbols": []
+    },
+    {
+      "path": "js/tests/proxy.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 324,
+      "symbols": []
+    },
+    {
+      "path": "js/tests/puppeteer.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 141,
+      "symbols": []
+    },
+    {
+      "path": "js/tests/stealth.puppeteer.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 2147,
+      "symbols": [
+        {
+          "name": "buildMockPage",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "buildMockCDP",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "buildRawKeyboard",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "buildMockElementHandle",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "buildMockBrowser",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 619
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 650
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 670
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 682
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 713
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 748
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 778
+        },
+        {
+          "name": "originals",
+          "type": "function",
+          "line": 876
+        },
+        {
+          "name": "originals",
+          "type": "function",
+          "line": 1164
+        },
+        {
+          "name": "originals",
+          "type": "function",
+          "line": 1819
+        }
+      ]
+    },
+    {
+      "path": "js/tests/stealth.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 1159,
+      "symbols": [
+        {
+          "name": "buildMockPage",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "makeLocator",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "buildMockCDP",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "buildRawKeyboard",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 507
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 543
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 555
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 590
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 629
+        },
+        {
+          "name": "stealth",
+          "type": "function",
+          "line": 663
+        }
+      ]
+    },
+    {
+      "path": "js/tests/update.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 382,
+      "symbols": [
+        {
+          "name": "makeAssets",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "mockFetch",
+          "type": "function",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "path": "js/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "kind": "manifest",
+      "lines": 77,
+      "symbols": []
+    },
+    {
+      "path": "tests/__init__.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "tests/conftest.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 11,
+      "symbols": [
+        {
+          "name": "_clean_backend_env",
+          "type": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "tests/test_backend.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 45,
+      "symbols": [
+        {
+          "name": "test_resolve_backend_default",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "test_resolve_backend_explicit_playwright",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "test_resolve_backend_explicit_patchright",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "test_resolve_backend_env_var",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "test_resolve_backend_param_beats_env",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "test_resolve_backend_invalid_raises",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "test_resolve_backend_invalid_env_raises",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "tests/test_build_args.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 201,
+      "symbols": [
+        {
+          "name": "test_timezone_injected",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "test_locale_injected",
+          "type": "function",
+          "line": 12
+        },
+        {
+          "name": "test_both_injected",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "test_timezone_independent_of_stealth_args",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "test_no_flags_when_not_set",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "test_extra_args_preserved",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "test_resolve_timezone_id_alias",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "test_resolve_timezone_wins_over_alias",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "test_resolve_no_alias",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "test_resolve_both_none",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "test_user_fingerprint_overrides_default",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "test_user_platform_overrides_default",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "test_timezone_param_overrides_user_arg",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "test_locale_param_overrides_user_arg",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "test_no_duplicate_flags",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "test_non_value_flags_preserved",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "test_override_logs_debug",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "test_webrtc_ip_passed_through_args",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "test_webrtc_ip_not_present_by_default",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "test_resolve_webrtc_args_auto",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "test_resolve_webrtc_args_explicit_ip_unchanged",
+          "type": "function",
+          "line": 188
+        },
+        {
+          "name": "test_resolve_webrtc_args_no_flag",
+          "type": "function",
+          "line": 196
+        }
+      ]
+    },
+    {
+      "path": "tests/test_cloakserve.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 340,
+      "symbols": [
+        {
+          "name": "TestParseConnectionParams",
+          "type": "class",
+          "line": 34
+        },
+        {
+          "name": "test_empty_query",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "test_fingerprint_seed",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "test_timezone_and_locale",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "test_proxy",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "test_geoip_true_variants",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "test_geoip_false",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "test_generic_fingerprint_params",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "test_special_params_not_in_extra_args",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "test_multiple_values_takes_first",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "TestParseCliArgs",
+          "type": "class",
+          "line": 85
+        },
+        {
+          "name": "test_defaults",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "test_custom_port",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "test_headless_false",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "test_strips_remote_debugging_flags",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "test_passthrough_args",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "test_port_not_in_passthrough",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "test_custom_data_dir",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "test_data_dir_not_in_passthrough",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "test_default_data_dir_docker",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "test_default_data_dir_bare_metal",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "TestURLRewriting",
+          "type": "class",
+          "line": 144
+        },
+        {
+          "name": "_rewrite_version",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "_rewrite_list_entry",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "test_version_rewrite_with_seed",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "test_version_rewrite_no_seed",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "test_list_rewrite_page_with_seed",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "test_list_rewrite_page_no_seed",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "test_list_rewrite_browser",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "test_wss_scheme_version",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "test_wss_scheme_list",
+          "type": "function",
+          "line": 194
+        },
+        {
+          "name": "TestConnectionTracking",
+          "type": "class",
+          "line": 205
+        },
+        {
+          "name": "_make_pool",
+          "type": "function",
+          "line": 208
+        },
+        {
+          "name": "test_connect_increments",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "test_disconnect_decrements",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "test_disconnect_to_zero_removes_key",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "test_disconnect_below_zero_safe",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "test_multiple_seeds_independent",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "TestSeedValidation",
+          "type": "class",
+          "line": 256
+        },
+        {
+          "name": "test_malicious_seeds_rejected",
+          "type": "function",
+          "line": 263
+        },
+        {
+          "name": "test_reserved_seeds_rejected",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "test_valid_seeds_accepted",
+          "type": "function",
+          "line": 275
+        },
+        {
+          "name": "TestSafeRmtree",
+          "type": "class",
+          "line": 285
+        },
+        {
+          "name": "_make_pool",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "test_refuses_path_outside_data_dir",
+          "type": "function",
+          "line": 296
+        },
+        {
+          "name": "test_refuses_data_dir_itself",
+          "type": "function",
+          "line": 308
+        },
+        {
+          "name": "test_deletes_valid_subdirectory",
+          "type": "function",
+          "line": 318
+        },
+        {
+          "name": "test_refuses_traversal_path",
+          "type": "function",
+          "line": 330
+        }
+      ]
+    },
+    {
+      "path": "tests/test_config.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 146,
+      "symbols": [
+        {
+          "name": "TestGetBinaryPath",
+          "type": "class",
+          "line": 25
+        },
+        {
+          "name": "test_linux",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "test_darwin",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "test_windows",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "TestArchive",
+          "type": "class",
+          "line": 47
+        },
+        {
+          "name": "test_ext_windows",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "test_ext_unix",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "test_archive_name",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "test_archive_name_custom_tag",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "TestFallbackUrl",
+          "type": "class",
+          "line": 72
+        },
+        {
+          "name": "test_github_releases_format",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "test_default_version",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "TestCacheDir",
+          "type": "class",
+          "line": 89
+        },
+        {
+          "name": "test_default_path",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "test_env_override",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "TestPlatformTag",
+          "type": "class",
+          "line": 109
+        },
+        {
+          "name": "test_unsupported_raises",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "TestStealthArgs",
+          "type": "class",
+          "line": 122
+        },
+        {
+          "name": "test_seed_uniqueness",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "test_macos_profile",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "test_linux_windows_profile",
+          "type": "function",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "path": "tests/test_extract.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 192,
+      "symbols": [
+        {
+          "name": "_create_tar_gz",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "TestExtractTar",
+          "type": "class",
+          "line": 37
+        },
+        {
+          "name": "test_basic",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "test_path_traversal_blocked",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "test_suspicious_symlink_skipped",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "_create_zip",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "TestExtractZip",
+          "type": "class",
+          "line": 95
+        },
+        {
+          "name": "test_basic",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "test_path_traversal_blocked",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "TestFlatten",
+          "type": "class",
+          "line": 120
+        },
+        {
+          "name": "test_single_subdir_flattened",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "test_app_bundle_preserved",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "test_noop_multiple_entries",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "TestPermissions",
+          "type": "class",
+          "line": 171
+        },
+        {
+          "name": "test_make_executable",
+          "type": "function",
+          "line": 173
+        },
+        {
+          "name": "test_is_executable_true",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "test_is_executable_false",
+          "type": "function",
+          "line": 188
+        }
+      ]
+    },
+    {
+      "path": "tests/test_geoip.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 179,
+      "symbols": [
+        {
+          "name": "test_resolve_literal_ipv4",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "test_resolve_literal_ipv4_with_auth",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "test_resolve_literal_ipv6",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "test_resolve_hostname",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "test_resolve_invalid_url",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "test_resolve_empty",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "test_locale_map_has_common_countries",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "test_locale_map_values_are_bcp47",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "test_resolve_geo_raises_when_geoip2_missing",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "test_resolve_geo_returns_none_when_db_missing",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "test_maybe_resolve_skips_when_geoip_false",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "test_maybe_resolve_skips_when_no_proxy",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "test_maybe_resolve_skips_when_both_explicit",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "test_maybe_resolve_fills_missing_timezone",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "test_maybe_resolve_fills_missing_locale",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "test_maybe_resolve_fills_both",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "test_maybe_resolve_geoip_timeout_returns_existing_values",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "test_private_ip_loopback",
+          "type": "function",
+          "line": 167
+        },
+        {
+          "name": "test_private_ip_rfc1918",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "test_private_ip_public",
+          "type": "function",
+          "line": 177
+        }
+      ]
+    },
+    {
+      "path": "tests/test_human_visual.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 363,
+      "symbols": [
+        {
+          "name": "updatePos",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "inject",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "step",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "check",
+          "type": "function",
+          "line": 64
+        }
+      ]
+    },
+    {
+      "path": "tests/test_humanize_unit.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 1757,
+      "symbols": [
+        {
+          "name": "_ensure_locator_patched",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "_FakeRawMouse",
+          "type": "class",
+          "line": 33
+        },
+        {
+          "name": "__init__",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "move",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "down",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "up",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "wheel",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "TestConfigResolution",
+          "type": "class",
+          "line": 50
+        },
+        {
+          "name": "test_default_config_resolves",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "test_careful_config_resolves",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "test_custom_override",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "test_invalid_preset_raises",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "test_rand_within_bounds",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "test_sleep_ms_timing",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "TestBezierMath",
+          "type": "class",
+          "line": 101
+        },
+        {
+          "name": "test_generates_multiple_points",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "test_smoothness_no_large_jumps",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "test_short_distance",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "test_not_straight_line",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "test_click_target_within_box",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "test_click_target_input_mode",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "TestAsyncCompat",
+          "type": "class",
+          "line": 172
+        },
+        {
+          "name": "test_async_modules_import",
+          "type": "function",
+          "line": 173
+        },
+        {
+          "name": "test_async_locator_patch",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "test_async_sleep_is_coroutine",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "TestFocusCheck",
+          "type": "class",
+          "line": 200
+        },
+        {
+          "name": "test_press_skips_click_when_focused",
+          "type": "function",
+          "line": 201
+        },
+        {
+          "name": "test_press_clicks_when_not_focused",
+          "type": "function",
+          "line": 219
+        },
+        {
+          "name": "TestCheckUncheckIdle",
+          "type": "class",
+          "line": 242
+        },
+        {
+          "name": "test_check_calls_idle_when_enabled",
+          "type": "function",
+          "line": 243
+        },
+        {
+          "name": "fake_idle",
+          "type": "function",
+          "line": 255
+        },
+        {
+          "name": "test_uncheck_calls_idle_when_enabled",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "fake_idle",
+          "type": "function",
+          "line": 282
+        },
+        {
+          "name": "TestFramePatching",
+          "type": "class",
+          "line": 302
+        },
+        {
+          "name": "test_all_11_methods_patched",
+          "type": "function",
+          "line": 303
+        },
+        {
+          "name": "TestDragToSafety",
+          "type": "class",
+          "line": 329
+        },
+        {
+          "name": "test_handles_missing_original",
+          "type": "function",
+          "line": 330
+        },
+        {
+          "name": "TestPageConfigPersistence",
+          "type": "class",
+          "line": 360
+        },
+        {
+          "name": "test_resolve_config_has_all_fields",
+          "type": "function",
+          "line": 361
+        },
+        {
+          "name": "TestMistypeConfig",
+          "type": "class",
+          "line": 376
+        },
+        {
+          "name": "test_default_mistype_chance",
+          "type": "function",
+          "line": 377
+        },
+        {
+          "name": "test_careful_mistype_higher",
+          "type": "function",
+          "line": 384
+        },
+        {
+          "name": "TestSelectAllPlatform",
+          "type": "class",
+          "line": 395
+        },
+        {
+          "name": "test_select_all_constant_exists",
+          "type": "function",
+          "line": 396
+        },
+        {
+          "name": "test_select_all_matches_platform",
+          "type": "function",
+          "line": 400
+        },
+        {
+          "name": "TestNonAsciiKeyboard",
+          "type": "class",
+          "line": 413
+        },
+        {
+          "name": "test_cyrillic_uses_insert_text",
+          "type": "function",
+          "line": 414
+        },
+        {
+          "name": "test_mixed_ascii_cyrillic",
+          "type": "function",
+          "line": 435
+        },
+        {
+          "name": "test_cjk_uses_insert_text",
+          "type": "function",
+          "line": 456
+        },
+        {
+          "name": "test_mistype_only_ascii",
+          "type": "function",
+          "line": 474
+        },
+        {
+          "name": "test_no_error_on_cyrillic",
+          "type": "function",
+          "line": 492
+        },
+        {
+          "name": "TestNonAsciiKeyboardAsync",
+          "type": "class",
+          "line": 508
+        },
+        {
+          "name": "TestBrowserFill",
+          "type": "class",
+          "line": 535
+        },
+        {
+          "name": "test_fill_clears_existing",
+          "type": "function",
+          "line": 536
+        },
+        {
+          "name": "test_fill_timing_humanized",
+          "type": "function",
+          "line": 551
+        },
+        {
+          "name": "test_clear_empties_field",
+          "type": "function",
+          "line": 563
+        },
+        {
+          "name": "TestBrowserPatching",
+          "type": "class",
+          "line": 579
+        },
+        {
+          "name": "test_page_has_original",
+          "type": "function",
+          "line": 580
+        },
+        {
+          "name": "test_locator_methods_patched",
+          "type": "function",
+          "line": 588
+        },
+        {
+          "name": "test_non_humanized_page_normal",
+          "type": "function",
+          "line": 601
+        },
+        {
+          "name": "test_page_human_cfg_persists",
+          "type": "function",
+          "line": 609
+        },
+        {
+          "name": "TestBrowserBotDetection",
+          "type": "class",
+          "line": 620
+        },
+        {
+          "name": "test_behavioral_checks_pass",
+          "type": "function",
+          "line": 623
+        },
+        {
+          "name": "test_form_timing",
+          "type": "function",
+          "line": 645
+        },
+        {
+          "name": "TestAsyncEndToEnd",
+          "type": "class",
+          "line": 663
+        },
+        {
+          "name": "TestElementHandlePatchingSync",
+          "type": "class",
+          "line": 692
+        },
+        {
+          "name": "test_patch_single_element_handle_marks_patched",
+          "type": "function",
+          "line": 695
+        },
+        {
+          "name": "test_element_handle_click_calls_human_move",
+          "type": "function",
+          "line": 725
+        },
+        {
+          "name": "test_element_handle_hover_moves_cursor_without_click",
+          "type": "function",
+          "line": 766
+        },
+        {
+          "name": "test_element_handle_type_calls_human_type",
+          "type": "function",
+          "line": 805
+        },
+        {
+          "name": "test_element_handle_fill_clears_and_types",
+          "type": "function",
+          "line": 850
+        },
+        {
+          "name": "test_element_handle_no_double_patching",
+          "type": "function",
+          "line": 898
+        },
+        {
+          "name": "test_nested_query_selector_returns_patched_handle",
+          "type": "function",
+          "line": 928
+        },
+        {
+          "name": "test_page_query_selector_patched",
+          "type": "function",
+          "line": 963
+        },
+        {
+          "name": "test_page_query_selector_all_patches_all",
+          "type": "function",
+          "line": 993
+        },
+        {
+          "name": "make_el",
+          "type": "function",
+          "line": 1001
+        },
+        {
+          "name": "test_wait_for_selector_patched",
+          "type": "function",
+          "line": 1028
+        },
+        {
+          "name": "test_element_handle_all_methods_patched",
+          "type": "function",
+          "line": 1058
+        },
+        {
+          "name": "TestElementHandlePatchingAsync",
+          "type": "class",
+          "line": 1096
+        },
+        {
+          "name": "TestBrowserElementHandle",
+          "type": "class",
+          "line": 1186
+        }
+      ]
+    },
+    {
+      "path": "tests/test_lambda_security.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 171,
+      "symbols": [
+        {
+          "name": "TestSchemeValidation",
+          "type": "class",
+          "line": 18
+        },
+        {
+          "name": "test_rejects_non_http_schemes",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "test_accepts_http_and_https",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "test_rejects_missing_hostname",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "TestSSRFProtection",
+          "type": "class",
+          "line": 49
+        },
+        {
+          "name": "test_rejects_private_ips",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "test_rejects_carrier_grade_nat",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "test_rejects_unresolvable_hostname",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "test_rejects_ipv4_mapped_ipv6",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "TestExtraArgsRemoval",
+          "type": "class",
+          "line": 82
+        },
+        {
+          "name": "test_ignores_caller_extra_args",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "test_includes_strategy_args",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "test_classify_error_uses_strategy_args",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "test_always_includes_lambda_hardening_flags",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "test_caller_cannot_inject_strategy_args",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "TestRedirectSSRF",
+          "type": "class",
+          "line": 114
+        },
+        {
+          "name": "test_validate_url_catches_redirect_target",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "test_validate_url_catches_localhost_redirect",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "test_code_flow_validates_before_content",
+          "type": "function",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "path": "tests/test_launch.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 82,
+      "symbols": [
+        {
+          "name": "test_binary_info",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "test_launch_and_close",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "test_launch_new_page",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "test_launch_with_extra_args",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "test_webdriver_flag",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "test_chrome_object_exists",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "test_plugins_count",
+          "type": "function",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "path": "tests/test_launch_context.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 331,
+      "symbols": [
+        {
+          "name": "_make_mock_browser",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "test_default_viewport",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "test_custom_viewport",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "test_user_agent",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "test_locale_forwarded",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "test_timezone_via_binary_not_cdp",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "test_color_scheme",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "test_geoip_resolution",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "test_timezone_id_alias",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "test_close_closes_browser",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "test_error_closes_browser",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "test_kwargs_passthrough",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "_make_mock_async_browser",
+          "type": "function",
+          "line": 217
+        }
+      ]
+    },
+    {
+      "path": "tests/test_persistent_context.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 259,
+      "symbols": [
+        {
+          "name": "_make_mock_pw_and_context",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "test_persistent_context_args_built",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "test_persistent_context_default_viewport",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "test_persistent_context_custom_viewport",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "test_persistent_context_user_agent",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "test_persistent_context_locale_and_timezone",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "test_persistent_context_color_scheme",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "test_persistent_context_geoip",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "test_persistent_context_timezone_id_alias",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "test_persistent_context_close_stops_pw",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "test_persistent_context_proxy_string",
+          "type": "function",
+          "line": 170
+        },
+        {
+          "name": "test_persistent_context_proxy_dict",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "_make_mock_async_pw_and_context",
+          "type": "function",
+          "line": 204
+        }
+      ]
+    },
+    {
+      "path": "tests/test_proxy.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 376,
+      "symbols": [
+        {
+          "name": "TestParseProxyUrl",
+          "type": "class",
+          "line": 13
+        },
+        {
+          "name": "test_no_credentials",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "test_with_credentials",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "test_url_encoded_password",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "test_socks5",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "test_no_port",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "test_username_only",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "TestBuildProxyKwargs",
+          "type": "class",
+          "line": 45
+        },
+        {
+          "name": "test_none",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "test_simple_proxy",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "test_proxy_with_auth",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "test_proxy_dict_passthrough",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "test_proxy_dict_with_auth",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "TestMaybeResolveGeoip",
+          "type": "class",
+          "line": 83
+        },
+        {
+          "name": "test_geoip_with_string_proxy",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "test_geoip_with_dict_proxy_extracts_server",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "test_geoip_disabled_skips_resolution",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "test_geoip_no_proxy_skips_resolution",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "test_geoip_preserves_explicit_timezone",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "test_geoip_normalizes_bare_proxy_with_creds",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "test_geoip_normalizes_schemeless_proxy_no_creds",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "test_geoip_socks5_dict_reconstructs_credentials",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "test_geoip_socks5_dict_no_auth_uses_server",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "test_geoip_http_dict_does_not_inline_creds",
+          "type": "function",
+          "line": 148
+        },
+        {
+          "name": "TestBareProxyFormat",
+          "type": "class",
+          "line": 155
+        },
+        {
+          "name": "test_bare_with_credentials",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "test_bare_credentials_not_in_server",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "test_bare_username_only",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "test_bare_no_port",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "test_bare_no_credentials_passthrough",
+          "type": "function",
+          "line": 181
+        },
+        {
+          "name": "test_resolve_proxy_config_bare",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "TestIsSocksProxy",
+          "type": "class",
+          "line": 193
+        },
+        {
+          "name": "test_socks5_string",
+          "type": "function",
+          "line": 194
+        },
+        {
+          "name": "test_socks5h_string",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "test_socks5_uppercase",
+          "type": "function",
+          "line": 200
+        },
+        {
+          "name": "test_http_string",
+          "type": "function",
+          "line": 203
+        },
+        {
+          "name": "test_dict_socks5",
+          "type": "function",
+          "line": 206
+        },
+        {
+          "name": "test_dict_http",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "test_none",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "TestResolveProxyConfig",
+          "type": "class",
+          "line": 216
+        },
+        {
+          "name": "test_none",
+          "type": "function",
+          "line": 217
+        },
+        {
+          "name": "test_http_string_returns_playwright_dict",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "test_http_dict_passthrough",
+          "type": "function",
+          "line": 229
+        },
+        {
+          "name": "test_socks5_string_returns_chrome_arg",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "test_socks5_no_auth_returns_chrome_arg",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "test_socks5h_returns_chrome_arg",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "test_socks5_dict_reconstructs_url",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "test_socks5_dict_ipv6_preserves_brackets",
+          "type": "function",
+          "line": 257
+        },
+        {
+          "name": "test_socks5_dict_with_bypass",
+          "type": "function",
+          "line": 263
+        },
+        {
+          "name": "test_socks5_string_encodes_equals_in_password",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "test_socks5_string_encodes_at_in_password",
+          "type": "function",
+          "line": 276
+        },
+        {
+          "name": "test_socks5_string_encoding_idempotent",
+          "type": "function",
+          "line": 282
+        },
+        {
+          "name": "test_socks5_string_logs_info_when_reencoding",
+          "type": "function",
+          "line": 287
+        },
+        {
+          "name": "test_socks5_string_silent_when_already_encoded",
+          "type": "function",
+          "line": 300
+        },
+        {
+          "name": "test_socks5_string_silent_when_no_credentials",
+          "type": "function",
+          "line": 307
+        },
+        {
+          "name": "test_socks5_string_silent_when_only_cosmetic_change",
+          "type": "function",
+          "line": 314
+        },
+        {
+          "name": "test_socks5_string_no_creds_unchanged",
+          "type": "function",
+          "line": 323
+        },
+        {
+          "name": "test_socks5_string_password_only_still_encoded",
+          "type": "function",
+          "line": 327
+        },
+        {
+          "name": "test_socks5_string_empty_password_preserves_colon",
+          "type": "function",
+          "line": 333
+        },
+        {
+          "name": "test_socks5_string_literal_percent_in_password",
+          "type": "function",
+          "line": 339
+        },
+        {
+          "name": "test_socks5_string_malformed_port_passes_through",
+          "type": "function",
+          "line": 345
+        },
+        {
+          "name": "test_socks5_string_malformed_ipv6_passes_through",
+          "type": "function",
+          "line": 354
+        },
+        {
+          "name": "test_socks5_string_preserves_path_and_query",
+          "type": "function",
+          "line": 362
+        },
+        {
+          "name": "test_socks5_string_ipv6_with_special_char_password",
+          "type": "function",
+          "line": 368
+        },
+        {
+          "name": "test_socks5_string_port_zero_preserved",
+          "type": "function",
+          "line": 373
+        }
+      ]
+    },
+    {
+      "path": "tests/test_stealth.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 286,
+      "symbols": [
+        {
+          "name": "browser",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "page",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "TestWebDriverDetection",
+          "type": "class",
+          "line": 32
+        },
+        {
+          "name": "test_navigator_webdriver_false",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "test_no_headless_chrome_ua",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "test_window_chrome_exists",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "test_plugins_present",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "test_languages_present",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "test_cdp_not_detected",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "TestBotDetectionSites",
+          "type": "class",
+          "line": 82
+        },
+        {
+          "name": "test_bot_sannysoft",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "test_bot_incolumitas",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "test_browserscan",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "test_device_and_browser_info",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "test_fingerprintjs",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "test_recaptcha_v3",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "TestIssueRegressions",
+          "type": "class",
+          "line": 222
+        },
+        {
+          "name": "test_immediate_goto_works",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "test_add_init_script_without_proxy",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "test_add_init_script_with_proxy",
+          "type": "function",
+          "line": 259
+        }
+      ]
+    },
+    {
+      "path": "tests/test_stealth_reproduction_110.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 168,
+      "symbols": [
+        {
+          "name": "TestIssue110Reproduction",
+          "type": "class",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "tests/test_stealth_unit.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 1481,
+      "symbols": [
+        {
+          "name": "_cfg",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "TestSyncIsolatedWorld",
+          "type": "class",
+          "line": 38
+        },
+        {
+          "name": "_make_world",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "test_initial_state",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "test_evaluate_creates_world_and_returns_value",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "test_evaluate_caches_context_id",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "test_evaluate_retries_on_exception_details",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "test_evaluate_retries_on_cdp_exception",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 129
+        },
+        {
+          "name": "test_evaluate_returns_none_after_double_failure",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "test_invalidate_resets_context_id",
+          "type": "function",
+          "line": 160
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "test_get_cdp_session_creates_and_caches",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "test_evaluate_returns_none_when_create_world_fails_on_retry",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "TestAsyncIsolatedWorld",
+          "type": "class",
+          "line": 212
+        },
+        {
+          "name": "_make_world",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 243
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 261
+        },
+        {
+          "name": "cdp_send",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "TestIsInputElementStealth",
+          "type": "class",
+          "line": 313
+        },
+        {
+          "name": "test_uses_isolated_world_when_available",
+          "type": "function",
+          "line": 316
+        },
+        {
+          "name": "test_isolated_world_receives_escaped_selector",
+          "type": "function",
+          "line": 331
+        },
+        {
+          "name": "test_returns_false_for_non_input",
+          "type": "function",
+          "line": 346
+        },
+        {
+          "name": "test_falls_back_to_evaluate_when_no_stealth_world",
+          "type": "function",
+          "line": 358
+        },
+        {
+          "name": "test_falls_back_to_evaluate_when_isolated_world_raises",
+          "type": "function",
+          "line": 369
+        },
+        {
+          "name": "test_returns_false_when_both_paths_fail",
+          "type": "function",
+          "line": 383
+        },
+        {
+          "name": "test_no_stealth_world_attr_falls_back",
+          "type": "function",
+          "line": 396
+        },
+        {
+          "name": "TestAsyncIsInputElementStealth",
+          "type": "class",
+          "line": 411
+        },
+        {
+          "name": "TestIsSelectorFocusedStealth",
+          "type": "class",
+          "line": 448
+        },
+        {
+          "name": "test_uses_isolated_world_when_available",
+          "type": "function",
+          "line": 451
+        },
+        {
+          "name": "test_returns_false_when_not_focused",
+          "type": "function",
+          "line": 465
+        },
+        {
+          "name": "test_falls_back_when_no_stealth_world",
+          "type": "function",
+          "line": 477
+        },
+        {
+          "name": "test_falls_back_when_isolated_world_raises",
+          "type": "function",
+          "line": 488
+        },
+        {
+          "name": "test_returns_false_when_both_paths_fail",
+          "type": "function",
+          "line": 501
+        },
+        {
+          "name": "TestAsyncIsSelectorFocusedStealth",
+          "type": "class",
+          "line": 519
+        },
+        {
+          "name": "TestShiftSymbolCDPSync",
+          "type": "class",
+          "line": 556
+        },
+        {
+          "name": "test_shift_symbol_codes_completeness",
+          "type": "function",
+          "line": 559
+        },
+        {
+          "name": "test_cdp_path_sends_key_down_and_key_up",
+          "type": "function",
+          "line": 567
+        },
+        {
+          "name": "test_cdp_path_does_not_call_page_evaluate",
+          "type": "function",
+          "line": 600
+        },
+        {
+          "name": "test_cdp_path_does_not_call_insert_text",
+          "type": "function",
+          "line": 613
+        },
+        {
+          "name": "test_fallback_path_uses_page_evaluate",
+          "type": "function",
+          "line": 626
+        },
+        {
+          "name": "test_cdp_path_all_shift_symbols",
+          "type": "function",
+          "line": 641
+        },
+        {
+          "name": "test_cdp_keydown_has_text_field",
+          "type": "function",
+          "line": 660
+        },
+        {
+          "name": "test_cdp_keyup_has_no_text_field",
+          "type": "function",
+          "line": 678
+        },
+        {
+          "name": "TestHumanTypeShiftCDP",
+          "type": "class",
+          "line": 701
+        },
+        {
+          "name": "test_shift_symbol_in_text_uses_cdp",
+          "type": "function",
+          "line": 704
+        },
+        {
+          "name": "test_text_without_shift_symbols_no_cdp",
+          "type": "function",
+          "line": 726
+        },
+        {
+          "name": "test_multiple_shift_symbols_all_use_cdp",
+          "type": "function",
+          "line": 739
+        },
+        {
+          "name": "test_mixed_text_no_evaluate_leak",
+          "type": "function",
+          "line": 756
+        },
+        {
+          "name": "TestShiftSymbolCDPAsync",
+          "type": "class",
+          "line": 774
+        },
+        {
+          "name": "TestNavigationInvalidation",
+          "type": "class",
+          "line": 863
+        },
+        {
+          "name": "test_goto_invalidates_stealth_world_sync",
+          "type": "function",
+          "line": 866
+        },
+        {
+          "name": "TestPatchPageStealthWiring",
+          "type": "class",
+          "line": 910
+        },
+        {
+          "name": "_make_mock_page",
+          "type": "function",
+          "line": 913
+        },
+        {
+          "name": "test_patch_page_sets_stealth_world",
+          "type": "function",
+          "line": 927
+        },
+        {
+          "name": "test_patch_page_sets_original",
+          "type": "function",
+          "line": 939
+        },
+        {
+          "name": "test_stealth_world_none_when_cdp_fails",
+          "type": "function",
+          "line": 952
+        },
+        {
+          "name": "test_click_passes_through_stealth_dom_query",
+          "type": "function",
+          "line": 971
+        },
+        {
+          "name": "tracking_cdp_send",
+          "type": "function",
+          "line": 983
+        },
+        {
+          "name": "TestShiftSymbolMaps",
+          "type": "class",
+          "line": 1030
+        },
+        {
+          "name": "test_all_codes_are_valid_key_codes",
+          "type": "function",
+          "line": 1033
+        },
+        {
+          "name": "test_all_keycodes_are_positive_integers",
+          "type": "function",
+          "line": 1042
+        },
+        {
+          "name": "test_digit_symbols_have_correct_keycodes",
+          "type": "function",
+          "line": 1049
+        },
+        {
+          "name": "test_codes_and_keycodes_have_same_keys",
+          "type": "function",
+          "line": 1060
+        },
+        {
+          "name": "test_shift_symbols_set_matches_codes_keys",
+          "type": "function",
+          "line": 1064
+        },
+        {
+          "name": "TestCDPModifiers",
+          "type": "class",
+          "line": 1073
+        },
+        {
+          "name": "test_keydown_modifier_is_8",
+          "type": "function",
+          "line": 1076
+        },
+        {
+          "name": "TestIsolatedWorldSafety",
+          "type": "class",
+          "line": 1097
+        },
+        {
+          "name": "test_selector_with_quotes_is_escaped",
+          "type": "function",
+          "line": 1100
+        },
+        {
+          "name": "test_selector_with_backticks_escaped",
+          "type": "function",
+          "line": 1118
+        },
+        {
+          "name": "_launch_kwargs",
+          "type": "function",
+          "line": 1142
+        },
+        {
+          "name": "TestStealthBrowserReal",
+          "type": "class",
+          "line": 1152
+        }
+      ]
+    },
+    {
+      "path": "tests/test_update.py",
+      "language": "python",
+      "kind": "test",
+      "lines": 550,
+      "symbols": [
+        {
+          "name": "TestVersionComparison",
+          "type": "class",
+          "line": 36
+        },
+        {
+          "name": "test_version_tuple_parsing",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "test_newer_version",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "test_older_version",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "test_same_version",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "test_patch_bump",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "test_major_bump",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "test_5th_segment_parsing",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "test_build_bump",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "test_build_suffix_newer_than_no_suffix",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "test_no_suffix_older_than_build_suffix",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "test_new_chromium_beats_old_build",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "TestDownloadUrl",
+          "type": "class",
+          "line": 72
+        },
+        {
+          "name": "test_default_url_format",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "test_custom_version_url",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "test_no_old_repo_reference",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "TestShouldCheckForUpdate",
+          "type": "class",
+          "line": 88
+        },
+        {
+          "name": "test_disabled_by_env",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "test_disabled_by_env_case_insensitive",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "test_disabled_by_binary_override",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "test_disabled_by_custom_download_url",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "test_rate_limited",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "test_stale_rate_limit_allows_check",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "TestEffectiveVersion",
+          "type": "class",
+          "line": 140
+        },
+        {
+          "name": "test_no_marker_returns_platform_version",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "test_marker_with_newer_version",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "test_marker_with_older_version_ignored",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "TestGetLatestVersion",
+          "type": "class",
+          "line": 159
+        },
+        {
+          "name": "_make_assets",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "_platform_tarball",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "test_parses_chromium_tag_with_platform_asset",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "test_skips_release_without_platform_asset",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "test_skips_draft_releases",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "test_skips_non_chromium_tags",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "test_returns_none_when_no_platform_assets",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "test_network_error_returns_none",
+          "type": "function",
+          "line": 251
+        },
+        {
+          "name": "TestWrapperUpdateCheck",
+          "type": "class",
+          "line": 257
+        },
+        {
+          "name": "setup_method",
+          "type": "function",
+          "line": 260
+        },
+        {
+          "name": "test_warns_when_newer_version_available",
+          "type": "function",
+          "line": 264
+        },
+        {
+          "name": "test_silent_when_current",
+          "type": "function",
+          "line": 276
+        },
+        {
+          "name": "test_disabled_by_auto_update_env",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "test_disabled_by_custom_download_url",
+          "type": "function",
+          "line": 294
+        },
+        {
+          "name": "test_network_error_silent",
+          "type": "function",
+          "line": 300
+        },
+        {
+          "name": "test_runs_only_once",
+          "type": "function",
+          "line": 307
+        },
+        {
+          "name": "TestParseChecksums",
+          "type": "class",
+          "line": 318
+        },
+        {
+          "name": "test_standard_format",
+          "type": "function",
+          "line": 322
+        },
+        {
+          "name": "test_binary_mode_asterisk",
+          "type": "function",
+          "line": 331
+        },
+        {
+          "name": "test_empty_lines_skipped",
+          "type": "function",
+          "line": 336
+        },
+        {
+          "name": "test_uppercase_lowered",
+          "type": "function",
+          "line": 341
+        },
+        {
+          "name": "test_empty_input",
+          "type": "function",
+          "line": 346
+        },
+        {
+          "name": "TestVerifyChecksum",
+          "type": "class",
+          "line": 351
+        },
+        {
+          "name": "test_matching_checksum",
+          "type": "function",
+          "line": 352
+        },
+        {
+          "name": "test_mismatched_checksum",
+          "type": "function",
+          "line": 360
+        },
+        {
+          "name": "TestClearCache",
+          "type": "class",
+          "line": 367
+        },
+        {
+          "name": "test_removes_dir",
+          "type": "function",
+          "line": 368
+        },
+        {
+          "name": "test_noop_if_missing",
+          "type": "function",
+          "line": 376
+        },
+        {
+          "name": "TestCheckForUpdate",
+          "type": "class",
+          "line": 382
+        },
+        {
+          "name": "test_returns_none_when_current",
+          "type": "function",
+          "line": 384
+        },
+        {
+          "name": "test_returns_none_on_network_error",
+          "type": "function",
+          "line": 389
+        },
+        {
+          "name": "test_returns_version_when_newer",
+          "type": "function",
+          "line": 397
+        },
+        {
+          "name": "test_skips_download_if_already_cached",
+          "type": "function",
+          "line": 405
+        },
+        {
+          "name": "TestEnsureBinary",
+          "type": "class",
+          "line": 417
+        },
+        {
+          "name": "test_local_override",
+          "type": "function",
+          "line": 419
+        },
+        {
+          "name": "test_local_override_missing_file",
+          "type": "function",
+          "line": 427
+        },
+        {
+          "name": "test_cached_binary_found",
+          "type": "function",
+          "line": 433
+        },
+        {
+          "name": "test_downloads_when_missing",
+          "type": "function",
+          "line": 450
+        },
+        {
+          "name": "TestWriteVersionMarker",
+          "type": "class",
+          "line": 472
+        },
+        {
+          "name": "test_creates_file",
+          "type": "function",
+          "line": 473
+        },
+        {
+          "name": "TestDownloadFallback",
+          "type": "class",
+          "line": 481
+        },
+        {
+          "name": "test_binary_download_falls_back_on_http_error",
+          "type": "function",
+          "line": 484
+        },
+        {
+          "name": "mock_download_file",
+          "type": "function",
+          "line": 493
+        },
+        {
+          "name": "test_binary_download_no_fallback_with_custom_url",
+          "type": "function",
+          "line": 509
+        },
+        {
+          "name": "test_checksum_fetch_falls_back_on_http_error",
+          "type": "function",
+          "line": 520
+        },
+        {
+          "name": "mock_get",
+          "type": "function",
+          "line": 527
+        },
+        {
+          "name": "test_checksum_fetch_returns_none_when_both_fail",
+          "type": "function",
+          "line": 544
+        }
+      ]
+    }
+  ]
+}

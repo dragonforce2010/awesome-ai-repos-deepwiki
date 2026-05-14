@@ -1,0 +1,264 @@
+{
+  "title": "CloakBrowser DeepWiki",
+  "description": "面向反检测自动化的隐身 Chromium：源码级 C++ 补丁 + Playwright 直插替代 + 拟人化行为层 + CDP 多路复用器",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "projectName": "cloakbrowser",
+  "source": {
+    "repo": "https://github.com/CloakHQ/cloakbrowser",
+    "commit": "6f4f92e7c762507056ed053078fb7e4854448c4b",
+    "branch": "main"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构",
+      "pages": ["system-architecture"],
+      "subsections": []
+    },
+    {
+      "id": "section-stealth-engine",
+      "title": "隐身引擎",
+      "pages": ["stealth-engine"],
+      "subsections": []
+    },
+    {
+      "id": "section-launch-api",
+      "title": "启动 API",
+      "pages": ["launch-api"],
+      "subsections": []
+    },
+    {
+      "id": "section-binary",
+      "title": "二进制生命周期",
+      "pages": ["binary-management"],
+      "subsections": []
+    },
+    {
+      "id": "section-network",
+      "title": "代理与 GeoIP",
+      "pages": ["proxy-and-geoip"],
+      "subsections": []
+    },
+    {
+      "id": "section-humanize",
+      "title": "拟人化行为层",
+      "pages": ["humanize-behavior"],
+      "subsections": []
+    },
+    {
+      "id": "section-cloakserve",
+      "title": "CDP 多路复用器",
+      "pages": ["cloakserve-cdp-multiplexer"],
+      "subsections": []
+    },
+    {
+      "id": "section-bilingual",
+      "title": "双 SDK 对偶",
+      "pages": ["python-vs-js-sdk"],
+      "subsections": []
+    },
+    {
+      "id": "section-deployment",
+      "title": "部署与集成",
+      "pages": ["deployment-and-integrations"],
+      "subsections": []
+    },
+    {
+      "id": "section-quality",
+      "title": "测试、CI 与发布",
+      "pages": ["testing-ci-release"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-stealth-engine",
+    "section-launch-api",
+    "section-binary",
+    "section-network",
+    "section-humanize",
+    "section-cloakserve",
+    "section-bilingual",
+    "section-deployment",
+    "section-quality"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "CloakBrowser 的诞生背景、核心创新、能力全景与阅读路线",
+      "importance": "high",
+      "filePaths": ["README.md", "pyproject.toml", "CHANGELOG.md", "cloakbrowser/__init__.py", "js/src/index.ts"],
+      "relatedPages": ["system-architecture", "stealth-engine", "launch-api"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "Wrapper / Binary / cloakserve 三层模型、调用链与跨语言对偶",
+      "importance": "high",
+      "filePaths": [
+        "cloakbrowser/__init__.py",
+        "cloakbrowser/browser.py",
+        "cloakbrowser/config.py",
+        "cloakbrowser/download.py",
+        "js/src/index.ts",
+        "js/src/playwright.ts",
+        "bin/cloakserve"
+      ],
+      "relatedPages": ["stealth-engine", "launch-api", "python-vs-js-sdk", "cloakserve-cdp-multiplexer"]
+    },
+    {
+      "id": "stealth-engine",
+      "title": "隐身引擎与指纹系统",
+      "file": "pages/stealth-engine.md",
+      "description": "源码级 C++ 补丁如何与 wrapper 协作；build_args 的去重与覆盖优先级；fingerprint flag 体系",
+      "importance": "high",
+      "filePaths": [
+        "cloakbrowser/config.py",
+        "cloakbrowser/browser.py",
+        "js/src/config.ts",
+        "js/src/args.ts",
+        "README.md"
+      ],
+      "relatedPages": ["system-architecture", "launch-api", "proxy-and-geoip"]
+    },
+    {
+      "id": "launch-api",
+      "title": "启动 API:四象限对偶",
+      "file": "pages/launch-api.md",
+      "description": "launch / launch_context / launch_persistent_context / 各自异步对偶的语义、清理钩子与扩展点",
+      "importance": "high",
+      "filePaths": [
+        "cloakbrowser/browser.py",
+        "cloakbrowser/__init__.py",
+        "js/src/playwright.ts",
+        "js/src/puppeteer.ts",
+        "js/src/types.ts"
+      ],
+      "relatedPages": ["system-architecture", "humanize-behavior", "proxy-and-geoip"]
+    },
+    {
+      "id": "binary-management",
+      "title": "二进制生命周期",
+      "file": "pages/binary-management.md",
+      "description": "ensure_binary、平台/版本解析、双链路下载、SHA-256 校验、后台自动更新与 PyPI/npm 自检",
+      "importance": "high",
+      "filePaths": [
+        "cloakbrowser/download.py",
+        "cloakbrowser/config.py",
+        "cloakbrowser/__main__.py",
+        "js/src/download.ts",
+        "js/src/cli.ts"
+      ],
+      "relatedPages": ["system-architecture", "deployment-and-integrations"]
+    },
+    {
+      "id": "proxy-and-geoip",
+      "title": "代理、GeoIP 与 WebRTC 一致性",
+      "file": "pages/proxy-and-geoip.md",
+      "description": "HTTP / SOCKS5 双路径、credentials URL 重编码、exit IP 复用、--fingerprint-webrtc-ip 自动注入",
+      "importance": "high",
+      "filePaths": [
+        "cloakbrowser/browser.py",
+        "cloakbrowser/geoip.py",
+        "js/src/proxy.ts",
+        "js/src/geoip.ts"
+      ],
+      "relatedPages": ["launch-api", "stealth-engine", "cloakserve-cdp-multiplexer"]
+    },
+    {
+      "id": "humanize-behavior",
+      "title": "拟人化行为层",
+      "file": "pages/humanize-behavior.md",
+      "description": "Bezier 鼠标、按键时序、加速-巡航-减速滚动;HumanConfig 预设与每次调用覆盖;CDP Isolated World 反检测",
+      "importance": "high",
+      "filePaths": [
+        "cloakbrowser/human/__init__.py",
+        "cloakbrowser/human/config.py",
+        "cloakbrowser/human/mouse.py",
+        "cloakbrowser/human/keyboard.py",
+        "cloakbrowser/human/scroll.py",
+        "js/src/human/index.ts",
+        "js/src/human/config.ts"
+      ],
+      "relatedPages": ["launch-api", "system-architecture"]
+    },
+    {
+      "id": "cloakserve-cdp-multiplexer",
+      "title": "cloakserve:CDP 多路复用器",
+      "file": "pages/cloakserve-cdp-multiplexer.md",
+      "description": "按 fingerprint seed 维护 Chrome 进程池;HTTP + WebSocket 双协议代理;并发与生命周期管理",
+      "importance": "high",
+      "filePaths": [
+        "bin/cloakserve",
+        "cloakbrowser/browser.py",
+        "tests/test_cloakserve.py"
+      ],
+      "relatedPages": ["system-architecture", "proxy-and-geoip", "deployment-and-integrations"]
+    },
+    {
+      "id": "python-vs-js-sdk",
+      "title": "Python 与 JS 双 SDK 对偶",
+      "file": "pages/python-vs-js-sdk.md",
+      "description": "API 一一对应映射;Puppeteer 适配差异;TypeScript 类型边界",
+      "importance": "medium",
+      "filePaths": [
+        "cloakbrowser/__init__.py",
+        "cloakbrowser/browser.py",
+        "js/src/index.ts",
+        "js/src/playwright.ts",
+        "js/src/puppeteer.ts",
+        "js/src/types.ts",
+        "js/package.json",
+        "pyproject.toml"
+      ],
+      "relatedPages": ["launch-api", "humanize-behavior"]
+    },
+    {
+      "id": "deployment-and-integrations",
+      "title": "部署与生态集成",
+      "file": "pages/deployment-and-integrations.md",
+      "description": "Docker 镜像、AWS Lambda 模板、browser-use / Crawl4AI / Scrapling / Stagehand / Selenium 等集成示例",
+      "importance": "medium",
+      "filePaths": [
+        "Dockerfile",
+        "bin/docker-entrypoint.sh",
+        "examples/integrations/aws_lambda/lambda_handler.py",
+        "examples/integrations/browser_use_example.py",
+        "examples/integrations/crawl4ai_example.py",
+        "examples/integrations/scrapling_example.py",
+        "examples/integrations/selenium_example.py",
+        "flake.nix"
+      ],
+      "relatedPages": ["binary-management", "cloakserve-cdp-multiplexer"]
+    },
+    {
+      "id": "testing-ci-release",
+      "title": "测试、CI 与发布管线",
+      "file": "pages/testing-ci-release.md",
+      "description": "Python pytest + JS vitest 套件;CI 三件套(ci/publish/attest-release);Sigstore + cosign 软件供应链证明",
+      "importance": "medium",
+      "filePaths": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/publish.yml",
+        ".github/workflows/attest-release.yml",
+        "tests/conftest.py",
+        "tests/test_stealth.py",
+        "tests/test_launch.py",
+        "js/tests/stealth.test.ts",
+        "pyproject.toml"
+      ],
+      "relatedPages": ["binary-management", "deployment-and-integrations"]
+    }
+  ]
+}
