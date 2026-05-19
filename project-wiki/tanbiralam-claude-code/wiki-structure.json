@@ -1,0 +1,312 @@
+{
+  "title": "tanbiralam/claude-code DeepWiki",
+  "projectName": "tanbiralam-claude-code",
+  "description": "中文源码导览：Claude Code CLI 的启动、会话、工具、权限、MCP、Skill、Agent、远程和终端 UI 架构。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/tanbiralam/claude-code",
+    "commit": "6f6f12b37f529488b10e53928dd5508bb93535c7"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": [
+        "overview"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-runtime",
+      "title": "运行时主链路",
+      "pages": [
+        "startup-and-cli",
+        "query-runtime",
+        "tool-system",
+        "permissions-hooks"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-extension",
+      "title": "扩展与协议",
+      "pages": [
+        "commands-skills-plugins",
+        "mcp-integration",
+        "agent-task-remote"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-ui-state",
+      "title": "界面、状态与质量",
+      "pages": [
+        "terminal-ui-keybindings",
+        "data-flow-and-state",
+        "settings-build-quality",
+        "security-boundaries"
+      ],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-runtime",
+    "section-extension",
+    "section-ui-state"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "项目定位、核心痛点、能力边界与阅读路线",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "package.json",
+        "src/entrypoints/cli.tsx",
+        "src/main.tsx",
+        "src/QueryEngine.ts",
+        "src/tools.ts",
+        "src/Tool.ts",
+        "src/commands.ts"
+      ],
+      "relatedPages": [
+        "startup-and-cli",
+        "query-runtime",
+        "tool-system"
+      ]
+    },
+    {
+      "id": "startup-and-cli",
+      "title": "启动与 CLI 入口",
+      "file": "pages/startup-and-cli.md",
+      "description": "从 Bun fast path 到 Commander 主命令和模式分流",
+      "importance": "high",
+      "filePaths": [
+        "src/entrypoints/cli.tsx",
+        "src/main.tsx",
+        "package.json",
+        "plugins/bunBundleDev.ts",
+        "bunfig.toml"
+      ],
+      "relatedPages": [
+        "overview",
+        "query-runtime",
+        "settings-build-quality"
+      ]
+    },
+    {
+      "id": "query-runtime",
+      "title": "QueryEngine 会话运行时",
+      "file": "pages/query-runtime.md",
+      "description": "消息生命周期、上下文注入、转录持久化和 SDK 输出",
+      "importance": "high",
+      "filePaths": [
+        "src/QueryEngine.ts",
+        "src/query.ts",
+        "src/context.ts",
+        "src/utils/processUserInput/processUserInput.ts",
+        "src/utils/sessionStorage.ts",
+        "src/services/api/claude.ts"
+      ],
+      "relatedPages": [
+        "startup-and-cli",
+        "tool-system",
+        "settings-build-quality"
+      ]
+    },
+    {
+      "id": "tool-system",
+      "title": "工具系统",
+      "file": "pages/tool-system.md",
+      "description": "Tool 抽象、内置工具注册、并发调度与执行错误处理",
+      "importance": "high",
+      "filePaths": [
+        "src/Tool.ts",
+        "src/tools.ts",
+        "src/services/tools/toolOrchestration.ts",
+        "src/services/tools/toolExecution.ts",
+        "src/tools/BashTool/BashTool.tsx",
+        "src/tools/FileReadTool/FileReadTool.tsx",
+        "src/tools/GrepTool/GrepTool.tsx"
+      ],
+      "relatedPages": [
+        "query-runtime",
+        "permissions-hooks",
+        "agent-task-remote"
+      ]
+    },
+    {
+      "id": "permissions-hooks",
+      "title": "权限与 Hook",
+      "file": "pages/permissions-hooks.md",
+      "description": "规则、模式、分类器、Hook 与交互弹窗的组合决策",
+      "importance": "high",
+      "filePaths": [
+        "src/Tool.ts",
+        "src/hooks/useCanUseTool.tsx",
+        "src/hooks/toolPermission/PermissionContext.ts",
+        "src/hooks/toolPermission/handlers/interactiveHandler.ts",
+        "src/hooks/toolPermission/handlers/coordinatorHandler.ts",
+        "src/utils/permissions/permissions.ts",
+        "src/utils/permissions/permissionSetup.ts",
+        "src/services/tools/toolHooks.ts"
+      ],
+      "relatedPages": [
+        "tool-system",
+        "mcp-integration",
+        "agent-task-remote"
+      ]
+    },
+    {
+      "id": "commands-skills-plugins",
+      "title": "命令、Skill 与插件",
+      "file": "pages/commands-skills-plugins.md",
+      "description": "斜杠命令注册、Skill 装载、插件能力与 SkillTool 执行路径",
+      "importance": "high",
+      "filePaths": [
+        "src/commands.ts",
+        "src/skills/loadSkillsDir.ts",
+        "src/tools/SkillTool/SkillTool.ts",
+        "src/plugins/bundled/index.ts",
+        "src/utils/plugins/loadPluginCommands.ts",
+        "src/services/skillSearch/localSearch.ts"
+      ],
+      "relatedPages": [
+        "startup-and-cli",
+        "mcp-integration",
+        "tool-system"
+      ]
+    },
+    {
+      "id": "mcp-integration",
+      "title": "MCP 集成",
+      "file": "pages/mcp-integration.md",
+      "description": "MCP 配置来源、连接 transport、工具/资源/Skill 暴露和策略过滤",
+      "importance": "high",
+      "filePaths": [
+        "src/services/mcp/client.ts",
+        "src/services/mcp/config.ts",
+        "src/services/mcp/types.ts",
+        "src/services/mcp/mcpStringUtils.ts",
+        "src/tools/MCPTool/MCPTool.ts",
+        "src/tools/ListMcpResourcesTool/ListMcpResourcesTool.ts",
+        "src/tools/ReadMcpResourceTool/ReadMcpResourceTool.ts"
+      ],
+      "relatedPages": [
+        "commands-skills-plugins",
+        "permissions-hooks",
+        "agent-task-remote"
+      ]
+    },
+    {
+      "id": "agent-task-remote",
+      "title": "Agent、Task 与远程会话",
+      "file": "pages/agent-task-remote.md",
+      "description": "子 Agent、后台任务、remote session 和 WebSocket 控制流",
+      "importance": "high",
+      "filePaths": [
+        "src/tools/AgentTool/AgentTool.tsx",
+        "src/tools/AgentTool/runAgent.ts",
+        "src/Task.ts",
+        "src/tasks.ts",
+        "src/remote/RemoteSessionManager.ts",
+        "src/remote/SessionsWebSocket.ts",
+        "src/main.tsx"
+      ],
+      "relatedPages": [
+        "tool-system",
+        "mcp-integration",
+        "terminal-ui-keybindings"
+      ]
+    },
+    {
+      "id": "terminal-ui-keybindings",
+      "title": "终端 UI 与键位系统",
+      "file": "pages/terminal-ui-keybindings.md",
+      "description": "Ink 包装、屏幕渲染池、键位上下文和多键 chord 解析",
+      "importance": "medium",
+      "filePaths": [
+        "src/ink.ts",
+        "src/ink/screen.ts",
+        "src/keybindings/defaultBindings.ts",
+        "src/keybindings/resolver.ts",
+        "src/keybindings/parser.ts",
+        "src/keybindings/loadUserBindings.ts",
+        "src/components/permissions/PermissionRequest.tsx"
+      ],
+      "relatedPages": [
+        "startup-and-cli",
+        "permissions-hooks",
+        "agent-task-remote"
+      ]
+    },
+    {
+      "id": "settings-build-quality",
+      "title": "配置、构建与质量门禁",
+      "file": "pages/settings-build-quality.md",
+      "description": "settings 合并、MCP 配置写入、feature flag、构建脚本和验证路径",
+      "importance": "medium",
+      "filePaths": [
+        "package.json",
+        "bunfig.toml",
+        "tsconfig.json",
+        "src/utils/settings/settings.ts",
+        "src/services/mcp/config.ts",
+        "src/migrations/migrateAutoUpdatesToSettings.ts",
+        "src/services/analytics/growthbook.ts"
+      ],
+      "relatedPages": [
+        "startup-and-cli",
+        "permissions-hooks",
+        "mcp-integration"
+      ]
+    },
+    {
+      "id": "data-flow-and-state",
+      "title": "数据流、状态与持久化",
+      "file": "pages/data-flow-and-state.md",
+      "description": "AppState、transcript、file cache、task output 和 session 恢复",
+      "importance": "medium",
+      "filePaths": [
+        "src/QueryEngine.ts",
+        "src/context.ts",
+        "src/bootstrap/state.ts",
+        "src/state/AppState.ts",
+        "src/history.ts",
+        "src/utils/sessionStorage.ts",
+        "src/utils/fileStateCache.ts",
+        "src/Task.ts"
+      ],
+      "relatedPages": [
+        "query-runtime",
+        "agent-task-remote",
+        "settings-build-quality"
+      ]
+    },
+    {
+      "id": "security-boundaries",
+      "title": "安全边界与风险点",
+      "file": "pages/security-boundaries.md",
+      "description": "泄露来源提示、权限绕过、远程连接、密钥和源码引用边界",
+      "importance": "medium",
+      "filePaths": [
+        "README.md",
+        "src/main.tsx",
+        "src/utils/permissions/permissionSetup.ts",
+        "src/services/mcp/config.ts",
+        "src/remote/SessionsWebSocket.ts",
+        "src/services/mcp/client.ts",
+        "src/hooks/toolPermission/handlers/interactiveHandler.ts"
+      ],
+      "relatedPages": [
+        "permissions-hooks",
+        "mcp-integration",
+        "startup-and-cli"
+      ]
+    }
+  ]
+}
