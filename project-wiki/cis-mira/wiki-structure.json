@@ -1,0 +1,160 @@
+{
+  "title": "blade/cis-mira DeepWiki",
+  "projectName": "cis-mira",
+  "description": "Mira 企业 AI 助手前端：流式对话、Claude Agent SDK 工具渲染、Skills/Project/模板与多端客户端的一体化 Web 应用。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "git@code.byted.org:blade/cis-mira.git",
+    "commit": "e8f059ad72082f0d9f35b78714e30d14e6f1c9e8"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构",
+      "pages": ["system-architecture", "routing-layouts-auth", "state-management"],
+      "subsections": []
+    },
+    {
+      "id": "section-chat",
+      "title": "对话与消息",
+      "pages": ["streaming-chat-pipeline", "message-adapter-rendering"],
+      "subsections": []
+    },
+    {
+      "id": "section-capabilities",
+      "title": "能力扩展",
+      "pages": ["skills-tools-mcp", "project-workspace", "templates-agents-home", "task-center"],
+      "subsections": []
+    },
+    {
+      "id": "section-platform",
+      "title": "多端与工程",
+      "pages": ["multi-platform-clients", "build-deploy-quality"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-chat",
+    "section-capabilities",
+    "section-platform"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "Mira FE 定位、产品面、技术栈与阅读路线",
+      "importance": "high",
+      "filePaths": ["README.md", "package.json", "src/root.tsx", "src/routes/routes.tsx", "src/design/README.md", "index.html"],
+      "relatedPages": ["system-architecture", "streaming-chat-pipeline"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与分层",
+      "file": "pages/system-architecture.md",
+      "description": "入口壳层、features 模块、API 与 store 双层状态",
+      "importance": "high",
+      "filePaths": ["src/root.tsx", "src/design/README.md", "src/api/utils.ts", "src/store/atoms/index.ts", "src/store/entities/chat/index.ts", "src/components/chat-layout/mira-layout.tsx"],
+      "relatedPages": ["overview", "state-management"]
+    },
+    {
+      "id": "routing-layouts-auth",
+      "title": "路由、布局与认证",
+      "file": "pages/routing-layouts-auth.md",
+      "description": "React Router 7 路由树、MiraLayout、JWT/飞书登录与公网 VPN 策略",
+      "importance": "high",
+      "filePaths": ["src/routes/routes.tsx", "src/constants/route.ts", "src/components/chat-layout/mira-layout.tsx", "src/utils/auth.ts", "src/contexts/user/provider.tsx", "src/lib/vpn-redirect.ts"],
+      "relatedPages": ["system-architecture", "streaming-chat-pipeline"]
+    },
+    {
+      "id": "streaming-chat-pipeline",
+      "title": "SSE 流式聊天链路",
+      "file": "pages/streaming-chat-pipeline.md",
+      "description": "从提交消息到 fetch-event-source 解析与本地流式状态",
+      "importance": "high",
+      "filePaths": ["src/hooks/use-chat-manager.ts", "src/features/stream/hooks/use-send-message.ts", "src/features/stream/services/stream-service.ts", "src/features/stream/hooks/use-stream-base.ts", "src/features/stream/constants/api.ts", "src/store/atoms/chat-stream-state.ts"],
+      "relatedPages": ["message-adapter-rendering", "state-management"]
+    },
+    {
+      "id": "message-adapter-rendering",
+      "title": "消息适配与工具渲染",
+      "file": "pages/message-adapter-rendering.md",
+      "description": "Claude 流式块解析、ViewData 缓存与 ToolRendering 组件树",
+      "importance": "high",
+      "filePaths": ["src/lib/message-adapter/utils/parse-streaming-events.ts", "src/routes/chat-page/components/messages/manus-message-list.tsx", "src/claude/components/ToolRendering/ToolUseRenderer.tsx", "src/features/stream/hooks/pre-created-answer-shell-controller.ts", "src/routes/chat-page/components/messages/message-item/content-block-shared.tsx"],
+      "relatedPages": ["streaming-chat-pipeline", "skills-tools-mcp"]
+    },
+    {
+      "id": "state-management",
+      "title": "状态管理",
+      "file": "pages/state-management.md",
+      "description": "Jotai 客户端态与 React Query 实体缓存的分工",
+      "importance": "medium",
+      "filePaths": ["src/store/atoms/chat-stream-state.ts", "src/store/atoms/chat-input.ts", "src/store/entities/message/index.ts", "src/store/entities/chat/index.ts", "src/lib/query.ts", "src/lib/session-config.ts"],
+      "relatedPages": ["streaming-chat-pipeline", "system-architecture"]
+    },
+    {
+      "id": "skills-tools-mcp",
+      "title": "Skills、Tools 与 MCP",
+      "file": "pages/skills-tools-mcp.md",
+      "description": "技能市场、聊天内技能选择与 MCP 工具 UI",
+      "importance": "high",
+      "filePaths": ["src/features/skill/api/skill.ts", "src/routes/skill-management/index.tsx", "src/features/tools/components/skill-menu-dropdown.tsx", "src/api/mcp.ts", "src/claude/components/ToolRendering/tools/SkillTool.tsx", "src/claude/components/ToolRendering/tools/McpAppView.tsx"],
+      "relatedPages": ["templates-agents-home", "message-adapter-rendering"]
+    },
+    {
+      "id": "project-workspace",
+      "title": "Project 工作区",
+      "file": "pages/project-workspace.md",
+      "description": "项目级指令、文件、技能与内部 Agent 绑定",
+      "importance": "medium",
+      "filePaths": ["src/routes/project/detail.tsx", "src/features/project/components/project-chat-input.tsx", "src/lib/agent-config.ts", "src/features/project/api/project.ts", "src/features/project/hooks/use-project-skills.ts"],
+      "relatedPages": ["streaming-chat-pipeline", "skills-tools-mcp"]
+    },
+    {
+      "id": "templates-agents-home",
+      "title": "首页、Agent 与模板",
+      "file": "pages/templates-agents-home.md",
+      "description": "Mira 入口页、模板区与 Slate 模板编辑器",
+      "importance": "medium",
+      "filePaths": ["src/routes/root-page/mira.tsx", "src/routes/root-page/components/template-section.tsx", "src/routes/create-template/index.tsx", "src/lib/template-cache.ts", "src/lib/session-config.ts", "src/hooks/use-chat-manager.ts"],
+      "relatedPages": ["overview", "skills-tools-mcp"]
+    },
+    {
+      "id": "task-center",
+      "title": "任务中心",
+      "file": "pages/task-center.md",
+      "description": "定时任务与异步任务看板",
+      "importance": "medium",
+      "filePaths": ["src/routes/task-center/index.tsx", "src/features/task-center/api/scheduler.ts", "src/features/task-center/components/task-dashboard.tsx", "src/store/atoms/task-center.ts", "src/claude/components/ToolRendering/tools/ScheduleTaskTool.tsx"],
+      "relatedPages": ["streaming-chat-pipeline"]
+    },
+    {
+      "id": "multi-platform-clients",
+      "title": "多端客户端",
+      "file": "pages/multi-platform-clients.md",
+      "description": "Electron、Chrome 扩展、Flutter 与 JSBridge",
+      "importance": "medium",
+      "filePaths": ["src/lib/platform.ts", "src/lib/jsbridge.ts", "electron-app/README.md", "chrome-extension/README.md", "electron-app/shared/lib/mira-client.ts", "index.html"],
+      "relatedPages": ["routing-layouts-auth", "build-deploy-quality"]
+    },
+    {
+      "id": "build-deploy-quality",
+      "title": "构建、部署与质量",
+      "file": "pages/build-deploy-quality.md",
+      "description": "Vite 多区域构建、设计系统治理与本地质量脚本",
+      "importance": "medium",
+      "filePaths": ["vite.config.ts", "package.json", ".env.intranet", ".env.cn", "docs/color-token-governance.md", ".claude/skills/mira-design-system/SKILL.md"],
+      "relatedPages": ["multi-platform-clients", "system-architecture"]
+    }
+  ]
+}
