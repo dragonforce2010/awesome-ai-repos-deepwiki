@@ -9,3 +9,4 @@ project-repos/
 project-wiki/.vitepress/dist/
 project-wiki/.vitepress/cache/
 project-wiki/test-vue-compile.md
+project-wiki/cis-mira/
