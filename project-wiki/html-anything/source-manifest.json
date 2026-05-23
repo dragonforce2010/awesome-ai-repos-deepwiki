@@ -1,0 +1,4227 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/html-anything",
+    "remote": "https://github.com/nexu-io/html-anything.git",
+    "branch": "main",
+    "commit": "145a40ebd79624bbd6a28ec379148a895896573c"
+  },
+  "file_count": 212,
+  "skipped_count": 105,
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 241,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 240,
+      "symbols": []
+    },
+    {
+      "path": "PROGRESS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 273,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 507,
+      "symbols": []
+    },
+    {
+      "path": "README.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 403,
+      "symbols": []
+    },
+    {
+      "path": "e2e/AGENTS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "e2e/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "e2e/playwright.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "e2e/scripts/playwright.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 51,
+      "symbols": [
+        {
+          "name": "Command",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "cleanArtifacts",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "printUsage",
+          "type": "function",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "e2e/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "e2e/ui/deploy-control.spec.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 103,
+      "symbols": [
+        {
+          "name": "seedStore",
+          "type": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "e2e/ui/export-menu.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 167,
+      "symbols": [
+        {
+          "name": "SeedOptions",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "seedStore",
+          "type": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "next/next.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "next/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "next/src/app/api/agents/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/convert/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 164,
+      "symbols": [
+        {
+          "name": "Body",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "buildEditPrompt",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "send",
+          "type": "function",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/deploy/config/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 87,
+      "symbols": [
+        {
+          "name": "deployErrorResponse",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "readProvider",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "PUT",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "DELETE",
+          "type": "function",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/deploy/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 120,
+      "symbols": [
+        {
+          "name": "Body",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "ensureFullHtmlDocument",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "deployErrorResponse",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/draft/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 113,
+      "symbols": [
+        {
+          "name": "Body",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "buildDraftPrompt",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "send",
+          "type": "function",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/marketplace/_lib/__tests__/host-guard.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 72,
+      "symbols": [
+        {
+          "name": "reqWithHost",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "body",
+          "type": "function",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/marketplace/_lib/host-guard.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 78,
+      "symbols": [
+        {
+          "name": "stripPort",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "parseAllowlist",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "isHostAllowed",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "safeUrlHost",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "hostRejectedResponse",
+          "type": "function",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/marketplace/install/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 32,
+      "symbols": [
+        {
+          "name": "POST",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "spec",
+          "type": "function",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/marketplace/packages/[id]/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": [
+        {
+          "name": "Ctx",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "DELETE",
+          "type": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/marketplace/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/templates/[id]/example/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 31,
+      "symbols": [
+        {
+          "name": "Ctx",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/templates/[id]/preview/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 29,
+      "symbols": [
+        {
+          "name": "Ctx",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/api/templates/route.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": [
+        {
+          "name": "GET",
+          "type": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "next/src/app/layout.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "next/src/app/page.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 121,
+      "symbols": [
+        {
+          "name": "data",
+          "type": "function",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/ai-prompt-bar.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 113,
+      "symbols": [
+        {
+          "name": "AiPromptBar",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "onSubmit",
+          "type": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/convert-chip.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 103,
+      "symbols": [
+        {
+          "name": "ConvertChip",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/deck-viewer.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 295,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "DeckViewer",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "onFs",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "ThumbStrip",
+          "type": "function",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/deploy-control.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 344,
+      "symbols": [
+        {
+          "name": "DeployControl",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "onClick",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "onClickPublish",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "onCopy",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "HistoryRow",
+          "type": "function",
+          "line": 289
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/drafts-menu.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 120,
+      "symbols": [
+        {
+          "name": "DraftsMenu",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "refresh",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "handler",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "restore",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "remove",
+          "type": "function",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/editor-pane.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 206,
+      "symbols": [
+        {
+          "name": "EditorPane",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "SaveIndicator",
+          "type": "function",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/export-menu.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 206,
+      "symbols": [
+        {
+          "name": "ExportMenuProps",
+          "type": "type",
+          "line": 24
+        },
+        {
+          "name": "ExportMenu",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "handler",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "showToast",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "cleanHtml",
+          "type": "function",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/formats-gallery.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 501,
+      "symbols": [
+        {
+          "name": "FormatKind",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "FormatExample",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "svgDataUrl",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "FormatsGallery",
+          "type": "function",
+          "line": 339
+        },
+        {
+          "name": "handleLoad",
+          "type": "function",
+          "line": 364
+        },
+        {
+          "name": "FormatCard",
+          "type": "function",
+          "line": 433
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/history-pane.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 493,
+      "symbols": [
+        {
+          "name": "Mode",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "HistoryPane",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "onOpenDiff",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "onRestore",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "onDelete",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "HistoryList",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "HistoryCard",
+          "type": "function",
+          "line": 229
+        },
+        {
+          "name": "sizeKB",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "DiffView",
+          "type": "function",
+          "line": 306
+        },
+        {
+          "name": "VersionPicker",
+          "type": "function",
+          "line": 385
+        },
+        {
+          "name": "VisualDiff",
+          "type": "function",
+          "line": 417
+        },
+        {
+          "name": "DiffIframe",
+          "type": "function",
+          "line": 432
+        },
+        {
+          "name": "SourceDiff",
+          "type": "function",
+          "line": 454
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/layout-mode-toggle.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 75,
+      "symbols": [
+        {
+          "name": "LayoutModeToggle",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/preview-pane.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 582,
+      "symbols": [
+        {
+          "name": "PreviewTab",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "PreviewPane",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "exampleHtml",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "onFs",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "StatusPill",
+          "type": "function",
+          "line": 367
+        },
+        {
+          "name": "MetricsBar",
+          "type": "function",
+          "line": 387
+        },
+        {
+          "name": "Metric",
+          "type": "function",
+          "line": 428
+        },
+        {
+          "name": "CodeEditor",
+          "type": "function",
+          "line": 442
+        },
+        {
+          "name": "LogPanel",
+          "type": "function",
+          "line": 492
+        },
+        {
+          "name": "LogLine",
+          "type": "function",
+          "line": 512
+        },
+        {
+          "name": "PreviewPlaceholder",
+          "type": "function",
+          "line": 542
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/samples-gallery.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 306,
+      "symbols": [
+        {
+          "name": "SamplesGallery",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "handleLoad",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "SampleCard",
+          "type": "function",
+          "line": 182
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/settings-modal.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1016,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "SectionId",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "SettingsModal",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "AgentSection",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "load",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "LanguageSection",
+          "type": "function",
+          "line": 283
+        },
+        {
+          "name": "AgentCard",
+          "type": "function",
+          "line": 339
+        },
+        {
+          "name": "ModelPicker",
+          "type": "function",
+          "line": 391
+        },
+        {
+          "name": "CustomBinPath",
+          "type": "function",
+          "line": 451
+        },
+        {
+          "name": "MissingCard",
+          "type": "function",
+          "line": 542
+        },
+        {
+          "name": "DeploySection",
+          "type": "function",
+          "line": 566
+        },
+        {
+          "name": "VercelDeployConfig",
+          "type": "function",
+          "line": 584
+        },
+        {
+          "name": "load",
+          "type": "function",
+          "line": 594
+        },
+        {
+          "name": "onSave",
+          "type": "function",
+          "line": 615
+        },
+        {
+          "name": "onClear",
+          "type": "function",
+          "line": 638
+        },
+        {
+          "name": "ComingSoonProvider",
+          "type": "function",
+          "line": 751
+        },
+        {
+          "name": "InstalledPackage",
+          "type": "type",
+          "line": 770
+        },
+        {
+          "name": "MarketplaceSection",
+          "type": "function",
+          "line": 777
+        },
+        {
+          "name": "load",
+          "type": "function",
+          "line": 786
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 792
+        },
+        {
+          "name": "onInstall",
+          "type": "function",
+          "line": 805
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 817
+        },
+        {
+          "name": "onUninstall",
+          "type": "function",
+          "line": 845
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 853
+        },
+        {
+          "name": "PackageCard",
+          "type": "function",
+          "line": 961
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/tasks-sidebar.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 417,
+      "symbols": [
+        {
+          "name": "TasksSidebar",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "TaskCard",
+          "type": "function",
+          "line": 271
+        },
+        {
+          "name": "commit",
+          "type": "function",
+          "line": 305
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/template-picker.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 582,
+      "symbols": [
+        {
+          "name": "Filter",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "rankFeatured",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "rankRecommended",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "matchesQuery",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "TemplatePicker",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "scenarioText",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "templateName",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "handler",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "onPreview",
+          "type": "function",
+          "line": 205
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/toolbar.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 186,
+      "symbols": [
+        {
+          "name": "Toolbar",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "HistoryToggle",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "CommunityLinks",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "Brand",
+          "type": "function",
+          "line": 166
+        }
+      ]
+    },
+    {
+      "path": "next/src/components/welcome-modal.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 452,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "type",
+          "line": 86
+        },
+        {
+          "name": "WelcomeModal",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "load",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "confirm",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "AgentCard",
+          "type": "function",
+          "line": 317
+        },
+        {
+          "name": "ModelPicker",
+          "type": "function",
+          "line": 368
+        },
+        {
+          "name": "MissingCard",
+          "type": "function",
+          "line": 426
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/__tests__/extract-html.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/agents/argv.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 421,
+      "symbols": [
+        {
+          "name": "AgentArgvOpts",
+          "type": "type",
+          "line": 1
+        },
+        {
+          "name": "UnsupportedAgentProtocolError",
+          "type": "class",
+          "line": 14
+        },
+        {
+          "name": "buildArgv",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "envFor",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "AgentParse",
+          "type": "type",
+          "line": 142
+        },
+        {
+          "name": "ParseState",
+          "type": "type",
+          "line": 163
+        },
+        {
+          "name": "makeParser",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "parseLine",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "rescueHtmlFromToolUse",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "name",
+          "type": "function",
+          "line": 198
+        },
+        {
+          "name": "parseLineWithState",
+          "type": "function",
+          "line": 228
+        },
+        {
+          "name": "text",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "text",
+          "type": "function",
+          "line": 344
+        },
+        {
+          "name": "text",
+          "type": "function",
+          "line": 396
+        },
+        {
+          "name": "extractTextFromLine",
+          "type": "function",
+          "line": 416
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/agents/detect.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 452,
+      "symbols": [
+        {
+          "name": "AgentProtocol",
+          "type": "type",
+          "line": 19
+        },
+        {
+          "name": "ModelOption",
+          "type": "type",
+          "line": 21
+        },
+        {
+          "name": "AgentDef",
+          "type": "type",
+          "line": 26
+        },
+        {
+          "name": "userToolchainDirs",
+          "type": "function",
+          "line": 299
+        },
+        {
+          "name": "resolveOpenclawAgentId",
+          "type": "function",
+          "line": 354
+        },
+        {
+          "name": "resolveOnPath",
+          "type": "function",
+          "line": 387
+        },
+        {
+          "name": "DetectedAgent",
+          "type": "type",
+          "line": 410
+        },
+        {
+          "name": "detectAgents",
+          "type": "function",
+          "line": 427
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/agents/invoke.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 319,
+      "symbols": [
+        {
+          "name": "InvokeOpts",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "BinResolution",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "resolveBinForAgent",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "tryPath",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "InvokeEvent",
+          "type": "type",
+          "line": 66
+        },
+        {
+          "name": "invokeAgent",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "safeEnqueue",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "safeClose",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "onAbort",
+          "type": "function",
+          "line": 300
+        },
+        {
+          "name": "errorStream",
+          "type": "function",
+          "line": 312
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/deck.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 142,
+      "symbols": [
+        {
+          "name": "DeckSlide",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "DeckParsed",
+          "type": "type",
+          "line": 25
+        },
+        {
+          "name": "isDeck",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "pick",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "decodeEntities",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "stripTags",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "extractAttr",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "parseDeck",
+          "type": "function",
+          "line": 73
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/deploy/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 275,
+      "symbols": [
+        {
+          "name": "DeployProviderId",
+          "type": "type",
+          "line": 22
+        },
+        {
+          "name": "DeployConfig",
+          "type": "type",
+          "line": 30
+        },
+        {
+          "name": "PublicDeployConfig",
+          "type": "type",
+          "line": 43
+        },
+        {
+          "name": "DeployError",
+          "type": "class",
+          "line": 54
+        },
+        {
+          "name": "deployConfigPath",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "isEnoent",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "writeDeployConfigFile",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "readVercelConfig",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "readCloudflarePagesConfig",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "readDeployConfig",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "writeVercelConfig",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "writeCloudflarePagesConfig",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "writeDeployConfig",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "clearDeployConfig",
+          "type": "function",
+          "line": 225
+        },
+        {
+          "name": "publicVercelConfig",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "publicCloudflarePagesConfig",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "publicDeployConfigForProvider",
+          "type": "function",
+          "line": 262
+        },
+        {
+          "name": "isDeployProviderId",
+          "type": "function",
+          "line": 271
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/deploy/url-check.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 179,
+      "symbols": [
+        {
+          "name": "DeploymentUrlCheck",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "WaitForUrlResult",
+          "type": "type",
+          "line": 22
+        },
+        {
+          "name": "normalizeDeploymentUrl",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "isVercelProtectedResponse",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "requestDeploymentUrl",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "checkDeploymentUrl",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "waitForReachableDeploymentUrl",
+          "type": "function",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/deploy/vercel.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 259,
+      "symbols": [
+        {
+          "name": "DeployFile",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "VercelDeployResult",
+          "type": "type",
+          "line": 24
+        },
+        {
+          "name": "VercelJson",
+          "type": "type",
+          "line": 34
+        },
+        {
+          "name": "vercelTeamQuery",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "readVercelJson",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "vercelError",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "deploymentUrl",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "aliasArr",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "deploymentUrlCandidates",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "disableVercelDeploymentProtection",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "json",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "pollVercelDeployment",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "safeProjectLabel",
+          "type": "function",
+          "line": 161
+        },
+        {
+          "name": "safeVercelProjectName",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "deployToVercel",
+          "type": "function",
+          "line": 178
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/drafts.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 92,
+      "symbols": [
+        {
+          "name": "Draft",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "read",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "write",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "listDrafts",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "snapshotDraft",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "deleteDraft",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "clearDrafts",
+          "type": "function",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/__tests__/bilibili.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 148,
+      "symbols": [
+        {
+          "name": "parseFragment",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "tokens",
+          "type": "function",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/__tests__/markdown-roundtrip.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 356,
+      "symbols": [
+        {
+          "name": "mdToDoc",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "roundtripTags",
+          "type": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/__tests__/mastodon.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 81,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/export/__tests__/notion.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 91,
+      "symbols": [
+        {
+          "name": "parseFragment",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "tokens",
+          "type": "function",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/bilibili.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 131,
+      "symbols": [
+        {
+          "name": "toBilibiliHtml",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "copyToBilibili",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "sanitize",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "sanitizeNode",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "isBilibiliCdn",
+          "type": "function",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/bluesky.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 37,
+      "symbols": [
+        {
+          "name": "BlueskyShare",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "buildBlueskyShare",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "copyBlueskyImage",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "copyBlueskyText",
+          "type": "function",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/clipboard.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 88,
+      "symbols": [
+        {
+          "name": "copyHtml",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "copyImage",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "copyText",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "copySafari",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "handler",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "stripTags",
+          "type": "function",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/deck.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 188,
+      "symbols": [
+        {
+          "name": "renderSlideToBlob",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "done",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "exportDeckPngZip",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "pad",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "exportDeckPptx",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "exportDeckPrint",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "ready",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "blobToDataUrl",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "escapeHtml",
+          "type": "function",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/download.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": [
+        {
+          "name": "downloadHtml",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "downloadMarkdown",
+          "type": "function",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/image.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 237,
+      "symbols": [
+        {
+          "name": "ImageOpts",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "NEXT_FRAME",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "sleep",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "waitForDocumentReady",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "done",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "done",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "fonts",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "done",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "resolveBackground",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "tryColor",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "fullScrollHeight",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "nodeToBlob",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "iframeToBlob",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "downloadBlob",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "copyIframeToClipboard",
+          "type": "function",
+          "line": 226
+        },
+        {
+          "name": "downloadIframeAsImage",
+          "type": "function",
+          "line": 231
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/markdown-roundtrip.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 317,
+      "symbols": [
+        {
+          "name": "htmlToMarkdown",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "copyAsMarkdown",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "downloadAsMarkdown",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "Ctx",
+          "type": "type",
+          "line": 38
+        },
+        {
+          "name": "renderBlock",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "childrenToBlocks",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "renderInline",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "inner",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "renderPre",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "raw",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "renderList",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "ChildBlock",
+          "type": "type",
+          "line": 171
+        },
+        {
+          "name": "t",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "renderTable",
+          "type": "function",
+          "line": 218
+        },
+        {
+          "name": "fmt",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "escapeMd",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "escapeBlockStarts",
+          "type": "function",
+          "line": 266
+        },
+        {
+          "name": "collapseBlankLines",
+          "type": "function",
+          "line": 274
+        },
+        {
+          "name": "backtickFence",
+          "type": "function",
+          "line": 278
+        },
+        {
+          "name": "wrapInlineCode",
+          "type": "function",
+          "line": 288
+        },
+        {
+          "name": "escapeHref",
+          "type": "function",
+          "line": 305
+        },
+        {
+          "name": "escapeTitle",
+          "type": "function",
+          "line": 314
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/mastodon.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 60,
+      "symbols": [
+        {
+          "name": "MastodonShare",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "buildMastodonShare",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "copyMastodonImage",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "copyMastodonText",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "truncateForPost",
+          "type": "function",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/notion.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 109,
+      "symbols": [
+        {
+          "name": "toNotionHtml",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "copyToNotion",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "unwrapAll",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "stripNoiseAttrs",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "langOnly",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "normalizeCodeBlocks",
+          "type": "function",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/remotion.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 413,
+      "symbols": [
+        {
+          "name": "slug",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "pad",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "msToFrames",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "buildFrameHtml",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "PACKAGE_JSON",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "ROOT_TSX",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "Props",
+          "type": "type",
+          "line": 173
+        },
+        {
+          "name": "release",
+          "type": "function",
+          "line": 198
+        },
+        {
+          "name": "SequenceEntry",
+          "type": "type",
+          "line": 230
+        },
+        {
+          "name": "VIDEO_TSX",
+          "type": "function",
+          "line": 237
+        },
+        {
+          "name": "seq",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "README_MD",
+          "type": "function",
+          "line": 294
+        },
+        {
+          "name": "ExportRemotionOptions",
+          "type": "type",
+          "line": 350
+        },
+        {
+          "name": "exportRemotionZip",
+          "type": "function",
+          "line": 360
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/wechat.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 56,
+      "symbols": [
+        {
+          "name": "toWechatHtml",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "copyToWechat",
+          "type": "function",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/export/zhihu.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 31,
+      "symbols": [
+        {
+          "name": "toZhihuHtml",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "tex",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "copyToZhihu",
+          "type": "function",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/extract-html.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "extractHtml",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "escape",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "previewHtml",
+          "type": "function",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/history/db.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 138,
+      "symbols": [
+        {
+          "name": "installIndexedDB",
+          "type": "function",
+          "line": 5
+        },
+        {
+          "name": "loadHistoryDb",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "runInput",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/history/db.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 196,
+      "symbols": [
+        {
+          "name": "RunRecord",
+          "type": "type",
+          "line": 28
+        },
+        {
+          "name": "HistoryDB",
+          "type": "interface",
+          "line": 45
+        },
+        {
+          "name": "getDB",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "makeId",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "PutRunInput",
+          "type": "type",
+          "line": 80
+        },
+        {
+          "name": "putRun",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "listRuns",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "getRun",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "deleteTaskRuns",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "deleteRun",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "pruneTask",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "clearAll",
+          "type": "function",
+          "line": 188
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/history/is-current.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 57,
+      "symbols": [
+        {
+          "name": "record",
+          "type": "function",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/history/is-current.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 19,
+      "symbols": [
+        {
+          "name": "isCurrentRun",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/hyperframes.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 173,
+      "symbols": [
+        {
+          "name": "HyperframeMetaEntry",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "HyperFrame",
+          "type": "type",
+          "line": 21
+        },
+        {
+          "name": "HyperframesParsed",
+          "type": "type",
+          "line": 34
+        },
+        {
+          "name": "isHyperframes",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "pick",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "stripTags",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "extractAttr",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "parseMeta",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "parseInlineMarker",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "parseHyperframes",
+          "type": "function",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/i18n.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1129,
+      "symbols": [
+        {
+          "name": "Dict",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "DictKey",
+          "type": "type",
+          "line": 1103
+        },
+        {
+          "name": "format",
+          "type": "function",
+          "line": 1105
+        },
+        {
+          "name": "t",
+          "type": "function",
+          "line": 1113
+        },
+        {
+          "name": "useT",
+          "type": "function",
+          "line": 1126
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/parsers/auto.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 148,
+      "symbols": [
+        {
+          "name": "DetectedFormat",
+          "type": "type",
+          "line": 3
+        },
+        {
+          "name": "detectFormat",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "tabCount",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "commaCount",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "ParsedSummary",
+          "type": "type",
+          "line": 67
+        },
+        {
+          "name": "summarizeForAgent",
+          "type": "function",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/parsers/file.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 72,
+      "symbols": [
+        {
+          "name": "FileParseResult",
+          "type": "type",
+          "line": 5
+        },
+        {
+          "name": "ext",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "parseFile",
+          "type": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/skills/__tests__/api.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 212,
+      "symbols": [
+        {
+          "name": "tarGzDir",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "buildOkTarball",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "stubFetch",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "data",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "after",
+          "type": "function",
+          "line": 207
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/skills/__tests__/cross-device.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 149,
+      "symbols": [
+        {
+          "name": "tarGzDir",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "fakeFetch",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "buildTarball",
+          "type": "function",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/skills/__tests__/install-rejections.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 221,
+      "symbols": [
+        {
+          "name": "tarGzDir",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "fakeFetch",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "buildTarballWith",
+          "type": "function",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/skills/__tests__/install.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 204,
+      "symbols": [
+        {
+          "name": "tarGzDir",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "Fixture",
+          "type": "type",
+          "line": 48
+        },
+        {
+          "name": "buildSingleSkillFixture",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "buildMultiSkillFixture",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "fakeFetch",
+          "type": "function",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/skills/__tests__/loader-merge.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 89,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/skills/__tests__/paths.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/skills/__tests__/preflight.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 180,
+      "symbols": [
+        {
+          "name": "TarEntry",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "octal",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "header",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "buildTarball",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "pad",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "fakeFetchWithTarball",
+          "type": "function",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/skills/__tests__/spec.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 58,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/skills/install.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 495,
+      "symbols": [
+        {
+          "name": "GitHubSpec",
+          "type": "type",
+          "line": 43
+        },
+        {
+          "name": "InstallError",
+          "type": "class",
+          "line": 50
+        },
+        {
+          "name": "parseGitHubSpec",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "isSafeSegment",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "isSafeRef",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "fetchDefaultBranch",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "json",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "downloadTarball",
+          "type": "function",
+          "line": 117
+        },
+        {
+          "name": "preflightTarball",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "readCString",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "extractTarball",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "DiscoveredSkill",
+          "type": "type",
+          "line": 261
+        },
+        {
+          "name": "discoverSkills",
+          "type": "function",
+          "line": 267
+        },
+        {
+          "name": "sanitizeSkillId",
+          "type": "function",
+          "line": 301
+        },
+        {
+          "name": "exists",
+          "type": "function",
+          "line": 308
+        },
+        {
+          "name": "safeStat",
+          "type": "function",
+          "line": 317
+        },
+        {
+          "name": "copyValidatedSkill",
+          "type": "function",
+          "line": 325
+        },
+        {
+          "name": "copyOptional",
+          "type": "function",
+          "line": 355
+        },
+        {
+          "name": "assertNoSymlink",
+          "type": "function",
+          "line": 374
+        },
+        {
+          "name": "InstallResult",
+          "type": "type",
+          "line": 381
+        },
+        {
+          "name": "InstallOptions",
+          "type": "type",
+          "line": 385
+        },
+        {
+          "name": "installFromGitHub",
+          "type": "function",
+          "line": 394
+        },
+        {
+          "name": "uninstallPackage",
+          "type": "function",
+          "line": 487
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/skills/paths.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 50,
+      "symbols": [
+        {
+          "name": "userSkillsDir",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "packageId",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "parsePackageId",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "makeSkillId",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "parseSkillId",
+          "type": "function",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/skills/registry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 151,
+      "symbols": [
+        {
+          "name": "InstalledPackage",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "UserSkillEntry",
+          "type": "type",
+          "line": 38
+        },
+        {
+          "name": "safeReadDir",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "isValidSegment",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "readPackageManifest",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "listPackages",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "listUserSkills",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "findUserSkill",
+          "type": "function",
+          "line": 146
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/store.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 601,
+      "symbols": [
+        {
+          "name": "ModelOption",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "AgentInfo",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "ConvertStatus",
+          "type": "type",
+          "line": 24
+        },
+        {
+          "name": "LogEntry",
+          "type": "type",
+          "line": 26
+        },
+        {
+          "name": "RunStats",
+          "type": "type",
+          "line": 44
+        },
+        {
+          "name": "Task",
+          "type": "type",
+          "line": 61
+        },
+        {
+          "name": "DeploymentStatus",
+          "type": "type",
+          "line": 100
+        },
+        {
+          "name": "DeploymentRecord",
+          "type": "type",
+          "line": 102
+        },
+        {
+          "name": "makeTask",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "Locale",
+          "type": "type",
+          "line": 145
+        },
+        {
+          "name": "LayoutMode",
+          "type": "type",
+          "line": 161
+        },
+        {
+          "name": "Persisted",
+          "type": "type",
+          "line": 165
+        },
+        {
+          "name": "State",
+          "type": "type",
+          "line": 185
+        },
+        {
+          "name": "patchTask",
+          "type": "function",
+          "line": 269
+        },
+        {
+          "name": "Snap",
+          "type": "type",
+          "line": 426
+        },
+        {
+          "name": "usePersistHydrated",
+          "type": "function",
+          "line": 581
+        },
+        {
+          "name": "selectActiveTask",
+          "type": "function",
+          "line": 592
+        },
+        {
+          "name": "useActiveTask",
+          "type": "function",
+          "line": 595
+        },
+        {
+          "name": "useActiveField",
+          "type": "function",
+          "line": 599
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/templates/__tests__/refresh.test.ts",
+      "language": "typescript",
+      "kind": "test",
+      "lines": 171,
+      "symbols": [
+        {
+          "name": "stubTemplates",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "Resolver",
+          "type": "type",
+          "line": 83
+        },
+        {
+          "name": "Resolver",
+          "type": "type",
+          "line": 126
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/templates/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 133,
+      "symbols": [
+        {
+          "name": "TemplateDef",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "TemplateExampleMeta",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "Listener",
+          "type": "type",
+          "line": 34
+        },
+        {
+          "name": "fetchTemplates",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "json",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "useTemplates",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "listener",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "refreshTemplates",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "fetchTemplateExample",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "getCachedTemplate",
+          "type": "function",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/templates/loader.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 292,
+      "symbols": [
+        {
+          "name": "SkillFrontmatter",
+          "type": "type",
+          "line": 24
+        },
+        {
+          "name": "SkillExampleMeta",
+          "type": "type",
+          "line": 46
+        },
+        {
+          "name": "SkillMeta",
+          "type": "type",
+          "line": 64
+        },
+        {
+          "name": "LoadedSkill",
+          "type": "type",
+          "line": 83
+        },
+        {
+          "name": "parseFrontmatter",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "safeRead",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "fmToMeta",
+          "type": "function",
+          "line": 160
+        },
+        {
+          "name": "invalidateSkillsCache",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "isValidBundledId",
+          "type": "function",
+          "line": 208
+        },
+        {
+          "name": "isValidSkillId",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "loadSkillFromDir",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "metaFromDir",
+          "type": "function",
+          "line": 232
+        },
+        {
+          "name": "listSkills",
+          "type": "function",
+          "line": 242
+        },
+        {
+          "name": "loadSkill",
+          "type": "function",
+          "line": 273
+        },
+        {
+          "name": "skillHasPreview",
+          "type": "function",
+          "line": 284
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/templates/scenarios.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 68,
+      "symbols": [
+        {
+          "name": "ScenarioKey",
+          "type": "type",
+          "line": 30
+        },
+        {
+          "name": "scenarioLabelKey",
+          "type": "function",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/templates/shared.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 58,
+      "symbols": [
+        {
+          "name": "assemblePrompt",
+          "type": "function",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/templates/skills/article-magazine/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/article-magazine/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/blog-post/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/card-twitter/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/card-twitter/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 3,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/card-xiaohongshu/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/card-xiaohongshu/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/dashboard/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/data-report/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/data-report/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/dating-web/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-blueprint/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-course-module/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-dir-key-nav/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-graphify-dark/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-guizang-editorial/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-guizang-editorial/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-hermes-cyber/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-magazine-web/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-obsidian-claude/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-open-slide-canvas/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-open-slide-canvas/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-pitch/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-presenter-mode/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-product-launch/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-replit/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-replit/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 16,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-safety-alert/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-simple/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-swiss-international/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-swiss-international/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-tech-sharing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-xhs-pastel/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-xhs-post/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/deck-xhs-white/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/digital-eguide/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/doc-kami-parchment/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/doc-kami-parchment/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/docs-page/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/email-marketing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/eng-runbook/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/finance-report/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/flowai-team-dashboard/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-data-chart-nyt/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-data-chart-nyt/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 18,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-flowchart-sticky/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-flowchart-sticky/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-glitch-title/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-glitch-title/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-light-leak-cinema/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-light-leak-cinema/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-liquid-bg-hero/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-liquid-bg-hero/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-logo-outro/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-logo-outro/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-macos-notification/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/frame-macos-notification/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/gamified-app/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/hr-onboarding/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/invoice/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/kanban-board/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/live-dashboard/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/magazine-poster/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/meeting-notes/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/mobile-app/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/mobile-onboarding/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/mockup-device-3d/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/mockup-device-3d/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/motion-frames/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/pm-spec/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/poster-hero/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/poster-hero/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/ppt-keynote/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/ppt-keynote/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/pricing-page/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/prototype-web/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/prototype-web/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/resume-modern/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/resume-modern/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/saas-landing/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-carousel/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-media-dashboard/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-media-matrix/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-reddit-card/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-reddit-card/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 6,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-spotify-card/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-spotify-card/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-x-post-card/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/social-x-post-card/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/sprite-animation/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/team-okrs/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/vfx-text-cursor/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/vfx-text-cursor/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/video-hyperframes/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 29,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/video-hyperframes/example.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/waitlist-page/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/web-proto-brutalist/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/web-proto-editorial/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/web-proto-soft/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/weekly-update/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/templates/skills/wireframe-sketch/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "next/src/lib/use-autosave.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 79,
+      "symbols": [
+        {
+          "name": "SaveStatus",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "useAutosave",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "relativeTime",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "useMounted",
+          "type": "function",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/use-convert.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 303,
+      "symbols": [
+        {
+          "name": "ConvertReq",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "useConvert",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "handleEvent",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "formatBytes",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "shortPath",
+          "type": "function",
+          "line": 276
+        },
+        {
+          "name": "formatMeta",
+          "type": "function",
+          "line": 281
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/use-deploy.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 106,
+      "symbols": [
+        {
+          "name": "DeployStatus",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "ApiSuccess",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "ApiError",
+          "type": "type",
+          "line": 25
+        },
+        {
+          "name": "shortHashSync",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "useDeploy",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "json",
+          "type": "function",
+          "line": 73
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/use-draft.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 143,
+      "symbols": [
+        {
+          "name": "DraftReq",
+          "type": "type",
+          "line": 6
+        },
+        {
+          "name": "DraftStatus",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "useDraft",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "next/src/lib/use-upload.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "useUploadFile",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "next/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 34,
+      "symbols": []
+    },
+    {
+      "path": "next/vitest.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 2533,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "scripts/guard.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 203,
+      "symbols": [
+        {
+          "name": "PackageJson",
+          "type": "type",
+          "line": 4
+        },
+        {
+          "name": "rel",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "hasPath",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "requirePath",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "requireDir",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "forbidPath",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "requireText",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "readJson",
+          "type": "function",
+          "line": 51
+        }
+      ]
+    }
+  ]
+}

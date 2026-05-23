@@ -1,0 +1,153 @@
+{
+  "title": "html-anything DeepWiki",
+  "description": "介绍 html-anything 渲染与适配控制系统的中文技术 Wiki，探讨 Next.js 服务、本地多进程 Agent 探测、适配协议、SSE 流式渲染以及多端导出发布原理。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/nexu-io/html-anything.git",
+    "commit": "145a40ebd79624bbd6a28ec379148a895896573c"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "项目概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-process-adapter",
+      "title": "进程协作与适配",
+      "pages": ["system-architecture", "agent-detection", "agent-adapter-protocol"],
+      "subsections": []
+    },
+    {
+      "id": "section-template-render",
+      "title": "模板与流式渲染",
+      "pages": ["templates-skills", "streaming-rendering"],
+      "subsections": []
+    },
+    {
+      "id": "section-export-engineering",
+      "title": "导出发布与工程化",
+      "pages": ["export-publish", "websetup-deployment", "testing-ci-pipeline"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-process-adapter",
+    "section-template-render",
+    "section-export-engineering"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "项目背景、核心愿景、功能与输出场景，以及 Wiki 页面导航。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "README.zh-CN.md"
+      ],
+      "relatedPages": ["system-architecture", "templates-skills"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与进程协作模型",
+      "file": "pages/system-architecture.md",
+      "description": "分析 Next.js 宿主、Server 路由和本地 Agent CLI 三层进程模型，解析双向管道通信机制。",
+      "importance": "high",
+      "filePaths": [
+        "next/package.json",
+        "next/src/app/api/convert/route.ts"
+      ],
+      "relatedPages": ["overview", "agent-detection", "agent-adapter-protocol", "streaming-rendering"]
+    },
+    {
+      "id": "agent-detection",
+      "title": "本地 Agent 探测与路径扫描",
+      "file": "pages/agent-detection.md",
+      "description": "揭秘 userToolchainDirs 启发式扫描，跨越 GUI 环境变量丢失限制自动识别 8 类本地 coding-agent CLI。",
+      "importance": "high",
+      "filePaths": [
+        "next/src/lib/agents/detect.ts",
+        "next/src/app/api/agents/route.ts"
+      ],
+      "relatedPages": ["system-architecture", "agent-adapter-protocol"]
+    },
+    {
+      "id": "agent-adapter-protocol",
+      "title": "Agent Argv 组装与流式 NDJSON 翻译协议",
+      "file": "pages/agent-adapter-protocol.md",
+      "description": "探讨 stdin/argv/argv-message 等不同协议的适配器拼装，详解 rescueHtmlFromToolUse 机制和 delta 去重状态机。",
+      "importance": "high",
+      "filePaths": [
+        "next/src/lib/agents/argv.ts",
+        "next/src/lib/agents/invoke.ts"
+      ],
+      "relatedPages": ["agent-detection", "templates-skills", "streaming-rendering"]
+    },
+    {
+      "id": "templates-skills",
+      "title": "去 AI-slop 模板与 Skills 约束机制",
+      "file": "pages/templates-skills.md",
+      "description": "深度剖析 75 套内置 Skills 模板管理，探讨如何通过中西文字体、基线网格和去AI化硬约束规避 LLM 自由排版错误。",
+      "importance": "high",
+      "filePaths": [
+        "next/src/lib/templates/loader.ts",
+        "next/src/lib/templates/shared.ts"
+      ],
+      "relatedPages": ["overview", "agent-adapter-protocol", "streaming-rendering"]
+    },
+    {
+      "id": "streaming-rendering",
+      "title": "SSE 流式管道与沙箱实时预览",
+      "file": "pages/streaming-rendering.md",
+      "description": "分析基于 EventSource 的 SSE 流式响应，探讨 sandboxed iframe 实时注入 srcdoc 并确保本地环境安全的预览机制。",
+      "importance": "medium",
+      "filePaths": [
+        "next/src/lib/use-convert.ts",
+        "next/src/app/api/convert/route.ts"
+      ],
+      "relatedPages": ["system-architecture", "agent-adapter-protocol", "templates-skills"]
+    },
+    {
+      "id": "export-publish",
+      "title": "多端一键发布与导出机制",
+      "file": "pages/export-publish.md",
+      "description": "详解微信公众号 juice 样式内联、推特 clipboardItem 2x PNG 截图、知乎公式图占位等导出细节技术实现。",
+      "importance": "high",
+      "filePaths": [
+        "next/src/lib/export/wechat.ts",
+        "next/src/lib/export/image.ts",
+        "next/src/lib/export/zhihu.ts"
+      ],
+      "relatedPages": ["overview", "websetup-deployment"]
+    },
+    {
+      "id": "websetup-deployment",
+      "title": "Next.js 路由与本地配置持久化",
+      "file": "pages/websetup-deployment.md",
+      "description": "分析 Settings 页面配置持久化和本地目录状态数据存储结构。",
+      "importance": "low",
+      "filePaths": [
+        "next/src/lib/store.ts",
+        "next/src/lib/use-deploy.ts"
+      ],
+      "relatedPages": ["export-publish", "testing-ci-pipeline"]
+    },
+    {
+      "id": "testing-ci-pipeline",
+      "title": "E2E 浏览器测试与 Playwright 自动化验证",
+      "file": "pages/testing-ci-pipeline.md",
+      "description": "分析 monorepo 下 @html-anything/e2e 包和 CI 中 Playwright 的自动化校验套件。",
+      "importance": "low",
+      "filePaths": [
+        "e2e/package.json",
+        "pnpm-workspace.yaml"
+      ],
+      "relatedPages": ["websetup-deployment"]
+    }
+  ]
+}
