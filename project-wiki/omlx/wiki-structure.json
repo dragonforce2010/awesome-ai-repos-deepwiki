@@ -1,0 +1,299 @@
+{
+  "title": "oMLX DeepWiki",
+  "projectName": "omlx",
+  "description": "针对 Apple Silicon 优化的本地 LLM 推理服务器，提供 OpenAI/Anthropic 兼容 API，独创分层 KV 缓存（RAM 热 + SSD 冷）",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/jundot/omlx",
+    "commit": "2f2f5087a9c9a6ef71fa165da4a299bd19d4d5b4",
+    "branch": "main"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "架构核心",
+      "pages": ["system-architecture", "tiered-kv-cache"],
+      "subsections": []
+    },
+    {
+      "id": "section-runtime",
+      "title": "调度与推理",
+      "pages": ["scheduler-and-batching", "engine-system", "speculative-decoding"],
+      "subsections": []
+    },
+    {
+      "id": "section-api",
+      "title": "接口与集成",
+      "pages": ["api-compatibility", "integrations-and-mcp"],
+      "subsections": []
+    },
+    {
+      "id": "section-models",
+      "title": "模型与管理",
+      "pages": ["model-management", "oq-quantization"],
+      "subsections": []
+    },
+    {
+      "id": "section-ops",
+      "title": "部署与质量",
+      "pages": ["packaging-and-deployment", "testing-and-patches"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-runtime",
+    "section-api",
+    "section-models",
+    "section-ops"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "为什么有 oMLX、解决什么问题、与 LM Studio / Ollama / vllm-mlx 的差异化定位",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "README.zh.md",
+        "pyproject.toml",
+        "omlx/__init__.py",
+        "omlx/cli.py"
+      ],
+      "relatedPages": ["system-architecture", "tiered-kv-cache", "api-compatibility"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "三层引擎栈、单 MLX 线程序列化、外部 prefill 范式、组件依赖关系",
+      "importance": "high",
+      "filePaths": [
+        "omlx/__init__.py",
+        "omlx/server.py",
+        "omlx/engine_core.py",
+        "omlx/engine_pool.py",
+        "omlx/scheduler.py",
+        "omlx/request.py",
+        "omlx/cli.py"
+      ],
+      "relatedPages": ["scheduler-and-batching", "engine-system", "tiered-kv-cache"]
+    },
+    {
+      "id": "tiered-kv-cache",
+      "title": "分层 KV 缓存",
+      "file": "pages/tiered-kv-cache.md",
+      "description": "paged-SSD-only 架构、SHA-256 链式哈希、热缓存与冷盘协同、safetensors 异步写入",
+      "importance": "high",
+      "filePaths": [
+        "omlx/cache/__init__.py",
+        "omlx/cache/interface.py",
+        "omlx/cache/paged_cache.py",
+        "omlx/cache/paged_ssd_cache.py",
+        "omlx/cache/hybrid_cache.py",
+        "omlx/cache/prefix_cache.py",
+        "omlx/cache/tiered_manager.py",
+        "omlx/cache/factory.py",
+        "omlx/cache/vision_feature_cache.py",
+        "omlx/cache/boundary_snapshot_store.py",
+        "omlx/cache/type_registry.py"
+      ],
+      "relatedPages": ["system-architecture", "scheduler-and-batching"]
+    },
+    {
+      "id": "scheduler-and-batching",
+      "title": "调度器与连续批处理",
+      "file": "pages/scheduler-and-batching.md",
+      "description": "scheduler.step 主循环、admission 控制、内存双水位、外部 prefill、async store-cache",
+      "importance": "high",
+      "filePaths": [
+        "omlx/scheduler.py",
+        "omlx/engine_core.py",
+        "omlx/request.py",
+        "omlx/process_memory_enforcer.py",
+        "omlx/memory_monitor.py"
+      ],
+      "relatedPages": ["engine-system", "tiered-kv-cache", "speculative-decoding"]
+    },
+    {
+      "id": "engine-system",
+      "title": "引擎系统与多模型",
+      "file": "pages/engine-system.md",
+      "description": "BaseEngine 家族、EnginePool LRU 驱逐、引擎降级链、TTL 与 pinning",
+      "importance": "high",
+      "filePaths": [
+        "omlx/engine_pool.py",
+        "omlx/engine_core.py",
+        "omlx/engine/base.py",
+        "omlx/engine/batched.py",
+        "omlx/engine/vlm.py",
+        "omlx/engine/dflash.py",
+        "omlx/engine/embedding.py",
+        "omlx/engine/reranker.py",
+        "omlx/engine/tts.py",
+        "omlx/engine/stt.py",
+        "omlx/engine/sts.py"
+      ],
+      "relatedPages": ["system-architecture", "scheduler-and-batching", "model-management"]
+    },
+    {
+      "id": "speculative-decoding",
+      "title": "推测解码三条路径",
+      "file": "pages/speculative-decoding.md",
+      "description": "SpecPrefill 稀疏 prefill、VLM-MTP 多 token 预测、DFlash 块扩散三种集成模式",
+      "importance": "medium",
+      "filePaths": [
+        "omlx/scheduler.py",
+        "omlx/engine/dflash.py",
+        "omlx/speculative/vlm_mtp.py",
+        "omlx/patches/specprefill.py",
+        "omlx/patches/mlx_lm_mtp/__init__.py",
+        "omlx/patches/mlx_vlm_mtp/__init__.py"
+      ],
+      "relatedPages": ["scheduler-and-batching", "engine-system", "testing-and-patches"]
+    },
+    {
+      "id": "api-compatibility",
+      "title": "API 兼容层",
+      "file": "pages/api-compatibility.md",
+      "description": "OpenAI / Anthropic / Responses 三协议统一、工具调用解析、thinking、grammar、SSE keepalive",
+      "importance": "high",
+      "filePaths": [
+        "omlx/server.py",
+        "omlx/api/openai_models.py",
+        "omlx/api/anthropic_models.py",
+        "omlx/api/anthropic_utils.py",
+        "omlx/api/responses_models.py",
+        "omlx/api/responses_utils.py",
+        "omlx/api/tool_calling.py",
+        "omlx/api/thinking.py",
+        "omlx/api/grammar.py",
+        "omlx/api/utils.py",
+        "omlx/api/embedding_models.py",
+        "omlx/api/rerank_models.py",
+        "omlx/api/audio_routes.py"
+      ],
+      "relatedPages": ["integrations-and-mcp", "engine-system"]
+    },
+    {
+      "id": "integrations-and-mcp",
+      "title": "外部工具集成与 MCP",
+      "file": "pages/integrations-and-mcp.md",
+      "description": "omlx launch 命令、Claude Code 上下文缩放、MCP 客户端架构与工具命名空间",
+      "importance": "medium",
+      "filePaths": [
+        "omlx/cli.py",
+        "omlx/integrations/__init__.py",
+        "omlx/integrations/base.py",
+        "omlx/integrations/claude.py",
+        "omlx/integrations/codex.py",
+        "omlx/integrations/copilot.py",
+        "omlx/integrations/opencode.py",
+        "omlx/integrations/openclaw.py",
+        "omlx/integrations/hermes.py",
+        "omlx/integrations/pi.py",
+        "omlx/mcp/client.py",
+        "omlx/mcp/manager.py",
+        "omlx/mcp/config.py",
+        "omlx/mcp/types.py",
+        "omlx/mcp/executor.py",
+        "omlx/api/mcp_routes.py"
+      ],
+      "relatedPages": ["api-compatibility", "system-architecture"]
+    },
+    {
+      "id": "model-management",
+      "title": "模型管理与 Admin Dashboard",
+      "file": "pages/model-management.md",
+      "description": "模型类型自动检测、配置解析层级、admin 路由、i18n、HF/ModelScope 下载",
+      "importance": "medium",
+      "filePaths": [
+        "omlx/model_discovery.py",
+        "omlx/model_registry.py",
+        "omlx/model_settings.py",
+        "omlx/model_profiles.py",
+        "omlx/settings.py",
+        "omlx/config.py",
+        "omlx/admin/routes.py",
+        "omlx/admin/auth.py",
+        "omlx/admin/benchmark.py",
+        "omlx/admin/hf_downloader.py",
+        "omlx/admin/ms_downloader.py",
+        "omlx/admin/vendor_deps.py"
+      ],
+      "relatedPages": ["engine-system", "packaging-and-deployment"]
+    },
+    {
+      "id": "oq-quantization",
+      "title": "oQ 数据驱动混合精度量化",
+      "file": "pages/oq-quantization.md",
+      "description": "oQ 等级与位宽预算、敏感度测量、proxy fallback、GPTQ 优化、admin 任务编排",
+      "importance": "medium",
+      "filePaths": [
+        "omlx/oq.py",
+        "docs/oQ_Quantization.md",
+        "omlx/oq_calibration_data.json",
+        "omlx/admin/oq_manager.py",
+        "omlx/turboquant_kv.py",
+        "omlx/patches/turboquant_attention.py"
+      ],
+      "relatedPages": ["model-management", "testing-and-patches"]
+    },
+    {
+      "id": "packaging-and-deployment",
+      "title": "macOS App 打包与部署",
+      "file": "pages/packaging-and-deployment.md",
+      "description": "venvstacks 三层环境、PyObjC 菜单栏 app、Homebrew Formula、Tahoe 可见性诊断",
+      "importance": "medium",
+      "filePaths": [
+        "packaging/README.md",
+        "packaging/build.py",
+        "packaging/venvstacks.toml",
+        "packaging/omlx_app/app.py",
+        "packaging/omlx_app/server_manager.py",
+        "packaging/omlx_app/__main__.py",
+        "packaging/omlx_app/preferences.py",
+        "packaging/omlx_app/updater.py",
+        "Formula/omlx.rb",
+        ".github/workflows/update-formula.yml",
+        "omlx/cli.py"
+      ],
+      "relatedPages": ["model-management", "system-architecture"]
+    },
+    {
+      "id": "testing-and-patches",
+      "title": "评估、上游 Patch 与质量保障",
+      "file": "pages/testing-and-patches.md",
+      "description": "16 个 benchmark、模型补丁体系、quality gates、依赖钉版策略",
+      "importance": "low",
+      "filePaths": [
+        "omlx/eval/base.py",
+        "omlx/eval/__init__.py",
+        "omlx/eval/mmlu.py",
+        "omlx/eval/humaneval.py",
+        "omlx/patches/__init__.py",
+        "omlx/patches/turboquant_attention.py",
+        "omlx/patches/qwen3_5_attention.py",
+        "omlx/patches/qwen3_6_nested_visual.py",
+        "omlx/patches/gated_delta_advance.py",
+        "omlx/patches/index_cache.py",
+        "omlx/patches/specprefill.py",
+        "omlx/patches/deepseek_v4/__init__.py",
+        "omlx/patches/mlx_lm_mtp/__init__.py",
+        "omlx/patches/mlx_vlm_mtp/__init__.py",
+        "omlx/admin/accuracy_benchmark.py",
+        "pyproject.toml"
+      ],
+      "relatedPages": ["speculative-decoding", "oq-quantization", "model-management"]
+    }
+  ]
+}
