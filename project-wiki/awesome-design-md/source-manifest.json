@@ -1,0 +1,1027 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/awesome-design-md",
+    "remote": "https://github.com/voltagent/awesome-design-md.git",
+    "branch": "main",
+    "commit": "3883984baf05226208a5dae15730a3593548b808"
+  },
+  "file_count": 145,
+  "skipped_count": 2,
+  "files": [
+    {
+      "path": ".github/FUNDING.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 4,
+      "symbols": []
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/design-md-request.yml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 198,
+      "symbols": []
+    },
+    {
+      "path": "design-md/airbnb/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 545,
+      "symbols": []
+    },
+    {
+      "path": "design-md/airbnb/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/airtable/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 554,
+      "symbols": []
+    },
+    {
+      "path": "design-md/airtable/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/apple/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 562,
+      "symbols": []
+    },
+    {
+      "path": "design-md/apple/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/binance/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 634,
+      "symbols": []
+    },
+    {
+      "path": "design-md/binance/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/bmw-m/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 503,
+      "symbols": []
+    },
+    {
+      "path": "design-md/bmw-m/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/bmw/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 544,
+      "symbols": []
+    },
+    {
+      "path": "design-md/bmw/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/bugatti/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 454,
+      "symbols": []
+    },
+    {
+      "path": "design-md/bugatti/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/cal/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 542,
+      "symbols": []
+    },
+    {
+      "path": "design-md/cal/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/claude/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 589,
+      "symbols": []
+    },
+    {
+      "path": "design-md/claude/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/clay/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 541,
+      "symbols": []
+    },
+    {
+      "path": "design-md/clay/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/clickhouse/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 544,
+      "symbols": []
+    },
+    {
+      "path": "design-md/clickhouse/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/cohere/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 451,
+      "symbols": []
+    },
+    {
+      "path": "design-md/cohere/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/coinbase/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 570,
+      "symbols": []
+    },
+    {
+      "path": "design-md/coinbase/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/composio/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 506,
+      "symbols": []
+    },
+    {
+      "path": "design-md/composio/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/cursor/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 537,
+      "symbols": []
+    },
+    {
+      "path": "design-md/cursor/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/elevenlabs/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 504,
+      "symbols": []
+    },
+    {
+      "path": "design-md/elevenlabs/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/expo/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 526,
+      "symbols": []
+    },
+    {
+      "path": "design-md/expo/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/ferrari/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 531,
+      "symbols": []
+    },
+    {
+      "path": "design-md/ferrari/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/figma/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 578,
+      "symbols": []
+    },
+    {
+      "path": "design-md/figma/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/framer/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 544,
+      "symbols": []
+    },
+    {
+      "path": "design-md/framer/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/hashicorp/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 575,
+      "symbols": []
+    },
+    {
+      "path": "design-md/hashicorp/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/ibm/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 550,
+      "symbols": []
+    },
+    {
+      "path": "design-md/ibm/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/intercom/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 546,
+      "symbols": []
+    },
+    {
+      "path": "design-md/intercom/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/kraken/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 125,
+      "symbols": []
+    },
+    {
+      "path": "design-md/kraken/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/lamborghini/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 288,
+      "symbols": []
+    },
+    {
+      "path": "design-md/lamborghini/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/linear.app/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 548,
+      "symbols": []
+    },
+    {
+      "path": "design-md/linear.app/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/lovable/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 298,
+      "symbols": []
+    },
+    {
+      "path": "design-md/lovable/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/mastercard/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 365,
+      "symbols": []
+    },
+    {
+      "path": "design-md/mastercard/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/meta/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 683,
+      "symbols": []
+    },
+    {
+      "path": "design-md/meta/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/minimax/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 746,
+      "symbols": []
+    },
+    {
+      "path": "design-md/minimax/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/mintlify/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 852,
+      "symbols": []
+    },
+    {
+      "path": "design-md/mintlify/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/miro/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 825,
+      "symbols": []
+    },
+    {
+      "path": "design-md/miro/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/mistral.ai/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 773,
+      "symbols": []
+    },
+    {
+      "path": "design-md/mistral.ai/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/mongodb/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 767,
+      "symbols": []
+    },
+    {
+      "path": "design-md/mongodb/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/nike/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 575,
+      "symbols": []
+    },
+    {
+      "path": "design-md/nike/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/notion/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 821,
+      "symbols": []
+    },
+    {
+      "path": "design-md/notion/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/nvidia/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 640,
+      "symbols": []
+    },
+    {
+      "path": "design-md/nvidia/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/ollama/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 539,
+      "symbols": []
+    },
+    {
+      "path": "design-md/ollama/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/opencode.ai/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 521,
+      "symbols": []
+    },
+    {
+      "path": "design-md/opencode.ai/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/pinterest/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 597,
+      "symbols": []
+    },
+    {
+      "path": "design-md/pinterest/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/playstation/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 661,
+      "symbols": []
+    },
+    {
+      "path": "design-md/playstation/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/posthog/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 690,
+      "symbols": []
+    },
+    {
+      "path": "design-md/posthog/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/raycast/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 669,
+      "symbols": []
+    },
+    {
+      "path": "design-md/raycast/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/renault/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 589,
+      "symbols": []
+    },
+    {
+      "path": "design-md/renault/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/replicate/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 616,
+      "symbols": []
+    },
+    {
+      "path": "design-md/replicate/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/resend/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 585,
+      "symbols": []
+    },
+    {
+      "path": "design-md/resend/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/revolut/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 636,
+      "symbols": []
+    },
+    {
+      "path": "design-md/revolut/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/runwayml/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 244,
+      "symbols": []
+    },
+    {
+      "path": "design-md/runwayml/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/sanity/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 357,
+      "symbols": []
+    },
+    {
+      "path": "design-md/sanity/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/sentry/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 551,
+      "symbols": []
+    },
+    {
+      "path": "design-md/sentry/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/shopify/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 516,
+      "symbols": []
+    },
+    {
+      "path": "design-md/shopify/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/slack/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 482,
+      "symbols": []
+    },
+    {
+      "path": "design-md/spacex/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 363,
+      "symbols": []
+    },
+    {
+      "path": "design-md/spacex/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/spotify/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 246,
+      "symbols": []
+    },
+    {
+      "path": "design-md/spotify/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/starbucks/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 580,
+      "symbols": []
+    },
+    {
+      "path": "design-md/starbucks/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/stripe/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 487,
+      "symbols": []
+    },
+    {
+      "path": "design-md/stripe/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/supabase/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 462,
+      "symbols": []
+    },
+    {
+      "path": "design-md/supabase/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/superhuman/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 448,
+      "symbols": []
+    },
+    {
+      "path": "design-md/superhuman/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/tesla/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 286,
+      "symbols": []
+    },
+    {
+      "path": "design-md/tesla/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/theverge/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 339,
+      "symbols": []
+    },
+    {
+      "path": "design-md/theverge/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/together.ai/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 633,
+      "symbols": []
+    },
+    {
+      "path": "design-md/together.ai/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/uber/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 636,
+      "symbols": []
+    },
+    {
+      "path": "design-md/uber/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/vercel/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 736,
+      "symbols": []
+    },
+    {
+      "path": "design-md/vercel/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/vodafone/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 538,
+      "symbols": []
+    },
+    {
+      "path": "design-md/vodafone/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/voltagent/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 521,
+      "symbols": []
+    },
+    {
+      "path": "design-md/voltagent/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/warp/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 526,
+      "symbols": []
+    },
+    {
+      "path": "design-md/warp/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/webflow/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 588,
+      "symbols": []
+    },
+    {
+      "path": "design-md/webflow/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/wired/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 497,
+      "symbols": []
+    },
+    {
+      "path": "design-md/wired/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/wise/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 544,
+      "symbols": []
+    },
+    {
+      "path": "design-md/wise/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/x.ai/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 465,
+      "symbols": []
+    },
+    {
+      "path": "design-md/x.ai/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "design-md/zapier/DESIGN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 537,
+      "symbols": []
+    },
+    {
+      "path": "design-md/zapier/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    }
+  ]
+}

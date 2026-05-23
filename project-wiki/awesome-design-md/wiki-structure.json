@@ -1,0 +1,126 @@
+{
+  "title": "awesome-design-md DeepWiki",
+  "description": "VoltAgent 维护的 DESIGN.md 精选库 —— 为 AI 编码代理提供可复制的品牌视觉语言文档",
+  "projectName": "awesome-design-md",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/voltagent/awesome-design-md",
+    "commit": "3883984baf05226208a5dae15730a3593548b808"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview", "catalog-architecture"],
+      "subsections": []
+    },
+    {
+      "id": "section-format",
+      "title": "DESIGN.md 格式",
+      "pages": ["design-md-format", "token-component-model"],
+      "subsections": []
+    },
+    {
+      "id": "section-catalog",
+      "title": "品牌目录",
+      "pages": ["brand-catalog", "brand-profile-examples"],
+      "subsections": []
+    },
+    {
+      "id": "section-usage",
+      "title": "使用与生态",
+      "pages": ["agent-consumption", "distribution-ecosystem", "contributing-governance"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-format",
+    "section-catalog",
+    "section-usage"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "DESIGN.md 概念、与 AGENTS.md 的分工、仓库定位与阅读路线",
+      "importance": "high",
+      "filePaths": ["README.md", "LICENSE", "CONTRIBUTING.md"],
+      "relatedPages": ["catalog-architecture", "design-md-format", "agent-consumption"]
+    },
+    {
+      "id": "catalog-architecture",
+      "title": "目录与仓库结构",
+      "file": "pages/catalog-architecture.md",
+      "description": "design-md 子目录约定、文件组成、无构建链路的静态内容模型",
+      "importance": "high",
+      "filePaths": ["README.md", "design-md/vercel/README.md", "design-md/voltagent/README.md", ".gitignore"],
+      "relatedPages": ["overview", "brand-catalog"]
+    },
+    {
+      "id": "design-md-format",
+      "title": "DESIGN.md 文档格式",
+      "file": "pages/design-md-format.md",
+      "description": "YAML 机器层 + Markdown 叙事层的双轨结构与章节约定",
+      "importance": "high",
+      "filePaths": ["README.md", "design-md/vercel/DESIGN.md", "design-md/notion/DESIGN.md"],
+      "relatedPages": ["token-component-model", "brand-profile-examples"]
+    },
+    {
+      "id": "token-component-model",
+      "title": "Token 与组件模型",
+      "file": "pages/token-component-model.md",
+      "description": "colors/typography/components 引用语法与 ex- 示例组件模式",
+      "importance": "high",
+      "filePaths": ["design-md/vercel/DESIGN.md", "design-md/voltagent/DESIGN.md", "design-md/stripe/DESIGN.md"],
+      "relatedPages": ["design-md-format", "agent-consumption"]
+    },
+    {
+      "id": "brand-catalog",
+      "title": "品牌目录与分类",
+      "file": "pages/brand-catalog.md",
+      "description": "71 个品牌条目、九大主题分类与 slug 命名规则",
+      "importance": "medium",
+      "filePaths": ["README.md", "design-md/linear.app/DESIGN.md", "design-md/stripe/DESIGN.md"],
+      "relatedPages": ["catalog-architecture", "brand-profile-examples"]
+    },
+    {
+      "id": "brand-profile-examples",
+      "title": "品牌档案深度对比",
+      "file": "pages/brand-profile-examples.md",
+      "description": "Vercel / Voltagent / Notion 三份 DESIGN.md 的设计取舍对照",
+      "importance": "medium",
+      "filePaths": ["design-md/vercel/DESIGN.md", "design-md/voltagent/DESIGN.md", "design-md/notion/DESIGN.md"],
+      "relatedPages": ["token-component-model", "brand-catalog"]
+    },
+    {
+      "id": "agent-consumption",
+      "title": "代理消费工作流",
+      "file": "pages/agent-consumption.md",
+      "description": "复制 DESIGN.md、提示词模式、与 AGENTS.md 的协同",
+      "importance": "high",
+      "filePaths": ["README.md", "design-md/vercel/DESIGN.md", "design-md/sanity/DESIGN.md"],
+      "relatedPages": ["overview", "distribution-ecosystem"]
+    },
+    {
+      "id": "distribution-ecosystem",
+      "title": "分发与 getdesign.md 生态",
+      "file": "pages/distribution-ecosystem.md",
+      "description": "getdesign.md 托管、Issue 请求流程与 README 外链策略",
+      "importance": "medium",
+      "filePaths": ["README.md", ".github/ISSUE_TEMPLATE/design-md-request.yml", "design-md/vercel/README.md"],
+      "relatedPages": ["agent-consumption", "contributing-governance"]
+    },
+    {
+      "id": "contributing-governance",
+      "title": "贡献与治理",
+      "file": "pages/contributing-governance.md",
+      "description": "CONTRIBUTING 限制、质量门槛与法律免责声明",
+      "importance": "low",
+      "filePaths": ["CONTRIBUTING.md", "LICENSE", ".github/FUNDING.yml"],
+      "relatedPages": ["distribution-ecosystem", "overview"]
+    }
+  ]
+}
