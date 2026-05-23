@@ -1,0 +1,165 @@
+{
+  "title": "codex-remote-feishu DeepWiki",
+  "description": "介绍 Codex 远程飞书控制 Bot 系统的中文技术 Wiki，探讨双进程协议封装、飞书网关 Early ACK 通道、本地 MCP 飞书监听服务以及 VS Code Shim 接管原理。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/kxn/codex-remote-feishu.git",
+    "commit": "d7ffa4c327062a995f250f525bab12ced6fe9aac"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "项目概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构与进程模型",
+      "pages": ["system-architecture", "feishu-gateway-queue"],
+      "subsections": []
+    },
+    {
+      "id": "section-core-modules",
+      "title": "核心模块实现",
+      "pages": [
+        "interactive-cards",
+        "orchestrator-core",
+        "feishu-mcp-listener"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-infrastructure",
+      "title": "基础设施与联动",
+      "pages": [
+        "editor-takeover",
+        "setup-install",
+        "daemon-service"
+      ],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-core-modules",
+    "section-infrastructure"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "项目诞生背景、核心愿景、功能全景以及文档阅读路线。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "docs/general/user-guide.md"
+      ],
+      "relatedPages": ["system-architecture", "feishu-gateway-queue"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与统一二进制模型",
+      "file": "pages/system-architecture.md",
+      "description": "分析 Unified Binary 统一进程角色架构，揭示 wrapper/daemon/install 双进程协作机制与兼容入口。",
+      "importance": "high",
+      "filePaths": [
+        "cmd/codex-remote/main.go",
+        "internal/app/launcher/launcher.go",
+        "docs/general/architecture.md"
+      ],
+      "relatedPages": ["overview", "feishu-gateway-queue", "orchestrator-core"]
+    },
+    {
+      "id": "feishu-gateway-queue",
+      "title": "飞书网关 Early ACK 与 FIFO 队列",
+      "file": "pages/feishu-gateway-queue.md",
+      "description": "探讨消息接收端的 Early ACK 快速响应防重试，以及 Gateway-Local FIFO Lane 串行入队分发设计。",
+      "importance": "high",
+      "filePaths": [
+        "internal/adapter/feishu/gateway.go",
+        "internal/adapter/feishu/queue.go",
+        "docs/draft/feishu-request-delivery-reliability-design.md"
+      ],
+      "relatedPages": ["system-architecture", "interactive-cards"]
+    },
+    {
+      "id": "interactive-cards",
+      "title": "CardKit 2.0 渲染与交互状态机",
+      "file": "pages/interactive-cards.md",
+      "description": "研究富文本切分器、过程进度卡摘要共享以及基于 UIEvent 读模型（SelectionView、PageView）的卡片操作状态机。",
+      "importance": "high",
+      "filePaths": [
+        "internal/core/renderer/renderer.go",
+        "internal/core/control/event.go",
+        "docs/general/feishu-card-ui-state-machine.md"
+      ],
+      "relatedPages": ["feishu-gateway-queue", "orchestrator-core"]
+    },
+    {
+      "id": "orchestrator-core",
+      "title": "Orchestrator 协管核心与运行态集群",
+      "file": "pages/orchestrator-core.md",
+      "description": "深入解析唯一产品决策状态中心 Orchestrator，分析 turns 队列、pickers 上下文与 catalog 持久化缓存集群设计。",
+      "importance": "high",
+      "filePaths": [
+        "internal/core/orchestrator/service.go",
+        "internal/core/orchestrator/turns.go",
+        "internal/core/orchestrator/pickers.go"
+      ],
+      "relatedPages": ["system-architecture", "interactive-cards", "feishu-mcp-listener"]
+    },
+    {
+      "id": "feishu-mcp-listener",
+      "title": "本地飞书 MCP 工具监听器",
+      "file": "pages/feishu-mcp-listener.md",
+      "description": "研究 127.0.0.1:9502 本地 MCP HTTP 服务，分析 loopback 加 bearer token 的安全防线与大模型投递图片文件回飞书的设计。",
+      "importance": "medium",
+      "filePaths": [
+        "internal/app/daemon/mcp.go",
+        "docs/general/codex-mcp-app-server-protocol.md"
+      ],
+      "relatedPages": ["orchestrator-core", "editor-takeover"]
+    },
+    {
+      "id": "editor-takeover",
+      "title": "VS Code Shim 编辑器联动与接管",
+      "file": "pages/editor-takeover.md",
+      "description": "详解桌面版配置劫持与 Remote 环境下物理替换扩展 bundle 入口（物理重命名原 codex 为 codex.real）的 Shim 接管实现。",
+      "importance": "medium",
+      "filePaths": [
+        "internal/adapter/editor/takeover.go",
+        "docs/draft/codex-session-patcher-research-2026-04.md"
+      ],
+      "relatedPages": ["feishu-mcp-listener", "setup-install"]
+    },
+    {
+      "id": "setup-install",
+      "title": "WebSetup 与引导安装生命周期",
+      "file": "pages/setup-install.md",
+      "description": "探讨一键安装脚本生命周期、本地 WebSetup 独立安装器角色以及 `/upgrade latest` 热重载状态升级逻辑。",
+      "importance": "medium",
+      "filePaths": [
+        "internal/app/install/install.go",
+        "web/src/routes/SetupRoute.tsx",
+        "docs/general/install-deploy-design.md"
+      ],
+      "relatedPages": ["editor-takeover", "daemon-service"]
+    },
+    {
+      "id": "daemon-service",
+      "title": "Linux Service 守护常驻与状态 API",
+      "file": "pages/daemon-service.md",
+      "description": "跨系统后台托管、Linux 用户级 systemd 单元及 Linger 保活配置，配合 /v1/status 接口健康状态上报。",
+      "importance": "low",
+      "filePaths": [
+        "internal/app/daemon/service.go",
+        "docs/general/config-state-storage-guidelines.md"
+      ],
+      "relatedPages": ["setup-install", "system-architecture"]
+    }
+  ]
+}
