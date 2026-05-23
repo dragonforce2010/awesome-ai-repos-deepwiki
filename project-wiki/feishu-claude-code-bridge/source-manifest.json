@@ -1,0 +1,2694 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/feishu-claude-code-bridge",
+    "remote": "https://github.com/zarazhangrui/feishu-claude-code-bridge.git",
+    "branch": "main",
+    "commit": "d59e0464e514fd348488dc61a52d7d3334de0aad"
+  },
+  "file_count": 59,
+  "skipped_count": 3,
+  "files": [
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 199,
+      "symbols": []
+    },
+    {
+      "path": "README.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 199,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "language": "yaml",
+      "kind": "source",
+      "lines": 1957,
+      "symbols": []
+    },
+    {
+      "path": "src/agent/claude/adapter.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 280,
+      "symbols": [
+        {
+          "name": "ClaudeAdapterOptions",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "ClaudeChild",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "ClaudeAdapter",
+          "type": "class",
+          "line": 104
+        },
+        {
+          "name": "onExit",
+          "type": "function",
+          "line": 213
+        }
+      ]
+    },
+    {
+      "path": "src/agent/claude/stream-json.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 80,
+      "symbols": [
+        {
+          "name": "ContentBlock",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "ClaudeRawEvent",
+          "type": "interface",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "src/agent/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 2,
+      "symbols": []
+    },
+    {
+      "path": "src/agent/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 49,
+      "symbols": [
+        {
+          "name": "AgentEvent",
+          "type": "type",
+          "line": 1
+        },
+        {
+          "name": "AgentRunOptions",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "AgentRun",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "AgentAdapter",
+          "type": "interface",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "src/bot/active-runs.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 44,
+      "symbols": [
+        {
+          "name": "RunHandle",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "ActiveRuns",
+          "type": "class",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "src/bot/channel.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 825,
+      "symbols": [
+        {
+          "name": "buildQuietLogger",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "codeFromObj",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "top",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "nested",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "isSuppressed",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "stringifyArgs",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "BridgeChannel",
+          "type": "interface",
+          "line": 107
+        },
+        {
+          "name": "StartChannelDeps",
+          "type": "interface",
+          "line": 112
+        },
+        {
+          "name": "startChannel",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "IntakeDeps",
+          "type": "interface",
+          "line": 331
+        },
+        {
+          "name": "intakeMessage",
+          "type": "function",
+          "line": 343
+        },
+        {
+          "name": "RunBatchDeps",
+          "type": "interface",
+          "line": 430
+        },
+        {
+          "name": "runAgentBatch",
+          "type": "function",
+          "line": 443
+        },
+        {
+          "name": "filterForPrefs",
+          "type": "function",
+          "line": 539
+        },
+        {
+          "name": "processAgentStream",
+          "type": "function",
+          "line": 616
+        },
+        {
+          "name": "armOrPauseIdle",
+          "type": "function",
+          "line": 643
+        },
+        {
+          "name": "expandedMessageContent",
+          "type": "function",
+          "line": 756
+        },
+        {
+          "name": "rawContent",
+          "type": "function",
+          "line": 758
+        },
+        {
+          "name": "buildPrompt",
+          "type": "function",
+          "line": 764
+        },
+        {
+          "name": "buildBridgeContextHeader",
+          "type": "function",
+          "line": 801
+        },
+        {
+          "name": "stripAttachmentRefs",
+          "type": "function",
+          "line": 816
+        }
+      ]
+    },
+    {
+      "path": "src/bot/chat-mode-cache.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 43,
+      "symbols": [
+        {
+          "name": "ChatMode",
+          "type": "type",
+          "line": 4
+        },
+        {
+          "name": "ChatModeCache",
+          "type": "class",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "src/bot/comments.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 394,
+      "symbols": [
+        {
+          "name": "CommentDeps",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "ReplyContentElement",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "CommentReply",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "CommentGetResponse",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "CommentListItem",
+          "type": "interface",
+          "line": 36
+        },
+        {
+          "name": "CommentListResponse",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "CommentContext",
+          "type": "interface",
+          "line": 46
+        },
+        {
+          "name": "handleCommentMention",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "ResolvedTarget",
+          "type": "interface",
+          "line": 183
+        },
+        {
+          "name": "resolveTarget",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "r",
+          "type": "function",
+          "line": 206
+        },
+        {
+          "name": "fetchCommentContext",
+          "type": "function",
+          "line": 228
+        },
+        {
+          "name": "r",
+          "type": "function",
+          "line": 239
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 247
+        },
+        {
+          "name": "findCommentViaList",
+          "type": "function",
+          "line": 271
+        },
+        {
+          "name": "r",
+          "type": "function",
+          "line": 278
+        },
+        {
+          "name": "buildCommentPrompt",
+          "type": "function",
+          "line": 295
+        },
+        {
+          "name": "stripMarkdown",
+          "type": "function",
+          "line": 331
+        },
+        {
+          "name": "postCommentReply",
+          "type": "function",
+          "line": 351
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 372
+        },
+        {
+          "name": "preview",
+          "type": "function",
+          "line": 392
+        }
+      ]
+    },
+    {
+      "path": "src/bot/group.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 44,
+      "symbols": [
+        {
+          "name": "CreateBoundChatOptions",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "CreatedChat",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "createBoundChat",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "chatId",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "defaultChatName",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "pad",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "src/bot/interactive-card.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 64,
+      "symbols": [
+        {
+          "name": "expandInteractiveCard",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "tryParseJson",
+          "type": "function",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "path": "src/bot/keepalive.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 156,
+      "symbols": [
+        {
+          "name": "KeepaliveDeps",
+          "type": "interface",
+          "line": 36
+        },
+        {
+          "name": "KeepaliveHandle",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "startKeepalive",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "tick",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "httpProbe",
+          "type": "function",
+          "line": 141
+        }
+      ]
+    },
+    {
+      "path": "src/bot/network-config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 44,
+      "symbols": [
+        {
+          "name": "NetworkOverrides",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "configureNetwork",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "redact",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "src/bot/pending-queue.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 102,
+      "symbols": [
+        {
+          "name": "PendingEntry",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "FlushHandler",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "PendingQueue",
+          "type": "class",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "src/bot/process-pool.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "ProcessPool",
+          "type": "class",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "src/bot/quote.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 170,
+      "symbols": [
+        {
+          "name": "QuotedContext",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "preExpandInteractive",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "fetchQuotedContext",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "r",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "fetchSubMessages",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "r",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "renderQuotedBlock",
+          "type": "function",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "path": "src/bot/reaction.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 110,
+      "symbols": [
+        {
+          "name": "addWorkingReaction",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "r",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "removeReaction",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "addCommentReaction",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "removeCommentReaction",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "commentReaction",
+          "type": "function",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "path": "src/bot/scope.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 37,
+      "symbols": [
+        {
+          "name": "scopeFor",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "scopeForMessage",
+          "type": "function",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "path": "src/bot/wizard.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 64,
+      "symbols": [
+        {
+          "name": "runRegistrationWizard",
+          "type": "function",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "path": "src/card/account-cards.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 186,
+      "symbols": [
+        {
+          "name": "maskAppId",
+          "type": "function",
+          "line": 3
+        },
+        {
+          "name": "CurrentInfo",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "accountCurrentCard",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "FormCardOpts",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "accountFormCard",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "accountValidatingCard",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "accountSuccessCard",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "accountFailureCard",
+          "type": "function",
+          "line": 165
+        },
+        {
+          "name": "accountCancelledCard",
+          "type": "function",
+          "line": 180
+        }
+      ]
+    },
+    {
+      "path": "src/card/config-card.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 250,
+      "symbols": [
+        {
+          "name": "ConfigFormOpts",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "configFormCard",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "configSavedCard",
+          "type": "function",
+          "line": 206
+        },
+        {
+          "name": "summarizeList",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "configCancelledCard",
+          "type": "function",
+          "line": 242
+        }
+      ]
+    },
+    {
+      "path": "src/card/dispatcher.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 213,
+      "symbols": [
+        {
+          "name": "CardDispatchDeps",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "handleCardAction",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "raw",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "resolveScope",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "lookupMessageThreadId",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "r",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "forwardToClaude",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "composeArgs",
+          "type": "function",
+          "line": 185
+        },
+        {
+          "name": "makeFakeMsg",
+          "type": "function",
+          "line": 194
+        }
+      ]
+    },
+    {
+      "path": "src/card/managed.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 101,
+      "symbols": [
+        {
+          "name": "ManagedEntry",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "ManagedCardSendResult",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "sendManagedCard",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "cardId",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "updateManagedCard",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "isManaged",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "forgetManagedCard",
+          "type": "function",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "path": "src/card/run-renderer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 207,
+      "symbols": [
+        {
+          "name": "ToolGroup",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "TextGroup",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "Group",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "renderCard",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "renderToolGroup",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "reasoningPanel",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "toolPanel",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "collapsedToolSummary",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "PanelOpts",
+          "type": "interface",
+          "line": 139
+        },
+        {
+          "name": "collapsiblePanel",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "panelHeader",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "markdown",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "noteMd",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "stopButton",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "footerStatus",
+          "type": "function",
+          "line": 185
+        },
+        {
+          "name": "summaryText",
+          "type": "function",
+          "line": 195
+        },
+        {
+          "name": "truncate",
+          "type": "function",
+          "line": 205
+        }
+      ]
+    },
+    {
+      "path": "src/card/run-state.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 152,
+      "symbols": [
+        {
+          "name": "ToolStatus",
+          "type": "type",
+          "line": 3
+        },
+        {
+          "name": "ToolEntry",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "Block",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "FooterStatus",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "Terminal",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "RunState",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "closeStreamingText",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "reduce",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "markInterrupted",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "markIdleTimeout",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "finalizeIfRunning",
+          "type": "function",
+          "line": 143
+        }
+      ]
+    },
+    {
+      "path": "src/card/templates.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 185,
+      "symbols": [
+        {
+          "name": "ButtonSpec",
+          "type": "interface",
+          "line": 1
+        },
+        {
+          "name": "button",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "divMd",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "actions",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "shell",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "workspacesCard",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "StatusInfo",
+          "type": "interface",
+          "line": 64
+        },
+        {
+          "name": "statusCard",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "ResumeEntry",
+          "type": "interface",
+          "line": 103
+        },
+        {
+          "name": "resumeCard",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "helpCard",
+          "type": "function",
+          "line": 144
+        },
+        {
+          "name": "escapeMd",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "escapeCode",
+          "type": "function",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "path": "src/card/text-renderer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 57,
+      "symbols": [
+        {
+          "name": "renderText",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "renderBlock",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "toolLine",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "footerLine",
+          "type": "function",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "path": "src/card/tool-render.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 128,
+      "symbols": [
+        {
+          "name": "toolHeaderText",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "toolBodyMd",
+          "type": "function",
+          "line": 21
+        },
+        {
+          "name": "summarizeInput",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "pick",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "renderInput",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "str",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "renderBashOutput",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "shortenPath",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "truncate",
+          "type": "function",
+          "line": 126
+        }
+      ]
+    },
+    {
+      "path": "src/cli/commands/migrate.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 131,
+      "symbols": [
+        {
+          "name": "MigrateOptions",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "LegacyShape",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "runMigrate",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "migrateLegacyPaths",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "migrateConfigShape",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "pathExists",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "moveDirContents",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "rmIfEmpty",
+          "type": "function",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "path": "src/cli/commands/ps.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 108,
+      "symbols": [
+        {
+          "name": "runPs",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "runKillCli",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "formatAgo",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "printTable",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "displayWidth",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "padEndDisplay",
+          "type": "function",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "src/cli/commands/secrets.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 159,
+      "symbols": [
+        {
+          "name": "ExecRequest",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "ExecResponseValue",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "runSecretsGet",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "runSecretsSet",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "runSecretsList",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "runSecretsRemove",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "readAllStdin",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "promptPassword",
+          "type": "function",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "src/cli/commands/service.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 313,
+      "symbols": [
+        {
+          "name": "ServiceStartOptions",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "requireAdapter",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "formatServiceStderr",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "printServiceFailure",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "ensureBridgeConfigured",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "waitForServiceConnect",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "reportConnectAfter",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "runServiceStart",
+          "type": "function",
+          "line": 160
+        },
+        {
+          "name": "runServiceStop",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "runServiceRestart",
+          "type": "function",
+          "line": 241
+        },
+        {
+          "name": "runServiceStatus",
+          "type": "function",
+          "line": 255
+        },
+        {
+          "name": "runServiceUnregister",
+          "type": "function",
+          "line": 296
+        }
+      ]
+    },
+    {
+      "path": "src/cli/commands/start.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 371,
+      "symbols": [
+        {
+          "name": "StartOptions",
+          "type": "interface",
+          "line": 52
+        },
+        {
+          "name": "runStart",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "stop",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "resolveConflict",
+          "type": "function",
+          "line": 226
+        },
+        {
+          "name": "ask",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "answer",
+          "type": "function",
+          "line": 252
+        },
+        {
+          "name": "formatAgo",
+          "type": "function",
+          "line": 274
+        },
+        {
+          "name": "maybeMigratePlaintextSecret",
+          "type": "function",
+          "line": 289
+        },
+        {
+          "name": "needsProviderRewrite",
+          "type": "function",
+          "line": 346
+        },
+        {
+          "name": "persistEncrypted",
+          "type": "function",
+          "line": 355
+        }
+      ]
+    },
+    {
+      "path": "src/cli/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 127,
+      "symbols": []
+    },
+    {
+      "path": "src/cli/preflight.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 181,
+      "symbols": [
+        {
+          "name": "PreFlightOptions",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "preFlightChecks",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "checkLarkCli",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "printInstallFailedWarning",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "isLarkCliInstalled",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "RunResult",
+          "type": "interface",
+          "line": 133
+        },
+        {
+          "name": "runCapture",
+          "type": "function",
+          "line": 144
+        }
+      ]
+    },
+    {
+      "path": "src/commands/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1092,
+      "symbols": [
+        {
+          "name": "Controls",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "CommandContext",
+          "type": "interface",
+          "line": 60
+        },
+        {
+          "name": "Handler",
+          "type": "type",
+          "line": 87
+        },
+        {
+          "name": "isAdminCommand",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "tryHandleCommand",
+          "type": "function",
+          "line": 127
+        },
+        {
+          "name": "runCommandHandler",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "reply",
+          "type": "function",
+          "line": 183
+        },
+        {
+          "name": "expandTilde",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "handleNew",
+          "type": "function",
+          "line": 197
+        },
+        {
+          "name": "handleNewChat",
+          "type": "function",
+          "line": 211
+        },
+        {
+          "name": "handleCd",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "handleWs",
+          "type": "function",
+          "line": 277
+        },
+        {
+          "name": "handleWsList",
+          "type": "function",
+          "line": 297
+        },
+        {
+          "name": "handleWsSave",
+          "type": "function",
+          "line": 304
+        },
+        {
+          "name": "handleWsUse",
+          "type": "function",
+          "line": 318
+        },
+        {
+          "name": "handleWsRemove",
+          "type": "function",
+          "line": 334
+        },
+        {
+          "name": "handleResume",
+          "type": "function",
+          "line": 346
+        },
+        {
+          "name": "applyResume",
+          "type": "function",
+          "line": 373
+        },
+        {
+          "name": "handleStatus",
+          "type": "function",
+          "line": 383
+        },
+        {
+          "name": "handleStop",
+          "type": "function",
+          "line": 397
+        },
+        {
+          "name": "handleTimeout",
+          "type": "function",
+          "line": 404
+        },
+        {
+          "name": "formatGlobal",
+          "type": "function",
+          "line": 408
+        },
+        {
+          "name": "handlePs",
+          "type": "function",
+          "line": 455
+        },
+        {
+          "name": "handleExit",
+          "type": "function",
+          "line": 483
+        },
+        {
+          "name": "formatAgo",
+          "type": "function",
+          "line": 535
+        },
+        {
+          "name": "handleReconnect",
+          "type": "function",
+          "line": 542
+        },
+        {
+          "name": "buildDoctorPrompt",
+          "type": "function",
+          "line": 579
+        },
+        {
+          "name": "handleDoctor",
+          "type": "function",
+          "line": 594
+        },
+        {
+          "name": "flush",
+          "type": "function",
+          "line": 642
+        },
+        {
+          "name": "handleHelp",
+          "type": "function",
+          "line": 706
+        },
+        {
+          "name": "handleAccount",
+          "type": "function",
+          "line": 713
+        },
+        {
+          "name": "showCurrent",
+          "type": "function",
+          "line": 729
+        },
+        {
+          "name": "showForm",
+          "type": "function",
+          "line": 741
+        },
+        {
+          "name": "cancelAccount",
+          "type": "function",
+          "line": 749
+        },
+        {
+          "name": "submitAccount",
+          "type": "function",
+          "line": 761
+        },
+        {
+          "name": "tenant",
+          "type": "function",
+          "line": 765
+        },
+        {
+          "name": "waitForSettle",
+          "type": "function",
+          "line": 781
+        },
+        {
+          "name": "finishSuccess",
+          "type": "function",
+          "line": 790
+        },
+        {
+          "name": "finishFailure",
+          "type": "function",
+          "line": 804
+        },
+        {
+          "name": "recallMessage",
+          "type": "function",
+          "line": 865
+        },
+        {
+          "name": "handleConfig",
+          "type": "function",
+          "line": 877
+        },
+        {
+          "name": "showConfigForm",
+          "type": "function",
+          "line": 891
+        },
+        {
+          "name": "cancelConfig",
+          "type": "function",
+          "line": 908
+        },
+        {
+          "name": "submitConfig",
+          "type": "function",
+          "line": 921
+        },
+        {
+          "name": "parseList",
+          "type": "function",
+          "line": 964
+        },
+        {
+          "name": "waitForSettle",
+          "type": "function",
+          "line": 1027
+        }
+      ]
+    },
+    {
+      "path": "src/config/keystore.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 149,
+      "symbols": [
+        {
+          "name": "Envelope",
+          "type": "interface",
+          "line": 28
+        },
+        {
+          "name": "StoreFile",
+          "type": "interface",
+          "line": 37
+        },
+        {
+          "name": "readStore",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "writeStore",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "loadOrCreateSalt",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "deriveKey",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "encrypt",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "decrypt",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "getSecret",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "setSecret",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "removeSecret",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "listSecretIds",
+          "type": "function",
+          "line": 146
+        }
+      ]
+    },
+    {
+      "path": "src/config/paths.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "src/config/schema.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 271,
+      "symbols": [
+        {
+          "name": "TenantBrand",
+          "type": "type",
+          "line": 1
+        },
+        {
+          "name": "SecretRef",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "SecretInput",
+          "type": "type",
+          "line": 22
+        },
+        {
+          "name": "AppCredentials",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "ProviderConfig",
+          "type": "interface",
+          "line": 36
+        },
+        {
+          "name": "SecretsConfig",
+          "type": "interface",
+          "line": 55
+        },
+        {
+          "name": "MessageReplyMode",
+          "type": "type",
+          "line": 69
+        },
+        {
+          "name": "AppAccess",
+          "type": "interface",
+          "line": 79
+        },
+        {
+          "name": "AppPreferences",
+          "type": "interface",
+          "line": 92
+        },
+        {
+          "name": "AppConfig",
+          "type": "interface",
+          "line": 154
+        },
+        {
+          "name": "isComplete",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "hasSecret",
+          "type": "function",
+          "line": 167
+        },
+        {
+          "name": "isSecretRef",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "secretKeyForApp",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "getMessageReplyMode",
+          "type": "function",
+          "line": 194
+        },
+        {
+          "name": "getShowToolCalls",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "getMaxConcurrentRuns",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "getRequireMentionInGroup",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "getAgentStopGraceMs",
+          "type": "function",
+          "line": 238
+        },
+        {
+          "name": "isUserAllowed",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "isChatAllowed",
+          "type": "function",
+          "line": 252
+        },
+        {
+          "name": "isAdmin",
+          "type": "function",
+          "line": 260
+        },
+        {
+          "name": "getRunIdleTimeoutMs",
+          "type": "function",
+          "line": 266
+        }
+      ]
+    },
+    {
+      "path": "src/config/secret-resolver.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 244,
+      "symbols": [
+        {
+          "name": "resolveAppSecret",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "resolveSecretInput",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "resolvePlainOrTemplate",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "lookupProvider",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "resolveEnvRef",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "resolveFileRef",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "resolveExecRef",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "isSelfBridgeCommand",
+          "type": "function",
+          "line": 139
+        },
+        {
+          "name": "spawnExecProvider",
+          "type": "function",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "path": "src/config/store.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 106,
+      "symbols": [
+        {
+          "name": "loadConfig",
+          "type": "function",
+          "line": 7
+        },
+        {
+          "name": "buildEncryptedAccountConfig",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "ensureSecretsGetterWrapper",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "sq",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "saveConfig",
+          "type": "function",
+          "line": 98
+        }
+      ]
+    },
+    {
+      "path": "src/core/logger.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 352,
+      "symbols": [
+        {
+          "name": "LogContext",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "todayKey",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "logsDir",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "getStream",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "Level",
+          "type": "type",
+          "line": 80
+        },
+        {
+          "name": "LogFields",
+          "type": "type",
+          "line": 81
+        },
+        {
+          "name": "emit",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "formatStdout",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "formatFields",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "apiData",
+          "type": "function",
+          "line": 215
+        },
+        {
+          "name": "apiStatus",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "withTrace",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "newTraceId",
+          "type": "function",
+          "line": 236
+        },
+        {
+          "name": "sanitizeLogsForDoctor",
+          "type": "function",
+          "line": 254
+        },
+        {
+          "name": "readRecentLogs",
+          "type": "function",
+          "line": 284
+        },
+        {
+          "name": "gcOldLogs",
+          "type": "function",
+          "line": 303
+        },
+        {
+          "name": "readTail",
+          "type": "function",
+          "line": 331
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/launchd.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 152,
+      "symbols": [
+        {
+          "name": "PlistInputs",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "buildPlist",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "escape",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "writePlist",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "plistExists",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "userTarget",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "serviceTarget",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "LaunchctlResult",
+          "type": "interface",
+          "line": 90
+        },
+        {
+          "name": "runLaunchctl",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "bootstrap",
+          "type": "function",
+          "line": 105
+        },
+        {
+          "name": "bootout",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "kickstart",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "isLoaded",
+          "type": "function",
+          "line": 121
+        },
+        {
+          "name": "waitUntilUnloaded",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "describeService",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "deletePlist",
+          "type": "function",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/paths.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 73,
+      "symbols": [
+        {
+          "name": "launchAgentPlistPath",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "systemdUnitPath",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "windowsLauncherCmdPath",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "daemonLogDir",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "daemonStdoutPath",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "daemonStderrPath",
+          "type": "function",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/schtasks.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 179,
+      "symbols": [
+        {
+          "name": "LauncherInputs",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "buildLauncherCmd",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "writeLauncherCmd",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "SchtasksResult",
+          "type": "interface",
+          "line": 59
+        },
+        {
+          "name": "runSchtasks",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "installTask",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "runTask",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "endTask",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "disableTask",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "enableTask",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "endAndDisable",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "restartTask",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "isTaskRegistered",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "isTaskRunning",
+          "type": "function",
+          "line": 152
+        },
+        {
+          "name": "describeTask",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "waitUntilStopped",
+          "type": "function",
+          "line": 163
+        },
+        {
+          "name": "deleteTask",
+          "type": "function",
+          "line": 172
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/service-adapter.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 162,
+      "symbols": [
+        {
+          "name": "ServiceResult",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "ServiceResultLike",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "ServiceAdapter",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "makeLaunchdAdapter",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "makeSystemdAdapter",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "makeSchtasksAdapter",
+          "type": "function",
+          "line": 119
+        },
+        {
+          "name": "getServiceAdapter",
+          "type": "function",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "path": "src/daemon/systemd.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 148,
+      "symbols": [
+        {
+          "name": "UnitInputs",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "buildUnit",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "escape",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "writeUnit",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "unitExists",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "SystemctlResult",
+          "type": "interface",
+          "line": 78
+        },
+        {
+          "name": "runSystemctl",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "daemonReload",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "enableAndStart",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "stop",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "disableAndStop",
+          "type": "function",
+          "line": 109
+        },
+        {
+          "name": "restart",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "isActive",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "describeService",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "waitUntilInactive",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "deleteUnit",
+          "type": "function",
+          "line": 146
+        }
+      ]
+    },
+    {
+      "path": "src/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "src/media/cache.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 134,
+      "symbols": [
+        {
+          "name": "AttachmentKind",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "LocalAttachment",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "ResourceRequest",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "MediaCache",
+          "type": "class",
+          "line": 20
+        },
+        {
+          "name": "gcMediaCache",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "dirFor",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "pickFileName",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "sanitize",
+          "type": "function",
+          "line": 132
+        }
+      ]
+    },
+    {
+      "path": "src/runtime/registry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 215,
+      "symbols": [
+        {
+          "name": "ProcessEntry",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "RegistryFile",
+          "type": "interface",
+          "line": 37
+        },
+        {
+          "name": "readRaw",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "isValidEntry",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "isAlive",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "readAndPrune",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "writeAtomic",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "writeAtomicSync",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "generateShortId",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "RegisterArgs",
+          "type": "interface",
+          "line": 112
+        },
+        {
+          "name": "register",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "unregister",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "updateEntry",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "unregisterSync",
+          "type": "function",
+          "line": 173
+        },
+        {
+          "name": "cleanupTmpFiles",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "sameAppOthers",
+          "type": "function",
+          "line": 198
+        },
+        {
+          "name": "resolveTarget",
+          "type": "function",
+          "line": 206
+        }
+      ]
+    },
+    {
+      "path": "src/session/history.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 119,
+      "symbols": [
+        {
+          "name": "SessionSummary",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "encodeCwd",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "claudeProjectDir",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "listRecentSessions",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "summarize",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "extractUserText",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "formatRelTime",
+          "type": "function",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "path": "src/session/store.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 139,
+      "symbols": [
+        {
+          "name": "SessionEntry",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "SessionMap",
+          "type": "type",
+          "line": 19
+        },
+        {
+          "name": "SessionStore",
+          "type": "class",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "src/utils/feishu-auth.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 72,
+      "symbols": [
+        {
+          "name": "ValidationResult",
+          "type": "interface",
+          "line": 8
+        },
+        {
+          "name": "TokenResp",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "BotInfoResp",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "validateAppCredentials",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "fetchBotInfo",
+          "type": "function",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "path": "src/workspace/store.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 77,
+      "symbols": [
+        {
+          "name": "WorkspaceData",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "WorkspaceStore",
+          "type": "class",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "tsup.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    }
+  ]
+}

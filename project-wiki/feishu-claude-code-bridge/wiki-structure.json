@@ -1,0 +1,176 @@
+{
+  "title": "feishu-claude-code-bridge DeepWiki",
+  "description": "Lark/飞书与本地 Claude Code 桥接 bot 系统的中文技术 Wiki，涵盖子进程流式管理、飞书交互式卡片实时更新、多会话和工作区以及后台守护进程的实现细节。",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/zarazhangrui/feishu-claude-code-bridge.git",
+    "commit": "d59e0464e514fd348488dc61a52d7d3334de0aad"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "项目概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "系统架构",
+      "pages": ["system-architecture"],
+      "subsections": []
+    },
+    {
+      "id": "section-core-modules",
+      "title": "核心模块实现",
+      "pages": [
+        "claude-integration",
+        "feishu-bot-core",
+        "interactive-cards",
+        "commands-sessions"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-infrastructure",
+      "title": "基础设施与安全",
+      "pages": [
+        "daemon-management",
+        "security-config",
+        "media-utils"
+      ],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-core-modules",
+    "section-infrastructure"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "介绍项目的核心价值、要解决的痛点、能力全景以及阅读路线。",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "README.zh.md",
+        "package.json"
+      ],
+      "relatedPages": ["system-architecture", "feishu-bot-core"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与进程模型",
+      "file": "pages/system-architecture.md",
+      "description": "探讨桥接器的主机-服务分层、与 Claude CLI 协同的双进程模型以及进程生命周期管理。",
+      "importance": "high",
+      "filePaths": [
+        "src/cli/commands/start.ts",
+        "src/runtime/registry.ts",
+        "src/index.ts"
+      ],
+      "relatedPages": ["overview", "claude-integration", "feishu-bot-core", "daemon-management"]
+    },
+    {
+      "id": "claude-integration",
+      "title": "Claude CLI 集成与适配器",
+      "file": "pages/claude-integration.md",
+      "description": "揭秘本地 Claude CLI 子进程启动参数标准化、JSON 字符流解析以及执行中断抢占的实现机制。",
+      "importance": "high",
+      "filePaths": [
+        "src/agent/claude/adapter.ts",
+        "src/agent/claude/stream-json.ts",
+        "src/agent/index.ts"
+      ],
+      "relatedPages": ["system-architecture", "feishu-bot-core", "interactive-cards"]
+    },
+    {
+      "id": "feishu-bot-core",
+      "title": "飞书 Bot 消息与连接管理",
+      "file": "pages/feishu-bot-core.md",
+      "description": "深入分析飞书长连接网关、消息防抖并发排队策略、事件调度和授权更新流程。",
+      "importance": "high",
+      "filePaths": [
+        "src/bot/channel.ts",
+        "src/bot/pending-queue.ts",
+        "src/bot/process-pool.ts"
+      ],
+      "relatedPages": ["system-architecture", "claude-integration", "interactive-cards", "commands-sessions"]
+    },
+    {
+      "id": "interactive-cards",
+      "title": "交互式卡片渲染与分发",
+      "file": "pages/interactive-cards.md",
+      "description": "解析飞书流式交互卡片组件在处理富文本、工具调用执行和交互操作状态机时的核心架构。",
+      "importance": "high",
+      "filePaths": [
+        "src/card/dispatcher.ts",
+        "src/card/run-renderer.ts",
+        "src/card/run-state.ts",
+        "src/card/templates.ts",
+        "src/card/text-renderer.ts"
+      ],
+      "relatedPages": ["feishu-bot-core", "claude-integration", "commands-sessions"]
+    },
+    {
+      "id": "commands-sessions",
+      "title": "会话与指令系统",
+      "file": "pages/commands-sessions.md",
+      "description": "阐述斜杠指令分发、工作空间切换和会话上下文存储在持久化与重置时的行为表现。",
+      "importance": "medium",
+      "filePaths": [
+        "src/commands/index.ts",
+        "src/session/store.ts",
+        "src/workspace/store.ts"
+      ],
+      "relatedPages": ["feishu-bot-core", "interactive-cards", "security-config"]
+    },
+    {
+      "id": "daemon-management",
+      "title": "守护进程与后台托管",
+      "file": "pages/daemon-management.md",
+      "description": "跨平台后台服务注册设计，支持 macOS launchd、Linux systemd 以及 Windows 任务计划程序。",
+      "importance": "medium",
+      "filePaths": [
+        "src/cli/commands/service.ts",
+        "src/daemon/launchd.ts",
+        "src/daemon/systemd.ts",
+        "src/daemon/schtasks.ts",
+        "src/daemon/service-adapter.ts"
+      ],
+      "relatedPages": ["system-architecture", "security-config"]
+    },
+    {
+      "id": "security-config",
+      "title": "安全防线与配置系统",
+      "file": "pages/security-config.md",
+      "description": "研究多级权限名单校验、免暴露凭据加密 Keystore 秘钥托管以及配置热重载更新逻辑。",
+      "importance": "medium",
+      "filePaths": [
+        "src/config/keystore.ts",
+        "src/config/schema.ts",
+        "src/config/secret-resolver.ts",
+        "src/config/store.ts",
+        "src/cli/commands/secrets.ts"
+      ],
+      "relatedPages": ["commands-sessions", "daemon-management"]
+    },
+    {
+      "id": "media-utils",
+      "title": "媒体流与辅助工具",
+      "file": "pages/media-utils.md",
+      "description": "探讨消息附件下载、缓存周期失效、网络 DNS 自适应降级以及交互式注册配置向导。",
+      "importance": "low",
+      "filePaths": [
+        "src/media/cache.ts",
+        "src/utils/feishu-auth.ts",
+        "src/bot/wizard.ts"
+      ],
+      "relatedPages": ["feishu-bot-core", "security-config"]
+    }
+  ]
+}
