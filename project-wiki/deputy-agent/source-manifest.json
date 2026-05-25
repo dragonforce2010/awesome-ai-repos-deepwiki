@@ -1,0 +1,7474 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/deputy-agent",
+    "remote": "https://github.com/SomeoneKong/deputy-agent",
+    "branch": "main",
+    "commit": "d6127c4f23c17e9dc58a5e4431778a96744aa783"
+  },
+  "file_count": 168,
+  "skipped_count": 6,
+  "files": [
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 149,
+      "symbols": []
+    },
+    {
+      "path": "README.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 130,
+      "symbols": []
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 171,
+      "symbols": []
+    },
+    {
+      "path": "docs/ARCHITECTURE.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 131,
+      "symbols": []
+    },
+    {
+      "path": "docs/DATA_FORMATS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 312,
+      "symbols": []
+    },
+    {
+      "path": "docs/DATA_FORMATS.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 278,
+      "symbols": []
+    },
+    {
+      "path": "docs/LIMITATIONS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 87,
+      "symbols": []
+    },
+    {
+      "path": "docs/LIMITATIONS.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 74,
+      "symbols": []
+    },
+    {
+      "path": "docs/PROVIDERS.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 162,
+      "symbols": []
+    },
+    {
+      "path": "docs/PROVIDERS.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 125,
+      "symbols": []
+    },
+    {
+      "path": "docs/RUNTIME.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 235,
+      "symbols": []
+    },
+    {
+      "path": "docs/RUNTIME.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 167,
+      "symbols": []
+    },
+    {
+      "path": "docs/USAGE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 180,
+      "symbols": []
+    },
+    {
+      "path": "docs/USAGE.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 159,
+      "symbols": []
+    },
+    {
+      "path": "docs/WEB.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 159,
+      "symbols": []
+    },
+    {
+      "path": "docs/WEB.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 119,
+      "symbols": []
+    },
+    {
+      "path": "package-lock.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 2394,
+      "symbols": []
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "src/cli/bin.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "src/cli/cli.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 504,
+      "symbols": [
+        {
+          "name": "CliIo",
+          "type": "interface",
+          "line": 39
+        },
+        {
+          "name": "emit",
+          "type": "function",
+          "line": 75
+        },
+        {
+          "name": "reportError",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "runCli",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "projectRootFrom",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "baseEnv",
+          "type": "function",
+          "line": 115
+        },
+        {
+          "name": "dispatch",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "ParseArgsOptions",
+          "type": "type",
+          "line": 164
+        },
+        {
+          "name": "tryParse",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "requireTaskId",
+          "type": "function",
+          "line": 183
+        },
+        {
+          "name": "cmdSubmit",
+          "type": "function",
+          "line": 200
+        },
+        {
+          "name": "roleFlags",
+          "type": "function",
+          "line": 211
+        },
+        {
+          "name": "taskId",
+          "type": "function",
+          "line": 224
+        },
+        {
+          "name": "cmdRun",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "runForeground",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "cmdTextWrite",
+          "type": "function",
+          "line": 267
+        },
+        {
+          "name": "cmdUpload",
+          "type": "function",
+          "line": 289
+        },
+        {
+          "name": "cmdTaskOnly",
+          "type": "function",
+          "line": 314
+        },
+        {
+          "name": "cmdResume",
+          "type": "function",
+          "line": 326
+        },
+        {
+          "name": "cmdCancel",
+          "type": "function",
+          "line": 340
+        },
+        {
+          "name": "cmdRename",
+          "type": "function",
+          "line": 352
+        },
+        {
+          "name": "cmdList",
+          "type": "function",
+          "line": 364
+        },
+        {
+          "name": "cmdStatus",
+          "type": "function",
+          "line": 384
+        },
+        {
+          "name": "paths",
+          "type": "function",
+          "line": 389
+        },
+        {
+          "name": "normalizeOptionalValueFlags",
+          "type": "function",
+          "line": 430
+        },
+        {
+          "name": "parseOptionalCount",
+          "type": "function",
+          "line": 445
+        },
+        {
+          "name": "cmdInspect",
+          "type": "function",
+          "line": 452
+        },
+        {
+          "name": "optStr",
+          "type": "function",
+          "line": 465
+        },
+        {
+          "name": "cmdWeb",
+          "type": "function",
+          "line": 487
+        }
+      ]
+    },
+    {
+      "path": "src/cli/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 118,
+      "symbols": [
+        {
+          "name": "RoleConfig",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "ProjectConfig",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "loadProjectConfig",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "parsePathField",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "parseRoles",
+          "type": "function",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "path": "src/cli/daemonEntry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 46,
+      "symbols": [
+        {
+          "name": "daemonMain",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "src/cli/errors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 169,
+      "symbols": [
+        {
+          "name": "CliExitCode",
+          "type": "type",
+          "line": 21
+        },
+        {
+          "name": "CliErrorKind",
+          "type": "type",
+          "line": 43
+        },
+        {
+          "name": "CliErrorOptions",
+          "type": "interface",
+          "line": 48
+        },
+        {
+          "name": "CliError",
+          "type": "class",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "path": "src/cli/exec.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 817,
+      "symbols": [
+        {
+          "name": "CommandResult",
+          "type": "interface",
+          "line": 47
+        },
+        {
+          "name": "ExecEnv",
+          "type": "interface",
+          "line": 57
+        },
+        {
+          "name": "isInProgress",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "isTerminal",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "loadPathsAndManifest",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "resolveTextInput",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "maybeEnsureHost",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "appendUserCliAction",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "appendStageTransition",
+          "type": "function",
+          "line": 170
+        },
+        {
+          "name": "appendUserConversation",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "bytesHuman",
+          "type": "function",
+          "line": 211
+        },
+        {
+          "name": "SubmitInput",
+          "type": "interface",
+          "line": 220
+        },
+        {
+          "name": "buildRoleBindings",
+          "type": "function",
+          "line": 242
+        },
+        {
+          "name": "parseRoleFlagPairs",
+          "type": "function",
+          "line": 256
+        },
+        {
+          "name": "execSubmit",
+          "type": "function",
+          "line": 271
+        },
+        {
+          "name": "AnswerInput",
+          "type": "interface",
+          "line": 320
+        },
+        {
+          "name": "inferClarifyRound",
+          "type": "function",
+          "line": 327
+        },
+        {
+          "name": "execAnswer",
+          "type": "function",
+          "line": 344
+        },
+        {
+          "name": "FeedbackInput",
+          "type": "interface",
+          "line": 400
+        },
+        {
+          "name": "execFeedback",
+          "type": "function",
+          "line": 406
+        },
+        {
+          "name": "UploadInput",
+          "type": "interface",
+          "line": 437
+        },
+        {
+          "name": "execUpload",
+          "type": "function",
+          "line": 443
+        },
+        {
+          "name": "RunInput",
+          "type": "interface",
+          "line": 513
+        },
+        {
+          "name": "assertRunnableTask",
+          "type": "function",
+          "line": 522
+        },
+        {
+          "name": "execRun",
+          "type": "function",
+          "line": 545
+        },
+        {
+          "name": "TaskOnlyInput",
+          "type": "interface",
+          "line": 568
+        },
+        {
+          "name": "execPause",
+          "type": "function",
+          "line": 572
+        },
+        {
+          "name": "execResume",
+          "type": "function",
+          "line": 593
+        },
+        {
+          "name": "execDone",
+          "type": "function",
+          "line": 613
+        },
+        {
+          "name": "CancelInput",
+          "type": "interface",
+          "line": 644
+        },
+        {
+          "name": "execCancel",
+          "type": "function",
+          "line": 649
+        },
+        {
+          "name": "RenameInput",
+          "type": "interface",
+          "line": 682
+        },
+        {
+          "name": "execRename",
+          "type": "function",
+          "line": 691
+        },
+        {
+          "name": "execDelete",
+          "type": "function",
+          "line": 722
+        },
+        {
+          "name": "TaskListEntry",
+          "type": "interface",
+          "line": 780
+        },
+        {
+          "name": "listTasks",
+          "type": "function",
+          "line": 788
+        },
+        {
+          "name": "paths",
+          "type": "function",
+          "line": 798
+        }
+      ]
+    },
+    {
+      "path": "src/cli/hostSpawn.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 93,
+      "symbols": [
+        {
+          "name": "SpawnResult",
+          "type": "type",
+          "line": 21
+        },
+        {
+          "name": "daemonEntry",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "EnsureHostRunningOpts",
+          "type": "interface",
+          "line": 34
+        },
+        {
+          "name": "ensureHostRunning",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "spawnDetachedHost",
+          "type": "function",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "path": "src/cli/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "src/cli/inspect.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 250,
+      "symbols": [
+        {
+          "name": "InspectMode",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "resolvePaths",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "tailLines",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "renderDashboard",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "renderInbox",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "renderInspect",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "renderWatcherContext",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "d",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "latestSessionId",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "latestWorker",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "latestWorkerSeqForSid",
+          "type": "function",
+          "line": 234
+        }
+      ]
+    },
+    {
+      "path": "src/cli/productionHost.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 251,
+      "symbols": [
+        {
+          "name": "loadManifestRoleBindings",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "productionModelForProvider",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "claudeIsolation",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "codexIsolation",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "isolationForProvider",
+          "type": "function",
+          "line": 89
+        },
+        {
+          "name": "buildProductionDaemonConfig",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "resolveRoleBinding",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "createProviderRuntime",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "hostExitToCliExit",
+          "type": "function",
+          "line": 238
+        }
+      ]
+    },
+    {
+      "path": "src/cli/projectRoot.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 72,
+      "symbols": [
+        {
+          "name": "hasTasksDir",
+          "type": "function",
+          "line": 16
+        },
+        {
+          "name": "resolveProjectRoot",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "tasksRootOf",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "computeTaskId",
+          "type": "function",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "path": "src/host/agent_control.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 655,
+      "symbols": [
+        {
+          "name": "ReviewerVerdictRecord",
+          "type": "interface",
+          "line": 58
+        },
+        {
+          "name": "ReviewerVerdictBuffer",
+          "type": "class",
+          "line": 69
+        },
+        {
+          "name": "StartWorkerOutcome",
+          "type": "interface",
+          "line": 85
+        },
+        {
+          "name": "StopWorkerOutcome",
+          "type": "interface",
+          "line": 91
+        },
+        {
+          "name": "ReviewerEnvelopeKind",
+          "type": "type",
+          "line": 100
+        },
+        {
+          "name": "TriggerReviewerOutcome",
+          "type": "interface",
+          "line": 102
+        },
+        {
+          "name": "HostAgentControl",
+          "type": "interface",
+          "line": 112
+        },
+        {
+          "name": "HostAgentControlDeps",
+          "type": "interface",
+          "line": 132
+        },
+        {
+          "name": "HostAgentControlImpl",
+          "type": "class",
+          "line": 172
+        },
+        {
+          "name": "commitReviewerEnded",
+          "type": "function",
+          "line": 283
+        },
+        {
+          "name": "injectAndWait",
+          "type": "function",
+          "line": 516
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 601
+        },
+        {
+          "name": "currentStage",
+          "type": "function",
+          "line": 645
+        },
+        {
+          "name": "createHostAgentControl",
+          "type": "function",
+          "line": 653
+        }
+      ]
+    },
+    {
+      "path": "src/host/agent_sessions.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 432,
+      "symbols": [
+        {
+          "name": "WorkerExitReason",
+          "type": "type",
+          "line": 45
+        },
+        {
+          "name": "isActiveExit",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "mapSessionEndReason",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "deriveExitIntentLastWins",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "intent",
+          "type": "function",
+          "line": 126
+        },
+        {
+          "name": "NextSeqFile",
+          "type": "interface",
+          "line": 136
+        },
+        {
+          "name": "allocateWorkerSessionSeq",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "foldMaxWorkerSessionSeq",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "writeSystemPrompt",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "writeFirstMessage",
+          "type": "function",
+          "line": 191
+        },
+        {
+          "name": "NonWorkerRole",
+          "type": "type",
+          "line": 197
+        },
+        {
+          "name": "SessionStartedDetails",
+          "type": "type",
+          "line": 203
+        },
+        {
+          "name": "SessionEndedDetails",
+          "type": "type",
+          "line": 207
+        },
+        {
+          "name": "appendSessionStarted",
+          "type": "function",
+          "line": 211
+        },
+        {
+          "name": "appendSessionEnded",
+          "type": "function",
+          "line": 219
+        },
+        {
+          "name": "appendWorkerEndedIdempotent",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "appendReviewerEndedIdempotent",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "generateSessionId",
+          "type": "function",
+          "line": 259
+        },
+        {
+          "name": "EnqueuableWorkerExitReason",
+          "type": "type",
+          "line": 266
+        },
+        {
+          "name": "DeriveWorkerSessionEndInput",
+          "type": "interface",
+          "line": 268
+        },
+        {
+          "name": "enqueueWorkerSessionEnd",
+          "type": "function",
+          "line": 282
+        },
+        {
+          "name": "BuildSessionRequestCommon",
+          "type": "interface",
+          "line": 303
+        },
+        {
+          "name": "isInjectDelivered",
+          "type": "function",
+          "line": 319
+        },
+        {
+          "name": "firstMessageInject",
+          "type": "function",
+          "line": 324
+        },
+        {
+          "name": "isValidReviewerPhase",
+          "type": "function",
+          "line": 358
+        },
+        {
+          "name": "WorkerOrchestrationState",
+          "type": "interface",
+          "line": 364
+        },
+        {
+          "name": "initWorkerOrchestrationState",
+          "type": "function",
+          "line": 390
+        },
+        {
+          "name": "SessionToolHistory",
+          "type": "class",
+          "line": 411
+        }
+      ]
+    },
+    {
+      "path": "src/host/daemon.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 2781,
+      "symbols": [
+        {
+          "name": "HostExitCode",
+          "type": "type",
+          "line": 139
+        },
+        {
+          "name": "DaemonConfig",
+          "type": "interface",
+          "line": 141
+        },
+        {
+          "name": "withSdkRetry",
+          "type": "function",
+          "line": 251
+        },
+        {
+          "name": "defaultModel",
+          "type": "function",
+          "line": 261
+        },
+        {
+          "name": "buildRoleResolver",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "defaultIsolation",
+          "type": "function",
+          "line": 329
+        },
+        {
+          "name": "metaHarnessPathGuards",
+          "type": "function",
+          "line": 345
+        },
+        {
+          "name": "DaemonState",
+          "type": "class",
+          "line": 365
+        },
+        {
+          "name": "DaemonResult",
+          "type": "interface",
+          "line": 515
+        },
+        {
+          "name": "runDaemon",
+          "type": "function",
+          "line": 524
+        },
+        {
+          "name": "runDaemonLocked",
+          "type": "function",
+          "line": 555
+        },
+        {
+          "name": "TickContext",
+          "type": "interface",
+          "line": 756
+        },
+        {
+          "name": "TickExit",
+          "type": "interface",
+          "line": 791
+        },
+        {
+          "name": "runTickAction",
+          "type": "function",
+          "line": 799
+        },
+        {
+          "name": "ensureClarifyingTransition",
+          "type": "function",
+          "line": 849
+        },
+        {
+          "name": "ensureMetaOnline",
+          "type": "function",
+          "line": 869
+        },
+        {
+          "name": "inboxCount",
+          "type": "function",
+          "line": 890
+        },
+        {
+          "name": "metaInjectWithTimeout",
+          "type": "function",
+          "line": 1015
+        },
+        {
+          "name": "currentStageSafe",
+          "type": "function",
+          "line": 1088
+        },
+        {
+          "name": "maybeForceFailedOnMetaFailure",
+          "type": "function",
+          "line": 1109
+        },
+        {
+          "name": "ensureWatcherOnline",
+          "type": "function",
+          "line": 1137
+        },
+        {
+          "name": "driveWatcherWake",
+          "type": "function",
+          "line": 1204
+        },
+        {
+          "name": "maybeStartWatcherCompact",
+          "type": "function",
+          "line": 1275
+        },
+        {
+          "name": "runWatcherCompactFlow",
+          "type": "function",
+          "line": 1320
+        },
+        {
+          "name": "isCurrent",
+          "type": "function",
+          "line": 1328
+        },
+        {
+          "name": "injectAndAwaitWatcherTurn",
+          "type": "function",
+          "line": 1435
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 1445
+        },
+        {
+          "name": "tryComplete",
+          "type": "function",
+          "line": 1456
+        },
+        {
+          "name": "reconcileWorkerCompletionPending",
+          "type": "function",
+          "line": 1537
+        },
+        {
+          "name": "captureWorkerStartFailedBaseline",
+          "type": "function",
+          "line": 1654
+        },
+        {
+          "name": "reconcileWorker",
+          "type": "function",
+          "line": 1666
+        },
+        {
+          "name": "startWorker",
+          "type": "function",
+          "line": 1711
+        },
+        {
+          "name": "monitorActiveWorker",
+          "type": "function",
+          "line": 1866
+        },
+        {
+          "name": "finalizeWorker",
+          "type": "function",
+          "line": 1897
+        },
+        {
+          "name": "driveMetaWake",
+          "type": "function",
+          "line": 2148
+        },
+        {
+          "name": "maybeRemindMetaProgress",
+          "type": "function",
+          "line": 2229
+        },
+        {
+          "name": "surfaceMetaWakeInjectError",
+          "type": "function",
+          "line": 2261
+        },
+        {
+          "name": "surfaceWatcherWakeInjectError",
+          "type": "function",
+          "line": 2290
+        },
+        {
+          "name": "handleAwaitUser",
+          "type": "function",
+          "line": 2309
+        },
+        {
+          "name": "waitForWorkerFinalizeIdle",
+          "type": "function",
+          "line": 2356
+        },
+        {
+          "name": "cleanupAndExit",
+          "type": "function",
+          "line": 2373
+        },
+        {
+          "name": "closeAndEnd",
+          "type": "function",
+          "line": 2417
+        },
+        {
+          "name": "sid",
+          "type": "function",
+          "line": 2448
+        },
+        {
+          "name": "toolNamesFor",
+          "type": "function",
+          "line": 2501
+        },
+        {
+          "name": "peekMetaUnread",
+          "type": "function",
+          "line": 2506
+        },
+        {
+          "name": "latestReadEnvId",
+          "type": "function",
+          "line": 2510
+        },
+        {
+          "name": "isSessionLive",
+          "type": "function",
+          "line": 2525
+        },
+        {
+          "name": "endStaleLongSession",
+          "type": "function",
+          "line": 2538
+        },
+        {
+          "name": "isSessionIdle",
+          "type": "function",
+          "line": 2563
+        },
+        {
+          "name": "isSessionStreaming",
+          "type": "function",
+          "line": 2575
+        },
+        {
+          "name": "wrapAgentControl",
+          "type": "function",
+          "line": 2599
+        },
+        {
+          "name": "enqueueInterruptSoftkillFailed",
+          "type": "function",
+          "line": 2765
+        }
+      ]
+    },
+    {
+      "path": "src/host/done_criteria/checks.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 358,
+      "symbols": [
+        {
+          "name": "CheckExecResult",
+          "type": "interface",
+          "line": 32
+        },
+        {
+          "name": "pass",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "fail",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "error",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "resolveInWorkspace",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "safeRealpath",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "isRegularFile",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "checkFileExists",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "checkFileMinLines",
+          "type": "function",
+          "line": 110
+        },
+        {
+          "name": "countLines",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "checkFileMinBytes",
+          "type": "function",
+          "line": 145
+        },
+        {
+          "name": "checkYamlFieldPresent",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "checkDirMinFiles",
+          "type": "function",
+          "line": 214
+        },
+        {
+          "name": "checkScript",
+          "type": "function",
+          "line": 256
+        },
+        {
+          "name": "buildScriptEnv",
+          "type": "function",
+          "line": 325
+        },
+        {
+          "name": "evaluateOne",
+          "type": "function",
+          "line": 339
+        }
+      ]
+    },
+    {
+      "path": "src/host/done_criteria/errorKinds.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 41,
+      "symbols": [
+        {
+          "name": "DoneCriteriaErrorKind",
+          "type": "type",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "src/host/done_criteria/evaluate.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 133,
+      "symbols": [
+        {
+          "name": "EvaluateOpts",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "startMs",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "elapsedMs",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "evaluateOutcome",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "buildErrorOutcome",
+          "type": "function",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "path": "src/host/done_criteria/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "src/host/done_criteria/render.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 70,
+      "symbols": [
+        {
+          "name": "renderOutcomeSummary",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "renderCheckLine",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "asStr",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "renderHead",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "renderSuffix",
+          "type": "function",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "src/host/done_criteria/scriptRunner.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 208,
+      "symbols": [
+        {
+          "name": "ScriptRunResultKind",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "ScriptRunResult",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "detachedSpawnOpts",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "terminateProcessTree",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "ScriptProcessRegistry",
+          "type": "class",
+          "line": 61
+        },
+        {
+          "name": "tail",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "runScript",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "elapsedMs",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 141
+        }
+      ]
+    },
+    {
+      "path": "src/host/done_criteria/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 141,
+      "symbols": [
+        {
+          "name": "CheckKind",
+          "type": "type",
+          "line": 23
+        },
+        {
+          "name": "CheckBase",
+          "type": "interface",
+          "line": 54
+        },
+        {
+          "name": "FileExistsCheck",
+          "type": "interface",
+          "line": 59
+        },
+        {
+          "name": "FileMinLinesCheck",
+          "type": "interface",
+          "line": 64
+        },
+        {
+          "name": "FileMinBytesCheck",
+          "type": "interface",
+          "line": 70
+        },
+        {
+          "name": "YamlFieldPresentCheck",
+          "type": "interface",
+          "line": 76
+        },
+        {
+          "name": "DirMinFilesCheck",
+          "type": "interface",
+          "line": 82
+        },
+        {
+          "name": "ScriptCheck",
+          "type": "interface",
+          "line": 89
+        },
+        {
+          "name": "DoneCriteriaCheck",
+          "type": "type",
+          "line": 96
+        },
+        {
+          "name": "DoneCriteriaConfig",
+          "type": "interface",
+          "line": 104
+        },
+        {
+          "name": "OverallResult",
+          "type": "type",
+          "line": 110
+        },
+        {
+          "name": "CheckResult",
+          "type": "type",
+          "line": 111
+        },
+        {
+          "name": "CheckOutcome",
+          "type": "interface",
+          "line": 113
+        },
+        {
+          "name": "OutcomeSummary",
+          "type": "interface",
+          "line": 124
+        },
+        {
+          "name": "DoneCriteriaOutcome",
+          "type": "interface",
+          "line": 135
+        }
+      ]
+    },
+    {
+      "path": "src/host/done_criteria/validate.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 311,
+      "symbols": [
+        {
+          "name": "ParseValidateResult",
+          "type": "type",
+          "line": 26
+        },
+        {
+          "name": "pathUnsafeReason",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "patternUnsafeReason",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "interpreterAllowed",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "scriptPathUnderScriptsDir",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "isNonNegativeInt",
+          "type": "function",
+          "line": 103
+        },
+        {
+          "name": "nonBlankString",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "ValidateOpts",
+          "type": "interface",
+          "line": 113
+        },
+        {
+          "name": "validateAndConvertCheck",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "description",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "ParseYamlResult",
+          "type": "type",
+          "line": 244
+        },
+        {
+          "name": "parseYamlContent",
+          "type": "function",
+          "line": 249
+        },
+        {
+          "name": "parseAndValidateConfig",
+          "type": "function",
+          "line": 261
+        },
+        {
+          "name": "validateParsedConfig",
+          "type": "function",
+          "line": 268
+        },
+        {
+          "name": "checksRaw",
+          "type": "function",
+          "line": 272
+        },
+        {
+          "name": "validateDoneCriteriaContent",
+          "type": "function",
+          "line": 308
+        }
+      ]
+    },
+    {
+      "path": "src/host/errorKinds.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 236,
+      "symbols": [
+        {
+          "name": "HostToolCommonErrorKind",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "HostOrchestrationErrorKind",
+          "type": "type",
+          "line": 34
+        },
+        {
+          "name": "SdkErrorKind",
+          "type": "type",
+          "line": 73
+        },
+        {
+          "name": "WatchdogKind",
+          "type": "type",
+          "line": 102
+        },
+        {
+          "name": "AgentBehaviorErrorKind",
+          "type": "type",
+          "line": 127
+        },
+        {
+          "name": "mapSdkErrorKind",
+          "type": "function",
+          "line": 206
+        },
+        {
+          "name": "sdkErrorKindFromRuntimeError",
+          "type": "function",
+          "line": 231
+        }
+      ]
+    },
+    {
+      "path": "src/host/events.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 271,
+      "symbols": [
+        {
+          "name": "HostEventType",
+          "type": "type",
+          "line": 19
+        },
+        {
+          "name": "HostEventCommon",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "HostEventInput",
+          "type": "type",
+          "line": 47
+        },
+        {
+          "name": "AppendEndedIdempotentResult",
+          "type": "interface",
+          "line": 49
+        },
+        {
+          "name": "EventsIO",
+          "type": "interface",
+          "line": 56
+        },
+        {
+          "name": "camelToSnakeKey",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "detailsToSnake",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "briefValue",
+          "type": "function",
+          "line": 117
+        },
+        {
+          "name": "foldMaxEventSeq",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "append",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "appendEndedIdempotentCore",
+          "type": "function",
+          "line": 165
+        },
+        {
+          "name": "appendWorkerEndedIdempotent",
+          "type": "function",
+          "line": 200
+        },
+        {
+          "name": "appendReviewerEndedIdempotent",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "readRecentSummaries",
+          "type": "function",
+          "line": 223
+        },
+        {
+          "name": "truncatePartialTail",
+          "type": "function",
+          "line": 256
+        },
+        {
+          "name": "quarantine",
+          "type": "function",
+          "line": 260
+        }
+      ]
+    },
+    {
+      "path": "src/host/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": []
+    },
+    {
+      "path": "src/host/main_loop.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 280,
+      "symbols": [
+        {
+          "name": "SingleInstanceResult",
+          "type": "interface",
+          "line": 28
+        },
+        {
+          "name": "HostPidMeta",
+          "type": "interface",
+          "line": 36
+        },
+        {
+          "name": "isPidAlive",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "acquireSingleInstanceLock",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "WakeCursor",
+          "type": "class",
+          "line": 88
+        },
+        {
+          "name": "foldUnreadForWake",
+          "type": "function",
+          "line": 169
+        },
+        {
+          "name": "ReminderEnvelopeInput",
+          "type": "interface",
+          "line": 180
+        },
+        {
+          "name": "enqueueWorkerCompletionReminder",
+          "type": "function",
+          "line": 194
+        },
+        {
+          "name": "enqueueHostEvent",
+          "type": "function",
+          "line": 227
+        },
+        {
+          "name": "TickAction",
+          "type": "type",
+          "line": 251
+        },
+        {
+          "name": "dispatchByStage",
+          "type": "function",
+          "line": 263
+        }
+      ]
+    },
+    {
+      "path": "src/host/recovery.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 761,
+      "symbols": [
+        {
+          "name": "ManifestReadFatal",
+          "type": "class",
+          "line": 44
+        },
+        {
+          "name": "SynthesizedWorkerEnd",
+          "type": "interface",
+          "line": 72
+        },
+        {
+          "name": "CrashPendingWaitState",
+          "type": "type",
+          "line": 96
+        },
+        {
+          "name": "CrashPendingWorker",
+          "type": "interface",
+          "line": 98
+        },
+        {
+          "name": "RecoveryResult",
+          "type": "interface",
+          "line": 105
+        },
+        {
+          "name": "eventsHasContent",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "detectEventsCorruption",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "foldDetectsCorruption",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "runStartupRecovery",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "SignalCandidate",
+          "type": "interface",
+          "line": 277
+        },
+        {
+          "name": "RepairResult",
+          "type": "interface",
+          "line": 304
+        },
+        {
+          "name": "repairHalfCompletedWorker",
+          "type": "function",
+          "line": 311
+        },
+        {
+          "name": "maybeAppendPairedWorkerEnded",
+          "type": "function",
+          "line": 518
+        },
+        {
+          "name": "foldMaxWorkerStartedSeq",
+          "type": "function",
+          "line": 532
+        },
+        {
+          "name": "findLatestActiveSignal",
+          "type": "function",
+          "line": 552
+        },
+        {
+          "name": "SessionEndContext",
+          "type": "interface",
+          "line": 576
+        },
+        {
+          "name": "findLatestSessionEnd",
+          "type": "function",
+          "line": 601
+        },
+        {
+          "name": "findSessionEndForSeq",
+          "type": "function",
+          "line": 624
+        },
+        {
+          "name": "readSessionEndContext",
+          "type": "function",
+          "line": 645
+        },
+        {
+          "name": "waitStateForExitReason",
+          "type": "function",
+          "line": 671
+        },
+        {
+          "name": "readSignalPayloadExtras",
+          "type": "function",
+          "line": 678
+        },
+        {
+          "name": "UnmatchedWorkerStarted",
+          "type": "interface",
+          "line": 697
+        },
+        {
+          "name": "findUnmatchedWorkerStarted",
+          "type": "function",
+          "line": 707
+        },
+        {
+          "name": "safeAppend",
+          "type": "function",
+          "line": 737
+        },
+        {
+          "name": "safeEnqueueHostEvent",
+          "type": "function",
+          "line": 745
+        }
+      ]
+    },
+    {
+      "path": "src/host/retry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 85,
+      "symbols": [
+        {
+          "name": "RetryConfig",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "RetryHooks",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "isTransient",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "computeDelay",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "withTransientRetry",
+          "type": "function",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": "src/host/role_assembly.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 304,
+      "symbols": [
+        {
+          "name": "IsolationProfile",
+          "type": "type",
+          "line": 34
+        },
+        {
+          "name": "RoleBinding",
+          "type": "interface",
+          "line": 37
+        },
+        {
+          "name": "WatcherCompactMode",
+          "type": "type",
+          "line": 43
+        },
+        {
+          "name": "ResolvedRoleAssembly",
+          "type": "interface",
+          "line": 52
+        },
+        {
+          "name": "SingleProviderConfig",
+          "type": "interface",
+          "line": 59
+        },
+        {
+          "name": "MultiProviderConfig",
+          "type": "interface",
+          "line": 66
+        },
+        {
+          "name": "RoleResolverConfig",
+          "type": "interface",
+          "line": 73
+        },
+        {
+          "name": "RoleAssemblyError",
+          "type": "class",
+          "line": 89
+        },
+        {
+          "name": "validateRoleAssemblyConfig",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "RoleResolver",
+          "type": "class",
+          "line": 132
+        },
+        {
+          "name": "CapabilityGateOpts",
+          "type": "interface",
+          "line": 251
+        },
+        {
+          "name": "checkRoleCapabilities",
+          "type": "function",
+          "line": 272
+        }
+      ]
+    },
+    {
+      "path": "src/host/stage_machine.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 294,
+      "symbols": [
+        {
+          "name": "TransitionTrigger",
+          "type": "type",
+          "line": 27
+        },
+        {
+          "name": "isInProgress",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "isTerminal",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "checkTransitionAllowed",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "GatePhase",
+          "type": "type",
+          "line": 112
+        },
+        {
+          "name": "GateResult",
+          "type": "interface",
+          "line": 114
+        },
+        {
+          "name": "checkBootstrapGate",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "checkFinalReviewGate",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "checkStageGate",
+          "type": "function",
+          "line": 170
+        },
+        {
+          "name": "StageAdvanceRequest",
+          "type": "interface",
+          "line": 176
+        },
+        {
+          "name": "StageAdvanceResult",
+          "type": "type",
+          "line": 183
+        },
+        {
+          "name": "HandleStageAdvanceDeps",
+          "type": "interface",
+          "line": 187
+        },
+        {
+          "name": "handleStageAdvance",
+          "type": "function",
+          "line": 202
+        }
+      ]
+    },
+    {
+      "path": "src/host/tools/agent.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 250,
+      "symbols": [
+        {
+          "name": "makeStartWorkerTool",
+          "type": "function",
+          "line": 79
+        },
+        {
+          "name": "makeStopWorkerTool",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "makeTriggerReviewerTool",
+          "type": "function",
+          "line": 160
+        },
+        {
+          "name": "isTaskRootRelative",
+          "type": "function",
+          "line": 241
+        }
+      ]
+    },
+    {
+      "path": "src/host/tools/common.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 150,
+      "symbols": [
+        {
+          "name": "HostToolResultBase",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "HostToolDeps",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "callerSessionId",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "ok",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "fail",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "toCallResult",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "renderValue",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "checkCallerRole",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "asInputObject",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "requireNonBlankString",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "busErrorFail",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "requireStringArray",
+          "type": "function",
+          "line": 142
+        }
+      ]
+    },
+    {
+      "path": "src/host/tools/harness.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 340,
+      "symbols": [
+        {
+          "name": "truncateUtf8Bytes",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "isWorkerHarnessPath",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "isSafeRelative",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "WriteHarnessInput",
+          "type": "interface",
+          "line": 77
+        },
+        {
+          "name": "parseWriteInput",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "validateSchematicContent",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "fileExists",
+          "type": "function",
+          "line": 135
+        },
+        {
+          "name": "writeHarnessFile",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "makeWriteWorkerTool",
+          "type": "function",
+          "line": 262
+        },
+        {
+          "name": "makeWriteWatcherTool",
+          "type": "function",
+          "line": 286
+        },
+        {
+          "name": "makeReadHarnessTool",
+          "type": "function",
+          "line": 306
+        }
+      ]
+    },
+    {
+      "path": "src/host/tools/inbox.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 201,
+      "symbols": [
+        {
+          "name": "channelForRole",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "makeInboxPullTool",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "makeInboxMarkRespondedTool",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "makeInspectWorkerStatusTool",
+          "type": "function",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "path": "src/host/tools/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 13,
+      "symbols": []
+    },
+    {
+      "path": "src/host/tools/msg.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 376,
+      "symbols": [
+        {
+          "name": "bodyOnlySchema",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "makeSendToWorkerTool",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "makeInterruptWorkerTool",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "makeSendToWatcherTool",
+          "type": "function",
+          "line": 116
+        },
+        {
+          "name": "makeSendToUserTool",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "stage",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "makeEscalateToMetaTool",
+          "type": "function",
+          "line": 205
+        },
+        {
+          "name": "makeNotifyMetaTool",
+          "type": "function",
+          "line": 250
+        },
+        {
+          "name": "makeDeclareDoneToMetaTool",
+          "type": "function",
+          "line": 280
+        },
+        {
+          "name": "makeObserveToMetaTool",
+          "type": "function",
+          "line": 314
+        },
+        {
+          "name": "parseBody",
+          "type": "function",
+          "line": 365
+        },
+        {
+          "name": "workerIdentity",
+          "type": "function",
+          "line": 372
+        }
+      ]
+    },
+    {
+      "path": "src/host/tools/registry.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 92,
+      "symbols": [
+        {
+          "name": "buildHostTools",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "registerHostTools",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "toolNamesForRole",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "allHostToolNames",
+          "type": "function",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "path": "src/host/tools/reviewer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 94,
+      "symbols": [
+        {
+          "name": "makeSubmitVerdictTool",
+          "type": "function",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "src/host/tools/stage.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 145,
+      "symbols": [
+        {
+          "name": "parseLastError",
+          "type": "function",
+          "line": 65
+        },
+        {
+          "name": "makeStageAdvanceTool",
+          "type": "function",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "path": "src/host/watchdog.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 203,
+      "symbols": [
+        {
+          "name": "WatchdogThresholds",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "stableStringify",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "toolUseSignature",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "WorkerWatchdogState",
+          "type": "interface",
+          "line": 76
+        },
+        {
+          "name": "WorkerWatchdogTrigger",
+          "type": "type",
+          "line": 83
+        },
+        {
+          "name": "checkWorkerWatchdog",
+          "type": "function",
+          "line": 88
+        },
+        {
+          "name": "WorkerWatchdogMutState",
+          "type": "interface",
+          "line": 111
+        },
+        {
+          "name": "recordWorkerActivity",
+          "type": "function",
+          "line": 128
+        },
+        {
+          "name": "checkReviewerTimeout",
+          "type": "function",
+          "line": 142
+        },
+        {
+          "name": "HostTimeoutError",
+          "type": "class",
+          "line": 152
+        },
+        {
+          "name": "withTimeout",
+          "type": "function",
+          "line": 165
+        },
+        {
+          "name": "sdkApiTimeoutAsTransient",
+          "type": "function",
+          "line": 195
+        }
+      ]
+    },
+    {
+      "path": "src/host/watcher/compact_summary.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 102,
+      "symbols": [
+        {
+          "name": "synthesizeWatcherCompactSummary",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "synthesizeFromEvents",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "kind",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "block",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "boundTail",
+          "type": "function",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "path": "src/host/watcher/dispatcher.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 312,
+      "symbols": [
+        {
+          "name": "WorkerSessionInfo",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "WindowDispatcherDeps",
+          "type": "interface",
+          "line": 43
+        },
+        {
+          "name": "WindowDispatcher",
+          "type": "interface",
+          "line": 53
+        },
+        {
+          "name": "defaultNowMono",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "toRelativeStreamPath",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "WindowDispatcherImpl",
+          "type": "class",
+          "line": 70
+        },
+        {
+          "name": "createWindowDispatcher",
+          "type": "function",
+          "line": 310
+        }
+      ]
+    },
+    {
+      "path": "src/host/watcher/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "src/host/watcher/offsetTracker.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 122,
+      "symbols": [
+        {
+          "name": "OffsetTracker",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "ReadIncrementResult",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "readStreamIncrement",
+          "type": "function",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "path": "src/host/watcher/preprocess.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 393,
+      "symbols": [
+        {
+          "name": "ProcessedRecord",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "byteLen",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "truncateBytes",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "stringifyToolContent",
+          "type": "function",
+          "line": 74
+        },
+        {
+          "name": "renderBlock",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "processEvent",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "unknownKind",
+          "type": "function",
+          "line": 259
+        },
+        {
+          "name": "receivedAt",
+          "type": "function",
+          "line": 260
+        },
+        {
+          "name": "preprocessEvents",
+          "type": "function",
+          "line": 272
+        },
+        {
+          "name": "kind",
+          "type": "function",
+          "line": 290
+        },
+        {
+          "name": "isEmptyWindow",
+          "type": "function",
+          "line": 305
+        },
+        {
+          "name": "tsRelative",
+          "type": "function",
+          "line": 315
+        },
+        {
+          "name": "recordHeader",
+          "type": "function",
+          "line": 321
+        },
+        {
+          "name": "RenderWindowBodyOpts",
+          "type": "interface",
+          "line": 331
+        },
+        {
+          "name": "renderWindowBody",
+          "type": "function",
+          "line": 347
+        }
+      ]
+    },
+    {
+      "path": "src/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/bus.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 786,
+      "symbols": [
+        {
+          "name": "PullOptions",
+          "type": "interface",
+          "line": 63
+        },
+        {
+          "name": "PullEnvelope",
+          "type": "interface",
+          "line": 68
+        },
+        {
+          "name": "PullResult",
+          "type": "interface",
+          "line": 79
+        },
+        {
+          "name": "MarkRespondedResult",
+          "type": "interface",
+          "line": 84
+        },
+        {
+          "name": "InspectOptions",
+          "type": "interface",
+          "line": 91
+        },
+        {
+          "name": "WorkerEnvelopeStatus",
+          "type": "interface",
+          "line": 96
+        },
+        {
+          "name": "InspectResult",
+          "type": "interface",
+          "line": 109
+        },
+        {
+          "name": "EnvelopeAnchor",
+          "type": "interface",
+          "line": 115
+        },
+        {
+          "name": "HasEnvelopeWithExtrasAfterOptions",
+          "type": "interface",
+          "line": 120
+        },
+        {
+          "name": "AppendFailedOptions",
+          "type": "interface",
+          "line": 126
+        },
+        {
+          "name": "MessagingBus",
+          "type": "interface",
+          "line": 131
+        },
+        {
+          "name": "hasPrefix",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "MessagingBusImpl",
+          "type": "class",
+          "line": 154
+        },
+        {
+          "name": "extras",
+          "type": "function",
+          "line": 759
+        },
+        {
+          "name": "deepEqual",
+          "type": "function",
+          "line": 769
+        },
+        {
+          "name": "createMessagingBus",
+          "type": "function",
+          "line": 784
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/envelope.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 304,
+      "symbols": [
+        {
+          "name": "Channel",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "EnvelopeKind",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "isKindAllowedForChannel",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "UserUploadExtras",
+          "type": "interface",
+          "line": 57
+        },
+        {
+          "name": "UserClarifyAnswerExtras",
+          "type": "interface",
+          "line": 64
+        },
+        {
+          "name": "WorkerExitIntent",
+          "type": "type",
+          "line": 68
+        },
+        {
+          "name": "WorkerEscalationExtras",
+          "type": "interface",
+          "line": 70
+        },
+        {
+          "name": "WorkerNotificationExtras",
+          "type": "interface",
+          "line": 76
+        },
+        {
+          "name": "WorkerCompletionClaimExtras",
+          "type": "interface",
+          "line": 81
+        },
+        {
+          "name": "WorkerSessionEndExtras",
+          "type": "interface",
+          "line": 86
+        },
+        {
+          "name": "WatcherObservationExtras",
+          "type": "interface",
+          "line": 93
+        },
+        {
+          "name": "ReviewerVerdictValue",
+          "type": "type",
+          "line": 98
+        },
+        {
+          "name": "ReviewerVerdictExtras",
+          "type": "interface",
+          "line": 100
+        },
+        {
+          "name": "HostEventExtras",
+          "type": "interface",
+          "line": 107
+        },
+        {
+          "name": "WorkerStreamWindowExtras",
+          "type": "interface",
+          "line": 112
+        },
+        {
+          "name": "EnvelopeExtras",
+          "type": "type",
+          "line": 120
+        },
+        {
+          "name": "ExtrasByKind",
+          "type": "type",
+          "line": 133
+        },
+        {
+          "name": "Envelope",
+          "type": "interface",
+          "line": 153
+        },
+        {
+          "name": "FieldSpec",
+          "type": "type",
+          "line": 171
+        },
+        {
+          "name": "isPlainObject",
+          "type": "function",
+          "line": 222
+        },
+        {
+          "name": "isInt",
+          "type": "function",
+          "line": 226
+        },
+        {
+          "name": "checkField",
+          "type": "function",
+          "line": 231
+        },
+        {
+          "name": "validateExtras",
+          "type": "function",
+          "line": 266
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "src/messaging/recovery.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 221,
+      "symbols": [
+        {
+          "name": "HostEventFailure",
+          "type": "type",
+          "line": 31
+        },
+        {
+          "name": "RecoveryReport",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "isDir",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "isFile",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "recoverAfterCrash",
+          "type": "function",
+          "line": 64
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/schema.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 231,
+      "symbols": [
+        {
+          "name": "extrasToJson",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "asRecordOrNull",
+          "type": "function",
+          "line": 94
+        },
+        {
+          "name": "extrasFromJson",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "extrasMatchToJsonKeys",
+          "type": "function",
+          "line": 199
+        },
+        {
+          "name": "PayloadJson",
+          "type": "interface",
+          "line": 213
+        },
+        {
+          "name": "buildPayloadJson",
+          "type": "function",
+          "line": 222
+        }
+      ]
+    },
+    {
+      "path": "src/messaging/state.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 78,
+      "symbols": [
+        {
+          "name": "StateEventType",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "StateEventCommon",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "EnqueuedEvent",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "ReadEvent",
+          "type": "interface",
+          "line": 28
+        },
+        {
+          "name": "RespondedEvent",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "FailedEvent",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "StateEvent",
+          "type": "type",
+          "line": 44
+        },
+        {
+          "name": "EnvelopeState",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "envelopeOrderKey",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "compareOrderKey",
+          "type": "function",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "path": "src/prompts/assembler.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 124,
+      "symbols": [
+        {
+          "name": "PromptAssembler",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "assembleMetaSystemPrompt",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "tone",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "assembleReviewerSystemPrompt",
+          "type": "function",
+          "line": 58
+        },
+        {
+          "name": "assembleWorkerSystemPrompt",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "assembleWatcherSystemPrompt",
+          "type": "function",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "path": "src/prompts/assets.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 293,
+      "symbols": [
+        {
+          "name": "frameworkSectionPath",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "rolePath",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "templatePath",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "exists",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "readTextFailSoft",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "readFrameworkSection",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "readRolePrompt",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "readTemplate",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "frameworkPrompt",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "CheckAssetsOpts",
+          "type": "interface",
+          "line": 90
+        },
+        {
+          "name": "checkAssetsOrFallback",
+          "type": "function",
+          "line": 106
+        },
+        {
+          "name": "normalizeConsumerLangs",
+          "type": "function",
+          "line": 175
+        },
+        {
+          "name": "pick",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "consumerLangDirectives",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "formatTemplate",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "joinNonEmpty",
+          "type": "function",
+          "line": 220
+        },
+        {
+          "name": "formatClarifyHistory",
+          "type": "function",
+          "line": 235
+        },
+        {
+          "name": "qText",
+          "type": "function",
+          "line": 257
+        },
+        {
+          "name": "aText",
+          "type": "function",
+          "line": 258
+        },
+        {
+          "name": "formatStageHistory",
+          "type": "function",
+          "line": 270
+        },
+        {
+          "name": "formatRecentEvents",
+          "type": "function",
+          "line": 279
+        },
+        {
+          "name": "readRawTaskOrPlaceholder",
+          "type": "function",
+          "line": 285
+        },
+        {
+          "name": "raw",
+          "type": "function",
+          "line": 286
+        },
+        {
+          "name": "readHarnessTaskpart",
+          "type": "function",
+          "line": 291
+        }
+      ]
+    },
+    {
+      "path": "src/prompts/assets/framework/inbox_consumption.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/framework/inbox_consumption.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 17,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/framework/isolation_declaration.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/framework/isolation_declaration.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/framework/messaging_protocol.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/framework/messaging_protocol.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/framework/tool_usage.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/framework/tool_usage.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/roles/meta.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 156,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/roles/meta.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 156,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/roles/reviewer.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/roles/reviewer.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/roles/watcher.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/roles/watcher.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/roles/worker.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 191,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/roles/worker.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 191,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/meta_session_start.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/meta_session_start.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/reviewer_first_message.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/reviewer_first_message.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/user_message_tone.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/user_message_tone.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/watcher_compact_reinject_intro.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 3,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/watcher_compact_reinject_intro.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 3,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/worker_session_start.en.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/assets/templates/worker_session_start.zh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/events.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 44,
+      "symbols": [
+        {
+          "name": "readRecentEventsSummaries",
+          "type": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "src/prompts/firstMessage.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 189,
+      "symbols": [
+        {
+          "name": "FirstUserMessageAssembler",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "assembleMetaFirstUserMessage",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "minimalFallback",
+          "type": "function",
+          "line": 71
+        },
+        {
+          "name": "assembleWorkerFirstUserMessage",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "fallback",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "assembleReviewerFirstUserMessage",
+          "type": "function",
+          "line": 133
+        },
+        {
+          "name": "minimalFallback",
+          "type": "function",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "path": "src/prompts/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "src/prompts/lang.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 50,
+      "symbols": [
+        {
+          "name": "Lang",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "PromptLangResolver",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "ReviewerPhase",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "PromptLangFallbackDetails",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "AuditCallback",
+          "type": "type",
+          "line": 33
+        },
+        {
+          "name": "setPromptLangFallbackAuditCallback",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "emitPromptLangFallbackAudit",
+          "type": "function",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "path": "src/prompts/literals.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 307,
+      "symbols": [
+        {
+          "name": "LiteralsKey",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "literals",
+          "type": "function",
+          "line": 305
+        }
+      ]
+    },
+    {
+      "path": "src/prompts/runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 104,
+      "symbols": [
+        {
+          "name": "RuntimePromptRenderer",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "renderWatcherCompactRoleReinjectMessage",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "intro",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "renderWakeInjectUserMessage",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "renderMetaProgressReminder",
+          "type": "function",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "path": "src/shared/atomic.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 44,
+      "symbols": [
+        {
+          "name": "AtomicWriter",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "writeBytesAtomic",
+          "type": "function",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "src/shared/capsule.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 112,
+      "symbols": [
+        {
+          "name": "CreateTaskCapsuleInput",
+          "type": "interface",
+          "line": 18
+        },
+        {
+          "name": "createTaskCapsule",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "src/shared/conversation.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 255,
+      "symbols": [
+        {
+          "name": "ConversationDirection",
+          "type": "type",
+          "line": 25
+        },
+        {
+          "name": "ConversationUserSource",
+          "type": "type",
+          "line": 28
+        },
+        {
+          "name": "ConversationUserKind",
+          "type": "type",
+          "line": 30
+        },
+        {
+          "name": "ConversationMetaIntent",
+          "type": "type",
+          "line": 38
+        },
+        {
+          "name": "ConversationRow",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "AppendUserToMetaOpts",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "AppendMetaToUserOpts",
+          "type": "interface",
+          "line": 60
+        },
+        {
+          "name": "ConversationIO",
+          "type": "interface",
+          "line": 67
+        },
+        {
+          "name": "statOrNull",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "formatTsHuman",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "renderMdBlock",
+          "type": "function",
+          "line": 111
+        },
+        {
+          "name": "readRowsLenient",
+          "type": "function",
+          "line": 146
+        },
+        {
+          "name": "writeOneRowLocked",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "appendUserToMeta",
+          "type": "function",
+          "line": 194
+        },
+        {
+          "name": "appendMetaToUser",
+          "type": "function",
+          "line": 208
+        },
+        {
+          "name": "readLastMetaToUser",
+          "type": "function",
+          "line": 221
+        },
+        {
+          "name": "rows",
+          "type": "function",
+          "line": 226
+        },
+        {
+          "name": "rebuildMdFromJsonl",
+          "type": "function",
+          "line": 230
+        },
+        {
+          "name": "ensureMdExistsOrRebuild",
+          "type": "function",
+          "line": 237
+        }
+      ]
+    },
+    {
+      "path": "src/shared/errors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 98,
+      "symbols": [
+        {
+          "name": "DeputyErrorOptions",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "DeputyError",
+          "type": "class",
+          "line": 19
+        },
+        {
+          "name": "LockTimeoutError",
+          "type": "class",
+          "line": 36
+        },
+        {
+          "name": "CorruptJsonlError",
+          "type": "class",
+          "line": 41
+        },
+        {
+          "name": "PathEscapeError",
+          "type": "class",
+          "line": 46
+        },
+        {
+          "name": "ManifestYamlParseError",
+          "type": "class",
+          "line": 51
+        },
+        {
+          "name": "ManifestSchemaMismatch",
+          "type": "class",
+          "line": 56
+        },
+        {
+          "name": "ManifestAtomicWriteFailed",
+          "type": "class",
+          "line": 61
+        },
+        {
+          "name": "TaskCapsuleConflict",
+          "type": "class",
+          "line": 66
+        },
+        {
+          "name": "StageCasMismatch",
+          "type": "class",
+          "line": 71
+        },
+        {
+          "name": "MessagingError",
+          "type": "class",
+          "line": 76
+        },
+        {
+          "name": "InvalidEnvelopeExtras",
+          "type": "class",
+          "line": 81
+        },
+        {
+          "name": "MessagingEnqueueFailed",
+          "type": "class",
+          "line": 86
+        },
+        {
+          "name": "MessagingStateCorrupted",
+          "type": "class",
+          "line": 91
+        },
+        {
+          "name": "MessagingPayloadCorrupted",
+          "type": "class",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "path": "src/shared/fsExt.d.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 11,
+      "symbols": [
+        {
+          "name": "FlockFlag",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "flockSync",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "flock",
+          "type": "function",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "path": "src/shared/ids.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 85,
+      "symbols": [
+        {
+          "name": "TaskId",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "EnvelopeId",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "UploadId",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "TopicSlug",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "isValidTaskId",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "assertTaskId",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "isValidEnvelopeId",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "isValidTopicSlug",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "genEnvelopeId",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "genUploadId",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "genDefaultTaskId",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "mm",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "formatSessionSeq",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "checkPathComponent",
+          "type": "function",
+          "line": 73
+        },
+        {
+          "name": "reject",
+          "type": "function",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "path": "src/shared/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 14,
+      "symbols": []
+    },
+    {
+      "path": "src/shared/jsonl.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 143,
+      "symbols": [
+        {
+          "name": "JsonlIO",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "lastByte",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "appendLine",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "parseSegment",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "truncatePartialTail",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "quarantine",
+          "type": "function",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "src/shared/locks.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 127,
+      "symbols": [
+        {
+          "name": "LockHandle",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "FileLock",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "isWouldBlock",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "code",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "openLockFd",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "makeHandle",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "acquireExclusive",
+          "type": "function",
+          "line": 63
+        },
+        {
+          "name": "tryAcquireNonblocking",
+          "type": "function",
+          "line": 86
+        },
+        {
+          "name": "withLock",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "withTryLock",
+          "type": "function",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "path": "src/shared/manifest.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 331,
+      "symbols": [
+        {
+          "name": "Stage",
+          "type": "type",
+          "line": 34
+        },
+        {
+          "name": "StageInProgress",
+          "type": "type",
+          "line": 58
+        },
+        {
+          "name": "StageHistoryEntry",
+          "type": "interface",
+          "line": 71
+        },
+        {
+          "name": "LastError",
+          "type": "interface",
+          "line": 76
+        },
+        {
+          "name": "RoleBinding",
+          "type": "interface",
+          "line": 84
+        },
+        {
+          "name": "RoleBindingMap",
+          "type": "type",
+          "line": 90
+        },
+        {
+          "name": "Manifest",
+          "type": "interface",
+          "line": 96
+        },
+        {
+          "name": "Mutator",
+          "type": "type",
+          "line": 110
+        },
+        {
+          "name": "MutateOptions",
+          "type": "interface",
+          "line": 112
+        },
+        {
+          "name": "StageTransitionOptions",
+          "type": "interface",
+          "line": 117
+        },
+        {
+          "name": "ManifestIO",
+          "type": "interface",
+          "line": 123
+        },
+        {
+          "name": "lastErrorToYaml",
+          "type": "function",
+          "line": 136
+        },
+        {
+          "name": "roleBindingsToYaml",
+          "type": "function",
+          "line": 143
+        },
+        {
+          "name": "manifestToYaml",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "lastErrorFromYaml",
+          "type": "function",
+          "line": 174
+        },
+        {
+          "name": "roleBindingsFromYaml",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "manifestFromYaml",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "writeManifest",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "load",
+          "type": "function",
+          "line": 251
+        },
+        {
+          "name": "writeInitial",
+          "type": "function",
+          "line": 272
+        },
+        {
+          "name": "withManifestWrite",
+          "type": "function",
+          "line": 277
+        },
+        {
+          "name": "mutate",
+          "type": "function",
+          "line": 295
+        },
+        {
+          "name": "applyStageTransition",
+          "type": "function",
+          "line": 302
+        }
+      ]
+    },
+    {
+      "path": "src/shared/paths.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 199,
+      "symbols": [
+        {
+          "name": "TaskCapsulePaths",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "buildTaskCapsulePaths",
+          "type": "function",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "src/shared/status_md.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 174,
+      "symbols": [
+        {
+          "name": "formatTsHuman",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "renderMetaMessage",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "renderActionHints",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "buildStatusMd",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "renderStatusMd",
+          "type": "function",
+          "line": 140
+        },
+        {
+          "name": "readOrRenderStatusMd",
+          "type": "function",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "path": "src/shared/timeUtils.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 62,
+      "symbols": [
+        {
+          "name": "Iso8601Us",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "formatUs",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "nowIso8601Us",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "iso8601UsFromMs",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "iso8601UsToMs",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "parseIso8601Us",
+          "type": "function",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "path": "src/web/app.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 86,
+      "symbols": [
+        {
+          "name": "WebServerOpts",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "staticDir",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "buildWebApp",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "startWebServer",
+          "type": "function",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "path": "src/web/cliBridge.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 241,
+      "symbols": [
+        {
+          "name": "BridgeOpts",
+          "type": "interface",
+          "line": 34
+        },
+        {
+          "name": "serializeWrite",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "spawnOf",
+          "type": "function",
+          "line": 54
+        },
+        {
+          "name": "bridgeAnswer",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "bridgeFeedback",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "bridgeUpload",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "bridgePause",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "bridgeResume",
+          "type": "function",
+          "line": 95
+        },
+        {
+          "name": "bridgeCancel",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "bridgeDone",
+          "type": "function",
+          "line": 113
+        },
+        {
+          "name": "bridgeRename",
+          "type": "function",
+          "line": 117
+        },
+        {
+          "name": "bridgeDelete",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "SubmitAttachment",
+          "type": "interface",
+          "line": 129
+        },
+        {
+          "name": "UploadResultDto",
+          "type": "interface",
+          "line": 138
+        },
+        {
+          "name": "UploadFailureDto",
+          "type": "interface",
+          "line": 144
+        },
+        {
+          "name": "SubmitCompositeResult",
+          "type": "interface",
+          "line": 149
+        },
+        {
+          "name": "bridgeSubmitComposite",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "ensureHostOnce",
+          "type": "function",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "path": "src/web/httpError.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 49,
+      "symbols": [
+        {
+          "name": "httpStatusForCliError",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "sendError",
+          "type": "function",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "path": "src/web/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 31,
+      "symbols": []
+    },
+    {
+      "path": "src/web/providers.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 126,
+      "symbols": [
+        {
+          "name": "ProviderDef",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "ModelChoiceDto",
+          "type": "interface",
+          "line": 39
+        },
+        {
+          "name": "ProviderChoiceDto",
+          "type": "interface",
+          "line": 45
+        },
+        {
+          "name": "RoleProviderSupportDto",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "ProvidersDto",
+          "type": "interface",
+          "line": 56
+        },
+        {
+          "name": "capabilitiesOf",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "supportFor",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "buildProvidersDto",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "computeProvidersDto",
+          "type": "function",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "path": "src/web/readService.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 303,
+      "symbols": [
+        {
+          "name": "TaskSummaryDto",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "resolvePaths",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "listTaskSummaries",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "loadManifest",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "probeHostOnline",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "readConversation",
+          "type": "function",
+          "line": 99
+        },
+        {
+          "name": "EventRow",
+          "type": "interface",
+          "line": 115
+        },
+        {
+          "name": "readEvents",
+          "type": "function",
+          "line": 124
+        },
+        {
+          "name": "StreamAgent",
+          "type": "type",
+          "line": 150
+        },
+        {
+          "name": "StreamFileInfo",
+          "type": "interface",
+          "line": 152
+        },
+        {
+          "name": "isStreamAgent",
+          "type": "function",
+          "line": 167
+        },
+        {
+          "name": "listStreamFiles",
+          "type": "function",
+          "line": 172
+        },
+        {
+          "name": "streamFilePath",
+          "type": "function",
+          "line": 196
+        },
+        {
+          "name": "readAgentPrompt",
+          "type": "function",
+          "line": 204
+        },
+        {
+          "name": "hostLogPath",
+          "type": "function",
+          "line": 220
+        },
+        {
+          "name": "readHostLogTail",
+          "type": "function",
+          "line": 225
+        },
+        {
+          "name": "FileTreeEntry",
+          "type": "interface",
+          "line": 239
+        },
+        {
+          "name": "listWorkspaceTree",
+          "type": "function",
+          "line": 247
+        },
+        {
+          "name": "walk",
+          "type": "function",
+          "line": 251
+        },
+        {
+          "name": "resolveWorkspaceFile",
+          "type": "function",
+          "line": 284
+        },
+        {
+          "name": "resolveUploadFile",
+          "type": "function",
+          "line": 289
+        },
+        {
+          "name": "resolveUnder",
+          "type": "function",
+          "line": 293
+        }
+      ]
+    },
+    {
+      "path": "src/web/routes.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 528,
+      "symbols": [
+        {
+          "name": "RouteContext",
+          "type": "interface",
+          "line": 56
+        },
+        {
+          "name": "bridgeOpts",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "taskIdOf",
+          "type": "function",
+          "line": 68
+        },
+        {
+          "name": "requireBodyText",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "registerRoutes",
+          "type": "function",
+          "line": 81
+        },
+        {
+          "name": "/api/health",
+          "type": "route",
+          "line": 83
+        },
+        {
+          "name": "/api/version",
+          "type": "route",
+          "line": 84
+        },
+        {
+          "name": "/api/tasks",
+          "type": "route",
+          "line": 87
+        },
+        {
+          "name": "/api/providers",
+          "type": "route",
+          "line": 96
+        },
+        {
+          "name": "/api/tasks/:id",
+          "type": "route",
+          "line": 104
+        },
+        {
+          "name": "/api/tasks/:id/status.md",
+          "type": "route",
+          "line": 116
+        },
+        {
+          "name": "/api/tasks",
+          "type": "route",
+          "line": 127
+        },
+        {
+          "name": "/api/tasks/:id",
+          "type": "route",
+          "line": 135
+        },
+        {
+          "name": "/api/tasks/:id/answer",
+          "type": "route",
+          "line": 140
+        },
+        {
+          "name": "/api/tasks/:id/feedback",
+          "type": "route",
+          "line": 143
+        },
+        {
+          "name": "/api/tasks/:id/pause",
+          "type": "route",
+          "line": 146
+        },
+        {
+          "name": "/api/tasks/:id/resume",
+          "type": "route",
+          "line": 149
+        },
+        {
+          "name": "/api/tasks/:id/done",
+          "type": "route",
+          "line": 152
+        },
+        {
+          "name": "/api/tasks/:id/cancel",
+          "type": "route",
+          "line": 155
+        },
+        {
+          "name": "reason",
+          "type": "function",
+          "line": 156
+        },
+        {
+          "name": "/api/tasks/:id/rename",
+          "type": "route",
+          "line": 161
+        },
+        {
+          "name": "title",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "/api/tasks/:id/uploads",
+          "type": "route",
+          "line": 168
+        },
+        {
+          "name": "/api/tasks/:id/conversation",
+          "type": "route",
+          "line": 177
+        },
+        {
+          "name": "/api/tasks/:id/events",
+          "type": "route",
+          "line": 186
+        },
+        {
+          "name": "since",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "/api/tasks/:id/streams/:agent",
+          "type": "route",
+          "line": 196
+        },
+        {
+          "name": "agent",
+          "type": "function",
+          "line": 199
+        },
+        {
+          "name": "/api/tasks/:id/streams/:agent/:file",
+          "type": "route",
+          "line": 207
+        },
+        {
+          "name": "/api/tasks/:id/files",
+          "type": "route",
+          "line": 226
+        },
+        {
+          "name": "/api/tasks/:id/uploads/:uploadId/:filename",
+          "type": "route",
+          "line": 245
+        },
+        {
+          "name": "/api/tasks/:id/agent_prompts/:sessionId",
+          "type": "route",
+          "line": 256
+        },
+        {
+          "name": "sessionId",
+          "type": "function",
+          "line": 259
+        },
+        {
+          "name": "/api/tasks/:id/host-log",
+          "type": "route",
+          "line": 267
+        },
+        {
+          "name": "/api/stream/tasks/:id",
+          "type": "route",
+          "line": 284
+        },
+        {
+          "name": "/api/stream/tasks",
+          "type": "route",
+          "line": 297
+        },
+        {
+          "name": "writeAction",
+          "type": "function",
+          "line": 305
+        },
+        {
+          "name": "streamFile",
+          "type": "function",
+          "line": 321
+        },
+        {
+          "name": "MultipartFilePart",
+          "type": "interface",
+          "line": 343
+        },
+        {
+          "name": "MultipartFieldPart",
+          "type": "interface",
+          "line": 349
+        },
+        {
+          "name": "MultipartPart",
+          "type": "type",
+          "line": 354
+        },
+        {
+          "name": "MultipartSingleFile",
+          "type": "interface",
+          "line": 356
+        },
+        {
+          "name": "handleSubmit",
+          "type": "function",
+          "line": 363
+        },
+        {
+          "name": "parts",
+          "type": "function",
+          "line": 371
+        },
+        {
+          "name": "parseRoleBindingsField",
+          "type": "function",
+          "line": 416
+        },
+        {
+          "name": "provider",
+          "type": "function",
+          "line": 436
+        },
+        {
+          "name": "handleSingleUpload",
+          "type": "function",
+          "line": 447
+        },
+        {
+          "name": "extractFieldValue",
+          "type": "function",
+          "line": 475
+        },
+        {
+          "name": "v",
+          "type": "function",
+          "line": 477
+        },
+        {
+          "name": "sanitizeFilename",
+          "type": "function",
+          "line": 484
+        },
+        {
+          "name": "saveTempFile",
+          "type": "function",
+          "line": 495
+        }
+      ]
+    },
+    {
+      "path": "src/web/security.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 91,
+      "symbols": [
+        {
+          "name": "isLoopbackHost",
+          "type": "function",
+          "line": 13
+        },
+        {
+          "name": "colonCount",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "assertLoopbackBindHost",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "hostOfUrl",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "rejectIfUnsafe",
+          "type": "function",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "path": "src/web/sse.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 383,
+      "symbols": [
+        {
+          "name": "SseSink",
+          "type": "interface",
+          "line": 32
+        },
+        {
+          "name": "makeSseSink",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "fire",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "debounce",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "startDetailStream",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "initStreamOffset",
+          "type": "function",
+          "line": 159
+        },
+        {
+          "name": "pushStreamIncrement",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "pushConversation",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "pushEvents",
+          "type": "function",
+          "line": 190
+        },
+        {
+          "name": "pushStageAndHost",
+          "type": "function",
+          "line": 203
+        },
+        {
+          "name": "pushStatusMd",
+          "type": "function",
+          "line": 220
+        },
+        {
+          "name": "checkNewStreamFiles",
+          "type": "function",
+          "line": 239
+        },
+        {
+          "name": "tryWatch",
+          "type": "function",
+          "line": 257
+        },
+        {
+          "name": "startListStream",
+          "type": "function",
+          "line": 337
+        },
+        {
+          "name": "pushList",
+          "type": "function",
+          "line": 343
+        }
+      ]
+    },
+    {
+      "path": "src/web/static/app.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 990,
+      "symbols": [
+        {
+          "name": "stageLabel",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "toast",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "api",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "stageChip",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "fmtSize",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "fileKind",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "loadList",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "renderList",
+          "type": "function",
+          "line": 92
+        },
+        {
+          "name": "startListStream",
+          "type": "function",
+          "line": 108
+        },
+        {
+          "name": "openTask",
+          "type": "function",
+          "line": 117
+        },
+        {
+          "name": "renderHeader",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "extractStatusSummary",
+          "type": "function",
+          "line": 168
+        },
+        {
+          "name": "extractStatusReason",
+          "type": "function",
+          "line": 179
+        },
+        {
+          "name": "m",
+          "type": "function",
+          "line": 180
+        },
+        {
+          "name": "setStatusBanner",
+          "type": "function",
+          "line": 183
+        },
+        {
+          "name": "renderDetailError",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "setTitleDisplay",
+          "type": "function",
+          "line": 221
+        },
+        {
+          "name": "startEditTitle",
+          "type": "function",
+          "line": 237
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 248
+        },
+        {
+          "name": "saveTitle",
+          "type": "function",
+          "line": 265
+        },
+        {
+          "name": "selectTab",
+          "type": "function",
+          "line": 287
+        },
+        {
+          "name": "stale",
+          "type": "function",
+          "line": 307
+        },
+        {
+          "name": "loadConversation",
+          "type": "function",
+          "line": 311
+        },
+        {
+          "name": "loadEvents",
+          "type": "function",
+          "line": 321
+        },
+        {
+          "name": "loadStream",
+          "type": "function",
+          "line": 331
+        },
+        {
+          "name": "renderStreamFile",
+          "type": "function",
+          "line": 351
+        },
+        {
+          "name": "loadFiles",
+          "type": "function",
+          "line": 391
+        },
+        {
+          "name": "fileLink",
+          "type": "function",
+          "line": 433
+        },
+        {
+          "name": "fetchTextHead",
+          "type": "function",
+          "line": 442
+        },
+        {
+          "name": "previewFile",
+          "type": "function",
+          "line": 469
+        },
+        {
+          "name": "fresh",
+          "type": "function",
+          "line": 472
+        },
+        {
+          "name": "loadHostLog",
+          "type": "function",
+          "line": 497
+        },
+        {
+          "name": "renderActionPanel",
+          "type": "function",
+          "line": 507
+        },
+        {
+          "name": "actionBtn",
+          "type": "function",
+          "line": 544
+        },
+        {
+          "name": "doWrite",
+          "type": "function",
+          "line": 550
+        },
+        {
+          "name": "doDelete",
+          "type": "function",
+          "line": 564
+        },
+        {
+          "name": "doUpload",
+          "type": "function",
+          "line": 596
+        },
+        {
+          "name": "startDetailStream",
+          "type": "function",
+          "line": 609
+        },
+        {
+          "name": "live",
+          "type": "function",
+          "line": 616
+        },
+        {
+          "name": "showNewTaskView",
+          "type": "function",
+          "line": 667
+        },
+        {
+          "name": "showEmptyView",
+          "type": "function",
+          "line": 678
+        },
+        {
+          "name": "parseHash",
+          "type": "function",
+          "line": 689
+        },
+        {
+          "name": "applyRoute",
+          "type": "function",
+          "line": 706
+        },
+        {
+          "name": "goTask",
+          "type": "function",
+          "line": 716
+        },
+        {
+          "name": "goNew",
+          "type": "function",
+          "line": 717
+        },
+        {
+          "name": "goEmpty",
+          "type": "function",
+          "line": 718
+        },
+        {
+          "name": "resetNewTaskForm",
+          "type": "function",
+          "line": 726
+        },
+        {
+          "name": "updateNtCharCount",
+          "type": "function",
+          "line": 742
+        },
+        {
+          "name": "syncNtDisabled",
+          "type": "function",
+          "line": 747
+        },
+        {
+          "name": "ntRoleLabel",
+          "type": "function",
+          "line": 760
+        },
+        {
+          "name": "ensureProvidersLoaded",
+          "type": "function",
+          "line": 767
+        },
+        {
+          "name": "ntSupportBadge",
+          "type": "function",
+          "line": 777
+        },
+        {
+          "name": "renderNtRoles",
+          "type": "function",
+          "line": 784
+        },
+        {
+          "name": "fixedModel",
+          "type": "function",
+          "line": 806
+        },
+        {
+          "name": "updateHint",
+          "type": "function",
+          "line": 814
+        },
+        {
+          "name": "addNtFiles",
+          "type": "function",
+          "line": 834
+        },
+        {
+          "name": "removeNtFile",
+          "type": "function",
+          "line": 844
+        },
+        {
+          "name": "renderNtFiles",
+          "type": "function",
+          "line": 850
+        },
+        {
+          "name": "submitTask",
+          "type": "function",
+          "line": 870
+        },
+        {
+          "name": "setNtProgress",
+          "type": "function",
+          "line": 921
+        },
+        {
+          "name": "updateLangToggle",
+          "type": "function",
+          "line": 929
+        }
+      ]
+    },
+    {
+      "path": "src/web/static/i18n.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 79,
+      "symbols": [
+        {
+          "name": "readLang",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "getLang",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "t",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "applyStaticI18n",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "onLangChange",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "setLang",
+          "type": "function",
+          "line": 62
+        },
+        {
+          "name": "initI18n",
+          "type": "function",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "path": "src/web/static/md.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 37,
+      "symbols": [
+        {
+          "name": "renderMarkdown",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "rewriteRelativePaths",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "filesUrl",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "src/web/static/messages.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 417,
+      "symbols": []
+    },
+    {
+      "path": "src/web/static/render.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 578,
+      "symbols": [
+        {
+          "name": "el",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "mdDiv",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "shortId",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "fmtTs",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "prettyJSON",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "modelStr",
+          "type": "function",
+          "line": 39
+        },
+        {
+          "name": "collapsible",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "sync",
+          "type": "function",
+          "line": 49
+        },
+        {
+          "name": "toolIcon",
+          "type": "function",
+          "line": 70
+        },
+        {
+          "name": "streamCard",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "applySubagentChip",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "metricsRow",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "jumpTo",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "renderStreamLine",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "renderToolResultContent",
+          "type": "function",
+          "line": 395
+        },
+        {
+          "name": "renderSessionDivider",
+          "type": "function",
+          "line": 409
+        },
+        {
+          "name": "evtArr",
+          "type": "function",
+          "line": 447
+        },
+        {
+          "name": "evtObj",
+          "type": "function",
+          "line": 451
+        },
+        {
+          "name": "evtFlags",
+          "type": "function",
+          "line": 456
+        },
+        {
+          "name": "evtFieldLabel",
+          "type": "function",
+          "line": 489
+        },
+        {
+          "name": "evtFieldValue",
+          "type": "function",
+          "line": 493
+        },
+        {
+          "name": "renderEventCard",
+          "type": "function",
+          "line": 498
+        },
+        {
+          "name": "renderConvRow",
+          "type": "function",
+          "line": 556
+        }
+      ]
+    },
+    {
+      "path": "src/web/streamReader.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 145,
+      "symbols": [
+        {
+          "name": "StreamReadResult",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "sizeOrNull",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "readRange",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "parseLines",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "readStreamFrom",
+          "type": "function",
+          "line": 83
+        },
+        {
+          "name": "tailStreamLines",
+          "type": "function",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/capability.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 70,
+      "symbols": [
+        {
+          "name": "buildClaudeCapabilities",
+          "type": "function",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 112,
+      "symbols": [
+        {
+          "name": "ClaudeQueryFn",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "ClaudeEffort",
+          "type": "type",
+          "line": 28
+        },
+        {
+          "name": "ClaudeProviderConfig",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "ResolvedClaudeConfig",
+          "type": "interface",
+          "line": 79
+        },
+        {
+          "name": "resolveConfig",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "cfg",
+          "type": "function",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/errors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 135,
+      "symbols": [
+        {
+          "name": "match",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "ClassifyFields",
+          "type": "interface",
+          "line": 60
+        },
+        {
+          "name": "make",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "classifySdkError",
+          "type": "function",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/eventNormalize.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 367,
+      "symbols": [
+        {
+          "name": "NormalizeContext",
+          "type": "interface",
+          "line": 28
+        },
+        {
+          "name": "common",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "mapStopReason",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "BetaUsageLike",
+          "type": "interface",
+          "line": 69
+        },
+        {
+          "name": "mapTokens",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "normalizeAssistantContent",
+          "type": "function",
+          "line": 96
+        },
+        {
+          "name": "normalizeUserContent",
+          "type": "function",
+          "line": 155
+        },
+        {
+          "name": "isNonEmptyStr",
+          "type": "function",
+          "line": 187
+        },
+        {
+          "name": "parentToolUseIdOf",
+          "type": "function",
+          "line": 192
+        },
+        {
+          "name": "p",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "normalizeMessage",
+          "type": "function",
+          "line": 201
+        },
+        {
+          "name": "normalizeSystem",
+          "type": "function",
+          "line": 277
+        },
+        {
+          "name": "rawSystem",
+          "type": "function",
+          "line": 348
+        },
+        {
+          "name": "SubagentUsageRaw",
+          "type": "interface",
+          "line": 352
+        },
+        {
+          "name": "normSubagentUsage",
+          "type": "function",
+          "line": 359
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/hooks.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 237,
+      "symbols": [
+        {
+          "name": "normalizeSep",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "normcase",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "stripExtendedPrefix",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "hardenPath",
+          "type": "function",
+          "line": 60
+        },
+        {
+          "name": "patternToRegExp",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "extractPath",
+          "type": "function",
+          "line": 82
+        },
+        {
+          "name": "CompiledGuard",
+          "type": "interface",
+          "line": 92
+        },
+        {
+          "name": "evaluatePathGuard",
+          "type": "function",
+          "line": 101
+        },
+        {
+          "name": "compileGuards",
+          "type": "function",
+          "line": 114
+        },
+        {
+          "name": "CompactCallbacks",
+          "type": "interface",
+          "line": 118
+        },
+        {
+          "name": "buildHooks",
+          "type": "function",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "src/wrapper/adapters/claude/isolation.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 127,
+      "symbols": [
+        {
+          "name": "defaultClaudeConfigDir",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "isolationOptions",
+          "type": "function",
+          "line": 25
+        },
+        {
+          "name": "verifyIsolation",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "unexpected",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "epochFenceOk",
+          "type": "function",
+          "line": 93
+        },
+        {
+          "name": "isolationSelfCheck",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "unexpected",
+          "type": "function",
+          "line": 113
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/pushableQueue.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 63,
+      "symbols": [
+        {
+          "name": "PushableQueue",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "createPushableQueue",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "wake",
+          "type": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 137,
+      "symbols": [
+        {
+          "name": "ClaudeRuntime",
+          "type": "class",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/schemaTranslate.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 202,
+      "symbols": [
+        {
+          "name": "SchemaTranslationError",
+          "type": "class",
+          "line": 20
+        },
+        {
+          "name": "ZodRawShape",
+          "type": "type",
+          "line": 28
+        },
+        {
+          "name": "fail",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "Node",
+          "type": "type",
+          "line": 34
+        },
+        {
+          "name": "asNode",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "singleType",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "assertNoUnsupportedKeywords",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "translateNode",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "translateObject",
+          "type": "function",
+          "line": 154
+        },
+        {
+          "name": "jsonSchemaToZodShape",
+          "type": "function",
+          "line": 173
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/session.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1192,
+      "symbols": [
+        {
+          "name": "ClaudeSession",
+          "type": "class",
+          "line": 51
+        },
+        {
+          "name": "onEnd",
+          "type": "function",
+          "line": 821
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 1005
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/claude/toolBridge.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 255,
+      "symbols": [
+        {
+          "name": "mcpToolName",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "isHostToolName",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "CallToolResultLike",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "compileValidator",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "ToolBridgeHooks",
+          "type": "interface",
+          "line": 53
+        },
+        {
+          "name": "CompiledTool",
+          "type": "interface",
+          "line": 70
+        },
+        {
+          "name": "serializeContent",
+          "type": "function",
+          "line": 76
+        },
+        {
+          "name": "buildMcpServer",
+          "type": "function",
+          "line": 90
+        },
+        {
+          "name": "invokeHostTool",
+          "type": "function",
+          "line": 132
+        },
+        {
+          "name": "detail",
+          "type": "function",
+          "line": 143
+        },
+        {
+          "name": "onUpstreamAbort",
+          "type": "function",
+          "line": 164
+        },
+        {
+          "name": "mkErr",
+          "type": "function",
+          "line": 182
+        },
+        {
+          "name": "handlerPromise",
+          "type": "function",
+          "line": 213
+        },
+        {
+          "name": "isAbortError",
+          "type": "function",
+          "line": 221
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/appServerClient.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 247,
+      "symbols": [
+        {
+          "name": "AppServerClientHooks",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "PendingCall",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "AppServerClient",
+          "type": "class",
+          "line": 41
+        },
+        {
+          "name": "isApprovalRequest",
+          "type": "function",
+          "line": 239
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/capability.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 93,
+      "symbols": [
+        {
+          "name": "buildCodexCapabilities",
+          "type": "function",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 138,
+      "symbols": [
+        {
+          "name": "AppServerProcess",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "SpawnArgs",
+          "type": "interface",
+          "line": 25
+        },
+        {
+          "name": "CodexSpawnFn",
+          "type": "type",
+          "line": 33
+        },
+        {
+          "name": "defaultSpawn",
+          "type": "function",
+          "line": 35
+        },
+        {
+          "name": "CodexToolBridgeMode",
+          "type": "type",
+          "line": 52
+        },
+        {
+          "name": "CodexProviderConfig",
+          "type": "interface",
+          "line": 70
+        },
+        {
+          "name": "ResolvedCodexConfig",
+          "type": "interface",
+          "line": 101
+        },
+        {
+          "name": "resolveCodexConfig",
+          "type": "function",
+          "line": 120
+        },
+        {
+          "name": "cfg",
+          "type": "function",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/errors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 134,
+      "symbols": [
+        {
+          "name": "ClassifyFields",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "make",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "codexErrorTag",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "classifyCodexErrorInfo",
+          "type": "function",
+          "line": 52
+        },
+        {
+          "name": "subprocessExitError",
+          "type": "function",
+          "line": 98
+        },
+        {
+          "name": "classifyRpcError",
+          "type": "function",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/eventNormalize.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 296,
+      "symbols": [
+        {
+          "name": "NormalizeContext",
+          "type": "interface",
+          "line": 48
+        },
+        {
+          "name": "common",
+          "type": "function",
+          "line": 59
+        },
+        {
+          "name": "mapTurnStatus",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "mapTokens",
+          "type": "function",
+          "line": 80
+        },
+        {
+          "name": "mapContextUsage",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "toolItemInfo",
+          "type": "function",
+          "line": 102
+        },
+        {
+          "name": "normalizeItemStarted",
+          "type": "function",
+          "line": 117
+        },
+        {
+          "name": "normalizeItemCompleted",
+          "type": "function",
+          "line": 150
+        },
+        {
+          "name": "toolResultText",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "text",
+          "type": "function",
+          "line": 192
+        },
+        {
+          "name": "compactEndedEvents",
+          "type": "function",
+          "line": 209
+        },
+        {
+          "name": "normalizeTurnStarted",
+          "type": "function",
+          "line": 240
+        },
+        {
+          "name": "normalizeTurnCompleted",
+          "type": "function",
+          "line": 245
+        },
+        {
+          "name": "normalizeAgentMessageDelta",
+          "type": "function",
+          "line": 258
+        },
+        {
+          "name": "normalizeReasoningDelta",
+          "type": "function",
+          "line": 264
+        },
+        {
+          "name": "normalizeTokenUsage",
+          "type": "function",
+          "line": 275
+        },
+        {
+          "name": "normalizeThreadCompacted",
+          "type": "function",
+          "line": 281
+        },
+        {
+          "name": "normalizeError",
+          "type": "function",
+          "line": 286
+        },
+        {
+          "name": "tokenUsageToContextUsage",
+          "type": "function",
+          "line": 292
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 8,
+      "symbols": []
+    },
+    {
+      "path": "src/wrapper/adapters/codex/isolation.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 243,
+      "symbols": [
+        {
+          "name": "codexHomeOf",
+          "type": "function",
+          "line": 27
+        },
+        {
+          "name": "buildChildEnv",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "isolationConfig",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "sandboxPolicyOf",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "provisionAuth",
+          "type": "function",
+          "line": 118
+        },
+        {
+          "name": "placeSentinel",
+          "type": "function",
+          "line": 163
+        },
+        {
+          "name": "randomToken",
+          "type": "function",
+          "line": 176
+        },
+        {
+          "name": "verifyIsolation",
+          "type": "function",
+          "line": 186
+        },
+        {
+          "name": "isolationSelfCheck",
+          "type": "function",
+          "line": 205
+        },
+        {
+          "name": "epochFenceOk",
+          "type": "function",
+          "line": 240
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/protocol.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 469,
+      "symbols": [
+        {
+          "name": "JsonValue",
+          "type": "type",
+          "line": 15
+        },
+        {
+          "name": "RequestId",
+          "type": "type",
+          "line": 17
+        },
+        {
+          "name": "AbsolutePathBuf",
+          "type": "type",
+          "line": 19
+        },
+        {
+          "name": "ClientInfo",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "InitializeCapabilities",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "InitializeParams",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "InitializeResponse",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "SandboxPolicy",
+          "type": "type",
+          "line": 51
+        },
+        {
+          "name": "NetworkAccess",
+          "type": "type",
+          "line": 64
+        },
+        {
+          "name": "AskForApproval",
+          "type": "type",
+          "line": 67
+        },
+        {
+          "name": "ReasoningEffort",
+          "type": "type",
+          "line": 75
+        },
+        {
+          "name": "ReasoningSummary",
+          "type": "type",
+          "line": 77
+        },
+        {
+          "name": "TurnStatus",
+          "type": "type",
+          "line": 81
+        },
+        {
+          "name": "CodexErrorInfo",
+          "type": "type",
+          "line": 84
+        },
+        {
+          "name": "TurnError",
+          "type": "interface",
+          "line": 101
+        },
+        {
+          "name": "UserInput",
+          "type": "type",
+          "line": 108
+        },
+        {
+          "name": "ThreadItem",
+          "type": "type",
+          "line": 116
+        },
+        {
+          "name": "Turn",
+          "type": "interface",
+          "line": 164
+        },
+        {
+          "name": "Thread",
+          "type": "interface",
+          "line": 175
+        },
+        {
+          "name": "DynamicToolSpec",
+          "type": "interface",
+          "line": 185
+        },
+        {
+          "name": "DynamicToolCallStatus",
+          "type": "type",
+          "line": 193
+        },
+        {
+          "name": "DynamicToolCallOutputContentItem",
+          "type": "type",
+          "line": 195
+        },
+        {
+          "name": "DynamicToolCallParams",
+          "type": "interface",
+          "line": 200
+        },
+        {
+          "name": "DynamicToolCallResponse",
+          "type": "interface",
+          "line": 210
+        },
+        {
+          "name": "ThreadStartParams",
+          "type": "interface",
+          "line": 217
+        },
+        {
+          "name": "SandboxMode",
+          "type": "type",
+          "line": 231
+        },
+        {
+          "name": "ThreadStartResponse",
+          "type": "interface",
+          "line": 233
+        },
+        {
+          "name": "ThreadResumeParams",
+          "type": "interface",
+          "line": 241
+        },
+        {
+          "name": "ThreadResumeResponse",
+          "type": "interface",
+          "line": 247
+        },
+        {
+          "name": "TurnStartParams",
+          "type": "interface",
+          "line": 252
+        },
+        {
+          "name": "TurnStartResponse",
+          "type": "interface",
+          "line": 265
+        },
+        {
+          "name": "TurnSteerParams",
+          "type": "interface",
+          "line": 269
+        },
+        {
+          "name": "TurnSteerResponse",
+          "type": "interface",
+          "line": 276
+        },
+        {
+          "name": "TurnInterruptParams",
+          "type": "interface",
+          "line": 280
+        },
+        {
+          "name": "TurnInterruptResponse",
+          "type": "type",
+          "line": 285
+        },
+        {
+          "name": "ThreadUnsubscribeParams",
+          "type": "interface",
+          "line": 287
+        },
+        {
+          "name": "ThreadUnsubscribeStatus",
+          "type": "type",
+          "line": 291
+        },
+        {
+          "name": "ThreadUnsubscribeResponse",
+          "type": "interface",
+          "line": 293
+        },
+        {
+          "name": "ThreadCompactStartParams",
+          "type": "interface",
+          "line": 297
+        },
+        {
+          "name": "ThreadCompactStartResponse",
+          "type": "type",
+          "line": 301
+        },
+        {
+          "name": "ThreadInjectItemsParams",
+          "type": "interface",
+          "line": 303
+        },
+        {
+          "name": "ThreadInjectItemsResponse",
+          "type": "type",
+          "line": 308
+        },
+        {
+          "name": "ThreadStartedNotification",
+          "type": "interface",
+          "line": 312
+        },
+        {
+          "name": "TurnStartedNotification",
+          "type": "interface",
+          "line": 316
+        },
+        {
+          "name": "TurnCompletedNotification",
+          "type": "interface",
+          "line": 321
+        },
+        {
+          "name": "ItemStartedNotification",
+          "type": "interface",
+          "line": 326
+        },
+        {
+          "name": "ItemCompletedNotification",
+          "type": "interface",
+          "line": 333
+        },
+        {
+          "name": "AgentMessageDeltaNotification",
+          "type": "interface",
+          "line": 340
+        },
+        {
+          "name": "ReasoningTextDeltaNotification",
+          "type": "interface",
+          "line": 347
+        },
+        {
+          "name": "ReasoningSummaryTextDeltaNotification",
+          "type": "interface",
+          "line": 355
+        },
+        {
+          "name": "TokenUsageBreakdown",
+          "type": "interface",
+          "line": 363
+        },
+        {
+          "name": "ThreadTokenUsage",
+          "type": "interface",
+          "line": 371
+        },
+        {
+          "name": "ThreadTokenUsageUpdatedNotification",
+          "type": "interface",
+          "line": 377
+        },
+        {
+          "name": "ContextCompactedNotification",
+          "type": "interface",
+          "line": 384
+        },
+        {
+          "name": "ErrorNotification",
+          "type": "interface",
+          "line": 389
+        },
+        {
+          "name": "JsonRpcRequest",
+          "type": "interface",
+          "line": 398
+        },
+        {
+          "name": "JsonRpcResponseOk",
+          "type": "interface",
+          "line": 405
+        },
+        {
+          "name": "JsonRpcResponseErr",
+          "type": "interface",
+          "line": 411
+        },
+        {
+          "name": "JsonRpcResponse",
+          "type": "type",
+          "line": 417
+        },
+        {
+          "name": "JsonRpcNotification",
+          "type": "interface",
+          "line": 419
+        },
+        {
+          "name": "ServerInbound",
+          "type": "type",
+          "line": 426
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 407,
+      "symbols": [
+        {
+          "name": "CapsuleConnection",
+          "type": "class",
+          "line": 52
+        },
+        {
+          "name": "autoApproveResponse",
+          "type": "function",
+          "line": 178
+        },
+        {
+          "name": "grantRequestedPermissions",
+          "type": "function",
+          "line": 202
+        },
+        {
+          "name": "requested",
+          "type": "function",
+          "line": 203
+        },
+        {
+          "name": "CodexRuntime",
+          "type": "class",
+          "line": 210
+        },
+        {
+          "name": "n",
+          "type": "function",
+          "line": 290
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/session.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 1020,
+      "symbols": [
+        {
+          "name": "CapsuleAccess",
+          "type": "interface",
+          "line": 88
+        },
+        {
+          "name": "CodexSession",
+          "type": "class",
+          "line": 112
+        },
+        {
+          "name": "onEnd",
+          "type": "function",
+          "line": 660
+        },
+        {
+          "name": "finish",
+          "type": "function",
+          "line": 822
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/codex/toolBridge.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 251,
+      "symbols": [
+        {
+          "name": "codexToolName",
+          "type": "function",
+          "line": 38
+        },
+        {
+          "name": "hostToolNameFromCodex",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "CompiledTool",
+          "type": "interface",
+          "line": 47
+        },
+        {
+          "name": "buildDynamicTools",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "ToolBridgeHooks",
+          "type": "interface",
+          "line": 94
+        },
+        {
+          "name": "serializeContent",
+          "type": "function",
+          "line": 107
+        },
+        {
+          "name": "dispatchToolCall",
+          "type": "function",
+          "line": 123
+        },
+        {
+          "name": "detail",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "onUpstreamAbort",
+          "type": "function",
+          "line": 171
+        },
+        {
+          "name": "mkErr",
+          "type": "function",
+          "line": 189
+        },
+        {
+          "name": "handlerPromise",
+          "type": "function",
+          "line": 216
+        },
+        {
+          "name": "isAbortError",
+          "type": "function",
+          "line": 224
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/adapters/stub.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 798,
+      "symbols": [
+        {
+          "name": "StubTurnStep",
+          "type": "type",
+          "line": 54
+        },
+        {
+          "name": "StubTurnProgram",
+          "type": "interface",
+          "line": 59
+        },
+        {
+          "name": "StubScriptbook",
+          "type": "interface",
+          "line": 80
+        },
+        {
+          "name": "StubScriptbookInternal",
+          "type": "interface",
+          "line": 87
+        },
+        {
+          "name": "createStubScriptbook",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "StubProviderConfig",
+          "type": "interface",
+          "line": 132
+        },
+        {
+          "name": "SessionState",
+          "type": "interface",
+          "line": 186
+        },
+        {
+          "name": "StubRuntime",
+          "type": "class",
+          "line": 250
+        },
+        {
+          "name": "cfg",
+          "type": "function",
+          "line": 267
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "src/wrapper/types/capability.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 121,
+      "symbols": [
+        {
+          "name": "InjectCapability",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "ContextUsageCapability",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "CompactCapability",
+          "type": "interface",
+          "line": 23
+        },
+        {
+          "name": "SessionResumeCapability",
+          "type": "interface",
+          "line": 30
+        },
+        {
+          "name": "ToolEnforcementCapability",
+          "type": "interface",
+          "line": 36
+        },
+        {
+          "name": "ProviderBuiltinToolsControlCapability",
+          "type": "interface",
+          "line": 43
+        },
+        {
+          "name": "ThinkingLevel",
+          "type": "type",
+          "line": 48
+        },
+        {
+          "name": "ThinkingCapability",
+          "type": "interface",
+          "line": 50
+        },
+        {
+          "name": "AutoRetryCapability",
+          "type": "interface",
+          "line": 56
+        },
+        {
+          "name": "JsonSchemaFeature",
+          "type": "type",
+          "line": 61
+        },
+        {
+          "name": "DiagnosticHint",
+          "type": "interface",
+          "line": 76
+        },
+        {
+          "name": "RuntimeCapabilities",
+          "type": "interface",
+          "line": 82
+        },
+        {
+          "name": "CompactHint",
+          "type": "interface",
+          "line": 98
+        },
+        {
+          "name": "CompactOutcome",
+          "type": "interface",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/types/common.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 20,
+      "symbols": [
+        {
+          "name": "SessionId",
+          "type": "type",
+          "line": 7
+        },
+        {
+          "name": "ProviderSessionId",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "TurnId",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "EnvelopeId",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "ProviderId",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "AgentRole",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "Unsubscribe",
+          "type": "type",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/types/errors.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 152,
+      "symbols": [
+        {
+          "name": "RuntimeErrorKind",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "TransientSubKind",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "PermanentSubKind",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "TimeoutSubKind",
+          "type": "type",
+          "line": 50
+        },
+        {
+          "name": "CancelledSubKind",
+          "type": "type",
+          "line": 57
+        },
+        {
+          "name": "ProtocolSubKind",
+          "type": "type",
+          "line": 63
+        },
+        {
+          "name": "RuntimeErrorSubKind",
+          "type": "type",
+          "line": 73
+        },
+        {
+          "name": "RuntimeError",
+          "type": "interface",
+          "line": 81
+        },
+        {
+          "name": "RuntimeErrorInit",
+          "type": "interface",
+          "line": 92
+        },
+        {
+          "name": "RuntimeErrorImpl",
+          "type": "class",
+          "line": 105
+        },
+        {
+          "name": "NotSupportedError",
+          "type": "class",
+          "line": 130
+        },
+        {
+          "name": "isRuntimeError",
+          "type": "function",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/types/events.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 388,
+      "symbols": [
+        {
+          "name": "SessionEventCommon",
+          "type": "interface",
+          "line": 21
+        },
+        {
+          "name": "TokenUsage",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "TurnUsage",
+          "type": "interface",
+          "line": 36
+        },
+        {
+          "name": "SessionFinalStats",
+          "type": "interface",
+          "line": 42
+        },
+        {
+          "name": "ContextUsage",
+          "type": "interface",
+          "line": 52
+        },
+        {
+          "name": "InjectRequestId",
+          "type": "type",
+          "line": 61
+        },
+        {
+          "name": "HostInjectKind",
+          "type": "type",
+          "line": 63
+        },
+        {
+          "name": "HostInjectMarker",
+          "type": "interface",
+          "line": 69
+        },
+        {
+          "name": "SessionStartedEvent",
+          "type": "interface",
+          "line": 77
+        },
+        {
+          "name": "SessionResumedEvent",
+          "type": "interface",
+          "line": 86
+        },
+        {
+          "name": "SessionEndedEvent",
+          "type": "interface",
+          "line": 93
+        },
+        {
+          "name": "TurnCause",
+          "type": "type",
+          "line": 101
+        },
+        {
+          "name": "TurnStartedEvent",
+          "type": "interface",
+          "line": 107
+        },
+        {
+          "name": "StopReason",
+          "type": "type",
+          "line": 114
+        },
+        {
+          "name": "TurnEndedEvent",
+          "type": "interface",
+          "line": 116
+        },
+        {
+          "name": "TextBlock",
+          "type": "interface",
+          "line": 126
+        },
+        {
+          "name": "ThinkingBlock",
+          "type": "interface",
+          "line": 131
+        },
+        {
+          "name": "ToolUseBlock",
+          "type": "interface",
+          "line": 136
+        },
+        {
+          "name": "AssistantBlock",
+          "type": "type",
+          "line": 144
+        },
+        {
+          "name": "AssistantBlockEvent",
+          "type": "interface",
+          "line": 146
+        },
+        {
+          "name": "AssistantDelta",
+          "type": "type",
+          "line": 155
+        },
+        {
+          "name": "AssistantDeltaEvent",
+          "type": "interface",
+          "line": 160
+        },
+        {
+          "name": "ToolResultBlock",
+          "type": "interface",
+          "line": 171
+        },
+        {
+          "name": "ToolInvokedEvent",
+          "type": "interface",
+          "line": 177
+        },
+        {
+          "name": "ToolResultRecordedEvent",
+          "type": "interface",
+          "line": 189
+        },
+        {
+          "name": "CompactReason",
+          "type": "type",
+          "line": 202
+        },
+        {
+          "name": "CompactStartedEvent",
+          "type": "interface",
+          "line": 204
+        },
+        {
+          "name": "CompactEndedEvent",
+          "type": "interface",
+          "line": 210
+        },
+        {
+          "name": "RetryStartedEvent",
+          "type": "interface",
+          "line": 222
+        },
+        {
+          "name": "RetryEndedEvent",
+          "type": "interface",
+          "line": 230
+        },
+        {
+          "name": "SubagentUsage",
+          "type": "interface",
+          "line": 240
+        },
+        {
+          "name": "SubagentStartedEvent",
+          "type": "interface",
+          "line": 246
+        },
+        {
+          "name": "SubagentProgressEvent",
+          "type": "interface",
+          "line": 254
+        },
+        {
+          "name": "SubagentStoppedEvent",
+          "type": "interface",
+          "line": 262
+        },
+        {
+          "name": "UsageSnapshotEvent",
+          "type": "interface",
+          "line": 271
+        },
+        {
+          "name": "HostInjectRequestedEvent",
+          "type": "interface",
+          "line": 281
+        },
+        {
+          "name": "InjectAcceptedEvent",
+          "type": "interface",
+          "line": 290
+        },
+        {
+          "name": "InjectRejectedEvent",
+          "type": "interface",
+          "line": 296
+        },
+        {
+          "name": "InjectQueuedEvent",
+          "type": "interface",
+          "line": 303
+        },
+        {
+          "name": "InjectDeliveredEvent",
+          "type": "interface",
+          "line": 310
+        },
+        {
+          "name": "InjectCancelledEvent",
+          "type": "interface",
+          "line": 317
+        },
+        {
+          "name": "InjectDroppedEvent",
+          "type": "interface",
+          "line": 324
+        },
+        {
+          "name": "RuntimeErrorEvent",
+          "type": "interface",
+          "line": 333
+        },
+        {
+          "name": "SyntheticStateSnapshotEvent",
+          "type": "interface",
+          "line": 340
+        },
+        {
+          "name": "ProviderRawEvent",
+          "type": "interface",
+          "line": 347
+        },
+        {
+          "name": "SessionEvent",
+          "type": "type",
+          "line": 353
+        },
+        {
+          "name": "StreamJsonlLine",
+          "type": "type",
+          "line": 383
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/types/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 11,
+      "symbols": []
+    },
+    {
+      "path": "src/wrapper/types/isolation.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 48,
+      "symbols": [
+        {
+          "name": "PromptLanguage",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "ShellPolicy",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "NetworkPolicy",
+          "type": "type",
+          "line": 11
+        },
+        {
+          "name": "SandboxPolicy",
+          "type": "interface",
+          "line": 13
+        },
+        {
+          "name": "ManagedAuthProvider",
+          "type": "type",
+          "line": 20
+        },
+        {
+          "name": "AuthSource",
+          "type": "type",
+          "line": 22
+        },
+        {
+          "name": "IsolationProfile",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "IsolationFinding",
+          "type": "interface",
+          "line": 39
+        },
+        {
+          "name": "IsolationSelfCheckResult",
+          "type": "interface",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/types/runtime.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "AgentRuntime",
+          "type": "interface",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/types/session.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 141,
+      "symbols": [
+        {
+          "name": "ModelSelector",
+          "type": "interface",
+          "line": 9
+        },
+        {
+          "name": "ThinkingConfig",
+          "type": "interface",
+          "line": 14
+        },
+        {
+          "name": "ProviderBuiltinToolsPolicy",
+          "type": "type",
+          "line": 19
+        },
+        {
+          "name": "HostToolCallTimeout",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "SessionFeatureFlags",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "SessionMetadata",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "PathGuardRule",
+          "type": "interface",
+          "line": 41
+        },
+        {
+          "name": "SessionRequestPathGuards",
+          "type": "interface",
+          "line": 48
+        },
+        {
+          "name": "SessionRequest",
+          "type": "interface",
+          "line": 52
+        },
+        {
+          "name": "SessionRequestSnapshot",
+          "type": "type",
+          "line": 73
+        },
+        {
+          "name": "SessionHandle",
+          "type": "interface",
+          "line": 75
+        },
+        {
+          "name": "SessionStatus",
+          "type": "type",
+          "line": 82
+        },
+        {
+          "name": "InjectInput",
+          "type": "interface",
+          "line": 89
+        },
+        {
+          "name": "InjectContentBlock",
+          "type": "type",
+          "line": 95
+        },
+        {
+          "name": "InjectPolicy",
+          "type": "type",
+          "line": 102
+        },
+        {
+          "name": "InjectAck",
+          "type": "type",
+          "line": 108
+        },
+        {
+          "name": "CloseOptions",
+          "type": "interface",
+          "line": 115
+        },
+        {
+          "name": "SessionEndReason",
+          "type": "type",
+          "line": 121
+        },
+        {
+          "name": "SessionCloseResult",
+          "type": "interface",
+          "line": 130
+        },
+        {
+          "name": "SessionResumeTarget",
+          "type": "type",
+          "line": 138
+        }
+      ]
+    },
+    {
+      "path": "src/wrapper/types/tool_bridge.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 139,
+      "symbols": [
+        {
+          "name": "JsonSchema",
+          "type": "type",
+          "line": 16
+        },
+        {
+          "name": "HostToolContentBlock",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "ToolOutputHint",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "HostToolMetadata",
+          "type": "interface",
+          "line": 29
+        },
+        {
+          "name": "ToolCallLogger",
+          "type": "interface",
+          "line": 35
+        },
+        {
+          "name": "HostToolPartialUpdate",
+          "type": "interface",
+          "line": 40
+        },
+        {
+          "name": "HostToolCallContext",
+          "type": "interface",
+          "line": 45
+        },
+        {
+          "name": "HostToolCallResult",
+          "type": "interface",
+          "line": 56
+        },
+        {
+          "name": "HostTool",
+          "type": "interface",
+          "line": 68
+        },
+        {
+          "name": "HostToolRegistry",
+          "type": "interface",
+          "line": 78
+        },
+        {
+          "name": "AgentRuntimeOptions",
+          "type": "interface",
+          "line": 85
+        },
+        {
+          "name": "AgentRuntimeFactory",
+          "type": "interface",
+          "line": 90
+        },
+        {
+          "name": "HostToolRegistryError",
+          "type": "class",
+          "line": 95
+        },
+        {
+          "name": "HostToolRegistryImpl",
+          "type": "class",
+          "line": 104
+        },
+        {
+          "name": "createHostToolRegistry",
+          "type": "function",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "path": "tsconfig.build.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 12,
+      "symbols": []
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 24,
+      "symbols": []
+    }
+  ]
+}

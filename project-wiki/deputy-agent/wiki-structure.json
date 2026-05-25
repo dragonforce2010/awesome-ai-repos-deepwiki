@@ -1,0 +1,155 @@
+{
+  "title": "deputy-agent DeepWiki",
+  "description": "SomeoneKong/deputy-agent 中文技术百科：自监督 master–worker 长任务 Agent 框架",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "projectName": "deputy-agent",
+  "source": {
+    "repo": "https://github.com/SomeoneKong/deputy-agent",
+    "commit": "d6127c4f23c17e9dc58a5e4431778a96744aa783"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": ["overview"],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "架构与运行时",
+      "pages": [
+        "system-architecture",
+        "host-daemon-runtime",
+        "agent-roles-stage-machine"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-data",
+      "title": "数据与通信",
+      "pages": ["task-capsule-data", "messaging-bus"],
+      "subsections": []
+    },
+    {
+      "id": "section-integration",
+      "title": "Provider 与工具",
+      "pages": ["provider-adapters", "host-tools-harness", "watcher-done-criteria"],
+      "subsections": []
+    },
+    {
+      "id": "section-interfaces",
+      "title": "入口与运维",
+      "pages": ["cli-web-gui", "limitations-quality"],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-data",
+    "section-integration",
+    "section-interfaces"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "长任务自治交付、master–worker 设计、能力与阅读路线",
+      "importance": "high",
+      "filePaths": ["README.md", "package.json", "docs/ARCHITECTURE.md"],
+      "relatedPages": ["system-architecture", "host-daemon-runtime", "agent-roles-stage-machine"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与模块地图",
+      "file": "pages/system-architecture.md",
+      "description": "src 子系统职责、CLI/Web 双入口、依赖方向",
+      "importance": "high",
+      "filePaths": ["docs/ARCHITECTURE.md", "src/index.ts", "package.json"],
+      "relatedPages": ["overview", "host-daemon-runtime", "task-capsule-data"]
+    },
+    {
+      "id": "host-daemon-runtime",
+      "title": "Host 守护进程与 Tick 循环",
+      "file": "pages/host-daemon-runtime.md",
+      "description": "单实例锁、tick 七步、会话编排、watchdog 与恢复",
+      "importance": "high",
+      "filePaths": ["src/host/daemon.ts", "src/host/main_loop.ts", "docs/RUNTIME.md"],
+      "relatedPages": ["agent-roles-stage-machine", "messaging-bus", "provider-adapters"]
+    },
+    {
+      "id": "agent-roles-stage-machine",
+      "title": "四角色协作与阶段机",
+      "file": "pages/agent-roles-stage-machine.md",
+      "description": "meta/worker/watcher/reviewer、九阶段生命周期、Reviewer 门禁",
+      "importance": "high",
+      "filePaths": ["src/host/stage_machine.ts", "src/shared/manifest.ts", "docs/RUNTIME.md"],
+      "relatedPages": ["host-daemon-runtime", "host-tools-harness", "messaging-bus"]
+    },
+    {
+      "id": "task-capsule-data",
+      "title": "任务胶囊与磁盘格式",
+      "file": "pages/task-capsule-data.md",
+      "description": "workspace/control 分区、manifest、events、原子 IO",
+      "importance": "high",
+      "filePaths": ["src/shared/capsule.ts", "src/shared/manifest.ts", "docs/DATA_FORMATS.md"],
+      "relatedPages": ["system-architecture", "messaging-bus", "cli-web-gui"]
+    },
+    {
+      "id": "messaging-bus",
+      "title": "消息总线与 Envelope",
+      "file": "pages/messaging-bus.md",
+      "description": "三通道 inbox、state.jsonl 折叠、跨进程恢复",
+      "importance": "medium",
+      "filePaths": ["src/messaging/bus.ts", "src/messaging/envelope.ts", "docs/DATA_FORMATS.md"],
+      "relatedPages": ["agent-roles-stage-machine", "host-daemon-runtime", "host-tools-harness"]
+    },
+    {
+      "id": "provider-adapters",
+      "title": "Provider 适配层",
+      "file": "pages/provider-adapters.md",
+      "description": "AgentRuntime、能力矩阵、Claude/Codex/stub 差异",
+      "importance": "high",
+      "filePaths": ["src/wrapper/types/runtime.ts", "src/wrapper/adapters/claude/runtime.ts", "docs/PROVIDERS.md"],
+      "relatedPages": ["host-daemon-runtime", "limitations-quality", "host-tools-harness"]
+    },
+    {
+      "id": "host-tools-harness",
+      "title": "Host 工具与 Harness",
+      "file": "pages/host-tools-harness.md",
+      "description": "sh_* 工具矩阵、按角色授权、按需生成 SOP",
+      "importance": "medium",
+      "filePaths": ["src/host/tools/registry.ts", "src/host/tools/stage.ts", "src/prompts/assets/roles/meta.en.md"],
+      "relatedPages": ["agent-roles-stage-machine", "provider-adapters", "watcher-done-criteria"]
+    },
+    {
+      "id": "watcher-done-criteria",
+      "title": "Watcher 流水线与完成判据",
+      "file": "pages/watcher-done-criteria.md",
+      "description": "worker 流窗口化、context compaction、done_criteria.yaml",
+      "importance": "medium",
+      "filePaths": ["src/host/watcher/dispatcher.ts", "src/host/done_criteria/evaluate.ts", "docs/RUNTIME.md"],
+      "relatedPages": ["host-daemon-runtime", "agent-roles-stage-machine", "task-capsule-data"]
+    },
+    {
+      "id": "cli-web-gui",
+      "title": "CLI 与 Web GUI",
+      "file": "pages/cli-web-gui.md",
+      "description": "deputy 命令、loopback HTTP/SSE、与 host 同进程写路径",
+      "importance": "medium",
+      "filePaths": ["src/web/routes.ts", "src/web/cliBridge.ts", "docs/WEB.md", "docs/USAGE.md"],
+      "relatedPages": ["task-capsule-data", "host-daemon-runtime", "limitations-quality"]
+    },
+    {
+      "id": "limitations-quality",
+      "title": "局限性与质量现状",
+      "file": "pages/limitations-quality.md",
+      "description": "0.1.0 成熟度、Provider 差异、无自动化测试",
+      "importance": "low",
+      "filePaths": ["docs/LIMITATIONS.md", "package.json", "README.md"],
+      "relatedPages": ["overview", "provider-adapters", "cli-web-gui"]
+    }
+  ]
+}
