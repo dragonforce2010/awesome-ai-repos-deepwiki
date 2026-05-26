@@ -1,0 +1,108 @@
+{
+  "title": "Garden Skills DeepWiki",
+  "description": "生产就绪的 Agent 辅助技能（Agent Skills）的收集与开发技术文档",
+  "projectName": "conardli-garden-skills",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "source": {
+    "repo": "https://github.com/ConardLi/garden-skills",
+    "commit": "ea0c0c8e88e0907906d013082b75d5d6d159c185"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "项目概览",
+      "pages": ["overview"]
+    },
+    {
+      "id": "section-architecture",
+      "title": "架构与组织",
+      "pages": ["system-architecture"]
+    },
+    {
+      "id": "section-skills",
+      "title": "核心技能实现",
+      "pages": ["web-video-presentation", "web-design-engineer", "gpt-image-2", "kb-retriever"]
+    },
+    {
+      "id": "section-ops-dev",
+      "title": "分发与开发",
+      "pages": ["distribution-and-installation", "development-and-quality"]
+    }
+  ],
+  "rootSections": ["section-overview", "section-architecture", "section-skills", "section-ops-dev"],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "项目定位、核心痛点与阅读路径",
+      "importance": "high",
+      "filePaths": ["README.md"],
+      "relatedPages": ["system-architecture"]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构与组织设计",
+      "file": "pages/system-architecture.md",
+      "description": "仓库组织、技能文件契约与自动化管道",
+      "importance": "high",
+      "filePaths": [".github/workflows/validate-skills.yml", ".github/workflows/release-skill.yml"],
+      "relatedPages": ["distribution-and-installation"]
+    },
+    {
+      "id": "web-video-presentation",
+      "title": "Web 视频制作技能 (web-video-presentation)",
+      "file": "pages/web-video-presentation.md",
+      "description": "固定比例舞台、(chapter, step) 进度游标与 Pluggable TTS 旁白渲染",
+      "importance": "medium",
+      "filePaths": ["skills/web-video-presentation/SKILL.md"],
+      "relatedPages": ["web-design-engineer"]
+    },
+    {
+      "id": "web-design-engineer",
+      "title": "前端设计工程技能 (web-design-engineer)",
+      "file": "pages/web-design-engineer.md",
+      "description": "六步开发法、25款风格配方与去 AI 味黑名单机制",
+      "importance": "medium",
+      "filePaths": ["skills/web-design-engineer/SKILL.md"],
+      "relatedPages": ["web-video-presentation"]
+    },
+    {
+      "id": "gpt-image-2",
+      "title": "GPT 图像生成与编辑技能 (gpt-image-2)",
+      "file": "pages/gpt-image-2.md",
+      "description": "Mode A/B/C 三种运行时模式自适应与二次编辑流",
+      "importance": "medium",
+      "filePaths": ["skills/gpt-image-2/SKILL.md"],
+      "relatedPages": ["kb-retriever"]
+    },
+    {
+      "id": "kb-retriever",
+      "title": "本地知识库检索技能 (kb-retriever)",
+      "file": "pages/kb-retriever.md",
+      "description": "分层索引树导航、5轮迭代控制与先学习再处理规则",
+      "importance": "medium",
+      "filePaths": ["skills/kb-retriever/SKILL.md"],
+      "relatedPages": ["gpt-image-2"]
+    },
+    {
+      "id": "distribution-and-installation",
+      "title": "分发与安装机制",
+      "file": "pages/distribution-and-installation.md",
+      "description": "npx 命令行分发逻辑、Release 压缩包与 Marketplace 清单",
+      "importance": "low",
+      "filePaths": [".claude-plugin/marketplace.json", "scripts/release/update-readme.mjs"],
+      "relatedPages": ["system-architecture"]
+    },
+    {
+      "id": "development-and-quality",
+      "title": "开发与质量保障指南",
+      "file": "pages/development-and-quality.md",
+      "description": "编写新 Skill 的规程、本地 validate 脚本机制与 frontmatter 约束",
+      "importance": "low",
+      "filePaths": ["scripts/validate-skills.mjs"],
+      "relatedPages": ["system-architecture"]
+    }
+  ]
+}

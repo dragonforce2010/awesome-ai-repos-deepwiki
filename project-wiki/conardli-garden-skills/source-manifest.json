@@ -1,0 +1,4313 @@
+{
+  "source": {
+    "path": "/Users/bytedance/workspace/workspace-local-task/deepwiki/project-repos/garden-skills",
+    "remote": "https://github.com/ConardLi/garden-skills",
+    "branch": "main",
+    "commit": "ea0c0c8e88e0907906d013082b75d5d6d159c185"
+  },
+  "file_count": 440,
+  "skipped_count": 88,
+  "files": [
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/release-skill.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 162,
+      "symbols": []
+    },
+    {
+      "path": ".github/workflows/validate-skills.yml",
+      "language": "yaml",
+      "kind": "automation",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.ja-JP.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 398,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 404,
+      "symbols": []
+    },
+    {
+      "path": "CONTRIBUTING.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 383,
+      "symbols": []
+    },
+    {
+      "path": "README.ja-JP.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 359,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 362,
+      "symbols": []
+    },
+    {
+      "path": "README.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 356,
+      "symbols": []
+    },
+    {
+      "path": "demo/web-design-demo/demo2/script.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 132,
+      "symbols": [
+        {
+          "name": "onScroll",
+          "type": "function",
+          "line": 3
+        },
+        {
+          "name": "initAICanvas",
+          "type": "function",
+          "line": 66
+        },
+        {
+          "name": "resize",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "draw",
+          "type": "function",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 171,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/README.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 171,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 499,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/manifest.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/graphical-abstract.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 209,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/mechanism-diagram.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 228,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/method-pipeline-overview.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 264,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/multi-condition-comparison.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 218,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/neural-network-architecture.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 219,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/publication-chart.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 252,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/qualitative-comparison-grid.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 224,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/research-overview-poster.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 223,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/academic-figures/scientific-schematic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 219,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/assets-and-props/game-screenshot-mockup.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 203,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/assets-and-props/retro-skeuomorphic-icons.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 172,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/avatars-and-profile/character-grid-portrait.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 213,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/avatars-and-profile/cultural-portrait-series.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 202,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/avatars-and-profile/sticker-set.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 189,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/avatars-and-profile/style-transfer-selfie.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 140,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/avatars-and-profile/themed-3d-icon.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 180,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/branding-and-packaging/beverage-label-design.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 188,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/branding-and-packaging/brand-identity-board.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 195,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/branding-and-packaging/character-merch-board.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 289,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/branding-and-packaging/cosmetic-packaging.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 182,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/branding-and-packaging/full-mascot-brand-doc.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 322,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/branding-and-packaging/mascot-brand-kit.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 191,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/editing-workflows/background-replacement.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 101,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/editing-workflows/local-object-replacement.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 106,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/editing-workflows/object-removal.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 103,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/editing-workflows/portrait-local-edit.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 125,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/editing-workflows/product-retouching.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/grids-and-collages/ad-banner-multi-grid.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 251,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/grids-and-collages/anime-pitch-board.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 188,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/grids-and-collages/banner-grid-2x2.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 195,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/grids-and-collages/lookbook-grid.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 196,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/grids-and-collages/mixed-style-multi-panel.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 197,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/infographics/bento-grid-infographic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 235,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/infographics/comparison-infographic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 201,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/infographics/hand-drawn-infographic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 178,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/infographics/kpi-dashboard-infographic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 204,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/infographics/legend-heavy-infographic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 212,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/infographics/step-by-step-infographic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 203,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/maps/food-map.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 189,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/maps/illustrated-city-map.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 163,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/maps/itinerary-day-trip-map.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 284,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/maps/store-distribution-map.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 187,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/maps/travel-route-map.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 187,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/portraits-and-characters/character-sheet.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 184,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/portraits-and-characters/founder-portrait.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 178,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/portraits-and-characters/pose-reference-sheet.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 256,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/portraits-and-characters/professional-portrait.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 177,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/portraits-and-characters/virtual-host.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 175,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/poster-and-campaigns/banner-hero.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 177,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/poster-and-campaigns/biomimetic-concept-poster.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 250,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/poster-and-campaigns/brand-poster.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 167,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/poster-and-campaigns/campaign-kv.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 175,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/poster-and-campaigns/character-catalog-poster.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 275,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/poster-and-campaigns/editorial-cover.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 180,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/poster-and-campaigns/lineup-comparison-poster.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 273,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/poster-and-campaigns/vintage-editorial-infographic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 281,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/product-visuals/ecommerce-marketing-board.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 306,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/product-visuals/exploded-view-poster.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 200,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/product-visuals/lifestyle-product-scene.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 233,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/product-visuals/packaging-showcase.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 215,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/product-visuals/premium-studio-product.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 212,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/product-visuals/white-background-product.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 186,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/prompt-writing.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1005,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/scenes-and-illustrations/concept-scene.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 169,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/scenes-and-illustrations/healing-scene.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 172,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/scenes-and-illustrations/minimalist-mood-scene.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 175,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/scenes-and-illustrations/picture-book-scene.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 185,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/slides-and-visual-docs/dense-explainer-slides.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 193,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/slides-and-visual-docs/educational-diagram-slide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 187,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/slides-and-visual-docs/policy-style-slide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 196,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/slides-and-visual-docs/visual-report-page.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 204,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/storyboards-and-sequences/anime-key-visual.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 176,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/storyboards-and-sequences/character-relationship-diagram.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 197,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/storyboards-and-sequences/cinematic-storyboard-grid.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 221,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/storyboards-and-sequences/four-panel-comic.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 220,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/storyboards-and-sequences/manga-spread-page.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 204,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/storyboards-and-sequences/process-photo-board.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 278,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/storyboards-and-sequences/product-tvc-storyboard.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 237,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/storyboards-and-sequences/recipe-process-flowchart.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 205,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/technical-diagrams/er-diagram.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 279,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/technical-diagrams/flowchart-decision.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 253,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/technical-diagrams/mind-map-tech.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 235,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/technical-diagrams/network-topology.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 245,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/technical-diagrams/sequence-diagram.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 262,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/technical-diagrams/state-machine.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 239,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/technical-diagrams/system-architecture.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 240,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/typography-and-text-layout/bilingual-layout-visual.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 186,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/typography-and-text-layout/title-safe-poster.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 177,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/ui-mockups/chat-interface-scene.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 285,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/ui-mockups/landing-page-case-study.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 279,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/ui-mockups/live-commerce-ui.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 227,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/ui-mockups/product-card-overlay.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 246,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/ui-mockups/short-video-cover-ui.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 219,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/references/ui-mockups/social-interface-mockup.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 250,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/scripts/check-mode.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 64,
+      "symbols": [
+        {
+          "name": "pad",
+          "type": "function",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "path": "skills/gpt-image-2/scripts/edit.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 225,
+      "symbols": [
+        {
+          "name": "printHelp",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "parseCli",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "buildRequestUrl",
+          "type": "function",
+          "line": 158
+        },
+        {
+          "name": "buildForm",
+          "type": "function",
+          "line": 162
+        },
+        {
+          "name": "run",
+          "type": "function",
+          "line": 186
+        }
+      ]
+    },
+    {
+      "path": "skills/gpt-image-2/scripts/generate.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 191,
+      "symbols": [
+        {
+          "name": "printHelp",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "parseCli",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "buildPayload",
+          "type": "function",
+          "line": 134
+        },
+        {
+          "name": "buildRequestUrl",
+          "type": "function",
+          "line": 149
+        },
+        {
+          "name": "run",
+          "type": "function",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "path": "skills/gpt-image-2/scripts/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "skills/gpt-image-2/scripts/shared.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 213,
+      "symbols": [
+        {
+          "name": "readEnvFile",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "loadAmbientEnv",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "readPromptInput",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "slugify",
+          "type": "function",
+          "line": 56
+        },
+        {
+          "name": "makeTimestamp",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "buildDefaultImagePath",
+          "type": "function",
+          "line": 78
+        },
+        {
+          "name": "buildDefaultPromptPath",
+          "type": "function",
+          "line": 85
+        },
+        {
+          "name": "resolveOutput",
+          "type": "function",
+          "line": 91
+        },
+        {
+          "name": "savePrompt",
+          "type": "function",
+          "line": 97
+        },
+        {
+          "name": "mimeFor",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "ensureFilesExist",
+          "type": "function",
+          "line": 112
+        },
+        {
+          "name": "encodeImages",
+          "type": "function",
+          "line": 122
+        },
+        {
+          "name": "buildBaseUrl",
+          "type": "function",
+          "line": 137
+        },
+        {
+          "name": "requireApiKey",
+          "type": "function",
+          "line": 141
+        },
+        {
+          "name": "postJson",
+          "type": "function",
+          "line": 147
+        },
+        {
+          "name": "postMultipart",
+          "type": "function",
+          "line": 166
+        },
+        {
+          "name": "fetchBytesFromUrl",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "extractGeneratedBytes",
+          "type": "function",
+          "line": 193
+        },
+        {
+          "name": "saveImage",
+          "type": "function",
+          "line": 201
+        },
+        {
+          "name": "printJson",
+          "type": "function",
+          "line": 206
+        },
+        {
+          "name": "appendIfPresent",
+          "type": "function",
+          "line": 210
+        }
+      ]
+    },
+    {
+      "path": "skills/kb-retriever/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 197,
+      "symbols": []
+    },
+    {
+      "path": "skills/kb-retriever/README.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 197,
+      "symbols": []
+    },
+    {
+      "path": "skills/kb-retriever/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 250,
+      "symbols": []
+    },
+    {
+      "path": "skills/kb-retriever/manifest.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "skills/kb-retriever/references/excel_analysis.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 129,
+      "symbols": []
+    },
+    {
+      "path": "skills/kb-retriever/references/excel_reading.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 72,
+      "symbols": []
+    },
+    {
+      "path": "skills/kb-retriever/references/pdf_reading.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 362,
+      "symbols": []
+    },
+    {
+      "path": "skills/kb-retriever/scripts/convert_pdf_to_images.py",
+      "language": "python",
+      "kind": "source",
+      "lines": 35,
+      "symbols": [
+        {
+          "name": "convert",
+          "type": "function",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "path": "skills/web-design-engineer/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 175,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/README.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 175,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 493,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/manifest.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/advanced-patterns.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 521,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/critique-guide.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 226,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/design-directions.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 188,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/INDEX.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 145,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/active-theory.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/aesop.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/apple-hig.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/are-na.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/balenciaga-post-2017.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/bloomberg-businessweek-turley.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/bloomberg-terminal.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/dieter-rams-braun.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/field-io.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/headspace-meditation.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/linear.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/mailchimp-freddie.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/mid-century-modern.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/monocle-magazine.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/muji-kenya-hara.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/notion-pre-ai.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/nyt-the-daily.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/pentagram.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/raycast.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/resn-storytelling.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/stripe-press.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/tufte-dataink.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/vercel-mesh.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/vignelli-swiss-helvetica.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-design-engineer/references/style-recipes/y2k-retrofuturism.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 169,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/README.zh-CN.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 169,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/SKILL.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 451,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/manifest.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 15,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/AUDIO.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 276,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/CHAPTER-CRAFT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 224,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/EXAMPLES/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 107,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/EXAMPLES/case-tech-review/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/EXAMPLES/case-tech-review/outline-snippet.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/EXAMPLES/hook-chapter/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 86,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/EXAMPLES/hook-chapter/chapter.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 125,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/EXAMPLES/list-reveal/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 91,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/EXAMPLES/list-reveal/chapter.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 103,
+      "symbols": [
+        {
+          "name": "Slot",
+          "type": "function",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/references/OUTLINE-FORMAT.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 203,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/RECORDING.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 77,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/SCRIPT-STYLE.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 409,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/references/THEMES.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 351,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/scripts/scaffold.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 245,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/scripts/extract-narrations.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 137,
+      "symbols": [
+        {
+          "name": "Segment",
+          "type": "interface",
+          "line": 36
+        },
+        {
+          "name": "readChapterOrder",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "loadNarrations",
+          "type": "function",
+          "line": 77
+        },
+        {
+          "name": "main",
+          "type": "function",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/scripts/synthesize-audio.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 145,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/scripts/tts-providers/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 324,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/scripts/tts-providers/minimax.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/scripts/tts-providers/openai.sh",
+      "language": "shell",
+      "kind": "source",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/App.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 73,
+      "symbols": [
+        {
+          "name": "estimateMs",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/chapters/01-example/Example.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 104,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/chapters/01-example/narrations.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/components/AutoStartGate.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "AutoStartGate",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/components/AutoToggle.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "AutoToggle",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/components/MaskReveal.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 35,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "MaskReveal",
+          "type": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/components/ProgressBar.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 109,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "ProgressBar",
+          "type": "function",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/components/Stage.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 48,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "Stage",
+          "type": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/hooks/useAudioPlayer.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 112,
+      "symbols": [
+        {
+          "name": "PlaybackMode",
+          "type": "type",
+          "line": 3
+        },
+        {
+          "name": "Options",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "useAudioPlayer",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "advanceAfter",
+          "type": "function",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/hooks/useAutoMode.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 66,
+      "symbols": [
+        {
+          "name": "readModeFromURL",
+          "type": "function",
+          "line": 6
+        },
+        {
+          "name": "useAutoMode",
+          "type": "function",
+          "line": 29
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/hooks/useStageScale.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 28,
+      "symbols": [
+        {
+          "name": "useStageScale",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "update",
+          "type": "function",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/hooks/useStepper.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 174,
+      "symbols": [
+        {
+          "name": "Cursor",
+          "type": "type",
+          "line": 10
+        },
+        {
+          "name": "StepperState",
+          "type": "interface",
+          "line": 12
+        },
+        {
+          "name": "clamp",
+          "type": "function",
+          "line": 24
+        },
+        {
+          "name": "sanitize",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "useStepper",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "globalIndex",
+          "type": "function",
+          "line": 87
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/main.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 9,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/registry/chapters.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/templates/src/registry/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 25,
+      "symbols": [
+        {
+          "name": "ChapterStepProps",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "Narration",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "ChapterDef",
+          "type": "interface",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "skills/web-video-presentation/templates/vite.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/bauhaus-bold/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/blueprint/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/bold-signal/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/chalk-garden/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/creative-voltage/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/dark-botanical/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/dune/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/electric-studio/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/forest-ink/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/indigo-porcelain/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/kraft-paper/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/midnight-press/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 26,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/monochrome-print/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/neon-cyber/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/newsroom/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/paper-press/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/pastel-dream/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/split-canvas/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/sunset-zine/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/swiss-ikb/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/terminal-green/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/vintage-editorial/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 28,
+      "symbols": []
+    },
+    {
+      "path": "skills/web-video-presentation/themes/warm-keynote/theme.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 27,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 221,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/eslint.config.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/netlify.toml",
+      "language": "toml",
+      "kind": "source",
+      "lines": 58,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/package-lock.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 3369,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 35,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/INDEX.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 1174,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/_mapping.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 1853,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/graphical-abstract/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/graphical-abstract/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 87,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/mechanism-diagram/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 102,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/mechanism-diagram/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 96,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/method-pipeline-overview/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 110,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/method-pipeline-overview/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 96,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/multi-condition-comparison/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 92,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/multi-condition-comparison/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 93,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/neural-network-architecture/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 124,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/neural-network-architecture/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 131,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/publication-chart/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 73,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/publication-chart/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/qualitative-comparison-grid/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 88,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/qualitative-comparison-grid/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 89,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/research-overview-poster/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 99,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/academic-figures/research-overview-poster/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 129,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/assets-and-props/game-screenshot-mockup/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/assets-and-props/game-screenshot-mockup/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/assets-and-props/retro-skeuomorphic-icons/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 92,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/assets-and-props/retro-skeuomorphic-icons/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/character-grid-portrait/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 64,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/character-grid-portrait/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 100,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/cultural-portrait-series/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/cultural-portrait-series/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/sticker-set/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/sticker-set/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 39,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/style-transfer-selfie/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/style-transfer-selfie/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 19,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/themed-3d-icon/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 37,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/avatars-and-profile/themed-3d-icon/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/branding-and-packaging/beverage-label-design/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 43,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/branding-and-packaging/beverage-label-design/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/branding-and-packaging/brand-identity-board/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/branding-and-packaging/brand-identity-board/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 64,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/branding-and-packaging/cosmetic-packaging/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/branding-and-packaging/cosmetic-packaging/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/branding-and-packaging/mascot-brand-kit/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/branding-and-packaging/mascot-brand-kit/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/background-replacement/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/background-replacement/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/local-object-replacement/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/local-object-replacement/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/object-removal/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/object-removal/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 21,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/portrait-local-edit/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/portrait-local-edit/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 22,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/product-retouching/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/editing-workflows/product-retouching/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/grids-and-collages/anime-pitch-board/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/grids-and-collages/anime-pitch-board/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 64,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/grids-and-collages/banner-grid-2x2/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/grids-and-collages/banner-grid-2x2/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/grids-and-collages/lookbook-grid/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 77,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/grids-and-collages/lookbook-grid/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 67,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/grids-and-collages/mixed-style-multi-panel/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 57,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/grids-and-collages/mixed-style-multi-panel/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/bento-grid-infographic/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 99,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/bento-grid-infographic/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 97,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/comparison-infographic/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/comparison-infographic/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/kpi-dashboard-infographic/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 113,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/kpi-dashboard-infographic/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 97,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/legend-heavy-infographic/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/legend-heavy-infographic/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 57,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/step-by-step-infographic/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/infographics/step-by-step-infographic/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 59,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/maps/food-map/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 57,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/maps/food-map/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/maps/illustrated-city-map/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/maps/illustrated-city-map/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/maps/store-distribution-map/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/maps/store-distribution-map/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/maps/travel-route-map/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 65,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/maps/travel-route-map/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 60,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/portraits-and-characters/character-sheet/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/portraits-and-characters/character-sheet/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/portraits-and-characters/founder-portrait/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/portraits-and-characters/founder-portrait/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/portraits-and-characters/professional-portrait/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/portraits-and-characters/professional-portrait/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/portraits-and-characters/virtual-host/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/portraits-and-characters/virtual-host/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/banner-hero/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/banner-hero/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/banner-hero/3.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 82,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/brand-poster/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/brand-poster/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/campaign-kv/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/campaign-kv/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/editorial-cover/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/poster-and-campaigns/editorial-cover/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 48,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/exploded-view-poster/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/exploded-view-poster/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/lifestyle-product-scene/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/lifestyle-product-scene/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/packaging-showcase/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 57,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/packaging-showcase/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 56,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/premium-studio-product/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 54,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/premium-studio-product/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 47,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/white-background-product/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/product-visuals/white-background-product/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/scenes-and-illustrations/concept-scene/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/scenes-and-illustrations/concept-scene/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 38,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/scenes-and-illustrations/healing-scene/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/scenes-and-illustrations/healing-scene/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/scenes-and-illustrations/minimalist-mood-scene/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/scenes-and-illustrations/minimalist-mood-scene/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/scenes-and-illustrations/picture-book-scene/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/scenes-and-illustrations/picture-book-scene/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/slides-and-visual-docs/dense-explainer-slides/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 50,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/slides-and-visual-docs/dense-explainer-slides/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 49,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/slides-and-visual-docs/educational-diagram-slide/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/slides-and-visual-docs/educational-diagram-slide/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/slides-and-visual-docs/policy-style-slide/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 53,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/slides-and-visual-docs/policy-style-slide/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 51,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/slides-and-visual-docs/visual-report-page/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 68,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/slides-and-visual-docs/visual-report-page/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 66,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/anime-key-visual/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/anime-key-visual/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/character-relationship-diagram/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 87,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/character-relationship-diagram/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 73,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/four-panel-comic/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 62,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/four-panel-comic/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/manga-spread-page/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 89,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/manga-spread-page/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 75,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/recipe-process-flowchart/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 68,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/storyboards-and-sequences/recipe-process-flowchart/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 70,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/er-diagram/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 426,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/er-diagram/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 314,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/flowchart-decision/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 206,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/flowchart-decision/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 186,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/mind-map-tech/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 156,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/mind-map-tech/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 152,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/network-topology/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 276,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/network-topology/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 240,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/sequence-diagram/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 180,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/sequence-diagram/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 190,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/state-machine/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 200,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/state-machine/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 200,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/system-architecture/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 303,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/technical-diagrams/system-architecture/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 282,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/typography-and-text-layout/bilingual-layout-visual/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 46,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/typography-and-text-layout/bilingual-layout-visual/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 45,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/typography-and-text-layout/title-safe-poster/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 44,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/typography-and-text-layout/title-safe-poster/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 42,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/chat-interface-scene/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 130,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/chat-interface-scene/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 147,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/chat-interface-scene/3.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 101,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/live-commerce-ui/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 83,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/live-commerce-ui/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 90,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/product-card-overlay/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 78,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/product-card-overlay/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 63,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/short-video-cover-ui/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 52,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/short-video-cover-ui/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 55,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/short-video-cover-ui/3.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 41,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/social-interface-mockup/1.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 72,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/social-interface-mockup/2.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 61,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/public/case/ui-mockups/social-interface-mockup/3.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 71,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/src/App.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 88,
+      "symbols": [
+        {
+          "name": "App",
+          "type": "function",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/gallery/CaseCard.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 79,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "CaseCard",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "onOpen",
+          "type": "function",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/gallery/CaseDetail.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 467,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "Tab",
+          "type": "type",
+          "line": 12
+        },
+        {
+          "name": "CaseDetail",
+          "type": "function",
+          "line": 14
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 37
+        },
+        {
+          "name": "onCopy",
+          "type": "function",
+          "line": 67
+        },
+        {
+          "name": "Bullet",
+          "type": "function",
+          "line": 383
+        },
+        {
+          "name": "ChatBubble",
+          "type": "function",
+          "line": 393
+        },
+        {
+          "name": "ModeRow",
+          "type": "function",
+          "line": 404
+        },
+        {
+          "name": "ChatMsg",
+          "type": "interface",
+          "line": 414
+        },
+        {
+          "name": "buildUsageDialog",
+          "type": "function",
+          "line": 419
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/gallery/CategoryView.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 75,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "CategoryView",
+          "type": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/gallery/Gallery.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 208,
+      "symbols": [
+        {
+          "name": "Mode",
+          "type": "type",
+          "line": 8
+        },
+        {
+          "name": "Filter",
+          "type": "type",
+          "line": 9
+        },
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "Gallery",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "ToggleIcon",
+          "type": "function",
+          "line": 184
+        },
+        {
+          "name": "SearchIcon",
+          "type": "function",
+          "line": 201
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/gallery/MasonryView.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 50,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "MasonryView",
+          "type": "function",
+          "line": 11
+        },
+        {
+          "name": "ratioFor",
+          "type": "function",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/hero/Hero.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 402,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 7
+        },
+        {
+          "name": "TileState",
+          "type": "interface",
+          "line": 38
+        },
+        {
+          "name": "Hero",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "markTileReady",
+          "type": "function",
+          "line": 130
+        },
+        {
+          "name": "schedule",
+          "type": "function",
+          "line": 151
+        },
+        {
+          "name": "rotate",
+          "type": "function",
+          "line": 157
+        },
+        {
+          "name": "onMove",
+          "type": "function",
+          "line": 212
+        },
+        {
+          "name": "x",
+          "type": "function",
+          "line": 214
+        },
+        {
+          "name": "y",
+          "type": "function",
+          "line": 215
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/hero/ModelCard.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 135,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "ModelCard",
+          "type": "function",
+          "line": 45
+        },
+        {
+          "name": "onEsc",
+          "type": "function",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/shared/Footer.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 86,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "Footer",
+          "type": "function",
+          "line": 9
+        },
+        {
+          "name": "Stat",
+          "type": "function",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/shared/Header.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 98,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 5
+        },
+        {
+          "name": "Header",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "onScroll",
+          "type": "function",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/shared/SkeletonImg.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 90,
+      "symbols": [
+        {
+          "name": "SkeletonImgProps",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "SkeletonImg",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "handleLoad",
+          "type": "function",
+          "line": 48
+        },
+        {
+          "name": "handleError",
+          "type": "function",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/components/skills/SkillsPage.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 450,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 6
+        },
+        {
+          "name": "SkillsPage",
+          "type": "function",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/data/cases.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 3968,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/src/data/docs.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 5,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/src/lib/data.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 38,
+      "symbols": [
+        {
+          "name": "getCase",
+          "type": "function",
+          "line": 8
+        },
+        {
+          "name": "getRelatedCases",
+          "type": "function",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/lib/router.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 71,
+      "symbols": [
+        {
+          "name": "parseHash",
+          "type": "function",
+          "line": 4
+        },
+        {
+          "name": "routeToHash",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "useRoute",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "onChange",
+          "type": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/src/main.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/src/types/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 60,
+      "symbols": [
+        {
+          "name": "CategoryMeta",
+          "type": "interface",
+          "line": 1
+        },
+        {
+          "name": "TemplateMeta",
+          "type": "interface",
+          "line": 11
+        },
+        {
+          "name": "PromptCase",
+          "type": "interface",
+          "line": 22
+        },
+        {
+          "name": "CasesManifest",
+          "type": "interface",
+          "line": 43
+        },
+        {
+          "name": "DocsManifest",
+          "type": "interface",
+          "line": 51
+        },
+        {
+          "name": "Route",
+          "type": "type",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "path": "website/gpt-image2-website/tsconfig.app.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/tsconfig.node.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "website/gpt-image2-website/vite.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 144,
+      "symbols": [
+        {
+          "name": "safePublicCopy",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "casesDataWatcher",
+          "type": "function",
+          "line": 64
+        },
+        {
+          "name": "runBuild",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "schedule",
+          "type": "function",
+          "line": 100
+        },
+        {
+          "name": "onChange",
+          "type": "function",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/README.md",
+      "language": "markdown",
+      "kind": "docs",
+      "lines": 73,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/eslint.config.js",
+      "language": "javascript",
+      "kind": "source",
+      "lines": 23,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/package-lock.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 3013,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/package.json",
+      "language": "json",
+      "kind": "manifest",
+      "lines": 30,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/src/App.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 32,
+      "symbols": [
+        {
+          "name": "App",
+          "type": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/01-opening/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 383,
+      "symbols": [
+        {
+          "name": "Opening",
+          "type": "function",
+          "line": 32
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 33
+        },
+        {
+          "name": "between",
+          "type": "function",
+          "line": 34
+        },
+        {
+          "name": "CrashChart",
+          "type": "function",
+          "line": 243
+        },
+        {
+          "name": "VictimRowProps",
+          "type": "interface",
+          "line": 307
+        },
+        {
+          "name": "VictimRow",
+          "type": "function",
+          "line": 312
+        },
+        {
+          "name": "SkillCard",
+          "type": "function",
+          "line": 340
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/02-video/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 90,
+      "symbols": [
+        {
+          "name": "VideoChapter",
+          "type": "function",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/03-core-point/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 204,
+      "symbols": [
+        {
+          "name": "CorePoint",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/04-role/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 297,
+      "symbols": [
+        {
+          "name": "Role",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "RoleIcon",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "RoleCard",
+          "type": "function",
+          "line": 72
+        },
+        {
+          "name": "Role",
+          "type": "function",
+          "line": 104
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/05-workflow/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 266,
+      "symbols": [
+        {
+          "name": "Station",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "Workflow",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "litCount",
+          "type": "function",
+          "line": 50
+        },
+        {
+          "name": "linePct",
+          "type": "function",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/06-anti-ai/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 290,
+      "symbols": [
+        {
+          "name": "AntiPattern",
+          "type": "interface",
+          "line": 24
+        },
+        {
+          "name": "BadCard",
+          "type": "function",
+          "line": 55
+        },
+        {
+          "name": "AntiAi",
+          "type": "function",
+          "line": 125
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 126
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/07-oklch/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 306,
+      "symbols": [
+        {
+          "name": "hslPerceived",
+          "type": "function",
+          "line": 28
+        },
+        {
+          "name": "c",
+          "type": "function",
+          "line": 31
+        },
+        {
+          "name": "Oklch",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "x",
+          "type": "function",
+          "line": 213
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/08-restraint/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 303,
+      "symbols": [
+        {
+          "name": "Section",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "SectionBlock",
+          "type": "function",
+          "line": 41
+        },
+        {
+          "name": "Restraint",
+          "type": "function",
+          "line": 131
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 132
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/09-verification/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 277,
+      "symbols": [
+        {
+          "name": "Check",
+          "type": "interface",
+          "line": 27
+        },
+        {
+          "name": "Verification",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/10-to-skill/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 248,
+      "symbols": [
+        {
+          "name": "ToSkill",
+          "type": "function",
+          "line": 44
+        },
+        {
+          "name": "at",
+          "type": "function",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/11-skill-changes/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 663,
+      "symbols": [
+        {
+          "name": "CodeLine",
+          "type": "interface",
+          "line": 33
+        },
+        {
+          "name": "ExcerptProps",
+          "type": "interface",
+          "line": 44
+        },
+        {
+          "name": "Excerpt",
+          "type": "function",
+          "line": 53
+        },
+        {
+          "name": "SkillChanges",
+          "type": "function",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/12-references/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 197,
+      "symbols": [
+        {
+          "name": "Tpl",
+          "type": "interface",
+          "line": 20
+        },
+        {
+          "name": "References",
+          "type": "function",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/13-closing/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 240,
+      "symbols": [
+        {
+          "name": "TickerProps",
+          "type": "interface",
+          "line": 31
+        },
+        {
+          "name": "NumberTicker",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "step",
+          "type": "function",
+          "line": 51
+        },
+        {
+          "name": "Closing",
+          "type": "function",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/14-outro/index.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 279,
+      "symbols": [
+        {
+          "name": "Resource",
+          "type": "interface",
+          "line": 26
+        },
+        {
+          "name": "IconLike",
+          "type": "function",
+          "line": 47
+        },
+        {
+          "name": "IconStar",
+          "type": "function",
+          "line": 69
+        },
+        {
+          "name": "IconFollow",
+          "type": "function",
+          "line": 84
+        },
+        {
+          "name": "Outro",
+          "type": "function",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/chapters/index.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 36,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/src/chapters/types.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 26,
+      "symbols": [
+        {
+          "name": "ChapterContext",
+          "type": "interface",
+          "line": 4
+        },
+        {
+          "name": "ChapterDef",
+          "type": "interface",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/design/motion.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 19,
+      "symbols": [
+        {
+          "name": "EaseName",
+          "type": "type",
+          "line": 18
+        },
+        {
+          "name": "DurName",
+          "type": "type",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/main.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 10,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/src/shared/LiveTicker.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 49,
+      "symbols": [
+        {
+          "name": "LiveClock",
+          "type": "function",
+          "line": 4
+        },
+        {
+          "name": "pad",
+          "type": "function",
+          "line": 10
+        },
+        {
+          "name": "FlickerNumber",
+          "type": "function",
+          "line": 19
+        },
+        {
+          "name": "noise",
+          "type": "function",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/shared/NumberTicker.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 78,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "easeOutQuart",
+          "type": "function",
+          "line": 17
+        },
+        {
+          "name": "NumberTicker",
+          "type": "function",
+          "line": 23
+        },
+        {
+          "name": "start",
+          "type": "function",
+          "line": 40
+        },
+        {
+          "name": "tick",
+          "type": "function",
+          "line": 42
+        },
+        {
+          "name": "display",
+          "type": "function",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/shared/Reveal.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 50,
+      "symbols": [
+        {
+          "name": "RevealKind",
+          "type": "type",
+          "line": 4
+        },
+        {
+          "name": "AsTag",
+          "type": "type",
+          "line": 13
+        },
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 15
+        },
+        {
+          "name": "Reveal",
+          "type": "function",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/shared/SceneFade.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 67,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 3
+        },
+        {
+          "name": "SceneFade",
+          "type": "function",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/stage/ChapterHost.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 54,
+      "symbols": [
+        {
+          "name": "ChapterHost",
+          "type": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/stage/ProgressBar.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 111,
+      "symbols": [
+        {
+          "name": "ProgressBar",
+          "type": "function",
+          "line": 15
+        },
+        {
+          "name": "show",
+          "type": "function",
+          "line": 22
+        },
+        {
+          "name": "scheduleHide",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "seekFromEvent",
+          "type": "function",
+          "line": 36
+        },
+        {
+          "name": "onMove",
+          "type": "function",
+          "line": 46
+        },
+        {
+          "name": "onUp",
+          "type": "function",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/stage/Stage.tsx",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 49,
+      "symbols": [
+        {
+          "name": "Props",
+          "type": "interface",
+          "line": 10
+        },
+        {
+          "name": "Stage",
+          "type": "function",
+          "line": 20
+        },
+        {
+          "name": "compute",
+          "type": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/stage/useHotKeys.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 76,
+      "symbols": [
+        {
+          "name": "useHotKeys",
+          "type": "function",
+          "line": 18
+        },
+        {
+          "name": "onKey",
+          "type": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/src/store/useStep.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 99,
+      "symbols": [
+        {
+          "name": "Listener",
+          "type": "type",
+          "line": 14
+        },
+        {
+          "name": "Snapshot",
+          "type": "interface",
+          "line": 16
+        },
+        {
+          "name": "totalSteps",
+          "type": "function",
+          "line": 26
+        },
+        {
+          "name": "locate",
+          "type": "function",
+          "line": 30
+        },
+        {
+          "name": "chapterStartGlobal",
+          "type": "function",
+          "line": 43
+        },
+        {
+          "name": "emit",
+          "type": "function",
+          "line": 57
+        },
+        {
+          "name": "set",
+          "type": "function",
+          "line": 61
+        },
+        {
+          "name": "useStep",
+          "type": "function",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "path": "website/web-design-website/tsconfig.app.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 25,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/tsconfig.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/tsconfig.node.json",
+      "language": "json",
+      "kind": "source",
+      "lines": 24,
+      "symbols": []
+    },
+    {
+      "path": "website/web-design-website/vite.config.ts",
+      "language": "typescript",
+      "kind": "source",
+      "lines": 7,
+      "symbols": []
+    }
+  ]
+}
