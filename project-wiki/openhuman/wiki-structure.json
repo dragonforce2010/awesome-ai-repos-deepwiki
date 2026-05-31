@@ -1,0 +1,409 @@
+{
+  "title": "OpenHuman DeepWiki",
+  "description": "OpenHuman 工业级中文技术 wiki — 个人 AI 助手、Memory Tree、Tauri 桌面架构",
+  "mode": "comprehensive",
+  "language": "zh-CN",
+  "projectName": "openhuman",
+  "source": {
+    "repo": "https://github.com/tinyhumansai/openhuman",
+    "commit": "225b1dabf611a0972d69ff73553780cf0753da13"
+  },
+  "sections": [
+    {
+      "id": "section-overview",
+      "title": "概览",
+      "pages": [
+        "overview"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-architecture",
+      "title": "架构",
+      "pages": [
+        "system-architecture",
+        "tauri-shell",
+        "react-frontend",
+        "json-rpc-bridge"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-runtime",
+      "title": "核心运行时",
+      "pages": [
+        "rust-core-runtime",
+        "agent-orchestration",
+        "tools-mcp"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-memory",
+      "title": "记忆系统",
+      "pages": [
+        "memory-tree-pipeline",
+        "memory-store-schema",
+        "subconscious-background"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-inference",
+      "title": "推理与集成",
+      "pages": [
+        "inference-routing",
+        "tokenjuice-compression",
+        "integrations-composio"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-channels",
+      "title": "通道与体验",
+      "pages": [
+        "channels-messaging",
+        "voice-meet-agent"
+      ],
+      "subsections": []
+    },
+    {
+      "id": "section-engineering",
+      "title": "安全与工程",
+      "pages": [
+        "security-privacy",
+        "ci-deployment",
+        "quality-risks-refactor"
+      ],
+      "subsections": []
+    }
+  ],
+  "rootSections": [
+    "section-overview",
+    "section-architecture",
+    "section-runtime",
+    "section-memory",
+    "section-inference",
+    "section-channels",
+    "section-engineering"
+  ],
+  "pages": [
+    {
+      "id": "overview",
+      "title": "项目概览",
+      "file": "pages/overview.md",
+      "description": "项目概览",
+      "importance": "high",
+      "filePaths": [
+        "README.md",
+        "Cargo.toml",
+        "package.json"
+      ],
+      "relatedPages": [
+        "system-architecture",
+        "memory-tree-pipeline",
+        "security-privacy"
+      ]
+    },
+    {
+      "id": "system-architecture",
+      "title": "系统架构",
+      "file": "pages/system-architecture.md",
+      "description": "系统架构",
+      "importance": "high",
+      "filePaths": [
+        "gitbooks/developing/architecture/README.zh-CN.md",
+        "src/lib.rs",
+        "docs/SECURITY_AUDIT.md"
+      ],
+      "relatedPages": [
+        "tauri-shell",
+        "rust-core-runtime",
+        "json-rpc-bridge",
+        "memory-tree-pipeline"
+      ]
+    },
+    {
+      "id": "tauri-shell",
+      "title": "Tauri 桌面壳层",
+      "file": "pages/tauri-shell.md",
+      "description": "Tauri 桌面壳层",
+      "importance": "medium",
+      "filePaths": [
+        "app/src-tauri/Cargo.toml",
+        "gitbooks/developing/architecture/README.md"
+      ],
+      "relatedPages": [
+        "system-architecture",
+        "json-rpc-bridge",
+        "react-frontend"
+      ]
+    },
+    {
+      "id": "react-frontend",
+      "title": "React 前端",
+      "file": "pages/react-frontend.md",
+      "description": "React 前端",
+      "importance": "medium",
+      "filePaths": [
+        "app/package.json",
+        "app/src/services/coreRpcClient.ts"
+      ],
+      "relatedPages": [
+        "json-rpc-bridge",
+        "tauri-shell",
+        "channels-messaging"
+      ]
+    },
+    {
+      "id": "json-rpc-bridge",
+      "title": "JSON-RPC 通信桥",
+      "file": "pages/json-rpc-bridge.md",
+      "description": "JSON-RPC 通信桥",
+      "importance": "medium",
+      "filePaths": [
+        "src/rpc/mod.rs",
+        "src/core/jsonrpc.rs",
+        "app/src/services/coreRpcClient.ts"
+      ],
+      "relatedPages": [
+        "react-frontend",
+        "rust-core-runtime",
+        "agent-orchestration"
+      ]
+    },
+    {
+      "id": "rust-core-runtime",
+      "title": "Rust 核心运行时",
+      "file": "pages/rust-core-runtime.md",
+      "description": "Rust 核心运行时",
+      "importance": "medium",
+      "filePaths": [
+        "src/lib.rs",
+        "src/openhuman/mod.rs",
+        "Cargo.toml"
+      ],
+      "relatedPages": [
+        "system-architecture",
+        "agent-orchestration",
+        "memory-tree-pipeline"
+      ]
+    },
+    {
+      "id": "memory-tree-pipeline",
+      "title": "Memory Tree 流水线",
+      "file": "pages/memory-tree-pipeline.md",
+      "description": "Memory Tree 流水线",
+      "importance": "high",
+      "filePaths": [
+        "src/openhuman/memory_store/chunks/store.rs",
+        "gitbooks/developing/architecture/README.zh-CN.md"
+      ],
+      "relatedPages": [
+        "memory-store-schema",
+        "integrations-composio",
+        "tokenjuice-compression"
+      ]
+    },
+    {
+      "id": "memory-store-schema",
+      "title": "内存存储与数据库模型",
+      "file": "pages/memory-store-schema.md",
+      "description": "内存存储与数据库模型",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/memory_store/chunks/store.rs",
+        "src/openhuman/memory_store/unified/init.rs"
+      ],
+      "relatedPages": [
+        "memory-tree-pipeline",
+        "subconscious-background",
+        "quality-risks-refactor"
+      ]
+    },
+    {
+      "id": "agent-orchestration",
+      "title": "Agent 编排与循环",
+      "file": "pages/agent-orchestration.md",
+      "description": "Agent 编排与循环",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/agent_orchestration/mod.rs",
+        "src/openhuman/agent/README.md",
+        "docs/agent-subagent-tool-flow.md"
+      ],
+      "relatedPages": [
+        "tools-mcp",
+        "inference-routing",
+        "security-privacy"
+      ]
+    },
+    {
+      "id": "inference-routing",
+      "title": "推理与模型路由",
+      "file": "pages/inference-routing.md",
+      "description": "推理与模型路由",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/inference/mod.rs",
+        "gitbooks/features/model-routing/README.md"
+      ],
+      "relatedPages": [
+        "tokenjuice-compression",
+        "rust-core-runtime",
+        "voice-meet-agent"
+      ]
+    },
+    {
+      "id": "tokenjuice-compression",
+      "title": "TokenJuice 压缩",
+      "file": "pages/tokenjuice-compression.md",
+      "description": "TokenJuice 压缩",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/tokenjuice/mod.rs",
+        "gitbooks/features/token-compression.md"
+      ],
+      "relatedPages": [
+        "memory-tree-pipeline",
+        "agent-orchestration",
+        "inference-routing"
+      ]
+    },
+    {
+      "id": "integrations-composio",
+      "title": "集成与 Composio",
+      "file": "pages/integrations-composio.md",
+      "description": "集成与 Composio",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/composio",
+        "README.md",
+        "gitbooks/features/integrations/README.md"
+      ],
+      "relatedPages": [
+        "memory-tree-pipeline",
+        "channels-messaging",
+        "security-privacy"
+      ]
+    },
+    {
+      "id": "tools-mcp",
+      "title": "工具系统与 MCP",
+      "file": "pages/tools-mcp.md",
+      "description": "工具系统与 MCP",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/tool_registry/ops.rs",
+        "src/openhuman/mcp_registry",
+        "docs/MCP_SETUP_AGENT.md"
+      ],
+      "relatedPages": [
+        "agent-orchestration",
+        "integrations-composio",
+        "security-privacy"
+      ]
+    },
+    {
+      "id": "channels-messaging",
+      "title": "消息通道",
+      "file": "pages/channels-messaging.md",
+      "description": "消息通道",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/channels",
+        "gitbooks/features/integrations/README.md"
+      ],
+      "relatedPages": [
+        "integrations-composio",
+        "agent-orchestration",
+        "react-frontend"
+      ]
+    },
+    {
+      "id": "voice-meet-agent",
+      "title": "语音与 Meet Agent",
+      "file": "pages/voice-meet-agent.md",
+      "description": "语音与 Meet Agent",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/voice",
+        "src/openhuman/meet_agent",
+        "gitbooks/features/mascot/README.md"
+      ],
+      "relatedPages": [
+        "inference-routing",
+        "react-frontend",
+        "system-architecture"
+      ]
+    },
+    {
+      "id": "subconscious-background",
+      "title": "Subconscious 后台思考",
+      "file": "pages/subconscious-background.md",
+      "description": "Subconscious 后台思考",
+      "importance": "medium",
+      "filePaths": [
+        "src/openhuman/subconscious/mod.rs",
+        "src/openhuman/subconscious/store.rs"
+      ],
+      "relatedPages": [
+        "memory-tree-pipeline",
+        "agent-orchestration",
+        "inference-routing"
+      ]
+    },
+    {
+      "id": "security-privacy",
+      "title": "安全与隐私边界",
+      "file": "pages/security-privacy.md",
+      "description": "安全与隐私边界",
+      "importance": "medium",
+      "filePaths": [
+        "docs/SECURITY_AUDIT.md",
+        "docs/PROMPT_INJECTION_GUARD.md",
+        "src/openhuman/security",
+        "src/openhuman/keyring"
+      ],
+      "relatedPages": [
+        "quality-risks-refactor",
+        "tools-mcp",
+        "json-rpc-bridge"
+      ]
+    },
+    {
+      "id": "ci-deployment",
+      "title": "CI/CD 与发布",
+      "file": "pages/ci-deployment.md",
+      "description": "CI/CD 与发布",
+      "importance": "medium",
+      "filePaths": [
+        ".github/workflows/build-desktop.yml",
+        ".github/workflows/release-production.yml",
+        "CONTRIBUTING.md"
+      ],
+      "relatedPages": [
+        "tauri-shell",
+        "quality-risks-refactor",
+        "overview"
+      ]
+    },
+    {
+      "id": "quality-risks-refactor",
+      "title": "代码质量与重构建议",
+      "file": "pages/quality-risks-refactor.md",
+      "description": "代码质量与重构建议",
+      "importance": "medium",
+      "filePaths": [
+        "docs/TEST-COVERAGE-MATRIX.md",
+        "docs/SECURITY_AUDIT.md",
+        "Cargo.toml"
+      ],
+      "relatedPages": [
+        "security-privacy",
+        "memory-store-schema",
+        "ci-deployment"
+      ]
+    }
+  ]
+}
